@@ -43,6 +43,10 @@ func main() {
 }
 ```
 
-## Examples
+## TODO
 
-TODO
+- [ ] Autoly generate codes for components.go and comp directory, based on Amis' schema.json in the last release(or Amis' docs)
+
+- [ ] Go+ classfile improvement
+
+- [ ] Tests and examples
