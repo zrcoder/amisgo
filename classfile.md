@@ -1,4 +1,4 @@
-amisgo is a Go+ classfile module, so you can use it like classfile.
+amisgo is a Go+ [classfile module](https://github.com/goplus/gop/blob/main/doc/classfile.md), so you can use it like classfile.
 
 1. Initialize your amisgo project
 
