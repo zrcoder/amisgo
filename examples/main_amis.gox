@@ -1,1 +1,5 @@
+page().title("Example").body(
+	page().title("Inner"),
+)
+
 listenAndServe! ":9090"

@@ -10,11 +10,10 @@
 Hello word with [Go+](https://goplus.org):
 
 ```c
-index := page().title("Example").body(
+page().title("Example").body(
 	page().title("Inner"),
 )
 
-route "/", index
 listenAndServe! ":9090"
 ```
 

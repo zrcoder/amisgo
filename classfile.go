@@ -23,12 +23,12 @@ var (
 )
 
 func Gopt_App_Main(app IMain, workers ...IWorker) {
+	app.init()
 	for _, worker := range workers {
 		worker.init()
 		worker.(interface{ Main() }).Main()
 		worker.HandleRouter()
 	}
-	app.init()
 	app.HandleRouter()
 	app.(interface{ MainEntry() }).MainEntry()
 }
