@@ -46,7 +46,7 @@ func main() {
 
 ## TODO
 
-- [ ] Autoly generate codes for components.go and comp directory, based on Amis' schema.json in the last release(or Amis' docs)
+- [ ] Autoly generate codes for components.go and the comp directory, based on schema.json in Amis' last release(or Amis' docs)
 
 - [ ] Go+ classfile improvement
 
