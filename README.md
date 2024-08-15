@@ -4,7 +4,8 @@
  The name stands for `amis go`, coincidentally means `friend` in Zulu.
 
 > `amisgo` is based on [Amis](https://aisuda.bce.baidu.com/amis).
-> More background and details see the [wiki](https://github.com/zrcoder/amisgo/wiki)
+> 
+> See the [wiki](https://github.com/zrcoder/amisgo/wiki) for more background and details. 
 
 ## Usage
 
