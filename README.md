@@ -1,15 +1,14 @@
 # Amisgo
 
-`amisgo` is a low code frontend framework for gophers.  
- The name stands for `amis go`, coincidentally means `friend` in Zulu.
+Amisgo is a low code frontend framework for gophers.  
+The name stands for `amis go`, coincidentally means `friend` in Zulu.
 
-> Amisgo is based on [Amis](https://aisuda.bce.baidu.com/amis).
-> 
+> Amisgo is based on baidu [Amis](https://aisuda.bce.baidu.com/amis).  
 > See the [wiki](https://github.com/zrcoder/amisgo/wiki) for more background and details. 
 
 ## Usage
 
-Hello word with [Go+](https://goplus.org):
+Hello world with [Go+](https://goplus.org):
 
 ```c
 page().title("Example").body(
