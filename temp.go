@@ -1,10 +1,10 @@
 package amisgo
 
 const htmlTemplate = `<!DOCTYPE html>
-<html lang="zh">
+<html lang={{ .Lang }}>
   <head>
     <meta charset="UTF-8" />
-    <title>amis demo</title>
+    <title>{{ .Title }}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta
       name="viewport"
