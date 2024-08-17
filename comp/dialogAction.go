@@ -1,14 +1,11 @@
 package comp
 
 // DialogAction 代表一个对话框动作按钮的配置。
-type DialogAction BaseRenderer
+type DialogAction Schema
 
 // NewDialogAction 创建一个新的 DialogAction 实例，并初始化默认设置。
 func NewDialogAction() DialogAction {
-	da := DialogAction(make(BaseRenderer))
-	da.set("type", "button")
-	da.set("actionType", "dialog")
-	return da
+	return make(DialogAction).set("type", "button").set("actionType", "dialog")
 }
 
 func (da DialogAction) set(key string, value interface{}) DialogAction {

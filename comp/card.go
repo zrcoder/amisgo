@@ -1,12 +1,11 @@
 package comp
 
 // Card 继承自 BaseRenderer
-type Card BaseRenderer
+type Card Schema
 
 // NewCard 创建一个新的 Card 实例
 func NewCard() Card {
-	c := Card(make(BaseRenderer))
-	return c.set("type", "card")
+	return make(Card).set("type", "card")
 }
 
 func (c Card) set(key string, value interface{}) Card {

@@ -1,12 +1,11 @@
 package comp
 
 // DateTimeControl 日期时间选择控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/datetime
-type DateTimeControl BaseRenderer
+type DateTimeControl Schema
 
 // NewDateTimeControl 创建一个新的 DateTimeControl 实例，并设置默认的 type
 func NewDateTimeControl() DateTimeControl {
-	d := DateTimeControl(make(BaseRenderer))
-	return d.set("type", "input-datetime")
+	return make(DateTimeControl).set("type", "input-datetime")
 }
 
 func (d DateTimeControl) set(key string, value interface{}) DateTimeControl {

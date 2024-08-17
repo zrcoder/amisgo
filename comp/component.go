@@ -1,11 +1,11 @@
 package comp
 
 // Component 代表一个灵活的组件，可以配置各种属性
-type Component BaseRenderer
+type Component Schema
 
 // NewComponent 创建一个新的 Component 实例，并设置默认类型
 func NewComponent() Component {
-	return Component(make(BaseRenderer))
+	return make(Component)
 }
 
 // Set 用于设置组件的其他属性

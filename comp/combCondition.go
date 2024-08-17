@@ -1,11 +1,11 @@
 package comp
 
 // ComboCondition 表示组合条件渲染器
-type ComboCondition BaseRenderer
+type ComboCondition Schema
 
 // NewComboCondition 创建一个新的 ComboCondition 实例
 func NewComboCondition() ComboCondition {
-	return ComboCondition(make(BaseRenderer))
+	return make(ComboCondition)
 }
 
 func (cc ComboCondition) set(key string, value interface{}) ComboCondition {

@@ -1,14 +1,11 @@
 package comp
 
 // CRUDCards 定义了 CRUDCards 渲染器
-type CRUDCards BaseRenderer
+type CRUDCards Schema
 
 // NewCRUDCards 创建一个新的 CRUDCards 实例
 func NewCRUDCards() CRUDCards {
-	c := CRUDCards(make(BaseRenderer))
-	c.set("mode", "cards")
-	c.set("type", "crud")
-	return c
+	return make(CRUDCards).set("mode", "cards").set("type", "crud")
 }
 
 func (c CRUDCards) set(key string, value interface{}) CRUDCards {

@@ -1,11 +1,11 @@
 package comp
 
 // Expandable 表示可展开的渲染器
-type Expandable BaseRenderer
+type Expandable Schema
 
 // NewExpandable 创建一个新的 Expandable 实例
 func NewExpandable() Expandable {
-	return Expandable(make(BaseRenderer))
+	return make(Expandable)
 }
 
 func (e Expandable) set(key string, value interface{}) Expandable {

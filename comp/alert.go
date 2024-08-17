@@ -3,12 +3,11 @@ package comp
 // Alert 提示渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/alert
 //
 // @version 6.6.0
-type Alert BaseRenderer
+type Alert Schema
 
 // NewAlert 创建一个新的 Alert 实例
 func NewAlert() Alert {
-	alert := Alert(make(BaseRenderer))
-	return alert.set("type", "alert")
+	return make(Alert).set("type", "alert")
 }
 
 func (a Alert) set(key string, value interface{}) Alert {

@@ -1,13 +1,11 @@
 package comp
 
 // ButtonGroup 代表按钮组渲染器
-type ButtonGroup BaseRenderer
+type ButtonGroup Schema
 
 // NewButtonGroup 创建一个新的 ButtonGroup 实例
 func NewButtonGroup() ButtonGroup {
-	bg := ButtonGroup(make(BaseRenderer))
-	bg.set("type", "button-group")
-	return bg
+	return make(ButtonGroup).set("type", "button-group")
 }
 
 func (br ButtonGroup) set(key string, value interface{}) ButtonGroup {

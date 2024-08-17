@@ -1,11 +1,11 @@
 package comp
 
 // VanillaAction
-type VanillaAction BaseRenderer
+type VanillaAction Schema
 
 // NewVanillaAction 创建一个新的 VanillaAction 实例
 func NewVanillaAction() VanillaAction {
-	return VanillaAction(make(BaseRenderer))
+	return make(VanillaAction)
 }
 
 // Set 设置属性

@@ -1,12 +1,11 @@
 package comp
 
 // Color 显示渲染器
-type Color BaseRenderer
+type Color Schema
 
 // NewColor 创建一个新的 Color 实例
 func NewColor() Color {
-	Color := Color(make(BaseRenderer))
-	return Color.set("type", "color")
+	return make(Color).set("type", "color")
 }
 
 func (c Color) set(key string, value interface{}) Color {

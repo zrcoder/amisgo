@@ -3,11 +3,11 @@ package comp
 // Flex 布局 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/flex
 //
 // @version 6.7.0
-type Flex BaseRenderer
+type Flex Schema
 
 // NewFlex 创建一个新的 Flex 实例
 func NewFlex() Flex {
-	return Flex(make(BaseRenderer)).set("type", "flex")
+	return make(Flex).set("type", "flex")
 }
 
 func (f Flex) set(key string, value interface{}) Flex {

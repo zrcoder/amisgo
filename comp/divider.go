@@ -1,11 +1,10 @@
 package comp
 
 // Divider 分割线渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/divider
-type Divider BaseRenderer
+type Divider Schema
 
 func NewDivider() Divider {
-	d := Divider(make(BaseRenderer))
-	return d.set("type", "divider")
+	return make(Divider).set("type", "divider")
 }
 
 func (d Divider) set(key string, value interface{}) Divider {

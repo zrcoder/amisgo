@@ -1,13 +1,11 @@
 package comp
 
 // ButtonGroupControl 代表按钮组控件渲染器
-type ButtonGroupControl BaseRenderer
+type ButtonGroupControl Schema
 
 // NewButtonGroupControl 创建一个新的 ButtonGroupControl 实例
 func NewButtonGroupControl() ButtonGroupControl {
-	bgc := ButtonGroupControl(make(BaseRenderer))
-	bgc.set("type", "button-group-select")
-	return bgc
+	return make(ButtonGroupControl).set("type", "button-group-select")
 }
 
 func (bgc ButtonGroupControl) set(key string, value interface{}) ButtonGroupControl {

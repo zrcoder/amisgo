@@ -1,13 +1,11 @@
 package comp
 
 // Carousel 继承自 BaseRenderer
-type Carousel BaseRenderer
+type Carousel Schema
 
 // NewCarousel 创建一个新的 Carousel 实例
 func NewCarousel() Carousel {
-	c := Carousel(make(BaseRenderer))
-	c.set("type", "carousel")
-	return c
+	return make(Carousel).set("type", "carousel")
 }
 
 func (c Carousel) set(key string, value interface{}) Carousel {

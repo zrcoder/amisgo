@@ -1,12 +1,11 @@
 package comp
 
 // Tpl 渲染器
-type Tpl BaseRenderer
+type Tpl Schema
 
 // NewTpl 创建一个新的 Tpl 实例
 func NewTpl() Tpl {
-	t := Tpl(make(BaseRenderer))
-	return t.set("type", "tpl")
+	return make(Tpl).set("type", "tpl")
 }
 
 // Badge 角标

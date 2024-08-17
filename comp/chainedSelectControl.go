@@ -1,13 +1,11 @@
 package comp
 
 // ChainedSelectControl 链式下拉框 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/chained-select
-type ChainedSelectControl BaseRenderer
+type ChainedSelectControl Schema
 
 // NewChainedSelectControl 创建一个新的 ChainedSelectControl 实例
 func NewChainedSelectControl() ChainedSelectControl {
-	c := ChainedSelectControl(make(BaseRenderer))
-	c.set("type", "chained-select")
-	return c
+	return make(ChainedSelectControl).set("type", "chained-select")
 }
 
 // set 设置属性值

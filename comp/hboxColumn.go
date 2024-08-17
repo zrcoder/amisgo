@@ -1,11 +1,11 @@
 package comp
 
 // HBoxColumn 列渲染器
-type HBoxColumn BaseRenderer
+type HBoxColumn Schema
 
 // NewHBoxColumn 创建一个新的 HBoxColumn 实例
 func NewHBoxColumn() HBoxColumn {
-	return HBoxColumn(make(BaseRenderer))
+	return make(HBoxColumn)
 }
 
 // set 设置属性

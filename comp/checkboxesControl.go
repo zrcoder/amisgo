@@ -1,10 +1,9 @@
 package comp
 
-type CheckboxesControl BaseRenderer
+type CheckboxesControl Schema
 
 func NewCheckboxesControl() CheckboxesControl {
-	c := CheckboxesControl{}
-	return c.set("type", "checkboxes")
+	return make(CheckboxesControl).set("type", "checkboxes")
 }
 
 func (c CheckboxesControl) set(key string, value interface{}) CheckboxesControl {

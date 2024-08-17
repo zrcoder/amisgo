@@ -1,13 +1,11 @@
 package comp
 
 // DropdownButton 表示下拉按钮渲染器。
-type DropdownButton BaseRenderer
+type DropdownButton Schema
 
 // NewDropdownButton 创建一个新的 DropdownButton 实例，并设置默认的 type 为 'dropdown-button'
 func NewDropdownButton() DropdownButton {
-	d := DropdownButton(make(BaseRenderer))
-	d.set("type", "dropdown-button")
-	return d
+	return make(DropdownButton).set("type", "dropdown-button")
 }
 
 func (d DropdownButton) set(key string, value interface{}) DropdownButton {

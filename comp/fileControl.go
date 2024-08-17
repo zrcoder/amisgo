@@ -1,11 +1,11 @@
 package comp
 
 // FileControl 文件上传控件
-type FileControl BaseRenderer
+type FileControl Schema
 
 // NewFileControl 创建一个新的 FileControl 实例
 func NewFileControl() FileControl {
-	f := FileControl(make(BaseRenderer))
+	f := make(FileControl)
 	f.set("type", "input-file")
 	f.Receiver("/api/upload/file")
 	f.StartChunkApi("/api/upload/startChunk")

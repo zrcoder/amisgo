@@ -1,11 +1,11 @@
 package comp
 
 // AnchorNavSection 锚点区域渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
-type AnchorNavSection BaseRenderer
+type AnchorNavSection Schema
 
 // NewAnchorNavSection 创建一个新的 AnchorNavSection 实例
 func NewAnchorNavSection() AnchorNavSection {
-	return AnchorNavSection(make(BaseRenderer))
+	return make(AnchorNavSection)
 }
 
 func (a AnchorNavSection) set(key string, value interface{}) AnchorNavSection {

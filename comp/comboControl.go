@@ -1,12 +1,11 @@
 package comp
 
 // ComboControl 组合输入框类型
-type ComboControl BaseRenderer
+type ComboControl Schema
 
 // NewComboControl 创建一个新的 ComboControl 实例
 func NewComboControl() ComboControl {
-	cc := ComboControl(make(BaseRenderer))
-	return cc.set("type", "combo")
+	return make(ComboControl).set("type", "combo")
 }
 
 func (cc ComboControl) set(key string, value interface{}) ComboControl {

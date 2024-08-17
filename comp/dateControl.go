@@ -1,12 +1,11 @@
 package comp
 
 // DateControl 日期选择控件
-type DateControl BaseRenderer
+type DateControl Schema
 
 // NewDateControl 创建一个新的 DateControl 实例，并设置默认的 type
 func NewDateControl() DateControl {
-	d := DateControl(make(BaseRenderer))
-	return d.set("type", "input-date")
+	return make(DateControl).set("type", "input-date")
 }
 
 func (d DateControl) set(key string, value interface{}) DateControl {

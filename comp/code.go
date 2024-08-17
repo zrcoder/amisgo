@@ -1,12 +1,11 @@
 package comp
 
 // Code 继承自 BaseRenderer
-type Code BaseRenderer
+type Code Schema
 
 // NewCode 创建一个新的 Code 实例
 func NewCode() Code {
-	c := Code(make(BaseRenderer))
-	return c.set("type", "code")
+	return make(Code).set("type", "code")
 }
 
 func (c Code) set(key string, value interface{}) Code {

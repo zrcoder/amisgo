@@ -1,11 +1,11 @@
 package comp
 
 // BaseApi 基础 API 渲染器
-type BaseApi BaseRenderer
+type BaseApi Schema
 
 // NewBaseApi 创建一个新的 BaseApi 实例
 func NewBaseApi() BaseApi {
-	return BaseApi(make(BaseRenderer))
+	return make(BaseApi)
 }
 
 // Set 设置属性

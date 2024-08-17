@@ -1,11 +1,11 @@
 package comp
 
 // FieldSetControl 表单项集合
-type FieldSetControl BaseRenderer
+type FieldSetControl Schema
 
 // NewFieldSetControl 创建一个新的 FieldSetControl 实例，并设置默认的 type
 func NewFieldSetControl() FieldSetControl {
-	return FieldSetControl(make(BaseRenderer)).set("type", "fieldset").set("titlePosition", "top")
+	return make(FieldSetControl).set("type", "fieldset").set("titlePosition", "top")
 }
 
 func (f FieldSetControl) set(key string, value interface{}) FieldSetControl {

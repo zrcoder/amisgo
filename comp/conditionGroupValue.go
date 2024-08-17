@@ -1,13 +1,11 @@
 package comp
 
 // ConditionGroupValue 代表一个条件组合值，支持多种配置项
-type ConditionGroupValue BaseRenderer
+type ConditionGroupValue Schema
 
 // NewConditionGroupValue 创建一个新的 ConditionGroupValue 实例，并设置默认的 conjunction
 func NewConditionGroupValue() ConditionGroupValue {
-	cgv := ConditionGroupValue(make(BaseRenderer))
-	cgv.set("conjunction", "and")
-	return cgv
+	return make(ConditionGroupValue).set("conjunction", "and")
 }
 
 func (c ConditionGroupValue) set(key string, value interface{}) ConditionGroupValue {

@@ -1,14 +1,11 @@
 package comp
 
 // Avatar 头像渲染器
-type Avatar BaseRenderer
+type Avatar Schema
 
 // NewAvatar 创建一个新的 Avatar 实例
 func NewAvatar() Avatar {
-	avatar := Avatar(make(BaseRenderer))
-	avatar.set("type", "avatar")
-	avatar.set("crossOrigin", "anonymous")
-	return avatar
+	return make(Avatar).set("type", "avatar").set("crossOrigin", "anonymous")
 }
 
 func (a Avatar) set(key string, value interface{}) Avatar {

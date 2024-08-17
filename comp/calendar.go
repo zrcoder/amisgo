@@ -1,13 +1,11 @@
 package comp
 
 // Calendar 继承自 BaseRenderer
-type Calendar BaseRenderer
+type Calendar Schema
 
 // NewCalendar 创建一个新的 Calendar 实例
 func NewCalendar() Calendar {
-	c := Calendar(make(BaseRenderer))
-	c.set("type", "calendar")
-	return c
+	return make(Calendar).set("type", "calendar")
 }
 
 func (c Calendar) set(key string, value interface{}) Calendar {

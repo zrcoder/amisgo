@@ -1,14 +1,11 @@
 package comp
 
 // CRUD2Cards 是 CRUD2 卡片渲染器
-type CRUD2Cards BaseRenderer
+type CRUD2Cards Schema
 
 // NewCRUD2Cards 创建一个新的 CRUD2Cards 实例
 func NewCRUD2Cards() CRUD2Cards {
-	cards := CRUD2Cards(make(BaseRenderer))
-	cards.set("mode", "cards")
-	cards.set("type", "crud2")
-	return cards
+	return make(CRUD2Cards).set("mode", "cards").set("type", "crud2")
 }
 
 // Set 设置属性

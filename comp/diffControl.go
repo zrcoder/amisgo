@@ -1,12 +1,11 @@
 package comp
 
 // DiffControl 编辑器
-type DiffControl BaseRenderer
+type DiffControl Schema
 
 // NewDiffControl 创建一个新的 DiffControl 实例，并设置默认的 type
 func NewDiffControl() DiffControl {
-	d := DiffControl(make(BaseRenderer))
-	return d.set("type", "diff-editor")
+	return make(DiffControl).set("type", "diff-editor")
 }
 
 func (d DiffControl) set(key string, value interface{}) DiffControl {

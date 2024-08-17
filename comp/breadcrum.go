@@ -1,11 +1,11 @@
 package comp
 
 // Breadcrumb 面包屑
-type Breadcrumb BaseRenderer
+type Breadcrumb Schema
 
 // NewBreadcrumb 创建一个新的 Breadcrumb 实例
 func NewBreadcrumb() Breadcrumb {
-	return Breadcrumb(make(BaseRenderer))
+	return make(Breadcrumb)
 }
 
 // Set 设置属性

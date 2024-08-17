@@ -1,11 +1,11 @@
 package comp
 
 // GridNav 宫格导航
-type GridNav BaseRenderer
+type GridNav Schema
 
 // NewGridNav 创建一个新的 GridNav 实例
 func NewGridNav() GridNav {
-	return GridNav(make(BaseRenderer)).set("type", "grid-nav")
+	return make(GridNav).set("type", "grid-nav")
 }
 
 // set 设置属性并返回当前对象

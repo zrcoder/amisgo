@@ -1,12 +1,11 @@
 package comp
 
 // DateRange 展示渲染器
-type DateRange BaseRenderer
+type DateRange Schema
 
 // NewDateRange 创建一个新的 DateRange 实例，并设置默认的 type
 func NewDateRange() DateRange {
-	d := DateRange(make(BaseRenderer))
-	return d.set("type", "date-range")
+	return make(DateRange).set("type", "date-range")
 }
 
 func (d DateRange) set(key string, value interface{}) DateRange {

@@ -1,13 +1,11 @@
 package comp
 
 // EditorControl 表示代码编辑器
-type EditorControl BaseRenderer
+type EditorControl Schema
 
 // NewEditorControl 创建一个新的 EditorControl 实例，并设置默认的 type 为 'editor'
 func NewEditorControl() EditorControl {
-	ec := EditorControl(make(BaseRenderer))
-	ec.set("type", "editor")
-	return ec
+	return make(EditorControl).set("type", "editor")
 }
 
 func (ec EditorControl) set(key string, value interface{}) EditorControl {

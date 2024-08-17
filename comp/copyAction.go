@@ -1,14 +1,11 @@
 package comp
 
 // CopyAction 代表复制行为的按钮
-type CopyAction BaseRenderer
+type CopyAction Schema
 
 // NewCopyAction 创建一个新的 CopyAction 实例，并设置默认的 actionType
 func NewCopyAction() CopyAction {
-	ca := CopyAction(make(BaseRenderer))
-	ca.set("type", "button")
-	ca.set("actionType", "copy")
-	return ca
+	return make(CopyAction).set("type", "button").set("actionType", "copy")
 }
 
 func (c CopyAction) set(key string, value interface{}) CopyAction {

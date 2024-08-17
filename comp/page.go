@@ -1,12 +1,11 @@
 package comp
 
 // Page 渲染器。详情请见：https://aisuda.bce.baidu.com/amis/zh-CN/components/page
-type Page BaseRenderer
+type Page Schema
 
 // NewPage 创建一个新的 Page 实例
 func NewPage() Page {
-	p := Page(make(BaseRenderer))
-	return p.set("type", "page")
+	return make(Page).set("type", "page")
 }
 
 // Aside 边栏区域

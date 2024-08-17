@@ -1,11 +1,11 @@
 package comp
 
 // Grid2D 二维布局渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/grid-2d
-type Grid2D BaseRenderer
+type Grid2D Schema
 
 // NewGrid2D 创建一个新的 Grid2D 实例
 func NewGrid2D() Grid2D {
-	return Grid2D(make(BaseRenderer)).set("type", "grid-2d")
+	return make(Grid2D).set("type", "grid-2d")
 }
 
 // set 设置属性并返回当前对象

@@ -3,11 +3,11 @@ package comp
 // FormControl 表单项包裹。文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/control
 //
 // @version 6.7.0
-type FormControl BaseRenderer
+type FormControl Schema
 
 // NewFormControl 创建一个新的 FormControl 实例
 func NewFormControl() FormControl {
-	return FormControl(make(BaseRenderer)).set("type", "control")
+	return make(FormControl).set("type", "control")
 }
 
 func (fc FormControl) set(key string, value interface{}) FormControl {

@@ -1,13 +1,11 @@
 package comp
 
 // Barcode 条形码渲染器
-type Barcode BaseRenderer
+type Barcode Schema
 
 // NewBarcode 创建一个新的 Barcode 实例
 func NewBarcode() Barcode {
-	barcode := Barcode(make(BaseRenderer))
-	barcode.set("type", "barcode")
-	return barcode
+	return make(Barcode).set("type", "barcode")
 }
 
 func (b Barcode) set(key string, value interface{}) Barcode {

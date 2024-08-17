@@ -1,11 +1,11 @@
 package comp
 
 // EmailAction 表示电子邮件动作按钮
-type EmailAction BaseRenderer
+type EmailAction Schema
 
 // NewEmailAction 创建一个新的 EmailAction 实例，并设置默认的 type 和 actionType
 func NewEmailAction() EmailAction {
-	return EmailAction(make(BaseRenderer)).set("type", "button").set("actionType", "email")
+	return make(EmailAction).set("type", "button").set("actionType", "email")
 }
 
 func (ea EmailAction) set(key string, value interface{}) EmailAction {

@@ -1,12 +1,11 @@
 package comp
 
 // Date 展示渲染器
-type Date BaseRenderer
+type Date Schema
 
 // NewDate 创建一个新的 Date 实例，并设置默认的 type
 func NewDate() Date {
-	d := Date(make(BaseRenderer))
-	return d.set("type", "date")
+	return make(Date).set("type", "date")
 }
 
 func (d Date) set(key string, value interface{}) Date {

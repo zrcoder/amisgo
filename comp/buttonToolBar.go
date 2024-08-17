@@ -1,12 +1,11 @@
 package comp
 
 // ButtonToolbar 代表按钮工具条控件渲染器
-type ButtonToolbar BaseRenderer
+type ButtonToolbar Schema
 
 // NewButtonToolbar 创建一个新的 ButtonToolbar 实例
 func NewButtonToolbar() ButtonToolbar {
-	bt := ButtonToolbar(make(BaseRenderer))
-	return bt.set("type", "button-toolbar")
+	return make(ButtonToolbar).set("type", "button-toolbar")
 }
 
 // Set 覆盖 BaseRenderer 的 Set 方法，返回 ButtonToolbar

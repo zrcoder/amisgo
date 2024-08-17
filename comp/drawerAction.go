@@ -1,14 +1,11 @@
 package comp
 
 // DrawerAction 表示一个抽出式弹框中的操作按钮。
-type DrawerAction BaseRenderer
+type DrawerAction Schema
 
 // NewDrawerAction 创建一个新的 DrawerAction 实例，并设置默认的 type 和 actionType
 func NewDrawerAction() DrawerAction {
-	d := DrawerAction(make(BaseRenderer))
-	d.set("type", "button")
-	d.set("actionType", "drawer")
-	return d
+	return make(DrawerAction).set("type", "button").set("actionType", "drawer")
 }
 
 func (d DrawerAction) set(key string, value interface{}) DrawerAction {

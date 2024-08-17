@@ -1,12 +1,11 @@
 package comp
 
 // ChartRadios 图表单选框
-type ChartRadios BaseRenderer
+type ChartRadios Schema
 
 // NewChartRadios 创建一个新的 ChartRadios 实例
 func NewChartRadios() ChartRadios {
-	c := ChartRadios(make(BaseRenderer))
-	return c.set("type", "chart-radios")
+	return make(ChartRadios).set("type", "chart-radios")
 }
 
 // set 设置属性值

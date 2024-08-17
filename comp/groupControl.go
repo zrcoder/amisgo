@@ -1,11 +1,11 @@
 package comp
 
 // GroupControl 表单集合渲染器，能让多个表单在一行显示
-type GroupControl BaseRenderer
+type GroupControl Schema
 
 // NewGroupControl 创建一个新的 GroupControl 实例
 func NewGroupControl() GroupControl {
-	return GroupControl(make(BaseRenderer)).set("type", "group")
+	return make(GroupControl).set("type", "group")
 }
 
 // set 设置属性并返回当前对象

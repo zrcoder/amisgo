@@ -1,11 +1,11 @@
 package comp
 
 // GridColumn 表示一个网格列
-type GridColumn BaseRenderer
+type GridColumn Schema
 
 // NewGridColumn 创建一个新的 GridColumn 实例
 func NewGridColumn() GridColumn {
-	return GridColumn(make(BaseRenderer))
+	return make(GridColumn)
 }
 
 // set 设置属性并返回当前对象

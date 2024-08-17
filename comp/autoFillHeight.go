@@ -1,11 +1,11 @@
 package comp
 
 // AutoFillHeight 自动填充高度渲染器
-type AutoFillHeight BaseRenderer
+type AutoFillHeight Schema
 
 // NewAutoFillHeight 创建一个新的 AutoFillHeight 实例
 func NewAutoFillHeight() AutoFillHeight {
-	return AutoFillHeight(make(BaseRenderer))
+	return make(AutoFillHeight)
 }
 
 // Set 设置属性

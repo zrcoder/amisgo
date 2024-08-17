@@ -1,11 +1,11 @@
 package comp
 
 // FeedbackDialog 表示反馈对话框
-type FeedbackDialog BaseRenderer
+type FeedbackDialog Schema
 
 // NewFeedbackDialog 创建一个新的 FeedbackDialog 实例
 func NewFeedbackDialog() FeedbackDialog {
-	return FeedbackDialog(make(BaseRenderer))
+	return make(FeedbackDialog)
 }
 
 func (f FeedbackDialog) set(key string, value interface{}) FeedbackDialog {

@@ -1,12 +1,11 @@
 package comp
 
 // Chart 图表渲染器
-type Chart BaseRenderer
+type Chart Schema
 
 // NewChart 创建一个新的 Chart 实例
 func NewChart() Chart {
-	c := Chart(make(BaseRenderer))
-	return c.set("type", "chart")
+	return make(Chart).set("type", "chart")
 }
 
 // set 设置属性值

@@ -1,14 +1,11 @@
 package comp
 
 // CRUD2List 是 CRUD2 列表渲染器
-type CRUD2List BaseRenderer
+type CRUD2List Schema
 
 // NewCRUD2List 创建一个新的 CRUD2List 实例
 func NewCRUD2List() CRUD2List {
-	list := CRUD2List(make(BaseRenderer))
-	list.set("mode", "list")
-	list.set("type", "crud2")
-	return list
+	return make(CRUD2List).set("mode", "list").set("type", "crud2")
 }
 
 // Set 设置属性

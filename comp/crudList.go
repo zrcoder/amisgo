@@ -1,14 +1,11 @@
 package comp
 
 // CRUDList 表示 CRUD 列表渲染器
-type CRUDList BaseRenderer
+type CRUDList Schema
 
 // NewCRUDList 创建新的 CRUDList 实例
 func NewCRUDList() CRUDList {
-	c := CRUDList(make(BaseRenderer))
-	c.set("mode", "list")
-	c.set("type", "crud")
-	return c
+	return make(CRUDList).set("mode", "list").set("type", "crud")
 }
 
 // Set 设置键值对，并返回当前实例

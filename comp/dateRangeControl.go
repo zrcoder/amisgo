@@ -1,12 +1,11 @@
 package comp
 
 // DateRangeControl 表示一个日期范围控件
-type DateRangeControl BaseRenderer
+type DateRangeControl Schema
 
 // NewDateRangeControl 创建一个新的 DateRangeControl 实例，并设置默认的 type
 func NewDateRangeControl() DateRangeControl {
-	d := DateRangeControl(make(BaseRenderer))
-	return d.set("type", "input-date-range")
+	return make(DateRangeControl).set("type", "input-date-range")
 }
 
 // set 设置 key-value 对，并返回当前实例

@@ -1,11 +1,11 @@
 package comp
 
 // HiddenControl 隐藏域。功能性组件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/hidden
-type HiddenControl BaseRenderer
+type HiddenControl Schema
 
 // NewHiddenControl 创建一个新的 HiddenControl 实例
 func NewHiddenControl() HiddenControl {
-	return HiddenControl(make(BaseRenderer)).set("type", "hidden")
+	return make(HiddenControl).set("type", "hidden")
 }
 
 // set 设置属性

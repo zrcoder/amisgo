@@ -3,11 +3,11 @@ package comp
 // Form 表单渲染器。说明：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/index
 //
 // @version 6.7.0
-type Form BaseRenderer
+type Form Schema
 
 // NewForm 创建一个新的 Form 实例
 func NewForm() Form {
-	return Form(make(BaseRenderer)).set("type", "form")
+	return make(Form).set("type", "form")
 }
 
 func (f Form) set(key string, value interface{}) Form {

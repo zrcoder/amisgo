@@ -1,13 +1,11 @@
 package comp
 
 // IFrame 渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/iframe
-type IFrame BaseRenderer
+type IFrame Schema
 
 // NewIFrame 创建一个新的 IFrame 实例
 func NewIFrame() IFrame {
-	i := IFrame(make(BaseRenderer))
-	i.set("type", "iframe")
-	return i
+	return make(IFrame).set("type", "iframe")
 }
 
 // Allow

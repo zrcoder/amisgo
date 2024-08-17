@@ -2,4 +2,4 @@ package comp
 
 type AmisComp interface{}
 
-type BaseRenderer map[string]interface{}
+type Schema map[string]interface{}

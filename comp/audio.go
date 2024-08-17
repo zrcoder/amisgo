@@ -1,13 +1,11 @@
 package comp
 
 // Audio 音频渲染器
-type Audio BaseRenderer
+type Audio Schema
 
 // NewAudio 创建一个新的 Audio 实例
 func NewAudio() Audio {
-	audio := Audio(make(BaseRenderer))
-	audio.set("type", "audio")
-	return audio
+	return make(Audio).set("type", "audio")
 }
 
 func (a Audio) set(key string, value interface{}) Audio {

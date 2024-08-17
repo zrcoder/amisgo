@@ -1,12 +1,11 @@
 package comp
 
 // Action 行为按钮 https://aisuda.bce.baidu.com/amis/zh-CN/components/action
-type Action BaseRenderer
+type Action Schema
 
 // NewAction 创建一个新的 Action 实例
 func NewAction() Action {
-	a := Action(make(BaseRenderer))
-	return a.set("type", "action")
+	return make(Action).set("type", "action")
 }
 
 // ActionType 【必填】这是 action 最核心的配置，来指定该 action 的作用类型 可选值: ajax | link | url | drawer | dialog | confirm | cancel | prev | next | copy | close

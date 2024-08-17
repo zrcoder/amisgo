@@ -1,12 +1,11 @@
 package comp
 
 // Drawer 抽出式弹框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/drawer
-type Drawer BaseRenderer
+type Drawer Schema
 
 // NewDrawer 创建一个新的 Drawer 实例，并设置默认的 type
 func NewDrawer() Drawer {
-	d := Drawer(make(BaseRenderer))
-	return d.set("type", "drawer")
+	return make(Drawer).set("type", "drawer")
 }
 
 func (d Drawer) set(key string, value interface{}) Drawer {

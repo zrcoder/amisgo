@@ -1,10 +1,9 @@
 package comp
 
-type Collapse BaseRenderer
+type Collapse Schema
 
 func NewCollapse() Collapse {
-	c := Collapse(make(BaseRenderer))
-	return c.set("type", "collapse")
+	return make(Collapse).set("type", "collapse")
 }
 
 func (c Collapse) set(key string, value interface{}) Collapse {

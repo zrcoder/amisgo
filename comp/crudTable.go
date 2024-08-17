@@ -1,12 +1,11 @@
 package comp
 
 // CRUDTable 继承自 BaseRenderer
-type CRUDTable BaseRenderer
+type CRUDTable Schema
 
 // NewCRUDTable 创建一个新的 CRUDTable 实例
 func NewCRUDTable() CRUDTable {
-	c := CRUDTable(make(BaseRenderer))
-	return c.set("type", "crud")
+	return make(CRUDTable).set("type", "crud")
 }
 
 func (c CRUDTable) set(key string, value interface{}) CRUDTable {

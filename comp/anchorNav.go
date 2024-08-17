@@ -1,13 +1,11 @@
 package comp
 
 // AnchorNav 锚点导航渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
-type AnchorNav BaseRenderer
+type AnchorNav Schema
 
 // NewAnchorNav 创建一个新的 AnchorNav 实例
 func NewAnchorNav() AnchorNav {
-	anchorNav := AnchorNav(make(BaseRenderer))
-	anchorNav.set("type", "anchor-nav")
-	return anchorNav
+	return make(AnchorNav).set("type", "anchor-nav")
 }
 
 func (a AnchorNav) set(key string, value interface{}) AnchorNav {

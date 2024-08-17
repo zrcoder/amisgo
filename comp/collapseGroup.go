@@ -1,12 +1,11 @@
 package comp
 
 // CollapseGroup 折叠渲染器
-type CollapseGroup BaseRenderer
+type CollapseGroup Schema
 
 // NewCollapseGroup 创建一个新的 CollapseGroup 实例
 func NewCollapseGroup() CollapseGroup {
-	res := CollapseGroup(make(BaseRenderer))
-	return res.set("type", "collapse-group")
+	return make(CollapseGroup).set("type", "collapse-group")
 }
 
 func (c CollapseGroup) set(key string, value interface{}) CollapseGroup {

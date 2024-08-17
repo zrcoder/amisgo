@@ -1,13 +1,11 @@
 package comp
 
 // InputArray 数组输入框。 combo 的别名。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-array
-type InputArray BaseRenderer
+type InputArray Schema
 
 // NewArrayControl 创建一个新的 ArrayControl 实例
 func NewArrayControl() InputArray {
-	ac := InputArray(make(BaseRenderer))
-	ac.set("type", "input-array")
-	return ac
+	return make(InputArray).set("type", "input-array")
 }
 
 func (ac InputArray) set(key string, value interface{}) InputArray {

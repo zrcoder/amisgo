@@ -1,11 +1,11 @@
 package comp
 
 // Badge 角标渲染器
-type Badge BaseRenderer
+type Badge Schema
 
 // NewBadge 创建一个新的 Badge 实例
 func NewBadge() Badge {
-	return Badge(make(BaseRenderer))
+	return make(Badge)
 }
 
 // Set 设置属性

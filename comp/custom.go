@@ -1,12 +1,11 @@
 package comp
 
 // Custom 自定义组件
-type Custom BaseRenderer
+type Custom Schema
 
 // NewCustom 创建一个新的 Custom 实例，并设置默认的 type
 func NewCustom() Custom {
-	c := Custom(make(BaseRenderer))
-	return c.set("type", "custom")
+	return make(Custom).set("type", "custom")
 }
 
 func (c Custom) set(key string, value interface{}) Custom {

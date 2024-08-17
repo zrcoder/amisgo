@@ -1,11 +1,11 @@
 package comp
 
 // FormulaControl 公式功能控件
-type FormulaControl BaseRenderer
+type FormulaControl Schema
 
 // NewFormulaControl 创建一个新的 FormulaControl 实例
 func NewFormulaControl() FormulaControl {
-	return FormulaControl(make(BaseRenderer)).set("type", "formula")
+	return make(FormulaControl).set("type", "formula")
 }
 
 func (fc FormulaControl) set(key string, value interface{}) FormulaControl {

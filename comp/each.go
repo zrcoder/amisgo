@@ -1,12 +1,11 @@
 package comp
 
 // Each 表示循环功能渲染器。
-type Each BaseRenderer
+type Each Schema
 
 // NewEach 创建一个新的 Each 实例，并设置默认的 type 为 'each'
 func NewEach() Each {
-	e := Each(make(BaseRenderer))
-	return e.set("type", "each")
+	return make(Each).set("type", "each")
 }
 
 func (e Each) set(key string, value interface{}) Each {

@@ -1,11 +1,11 @@
 package comp
 
 // Grid 格子布局渲染器
-type Grid BaseRenderer
+type Grid Schema
 
 // NewGrid 创建一个新的 Grid 实例
 func NewGrid() Grid {
-	return Grid(make(BaseRenderer)).set("type", "grid")
+	return make(Grid).set("type", "grid")
 }
 
 // set 设置属性并返回当前对象

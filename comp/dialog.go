@@ -1,11 +1,9 @@
 package comp
 
-type Dialog BaseRenderer
+type Dialog Schema
 
 func NewDialog() Dialog {
-	d := Dialog(make(BaseRenderer))
-	d.set("type", "dialog")
-	return d
+	return make(Dialog).set("type", "dialog")
 }
 
 func (d Dialog) set(key string, value interface{}) Dialog {

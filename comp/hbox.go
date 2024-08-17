@@ -1,11 +1,11 @@
 package comp
 
 // HBox 水平布局渲染器
-type HBox BaseRenderer
+type HBox Schema
 
 // NewHBox 创建一个新的 HBox 实例
 func NewHBox() HBox {
-	return HBox(make(BaseRenderer)).set("type", "hbox")
+	return make(HBox).set("type", "hbox")
 }
 
 func (h HBox) set(key string, value interface{}) HBox {

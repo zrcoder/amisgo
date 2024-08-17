@@ -1,14 +1,11 @@
 package comp
 
 // AjaxAction 表示一个 Ajax 行为按钮
-type AjaxAction BaseRenderer
+type AjaxAction Schema
 
 // NewAjaxAction 创建一个新的 AjaxAction 实例
 func NewAjaxAction() AjaxAction {
-	a := AjaxAction(make(BaseRenderer))
-	a.set("type", "button")
-	a.set("actionType", "ajax")
-	return a
+	return make(AjaxAction).set("type", "button").set("actionType", "ajax")
 }
 
 // ActionType 指定为发送 ajax 的行为。

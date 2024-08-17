@@ -1,13 +1,11 @@
 package comp
 
 // CRUD2Table 定义了 CRUD2 表格的渲染器
-type CRUD2Table BaseRenderer
+type CRUD2Table Schema
 
 // NewCRUD2Table 创建一个新的 CRUD2Table 实例
 func NewCRUD2Table() CRUD2Table {
-	t := CRUD2Table(make(BaseRenderer))
-	t.set("type", "crud2")
-	return t
+	return make(CRUD2Table).set("type", "crud2")
 }
 
 func (t CRUD2Table) set(key string, value interface{}) CRUD2Table {

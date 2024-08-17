@@ -1,13 +1,11 @@
 package comp
 
 // Container 代表一个容器渲染器，支持多种配置项
-type Container BaseRenderer
+type Container Schema
 
 // NewContainer 创建一个新的 Container 实例，并设置默认的 type
 func NewContainer() Container {
-	c := Container(make(BaseRenderer))
-	c.set("type", "container")
-	return c
+	return make(Container).set("type", "container")
 }
 
 func (c Container) set(key string, value interface{}) Container {

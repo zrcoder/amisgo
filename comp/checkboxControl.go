@@ -1,12 +1,11 @@
 package comp
 
 // CheckboxControl 继承自 BaseRenderer
-type CheckboxControl BaseRenderer
+type CheckboxControl Schema
 
 // NewCheckboxControl 创建一个新的 CheckboxControl 实例
 func NewCheckboxControl() CheckboxControl {
-	c := CheckboxControl(make(BaseRenderer))
-	return c.set("type", "checkbox")
+	return make(CheckboxControl).set("type", "checkbox")
 }
 
 func (c CheckboxControl) set(key string, value interface{}) CheckboxControl {

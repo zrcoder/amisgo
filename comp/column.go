@@ -1,12 +1,11 @@
 package comp
 
 // Column 表示列渲染器
-type Column BaseRenderer
+type Column Schema
 
 // NewColumn 创建一个新的 Column 实例
 func NewColumn() Column {
-	column := Column(make(BaseRenderer))
-	return column
+	return make(Column)
 }
 
 func (c Column) set(key string, value interface{}) Column {

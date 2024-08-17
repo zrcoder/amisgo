@@ -1,12 +1,11 @@
 package comp
 
 // ConditionBuilderControl 代表一个条件组合控件，支持多种配置项
-type ConditionBuilderControl BaseRenderer
+type ConditionBuilderControl Schema
 
 // NewConditionBuilderControl 创建一个新的 ConditionBuilderControl 实例，并设置默认类型
 func NewConditionBuilderControl() ConditionBuilderControl {
-	cc := ConditionBuilderControl(make(BaseRenderer))
-	return cc.set("type", "condition-builder")
+	return make(ConditionBuilderControl).set("type", "condition-builder")
 }
 
 func (c ConditionBuilderControl) set(key string, value interface{}) ConditionBuilderControl {

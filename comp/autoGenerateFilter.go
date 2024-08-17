@@ -1,11 +1,11 @@
 package comp
 
 // AutoGenerateFilter 自动生成过滤器渲染器
-type AutoGenerateFilter BaseRenderer
+type AutoGenerateFilter Schema
 
 // NewAutoGenerateFilter 创建一个新的 AutoGenerateFilter 实例
 func NewAutoGenerateFilter() AutoGenerateFilter {
-	return AutoGenerateFilter(make(BaseRenderer))
+	return make(AutoGenerateFilter)
 }
 
 // Set 设置属性
