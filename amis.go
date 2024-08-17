@@ -9,45 +9,26 @@ import (
 )
 
 type Amis struct {
-	Config    Config
-	Router    string // default is "/"
-	component comp.Component
-}
-
-type Config struct {
 	Theme string
+	Lang  string
+	Title string
 }
 
-func New() *Amis {
-	res := &Amis{}
-	res.init()
-	return res
-}
-
-func (a *Amis) init() {
-	a.Router = "/"
-}
-
-func (a *Amis) Theme(theme string) {
-	a.Config.Theme = theme
-}
-
-func (a *Amis) Route(r string) {
-	a.Router = r
-}
-
-func (a *Amis) HandleRouter() {
-	http.HandleFunc(a.Router, func(w http.ResponseWriter, r *http.Request) {
+func (a *Amis) Route(patten string, component comp.AmisComp) {
+	http.HandleFunc(patten, func(w http.ResponseWriter, r *http.Request) {
 		tmpl := template.Must(template.New("").Parse(htmlTemplate))
-		jsonData, _ := json.Marshal(a.component)
+		amisJson, _ := json.Marshal(component)
 		data := struct {
-			Theme    string
+			*Amis
 			AmisJson string
 		}{
-			Theme:    a.Config.Theme,
-			AmisJson: string(jsonData),
+			Amis:     a,
+			AmisJson: string(amisJson),
 		}
-		tmpl.Execute(w, data)
+		err := tmpl.Execute(w, data)
+		if err != nil {
+			panic(err)
+		}
 	})
 }
 

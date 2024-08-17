@@ -4,44 +4,30 @@ Amisgo is a low code frontend framework for gophers.
 The name stands for `amis go`, coincidentally means `friend` in Zulu.
 
 > Amisgo is based on baidu [Amis](https://aisuda.bce.baidu.com/amis).  
-> See the [wiki](https://github.com/zrcoder/amisgo/wiki) for more background and details. 
+> See the [wiki](https://github.com/zrcoder/amisgo/wiki) for more background and details.
 
 ## Usage
 
-Hello world with [Go+](https://goplus.org):
-
-```c
-page().title("Example").body(
-	page().title("Inner"),
-)
-
-listenAndServe! ":9090"
-```
-
-> see detail in [classfile.md](classfile.md)
-
-with Go:
+Hello world
 
 ```go
 package main
 
 import (
 	"github.com/zrcoder/amisgo"
+	"github.com/zrcoder/amisgo/comp"
 )
 
 func main() {
-	app := amisgo.New()
-
-	app.Page().Title("Example").Body(
-		app.Page().Title("Inner"),
+	index := comp.NewPage().Title("Amisgo").Body(
+		comp.NewPage().Title("Hello world!"),
 	)
 
-	app.HandleRouter()
-
-	if err := app.ListenAndServe(":9090"); err != nil {
-		panic(err)
-	}
+	app := &amisgo.Amis{}
+	app.Route("/", index)
+	panic(app.ListenAndServe(":9090"))
 }
+
 ```
 
 ## TODO
