@@ -23,14 +23,14 @@ func main() {
 		comp.NewPage().Title("Hello world!"),
 	)
 
-	app := &amisgo.Amis{}
-	app.Route("/", index)
-	panic(app.ListenAndServe(":9090"))
+	amisgo.Route("/", index)
+	panic(amisgo.ListenAndServe(":9090"))
 }
-
 ```
 
 ## TODO
+
+- [x] both ListenAndServe, GenerateStaticWebsite api
 
 - [ ] Autoly generate codes for components.go and the comp directory, based on schema.json in Amis' last release(or Amis' docs)
 

@@ -10,7 +10,6 @@ func main() {
 		comp.NewPage().Title("Hello world!"),
 	)
 
-	app := &amisgo.Amis{}
-	app.Route("/", index)
-	panic(app.ListenAndServe(":9090"))
+	amisgo.Route("/", index)
+	panic(amisgo.ListenAndServe(":9090"))
 }
