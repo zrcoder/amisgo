@@ -16,7 +16,7 @@ func (wm watermark) set(key string, value interface{}) watermark {
 }
 
 // Body 内容
-func (wm watermark) Body(value string) watermark {
+func (wm watermark) Body(value ...interface{}) watermark {
 	return wm.set("body", value)
 }
 

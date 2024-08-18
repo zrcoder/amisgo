@@ -41,7 +41,7 @@ func (ua urlAction) Block(value bool) urlAction {
 }
 
 // Body 子内容 (子内容)
-func (ua urlAction) Body(value string) urlAction {
+func (ua urlAction) Body(value ...interface{}) urlAction {
 	return ua.set("body", value)
 }
 

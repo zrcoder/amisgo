@@ -41,7 +41,7 @@ func (ws wizardStep) AutoFocus(value bool) wizardStep {
 }
 
 // Body 表单项集合
-func (ws wizardStep) Body(value string) wizardStep {
+func (ws wizardStep) Body(value ...interface{}) wizardStep {
 	return ws.set("body", value)
 }
 
