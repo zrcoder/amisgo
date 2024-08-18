@@ -1,19 +1,19 @@
 package comp
 
-// Barcode 条形码渲染器
-type Barcode Schema
+// barcode 条形码渲染器
+type barcode schema
 
-// NewBarcode 创建一个新的 Barcode 实例
-func NewBarcode() Barcode {
-	return make(Barcode).set("type", "barcode")
+// Barcode 创建一个新的 Barcode 实例
+func Barcode() barcode {
+	return make(barcode).set("type", "barcode")
 }
 
-func (b Barcode) set(key string, value interface{}) Barcode {
+func (b barcode) set(key string, value interface{}) barcode {
 	b[key] = value
 	return b
 }
 
 // ClassName 设置外层类名
-func (b Barcode) ClassName(value string) Barcode {
+func (b barcode) ClassName(value string) barcode {
 	return b.set("className", value)
 }

@@ -1,44 +1,44 @@
 package comp
 
-// ImageToolbarAction 图片工具栏操作
-type ImageToolbarAction Schema
+// imageToolbarAction 图片工具栏操作
+type imageToolbarAction schema
 
-// NewImageToolbarAction 创建一个新的 ImageToolbarAction 实例，并设置默认的 key
-func NewImageToolbarAction() ImageToolbarAction {
-	return make(ImageToolbarAction).set("key", "ROTATE_RIGHT")
+// ImageToolbarAction 创建一个新的 ImageToolbarAction 实例，并设置默认的 key
+func ImageToolbarAction() imageToolbarAction {
+	return make(imageToolbarAction).set("key", "ROTATE_RIGHT")
 }
 
-func (a ImageToolbarAction) set(key string, value interface{}) ImageToolbarAction {
+func (a imageToolbarAction) set(key string, value interface{}) imageToolbarAction {
 	a[key] = value
 	return a
 }
 
 // ConfirmTitle 确认弹窗标题
-func (a ImageToolbarAction) ConfirmTitle(value string) ImageToolbarAction {
+func (a imageToolbarAction) ConfirmTitle(value string) imageToolbarAction {
 	return a.set("confirmTitle", value)
 }
 
 // Disabled
-func (a ImageToolbarAction) Disabled(value bool) ImageToolbarAction {
+func (a imageToolbarAction) Disabled(value bool) imageToolbarAction {
 	return a.set("disabled", value)
 }
 
 // Icon
-func (a ImageToolbarAction) Icon(value string) ImageToolbarAction {
+func (a imageToolbarAction) Icon(value string) imageToolbarAction {
 	return a.set("icon", value)
 }
 
 // IconClassName
-func (a ImageToolbarAction) IconClassName(value string) ImageToolbarAction {
+func (a imageToolbarAction) IconClassName(value string) imageToolbarAction {
 	return a.set("iconClassName", value)
 }
 
 // Key 可选值: ROTATE_RIGHT | ROTATE_LEFT | ZOOM_IN | ZOOM_OUT | SCALE_ORIGIN
-func (a ImageToolbarAction) Key(value string) ImageToolbarAction {
+func (a imageToolbarAction) Key(value string) imageToolbarAction {
 	return a.set("key", value)
 }
 
 // Label
-func (a ImageToolbarAction) Label(value string) ImageToolbarAction {
+func (a imageToolbarAction) Label(value string) imageToolbarAction {
 	return a.set("label", value)
 }

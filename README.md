@@ -19,10 +19,10 @@ import (
 )
 
 func main() {
-	index := comp.NewPage().Title("Amisgo").Body(
-		comp.NewFormControl().Mode("horizontal").Body(
-			comp.NewInputText().Label("Name").Name("name"),
-			comp.NewInputText().Type("input-email").Label("Email").Name("email"),
+	index := comp.Page().Title("Amisgo").Body(
+		comp.Form().Mode("horizontal").Body(
+			comp.InputText().Label("Name").Name("name"),
+			comp.InputEmail().Label("Email").Name("email"),
 		),
 	)
 
@@ -34,9 +34,6 @@ func main() {
 ## TODO
 
 - [x] both ListenAndServe, GenerateStaticWebsite api
-
-- [ ] Autoly generate codes for components.go and the comp directory, based on schema.json in Amis' last release(or Amis' docs)
-
-- [ ] Go+ classfile improvement
-
+- [x] Autoly generate codes for components.go and the comp directory, based on schema.json in Amis' last release(or Amis' docs)
 - [ ] Tests and examples
+- [ ] Go+ classfile improvement

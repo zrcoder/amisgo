@@ -1,39 +1,39 @@
 package comp
 
-// ComboCondition 表示组合条件渲染器
-type ComboCondition Schema
+// comboCondition 表示组合条件渲染器
+type comboCondition schema
 
-// NewComboCondition 创建一个新的 ComboCondition 实例
-func NewComboCondition() ComboCondition {
-	return make(ComboCondition)
+// ComboCondition 创建一个新的 ComboCondition 实例
+func ComboCondition() comboCondition {
+	return make(comboCondition)
 }
 
-func (cc ComboCondition) set(key string, value interface{}) ComboCondition {
+func (cc comboCondition) set(key string, value interface{}) comboCondition {
 	cc[key] = value
 	return cc
 }
 
 // Items 设置项
-func (cc ComboCondition) Items(value string) ComboCondition {
+func (cc comboCondition) Items(value string) comboCondition {
 	return cc.set("items", value)
 }
 
 // Label 设置标签
-func (cc ComboCondition) Label(value string) ComboCondition {
+func (cc comboCondition) Label(value string) comboCondition {
 	return cc.set("label", value)
 }
 
 // Mode 设置模式
-func (cc ComboCondition) Mode(value string) ComboCondition {
+func (cc comboCondition) Mode(value string) comboCondition {
 	return cc.set("mode", value)
 }
 
 // Scaffold 设置脚手架
-func (cc ComboCondition) Scaffold(value string) ComboCondition {
+func (cc comboCondition) Scaffold(value string) comboCondition {
 	return cc.set("scaffold", value)
 }
 
 // Test 设置测试值
-func (cc ComboCondition) Test(value string) ComboCondition {
+func (cc comboCondition) Test(value string) comboCondition {
 	return cc.set("test", value)
 }

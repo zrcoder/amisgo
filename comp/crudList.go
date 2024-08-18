@@ -1,370 +1,402 @@
 package comp
 
-// CRUDList 表示 CRUD 列表渲染器
-type CRUDList Schema
+// crudList 表示 CRUD 列表渲染器
+type crudList schema
 
-// NewCRUDList 创建新的 CRUDList 实例
-func NewCRUDList() CRUDList {
-	return make(CRUDList).set("mode", "list").set("type", "crud")
+// CrudList 创建新的 CrudList 实例
+func CrudList() crudList {
+	return make(crudList).set("mode", "list").set("type", "crud")
 }
 
 // Set 设置键值对，并返回当前实例
-func (c CRUDList) set(key string, value interface{}) CRUDList {
+func (c crudList) set(key string, value interface{}) crudList {
 	c[key] = value
 	return c
 }
 
 // AffixFooter 设置是否固底
-func (c CRUDList) AffixFooter(value bool) CRUDList {
+func (c crudList) AffixFooter(value bool) crudList {
 	return c.set("affixFooter", value)
 }
 
 // AffixHeader 设置是否固顶
-func (c CRUDList) AffixHeader(value bool) CRUDList {
+func (c crudList) AffixHeader(value bool) crudList {
 	return c.set("affixHeader", value)
 }
 
 // AlwaysShowPagination 默认只显示分页数大于 1 时才显示，设置为 true 总是显示
-func (c CRUDList) AlwaysShowPagination(value bool) CRUDList {
+func (c crudList) AlwaysShowPagination(value bool) crudList {
 	return c.set("alwaysShowPagination", value)
 }
 
-// Api 设置初始化数据 API
-func (c CRUDList) Api(value string) CRUDList {
+// API 设置初始化数据 API (整合 CRUD2List 和 CRUDList 的相同方法)
+func (c crudList) API(value string) crudList {
 	return c.set("api", value)
 }
 
-// AutoFillHeight 设置内容区域是否占满屏幕剩余空间
-func (c CRUDList) AutoFillHeight(value string) CRUDList {
+// AutoFillHeight 设置内容区域占满屏幕剩余空间
+func (c crudList) AutoFillHeight(value bool) crudList {
 	return c.set("autoFillHeight", value)
 }
 
 // AutoGenerateFilter 开启查询区域，会根据列元素的searchable属性值，自动生成查询条件表单
-func (c CRUDList) AutoGenerateFilter(value string) CRUDList {
+func (c crudList) AutoGenerateFilter(value string) crudList {
 	return c.set("autoGenerateFilter", value)
 }
 
-// AutoJumpToTopOnPagerChange 设置分页时是否自动跳到顶部
-func (c CRUDList) AutoJumpToTopOnPagerChange(value bool) CRUDList {
+// AutoJumpToTopOnPagerChange 设置是否自动跳顶部，当切分页的时候
+func (c crudList) AutoJumpToTopOnPagerChange(value bool) crudList {
 	return c.set("autoJumpToTopOnPagerChange", value)
 }
 
 // BulkActions 设置批量操作
-func (c CRUDList) BulkActions(value string) CRUDList {
+func (c crudList) BulkActions(value string) crudList {
 	return c.set("bulkActions", value)
 }
 
 // CheckOnItemClick 设置点击列表单行时是否选择
-func (c CRUDList) CheckOnItemClick(value bool) CRUDList {
+func (c crudList) CheckOnItemClick(value bool) crudList {
 	return c.set("checkOnItemClick", value)
 }
 
 // ClassName 设置容器 CSS 类名
-func (c CRUDList) ClassName(value string) CRUDList {
+func (c crudList) ClassName(value string) crudList {
 	return c.set("className", value)
 }
 
 // DefaultParams 设置默认初始参数
-func (c CRUDList) DefaultParams(value string) CRUDList {
+func (c crudList) DefaultParams(value string) crudList {
 	return c.set("defaultParams", value)
 }
 
 // DeferApi 设置懒加载 API
-func (c CRUDList) DeferApi(value string) CRUDList {
+func (c crudList) DeferApi(value string) crudList {
 	return c.set("deferApi", value)
 }
 
 // Disabled 设置是否禁用
-func (c CRUDList) Disabled(value bool) CRUDList {
+func (c crudList) Disabled(value bool) crudList {
 	return c.set("disabled", value)
 }
 
-// DisabledOn 设置禁用表达式
-func (c CRUDList) DisabledOn(value string) CRUDList {
+// DisabledOn 设置是否禁用表达式
+func (c crudList) DisabledOn(value string) crudList {
 	return c.set("disabledOn", value)
 }
 
 // Draggable 设置是否可通过拖拽排序
-func (c CRUDList) Draggable(value bool) CRUDList {
+func (c crudList) Draggable(value bool) crudList {
 	return c.set("draggable", value)
 }
 
 // DraggableOn 设置可拖拽排序表达式
-func (c CRUDList) DraggableOn(value string) CRUDList {
+func (c crudList) DraggableOn(value string) crudList {
 	return c.set("draggableOn", value)
 }
 
 // EditorSetting 设置编辑器配置
-func (c CRUDList) EditorSetting(value string) CRUDList {
+func (c crudList) EditorSetting(value string) crudList {
 	return c.set("editorSetting", value)
 }
 
 // ExpandConfig 设置内嵌模式的默认展开选项
-func (c CRUDList) ExpandConfig(value string) CRUDList {
+func (c crudList) ExpandConfig(value string) crudList {
 	return c.set("expandConfig", value)
 }
 
 // Filter 设置过滤器表单
-func (c CRUDList) Filter(value string) CRUDList {
+func (c crudList) Filter(value string) crudList {
 	return c.set("filter", value)
 }
 
 // FilterDefaultVisible 设置过滤器默认是否可见
-func (c CRUDList) FilterDefaultVisible(value bool) CRUDList {
+func (c crudList) FilterDefaultVisible(value bool) crudList {
 	return c.set("filterDefaultVisible", value)
 }
 
 // FilterTogglable 设置过滤器是否可切换
-func (c CRUDList) FilterTogglable(value bool) CRUDList {
+func (c crudList) FilterTogglable(value bool) crudList {
 	return c.set("filterTogglable", value)
 }
 
 // Footer 设置底部区域
-func (c CRUDList) Footer(value string) CRUDList {
+func (c crudList) Footer(value interface{}) crudList {
 	return c.set("footer", value)
 }
 
-// FooterClassName 设置底部区域类名
-func (c CRUDList) FooterClassName(value string) CRUDList {
+// FooterClassName 设置底部区域 CSS 类名
+func (c crudList) FooterClassName(value string) crudList {
 	return c.set("footerClassName", value)
 }
 
-// FooterToolbar 设置底部工具栏
-func (c CRUDList) FooterToolbar(value string) CRUDList {
+// FooterToolbar 设置底部工具栏区域
+func (c crudList) FooterToolbar(value interface{}) crudList {
 	return c.set("footerToolbar", value)
 }
 
 // Header 设置顶部区域
-func (c CRUDList) Header(value string) CRUDList {
+func (c crudList) Header(value interface{}) crudList {
 	return c.set("header", value)
 }
 
-// HeaderClassName 设置顶部区域类名
-func (c CRUDList) HeaderClassName(value string) CRUDList {
+// HeaderClassName 设置顶部区域 CSS 类名
+func (c crudList) HeaderClassName(value string) crudList {
 	return c.set("headerClassName", value)
 }
 
-// HeaderToolbar 设置顶部工具栏
-func (c CRUDList) HeaderToolbar(value string) CRUDList {
+// HeaderToolbar 设置顶部工具栏区域
+func (c crudList) HeaderToolbar(value interface{}) crudList {
 	return c.set("headerToolbar", value)
 }
 
 // Hidden 设置是否隐藏
-func (c CRUDList) Hidden(value bool) CRUDList {
+func (c crudList) Hidden(value bool) crudList {
 	return c.set("hidden", value)
 }
 
-// HiddenOn 设置隐藏表达式
-func (c CRUDList) HiddenOn(value string) CRUDList {
+// HiddenOn 设置是否隐藏表达式
+func (c crudList) HiddenOn(value string) crudList {
 	return c.set("hiddenOn", value)
 }
 
 // HideCheckToggler 设置是否隐藏勾选框
-func (c CRUDList) HideCheckToggler(value bool) CRUDList {
+func (c crudList) HideCheckToggler(value bool) crudList {
 	return c.set("hideCheckToggler", value)
 }
 
-// HideQuickSaveBtn 设置是否隐藏快速编辑的按钮
-func (c CRUDList) HideQuickSaveBtn(value bool) CRUDList {
+// HideQuickSaveBtn 设置是否隐藏快速编辑按钮
+func (c crudList) HideQuickSaveBtn(value bool) crudList {
 	return c.set("hideQuickSaveBtn", value)
 }
 
-// Id 设置组件唯一 ID
-func (c CRUDList) Id(value string) CRUDList {
+// ID 设置组件唯一 ID
+func (c crudList) ID(value string) crudList {
 	return c.set("id", value)
 }
 
 // InitFetch 设置初始是否拉取
-func (c CRUDList) InitFetch(value bool) CRUDList {
+func (c crudList) InitFetch(value bool) crudList {
 	return c.set("initFetch", value)
 }
 
 // InitFetchOn 设置初始是否拉取，用表达式来配置
-func (c CRUDList) InitFetchOn(value string) CRUDList {
+func (c crudList) InitFetchOn(value string) crudList {
 	return c.set("initFetchOn", value)
 }
 
 // InnerClassName 设置内部 DOM 的 className
-func (c CRUDList) InnerClassName(value string) CRUDList {
+func (c crudList) InnerClassName(value string) crudList {
 	return c.set("innerClassName", value)
 }
 
 // Interval 设置自动刷新时间
-func (c CRUDList) Interval(value string) CRUDList {
+func (c crudList) Interval(value string) crudList {
 	return c.set("interval", value)
 }
 
 // ItemAction 设置点击列表项的行为
-func (c CRUDList) ItemAction(value string) CRUDList {
+func (c crudList) ItemAction(value string) crudList {
 	return c.set("itemAction", value)
 }
 
 // ItemActions 设置单条操作
-func (c CRUDList) ItemActions(value string) CRUDList {
+func (c crudList) ItemActions(value string) crudList {
 	return c.set("itemActions", value)
 }
 
 // ItemCheckableOn 设置约束批量操作
-func (c CRUDList) ItemCheckableOn(value string) CRUDList {
+func (c crudList) ItemCheckableOn(value string) crudList {
 	return c.set("itemCheckableOn", value)
 }
 
-// ItemDraggableOn 设置配置某项是否可拖拽排序
-func (c CRUDList) ItemDraggableOn(value string) CRUDList {
+// ItemDraggableOn 配置某项是否可拖拽排序
+func (c crudList) ItemDraggableOn(value string) crudList {
 	return c.set("itemDraggableOn", value)
 }
 
-// KeepItemSelectionOnPageChange 设置分页时是否保留用户选择
-func (c CRUDList) KeepItemSelectionOnPageChange(value bool) CRUDList {
+// KeepItemSelectionOnPageChange 翻页时是否保留用户已选的数据
+func (c crudList) KeepItemSelectionOnPageChange(value bool) crudList {
 	return c.set("keepItemSelectionOnPageChange", value)
 }
 
 // LabelTpl 设置已勾选项的文案
-func (c CRUDList) LabelTpl(value string) CRUDList {
+func (c crudList) LabelTpl(value string) crudList {
 	return c.set("labelTpl", value)
 }
 
-// ListItem 设置单条数据展示内容配置
-func (c CRUDList) ListItem(value string) CRUDList {
+// ListItem 单条数据展示内容配置
+func (c crudList) ListItem(value interface{}) crudList {
 	return c.set("listItem", value)
 }
 
-// LoadDataOnce 设置是否为前端单次加载模式
-func (c CRUDList) LoadDataOnce(value bool) CRUDList {
+// LoadDataOnce 是否为前端单次加载模式
+func (c crudList) LoadDataOnce(value bool) crudList {
 	return c.set("loadDataOnce", value)
 }
 
 // LoadDataOnceFetchOnFilter 设置在开启 loadDataOnce 时，当修改过滤条件时是否重新请求 API
-func (c CRUDList) LoadDataOnceFetchOnFilter(value bool) CRUDList {
+func (c crudList) LoadDataOnceFetchOnFilter(value bool) crudList {
 	return c.set("loadDataOnceFetchOnFilter", value)
 }
 
 // LoadingConfig 设置加载配置
-func (c CRUDList) LoadingConfig(value string) CRUDList {
+func (c crudList) LoadingConfig(value string) crudList {
 	return c.set("loadingConfig", value)
 }
 
 // MatchFunc 设置自定义搜索匹配函数
-func (c CRUDList) MatchFunc(value string) CRUDList {
+func (c crudList) MatchFunc(value string) crudList {
 	return c.set("matchFunc", value)
 }
 
 // Messages 设置消息文案配置
-func (c CRUDList) Messages(value string) CRUDList {
+func (c crudList) Messages(value string) crudList {
 	return c.set("messages", value)
 }
 
-// Mode 设置内容区展示模式
-func (c CRUDList) Mode(value string) CRUDList {
+// Mode 设置指定内容区的展示模式
+func (c crudList) Mode(value string) crudList {
 	return c.set("mode", value)
 }
 
 // Name 设置组件名字
-func (c CRUDList) Name(value string) CRUDList {
+func (c crudList) Name(value string) crudList {
 	return c.set("name", value)
 }
 
-// OnEvent 设置事件动作配置
-func (c CRUDList) OnEvent(value string) CRUDList {
+// OnEvent 事件绑定
+func (c crudList) OnEvent(value string) crudList {
 	return c.set("onEvent", value)
 }
 
-// PageField 设置分页参数字段
-func (c CRUDList) PageField(value string) CRUDList {
-	return c.set("pageField", value)
+// Pagination 设置分页配置
+func (c crudList) Pagination(value interface{}) crudList {
+	return c.set("pagination", value)
 }
 
-// PageFieldName 设置分页字段名称
-func (c CRUDList) PageFieldName(value string) CRUDList {
-	return c.set("pageFieldName", value)
+// Placeholder 设置列表空数据的提示
+func (c crudList) Placeholder(value string) crudList {
+	return c.set("placeholder", value)
 }
 
-// PerPage 设置每页条数
-func (c CRUDList) PerPage(value int) CRUDList {
-	return c.set("perPage", value)
+// QuickSaveApi 设置快速保存 API
+func (c crudList) QuickSaveApi(value string) crudList {
+	return c.set("quickSaveApi", value)
 }
 
-// QuickSave 设置快速编辑配置
-func (c CRUDList) QuickSave(value string) CRUDList {
-	return c.set("quickSave", value)
+// QuickSaveItemActions 设置快速编辑按钮配置
+func (c crudList) QuickSaveItemActions(value string) crudList {
+	return c.set("quickSaveItemActions", value)
 }
 
-// RefreshInterval 设置自动刷新时间间隔
-func (c CRUDList) RefreshInterval(value string) CRUDList {
+// QuickSaveSuccessMessage 设置快速保存成功的提示信息
+func (c crudList) QuickSaveSuccessMessage(value string) crudList {
+	return c.set("quickSaveSuccessMessage", value)
+}
+
+// RefreshInterval 设置自动刷新时间
+func (c crudList) RefreshInterval(value string) crudList {
 	return c.set("refreshInterval", value)
 }
 
-// Removable 设置是否可删除
-func (c CRUDList) Removable(value bool) CRUDList {
-	return c.set("removable", value)
+// RemoteFilter 支持远程筛选
+func (c crudList) RemoteFilter(value bool) crudList {
+	return c.set("remoteFilter", value)
 }
 
-// SaveOrder 设置排序信息保存
-func (c CRUDList) SaveOrder(value bool) CRUDList {
-	return c.set("saveOrder", value)
+// RenderType 设置渲染类型
+func (c crudList) RenderType(value string) crudList {
+	return c.set("renderType", value)
 }
 
-// SaveOrderApi 设置排序保存 API
-func (c CRUDList) SaveOrderApi(value string) CRUDList {
-	return c.set("saveOrderApi", value)
+// ResetValueOnHidden 设置隐藏时是否重置值
+func (c crudList) ResetValueOnHidden(value bool) crudList {
+	return c.set("resetValueOnHidden", value)
 }
 
-// Searchable 设置是否可搜索
-func (c CRUDList) Searchable(value bool) CRUDList {
-	return c.set("searchable", value)
+// RowClassName 设置行 CSS 类名
+func (c crudList) RowClassName(value string) crudList {
+	return c.set("rowClassName", value)
 }
 
-// SimpleMode 设置简洁模式
-func (c CRUDList) SimpleMode(value bool) CRUDList {
-	return c.set("simpleMode", value)
+// SearchFormClassName 设置搜索表单 CSS 类名
+func (c crudList) SearchFormClassName(value string) crudList {
+	return c.set("searchFormClassName", value)
 }
 
-// Size 设置组件尺寸
-func (c CRUDList) Size(value string) CRUDList {
-	return c.set("size", value)
+// SearchSchema 设置搜索表单
+func (c crudList) SearchSchema(value interface{}) crudList {
+	return c.set("searchSchema", value)
 }
 
-// Stick 设置是否固定
-func (c CRUDList) Stick(value bool) CRUDList {
-	return c.set("stick", value)
+// SortSettings 设置排序配置
+func (c crudList) SortSettings(value string) crudList {
+	return c.set("sortSettings", value)
 }
 
-// StickOn 设置固定条件
-func (c CRUDList) StickOn(value string) CRUDList {
-	return c.set("stickOn", value)
+// SortFieldName 设置排序字段名
+func (c crudList) SortFieldName(value string) crudList {
+	return c.set("sortFieldName", value)
 }
 
-// Toolbar 设置工具栏
-func (c CRUDList) Toolbar(value string) CRUDList {
-	return c.set("toolbar", value)
+// Source 设置数据来源
+func (c crudList) Source(value string) crudList {
+	return c.set("source", value)
 }
 
-// ToolbarClassName 设置工具栏类名
-func (c CRUDList) ToolbarClassName(value string) CRUDList {
-	return c.set("toolbarClassName", value)
+// Stateful 设置是否保留状态
+func (c crudList) Stateful(value bool) crudList {
+	return c.set("stateful", value)
 }
 
-// ToolbarPosition 设置工具栏位置
-func (c CRUDList) ToolbarPosition(value string) CRUDList {
-	return c.set("toolbarPosition", value)
+// TableClassName 设置表格 CSS 类名
+func (c crudList) TableClassName(value string) crudList {
+	return c.set("tableClassName", value)
 }
 
-// Unstable 设置是否不稳定（不推荐）
-func (c CRUDList) Unstable(value bool) CRUDList {
-	return c.set("unstable", value)
+// TableLayout 设置表格布局
+func (c crudList) TableLayout(value string) crudList {
+	return c.set("tableLayout", value)
 }
 
-// UseMobile 设置是否使用移动端样式
-func (c CRUDList) UseMobile(value bool) CRUDList {
-	return c.set("useMobile", value)
+// Tooltip设置 提示信息配置
+func (c crudList) Tooltip(value string) crudList {
+	return c.set("tooltip", value)
 }
 
-// ValueField 设置值字段
-func (c CRUDList) ValueField(value string) CRUDList {
-	return c.set("valueField", value)
+// TransformItems 设置数据转换
+func (c crudList) TransformItems(value string) crudList {
+	return c.set("transformItems", value)
 }
 
-// ValueFieldOn 设置值字段表达式
-func (c CRUDList) ValueFieldOn(value string) CRUDList {
-	return c.set("valueFieldOn", value)
+// Virtualized 设置虚拟化
+func (c crudList) Virtualized(value bool) crudList {
+	return c.set("virtualized", value)
 }
+
+// Width 设置宽度
+func (c crudList) Width(value string) crudList {
+	return c.set("width", value)
+}
+
+// EmptyText 设置无数据时的提示
+func (c crudList) EmptyText(value string) crudList {
+	return c.set("emptyText", value)
+}
+
+// Components 设置自定义组件
+func (c crudList) Components(value interface{}) crudList {
+	return c.set("components", value)
+}
+
+// 其他 CRUD2List 特有字段和方法
+func (c crudList) CustomField1(value string) crudList {
+	return c.set("customField1", value)
+}
+
+// 其他 CRUDList 特有字段和方法
+func (c crudList) CustomField2(value string) crudList {
+	return c.set("customField2", value)
+}
+
+// ...

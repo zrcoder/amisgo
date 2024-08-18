@@ -1,7 +1,5 @@
 package comp
 
-type Button = VanillaAction
-
-func NewButton() Button {
-	return NewVanillaAction().set("type", "button")
+func Button() vanillaAction {
+	return VanillaAction().set("type", "button")
 }

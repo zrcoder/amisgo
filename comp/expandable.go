@@ -1,39 +1,39 @@
 package comp
 
-// Expandable 表示可展开的渲染器
-type Expandable Schema
+// expandable 表示可展开的渲染器
+type expandable schema
 
-// NewExpandable 创建一个新的 Expandable 实例
-func NewExpandable() Expandable {
-	return make(Expandable)
+// Expandable 创建一个新的 Expandable 实例
+func Expandable() expandable {
+	return make(expandable)
 }
 
-func (e Expandable) set(key string, value interface{}) Expandable {
+func (e expandable) set(key string, value interface{}) expandable {
 	e[key] = value
 	return e
 }
 
 // ExpandableOn 行是否可展开表达式
-func (e Expandable) ExpandableOn(value string) Expandable {
+func (e expandable) ExpandableOn(value string) expandable {
 	return e.set("expandableOn", value)
 }
 
 // ExpandedRowClassNameExpr 展开行自定义样式表达式
-func (e Expandable) ExpandedRowClassNameExpr(value string) Expandable {
+func (e expandable) ExpandedRowClassNameExpr(value string) expandable {
 	return e.set("expandedRowClassNameExpr", value)
 }
 
 // ExpandedRowKeys 已展开的 key 值
-func (e Expandable) ExpandedRowKeys(value string) Expandable {
+func (e expandable) ExpandedRowKeys(value string) expandable {
 	return e.set("expandedRowKeys", value)
 }
 
 // ExpandedRowKeysExpr 已展开的 key 值表达式
-func (e Expandable) ExpandedRowKeysExpr(value string) Expandable {
+func (e expandable) ExpandedRowKeysExpr(value string) expandable {
 	return e.set("expandedRowKeysExpr", value)
 }
 
 // KeyField 对应数据源的 key 值
-func (e Expandable) KeyField(value string) Expandable {
+func (e expandable) KeyField(value string) expandable {
 	return e.set("keyField", value)
 }

@@ -3,7 +3,7 @@ package comp
 // ListRenderer 列表展示控件
 //
 // @version 6.7.0
-type ListRenderer Schema
+type ListRenderer schema
 
 // NewListRenderer 创建一个新的 ListRenderer 实例
 func NewListRenderer() ListRenderer {

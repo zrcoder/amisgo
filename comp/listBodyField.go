@@ -1,58 +1,58 @@
 package comp
 
-// ListBodyField 列表体字段控件
+// listBodyField 列表体字段控件
 //
 // @version 6.7.0
-type ListBodyField Schema
+type listBodyField schema
 
-// NewListBodyField 创建一个新的 ListBodyField 实例
-func NewListBodyField() ListBodyField {
-	return make(ListBodyField)
+// ListBodyField 创建一个新的 ListBodyField 实例
+func ListBodyField() listBodyField {
+	return make(listBodyField)
 }
 
 // Copyable 配置点击复制功能
-func (lb ListBodyField) Copyable(value bool) ListBodyField {
+func (lb listBodyField) Copyable(value bool) listBodyField {
 	lb.set("copyable", value)
 	return lb
 }
 
 // InnerClassName 内层组件的 CSS 类名
-func (lb ListBodyField) InnerClassName(value string) ListBodyField {
+func (lb listBodyField) InnerClassName(value string) listBodyField {
 	lb.set("innerClassName", value)
 	return lb
 }
 
 // Label 列标题
-func (lb ListBodyField) Label(value string) ListBodyField {
+func (lb listBodyField) Label(value string) listBodyField {
 	lb.set("label", value)
 	return lb
 }
 
 // LabelClassName label 类名
-func (lb ListBodyField) LabelClassName(value string) ListBodyField {
+func (lb listBodyField) LabelClassName(value string) listBodyField {
 	lb.set("labelClassName", value)
 	return lb
 }
 
 // Name 绑定字段名
-func (lb ListBodyField) Name(value string) ListBodyField {
+func (lb listBodyField) Name(value string) listBodyField {
 	lb.set("name", value)
 	return lb
 }
 
 // PopOver 配置查看详情功能
-func (lb ListBodyField) PopOver(value string) ListBodyField {
+func (lb listBodyField) PopOver(value string) listBodyField {
 	lb.set("popOver", value)
 	return lb
 }
 
 // QuickEdit 配置快速编辑功能
-func (lb ListBodyField) QuickEdit(value string) ListBodyField {
+func (lb listBodyField) QuickEdit(value string) listBodyField {
 	lb.set("quickEdit", value)
 	return lb
 }
 
-func (lb ListBodyField) set(key string, value interface{}) ListBodyField {
+func (lb listBodyField) set(key string, value interface{}) listBodyField {
 	lb[key] = value
 	return lb
 }

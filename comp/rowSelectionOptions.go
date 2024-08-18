@@ -1,27 +1,26 @@
 package comp
 
-// RowSelectionOptions
-//
-// @author  slowlyo
-// @version 6.7.0
-type RowSelectionOptions Schema
+// rowSelectionOptions
 
-// NewRowSelectionOptions 创建一个新的 RowSelectionOptions 实例
-func NewRowSelectionOptions() RowSelectionOptions {
-	return RowSelectionOptions{}
+// @version 6.7.0
+type rowSelectionOptions schema
+
+// RowSelectionOptions 创建一个新的 RowSelectionOptions 实例
+func RowSelectionOptions() rowSelectionOptions {
+	return rowSelectionOptions{}
 }
 
-func (r RowSelectionOptions) set(key string, value interface{}) RowSelectionOptions {
+func (r rowSelectionOptions) set(key string, value interface{}) rowSelectionOptions {
 	r[key] = value
 	return r
 }
 
 // Key 选择类型 选择全部
-func (r RowSelectionOptions) Key(value string) RowSelectionOptions {
+func (r rowSelectionOptions) Key(value string) rowSelectionOptions {
 	return r.set("key", value)
 }
 
 // Text 选项显示文本
-func (r RowSelectionOptions) Text(value string) RowSelectionOptions {
+func (r rowSelectionOptions) Text(value string) rowSelectionOptions {
 	return r.set("text", value)
 }

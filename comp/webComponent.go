@@ -1,32 +1,31 @@
 package comp
 
-// WebComponent Web Component
-//
-// @author  slowlyo
-// @version 6.7.0
-type WebComponent Schema
+// webComponent Web Component
 
-// NewWebComponent 创建一个新的 WebComponent 实例
-func NewWebComponent() WebComponent {
-	return WebComponent{}.set("type", "web-component")
+// @version 6.7.0
+type webComponent schema
+
+// WebComponent 创建一个新的 WebComponent 实例
+func WebComponent() webComponent {
+	return webComponent{}.set("type", "web-component")
 }
 
-func (wc WebComponent) set(key string, value interface{}) WebComponent {
+func (wc webComponent) set(key string, value interface{}) webComponent {
 	wc[key] = value
 	return wc
 }
 
 // Body 子节点
-func (wc WebComponent) Body(value ...interface{}) WebComponent {
+func (wc webComponent) Body(value ...interface{}) webComponent {
 	return wc.set("body", value)
 }
 
 // Props 标签上的属性
-func (wc WebComponent) Props(value string) WebComponent {
+func (wc webComponent) Props(value string) webComponent {
 	return wc.set("props", value)
 }
 
 // Tag 具体使用的 web-component 标签
-func (wc WebComponent) Tag(value string) WebComponent {
+func (wc webComponent) Tag(value string) webComponent {
 	return wc.set("tag", value)
 }

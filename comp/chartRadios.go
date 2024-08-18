@@ -1,29 +1,29 @@
 package comp
 
-// ChartRadios 图表单选框
-type ChartRadios Schema
+// chartRadios 图表单选框
+type chartRadios schema
 
-// NewChartRadios 创建一个新的 ChartRadios 实例
-func NewChartRadios() ChartRadios {
-	return make(ChartRadios).set("type", "chart-radios")
+// ChartRadios 创建一个新的 ChartRadios 实例
+func ChartRadios() chartRadios {
+	return make(chartRadios).set("type", "chart-radios")
 }
 
-func (c ChartRadios) set(key string, value interface{}) ChartRadios {
+func (c chartRadios) set(key string, value interface{}) chartRadios {
 	c[key] = value
 	return c
 }
 
 // ChartValueField 图表数值字段名
-func (c ChartRadios) ChartValueField(value string) ChartRadios {
+func (c chartRadios) ChartValueField(value string) chartRadios {
 	return c.set("chartValueField", value)
 }
 
 // Config 图表配置
-func (c ChartRadios) Config(value string) ChartRadios {
+func (c chartRadios) Config(value string) chartRadios {
 	return c.set("config", value)
 }
 
 // ShowTooltipOnHighlight 高亮的时候是否显示 tooltip
-func (c ChartRadios) ShowTooltipOnHighlight(value bool) ChartRadios {
+func (c chartRadios) ShowTooltipOnHighlight(value bool) chartRadios {
 	return c.set("showTooltipOnHighlight", value)
 }

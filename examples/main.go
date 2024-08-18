@@ -6,10 +6,10 @@ import (
 )
 
 func main() {
-	index := comp.NewPage().Title("Amisgo").Body(
-		comp.NewFormControl().Mode("horizontal").Body(
-			comp.NewInputText().Label("Name").Name("name"),
-			comp.NewInputText().Type("input-email").Label("Email").Name("email"),
+	index := comp.Page().Title("Amisgo").Body(
+		comp.Form().Mode("horizontal").Body(
+			comp.InputText().Label("Name").Name("name"),
+			comp.InputEmail().Label("Email").Name("email"),
 		),
 	)
 

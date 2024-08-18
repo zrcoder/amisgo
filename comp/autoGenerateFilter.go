@@ -1,29 +1,29 @@
 package comp
 
-// AutoGenerateFilter 自动生成过滤器渲染器
-type AutoGenerateFilter Schema
+// autoGenerateFilter 自动生成过滤器渲染器
+type autoGenerateFilter schema
 
-// NewAutoGenerateFilter 创建一个新的 AutoGenerateFilter 实例
-func NewAutoGenerateFilter() AutoGenerateFilter {
-	return make(AutoGenerateFilter)
+// AutoGenerateFilter 创建一个新的 AutoGenerateFilter 实例
+func AutoGenerateFilter() autoGenerateFilter {
+	return make(autoGenerateFilter)
 }
 
-func (a AutoGenerateFilter) set(key string, value interface{}) AutoGenerateFilter {
+func (a autoGenerateFilter) set(key string, value interface{}) autoGenerateFilter {
 	a[key] = value
 	return a
 }
 
 // ColumnsNum 设置过滤条件单行列数
-func (a AutoGenerateFilter) ColumnsNum(value string) AutoGenerateFilter {
+func (a autoGenerateFilter) ColumnsNum(value string) autoGenerateFilter {
 	return a.set("columnsNum", value)
 }
 
 // DefaultCollapsed 设置是否默认收起
-func (a AutoGenerateFilter) DefaultCollapsed(value bool) AutoGenerateFilter {
+func (a autoGenerateFilter) DefaultCollapsed(value bool) autoGenerateFilter {
 	return a.set("defaultCollapsed", value)
 }
 
 // ShowBtnToolbar 设置是否显示设置查询字段
-func (a AutoGenerateFilter) ShowBtnToolbar(value bool) AutoGenerateFilter {
+func (a autoGenerateFilter) ShowBtnToolbar(value bool) autoGenerateFilter {
 	return a.set("showBtnToolbar", value)
 }

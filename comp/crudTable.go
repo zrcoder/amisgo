@@ -1,309 +1,358 @@
 package comp
 
-// CRUDTable
-type CRUDTable Schema
+// crudTable 定义了 CRUD 表格的渲染器
+type crudTable schema
 
-// NewCRUDTable 创建一个新的 CRUDTable 实例
-func NewCRUDTable() CRUDTable {
-	return make(CRUDTable).set("type", "crud")
+// CrudTable 创建一个新的 CRUDTable 实例
+func CrudTable() crudTable {
+	return make(crudTable).set("type", "crud")
 }
 
-func (c CRUDTable) set(key string, value interface{}) CRUDTable {
+func (c crudTable) set(key string, value interface{}) crudTable {
 	c[key] = value
 	return c
 }
 
-// AffixFooter 设置 affixFooter 属性
-func (c CRUDTable) AffixFooter(value bool) CRUDTable {
-	return c.set("affixFooter", value)
-}
+// 常见配置字段
 
-// AffixHeader 设置 affixHeader 属性
-func (c CRUDTable) AffixHeader(value bool) CRUDTable {
-	return c.set("affixHeader", value)
-}
-
-// AffixRow 设置 affixRow 属性
-func (c CRUDTable) AffixRow(value string) CRUDTable {
-	return c.set("affixRow", value)
-}
-
-// AlwaysShowPagination 设置 alwaysShowPagination 属性
-func (c CRUDTable) AlwaysShowPagination(value bool) CRUDTable {
-	return c.set("alwaysShowPagination", value)
-}
-
-// Api 设置 api 属性
-func (c CRUDTable) Api(value string) CRUDTable {
+// Api 设置初始化数据 API
+func (c crudTable) Api(value string) crudTable {
 	return c.set("api", value)
 }
 
-// AutoFillHeight 设置 autoFillHeight 属性
-func (c CRUDTable) AutoFillHeight(value string) CRUDTable {
+// AutoFillHeight 设置内容区域是否占满屏幕剩余空间
+func (c crudTable) AutoFillHeight(value interface{}) crudTable {
 	return c.set("autoFillHeight", value)
 }
 
-// AutoGenerateFilter 设置 autoGenerateFilter 属性
-func (c CRUDTable) AutoGenerateFilter(value string) CRUDTable {
-	return c.set("autoGenerateFilter", value)
-}
-
-// AutoJumpToTopOnPagerChange 设置 autoJumpToTopOnPagerChange 属性
-func (c CRUDTable) AutoJumpToTopOnPagerChange(value bool) CRUDTable {
-	return c.set("autoJumpToTopOnPagerChange", value)
-}
-
-// BulkActions 设置 bulkActions 属性
-func (c CRUDTable) BulkActions(value string) CRUDTable {
-	return c.set("bulkActions", value)
-}
-
-// CanAccessSuperData 设置 canAccessSuperData 属性
-func (c CRUDTable) CanAccessSuperData(value bool) CRUDTable {
-	return c.set("canAccessSuperData", value)
-}
-
-// ClassName 设置 className 属性
-func (c CRUDTable) ClassName(value string) CRUDTable {
-	return c.set("className", value)
-}
-
-// Columns 设置 columns 属性
-func (c CRUDTable) Columns(value string) CRUDTable {
+// Columns 设置表格列配置
+func (c crudTable) Columns(value string) crudTable {
 	return c.set("columns", value)
 }
 
-// ColumnsTogglable 设置 columnsTogglable 属性
-func (c CRUDTable) ColumnsTogglable(value bool) CRUDTable {
-	return c.set("columnsTogglable", value)
-}
-
-// CombineFromIndex 设置 combineFromIndex 属性
-func (c CRUDTable) CombineFromIndex(value string) CRUDTable {
-	return c.set("combineFromIndex", value)
-}
-
-// CombineNum 设置 combineNum 属性
-func (c CRUDTable) CombineNum(value string) CRUDTable {
-	return c.set("combineNum", value)
-}
-
-// Data 设置 data 属性
-func (c CRUDTable) Data(value string) CRUDTable {
-	return c.set("data", value)
-}
-
-// DefaultParams 设置 defaultParams 属性
-func (c CRUDTable) DefaultParams(value string) CRUDTable {
-	return c.set("defaultParams", value)
-}
-
-// DeferApi 设置 deferApi 属性
-func (c CRUDTable) DeferApi(value string) CRUDTable {
-	return c.set("deferApi", value)
-}
-
-// Disabled 设置 disabled 属性
-func (c CRUDTable) Disabled(value bool) CRUDTable {
+// Disabled 设置是否禁用
+func (c crudTable) Disabled(value bool) crudTable {
 	return c.set("disabled", value)
 }
 
-// DisabledOn 设置 disabledOn 属性
-func (c CRUDTable) DisabledOn(value string) CRUDTable {
-	return c.set("disabledOn", value)
+// Expandable 设置表格行可展开配置
+func (c crudTable) Expandable(value bool) crudTable {
+	return c.set("expandable", value)
 }
 
-// Draggable 设置 draggable 属性
-func (c CRUDTable) Draggable(value bool) CRUDTable {
-	return c.set("draggable", value)
+// Footer 设置指定表尾
+func (c crudTable) Footer(value string) crudTable {
+	return c.set("footer", value)
 }
 
-// DraggableOn 设置 draggableOn 属性
-func (c CRUDTable) DraggableOn(value string) CRUDTable {
-	return c.set("draggableOn", value)
+// HeaderToolbar 设置顶部区域
+func (c crudTable) HeaderToolbar(value string) crudTable {
+	return c.set("headerToolbar", value)
 }
 
-// EditorSetting 设置 editorSetting 属性
-func (c CRUDTable) EditorSetting(value string) CRUDTable {
-	return c.set("editorSetting", value)
+// Hidden 设置是否隐藏
+func (c crudTable) Hidden(value bool) crudTable {
+	return c.set("hidden", value)
 }
 
-// ExpandConfig 设置 expandConfig 属性
-func (c CRUDTable) ExpandConfig(value string) CRUDTable {
-	return c.set("expandConfig", value)
+// Id 设置组件唯一 id
+func (c crudTable) Id(value string) crudTable {
+	return c.set("id", value)
 }
 
-// Filter 设置 filter 属性
-func (c CRUDTable) Filter(value string) CRUDTable {
-	return c.set("filter", value)
+// Interval 设置自动刷新时间
+func (c crudTable) Interval(value string) crudTable {
+	return c.set("interval", value)
 }
 
-// FilterDefaultVisible 设置 filterDefaultVisible 属性
-func (c CRUDTable) FilterDefaultVisible(value bool) CRUDTable {
-	return c.set("filterDefaultVisible", value)
-}
-
-// FilterTogglable 设置 filterTogglable 属性
-func (c CRUDTable) FilterTogglable(value bool) CRUDTable {
-	return c.set("filterTogglable", value)
-}
-
-// Footable 设置 footable 属性
-func (c CRUDTable) Footable(value bool) CRUDTable {
-	return c.set("footable", value)
-}
-
-// FormItemMode 设置 formItemMode 属性
-func (c CRUDTable) FormItemMode(value string) CRUDTable {
-	return c.set("formItemMode", value)
-}
-
-// HeaderTitle 设置 headerTitle 属性
-func (c CRUDTable) HeaderTitle(value string) CRUDTable {
-	return c.set("headerTitle", value)
-}
-
-// HoverAction 设置 hoverAction 属性
-func (c CRUDTable) HoverAction(value bool) CRUDTable {
-	return c.set("hoverAction", value)
-}
-
-// HoverActionType 设置 hoverActionType 属性
-func (c CRUDTable) HoverActionType(value string) CRUDTable {
-	return c.set("hoverActionType", value)
-}
-
-// ItemActions 设置 itemActions 属性
-func (c CRUDTable) ItemActions(value string) CRUDTable {
-	return c.set("itemActions", value)
-}
-
-// LabelTpl 设置 labelTpl 属性
-func (c CRUDTable) LabelTpl(value string) CRUDTable {
-	return c.set("labelTpl", value)
-}
-
-// Loading设置 loading 属性
-func (c CRUDTable) Loading(value bool) CRUDTable {
+// Loading 设置加载中状态
+func (c crudTable) Loading(value string) crudTable {
 	return c.set("loading", value)
 }
 
-// MaxHeight 设置 maxHeight 属性
-func (c CRUDTable) MaxHeight(value string) CRUDTable {
-	return c.set("maxHeight", value)
-}
-
-// MaxIndex 设置 maxIndex 属性
-func (c CRUDTable) MaxIndex(value int) CRUDTable {
-	return c.set("maxIndex", value)
-}
-
-// Name 设置 name 属性
-func (c CRUDTable) Name(value string) CRUDTable {
+// Name 设置组件名字
+func (c crudTable) Name(value string) crudTable {
 	return c.set("name", value)
 }
 
-// Pagination 设置 pagination 属性
-func (c CRUDTable) Pagination(value bool) CRUDTable {
+// Pagination 设置分页配置
+func (c crudTable) Pagination(value interface{}) crudTable {
 	return c.set("pagination", value)
 }
 
-// PageField 设置 pageField 属性
-func (c CRUDTable) PageField(value string) CRUDTable {
-	return c.set("pageField", value)
-}
-
-// PerPage 设置 perPage 属性
-func (c CRUDTable) PerPage(value int) CRUDTable {
-	return c.set("perPage", value)
-}
-
-// Placeholder 设置 placeholder 属性
-func (c CRUDTable) Placeholder(value string) CRUDTable {
+// Placeholder 设置列表空数据的提示
+func (c crudTable) Placeholder(value string) crudTable {
 	return c.set("placeholder", value)
 }
 
-// RowClassName 设置 rowClassName 属性
-func (c CRUDTable) RowClassName(value string) CRUDTable {
+// RowClassName 设置行 CSS 类名
+func (c crudTable) RowClassName(value string) crudTable {
 	return c.set("rowClassName", value)
 }
 
-// SaveOrder 设置 saveOrder 属性
-func (c CRUDTable) SaveOrder(value bool) CRUDTable {
-	return c.set("saveOrder", value)
-}
-
-// SearchSettings 设置 searchSettings 属性
-func (c CRUDTable) SearchSettings(value string) CRUDTable {
-	return c.set("searchSettings", value)
-}
-
-// Searchable 设置 searchable 属性
-func (c CRUDTable) Searchable(value bool) CRUDTable {
-	return c.set("searchable", value)
-}
-
-// ShowSetting 设置 showSetting 属性
-func (c CRUDTable) ShowSetting(value bool) CRUDTable {
-	return c.set("showSetting", value)
-}
-
-// Size 设置 size 属性
-func (c CRUDTable) Size(value string) CRUDTable {
-	return c.set("size", value)
-}
-
-// Sticky 设置 sticky 属性
-func (c CRUDTable) Sticky(value bool) CRUDTable {
+// Sticky 设置是否粘性头部
+func (c crudTable) Sticky(value bool) crudTable {
 	return c.set("sticky", value)
 }
 
-// StickyHeader 设置 stickyHeader 属性
-func (c CRUDTable) StickyHeader(value bool) CRUDTable {
-	return c.set("stickyHeader", value)
+// Style 设置组件样式
+func (c crudTable) Style(value string) crudTable {
+	return c.set("style", value)
 }
 
-// Striped 设置 striped 属性
-func (c CRUDTable) Striped(value bool) CRUDTable {
-	return c.set("striped", value)
+// TableLayout 设置表格布局
+func (c crudTable) TableLayout(value string) crudTable {
+	return c.set("tableLayout", value)
 }
 
-// ToggledBySetting 设置 toggledBySetting 属性
-func (c CRUDTable) ToggledBySetting(value bool) CRUDTable {
-	return c.set("toggledBySetting", value)
-}
-
-// TableWidth 设置 tableWidth 属性
-func (c CRUDTable) TableWidth(value string) CRUDTable {
-	return c.set("tableWidth", value)
-}
-
-// Title 设置 title 属性
-func (c CRUDTable) Title(value string) CRUDTable {
+// Title 设置表格标题
+func (c crudTable) Title(value string) crudTable {
 	return c.set("title", value)
 }
 
-// UnmountOnHidden 设置 unmountOnHidden 属性
-func (c CRUDTable) UnmountOnHidden(value bool) CRUDTable {
-	return c.set("unmountOnHidden", value)
-}
-
-// UniqueId 设置 uniqueId 属性
-func (c CRUDTable) UniqueId(value string) CRUDTable {
-	return c.set("uniqueId", value)
-}
-
-// VerticalAlign 设置 verticalAlign 属性
-func (c CRUDTable) VerticalAlign(value string) CRUDTable {
-	return c.set("verticalAlign", value)
-}
-
-// Width 设置 width 属性
-func (c CRUDTable) Width(value string) CRUDTable {
+// Width 设置宽度
+func (c crudTable) Width(value string) crudTable {
 	return c.set("width", value)
 }
 
-// Wrap 设置 wrap 属性
-func (c CRUDTable) Wrap(value bool) CRUDTable {
-	return c.set("wrap", value)
+// CRUD2Table 特有字段
+
+// Actions 设置操作列配置
+func (c crudTable) Actions(value string) crudTable {
+	return c.set("actions", value)
+}
+
+// AutoJumpToTopOnPagerChange 设置是否自动跳到顶部
+func (c crudTable) AutoJumpToTopOnPagerChange(value bool) crudTable {
+	return c.set("autoJumpToTopOnPagerChange", value)
+}
+
+// Bordered 设置是否展示边框
+func (c crudTable) Bordered(value bool) crudTable {
+	return c.set("bordered", value)
+}
+
+// CanAccessSuperData 设置表格是否可以获取父级数据域值
+func (c crudTable) CanAccessSuperData(value bool) crudTable {
+	return c.set("canAccessSuperData", value)
+}
+
+// ChildrenColumnName 设置数据源嵌套自定义字段名
+func (c crudTable) ChildrenColumnName(value string) crudTable {
+	return c.set("childrenColumnName", value)
+}
+
+// ClassName 设置容器 css 类名
+func (c crudTable) ClassName(value string) crudTable {
+	return c.set("className", value)
+}
+
+// ColumnsTogglable 设置表格是否可自定义列
+func (c crudTable) ColumnsTogglable(value bool) crudTable {
+	return c.set("columnsTogglable", value)
+}
+
+// EditorSetting 设置编辑器配置
+func (c crudTable) EditorSetting(value string) crudTable {
+	return c.set("editorSetting", value)
+}
+
+// FooterToolbar 设置底部区域
+func (c crudTable) FooterToolbar(value string) crudTable {
+	return c.set("footerToolbar", value)
+}
+
+// FooterToolbarClassName 设置底部区域 CSS 类名
+func (c crudTable) FooterToolbarClassName(value string) crudTable {
+	return c.set("footerToolbarClassName", value)
+}
+
+// HeaderToolbarClassName 设置顶部区域 CSS 类名
+func (c crudTable) HeaderToolbarClassName(value string) crudTable {
+	return c.set("headerToolbarClassName", value)
+}
+
+// HideQuickSaveBtn 设置是否隐藏快速保存按钮
+func (c crudTable) HideQuickSaveBtn(value bool) crudTable {
+	return c.set("hideQuickSaveBtn", value)
+}
+
+// KeyField 设置多选、嵌套展开记录的 ID 字段名
+func (c crudTable) KeyField(value string) crudTable {
+	return c.set("keyField", value)
+}
+
+// LazyRenderAfter 设置一次性渲染的列数
+func (c crudTable) LazyRenderAfter(value string) crudTable {
+	return c.set("lazyRenderAfter", value)
+}
+
+// LineHeight 设置是否固定内容行高度
+func (c crudTable) LineHeight(value string) crudTable {
+	return c.set("lineHeight", value)
+}
+
+// LoadDataOnce 设置是否为前端单次加载模式
+func (c crudTable) LoadDataOnce(value bool) crudTable {
+	return c.set("loadDataOnce", value)
+}
+
+// LoadType 设置数据展示模式
+func (c crudTable) LoadType(value string) crudTable {
+	return c.set("loadType", value)
+}
+
+// LoadingConfig 设置加载中配置
+func (c crudTable) LoadingConfig(value string) crudTable {
+	return c.set("loadingConfig", value)
+}
+
+// MaxKeepItemSelectionLength 设置批量操作最大限制数
+func (c crudTable) MaxKeepItemSelectionLength(value string) crudTable {
+	return c.set("maxKeepItemSelectionLength", value)
+}
+
+// Messages 设置接口报错信息配置
+func (c crudTable) Messages(value string) crudTable {
+	return c.set("messages", value)
+}
+
+// Mode 设置指定内容区的展示模式
+func (c crudTable) Mode(value string) crudTable {
+	return c.set("mode", value)
+}
+
+// Multiple 设置是否可以多选数据
+func (c crudTable) Multiple(value bool) crudTable {
+	return c.set("multiple", value)
+}
+
+// OnEvent 设置事件动作配置
+func (c crudTable) OnEvent(value string) crudTable {
+	return c.set("onEvent", value)
+}
+
+// PageField 设置分页页码字段名
+func (c crudTable) PageField(value string) crudTable {
+	return c.set("pageField", value)
+}
+
+// ParsePrimitiveQuery 设置是否开启 Query 信息转换
+func (c crudTable) ParsePrimitiveQuery(value string) crudTable {
+	return c.set("parsePrimitiveQuery", value)
+}
+
+// PerPage 设置无限加载时每页加载数量
+func (c crudTable) PerPage(value string) crudTable {
+	return c.set("perPage", value)
+}
+
+// PerPageField 设置分页每页显示多少条数据的字段名
+func (c crudTable) PerPageField(value string) crudTable {
+	return c.set("perPageField", value)
+}
+
+// PopOverContainer 设置指定挂载 DOM
+func (c crudTable) PopOverContainer(value string) crudTable {
+	return c.set("popOverContainer", value)
+}
+
+// PrimaryField 设置行标识符
+func (c crudTable) PrimaryField(value string) crudTable {
+	return c.set("primaryField", value)
+}
+
+// QuickSaveApi 设置快速编辑后批量保存的 API
+func (c crudTable) QuickSaveApi(value string) crudTable {
+	return c.set("quickSaveApi", value)
+}
+
+// QuickSaveItemApi 设置快速编辑即时保存的 API
+func (c crudTable) QuickSaveItemApi(value string) crudTable {
+	return c.set("quickSaveItemApi", value)
+}
+
+// Reload 设置重新加载的组件名称
+func (c crudTable) Reload(value string) crudTable {
+	return c.set("reload", value)
+}
+
+// RowClassNameExpr 设置自定义行样式
+func (c crudTable) RowClassNameExpr(value string) crudTable {
+	return c.set("rowClassNameExpr", value)
+}
+
+// RowSelection 设置表格可选择配置
+func (c crudTable) RowSelection(value string) crudTable {
+	return c.set("rowSelection", value)
+}
+
+// SaveOrderApi 设置保存排序的 API
+func (c crudTable) SaveOrderApi(value string) crudTable {
+	return c.set("saveOrderApi", value)
+}
+
+// Selectable 设置是否可以选择数据
+func (c crudTable) Selectable(value bool) crudTable {
+	return c.set("selectable", value)
+}
+
+// ShowBadge 设置是否展示数据条数徽标
+func (c crudTable) ShowBadge(value bool) crudTable {
+	return c.set("showBadge", value)
+}
+
+// ShowHeader 设置是否显示表头
+func (c crudTable) ShowHeader(value bool) crudTable {
+	return c.set("showHeader", value)
+}
+
+// ShowPagination 设置是否显示分页
+func (c crudTable) ShowPagination(value bool) crudTable {
+	return c.set("showPagination", value)
+}
+
+// ShowQuickSaveBtn 设置是否展示快速保存按钮
+func (c crudTable) ShowQuickSaveBtn(value bool) crudTable {
+	return c.set("showQuickSaveBtn", value)
+}
+
+// ShowToolbar 设置是否显示工具栏
+func (c crudTable) ShowToolbar(value bool) crudTable {
+	return c.set("showToolbar", value)
+}
+
+// Source 设置表格数据源
+func (c crudTable) Source(value string) crudTable {
+	return c.set("source", value)
+}
+
+// Toolbar 设置指定表头工具栏
+func (c crudTable) Toolbar(value string) crudTable {
+	return c.set("toolbar", value)
+}
+
+// ToolbarClassName 设置工具栏 CSS 类名
+func (c crudTable) ToolbarClassName(value string) crudTable {
+	return c.set("toolbarClassName", value)
+}
+
+// Unfoldable 设置是否允许展开或收起
+func (c crudTable) Unfoldable(value bool) crudTable {
+	return c.set("unfoldable", value)
+}
+
+// Validate 设置校验配置
+func (c crudTable) Validate(value string) crudTable {
+	return c.set("validate", value)
+}
+
+// ValueField 设置表格数据的字段名称
+func (c crudTable) ValueField(value string) crudTable {
+	return c.set("valueField", value)
+}
+
+// WidthMode 设置列宽模式
+func (c crudTable) WidthMode(value string) crudTable {
+	return c.set("widthMode", value)
 }

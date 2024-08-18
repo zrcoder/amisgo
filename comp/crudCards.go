@@ -1,384 +1,449 @@
 package comp
 
-// CRUDCards 定义了 CRUDCards 渲染器
-type CRUDCards Schema
+// crudCards 定义了 crudCards 渲染器
+type crudCards schema
 
-// NewCRUDCards 创建一个新的 CRUDCards 实例
-func NewCRUDCards() CRUDCards {
-	return make(CRUDCards).set("mode", "cards").set("type", "crud")
+// CrudCards 创建一个新的 CrudCards 实例
+func CrudCards() crudCards {
+	return make(crudCards).set("mode", "cards").set("type", "crud")
 }
 
-func (c CRUDCards) set(key string, value interface{}) CRUDCards {
+func (c crudCards) set(key string, value interface{}) crudCards {
 	c[key] = value
 	return c
 }
 
 // AffixFooter 设置是否固底
-func (c CRUDCards) AffixFooter(value bool) CRUDCards {
+func (c crudCards) AffixFooter(value bool) crudCards {
 	return c.set("affixFooter", value)
 }
 
 // AffixHeader 设置是否固顶
-func (c CRUDCards) AffixHeader(value bool) CRUDCards {
+func (c crudCards) AffixHeader(value bool) crudCards {
 	return c.set("affixHeader", value)
 }
 
 // AlwaysShowPagination 设置是否总是显示分页
-func (c CRUDCards) AlwaysShowPagination(value bool) CRUDCards {
+func (c crudCards) AlwaysShowPagination(value bool) crudCards {
 	return c.set("alwaysShowPagination", value)
 }
 
 // Api 设置初始化数据 API
-func (c CRUDCards) Api(value string) CRUDCards {
+func (c crudCards) Api(value string) crudCards {
 	return c.set("api", value)
 }
 
 // AutoFillHeight 设置内容区域是否占满屏幕剩余空间
-func (c CRUDCards) AutoFillHeight(value string) CRUDCards {
+func (c crudCards) AutoFillHeight(value string) crudCards {
 	return c.set("autoFillHeight", value)
 }
 
 // AutoGenerateFilter 开启自动生成查询条件表单
-func (c CRUDCards) AutoGenerateFilter(value string) CRUDCards {
+func (c crudCards) AutoGenerateFilter(value string) crudCards {
 	return c.set("autoGenerateFilter", value)
 }
 
 // AutoJumpToTopOnPagerChange 设置是否自动跳到顶部
-func (c CRUDCards) AutoJumpToTopOnPagerChange(value bool) CRUDCards {
+func (c crudCards) AutoJumpToTopOnPagerChange(value bool) crudCards {
 	return c.set("autoJumpToTopOnPagerChange", value)
 }
 
 // BulkActions 设置批量操作
-func (c CRUDCards) BulkActions(value string) CRUDCards {
+func (c crudCards) BulkActions(value string) crudCards {
 	return c.set("bulkActions", value)
 }
 
 // Card 设置卡片配置
-func (c CRUDCards) Card(value string) CRUDCards {
+func (c crudCards) Card(value interface{}) crudCards {
 	return c.set("card", value)
 }
 
 // CheckOnItemClick 设置点击卡片时是否勾选卡片
-func (c CRUDCards) CheckOnItemClick(value bool) CRUDCards {
+func (c crudCards) CheckOnItemClick(value bool) crudCards {
 	return c.set("checkOnItemClick", value)
 }
 
-// ClassName 设置容器 css 类名
-func (c CRUDCards) ClassName(value string) CRUDCards {
+// ClassName 设置容器 CSS 类名
+func (c crudCards) ClassName(value string) crudCards {
 	return c.set("className", value)
 }
 
 // DefaultParams 设置默认参数
-func (c CRUDCards) DefaultParams(value string) CRUDCards {
+func (c crudCards) DefaultParams(value string) crudCards {
 	return c.set("defaultParams", value)
 }
 
 // DeferApi 设置懒加载 API
-func (c CRUDCards) DeferApi(value string) CRUDCards {
+func (c crudCards) DeferApi(value string) crudCards {
 	return c.set("deferApi", value)
 }
 
 // Disabled 设置是否禁用
-func (c CRUDCards) Disabled(value bool) CRUDCards {
+func (c crudCards) Disabled(value bool) crudCards {
 	return c.set("disabled", value)
 }
 
 // DisabledOn 设置禁用表达式
-func (c CRUDCards) DisabledOn(value string) CRUDCards {
+func (c crudCards) DisabledOn(value string) crudCards {
 	return c.set("disabledOn", value)
 }
 
 // Draggable 设置是否可通过拖拽排序
-func (c CRUDCards) Draggable(value bool) CRUDCards {
+func (c crudCards) Draggable(value bool) crudCards {
 	return c.set("draggable", value)
 }
 
 // DraggableOn 设置拖拽排序表达式
-func (c CRUDCards) DraggableOn(value string) CRUDCards {
+func (c crudCards) DraggableOn(value string) crudCards {
 	return c.set("draggableOn", value)
 }
 
 // EditorSetting 设置编辑器配置
-func (c CRUDCards) EditorSetting(value string) CRUDCards {
+func (c crudCards) EditorSetting(value string) crudCards {
 	return c.set("editorSetting", value)
 }
 
 // ExpandConfig 设置展开配置
-func (c CRUDCards) ExpandConfig(value string) CRUDCards {
+func (c crudCards) ExpandConfig(value string) crudCards {
 	return c.set("expandConfig", value)
 }
 
 // Filter 设置过滤器表单
-func (c CRUDCards) Filter(value string) CRUDCards {
+func (c crudCards) Filter(value string) crudCards {
 	return c.set("filter", value)
 }
 
 // FilterDefaultVisible 设置过滤器默认是否可见
-func (c CRUDCards) FilterDefaultVisible(value bool) CRUDCards {
+func (c crudCards) FilterDefaultVisible(value bool) crudCards {
 	return c.set("filterDefaultVisible", value)
 }
 
 // FilterTogglable 设置过滤器是否可切换
-func (c CRUDCards) FilterTogglable(value bool) CRUDCards {
+func (c crudCards) FilterTogglable(value bool) crudCards {
 	return c.set("filterTogglable", value)
 }
 
 // Footer 设置底部区域
-func (c CRUDCards) Footer(value string) CRUDCards {
+func (c crudCards) Footer(value interface{}) crudCards {
 	return c.set("footer", value)
 }
 
 // FooterClassName 设置底部 CSS 类名
-func (c CRUDCards) FooterClassName(value string) CRUDCards {
+func (c crudCards) FooterClassName(value string) crudCards {
 	return c.set("footerClassName", value)
 }
 
 // FooterToolbar 设置底部工具栏
-func (c CRUDCards) FooterToolbar(value string) CRUDCards {
+func (c crudCards) FooterToolbar(value interface{}) crudCards {
 	return c.set("footerToolbar", value)
 }
 
+// FooterToolbarClassName 设置底部工具栏 CSS 类名
+func (c crudCards) FooterToolbarClassName(value string) crudCards {
+	return c.set("footerToolbarClassName", value)
+}
+
 // Header 设置顶部区域
-func (c CRUDCards) Header(value string) CRUDCards {
+func (c crudCards) Header(value interface{}) crudCards {
 	return c.set("header", value)
 }
 
 // HeaderClassName 设置顶部 CSS 类名
-func (c CRUDCards) HeaderClassName(value string) CRUDCards {
+func (c crudCards) HeaderClassName(value string) crudCards {
 	return c.set("headerClassName", value)
 }
 
 // HeaderToolbar 设置顶部工具栏
-func (c CRUDCards) HeaderToolbar(value string) CRUDCards {
+func (c crudCards) HeaderToolbar(value interface{}) crudCards {
 	return c.set("headerToolbar", value)
 }
 
+// HeaderToolbarClassName 设置顶部工具栏 CSS 类名
+func (c crudCards) HeaderToolbarClassName(value string) crudCards {
+	return c.set("headerToolbarClassName", value)
+}
+
 // Hidden 设置是否隐藏
-func (c CRUDCards) Hidden(value bool) CRUDCards {
+func (c crudCards) Hidden(value bool) crudCards {
 	return c.set("hidden", value)
 }
 
 // HiddenOn 设置隐藏表达式
-func (c CRUDCards) HiddenOn(value string) CRUDCards {
+func (c crudCards) HiddenOn(value string) crudCards {
 	return c.set("hiddenOn", value)
 }
 
 // HideCheckToggler 设置是否隐藏勾选框
-func (c CRUDCards) HideCheckToggler(value bool) CRUDCards {
+func (c crudCards) HideCheckToggler(value bool) crudCards {
 	return c.set("hideCheckToggler", value)
 }
 
 // HideQuickSaveBtn 设置是否隐藏快速保存按钮
-func (c CRUDCards) HideQuickSaveBtn(value bool) CRUDCards {
+func (c crudCards) HideQuickSaveBtn(value bool) crudCards {
 	return c.set("hideQuickSaveBtn", value)
 }
 
 // Id 设置组件唯一 ID
-func (c CRUDCards) Id(value string) CRUDCards {
+func (c crudCards) Id(value string) crudCards {
 	return c.set("id", value)
 }
 
 // InitFetch 设置初始是否拉取
-func (c CRUDCards) InitFetch(value bool) CRUDCards {
+func (c crudCards) InitFetch(value bool) crudCards {
 	return c.set("initFetch", value)
 }
 
 // InitFetchOn 设置初始拉取表达式
-func (c CRUDCards) InitFetchOn(value string) CRUDCards {
+func (c crudCards) InitFetchOn(value string) crudCards {
 	return c.set("initFetchOn", value)
 }
 
 // InnerClassName 设置内部 DOM 的 CSS 类名
-func (c CRUDCards) InnerClassName(value string) CRUDCards {
+func (c crudCards) InnerClassName(value string) crudCards {
 	return c.set("innerClassName", value)
 }
 
 // Interval 设置自动刷新时间
-func (c CRUDCards) Interval(value string) CRUDCards {
+func (c crudCards) Interval(value string) crudCards {
 	return c.set("interval", value)
 }
 
 // ItemActions 设置单条操作
-func (c CRUDCards) ItemActions(value string) CRUDCards {
+func (c crudCards) ItemActions(value string) crudCards {
 	return c.set("itemActions", value)
 }
 
 // ItemCheckableOn 设置约束批量操作
-func (c CRUDCards) ItemCheckableOn(value string) CRUDCards {
+func (c crudCards) ItemCheckableOn(value string) crudCards {
 	return c.set("itemCheckableOn", value)
 }
 
 // ItemClassName 设置卡片 CSS 类名
-func (c CRUDCards) ItemClassName(value string) CRUDCards {
+func (c crudCards) ItemClassName(value string) crudCards {
 	return c.set("itemClassName", value)
 }
 
 // ItemDraggableOn 设置项是否可拖拽排序
-func (c CRUDCards) ItemDraggableOn(value string) CRUDCards {
+func (c crudCards) ItemDraggableOn(value string) crudCards {
 	return c.set("itemDraggableOn", value)
 }
 
 // KeepItemSelectionOnPageChange 设置分页时是否保留用户选择
-func (c CRUDCards) KeepItemSelectionOnPageChange(value bool) CRUDCards {
+func (c crudCards) KeepItemSelectionOnPageChange(value bool) crudCards {
 	return c.set("keepItemSelectionOnPageChange", value)
 }
 
 // LabelTpl 设置已勾选项的文案
-func (c CRUDCards) LabelTpl(value string) CRUDCards {
+func (c crudCards) LabelTpl(value string) crudCards {
 	return c.set("labelTpl", value)
 }
 
 // LoadDataOnce 设置是否为前端单次加载模式
-func (c CRUDCards) LoadDataOnce(value bool) CRUDCards {
+func (c crudCards) LoadDataOnce(value bool) crudCards {
 	return c.set("loadDataOnce", value)
 }
 
 // LoadDataOnceFetchOnFilter 设置 loadDataOnce 时的过滤条件
-func (c CRUDCards) LoadDataOnceFetchOnFilter(value bool) CRUDCards {
+func (c crudCards) LoadDataOnceFetchOnFilter(value bool) crudCards {
 	return c.set("loadDataOnceFetchOnFilter", value)
 }
 
 // LoadingConfig 设置加载配置
-func (c CRUDCards) LoadingConfig(value string) CRUDCards {
+func (c crudCards) LoadingConfig(value string) crudCards {
 	return c.set("loadingConfig", value)
 }
 
 // MasonryLayout 设置是否为瀑布流布局
-func (c CRUDCards) MasonryLayout(value bool) CRUDCards {
+func (c crudCards) MasonryLayout(value bool) crudCards {
 	return c.set("masonryLayout", value)
 }
 
 // MatchFunc 设置自定义搜索匹配函数
-func (c CRUDCards) MatchFunc(value string) CRUDCards {
+func (c crudCards) MatchFunc(value string) crudCards {
 	return c.set("matchFunc", value)
 }
 
 // Messages 设置消息文案配置
-func (c CRUDCards) Messages(value string) CRUDCards {
+func (c crudCards) Messages(value string) crudCards {
 	return c.set("messages", value)
 }
 
 // Mode 设置展示模式
-func (c CRUDCards) Mode(value string) CRUDCards {
+func (c crudCards) Mode(value string) crudCards {
 	return c.set("mode", value)
 }
 
 // Name 设置组件名字
-func (c CRUDCards) Name(value string) CRUDCards {
+func (c crudCards) Name(value string) crudCards {
 	return c.set("name", value)
 }
 
 // OnEvent 设置事件动作配置
-func (c CRUDCards) OnEvent(value string) CRUDCards {
+func (c crudCards) OnEvent(value string) crudCards {
 	return c.set("onEvent", value)
 }
 
 // OrderBy 设置默认排序字段
-func (c CRUDCards) OrderBy(value string) CRUDCards {
+func (c crudCards) OrderBy(value string) crudCards {
 	return c.set("orderBy", value)
 }
 
-// PageField 设置分页字段名
-func (c CRUDCards) PageField(value string) CRUDCards {
+// PageField 设置分页字段
+func (c crudCards) PageField(value string) crudCards {
 	return c.set("pageField", value)
 }
 
-// Pagination 设置分页
-func (c CRUDCards) Pagination(value string) CRUDCards {
+// Pagination 设置分页配置
+func (c crudCards) Pagination(value string) crudCards {
 	return c.set("pagination", value)
 }
 
-// PerPage 设置每页显示条数
-func (c CRUDCards) PerPage(value int) CRUDCards {
+// PerPage 设置每页条数
+func (c crudCards) PerPage(value int) crudCards {
 	return c.set("perPage", value)
 }
 
-// QuickSaveApi 设置快速保存 API
-func (c CRUDCards) QuickSaveApi(value string) CRUDCards {
-	return c.set("quickSaveApi", value)
+// Query 设置查询字段
+func (c crudCards) Query(value string) crudCards {
+	return c.set("query", value)
 }
 
-// ReadOnly 设置只读
-func (c CRUDCards) ReadOnly(value bool) CRUDCards {
-	return c.set("readOnly", value)
+// Reload 设置是否需要重新加载
+func (c crudCards) Reload(value bool) crudCards {
+	return c.set("reload", value)
 }
 
-// ResetPageOnReload 设置重载时是否重置分页
-func (c CRUDCards) ResetPageOnReload(value bool) CRUDCards {
-	return c.set("resetPageOnReload", value)
+// Render设置是否渲染组件
+func (c crudCards) Render(value bool) crudCards {
+	return c.set("render", value)
 }
 
-// SearchSettings 设置搜索配置
-func (c CRUDCards) SearchSettings(value string) CRUDCards {
-	return c.set("searchSettings", value)
+// ResetPage 设置是否重置分页
+func (c crudCards) ResetPage(value bool) crudCards {
+	return c.set("resetPage", value)
 }
 
-// Selectable 设置是否可选择
-func (c CRUDCards) Selectable(value bool) CRUDCards {
-	return c.set("selectable", value)
+// RowClassName 设置行 CSS 类名
+func (c crudCards) RowClassName(value string) crudCards {
+	return c.set("rowClassName", value)
+}
+
+// Searchable 设置是否可搜索
+func (c crudCards) Searchable(value bool) crudCards {
+	return c.set("searchable", value)
+}
+
+// SearchPlaceholder 设置搜索占位符
+func (c crudCards) SearchPlaceholder(value string) crudCards {
+	return c.set("searchPlaceholder", value)
+}
+
+// ShowErrorMsg 设置是否显示错误信息
+func (c crudCards) ShowErrorMsg(value bool) crudCards {
+	return c.set("showErrorMsg", value)
 }
 
 // ShowPagination 设置是否显示分页
-func (c CRUDCards) ShowPagination(value bool) CRUDCards {
+func (c crudCards) ShowPagination(value bool) crudCards {
 	return c.set("showPagination", value)
 }
 
-// ShowQuickSaveBtn 设置是否显示快速保存按钮
-func (c CRUDCards) ShowQuickSaveBtn(value bool) CRUDCards {
-	return c.set("showQuickSaveBtn", value)
+// ShowSearch 设置是否显示搜索框
+func (c crudCards) ShowSearch(value bool) crudCards {
+	return c.set("showSearch", value)
 }
 
-// ShowTotal 设置是否显示总条数
-func (c CRUDCards) ShowTotal(value bool) CRUDCards {
-	return c.set("showTotal", value)
+// ShowSort 设置是否显示排序
+func (c crudCards) ShowSort(value bool) crudCards {
+	return c.set("showSort", value)
+}
+
+// ShowSwitch 设置是否显示切换按钮
+func (c crudCards) ShowSwitch(value bool) crudCards {
+	return c.set("showSwitch", value)
+}
+
+// ShowToolbar 设置是否显示工具栏
+func (c crudCards) ShowToolbar(value bool) crudCards {
+	return c.set("showToolbar", value)
+}
+
+// Size 设置组件尺寸
+func (c crudCards) Size(value string) crudCards {
+	return c.set("size", value)
 }
 
 // Source 设置数据源
-func (c CRUDCards) Source(value string) CRUDCards {
+func (c crudCards) Source(value string) crudCards {
 	return c.set("source", value)
 }
 
-// SubItemSettings 设置子项配置
-func (c CRUDCards) SubItemSettings(value string) CRUDCards {
-	return c.set("subItemSettings", value)
+// Sortable 设置是否可排序
+func (c crudCards) Sortable(value bool) crudCards {
+	return c.set("sortable", value)
 }
 
-// SyncLocation 设置是否同步浏览器位置
-func (c CRUDCards) SyncLocation(value bool) CRUDCards {
+// SubmitText 设置提交按钮文字
+func (c crudCards) SubmitText(value string) crudCards {
+	return c.set("submitText", value)
+}
+
+// SyncLocation 设置是否同步 URL
+func (c crudCards) SyncLocation(value bool) crudCards {
 	return c.set("syncLocation", value)
 }
 
 // Title 设置标题
-func (c CRUDCards) Title(value string) CRUDCards {
+func (c crudCards) Title(value string) crudCards {
 	return c.set("title", value)
 }
 
-// Toolbar 设置工具栏
-func (c CRUDCards) Toolbar(value string) CRUDCards {
-	return c.set("toolbar", value)
+// Translations 设置多语言翻译
+func (c crudCards) Translations(value map[string]string) crudCards {
+	return c.set("translations", value)
 }
 
-// ToolbarClassName 设置工具栏 CSS 类名
-func (c CRUDCards) ToolbarClassName(value string) CRUDCards {
-	return c.set("toolbarClassName", value)
+// VerticalAlign 设置垂直对齐方式
+func (c crudCards) VerticalAlign(value string) crudCards {
+	return c.set("verticalAlign", value)
 }
 
-// Tooltip 设置工具提示
-func (c CRUDCards) Tooltip(value string) CRUDCards {
-	return c.set("tooltip", value)
+// Visible 设置是否可见
+func (c crudCards) Visible(value bool) crudCards {
+	return c.set("visible", value)
 }
 
-// UseMobile 设置是否使用移动端适配
-func (c CRUDCards) UseMobile(value bool) CRUDCards {
-	return c.set("useMobile", value)
-}
-
-// ValueField 设置值字段名
-func (c CRUDCards) ValueField(value string) CRUDCards {
-	return c.set("valueField", value)
-}
-
-// VisibleOn 设置可见表达式
-func (c CRUDCards) VisibleOn(value string) CRUDCards {
+// VisibleOn 设置可见性表达式
+func (c crudCards) VisibleOn(value string) crudCards {
 	return c.set("visibleOn", value)
+}
+
+// Width 设置宽度
+func (c crudCards) Width(value string) crudCards {
+	return c.set("width", value)
+}
+
+// WrapItemClassName 设置包裹项的 CSS 类名
+func (c crudCards) WrapItemClassName(value string) crudCards {
+	return c.set("wrapItemClassName", value)
+}
+
+// ExtraAction 设置额外操作
+func (c crudCards) ExtraAction(value interface{}) crudCards {
+	return c.set("extraAction", value)
+}
+
+// AutoSaveOnChange 设置是否自动保存更改
+func (c crudCards) AutoSaveOnChange(value bool) crudCards {
+	return c.set("autoSaveOnChange", value)
+}
+
+// // 这里可以继续添加 CRUD2Cards 中的其他方法...
+
+// Helper 方法
+func (c crudCards) merge(other crudCards) crudCards {
+	for key, value := range other {
+		c[key] = value
+	}
+	return c
 }

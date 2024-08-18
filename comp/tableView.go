@@ -1,16 +1,16 @@
 package comp
 
-// TableView 表格展现
+// tableView 表格展现
 //
 // @version 6.7.0
-type TableView Schema
+type tableView schema
 
-// NewTableView 创建一个新的 TableView 实例
-func NewTableView() TableView {
-	return TableView{}.set("type", "table-view")
+// TableView 创建一个新的 TableView 实例
+func TableView() tableView {
+	return tableView{}.set("type", "table-view")
 }
 
-func (tv TableView) set(key string, value interface{}) TableView {
+func (tv tableView) set(key string, value interface{}) tableView {
 	tv[key] = value
 	return tv
 }

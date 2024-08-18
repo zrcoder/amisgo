@@ -1,277 +1,277 @@
 package comp
 
-// Page 代表 amis Page 渲染器
+// page 代表 amis page 渲染器
 //
 // @version 6.7.0
-type Page Schema
+type page schema
 
-// NewPage 创建一个新的 Page 实例
-func NewPage() Page {
-	return Page{}.set("type", "page")
+// Page 创建一个新的 Page 实例
+func Page() page {
+	return page{}.set("type", "page")
 }
 
 // set 用于设置字段值
-func (p Page) set(key string, value interface{}) Page {
+func (p page) set(key string, value interface{}) page {
 	p[key] = value
 	return p
 }
 
 // Aside 边栏区域
-func (p Page) Aside(value string) Page {
+func (p page) Aside(value string) page {
 	return p.set("aside", value)
 }
 
 // AsideClassName 边栏区 css 类名
-func (p Page) AsideClassName(value string) Page {
+func (p page) AsideClassName(value string) page {
 	return p.set("asideClassName", value)
 }
 
 // AsideMaxWidth 边栏最小宽度
-func (p Page) AsideMaxWidth(value string) Page {
+func (p page) AsideMaxWidth(value string) page {
 	return p.set("asideMaxWidth", value)
 }
 
 // AsideMinWidth 边栏最小宽度
-func (p Page) AsideMinWidth(value string) Page {
+func (p page) AsideMinWidth(value string) page {
 	return p.set("asideMinWidth", value)
 }
 
 // AsideResizor 边栏是否允许拖动
-func (p Page) AsideResizor(value bool) Page {
+func (p page) AsideResizor(value bool) page {
 	return p.set("asideResizor", value)
 }
 
-// AsideSticky 边栏内容是否粘住
-func (p Page) AsideSticky(value bool) Page {
+// AsideSticky 边栏内容是否粘住，即不跟随滚动。
+func (p page) AsideSticky(value bool) page {
 	return p.set("asideSticky", value)
 }
 
 // Body 内容区域
-func (p Page) Body(value ...interface{}) Page {
+func (p page) Body(value ...interface{}) page {
 	return p.set("body", value)
 }
 
 // BodyClassName 内容区 css 类名
-func (p Page) BodyClassName(value string) Page {
+func (p page) BodyClassName(value string) page {
 	return p.set("bodyClassName", value)
 }
 
 // ClassName 配置容器 className
-func (p Page) ClassName(value string) Page {
+func (p page) ClassName(value string) page {
 	return p.set("className", value)
 }
 
 // CSS 自定义页面级别样式表
-func (p Page) CSS(value string) Page {
+func (p page) CSS(value string) page {
 	return p.set("css", value)
 }
 
 // CSSVars css 变量
-func (p Page) CSSVars(value string) Page {
+func (p page) CSSVars(value string) page {
 	return p.set("cssVars", value)
 }
 
 // Data 页面级别的初始数据
-func (p Page) Data(value string) Page {
+func (p page) Data(value string) page {
 	return p.set("data", value)
 }
 
 // Definitions 配置定义
-func (p Page) Definitions(value string) Page {
+func (p page) Definitions(value string) page {
 	return p.set("definitions", value)
 }
 
 // Disabled 是否禁用
-func (p Page) Disabled(value bool) Page {
+func (p page) Disabled(value bool) page {
 	return p.set("disabled", value)
 }
 
 // DisabledOn 是否禁用表达式
-func (p Page) DisabledOn(value string) Page {
+func (p page) DisabledOn(value string) page {
 	return p.set("disabledOn", value)
 }
 
 // EditorSetting 编辑器配置
-func (p Page) EditorSetting(value string) Page {
+func (p page) EditorSetting(value string) page {
 	return p.set("editorSetting", value)
 }
 
 // HeaderClassName 配置 header 容器 className
-func (p Page) HeaderClassName(value string) Page {
+func (p page) HeaderClassName(value string) page {
 	return p.set("headerClassName", value)
 }
 
 // Hidden 是否隐藏
-func (p Page) Hidden(value bool) Page {
+func (p page) Hidden(value bool) page {
 	return p.set("hidden", value)
 }
 
 // HiddenOn 是否隐藏表达式
-func (p Page) HiddenOn(value string) Page {
+func (p page) HiddenOn(value string) page {
 	return p.set("hiddenOn", value)
 }
 
 // ID 组件唯一 id
-func (p Page) ID(value string) Page {
+func (p page) ID(value string) page {
 	return p.set("id", value)
 }
 
 // InitApi 页面初始化 API
-func (p Page) InitApi(value string) Page {
+func (p page) InitApi(value string) page {
 	return p.set("initApi", value)
 }
 
 // InitFetch 是否默认就拉取
-func (p Page) InitFetch(value bool) Page {
+func (p page) InitFetch(value bool) page {
 	return p.set("initFetch", value)
 }
 
 // InitFetchOn 是否默认就拉取表达式
-func (p Page) InitFetchOn(value string) Page {
+func (p page) InitFetchOn(value string) page {
 	return p.set("initFetchOn", value)
 }
 
 // Interval 配置轮询间隔
-func (p Page) Interval(value string) Page {
+func (p page) Interval(value string) page {
 	return p.set("interval", value)
 }
 
 // LoadingConfig 加载配置
-func (p Page) LoadingConfig(value string) Page {
+func (p page) LoadingConfig(value string) page {
 	return p.set("loadingConfig", value)
 }
 
 // Messages 消息文案配置
-func (p Page) Messages(value string) Page {
+func (p page) Messages(value string) page {
 	return p.set("messages", value)
 }
 
 // MobileCSS 移动端下的样式表
-func (p Page) MobileCSS(value string) Page {
+func (p page) MobileCSS(value string) page {
 	return p.set("mobileCSS", value)
 }
 
 // Name 组件名字
-func (p Page) Name(value string) Page {
+func (p page) Name(value string) page {
 	return p.set("name", value)
 }
 
 // OnEvent 事件动作配置
-func (p Page) OnEvent(value string) Page {
+func (p page) OnEvent(value string) page {
 	return p.set("onEvent", value)
 }
 
 // PullRefresh 下拉刷新配置
-func (p Page) PullRefresh(value string) Page {
+func (p page) PullRefresh(value string) page {
 	return p.set("pullRefresh", value)
 }
 
 // Regions 默认不设置自动感觉内容来决定要不要展示这些区域
-func (p Page) Regions(value string) Page {
+func (p page) Regions(value string) page {
 	return p.set("regions", value)
 }
 
 // Remark 页面描述
-func (p Page) Remark(value string) Page {
+func (p page) Remark(value string) page {
 	return p.set("remark", value)
 }
 
 // ShowErrorMsg 是否显示错误信息
-func (p Page) ShowErrorMsg(value bool) Page {
+func (p page) ShowErrorMsg(value bool) page {
 	return p.set("showErrorMsg", value)
 }
 
 // SilentPolling 是否要静默加载
-func (p Page) SilentPolling(value bool) Page {
+func (p page) SilentPolling(value bool) page {
 	return p.set("silentPolling", value)
 }
 
 // Static 是否静态展示
-func (p Page) Static(value bool) Page {
+func (p page) Static(value bool) page {
 	return p.set("static", value)
 }
 
 // StaticClassName 静态展示表单项类名
-func (p Page) StaticClassName(value string) Page {
+func (p page) StaticClassName(value string) page {
 	return p.set("staticClassName", value)
 }
 
 // StaticInputClassName 静态展示表单项 Value 类名
-func (p Page) StaticInputClassName(value string) Page {
+func (p page) StaticInputClassName(value string) page {
 	return p.set("staticInputClassName", value)
 }
 
 // StaticLabelClassName 静态展示表单项 Label 类名
-func (p Page) StaticLabelClassName(value string) Page {
+func (p page) StaticLabelClassName(value string) page {
 	return p.set("staticLabelClassName", value)
 }
 
 // StaticOn 是否静态展示表达式
-func (p Page) StaticOn(value string) Page {
+func (p page) StaticOn(value string) page {
 	return p.set("staticOn", value)
 }
 
 // StaticPlaceholder 静态展示空值占位
-func (p Page) StaticPlaceholder(value string) Page {
+func (p page) StaticPlaceholder(value string) page {
 	return p.set("staticPlaceholder", value)
 }
 
 // StaticSchema 静态展示模式的 schema
-func (p Page) StaticSchema(value string) Page {
+func (p page) StaticSchema(value string) page {
 	return p.set("staticSchema", value)
 }
 
 // StopAutoRefreshWhen 配置停止轮询的条件
-func (p Page) StopAutoRefreshWhen(value string) Page {
+func (p page) StopAutoRefreshWhen(value string) page {
 	return p.set("stopAutoRefreshWhen", value)
 }
 
 // Style 自定义样式
-func (p Page) Style(value string) Page {
+func (p page) Style(value string) page {
 	return p.set("style", value)
 }
 
 // SubTitle 页面副标题
-func (p Page) SubTitle(value string) Page {
+func (p page) SubTitle(value string) page {
 	return p.set("subTitle", value)
 }
 
 // TestIdBuilder 自定义测试 ID 构建器
-func (p Page) TestIdBuilder(value string) Page {
+func (p page) TestIdBuilder(value string) page {
 	return p.set("testIdBuilder", value)
 }
 
 // Testid 测试 ID
-func (p Page) Testid(value string) Page {
+func (p page) Testid(value string) page {
 	return p.set("testid", value)
 }
 
 // Title 页面标题
-func (p Page) Title(value string) Page {
+func (p page) Title(value string) page {
 	return p.set("title", value)
 }
 
-// Toolbar 页面顶部区域
-func (p Page) Toolbar(value string) Page {
+// Toolbar 页面顶部区域，当存在 title 时在右上角显示。
+func (p page) Toolbar(value string) page {
 	return p.set("toolbar", value)
 }
 
 // ToolbarClassName 配置 toolbar 容器 className
-func (p Page) ToolbarClassName(value string) Page {
+func (p page) ToolbarClassName(value string) page {
 	return p.set("toolbarClassName", value)
 }
 
 // UseMobileUI 可以组件级别用来关闭移动端样式
-func (p Page) UseMobileUI(value bool) Page {
+func (p page) UseMobileUI(value bool) page {
 	return p.set("useMobileUI", value)
 }
 
 // Visible 是否显示
-func (p Page) Visible(value bool) Page {
+func (p page) Visible(value bool) page {
 	return p.set("visible", value)
 }
 
 // VisibleOn 是否显示表达式
-func (p Page) VisibleOn(value string) Page {
+func (p page) VisibleOn(value string) page {
 	return p.set("visibleOn", value)
 }
