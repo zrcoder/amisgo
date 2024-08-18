@@ -34,6 +34,6 @@ func main() {
 ## TODO
 
 - [x] both ListenAndServe, GenerateStaticWebsite api
-- [x] Autoly generate codes for components.go and the comp directory, based on schema.json in Amis' last release(or Amis' docs)
+- [x] Generate codes in the comp directory, based on schema.json in Amis' last release(or Amis' docs)
 - [ ] Tests and examples
 - [ ] Go+ classfile improvement
