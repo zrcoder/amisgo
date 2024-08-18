@@ -1,11 +1,11 @@
 package comp
 
-// VanillaAction
+// VanillaAction 代表动作配置。
 type VanillaAction Schema
 
-// NewVanillaAction 创建一个新的 VanillaAction 实例
+// NewVanillaAction 创建一个新的 VanillaAction 实例。
 func NewVanillaAction() VanillaAction {
-	return make(VanillaAction)
+	return VanillaAction{}.set("type", "button")
 }
 
 func (v VanillaAction) set(key string, value interface{}) VanillaAction {
@@ -13,7 +13,7 @@ func (v VanillaAction) set(key string, value interface{}) VanillaAction {
 	return v
 }
 
-// ActionType
+// ActionType 设置动作类型。
 func (v VanillaAction) ActionType(value string) VanillaAction {
 	return v.set("actionType", value)
 }
@@ -43,7 +43,7 @@ func (v VanillaAction) Body(value ...interface{}) VanillaAction {
 	return v.set("body", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
 func (v VanillaAction) ClassName(value string) VanillaAction {
 	return v.set("className", value)
 }
@@ -118,7 +118,7 @@ func (v VanillaAction) Icon(value string) VanillaAction {
 	return v.set("icon", value)
 }
 
-// IconClassName icon 上的css 类名
+// IconClassName icon 上的css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
 func (v VanillaAction) IconClassName(value string) VanillaAction {
 	return v.set("iconClassName", value)
 }
@@ -133,12 +133,12 @@ func (v VanillaAction) Label(value string) VanillaAction {
 	return v.set("label", value)
 }
 
-// Level 按钮样式
+// Level 按钮样式 可选值: info | success | warning | danger | link | primary | dark | light | secondary
 func (v VanillaAction) Level(value string) VanillaAction {
 	return v.set("level", value)
 }
 
-// LoadingClassName loading 上的css 类名
+// LoadingClassName loading 上的css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
 func (v VanillaAction) LoadingClassName(value string) VanillaAction {
 	return v.set("loadingClassName", value)
 }
@@ -183,12 +183,12 @@ func (v VanillaAction) RightIcon(value string) VanillaAction {
 	return v.set("rightIcon", value)
 }
 
-// RightIconClassName 右侧 icon 上的 css 类名
+// RightIconClassName 右侧 icon 上的 css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
 func (v VanillaAction) RightIconClassName(value string) VanillaAction {
 	return v.set("rightIconClassName", value)
 }
 
-// Size 按钮大小
+// Size 按钮大小 可选值: xs | sm | md | lg
 func (v VanillaAction) Size(value string) VanillaAction {
 	return v.set("size", value)
 }
@@ -198,17 +198,17 @@ func (v VanillaAction) Static(value bool) VanillaAction {
 	return v.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
 func (v VanillaAction) StaticClassName(value string) VanillaAction {
 	return v.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
 func (v VanillaAction) StaticInputClassName(value string) VanillaAction {
 	return v.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
 func (v VanillaAction) StaticLabelClassName(value string) VanillaAction {
 	return v.set("staticLabelClassName", value)
 }
@@ -218,12 +218,12 @@ func (v VanillaAction) StaticOn(value string) VanillaAction {
 	return v.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder 静态展示为空时的占位符。
 func (v VanillaAction) StaticPlaceholder(value string) VanillaAction {
 	return v.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema 静态展示模式的 schema
 func (v VanillaAction) StaticSchema(value string) VanillaAction {
 	return v.set("staticSchema", value)
 }
@@ -233,42 +233,42 @@ func (v VanillaAction) Style(value string) VanillaAction {
 	return v.set("style", value)
 }
 
-// Target 可以指定让谁来触发这个动作。
+// Target 谁能触发这个动作。
 func (v VanillaAction) Target(value string) VanillaAction {
 	return v.set("target", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder 设置测试ID生成函数
 func (v VanillaAction) TestIdBuilder(value string) VanillaAction {
 	return v.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid 测试ID
 func (v VanillaAction) Testid(value string) VanillaAction {
 	return v.set("testid", value)
 }
 
-// Tooltip
+// Tooltip 提示文字
 func (v VanillaAction) Tooltip(value string) VanillaAction {
 	return v.set("tooltip", value)
 }
 
-// TooltipPlacement 可选值: top | right | bottom | left
+// TooltipPlacement 提示文字的显示位置 可选值: top | right | bottom | left
 func (v VanillaAction) TooltipPlacement(value string) VanillaAction {
 	return v.set("tooltipPlacement", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI 是否禁用移动端样式
 func (v VanillaAction) UseMobileUI(value bool) VanillaAction {
 	return v.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible 是否可见
 func (v VanillaAction) Visible(value bool) VanillaAction {
 	return v.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn 是否可见表达式 (表达式，语法 `data.xxx > 5`。)
 func (v VanillaAction) VisibleOn(value string) VanillaAction {
 	return v.set("visibleOn", value)
 }

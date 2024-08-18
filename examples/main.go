@@ -7,7 +7,10 @@ import (
 
 func main() {
 	index := comp.NewPage().Title("Amisgo").Body(
-		comp.NewPage().Title("Hello world!"),
+		comp.NewFormControl().Mode("horizontal").Body(
+			comp.NewInputText().Label("Name").Name("name"),
+			comp.NewInputText().Type("input-email").Label("Email").Name("email"),
+		),
 	)
 
 	amisgo.Route("/", index)
