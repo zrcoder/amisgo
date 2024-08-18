@@ -8,7 +8,6 @@ func NewVanillaAction() VanillaAction {
 	return make(VanillaAction)
 }
 
-// Set 设置属性
 func (v VanillaAction) set(key string, value interface{}) VanillaAction {
 	v[key] = value
 	return v

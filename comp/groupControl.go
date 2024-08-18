@@ -8,7 +8,6 @@ func NewGroupControl() GroupControl {
 	return make(GroupControl).set("type", "group")
 }
 
-// set 设置属性并返回当前对象
 func (g GroupControl) set(key string, value interface{}) GroupControl {
 	g[key] = value
 	return g
@@ -257,11 +256,6 @@ func (g GroupControl) SubmitOnChange(value bool) GroupControl {
 // TestIdBuilder
 func (g GroupControl) TestIdBuilder(value string) GroupControl {
 	return g.set("testIdBuilder", value)
-}
-
-// Type 表单项类型
-func (g GroupControl) Type(value string) GroupControl {
-	return g.set("type", value)
 }
 
 // UseMobileUI 可以组件级别用来关闭移动端样式

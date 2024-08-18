@@ -137,11 +137,6 @@ func (d Divider) TitlePosition(value string) Divider {
 	return d.set("titlePosition", value)
 }
 
-// Type 指定为 divider
-func (d Divider) Type(value string) Divider {
-	return d.set("type", value)
-}
-
 // UseMobileUI 可以组件级别用来关闭移动端样式
 func (d Divider) UseMobileUI(value bool) Divider {
 	return d.set("useMobileUI", value)

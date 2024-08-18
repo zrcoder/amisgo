@@ -1,6 +1,6 @@
 package comp
 
-// Calendar 继承自 BaseRenderer
+// Calendar
 type Calendar Schema
 
 // NewCalendar 创建一个新的 Calendar 实例

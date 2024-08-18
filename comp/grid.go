@@ -8,7 +8,6 @@ func NewGrid() Grid {
 	return make(Grid).set("type", "grid")
 }
 
-// set 设置属性并返回当前对象
 func (g Grid) set(key string, value interface{}) Grid {
 	g[key] = value
 	return g
@@ -117,11 +116,6 @@ func (g Grid) TestIdBuilder(value string) Grid {
 // Testid 测试 id
 func (g Grid) Testid(value string) Grid {
 	return g.set("testid", value)
-}
-
-// Type 指定为 Grid 格子布局渲染器
-func (g Grid) Type(value string) Grid {
-	return g.set("type", value)
 }
 
 // UseMobileUI 组件级别关闭移动端样式

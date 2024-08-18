@@ -128,11 +128,6 @@ func (t Tpl) Tpl(value string) Tpl {
 	return t.set("tpl", value)
 }
 
-// Type 指定为模板渲染器
-func (t Tpl) Type(value string) Tpl {
-	return t.set("type", value)
-}
-
 // UseMobileUI 可以组件级别用来关闭移动端样式
 func (t Tpl) UseMobileUI(value bool) Tpl {
 	return t.set("useMobileUI", value)
@@ -153,7 +148,6 @@ func (t Tpl) WrapperComponent(value string) Tpl {
 	return t.set("wrapperComponent", value)
 }
 
-// set 设置属性
 func (t Tpl) set(key string, value interface{}) Tpl {
 	t[key] = value
 	return t

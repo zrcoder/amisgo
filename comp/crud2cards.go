@@ -8,7 +8,6 @@ func NewCRUD2Cards() CRUD2Cards {
 	return make(CRUD2Cards).set("mode", "cards").set("type", "crud2")
 }
 
-// Set 设置属性
 func (c CRUD2Cards) set(key string, value interface{}) CRUD2Cards {
 	c[key] = value
 	return c

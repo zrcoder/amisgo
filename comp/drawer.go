@@ -208,11 +208,6 @@ func (d Drawer) Title(value string) Drawer {
 	return d.set("title", value)
 }
 
-// Type 指定为 drawer
-func (d Drawer) Type(value string) Drawer {
-	return d.set("type", value)
-}
-
 // UseMobileUI 可以组件级别用来关闭移动端样式
 func (d Drawer) UseMobileUI(value bool) Drawer {
 	return d.set("useMobileUI", value)

@@ -8,7 +8,6 @@ func NewHBoxColumn() HBoxColumn {
 	return make(HBoxColumn)
 }
 
-// set 设置属性
 func (h HBoxColumn) set(key string, value interface{}) HBoxColumn {
 	h[key] = value
 	return h

@@ -1,6 +1,6 @@
 package comp
 
-// CheckboxControl 继承自 BaseRenderer
+// CheckboxControl
 type CheckboxControl Schema
 
 // NewCheckboxControl 创建一个新的 CheckboxControl 实例

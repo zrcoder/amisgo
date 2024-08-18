@@ -8,7 +8,6 @@ func NewAutoGenerateFilter() AutoGenerateFilter {
 	return make(AutoGenerateFilter)
 }
 
-// Set 设置属性
 func (a AutoGenerateFilter) set(key string, value interface{}) AutoGenerateFilter {
 	a[key] = value
 	return a

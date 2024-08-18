@@ -37,8 +37,3 @@ func (e Expandable) ExpandedRowKeysExpr(value string) Expandable {
 func (e Expandable) KeyField(value string) Expandable {
 	return e.set("keyField", value)
 }
-
-// Type 对应渲染器类型
-func (e Expandable) Type(value string) Expandable {
-	return e.set("type", value)
-}

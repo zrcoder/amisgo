@@ -8,7 +8,6 @@ func NewChart() Chart {
 	return make(Chart).set("type", "chart")
 }
 
-// set 设置属性值
 func (c Chart) set(key string, value interface{}) Chart {
 	c[key] = value
 	return c

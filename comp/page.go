@@ -1,11 +1,19 @@
 package comp
 
-// Page 渲染器。详情请见：https://aisuda.bce.baidu.com/amis/zh-CN/components/page
+// Page 代表 amis Page 渲染器
+//
+// @version 6.7.0
 type Page Schema
 
 // NewPage 创建一个新的 Page 实例
 func NewPage() Page {
-	return make(Page).set("type", "page")
+	return Page{}.set("type", "page")
+}
+
+// set 用于设置字段值
+func (p Page) set(key string, value interface{}) Page {
+	p[key] = value
+	return p
 }
 
 // Aside 边栏区域
@@ -53,13 +61,13 @@ func (p Page) ClassName(value string) Page {
 	return p.set("className", value)
 }
 
-// Css 自定义页面级别样式表
-func (p Page) Css(value string) Page {
+// CSS 自定义页面级别样式表
+func (p Page) CSS(value string) Page {
 	return p.set("css", value)
 }
 
-// CssVars css 变量
-func (p Page) CssVars(value string) Page {
+// CSSVars css 变量
+func (p Page) CSSVars(value string) Page {
 	return p.set("cssVars", value)
 }
 
@@ -68,7 +76,7 @@ func (p Page) Data(value string) Page {
 	return p.set("data", value)
 }
 
-// Definitions
+// Definitions 配置定义
 func (p Page) Definitions(value string) Page {
 	return p.set("definitions", value)
 }
@@ -103,17 +111,17 @@ func (p Page) HiddenOn(value string) Page {
 	return p.set("hiddenOn", value)
 }
 
-// Id 组件唯一 id
-func (p Page) Id(value string) Page {
+// ID 组件唯一 id
+func (p Page) ID(value string) Page {
 	return p.set("id", value)
 }
 
-// InitApi 页面初始化的 API
+// InitApi 页面初始化 API
 func (p Page) InitApi(value string) Page {
 	return p.set("initApi", value)
 }
 
-// InitFetch 是否默认就拉取？
+// InitFetch 是否默认就拉取
 func (p Page) InitFetch(value bool) Page {
 	return p.set("initFetch", value)
 }
@@ -128,7 +136,7 @@ func (p Page) Interval(value string) Page {
 	return p.set("interval", value)
 }
 
-// LoadingConfig
+// LoadingConfig 加载配置
 func (p Page) LoadingConfig(value string) Page {
 	return p.set("loadingConfig", value)
 }
@@ -158,7 +166,7 @@ func (p Page) PullRefresh(value string) Page {
 	return p.set("pullRefresh", value)
 }
 
-// Regions 默认不设置自动感觉内容
+// Regions 默认不设置自动感觉内容来决定要不要展示这些区域
 func (p Page) Regions(value string) Page {
 	return p.set("regions", value)
 }
@@ -188,12 +196,12 @@ func (p Page) StaticClassName(value string) Page {
 	return p.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName 静态展示表单项 Value 类名
 func (p Page) StaticInputClassName(value string) Page {
 	return p.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName 静态展示表单项 Label 类名
 func (p Page) StaticLabelClassName(value string) Page {
 	return p.set("staticLabelClassName", value)
 }
@@ -208,7 +216,7 @@ func (p Page) StaticPlaceholder(value string) Page {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema 静态展示模式的 schema
 func (p Page) StaticSchema(value string) Page {
 	return p.set("staticSchema", value)
 }
@@ -228,12 +236,12 @@ func (p Page) SubTitle(value string) Page {
 	return p.set("subTitle", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder 自定义测试 ID 构建器
 func (p Page) TestIdBuilder(value string) Page {
 	return p.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid 测试 ID
 func (p Page) Testid(value string) Page {
 	return p.set("testid", value)
 }
@@ -253,11 +261,6 @@ func (p Page) ToolbarClassName(value string) Page {
 	return p.set("toolbarClassName", value)
 }
 
-// Type 指定为 page 渲染器
-func (p Page) Type(value string) Page {
-	return p.set("type", value)
-}
-
 // UseMobileUI 可以组件级别用来关闭移动端样式
 func (p Page) UseMobileUI(value bool) Page {
 	return p.set("useMobileUI", value)
@@ -271,10 +274,4 @@ func (p Page) Visible(value bool) Page {
 // VisibleOn 是否显示表达式
 func (p Page) VisibleOn(value string) Page {
 	return p.set("visibleOn", value)
-}
-
-// set 设置属性
-func (p Page) set(key string, value interface{}) Page {
-	p[key] = value
-	return p
 }

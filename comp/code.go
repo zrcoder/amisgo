@@ -1,6 +1,6 @@
 package comp
 
-// Code 继承自 BaseRenderer
+// Code
 type Code Schema
 
 // NewCode 创建一个新的 Code 实例

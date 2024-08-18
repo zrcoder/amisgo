@@ -14,7 +14,6 @@ func NewFileControl() FileControl {
 	return f
 }
 
-// set 设置属性值
 func (f FileControl) set(key string, value interface{}) FileControl {
 	f[key] = value
 	return f

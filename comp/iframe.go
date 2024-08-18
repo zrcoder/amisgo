@@ -133,11 +133,6 @@ func (i IFrame) Testid(value string) IFrame {
 	return i.set("testid", value)
 }
 
-// Type 指定为 iframe 渲染器
-func (i IFrame) Type(value string) IFrame {
-	return i.set("type", value)
-}
-
 // UseMobileUI 可以组件级别用来关闭移动端样式
 func (i IFrame) UseMobileUI(value bool) IFrame {
 	return i.set("useMobileUI", value)
@@ -158,7 +153,6 @@ func (i IFrame) Width(value string) IFrame {
 	return i.set("width", value)
 }
 
-// set 设置属性
 func (i IFrame) set(key string, value interface{}) IFrame {
 	i[key] = value
 	return i

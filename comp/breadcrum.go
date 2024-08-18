@@ -8,7 +8,6 @@ func NewBreadcrumb() Breadcrumb {
 	return make(Breadcrumb)
 }
 
-// Set 设置属性
 func (b Breadcrumb) set(key string, value interface{}) Breadcrumb {
 	b[key] = value
 	return b

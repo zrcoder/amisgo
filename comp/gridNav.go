@@ -8,7 +8,6 @@ func NewGridNav() GridNav {
 	return make(GridNav).set("type", "grid-nav")
 }
 
-// set 设置属性并返回当前对象
 func (g GridNav) set(key string, value interface{}) GridNav {
 	g[key] = value
 	return g

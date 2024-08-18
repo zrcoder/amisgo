@@ -8,7 +8,6 @@ func NewGrid2D() Grid2D {
 	return make(Grid2D).set("type", "grid-2d")
 }
 
-// set 设置属性并返回当前对象
 func (g Grid2D) set(key string, value interface{}) Grid2D {
 	g[key] = value
 	return g
@@ -127,11 +126,6 @@ func (g Grid2D) TestIdBuilder(value string) Grid2D {
 // Testid 测试 id
 func (g Grid2D) Testid(value string) Grid2D {
 	return g.set("testid", value)
-}
-
-// Type 指定为 grid-2d 展示类型
-func (g Grid2D) Type(value string) Grid2D {
-	return g.set("type", value)
 }
 
 // UseMobileUI 可以组件级别用来关闭移动端样式

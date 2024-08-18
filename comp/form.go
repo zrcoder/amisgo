@@ -120,11 +120,6 @@ func (f Form) Title(value string) Form {
 	return f.set("title", value)
 }
 
-// Type 指定为表单渲染器
-func (f Form) Type(value string) Form {
-	return f.set("type", value)
-}
-
 // UseMobileUI 可以组件级别用来关闭移动端样式
 func (f Form) UseMobileUI(value bool) Form {
 	return f.set("useMobileUI", value)

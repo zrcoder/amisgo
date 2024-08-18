@@ -8,7 +8,6 @@ func NewChainedSelectControl() ChainedSelectControl {
 	return make(ChainedSelectControl).set("type", "chained-select")
 }
 
-// set 设置属性值
 func (c ChainedSelectControl) set(key string, value interface{}) ChainedSelectControl {
 	c[key] = value
 	return c

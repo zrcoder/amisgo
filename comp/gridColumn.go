@@ -8,7 +8,6 @@ func NewGridColumn() GridColumn {
 	return make(GridColumn)
 }
 
-// set 设置属性并返回当前对象
 func (c GridColumn) set(key string, value interface{}) GridColumn {
 	c[key] = value
 	return c

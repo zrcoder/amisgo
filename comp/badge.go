@@ -8,7 +8,6 @@ func NewBadge() Badge {
 	return make(Badge)
 }
 
-// Set 设置属性
 func (b Badge) set(key string, value interface{}) Badge {
 	b[key] = value
 	return b

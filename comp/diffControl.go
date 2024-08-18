@@ -248,11 +248,6 @@ func (d DiffControl) TestIdBuilder(value string) DiffControl {
 	return d.set("testIdBuilder", value)
 }
 
-// Type 指定为 Diff 编辑器
-func (d DiffControl) Type(value string) DiffControl {
-	return d.set("type", value)
-}
-
 // UseMobileUI 关闭移动端样式
 func (d DiffControl) UseMobileUI(value bool) DiffControl {
 	return d.set("useMobileUI", value)

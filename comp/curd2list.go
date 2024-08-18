@@ -8,7 +8,6 @@ func NewCRUD2List() CRUD2List {
 	return make(CRUD2List).set("mode", "list").set("type", "crud2")
 }
 
-// Set 设置属性
 func (l CRUD2List) set(key string, value interface{}) CRUD2List {
 	l[key] = value
 	return l

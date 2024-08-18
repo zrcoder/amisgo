@@ -8,7 +8,6 @@ func NewAutoFillHeight() AutoFillHeight {
 	return make(AutoFillHeight)
 }
 
-// Set 设置属性
 func (a AutoFillHeight) set(key string, value interface{}) AutoFillHeight {
 	a[key] = value
 	return a

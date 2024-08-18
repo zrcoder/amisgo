@@ -253,11 +253,6 @@ func (fc FormulaControl) TestIdBuilder(value string) FormulaControl {
 	return fc.set("testIdBuilder", value)
 }
 
-// Type 指定为公式功能控件
-func (fc FormulaControl) Type(value string) FormulaControl {
-	return fc.set("type", value)
-}
-
 // UseMobileUI 关闭移动端样式
 func (fc FormulaControl) UseMobileUI(value bool) FormulaControl {
 	return fc.set("useMobileUI", value)

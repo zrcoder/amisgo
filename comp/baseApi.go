@@ -8,7 +8,6 @@ func NewBaseApi() BaseApi {
 	return make(BaseApi)
 }
 
-// Set 设置属性
 func (b BaseApi) set(key string, value interface{}) BaseApi {
 	b[key] = value
 	return b

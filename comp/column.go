@@ -108,11 +108,6 @@ func (c Column) Togged(value bool) Column {
 	return c.set("toggled", value)
 }
 
-// Type 设置指定列内容渲染器
-func (c Column) Type(value string) Column {
-	return c.set("type", value)
-}
-
 // Width 设置列宽
 func (c Column) Width(value string) Column {
 	return c.set("width", value)

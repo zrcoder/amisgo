@@ -8,7 +8,6 @@ func NewHiddenControl() HiddenControl {
 	return make(HiddenControl).set("type", "hidden")
 }
 
-// set 设置属性
 func (h HiddenControl) set(key string, value interface{}) HiddenControl {
 	h[key] = value
 	return h
@@ -232,11 +231,6 @@ func (h HiddenControl) SubmitOnChange(value bool) HiddenControl {
 // TestIdBuilder
 func (h HiddenControl) TestIdBuilder(value string) HiddenControl {
 	return h.set("testIdBuilder", value)
-}
-
-// Type 表单项类型
-func (h HiddenControl) Type(value string) HiddenControl {
-	return h.set("type", value)
 }
 
 // UseMobileUI 可以组件级别用来关闭移动端样式

@@ -1,6 +1,6 @@
 package comp
 
-// Carousel 继承自 BaseRenderer
+// Carousel
 type Carousel Schema
 
 // NewCarousel 创建一个新的 Carousel 实例

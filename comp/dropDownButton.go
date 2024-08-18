@@ -183,11 +183,6 @@ func (d DropdownButton) Trigger(value string) DropdownButton {
 	return d.set("trigger", value)
 }
 
-// Type 指定为 Dropdown Button 类型
-func (d DropdownButton) Type(value string) DropdownButton {
-	return d.set("type", value)
-}
-
 // UseMobileUI 组件级别用来关闭移动端样式
 func (d DropdownButton) UseMobileUI(value bool) DropdownButton {
 	return d.set("useMobileUI", value)

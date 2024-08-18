@@ -8,7 +8,6 @@ func NewChartRadios() ChartRadios {
 	return make(ChartRadios).set("type", "chart-radios")
 }
 
-// set 设置属性值
 func (c ChartRadios) set(key string, value interface{}) ChartRadios {
 	c[key] = value
 	return c

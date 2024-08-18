@@ -240,11 +240,6 @@ func (fc FormControl) TestIdBuilder(value string) FormControl {
 	return fc.set("testIdBuilder", value)
 }
 
-// Type 表单项类型
-func (fc FormControl) Type(value string) FormControl {
-	return fc.set("type", value)
-}
-
 // UseMobileUI 可以组件级别用来关闭移动端样式
 func (fc FormControl) UseMobileUI(value bool) FormControl {
 	return fc.set("useMobileUI", value)

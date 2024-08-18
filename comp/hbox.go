@@ -128,11 +128,6 @@ func (h HBox) Testid(value string) HBox {
 	return h.set("testid", value)
 }
 
-// type 指定为 each 展示类型
-func (h HBox) Type(value string) HBox {
-	return h.set("type", value)
-}
-
 // useMobileUI 关闭移动端样式
 func (h HBox) UseMobileUI(value bool) HBox {
 	return h.set("useMobileUI", value)

@@ -1,6 +1,6 @@
 package comp
 
-// Card 继承自 BaseRenderer
+// Card
 type Card Schema
 
 // NewCard 创建一个新的 Card 实例

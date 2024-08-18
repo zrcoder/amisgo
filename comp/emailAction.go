@@ -273,11 +273,6 @@ func (ea EmailAction) TooltipPlacement(value string) EmailAction {
 	return ea.set("tooltipPlacement", value)
 }
 
-// Type 指定按钮类型
-func (ea EmailAction) Type(value string) EmailAction {
-	return ea.set("type", value)
-}
-
 // UseMobileUI 组件级别关闭移动端样式
 func (ea EmailAction) UseMobileUI(value bool) EmailAction {
 	return ea.set("useMobileUI", value)

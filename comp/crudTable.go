@@ -1,6 +1,6 @@
 package comp
 
-// CRUDTable 继承自 BaseRenderer
+// CRUDTable
 type CRUDTable Schema
 
 // NewCRUDTable 创建一个新的 CRUDTable 实例
