@@ -31,6 +31,10 @@ func main() {
 }
 ```
 
+and then visit http://localhost:9090 , you will see a page like this:
+
+![hello-amis](./hello-amis.png)
+
 ## TODO
 
 - [x] both ListenAndServe, GenerateStaticWebsite api
