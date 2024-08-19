@@ -10,13 +10,13 @@ func Spinner() spinner {
 	return spinner{}.set("type", "spinner")
 }
 
-func (s spinner) set(key string, value interface{}) spinner {
+func (s spinner) set(key string, value any) spinner {
 	s[key] = value
 	return s
 }
 
 // Body 作为容器使用时内容 (作为容器使用时内容)
-func (s spinner) Body(value ...interface{}) spinner {
+func (s spinner) Body(value ...any) spinner {
 	return s.set("body", value)
 }
 
@@ -76,7 +76,7 @@ func (s spinner) Mode(value string) spinner {
 }
 
 // OnEvent 事件动作配置
-func (s spinner) OnEvent(value string) spinner {
+func (s spinner) OnEvent(value any) spinner {
 	return s.set("onEvent", value)
 }
 
@@ -141,7 +141,7 @@ func (s spinner) StaticSchema(value string) spinner {
 }
 
 // Style 组件样式
-func (s spinner) Style(value string) spinner {
+func (s spinner) Style(value any) spinner {
 	return s.set("style", value)
 }
 

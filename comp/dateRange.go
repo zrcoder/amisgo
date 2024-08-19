@@ -8,7 +8,7 @@ func DateRange() dateRange {
 	return make(dateRange).set("type", "date-range")
 }
 
-func (d dateRange) set(key string, value interface{}) dateRange {
+func (d dateRange) set(key string, value any) dateRange {
 	d[key] = value
 	return d
 }
@@ -69,7 +69,7 @@ func (d dateRange) ID(value string) dateRange {
 }
 
 // OnEvent 事件动作配置
-func (d dateRange) OnEvent(value string) dateRange {
+func (d dateRange) OnEvent(value any) dateRange {
 	return d.set("onEvent", value)
 }
 
@@ -109,7 +109,7 @@ func (d dateRange) StaticSchema(value string) dateRange {
 }
 
 // Style 组件样式
-func (d dateRange) Style(value string) dateRange {
+func (d dateRange) Style(value any) dateRange {
 	return d.set("style", value)
 }
 

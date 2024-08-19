@@ -10,7 +10,7 @@ func Status() status {
 	return status{}.set("type", "status")
 }
 
-func (s status) set(key string, value interface{}) status {
+func (s status) set(key string, value any) status {
 	s[key] = value
 	return s
 }
@@ -61,7 +61,7 @@ func (s status) Map(value string) status {
 }
 
 // OnEvent 事件动作配置
-func (s status) OnEvent(value string) status {
+func (s status) OnEvent(value any) status {
 	return s.set("onEvent", value)
 }
 
@@ -111,7 +111,7 @@ func (s status) StaticSchema(value string) status {
 }
 
 // Style 组件样式
-func (s status) Style(value string) status {
+func (s status) Style(value any) status {
 	return s.set("style", value)
 }
 

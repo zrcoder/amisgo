@@ -10,7 +10,7 @@ func Transfer() transfer {
 	return transfer{}.set("type", "transfer")
 }
 
-func (tc transfer) set(key string, value interface{}) transfer {
+func (tc transfer) set(key string, value any) transfer {
 	tc[key] = value
 	return tc
 }
@@ -56,7 +56,7 @@ func (tc transfer) Clearable(value bool) transfer {
 }
 
 // Columns 当 selectMode 为 table 时定义表格列信息。
-func (tc transfer) Columns(value string) transfer {
+func (tc transfer) Columns(value ...any) transfer {
 	return tc.set("columns", value)
 }
 
@@ -271,7 +271,7 @@ func (tc transfer) OnChange(value string) transfer {
 }
 
 // OnEvent 事件处理
-func (tc transfer) OnEvent(value string) transfer {
+func (tc transfer) OnEvent(value any) transfer {
 	return tc.set("onEvent", value)
 }
 
@@ -361,7 +361,7 @@ func (tc transfer) TextField(value string) transfer {
 }
 
 // Value
-func (tc transfer) Value(value interface{}) transfer {
+func (tc transfer) Value(value any) transfer {
 	return tc.set("value", value)
 }
 

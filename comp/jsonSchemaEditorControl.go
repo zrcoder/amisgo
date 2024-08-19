@@ -11,7 +11,7 @@ func JsonSchemaEditor() jsonSchemaEditor {
 }
 
 // set 是一个内部方法，用于设置字段值并返回自身的引用
-func (j jsonSchemaEditor) set(key string, value interface{}) jsonSchemaEditor {
+func (j jsonSchemaEditor) set(key string, value any) jsonSchemaEditor {
 	j[key] = value
 	return j
 }
@@ -167,7 +167,7 @@ func (j jsonSchemaEditor) Name(value string) jsonSchemaEditor {
 }
 
 // OnEvent 事件动作配置
-func (j jsonSchemaEditor) OnEvent(value string) jsonSchemaEditor {
+func (j jsonSchemaEditor) OnEvent(value any) jsonSchemaEditor {
 	return j.set("onEvent", value)
 }
 
@@ -257,7 +257,7 @@ func (j jsonSchemaEditor) StaticSchema(value string) jsonSchemaEditor {
 }
 
 // Style 组件样式
-func (j jsonSchemaEditor) Style(value string) jsonSchemaEditor {
+func (j jsonSchemaEditor) Style(value any) jsonSchemaEditor {
 	return j.set("style", value)
 }
 

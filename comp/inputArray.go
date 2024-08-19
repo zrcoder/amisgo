@@ -8,7 +8,7 @@ func InputArray() inputArray {
 	return make(inputArray).set("type", "input-array")
 }
 
-func (ac inputArray) set(key string, value interface{}) inputArray {
+func (ac inputArray) set(key string, value any) inputArray {
 	ac[key] = value
 	return ac
 }
@@ -164,7 +164,7 @@ func (ac inputArray) InputClassName(value string) inputArray {
 }
 
 // Items 设置成员渲染器配置
-func (ac inputArray) Items(value string) inputArray {
+func (ac inputArray) Items(value ...any) inputArray {
 	return ac.set("items", value)
 }
 
@@ -249,7 +249,7 @@ func (ac inputArray) Nullable(value bool) inputArray {
 }
 
 // OnEvent 设置事件动作配置
-func (ac inputArray) OnEvent(value string) inputArray {
+func (ac inputArray) OnEvent(value any) inputArray {
 	return ac.set("onEvent", value)
 }
 
@@ -344,7 +344,7 @@ func (ac inputArray) StrictMode(value bool) inputArray {
 }
 
 // Style 设置组件样式
-func (ac inputArray) Style(value string) inputArray {
+func (ac inputArray) Style(value any) inputArray {
 	return ac.set("style", value)
 }
 
@@ -379,7 +379,7 @@ func (ac inputArray) TabsMode(value bool) inputArray {
 }
 
 // TabsStyle 设置 Tabs 的展示模式
-func (ac inputArray) TabsStyle(value string) inputArray {
+func (ac inputArray) TabsStyle(value any) inputArray {
 	return ac.set("tabsStyle", value)
 }
 

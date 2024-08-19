@@ -10,7 +10,7 @@ func QRCodeImageSettings() qrCodeImageSettings {
 	return qrCodeImageSettings{}
 }
 
-func (q qrCodeImageSettings) set(key string, value interface{}) qrCodeImageSettings {
+func (q qrCodeImageSettings) set(key string, value any) qrCodeImageSettings {
 	q[key] = value
 	return q
 }

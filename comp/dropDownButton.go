@@ -8,7 +8,7 @@ func DropdownButton() dropdownButton {
 	return make(dropdownButton).set("type", "dropdown-button")
 }
 
-func (d dropdownButton) set(key string, value interface{}) dropdownButton {
+func (d dropdownButton) set(key string, value any) dropdownButton {
 	d[key] = value
 	return d
 }
@@ -24,7 +24,7 @@ func (d dropdownButton) Block(value bool) dropdownButton {
 }
 
 // Body 内容区域
-func (d dropdownButton) Body(value ...interface{}) dropdownButton {
+func (d dropdownButton) Body(value ...any) dropdownButton {
 	return d.set("body", value)
 }
 
@@ -109,7 +109,7 @@ func (d dropdownButton) MenuClassName(value string) dropdownButton {
 }
 
 // OnEvent 事件动作配置
-func (d dropdownButton) OnEvent(value string) dropdownButton {
+func (d dropdownButton) OnEvent(value any) dropdownButton {
 	return d.set("onEvent", value)
 }
 
@@ -164,7 +164,7 @@ func (d dropdownButton) StaticSchema(value string) dropdownButton {
 }
 
 // Style 组件样式
-func (d dropdownButton) Style(value string) dropdownButton {
+func (d dropdownButton) Style(value any) dropdownButton {
 	return d.set("style", value)
 }
 

@@ -6,7 +6,7 @@ func Dialog() dialog {
 	return make(dialog).set("type", "dialog")
 }
 
-func (d dialog) set(key string, value interface{}) dialog {
+func (d dialog) set(key string, value any) dialog {
 	d[key] = value
 	return d
 }
@@ -17,7 +17,7 @@ func (d dialog) Actions(value string) dialog {
 }
 
 // Body 内容区域 (内容区域)
-func (d dialog) Body(value ...interface{}) dialog {
+func (d dialog) Body(value ...any) dialog {
 	return d.set("body", value)
 }
 
@@ -122,7 +122,7 @@ func (d dialog) Name(value string) dialog {
 }
 
 // OnEvent 事件动作配置
-func (d dialog) OnEvent(value string) dialog {
+func (d dialog) OnEvent(value any) dialog {
 	return d.set("onEvent", value)
 }
 
@@ -187,7 +187,7 @@ func (d dialog) StaticSchema(value string) dialog {
 }
 
 // Style 组件样式
-func (d dialog) Style(value string) dialog {
+func (d dialog) Style(value any) dialog {
 	return d.set("style", value)
 }
 
@@ -202,7 +202,7 @@ func (d dialog) Testid(value string) dialog {
 }
 
 // Title 请通过配置 title 设置标题 (请通过配置 title 设置标题)
-func (d dialog) Title(value string) dialog {
+func (d dialog) Title(value any) dialog {
 	return d.set("title", value)
 }
 

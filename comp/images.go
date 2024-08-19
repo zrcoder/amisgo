@@ -8,7 +8,7 @@ func Images() images {
 	return make(images).set("type", "images")
 }
 
-func (i images) set(key string, value interface{}) images {
+func (i images) set(key string, value any) images {
 	i[key] = value
 	return i
 }
@@ -84,7 +84,7 @@ func (i images) Name(value string) images {
 }
 
 // OnEvent 事件动作配置
-func (i images) OnEvent(value string) images {
+func (i images) OnEvent(value any) images {
 	return i.set("onEvent", value)
 }
 
@@ -159,7 +159,7 @@ func (i images) StaticSchema(value string) images {
 }
 
 // Style 组件样式
-func (i images) Style(value string) images {
+func (i images) Style(value any) images {
 	return i.set("style", value)
 }
 

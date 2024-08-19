@@ -8,7 +8,7 @@ func EmailAction() emailAction {
 	return make(emailAction).set("type", "button").set("actionType", "email")
 }
 
-func (ea emailAction) set(key string, value interface{}) emailAction {
+func (ea emailAction) set(key string, value any) emailAction {
 	ea[key] = value
 	return ea
 }
@@ -39,7 +39,7 @@ func (ea emailAction) Block(value bool) emailAction {
 }
 
 // Body 邮件正文
-func (ea emailAction) Body(value ...interface{}) emailAction {
+func (ea emailAction) Body(value ...any) emailAction {
 	return ea.set("body", value)
 }
 
@@ -64,7 +64,7 @@ func (ea emailAction) ConfirmText(value string) emailAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (ea emailAction) ConfirmTitle(value string) emailAction {
+func (ea emailAction) ConfirmTitle(value any) emailAction {
 	return ea.set("confirmTitle", value)
 }
 
@@ -159,7 +159,7 @@ func (ea emailAction) OnClick(value string) emailAction {
 }
 
 // OnEvent 事件动作配置
-func (ea emailAction) OnEvent(value string) emailAction {
+func (ea emailAction) OnEvent(value any) emailAction {
 	return ea.set("onEvent", value)
 }
 
@@ -229,7 +229,7 @@ func (ea emailAction) StaticSchema(value string) emailAction {
 }
 
 // Style 组件样式
-func (ea emailAction) Style(value string) emailAction {
+func (ea emailAction) Style(value any) emailAction {
 	return ea.set("style", value)
 }
 

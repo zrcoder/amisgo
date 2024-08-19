@@ -6,7 +6,7 @@ func Checkboxes() checkboxes {
 	return make(checkboxes).set("type", "checkboxes")
 }
 
-func (c checkboxes) set(key string, value interface{}) checkboxes {
+func (c checkboxes) set(key string, value any) checkboxes {
 	c[key] = value
 	return c
 }
@@ -257,7 +257,7 @@ func (c checkboxes) Name(value string) checkboxes {
 }
 
 // 事件动作配置
-func (c checkboxes) OnEvent(value string) checkboxes {
+func (c checkboxes) OnEvent(value any) checkboxes {
 	return c.set("onEvent", value)
 }
 

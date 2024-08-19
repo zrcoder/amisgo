@@ -8,7 +8,7 @@ func ChartRadios() chartRadios {
 	return make(chartRadios).set("type", "chart-radios")
 }
 
-func (c chartRadios) set(key string, value interface{}) chartRadios {
+func (c chartRadios) set(key string, value any) chartRadios {
 	c[key] = value
 	return c
 }

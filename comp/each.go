@@ -8,7 +8,7 @@ func Each() each {
 	return make(each).set("type", "each")
 }
 
-func (e each) set(key string, value interface{}) each {
+func (e each) set(key string, value any) each {
 	e[key] = value
 	return e
 }
@@ -59,7 +59,7 @@ func (e each) ItemKeyName(value string) each {
 }
 
 // Items 数据项
-func (e each) Items(value string) each {
+func (e each) Items(value ...any) each {
 	return e.set("items", value)
 }
 
@@ -69,7 +69,7 @@ func (e each) Name(value string) each {
 }
 
 // OnEvent 事件动作配置
-func (e each) OnEvent(value string) each {
+func (e each) OnEvent(value any) each {
 	return e.set("onEvent", value)
 }
 
@@ -119,7 +119,7 @@ func (e each) StaticSchema(value string) each {
 }
 
 // Style 组件样式
-func (e each) Style(value string) each {
+func (e each) Style(value any) each {
 	return e.set("style", value)
 }
 

@@ -10,7 +10,7 @@ func Alert() alert {
 	return make(alert).set("type", "alert")
 }
 
-func (a alert) set(key string, value interface{}) alert {
+func (a alert) set(key string, value any) alert {
 	a[key] = value
 	return a
 }
@@ -21,7 +21,7 @@ func (a alert) Actions(value string) alert {
 }
 
 // 内容区域 (内容区域)
-func (a alert) Body(value ...interface{}) alert {
+func (a alert) Body(value ...any) alert {
 	return a.set("body", value)
 }
 
@@ -81,7 +81,7 @@ func (a alert) Level(value string) alert {
 }
 
 // 事件动作配置
-func (a alert) OnEvent(value string) alert {
+func (a alert) OnEvent(value any) alert {
 	return a.set("onEvent", value)
 }
 
@@ -130,7 +130,7 @@ func (a alert) StaticSchema(value string) alert {
 }
 
 // 组件样式
-func (a alert) Style(value string) alert {
+func (a alert) Style(value any) alert {
 	return a.set("style", value)
 }
 
@@ -143,7 +143,7 @@ func (a alert) Testid(value string) alert {
 }
 
 // 提示框标题
-func (a alert) Title(value string) alert {
+func (a alert) Title(value any) alert {
 	return a.set("title", value)
 }
 

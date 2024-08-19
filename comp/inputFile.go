@@ -13,7 +13,7 @@ func InputFile() inputFile {
 	return f
 }
 
-func (f inputFile) set(key string, value interface{}) inputFile {
+func (f inputFile) set(key string, value any) inputFile {
 	f[key] = value
 	return f
 }

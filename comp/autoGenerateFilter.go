@@ -8,7 +8,7 @@ func AutoGenerateFilter() autoGenerateFilter {
 	return make(autoGenerateFilter)
 }
 
-func (a autoGenerateFilter) set(key string, value interface{}) autoGenerateFilter {
+func (a autoGenerateFilter) set(key string, value any) autoGenerateFilter {
 	a[key] = value
 	return a
 }

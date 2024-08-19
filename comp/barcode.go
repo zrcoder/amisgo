@@ -8,7 +8,7 @@ func Barcode() barcode {
 	return make(barcode).set("type", "barcode")
 }
 
-func (b barcode) set(key string, value interface{}) barcode {
+func (b barcode) set(key string, value any) barcode {
 	b[key] = value
 	return b
 }

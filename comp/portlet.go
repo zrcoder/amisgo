@@ -10,7 +10,7 @@ func Portlet() portlet {
 	return portlet{}.set("type", "portlet")
 }
 
-func (p portlet) set(key string, value interface{}) portlet {
+func (p portlet) set(key string, value any) portlet {
 	p[key] = value
 	return p
 }
@@ -81,7 +81,7 @@ func (p portlet) MountOnEnter(value bool) portlet {
 }
 
 // OnEvent 事件动作配置
-func (p portlet) OnEvent(value string) portlet {
+func (p portlet) OnEvent(value any) portlet {
 	return p.set("onEvent", value)
 }
 
@@ -131,7 +131,7 @@ func (p portlet) StaticSchema(value string) portlet {
 }
 
 // Style 自定义样式
-func (p portlet) Style(value string) portlet {
+func (p portlet) Style(value any) portlet {
 	return p.set("style", value)
 }
 

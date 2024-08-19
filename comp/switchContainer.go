@@ -10,7 +10,7 @@ func SwitchContainer() switchContainer {
 	return switchContainer{}.set("type", "switch-container")
 }
 
-func (s switchContainer) set(key string, value interface{}) switchContainer {
+func (s switchContainer) set(key string, value any) switchContainer {
 	s[key] = value
 	return s
 }
@@ -51,12 +51,12 @@ func (s switchContainer) Id(value string) switchContainer {
 }
 
 // Items 状态项列表
-func (s switchContainer) Items(value string) switchContainer {
+func (s switchContainer) Items(value ...any) switchContainer {
 	return s.set("items", value)
 }
 
 // OnEvent 事件动作配置
-func (s switchContainer) OnEvent(value string) switchContainer {
+func (s switchContainer) OnEvent(value any) switchContainer {
 	return s.set("onEvent", value)
 }
 
@@ -96,7 +96,7 @@ func (s switchContainer) StaticSchema(value string) switchContainer {
 }
 
 // Style 自定义样式
-func (s switchContainer) Style(value string) switchContainer {
+func (s switchContainer) Style(value any) switchContainer {
 	return s.set("style", value)
 }
 

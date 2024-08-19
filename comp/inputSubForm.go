@@ -9,7 +9,7 @@ func InputSubForm() inputSubForm {
 	return inputSubForm{}.set("type", "input-sub-form")
 }
 
-func (s inputSubForm) set(key string, value interface{}) inputSubForm {
+func (s inputSubForm) set(key string, value any) inputSubForm {
 	s[key] = value
 	return s
 }
@@ -205,7 +205,7 @@ func (s inputSubForm) Name(value string) inputSubForm {
 }
 
 // OnEvent 事件动作配置
-func (s inputSubForm) OnEvent(value string) inputSubForm {
+func (s inputSubForm) OnEvent(value any) inputSubForm {
 	return s.set("onEvent", value)
 }
 
@@ -300,7 +300,7 @@ func (s inputSubForm) StaticSchema(value string) inputSubForm {
 }
 
 // Style 组件样式
-func (s inputSubForm) Style(value string) inputSubForm {
+func (s inputSubForm) Style(value any) inputSubForm {
 	return s.set("style", value)
 }
 

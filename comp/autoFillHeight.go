@@ -8,7 +8,7 @@ func AutoFillHeight() autoFillHeight {
 	return make(autoFillHeight)
 }
 
-func (a autoFillHeight) set(key string, value interface{}) autoFillHeight {
+func (a autoFillHeight) set(key string, value any) autoFillHeight {
 	a[key] = value
 	return a
 }

@@ -8,12 +8,12 @@ func Grid() grid {
 	return make(grid).set("type", "grid")
 }
 
-func (g grid) set(key string, value interface{}) grid {
+func (g grid) set(key string, value any) grid {
 	g[key] = value
 	return g
 }
 
-// Align 水平对齐方式
+// Align 水平对齐方式 'left' | 'right' | 'between' | 'center'
 func (g grid) Align(value string) grid {
 	return g.set("align", value)
 }
@@ -24,7 +24,7 @@ func (g grid) ClassName(value string) grid {
 }
 
 // Columns 列集合
-func (g grid) Columns(value ...interface{}) grid {
+func (g grid) Columns(value ...any) grid {
 	return g.set("columns", value)
 }
 
@@ -43,7 +43,7 @@ func (g grid) EditorSetting(value string) grid {
 	return g.set("editorSetting", value)
 }
 
-// Gap 水平间距
+// Gap 水平间距 'xs' | 'sm' | 'base' | 'none' | 'md' | 'lg'
 func (g grid) Gap(value string) grid {
 	return g.set("gap", value)
 }
@@ -64,7 +64,7 @@ func (g grid) ID(value string) grid {
 }
 
 // OnEvent 事件动作配置
-func (g grid) OnEvent(value string) grid {
+func (g grid) OnEvent(value any) grid {
 	return g.set("onEvent", value)
 }
 
@@ -104,7 +104,7 @@ func (g grid) StaticSchema(value string) grid {
 }
 
 // Style 组件样式
-func (g grid) Style(value string) grid {
+func (g grid) Style(value any) grid {
 	return g.set("style", value)
 }
 
@@ -123,7 +123,7 @@ func (g grid) UseMobileUI(value bool) grid {
 	return g.set("useMobileUI", value)
 }
 
-// Valign 垂直对齐方式
+// Valign 垂直对齐方式 'top' | 'middle' | 'bottom' | 'between'
 func (g grid) Valign(value string) grid {
 	return g.set("valign", value)
 }

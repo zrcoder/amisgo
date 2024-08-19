@@ -9,7 +9,7 @@ func Static() static {
 	return static{}.set("type", "static")
 }
 
-func (s static) set(key string, value interface{}) static {
+func (s static) set(key string, value any) static {
 	s[key] = value
 	return s
 }
@@ -150,7 +150,7 @@ func (s static) Name(value string) static {
 }
 
 // OnEvent 事件动作配置
-func (s static) OnEvent(value string) static {
+func (s static) OnEvent(value any) static {
 	return s.set("onEvent", value)
 }
 
@@ -240,7 +240,7 @@ func (s static) StaticSchema(value string) static {
 }
 
 // Style 组件样式
-func (s static) Style(value string) static {
+func (s static) Style(value any) static {
 	return s.set("style", value)
 }
 

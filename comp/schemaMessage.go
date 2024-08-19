@@ -10,7 +10,7 @@ func SchemaMessage() schemaMessage {
 	return schemaMessage{}
 }
 
-func (s schemaMessage) set(key string, value interface{}) schemaMessage {
+func (s schemaMessage) set(key string, value any) schemaMessage {
 	s[key] = value
 	return s
 }

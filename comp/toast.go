@@ -11,13 +11,13 @@ func Toast() toast {
 	return toast{}
 }
 
-func (t toast) set(key string, value interface{}) toast {
+func (t toast) set(key string, value any) toast {
 	t[key] = value
 	return t
 }
 
 // Body 内容
-func (t toast) Body(value ...interface{}) toast {
+func (t toast) Body(value ...any) toast {
 	return t.set("body", value)
 }
 
@@ -27,7 +27,7 @@ func (t toast) CloseButton(value bool) toast {
 }
 
 // Items 轻提示内容
-func (t toast) Items(value string) toast {
+func (t toast) Items(value ...any) toast {
 	return t.set("items", value)
 }
 
@@ -52,6 +52,6 @@ func (t toast) Timeout(value string) toast {
 }
 
 // Title 标题
-func (t toast) Title(value string) toast {
+func (t toast) Title(value any) toast {
 	return t.set("title", value)
 }

@@ -52,7 +52,7 @@ func (lb listBodyField) QuickEdit(value string) listBodyField {
 	return lb
 }
 
-func (lb listBodyField) set(key string, value interface{}) listBodyField {
+func (lb listBodyField) set(key string, value any) listBodyField {
 	lb[key] = value
 	return lb
 }

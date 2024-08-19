@@ -10,7 +10,7 @@ func Switch() switchControl {
 	return switchControl{}.set("type", "switch")
 }
 
-func (s switchControl) set(key string, value interface{}) switchControl {
+func (s switchControl) set(key string, value any) switchControl {
 	s[key] = value
 	return s
 }
@@ -156,7 +156,7 @@ func (s switchControl) OffText(value string) switchControl {
 }
 
 // OnEvent 事件动作配置
-func (s switchControl) OnEvent(value string) switchControl {
+func (s switchControl) OnEvent(value any) switchControl {
 	return s.set("onEvent", value)
 }
 
@@ -246,7 +246,7 @@ func (s switchControl) StaticSchema(value string) switchControl {
 }
 
 // Style 组件样式
-func (s switchControl) Style(value string) switchControl {
+func (s switchControl) Style(value any) switchControl {
 	return s.set("style", value)
 }
 

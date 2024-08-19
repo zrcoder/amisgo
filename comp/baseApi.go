@@ -8,7 +8,7 @@ func BaseApi() baseApi {
 	return make(baseApi)
 }
 
-func (b baseApi) set(key string, value interface{}) baseApi {
+func (b baseApi) set(key string, value any) baseApi {
 	b[key] = value
 	return b
 }

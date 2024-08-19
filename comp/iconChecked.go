@@ -8,7 +8,7 @@ func IconChecked() iconChecked {
 	return make(iconChecked)
 }
 
-func (i iconChecked) set(key string, value interface{}) iconChecked {
+func (i iconChecked) set(key string, value any) iconChecked {
 	i[key] = value
 	return i
 }

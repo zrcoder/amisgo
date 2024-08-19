@@ -9,7 +9,7 @@ func InputRichText() inputRichText {
 	return inputRichText{}.set("type", "input-rich-text")
 }
 
-func (rc inputRichText) set(key string, value interface{}) inputRichText {
+func (rc inputRichText) set(key string, value any) inputRichText {
 	rc[key] = value
 	return rc
 }
@@ -150,7 +150,7 @@ func (rc inputRichText) Name(value string) inputRichText {
 }
 
 // OnEvent 事件动作配置
-func (rc inputRichText) OnEvent(value string) inputRichText {
+func (rc inputRichText) OnEvent(value any) inputRichText {
 	return rc.set("onEvent", value)
 }
 
@@ -240,7 +240,7 @@ func (rc inputRichText) StaticSchema(value string) inputRichText {
 }
 
 // Style 组件样式
-func (rc inputRichText) Style(value string) inputRichText {
+func (rc inputRichText) Style(value any) inputRichText {
 	return rc.set("style", value)
 }
 

@@ -10,7 +10,7 @@ func Words() words {
 	return words{}.set("type", "words")
 }
 
-func (w words) set(key string, value interface{}) words {
+func (w words) set(key string, value any) words {
 	w[key] = value
 	return w
 }
@@ -86,7 +86,7 @@ func (w words) Limit(value string) words {
 }
 
 // OnEvent 事件动作配置
-func (w words) OnEvent(value string) words {
+func (w words) OnEvent(value any) words {
 	return w.set("onEvent", value)
 }
 
@@ -126,7 +126,7 @@ func (w words) StaticSchema(value string) words {
 }
 
 // Style 组件样式
-func (w words) Style(value string) words {
+func (w words) Style(value any) words {
 	return w.set("style", value)
 }
 

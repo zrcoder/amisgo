@@ -9,7 +9,7 @@ func TransferPicker() transferPicker {
 	return transferPicker{}.set("type", "transfer-picker")
 }
 
-func (tpc transferPicker) set(key string, value interface{}) transferPicker {
+func (tpc transferPicker) set(key string, value any) transferPicker {
 	tpc[key] = value
 	return tpc
 }
@@ -60,7 +60,7 @@ func (tpc transferPicker) Clearable(value bool) transferPicker {
 }
 
 // Columns 当 selectMode 为 table 时定义表格列信息。
-func (tpc transferPicker) Columns(value string) transferPicker {
+func (tpc transferPicker) Columns(value ...any) transferPicker {
 	return tpc.set("columns", value)
 }
 

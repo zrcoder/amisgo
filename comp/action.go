@@ -44,7 +44,7 @@ func (a action) ConfirmText(value string) action {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (a action) ConfirmTitle(value string) action {
+func (a action) ConfirmTitle(value any) action {
 	return a.set("confirmTitle", value)
 }
 
@@ -113,7 +113,7 @@ func (a action) TooltipPlacement(value string) action {
 	return a.set("tooltipPlacement", value)
 }
 
-func (a action) set(key string, value interface{}) action {
+func (a action) set(key string, value any) action {
 	a[key] = value
 	return a
 }

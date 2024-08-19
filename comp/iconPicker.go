@@ -8,7 +8,7 @@ func IconPicker() iconPicker {
 	return make(iconPicker).set("type", "icon-picker")
 }
 
-func (i iconPicker) set(key string, value interface{}) iconPicker {
+func (i iconPicker) set(key string, value any) iconPicker {
 	i[key] = value
 	return i
 }
@@ -139,7 +139,7 @@ func (i iconPicker) Name(value string) iconPicker {
 }
 
 // OnEvent 事件动作配置
-func (i iconPicker) OnEvent(value string) iconPicker {
+func (i iconPicker) OnEvent(value any) iconPicker {
 	return i.set("onEvent", value)
 }
 
@@ -219,7 +219,7 @@ func (i iconPicker) StaticSchema(value string) iconPicker {
 }
 
 // Style 组件样式
-func (i iconPicker) Style(value string) iconPicker {
+func (i iconPicker) Style(value any) iconPicker {
 	return i.set("style", value)
 }
 

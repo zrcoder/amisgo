@@ -8,7 +8,7 @@ func Chart() chart {
 	return make(chart).set("type", "chart")
 }
 
-func (c chart) set(key string, value interface{}) chart {
+func (c chart) set(key string, value any) chart {
 	c[key] = value
 	return c
 }
@@ -34,7 +34,7 @@ func (c chart) ClickAction(value string) chart {
 }
 
 // Config 配置echart的config，支持数据映射。如果用了数据映射，为了同步更新，请设置 trackExpression
-func (c chart) Config(value interface{}) chart {
+func (c chart) Config(value any) chart {
 	return c.set("config", value)
 }
 
@@ -119,7 +119,7 @@ func (c chart) Name(value string) chart {
 }
 
 // OnEvent 事件动作配置
-func (c chart) OnEvent(value string) chart {
+func (c chart) OnEvent(value any) chart {
 	return c.set("onEvent", value)
 }
 
@@ -169,7 +169,7 @@ func (c chart) StaticSchema(value string) chart {
 }
 
 // Style style样式
-func (c chart) Style(value string) chart {
+func (c chart) Style(value any) chart {
 	return c.set("style", value)
 }
 

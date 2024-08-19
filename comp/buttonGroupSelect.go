@@ -8,7 +8,7 @@ func ButtonGroupSelect() buttonGroupSelect {
 	return make(buttonGroupSelect).set("type", "button-group-select")
 }
 
-func (bgc buttonGroupSelect) set(key string, value interface{}) buttonGroupSelect {
+func (bgc buttonGroupSelect) set(key string, value any) buttonGroupSelect {
 	bgc[key] = value
 	return bgc
 }
@@ -269,7 +269,7 @@ func (bgc buttonGroupSelect) OnChange(value string) buttonGroupSelect {
 }
 
 // OnEvent 设置事件回调函数
-func (bgc buttonGroupSelect) OnEvent(value string) buttonGroupSelect {
+func (bgc buttonGroupSelect) OnEvent(value any) buttonGroupSelect {
 	return bgc.set("onEvent", value)
 }
 

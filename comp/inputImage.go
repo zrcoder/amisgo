@@ -8,7 +8,7 @@ func InputImage() inputImage {
 	return make(inputImage).set("type", "input-image").Receiver("/api/upload")
 }
 
-func (i inputImage) set(key string, value interface{}) inputImage {
+func (i inputImage) set(key string, value any) inputImage {
 	i[key] = value
 	return i
 }
@@ -49,7 +49,7 @@ func (i inputImage) Capture(value string) inputImage {
 }
 
 // ClassName 容器 css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
-func (i inputImage) ClassName(value interface{}) inputImage {
+func (i inputImage) ClassName(value any) inputImage {
 	return i.set("className", value)
 }
 
@@ -274,7 +274,7 @@ func (i inputImage) Name(value string) inputImage {
 }
 
 // OnEvent 事件动作配置
-func (i inputImage) OnEvent(value string) inputImage {
+func (i inputImage) OnEvent(value any) inputImage {
 	return i.set("onEvent", value)
 }
 

@@ -8,7 +8,7 @@ func ChainedSelect() chainedSelect {
 	return make(chainedSelect).set("type", "chained-select")
 }
 
-func (c chainedSelect) set(key string, value interface{}) chainedSelect {
+func (c chainedSelect) set(key string, value any) chainedSelect {
 	c[key] = value
 	return c
 }
@@ -239,7 +239,7 @@ func (c chainedSelect) Name(value string) chainedSelect {
 }
 
 // OnEvent 事件动作配置
-func (c chainedSelect) OnEvent(value string) chainedSelect {
+func (c chainedSelect) OnEvent(value any) chainedSelect {
 	return c.set("onEvent", value)
 }
 
@@ -344,7 +344,7 @@ func (c chainedSelect) StaticSchema(value string) chainedSelect {
 }
 
 // Style 组件样式
-func (c chainedSelect) Style(value string) chainedSelect {
+func (c chainedSelect) Style(value any) chainedSelect {
 	return c.set("style", value)
 }
 

@@ -8,7 +8,7 @@ func IconItem() iconItem {
 	return make(iconItem)
 }
 
-func (i iconItem) set(key string, value interface{}) iconItem {
+func (i iconItem) set(key string, value any) iconItem {
 	i[key] = value
 	return i
 }

@@ -10,7 +10,7 @@ func Remark() remark {
 	return remark{}.set("type", "remark")
 }
 
-func (rm remark) set(key string, value interface{}) remark {
+func (rm remark) set(key string, value any) remark {
 	rm[key] = value
 	return rm
 }
@@ -66,7 +66,7 @@ func (rm remark) Label(value string) remark {
 }
 
 // OnEvent 事件动作配置
-func (rm remark) OnEvent(value string) remark {
+func (rm remark) OnEvent(value any) remark {
 	return rm.set("onEvent", value)
 }
 
@@ -121,7 +121,7 @@ func (rm remark) StaticSchema(value string) remark {
 }
 
 // Style 组件样式
-func (rm remark) Style(value string) remark {
+func (rm remark) Style(value any) remark {
 	return rm.set("style", value)
 }
 
@@ -136,7 +136,7 @@ func (rm remark) Testid(value string) remark {
 }
 
 // Title 提示标题
-func (rm remark) Title(value string) remark {
+func (rm remark) Title(value any) remark {
 	return rm.set("title", value)
 }
 

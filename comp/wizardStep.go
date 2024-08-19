@@ -10,7 +10,7 @@ func WizardStep() wizardStep {
 	return wizardStep{}.set("type", "wizard-step")
 }
 
-func (ws wizardStep) set(key string, value interface{}) wizardStep {
+func (ws wizardStep) set(key string, value any) wizardStep {
 	ws[key] = value
 	return ws
 }
@@ -41,7 +41,7 @@ func (ws wizardStep) AutoFocus(value bool) wizardStep {
 }
 
 // Body 表单项集合
-func (ws wizardStep) Body(value ...interface{}) wizardStep {
+func (ws wizardStep) Body(value ...any) wizardStep {
 	return ws.set("body", value)
 }
 
@@ -221,7 +221,7 @@ func (ws wizardStep) Name(value string) wizardStep {
 }
 
 // OnEvent 事件动作配置
-func (ws wizardStep) OnEvent(value string) wizardStep {
+func (ws wizardStep) OnEvent(value any) wizardStep {
 	return ws.set("onEvent", value)
 }
 
@@ -326,12 +326,12 @@ func (ws wizardStep) StopAutoRefreshWhen(value string) wizardStep {
 }
 
 // Style 组件样式
-func (ws wizardStep) Style(value string) wizardStep {
+func (ws wizardStep) Style(value any) wizardStep {
 	return ws.set("style", value)
 }
 
 // SubTitle 子标题
-func (ws wizardStep) SubTitle(value string) wizardStep {
+func (ws wizardStep) SubTitle(value any) wizardStep {
 	return ws.set("subTitle", value)
 }
 
@@ -371,7 +371,7 @@ func (ws wizardStep) Testid(value string) wizardStep {
 }
 
 // Title 表单标题
-func (ws wizardStep) Title(value string) wizardStep {
+func (ws wizardStep) Title(value any) wizardStep {
 	return ws.set("title", value)
 }
 

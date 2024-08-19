@@ -7,7 +7,7 @@ func Drawer() drawer {
 	return make(drawer).set("type", "drawer")
 }
 
-func (d drawer) set(key string, value interface{}) drawer {
+func (d drawer) set(key string, value any) drawer {
 	d[key] = value
 	return d
 }
@@ -18,7 +18,7 @@ func (d drawer) Actions(value string) drawer {
 }
 
 // Body 内容区域 (内容区域)
-func (d drawer) Body(value ...interface{}) drawer {
+func (d drawer) Body(value ...any) drawer {
 	return d.set("body", value)
 }
 
@@ -118,7 +118,7 @@ func (d drawer) Name(value string) drawer {
 }
 
 // OnEvent 事件动作配置
-func (d drawer) OnEvent(value string) drawer {
+func (d drawer) OnEvent(value any) drawer {
 	return d.set("onEvent", value)
 }
 
@@ -188,7 +188,7 @@ func (d drawer) StaticSchema(value string) drawer {
 }
 
 // Style 组件样式
-func (d drawer) Style(value string) drawer {
+func (d drawer) Style(value any) drawer {
 	return d.set("style", value)
 }
 
@@ -203,7 +203,7 @@ func (d drawer) Testid(value string) drawer {
 }
 
 // Title 请通过配置 title 设置标题 (请通过配置 title 设置标题)
-func (d drawer) Title(value string) drawer {
+func (d drawer) Title(value any) drawer {
 	return d.set("title", value)
 }
 

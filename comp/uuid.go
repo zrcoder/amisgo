@@ -9,7 +9,7 @@ func UUID() uuid {
 	return uuid{}.set("type", "uuid")
 }
 
-func (uc uuid) set(key string, value interface{}) uuid {
+func (uc uuid) set(key string, value any) uuid {
 	uc[key] = value
 	return uc
 }
@@ -145,7 +145,7 @@ func (uc uuid) Name(value string) uuid {
 }
 
 // OnEvent 事件动作配置
-func (uc uuid) OnEvent(value string) uuid {
+func (uc uuid) OnEvent(value any) uuid {
 	return uc.set("onEvent", value)
 }
 
@@ -225,7 +225,7 @@ func (uc uuid) StaticSchema(value string) uuid {
 }
 
 // Style 组件样式
-func (uc uuid) Style(value string) uuid {
+func (uc uuid) Style(value any) uuid {
 	return uc.set("style", value)
 }
 

@@ -10,7 +10,7 @@ func TabsTransferPicker() tabsTransferPicker {
 }
 
 // set 设置指定的键值对并返回新的 TabsTransferPickerControl 实例
-func (tpc tabsTransferPicker) set(key string, value interface{}) tabsTransferPicker {
+func (tpc tabsTransferPicker) set(key string, value any) tabsTransferPicker {
 	tpc[key] = value
 	return tpc
 }
@@ -56,7 +56,7 @@ func (tpc tabsTransferPicker) Clearable(value bool) tabsTransferPicker {
 }
 
 // Columns 当 selectMode 为 table 时定义表格列信息。
-func (tpc tabsTransferPicker) Columns(value string) tabsTransferPicker {
+func (tpc tabsTransferPicker) Columns(value ...any) tabsTransferPicker {
 	return tpc.set("columns", value)
 }
 
@@ -261,7 +261,7 @@ func (tpc tabsTransferPicker) OnChange(value string) tabsTransferPicker {
 }
 
 // Options 选项
-func (tpc tabsTransferPicker) Options(value interface{}) tabsTransferPicker {
+func (tpc tabsTransferPicker) Options(value any) tabsTransferPicker {
 	return tpc.set("options", value)
 }
 
@@ -291,7 +291,7 @@ func (tpc tabsTransferPicker) Source(value string) tabsTransferPicker {
 }
 
 // Tabs 选项卡
-func (tpc tabsTransferPicker) Tabs(value interface{}) tabsTransferPicker {
+func (tpc tabsTransferPicker) Tabs(value any) tabsTransferPicker {
 	return tpc.set("tabs", value)
 }
 
@@ -301,7 +301,7 @@ func (tpc tabsTransferPicker) Tooltip(value string) tabsTransferPicker {
 }
 
 // Value 表单值
-func (tpc tabsTransferPicker) Value(value interface{}) tabsTransferPicker {
+func (tpc tabsTransferPicker) Value(value any) tabsTransferPicker {
 	return tpc.set("value", value)
 }
 

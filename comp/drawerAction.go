@@ -8,7 +8,7 @@ func DrawerAction() drawerAction {
 	return make(drawerAction).set("type", "button").set("actionType", "drawer")
 }
 
-func (d drawerAction) set(key string, value interface{}) drawerAction {
+func (d drawerAction) set(key string, value any) drawerAction {
 	d[key] = value
 	return d
 }
@@ -39,7 +39,7 @@ func (d drawerAction) Block(value bool) drawerAction {
 }
 
 // Body 子内容
-func (d drawerAction) Body(value ...interface{}) drawerAction {
+func (d drawerAction) Body(value ...any) drawerAction {
 	return d.set("body", value)
 }
 
@@ -59,7 +59,7 @@ func (d drawerAction) ConfirmText(value string) drawerAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (d drawerAction) ConfirmTitle(value string) drawerAction {
+func (d drawerAction) ConfirmTitle(value any) drawerAction {
 	return d.set("confirmTitle", value)
 }
 
@@ -169,7 +169,7 @@ func (d drawerAction) OnClick(value string) drawerAction {
 }
 
 // OnEvent 事件动作配置
-func (d drawerAction) OnEvent(value string) drawerAction {
+func (d drawerAction) OnEvent(value any) drawerAction {
 	return d.set("onEvent", value)
 }
 
@@ -249,7 +249,7 @@ func (d drawerAction) StaticSchema(value string) drawerAction {
 }
 
 // Style 组件样式
-func (d drawerAction) Style(value string) drawerAction {
+func (d drawerAction) Style(value any) drawerAction {
 	return d.set("style", value)
 }
 

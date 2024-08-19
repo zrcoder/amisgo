@@ -22,7 +22,7 @@ func (l link) Blank(value bool) link {
 }
 
 // Body 链接内容
-func (l link) Body(value ...interface{}) link {
+func (l link) Body(value ...any) link {
 	return l.set("body", value)
 }
 
@@ -77,7 +77,7 @@ func (l link) ID(value string) link {
 }
 
 // OnEvent 事件动作配置
-func (l link) OnEvent(value string) link {
+func (l link) OnEvent(value any) link {
 	return l.set("onEvent", value)
 }
 
@@ -122,7 +122,7 @@ func (l link) StaticSchema(value string) link {
 }
 
 // Style 组件样式
-func (l link) Style(value string) link {
+func (l link) Style(value any) link {
 	return l.set("style", value)
 }
 
@@ -152,7 +152,7 @@ func (l link) VisibleOn(value string) link {
 }
 
 // set 设置键值对
-func (l link) set(key string, value interface{}) link {
+func (l link) set(key string, value any) link {
 	l[key] = value
 	return l
 }

@@ -10,7 +10,7 @@ func Table() table {
 	return table{}.set("type", "table")
 }
 
-func (t table) set(key string, value interface{}) table {
+func (t table) set(key string, value any) table {
 	t[key] = value
 	return t
 }
@@ -51,7 +51,7 @@ func (t table) ClassName(value string) table {
 }
 
 // Columns 表格的列信息
-func (t table) Columns(value string) table {
+func (t table) Columns(value ...any) table {
 	return t.set("columns", value)
 }
 
@@ -131,7 +131,7 @@ func (t table) ItemBadge(value string) table {
 }
 
 // OnEvent 事件动作配置
-func (t table) OnEvent(value string) table {
+func (t table) OnEvent(value any) table {
 	return t.set("onEvent", value)
 }
 
@@ -206,7 +206,7 @@ func (t table) StaticSchema(value string) table {
 }
 
 // Style 组件样式
-func (t table) Style(value string) table {
+func (t table) Style(value any) table {
 	return t.set("style", value)
 }
 
@@ -231,7 +231,7 @@ func (t table) Testid(value string) table {
 }
 
 // Title 标题
-func (t table) Title(value string) table {
+func (t table) Title(value any) table {
 	return t.set("title", value)
 }
 

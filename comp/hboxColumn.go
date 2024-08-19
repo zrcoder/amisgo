@@ -8,13 +8,13 @@ func HBoxColumn() hBoxColumn {
 	return make(hBoxColumn)
 }
 
-func (h hBoxColumn) set(key string, value interface{}) hBoxColumn {
+func (h hBoxColumn) set(key string, value any) hBoxColumn {
 	h[key] = value
 	return h
 }
 
 // body 内容区
-func (h hBoxColumn) Body(value ...interface{}) hBoxColumn {
+func (h hBoxColumn) Body(value ...any) hBoxColumn {
 	return h.set("body", value)
 }
 
@@ -39,7 +39,7 @@ func (h hBoxColumn) Mode(value string) hBoxColumn {
 }
 
 // style 其他样式
-func (h hBoxColumn) Style(value string) hBoxColumn {
+func (h hBoxColumn) Style(value any) hBoxColumn {
 	return h.set("style", value)
 }
 

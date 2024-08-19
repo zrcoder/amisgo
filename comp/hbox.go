@@ -1,5 +1,7 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // hBox 水平布局渲染器
 type hBox schema
 
@@ -8,7 +10,7 @@ func HBox() hBox {
 	return make(hBox).set("type", "hbox")
 }
 
-func (h hBox) set(key string, value interface{}) hBox {
+func (h hBox) set(key string, value any) hBox {
 	h[key] = value
 	return h
 }
@@ -24,7 +26,7 @@ func (h hBox) ClassName(value string) hBox {
 }
 
 // columns
-func (h hBox) Columns(value string) hBox {
+func (h hBox) Columns(value ...model.ColumnSchema) hBox {
 	return h.set("columns", value)
 }
 
@@ -64,7 +66,7 @@ func (h hBox) Id(value string) hBox {
 }
 
 // onEvent 事件动作配置
-func (h hBox) OnEvent(value string) hBox {
+func (h hBox) OnEvent(value any) hBox {
 	return h.set("onEvent", value)
 }
 
@@ -104,7 +106,7 @@ func (h hBox) StaticSchema(value string) hBox {
 }
 
 // style 组件样式
-func (h hBox) Style(value string) hBox {
+func (h hBox) Style(value any) hBox {
 	return h.set("style", value)
 }
 
@@ -133,7 +135,7 @@ func (h hBox) UseMobileUI(value bool) hBox {
 	return h.set("useMobileUI", value)
 }
 
-// valign 垂直对齐方式
+// Valign 垂直对齐方式 'top' | 'middle' | 'bottom' | 'between'
 func (h hBox) Valign(value string) hBox {
 	return h.set("valign", value)
 }

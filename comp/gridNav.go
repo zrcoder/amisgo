@@ -8,7 +8,7 @@ func GridNav() gridNav {
 	return make(gridNav).set("type", "grid-nav")
 }
 
-func (g gridNav) set(key string, value interface{}) gridNav {
+func (g gridNav) set(key string, value any) gridNav {
 	g[key] = value
 	return g
 }

@@ -10,7 +10,7 @@ func SearchBox() searchBox {
 	return searchBox{}.set("type", "search-box")
 }
 
-func (s searchBox) set(key string, value interface{}) searchBox {
+func (s searchBox) set(key string, value any) searchBox {
 	s[key] = value
 	return s
 }
@@ -81,7 +81,7 @@ func (s searchBox) Name(value string) searchBox {
 }
 
 // OnEvent 事件动作配置
-func (s searchBox) OnEvent(value string) searchBox {
+func (s searchBox) OnEvent(value any) searchBox {
 	return s.set("onEvent", value)
 }
 
@@ -131,7 +131,7 @@ func (s searchBox) StaticSchema(value string) searchBox {
 }
 
 // Style 组件样式
-func (s searchBox) Style(value string) searchBox {
+func (s searchBox) Style(value any) searchBox {
 	return s.set("style", value)
 }
 

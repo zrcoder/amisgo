@@ -10,7 +10,7 @@ func TableColumn() tableColumn {
 	return tableColumn{}
 }
 
-func (c tableColumn) set(key string, value interface{}) tableColumn {
+func (c tableColumn) set(key string, value any) tableColumn {
 	c[key] = value
 	return c
 }
@@ -61,7 +61,7 @@ func (c tableColumn) HeaderAlign(value string) tableColumn {
 }
 
 // InnerStyle 单元格内部组件自定义样式
-func (c tableColumn) InnerStyle(value string) tableColumn {
+func (c tableColumn) InnerStyle(value any) tableColumn {
 	return c.set("innerStyle", value)
 }
 

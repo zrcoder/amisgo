@@ -7,7 +7,7 @@ func DiffEditor() diffEditor {
 	return make(diffEditor).set("type", "diff-editor")
 }
 
-func (d diffEditor) set(key string, value interface{}) diffEditor {
+func (d diffEditor) set(key string, value any) diffEditor {
 	d[key] = value
 	return d
 }
@@ -148,7 +148,7 @@ func (d diffEditor) Name(value string) diffEditor {
 }
 
 // OnEvent 事件动作配置
-func (d diffEditor) OnEvent(value string) diffEditor {
+func (d diffEditor) OnEvent(value any) diffEditor {
 	return d.set("onEvent", value)
 }
 
@@ -233,7 +233,7 @@ func (d diffEditor) StaticSchema(value string) diffEditor {
 }
 
 // Style 组件样式
-func (d diffEditor) Style(value string) diffEditor {
+func (d diffEditor) Style(value any) diffEditor {
 	return d.set("style", value)
 }
 

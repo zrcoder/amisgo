@@ -1,5 +1,7 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // page 代表 amis page 渲染器
 //
 // @version 6.7.0
@@ -11,13 +13,13 @@ func Page() page {
 }
 
 // set 用于设置字段值
-func (p page) set(key string, value interface{}) page {
+func (p page) set(key string, value any) page {
 	p[key] = value
 	return p
 }
 
 // Aside 边栏区域
-func (p page) Aside(value string) page {
+func (p page) Aside(value ...any) page {
 	return p.set("aside", value)
 }
 
@@ -47,7 +49,7 @@ func (p page) AsideSticky(value bool) page {
 }
 
 // Body 内容区域
-func (p page) Body(value ...interface{}) page {
+func (p page) Body(value ...any) page {
 	return p.set("body", value)
 }
 
@@ -62,12 +64,12 @@ func (p page) ClassName(value string) page {
 }
 
 // CSS 自定义页面级别样式表
-func (p page) CSS(value string) page {
+func (p page) CSS(value any) page {
 	return p.set("css", value)
 }
 
 // CSSVars css 变量
-func (p page) CSSVars(value string) page {
+func (p page) CSSVars(value any) page {
 	return p.set("cssVars", value)
 }
 
@@ -131,8 +133,8 @@ func (p page) InitFetchOn(value string) page {
 	return p.set("initFetchOn", value)
 }
 
-// Interval 配置轮询间隔
-func (p page) Interval(value string) page {
+// Interval 刷新时间(ms, 最小 1000)
+func (p page) Interval(value int) page {
 	return p.set("interval", value)
 }
 
@@ -147,7 +149,7 @@ func (p page) Messages(value string) page {
 }
 
 // MobileCSS 移动端下的样式表
-func (p page) MobileCSS(value string) page {
+func (p page) MobileCSS(value any) page {
 	return p.set("mobileCSS", value)
 }
 
@@ -157,12 +159,12 @@ func (p page) Name(value string) page {
 }
 
 // OnEvent 事件动作配置
-func (p page) OnEvent(value string) page {
+func (p page) OnEvent(value any) page {
 	return p.set("onEvent", value)
 }
 
 // PullRefresh 下拉刷新配置
-func (p page) PullRefresh(value string) page {
+func (p page) PullRefresh(value model.PullRefreshSchema) page {
 	return p.set("pullRefresh", value)
 }
 
@@ -172,7 +174,7 @@ func (p page) Regions(value string) page {
 }
 
 // Remark 页面描述
-func (p page) Remark(value string) page {
+func (p page) Remark(value remark) page {
 	return p.set("remark", value)
 }
 
@@ -227,12 +229,12 @@ func (p page) StopAutoRefreshWhen(value string) page {
 }
 
 // Style 自定义样式
-func (p page) Style(value string) page {
+func (p page) Style(value any) page {
 	return p.set("style", value)
 }
 
 // SubTitle 页面副标题
-func (p page) SubTitle(value string) page {
+func (p page) SubTitle(value any) page {
 	return p.set("subTitle", value)
 }
 
@@ -247,12 +249,12 @@ func (p page) Testid(value string) page {
 }
 
 // Title 页面标题
-func (p page) Title(value string) page {
+func (p page) Title(value any) page {
 	return p.set("title", value)
 }
 
 // Toolbar 页面顶部区域，当存在 title 时在右上角显示。
-func (p page) Toolbar(value ...interface{}) page {
+func (p page) Toolbar(value ...any) page {
 	return p.set("toolbar", value)
 }
 

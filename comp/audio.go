@@ -7,7 +7,7 @@ func Audio() audio {
 	return make(audio).set("type", "audio")
 }
 
-func (a audio) set(key string, value interface{}) audio {
+func (a audio) set(key string, value any) audio {
 	a[key] = value
 	return a
 }
@@ -68,7 +68,7 @@ func (a audio) Loop(value bool) audio {
 }
 
 // OnEvent 设置事件动作配置
-func (a audio) OnEvent(value string) audio {
+func (a audio) OnEvent(value any) audio {
 	return a.set("onEvent", value)
 }
 
@@ -118,7 +118,7 @@ func (a audio) StaticSchema(value string) audio {
 }
 
 // Style 设置组件样式
-func (a audio) Style(value string) audio {
+func (a audio) Style(value any) audio {
 	return a.set("style", value)
 }
 

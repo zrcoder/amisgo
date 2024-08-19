@@ -11,7 +11,7 @@ func Radio() radio {
 }
 
 // set 是一个私有方法，用于设置字段值
-func (rc radio) set(key string, value interface{}) radio {
+func (rc radio) set(key string, value any) radio {
 	rc[key] = value
 	return rc
 }
@@ -152,7 +152,7 @@ func (rc radio) Name(value string) radio {
 }
 
 // OnEvent 事件动作配置
-func (rc radio) OnEvent(value string) radio {
+func (rc radio) OnEvent(value any) radio {
 	return rc.set("onEvent", value)
 }
 
@@ -247,7 +247,7 @@ func (rc radio) StaticSchema(value string) radio {
 }
 
 // Style 组件样式
-func (rc radio) Style(value string) radio {
+func (rc radio) Style(value any) radio {
 	return rc.set("style", value)
 }
 

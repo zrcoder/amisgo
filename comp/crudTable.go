@@ -13,7 +13,7 @@ func Crud() crudTable {
 	return CrudTable()
 }
 
-func (c crudTable) set(key string, value interface{}) crudTable {
+func (c crudTable) set(key string, value any) crudTable {
 	c[key] = value
 	return c
 }
@@ -26,12 +26,12 @@ func (c crudTable) Api(value string) crudTable {
 }
 
 // AutoFillHeight 设置内容区域是否占满屏幕剩余空间
-func (c crudTable) AutoFillHeight(value interface{}) crudTable {
+func (c crudTable) AutoFillHeight(value any) crudTable {
 	return c.set("autoFillHeight", value)
 }
 
 // Columns 设置表格列配置
-func (c crudTable) Columns(value ...interface{}) crudTable {
+func (c crudTable) Columns(value ...any) crudTable {
 	return c.set("columns", value)
 }
 
@@ -81,7 +81,7 @@ func (c crudTable) Name(value string) crudTable {
 }
 
 // Pagination 设置分页配置
-func (c crudTable) Pagination(value interface{}) crudTable {
+func (c crudTable) Pagination(value any) crudTable {
 	return c.set("pagination", value)
 }
 
@@ -101,7 +101,7 @@ func (c crudTable) Sticky(value bool) crudTable {
 }
 
 // Style 设置组件样式
-func (c crudTable) Style(value string) crudTable {
+func (c crudTable) Style(value any) crudTable {
 	return c.set("style", value)
 }
 
@@ -111,7 +111,7 @@ func (c crudTable) TableLayout(value string) crudTable {
 }
 
 // Title 设置表格标题
-func (c crudTable) Title(value string) crudTable {
+func (c crudTable) Title(value any) crudTable {
 	return c.set("title", value)
 }
 
@@ -233,7 +233,7 @@ func (c crudTable) Multiple(value bool) crudTable {
 }
 
 // OnEvent 设置事件动作配置
-func (c crudTable) OnEvent(value string) crudTable {
+func (c crudTable) OnEvent(value any) crudTable {
 	return c.set("onEvent", value)
 }
 

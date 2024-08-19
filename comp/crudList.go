@@ -9,7 +9,7 @@ func CrudList() crudList {
 }
 
 // Set 设置键值对，并返回当前实例
-func (c crudList) set(key string, value interface{}) crudList {
+func (c crudList) set(key string, value any) crudList {
 	c[key] = value
 	return c
 }
@@ -120,7 +120,7 @@ func (c crudList) FilterTogglable(value bool) crudList {
 }
 
 // Footer 设置底部区域
-func (c crudList) Footer(value interface{}) crudList {
+func (c crudList) Footer(value any) crudList {
 	return c.set("footer", value)
 }
 
@@ -130,12 +130,12 @@ func (c crudList) FooterClassName(value string) crudList {
 }
 
 // FooterToolbar 设置底部工具栏区域
-func (c crudList) FooterToolbar(value interface{}) crudList {
+func (c crudList) FooterToolbar(value any) crudList {
 	return c.set("footerToolbar", value)
 }
 
 // Header 设置顶部区域
-func (c crudList) Header(value interface{}) crudList {
+func (c crudList) Header(value any) crudList {
 	return c.set("header", value)
 }
 
@@ -145,7 +145,7 @@ func (c crudList) HeaderClassName(value string) crudList {
 }
 
 // HeaderToolbar 设置顶部工具栏区域
-func (c crudList) HeaderToolbar(value interface{}) crudList {
+func (c crudList) HeaderToolbar(value any) crudList {
 	return c.set("headerToolbar", value)
 }
 
@@ -225,7 +225,7 @@ func (c crudList) LabelTpl(value string) crudList {
 }
 
 // ListItem 单条数据展示内容配置
-func (c crudList) ListItem(value interface{}) crudList {
+func (c crudList) ListItem(value any) crudList {
 	return c.set("listItem", value)
 }
 
@@ -265,12 +265,12 @@ func (c crudList) Name(value string) crudList {
 }
 
 // OnEvent 事件绑定
-func (c crudList) OnEvent(value string) crudList {
+func (c crudList) OnEvent(value any) crudList {
 	return c.set("onEvent", value)
 }
 
 // Pagination 设置分页配置
-func (c crudList) Pagination(value interface{}) crudList {
+func (c crudList) Pagination(value any) crudList {
 	return c.set("pagination", value)
 }
 
@@ -325,7 +325,7 @@ func (c crudList) SearchFormClassName(value string) crudList {
 }
 
 // SearchSchema 设置搜索表单
-func (c crudList) SearchSchema(value interface{}) crudList {
+func (c crudList) SearchSchema(value any) crudList {
 	return c.set("searchSchema", value)
 }
 
@@ -365,7 +365,7 @@ func (c crudList) Tooltip(value string) crudList {
 }
 
 // TransformItems 设置数据转换
-func (c crudList) TransformItems(value string) crudList {
+func (c crudList) TransformItems(value ...any) crudList {
 	return c.set("transformItems", value)
 }
 
@@ -385,7 +385,7 @@ func (c crudList) EmptyText(value string) crudList {
 }
 
 // Components 设置自定义组件
-func (c crudList) Components(value interface{}) crudList {
+func (c crudList) Components(value any) crudList {
 	return c.set("components", value)
 }
 

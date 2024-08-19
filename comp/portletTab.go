@@ -10,13 +10,13 @@ func PortletTab() portletTab {
 	return portletTab{}
 }
 
-func (p portletTab) set(key string, value interface{}) portletTab {
+func (p portletTab) set(key string, value any) portletTab {
 	p[key] = value
 	return p
 }
 
 // Body 内容
-func (p portletTab) Body(value ...interface{}) portletTab {
+func (p portletTab) Body(value ...any) portletTab {
 	return p.set("body", value)
 }
 
@@ -71,7 +71,7 @@ func (p portletTab) MountOnEnter(value bool) portletTab {
 }
 
 // OnEvent 事件动作配置
-func (p portletTab) OnEvent(value string) portletTab {
+func (p portletTab) OnEvent(value any) portletTab {
 	return p.set("onEvent", value)
 }
 
@@ -116,7 +116,7 @@ func (p portletTab) StaticSchema(value string) portletTab {
 }
 
 // Style 组件样式
-func (p portletTab) Style(value string) portletTab {
+func (p portletTab) Style(value any) portletTab {
 	return p.set("style", value)
 }
 
@@ -136,7 +136,7 @@ func (p portletTab) Testid(value string) portletTab {
 }
 
 // Title Tab 标题
-func (p portletTab) Title(value string) portletTab {
+func (p portletTab) Title(value any) portletTab {
 	return p.set("title", value)
 }
 

@@ -9,7 +9,7 @@ func InputRating() inputRating {
 	return inputRating{}.set("type", "input-rating")
 }
 
-func (rc inputRating) set(key string, value interface{}) inputRating {
+func (rc inputRating) set(key string, value any) inputRating {
 	rc[key] = value
 	return rc
 }
@@ -175,7 +175,7 @@ func (rc inputRating) Name(value string) inputRating {
 }
 
 // OnEvent 事件动作配置
-func (rc inputRating) OnEvent(value string) inputRating {
+func (rc inputRating) OnEvent(value any) inputRating {
 	return rc.set("onEvent", value)
 }
 
@@ -255,7 +255,7 @@ func (rc inputRating) StaticSchema(value string) inputRating {
 }
 
 // Style 组件样式
-func (rc inputRating) Style(value string) inputRating {
+func (rc inputRating) Style(value any) inputRating {
 	return rc.set("style", value)
 }
 

@@ -8,7 +8,7 @@ func Icon() icon {
 	return make(icon).set("type", "icon")
 }
 
-func (i icon) set(key string, value interface{}) icon {
+func (i icon) set(key string, value any) icon {
 	i[key] = value
 	return i
 }
@@ -59,7 +59,7 @@ func (i icon) ID(value string) icon {
 }
 
 // OnEvent 事件动作配置
-func (i icon) OnEvent(value string) icon {
+func (i icon) OnEvent(value any) icon {
 	return i.set("onEvent", value)
 }
 
@@ -99,7 +99,7 @@ func (i icon) StaticSchema(value string) icon {
 }
 
 // Style 组件样式
-func (i icon) Style(value string) icon {
+func (i icon) Style(value any) icon {
 	return i.set("style", value)
 }
 

@@ -10,7 +10,7 @@ func Tag() tag {
 	return tag{}.set("type", "tag")
 }
 
-func (t tag) set(key string, value interface{}) tag {
+func (t tag) set(key string, value any) tag {
 	t[key] = value
 	return t
 }
@@ -91,7 +91,7 @@ func (t tag) Label(value string) tag {
 }
 
 // OnEvent 设置事件动作配置
-func (t tag) OnEvent(value string) tag {
+func (t tag) OnEvent(value any) tag {
 	return t.set("onEvent", value)
 }
 
@@ -131,7 +131,7 @@ func (t tag) StaticSchema(value string) tag {
 }
 
 // Style 设置自定义样式
-func (t tag) Style(value string) tag {
+func (t tag) Style(value any) tag {
 	return t.set("style", value)
 }
 

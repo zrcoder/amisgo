@@ -9,7 +9,7 @@ func InputExcel() inputExcel {
 }
 
 // set 是一个内部方法，用于设置字段值并返回自身的引用
-func (i inputExcel) set(key string, value interface{}) inputExcel {
+func (i inputExcel) set(key string, value any) inputExcel {
 	i[key] = value
 	return i
 }

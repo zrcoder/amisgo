@@ -7,7 +7,7 @@ func InputCity() inputCity {
 	return make(inputCity).set("type", "input-city")
 }
 
-func (i inputCity) set(key string, value interface{}) inputCity {
+func (i inputCity) set(key string, value any) inputCity {
 	i[key] = value
 	return i
 }
@@ -178,7 +178,7 @@ func (i inputCity) Name(value string) inputCity {
 }
 
 // OnEvent 事件动作配置
-func (i inputCity) OnEvent(value string) inputCity {
+func (i inputCity) OnEvent(value any) inputCity {
 	return i.set("onEvent", value)
 }
 
@@ -263,7 +263,7 @@ func (i inputCity) StaticSchema(value string) inputCity {
 }
 
 // Style 组件样式
-func (i inputCity) Style(value string) inputCity {
+func (i inputCity) Style(value any) inputCity {
 	return i.set("style", value)
 }
 
@@ -303,7 +303,7 @@ func (i inputCity) Validations(value string) inputCity {
 }
 
 // Value 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
-func (i inputCity) Value(value interface{}) inputCity {
+func (i inputCity) Value(value any) inputCity {
 	return i.set("value", value)
 }
 

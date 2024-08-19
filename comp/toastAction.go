@@ -10,7 +10,7 @@ func ToastAction() toastAction {
 	return toastAction{}.set("type", "button").set("actionType", "toast")
 }
 
-func (ta toastAction) set(key string, value interface{}) toastAction {
+func (ta toastAction) set(key string, value any) toastAction {
 	ta[key] = value
 	return ta
 }
@@ -36,7 +36,7 @@ func (ta toastAction) Block(value bool) toastAction {
 }
 
 // Body 子内容 (子内容)
-func (ta toastAction) Body(value ...interface{}) toastAction {
+func (ta toastAction) Body(value ...any) toastAction {
 	return ta.set("body", value)
 }
 
@@ -56,7 +56,7 @@ func (ta toastAction) ConfirmText(value string) toastAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (ta toastAction) ConfirmTitle(value string) toastAction {
+func (ta toastAction) ConfirmTitle(value any) toastAction {
 	return ta.set("confirmTitle", value)
 }
 
@@ -151,7 +151,7 @@ func (ta toastAction) OnClick(value string) toastAction {
 }
 
 // OnEvent 事件动作配置
-func (ta toastAction) OnEvent(value string) toastAction {
+func (ta toastAction) OnEvent(value any) toastAction {
 	return ta.set("onEvent", value)
 }
 
@@ -221,7 +221,7 @@ func (ta toastAction) StaticSchema(value string) toastAction {
 }
 
 // Style 组件样式
-func (ta toastAction) Style(value string) toastAction {
+func (ta toastAction) Style(value any) toastAction {
 	return ta.set("style", value)
 }
 

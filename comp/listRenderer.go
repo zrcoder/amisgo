@@ -13,7 +13,7 @@ func NewListRenderer() ListRenderer {
 }
 
 // set 设置字段值
-func (lr ListRenderer) set(key string, value interface{}) ListRenderer {
+func (lr ListRenderer) set(key string, value any) ListRenderer {
 	lr[key] = value
 	return lr
 }
@@ -121,7 +121,7 @@ func (lr ListRenderer) ListItem(value string) ListRenderer {
 }
 
 // OnEvent 设置事件动作配置
-func (lr ListRenderer) OnEvent(value string) ListRenderer {
+func (lr ListRenderer) OnEvent(value any) ListRenderer {
 	return lr.set("onEvent", value)
 }
 
@@ -192,7 +192,7 @@ func (lr ListRenderer) StaticSchema(value string) ListRenderer {
 }
 
 // Style 设置组件样式
-func (lr ListRenderer) Style(value string) ListRenderer {
+func (lr ListRenderer) Style(value any) ListRenderer {
 	return lr.set("style", value)
 }
 
@@ -208,7 +208,7 @@ func (lr ListRenderer) Testid(value string) ListRenderer {
 
 // Title 设置标题
 // 支持两种语法：1. `${xxx}` 或 `${xxx|upperCase}` 2. `<%= data.xxx %>`
-func (lr ListRenderer) Title(value string) ListRenderer {
+func (lr ListRenderer) Title(value any) ListRenderer {
 	return lr.set("title", value)
 }
 

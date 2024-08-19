@@ -10,13 +10,13 @@ func WebComponent() webComponent {
 	return webComponent{}.set("type", "web-component")
 }
 
-func (wc webComponent) set(key string, value interface{}) webComponent {
+func (wc webComponent) set(key string, value any) webComponent {
 	wc[key] = value
 	return wc
 }
 
 // Body 子节点
-func (wc webComponent) Body(value ...interface{}) webComponent {
+func (wc webComponent) Body(value ...any) webComponent {
 	return wc.set("body", value)
 }
 

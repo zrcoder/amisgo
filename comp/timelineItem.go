@@ -10,7 +10,7 @@ func NewTimelineItem() timelineItem {
 	return timelineItem{}
 }
 
-func (t timelineItem) set(key string, value interface{}) timelineItem {
+func (t timelineItem) set(key string, value any) timelineItem {
 	t[key] = value
 	return t
 }
@@ -86,7 +86,7 @@ func (t timelineItem) ID(value string) timelineItem {
 }
 
 // OnEvent 事件动作配置
-func (t timelineItem) OnEvent(value string) timelineItem {
+func (t timelineItem) OnEvent(value any) timelineItem {
 	return t.set("onEvent", value)
 }
 
@@ -126,7 +126,7 @@ func (t timelineItem) StaticSchema(value string) timelineItem {
 }
 
 // Style 组件样式
-func (t timelineItem) Style(value string) timelineItem {
+func (t timelineItem) Style(value any) timelineItem {
 	return t.set("style", value)
 }
 
@@ -151,7 +151,7 @@ func (t timelineItem) TimeClassName(value string) timelineItem {
 }
 
 // Title 时间节点标题 (时间节点标题)
-func (t timelineItem) Title(value string) timelineItem {
+func (t timelineItem) Title(value any) timelineItem {
 	return t.set("title", value)
 }
 

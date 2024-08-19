@@ -8,7 +8,7 @@ func Cards() cards {
 	return make(cards).set("type", "cards")
 }
 
-func (c cards) set(key string, value interface{}) cards {
+func (c cards) set(key string, value any) cards {
 	c[key] = value
 	return c
 }
@@ -119,7 +119,7 @@ func (c cards) MasonryLayout(value bool) cards {
 }
 
 // OnEvent 设置 onEvent 属性
-func (c cards) OnEvent(value string) cards {
+func (c cards) OnEvent(value any) cards {
 	return c.set("onEvent", value)
 }
 
@@ -179,7 +179,7 @@ func (c cards) StaticSchema(value string) cards {
 }
 
 // Style 设置 style 属性
-func (c cards) Style(value string) cards {
+func (c cards) Style(value any) cards {
 	return c.set("style", value)
 }
 
@@ -194,7 +194,7 @@ func (c cards) TestID(value string) cards {
 }
 
 // Title 设置 title 属性
-func (c cards) Title(value string) cards {
+func (c cards) Title(value any) cards {
 	return c.set("title", value)
 }
 

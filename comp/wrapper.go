@@ -11,13 +11,13 @@ func Wrapper() wrapper {
 	return wrapper{}.set("type", "wrapper")
 }
 
-func (w wrapper) set(key string, value interface{}) wrapper {
+func (w wrapper) set(key string, value any) wrapper {
 	w[key] = value
 	return w
 }
 
 // Body 内容 (内容)
-func (w wrapper) Body(value ...interface{}) wrapper {
+func (w wrapper) Body(value ...any) wrapper {
 	return w.set("body", value)
 }
 
@@ -57,7 +57,7 @@ func (w wrapper) Id(value string) wrapper {
 }
 
 // OnEvent 事件动作配置
-func (w wrapper) OnEvent(value string) wrapper {
+func (w wrapper) OnEvent(value any) wrapper {
 	return w.set("onEvent", value)
 }
 
@@ -102,7 +102,7 @@ func (w wrapper) StaticSchema(value string) wrapper {
 }
 
 // Style 自定义样式
-func (w wrapper) Style(value string) wrapper {
+func (w wrapper) Style(value any) wrapper {
 	return w.set("style", value)
 }
 

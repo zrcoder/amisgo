@@ -10,7 +10,7 @@ func NestedSelect() nestedSelect {
 }
 
 // set 设置字段值
-func (nsc nestedSelect) set(key string, value interface{}) nestedSelect {
+func (nsc nestedSelect) set(key string, value any) nestedSelect {
 	nsc[key] = value
 	return nsc
 }
@@ -266,7 +266,7 @@ func (nsc nestedSelect) Name(value string) nestedSelect {
 }
 
 // OnEvent 事件动作配置
-func (nsc nestedSelect) OnEvent(value string) nestedSelect {
+func (nsc nestedSelect) OnEvent(value any) nestedSelect {
 	return nsc.set("onEvent", value)
 }
 
@@ -276,7 +276,7 @@ func (nsc nestedSelect) OnlyChildren(value bool) nestedSelect {
 }
 
 // Options 选项
-func (nsc nestedSelect) Options(value interface{}) nestedSelect {
+func (nsc nestedSelect) Options(value any) nestedSelect {
 	return nsc.set("options", value)
 }
 
@@ -326,7 +326,7 @@ func (nsc nestedSelect) StaticLabel(value string) nestedSelect {
 }
 
 // Style 控件样式
-func (nsc nestedSelect) Style(value string) nestedSelect {
+func (nsc nestedSelect) Style(value any) nestedSelect {
 	return nsc.set("style", value)
 }
 
@@ -341,7 +341,7 @@ func (nsc nestedSelect) Tree(value bool) nestedSelect {
 }
 
 // Value 选中值
-func (nsc nestedSelect) Value(value interface{}) nestedSelect {
+func (nsc nestedSelect) Value(value any) nestedSelect {
 	return nsc.set("value", value)
 }
 

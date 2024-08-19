@@ -10,7 +10,7 @@ func SchemaCopyable() schemaCopyable {
 	return schemaCopyable{}
 }
 
-func (s schemaCopyable) set(key string, value interface{}) schemaCopyable {
+func (s schemaCopyable) set(key string, value any) schemaCopyable {
 	s[key] = value
 	return s
 }

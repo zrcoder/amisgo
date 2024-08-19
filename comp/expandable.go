@@ -8,7 +8,7 @@ func Expandable() expandable {
 	return make(expandable)
 }
 
-func (e expandable) set(key string, value interface{}) expandable {
+func (e expandable) set(key string, value any) expandable {
 	e[key] = value
 	return e
 }

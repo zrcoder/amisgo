@@ -11,7 +11,7 @@ func ListenerAction() listenerAction {
 }
 
 // set 设置字段值
-func (la listenerAction) set(key string, value interface{}) listenerAction {
+func (la listenerAction) set(key string, value any) listenerAction {
 	la[key] = value
 	return la
 }
@@ -37,7 +37,7 @@ func (la listenerAction) ComponentName(value string) listenerAction {
 }
 
 // ConfirmTitle 设置确认弹窗标题
-func (la listenerAction) ConfirmTitle(value string) listenerAction {
+func (la listenerAction) ConfirmTitle(value any) listenerAction {
 	return la.set("confirmTitle", value)
 }
 

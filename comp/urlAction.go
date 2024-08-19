@@ -10,7 +10,7 @@ func UrlAction() urlAction {
 	return urlAction{}.set("type", "button").set("actionType", "url")
 }
 
-func (ua urlAction) set(key string, value interface{}) urlAction {
+func (ua urlAction) set(key string, value any) urlAction {
 	ua[key] = value
 	return ua
 }
@@ -41,7 +41,7 @@ func (ua urlAction) Block(value bool) urlAction {
 }
 
 // Body 子内容 (子内容)
-func (ua urlAction) Body(value ...interface{}) urlAction {
+func (ua urlAction) Body(value ...any) urlAction {
 	return ua.set("body", value)
 }
 
@@ -61,7 +61,7 @@ func (ua urlAction) ConfirmText(value string) urlAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (ua urlAction) ConfirmTitle(value string) urlAction {
+func (ua urlAction) ConfirmTitle(value any) urlAction {
 	return ua.set("confirmTitle", value)
 }
 
@@ -161,7 +161,7 @@ func (ua urlAction) OnClick(value string) urlAction {
 }
 
 // OnEvent 事件动作配置
-func (ua urlAction) OnEvent(value string) urlAction {
+func (ua urlAction) OnEvent(value any) urlAction {
 	return ua.set("onEvent", value)
 }
 
@@ -231,7 +231,7 @@ func (ua urlAction) StaticSchema(value string) urlAction {
 }
 
 // Style 组件样式
-func (ua urlAction) Style(value string) urlAction {
+func (ua urlAction) Style(value any) urlAction {
 	return ua.set("style", value)
 }
 

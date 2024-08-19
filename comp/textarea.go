@@ -10,7 +10,7 @@ func Textarea() textarea {
 	return textarea{}.set("type", "textarea")
 }
 
-func (t textarea) set(key string, value interface{}) textarea {
+func (t textarea) set(key string, value any) textarea {
 	t[key] = value
 	return t
 }
@@ -166,7 +166,7 @@ func (t textarea) Name(value string) textarea {
 }
 
 // OnEvent 事件动作配置
-func (t textarea) OnEvent(value string) textarea {
+func (t textarea) OnEvent(value any) textarea {
 	return t.set("onEvent", value)
 }
 
@@ -256,7 +256,7 @@ func (t textarea) StaticSchema(value string) textarea {
 }
 
 // Style 组件样式
-func (t textarea) Style(value string) textarea {
+func (t textarea) Style(value any) textarea {
 	return t.set("style", value)
 }
 

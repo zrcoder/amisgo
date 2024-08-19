@@ -8,7 +8,7 @@ func Badge() badge {
 	return make(badge)
 }
 
-func (b badge) set(key string, value interface{}) badge {
+func (b badge) set(key string, value any) badge {
 	b[key] = value
 	return b
 }
@@ -54,7 +54,7 @@ func (b badge) Size(value string) badge {
 }
 
 // Style 设置角标的自定义样式
-func (b badge) Style(value string) badge {
+func (b badge) Style(value any) badge {
 	return b.set("style", value)
 }
 

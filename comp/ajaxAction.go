@@ -33,7 +33,7 @@ func (a ajaxAction) Block(value bool) ajaxAction {
 }
 
 // Body 子内容
-func (a ajaxAction) Body(value ...interface{}) ajaxAction {
+func (a ajaxAction) Body(value ...any) ajaxAction {
 	return a.set("body", value)
 }
 
@@ -53,7 +53,7 @@ func (a ajaxAction) ConfirmText(value string) ajaxAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (a ajaxAction) ConfirmTitle(value string) ajaxAction {
+func (a ajaxAction) ConfirmTitle(value any) ajaxAction {
 	return a.set("confirmTitle", value)
 }
 
@@ -163,7 +163,7 @@ func (a ajaxAction) OnClick(value string) ajaxAction {
 }
 
 // OnEvent 事件动作配置
-func (a ajaxAction) OnEvent(value string) ajaxAction {
+func (a ajaxAction) OnEvent(value any) ajaxAction {
 	return a.set("onEvent", value)
 }
 
@@ -243,7 +243,7 @@ func (a ajaxAction) StaticSchema(value string) ajaxAction {
 }
 
 // Style 组件样式
-func (a ajaxAction) Style(value string) ajaxAction {
+func (a ajaxAction) Style(value any) ajaxAction {
 	return a.set("style", value)
 }
 
@@ -292,7 +292,7 @@ func (a ajaxAction) VisibleOn(value string) ajaxAction {
 	return a.set("visibleOn", value)
 }
 
-func (a ajaxAction) set(key string, value interface{}) ajaxAction {
+func (a ajaxAction) set(key string, value any) ajaxAction {
 	a[key] = value
 	return a
 }

@@ -9,7 +9,7 @@ func MultilineText() multilineText {
 }
 
 // set 方法用于设置属性并返回自身
-func (m multilineText) set(key string, value interface{}) multilineText {
+func (m multilineText) set(key string, value any) multilineText {
 	m[key] = value
 	return m
 }
@@ -65,7 +65,7 @@ func (m multilineText) MaxRows(value string) multilineText {
 }
 
 // OnEvent 设置事件动作配置
-func (m multilineText) OnEvent(value string) multilineText {
+func (m multilineText) OnEvent(value any) multilineText {
 	return m.set("onEvent", value)
 }
 
@@ -105,7 +105,7 @@ func (m multilineText) StaticSchema(value string) multilineText {
 }
 
 // Style 设置组件样式
-func (m multilineText) Style(value string) multilineText {
+func (m multilineText) Style(value any) multilineText {
 	return m.set("style", value)
 }
 

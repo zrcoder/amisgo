@@ -8,7 +8,7 @@ func Calendar() calendar {
 	return make(calendar).set("type", "calendar")
 }
 
-func (c calendar) set(key string, value interface{}) calendar {
+func (c calendar) set(key string, value any) calendar {
 	c[key] = value
 	return c
 }
@@ -54,7 +54,7 @@ func (c calendar) LargeMode(value bool) calendar {
 }
 
 // OnEvent 设置 onEvent 属性
-func (c calendar) OnEvent(value string) calendar {
+func (c calendar) OnEvent(value any) calendar {
 	return c.set("onEvent", value)
 }
 
@@ -109,7 +109,7 @@ func (c calendar) StaticSchema(value string) calendar {
 }
 
 // Style 设置 style 属性
-func (c calendar) Style(value string) calendar {
+func (c calendar) Style(value any) calendar {
 	return c.set("style", value)
 }
 
@@ -124,7 +124,7 @@ func (c calendar) TestID(value string) calendar {
 }
 
 // TodayActiveStyle 设置 todayActiveStyle 属性
-func (c calendar) TodayActiveStyle(value string) calendar {
+func (c calendar) TodayActiveStyle(value any) calendar {
 	return c.set("todayActiveStyle", value)
 }
 

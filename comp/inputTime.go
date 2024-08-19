@@ -171,7 +171,7 @@ func (tc inputTime) Name(value string) inputTime {
 }
 
 // OnEvent 事件动作配置
-func (tc inputTime) OnEvent(value string) inputTime {
+func (tc inputTime) OnEvent(value any) inputTime {
 	return tc.set("onEvent", value)
 }
 
@@ -256,7 +256,7 @@ func (tc inputTime) StaticSchema(value string) inputTime {
 }
 
 // Style 组件样式
-func (tc inputTime) Style(value string) inputTime {
+func (tc inputTime) Style(value any) inputTime {
 	return tc.set("style", value)
 }
 
@@ -336,7 +336,7 @@ func (tc inputTime) Width(value string) inputTime {
 }
 
 // set 设置键值对（私有方法）
-func (tc inputTime) set(key string, value interface{}) inputTime {
+func (tc inputTime) set(key string, value any) inputTime {
 	// 这里假设 Schema 类型有一个 set 方法可以设置键值对
 	tc[key] = value
 	return tc

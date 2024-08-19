@@ -8,7 +8,7 @@ func Avatar() avatar {
 	return make(avatar).set("type", "avatar").set("crossOrigin", "anonymous")
 }
 
-func (a avatar) set(key string, value interface{}) avatar {
+func (a avatar) set(key string, value any) avatar {
 	a[key] = value
 	return a
 }
@@ -94,7 +94,7 @@ func (a avatar) OnError(value string) avatar {
 }
 
 // OnEvent 设置事件动作配置
-func (a avatar) OnEvent(value string) avatar {
+func (a avatar) OnEvent(value any) avatar {
 	return a.set("onEvent", value)
 }
 
@@ -149,7 +149,7 @@ func (a avatar) StaticSchema(value string) avatar {
 }
 
 // Style 设置自定义样式
-func (a avatar) Style(value string) avatar {
+func (a avatar) Style(value any) avatar {
 	return a.set("style", value)
 }
 

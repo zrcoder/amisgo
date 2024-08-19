@@ -8,13 +8,13 @@ func ComboCondition() comboCondition {
 	return make(comboCondition)
 }
 
-func (cc comboCondition) set(key string, value interface{}) comboCondition {
+func (cc comboCondition) set(key string, value any) comboCondition {
 	cc[key] = value
 	return cc
 }
 
 // Items 设置项
-func (cc comboCondition) Items(value string) comboCondition {
+func (cc comboCondition) Items(value ...any) comboCondition {
 	return cc.set("items", value)
 }
 

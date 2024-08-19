@@ -10,7 +10,7 @@ func Plain() plain {
 	return plain{}.set("type", "plain")
 }
 
-func (p plain) set(key string, value interface{}) plain {
+func (p plain) set(key string, value any) plain {
 	p[key] = value
 	return p
 }
@@ -56,7 +56,7 @@ func (p plain) Inline(value bool) plain {
 }
 
 // OnEvent 事件动作配置
-func (p plain) OnEvent(value string) plain {
+func (p plain) OnEvent(value any) plain {
 	return p.set("onEvent", value)
 }
 
@@ -101,7 +101,7 @@ func (p plain) StaticSchema(value string) plain {
 }
 
 // Style 组件样式
-func (p plain) Style(value string) plain {
+func (p plain) Style(value any) plain {
 	return p.set("style", value)
 }
 

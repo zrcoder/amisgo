@@ -8,7 +8,7 @@ func Checkbox() checkbox {
 	return make(checkbox).set("type", "checkbox")
 }
 
-func (c checkbox) set(key string, value interface{}) checkbox {
+func (c checkbox) set(key string, value any) checkbox {
 	c[key] = value
 	return c
 }
@@ -154,7 +154,7 @@ func (c checkbox) Name(value string) checkbox {
 }
 
 // OnEvent 设置 onEvent 属性
-func (c checkbox) OnEvent(value string) checkbox {
+func (c checkbox) OnEvent(value any) checkbox {
 	return c.set("onEvent", value)
 }
 
@@ -249,7 +249,7 @@ func (c checkbox) StaticSchema(value string) checkbox {
 }
 
 // Style 设置 style 属性
-func (c checkbox) Style(value string) checkbox {
+func (c checkbox) Style(value any) checkbox {
 	return c.set("style", value)
 }
 

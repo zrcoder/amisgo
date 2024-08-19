@@ -8,7 +8,7 @@ func OtherAction() otherAction {
 }
 
 // set 设置字段值
-func (oa otherAction) set(key string, value interface{}) otherAction {
+func (oa otherAction) set(key string, value any) otherAction {
 	oa[key] = value
 	return oa
 }
@@ -39,7 +39,7 @@ func (oa otherAction) Block(value bool) otherAction {
 }
 
 // Body 子内容
-func (oa otherAction) Body(value ...interface{}) otherAction {
+func (oa otherAction) Body(value ...any) otherAction {
 	return oa.set("body", value)
 }
 
@@ -59,7 +59,7 @@ func (oa otherAction) ConfirmText(value string) otherAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (oa otherAction) ConfirmTitle(value string) otherAction {
+func (oa otherAction) ConfirmTitle(value any) otherAction {
 	return oa.set("confirmTitle", value)
 }
 
@@ -154,7 +154,7 @@ func (oa otherAction) OnClick(value string) otherAction {
 }
 
 // OnEvent 事件动作配置
-func (oa otherAction) OnEvent(value string) otherAction {
+func (oa otherAction) OnEvent(value any) otherAction {
 	return oa.set("onEvent", value)
 }
 
@@ -224,7 +224,7 @@ func (oa otherAction) StaticSchema(value string) otherAction {
 }
 
 // Style 组件样式
-func (oa otherAction) Style(value string) otherAction {
+func (oa otherAction) Style(value any) otherAction {
 	return oa.set("style", value)
 }
 

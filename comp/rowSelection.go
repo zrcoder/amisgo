@@ -10,7 +10,7 @@ func RowSelection() rowSelection {
 	return rowSelection{}
 }
 
-func (r rowSelection) set(key string, value interface{}) rowSelection {
+func (r rowSelection) set(key string, value any) rowSelection {
 	r[key] = value
 	return r
 }

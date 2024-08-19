@@ -8,7 +8,7 @@ func VanillaAction() vanillaAction {
 	return vanillaAction{}.set("type", "button")
 }
 
-func (v vanillaAction) set(key string, value interface{}) vanillaAction {
+func (v vanillaAction) set(key string, value any) vanillaAction {
 	v[key] = value
 	return v
 }
@@ -39,7 +39,7 @@ func (v vanillaAction) Block(value bool) vanillaAction {
 }
 
 // Body 子内容 (子内容)
-func (v vanillaAction) Body(value ...interface{}) vanillaAction {
+func (v vanillaAction) Body(value ...any) vanillaAction {
 	return v.set("body", value)
 }
 
@@ -59,7 +59,7 @@ func (v vanillaAction) ConfirmText(value string) vanillaAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (v vanillaAction) ConfirmTitle(value string) vanillaAction {
+func (v vanillaAction) ConfirmTitle(value any) vanillaAction {
 	return v.set("confirmTitle", value)
 }
 
@@ -159,7 +159,7 @@ func (v vanillaAction) OnClick(value string) vanillaAction {
 }
 
 // OnEvent 事件动作配置
-func (v vanillaAction) OnEvent(value string) vanillaAction {
+func (v vanillaAction) OnEvent(value any) vanillaAction {
 	return v.set("onEvent", value)
 }
 
@@ -229,7 +229,7 @@ func (v vanillaAction) StaticSchema(value string) vanillaAction {
 }
 
 // Style 组件样式
-func (v vanillaAction) Style(value string) vanillaAction {
+func (v vanillaAction) Style(value any) vanillaAction {
 	return v.set("style", value)
 }
 

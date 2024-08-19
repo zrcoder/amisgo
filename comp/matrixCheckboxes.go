@@ -10,7 +10,7 @@ func MatrixCheckboxes() matrixCheckboxes {
 	return matrixCheckboxes{}.set("type", "matrix-checkboxes")
 }
 
-func (mc matrixCheckboxes) set(key string, value interface{}) matrixCheckboxes {
+func (mc matrixCheckboxes) set(key string, value any) matrixCheckboxes {
 	mc[key] = value
 	return mc
 }
@@ -34,7 +34,7 @@ func (mc matrixCheckboxes) ClearValueOnHidden(value bool) matrixCheckboxes {
 }
 
 // Columns
-func (mc matrixCheckboxes) Columns(value string) matrixCheckboxes {
+func (mc matrixCheckboxes) Columns(value ...any) matrixCheckboxes {
 	mc.set("columns", value)
 	return mc
 }
@@ -178,7 +178,7 @@ func (mc matrixCheckboxes) Name(value string) matrixCheckboxes {
 }
 
 // OnEvent 事件动作配置
-func (mc matrixCheckboxes) OnEvent(value string) matrixCheckboxes {
+func (mc matrixCheckboxes) OnEvent(value any) matrixCheckboxes {
 	mc.set("onEvent", value)
 	return mc
 }
@@ -298,7 +298,7 @@ func (mc matrixCheckboxes) StaticSchema(value string) matrixCheckboxes {
 }
 
 // Style 组件样式
-func (mc matrixCheckboxes) Style(value string) matrixCheckboxes {
+func (mc matrixCheckboxes) Style(value any) matrixCheckboxes {
 	mc.set("style", value)
 	return mc
 }

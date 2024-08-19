@@ -7,7 +7,7 @@ func FieldSet() fieldSet {
 	return make(fieldSet).set("type", "fieldset").set("titlePosition", "top")
 }
 
-func (f fieldSet) set(key string, value interface{}) fieldSet {
+func (f fieldSet) set(key string, value any) fieldSet {
 	f[key] = value
 	return f
 }
@@ -18,7 +18,7 @@ func (f fieldSet) AutoFill(value string) fieldSet {
 }
 
 // Body 内容区域
-func (f fieldSet) Body(value ...interface{}) fieldSet {
+func (f fieldSet) Body(value ...any) fieldSet {
 	return f.set("body", value)
 }
 
@@ -48,7 +48,7 @@ func (f fieldSet) CollapseHeader(value string) fieldSet {
 }
 
 // CollapseTitle 收起的标题
-func (f fieldSet) CollapseTitle(value string) fieldSet {
+func (f fieldSet) CollapseTitle(value any) fieldSet {
 	return f.set("collapseTitle", value)
 }
 
@@ -203,7 +203,7 @@ func (f fieldSet) Name(value string) fieldSet {
 }
 
 // OnEvent 事件动作配置
-func (f fieldSet) OnEvent(value string) fieldSet {
+func (f fieldSet) OnEvent(value any) fieldSet {
 	return f.set("onEvent", value)
 }
 
@@ -273,7 +273,7 @@ func (f fieldSet) SubmitOnChange(value bool) fieldSet {
 }
 
 // Title 标题
-func (f fieldSet) Title(value string) fieldSet {
+func (f fieldSet) Title(value any) fieldSet {
 	return f.set("title", value)
 }
 

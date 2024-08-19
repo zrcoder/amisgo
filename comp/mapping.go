@@ -10,7 +10,7 @@ func Mapping() mapping {
 	return mapping{}.set("type", "map")
 }
 
-func (m mapping) set(key string, value interface{}) mapping {
+func (m mapping) set(key string, value any) mapping {
 	m[key] = value
 	return m
 }
@@ -82,7 +82,7 @@ func (m mapping) Name(value string) mapping {
 }
 
 // OnEvent 事件动作配置
-func (m mapping) OnEvent(value string) mapping {
+func (m mapping) OnEvent(value any) mapping {
 	m.set("onEvent", value)
 	return m
 }
@@ -142,7 +142,7 @@ func (m mapping) StaticSchema(value string) mapping {
 }
 
 // Style 组件样式
-func (m mapping) Style(value string) mapping {
+func (m mapping) Style(value any) mapping {
 	m.set("style", value)
 	return m
 }

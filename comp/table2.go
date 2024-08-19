@@ -9,7 +9,7 @@ func Table2() table2 {
 	return table2{}.set("type", "table2")
 }
 
-func (ts2 table2) set(key string, value interface{}) table2 {
+func (ts2 table2) set(key string, value any) table2 {
 	ts2[key] = value
 	return ts2
 }
@@ -45,7 +45,7 @@ func (ts2 table2) ClassName(value string) table2 {
 }
 
 // Columns 表格列配置
-func (ts2 table2) Columns(value string) table2 {
+func (ts2 table2) Columns(value ...any) table2 {
 	return ts2.set("columns", value)
 }
 
@@ -140,7 +140,7 @@ func (ts2 table2) Multiple(value bool) table2 {
 }
 
 // OnEvent 事件动作配置
-func (ts2 table2) OnEvent(value string) table2 {
+func (ts2 table2) OnEvent(value any) table2 {
 	return ts2.set("onEvent", value)
 }
 
@@ -240,7 +240,7 @@ func (ts2 table2) Sticky(value bool) table2 {
 }
 
 // Style 组件样式
-func (ts2 table2) Style(value string) table2 {
+func (ts2 table2) Style(value any) table2 {
 	return ts2.set("style", value)
 }
 
@@ -260,7 +260,7 @@ func (ts2 table2) Testid(value string) table2 {
 }
 
 // Title 表格标题
-func (ts2 table2) Title(value string) table2 {
+func (ts2 table2) Title(value any) table2 {
 	return ts2.set("title", value)
 }
 

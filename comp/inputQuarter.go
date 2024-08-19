@@ -170,7 +170,7 @@ func (q inputQuarter) Name(value string) inputQuarter {
 }
 
 // OnEvent 事件动作配置
-func (q inputQuarter) OnEvent(value string) inputQuarter {
+func (q inputQuarter) OnEvent(value any) inputQuarter {
 	return q.set("onEvent", value)
 }
 
@@ -275,7 +275,7 @@ func (q inputQuarter) Width(value string) inputQuarter {
 }
 
 // set 设置属性值
-func (q inputQuarter) set(key string, value interface{}) inputQuarter {
+func (q inputQuarter) set(key string, value any) inputQuarter {
 	// This method should set the property `key` with the given `value` on the `QuarterControl` instance.
 	// Assuming we have a way to store and manage these properties.
 	return q

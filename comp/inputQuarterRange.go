@@ -11,7 +11,7 @@ func InputQuarterRange() inputQuarterRange {
 }
 
 // set 设置字段的值
-func (qrc inputQuarterRange) set(key string, value interface{}) inputQuarterRange {
+func (qrc inputQuarterRange) set(key string, value any) inputQuarterRange {
 	qrc[key] = value
 	return qrc
 }
@@ -207,7 +207,7 @@ func (qrc inputQuarterRange) Name(value string) inputQuarterRange {
 }
 
 // OnEvent 事件动作配置
-func (qrc inputQuarterRange) OnEvent(value string) inputQuarterRange {
+func (qrc inputQuarterRange) OnEvent(value any) inputQuarterRange {
 	return qrc.set("onEvent", value)
 }
 
@@ -307,7 +307,7 @@ func (qrc inputQuarterRange) StaticSchema(value string) inputQuarterRange {
 }
 
 // Style 组件样式
-func (qrc inputQuarterRange) Style(value string) inputQuarterRange {
+func (qrc inputQuarterRange) Style(value any) inputQuarterRange {
 	return qrc.set("style", value)
 }
 

@@ -11,7 +11,7 @@ func Property() property {
 		set("type", "property")
 }
 
-func (p property) set(key string, value interface{}) property {
+func (p property) set(key string, value any) property {
 	p[key] = value
 	return p
 }
@@ -27,17 +27,17 @@ func (p property) Column(value string) property {
 }
 
 // ContentStyle 属性值的样式
-func (p property) ContentStyle(value string) property {
+func (p property) ContentStyle(value any) property {
 	return p.set("contentStyle", value)
 }
 
 // Items 属性项
-func (p property) Items(value string) property {
+func (p property) Items(value ...any) property {
 	return p.set("items", value)
 }
 
 // LabelStyle 属性名的样式
-func (p property) LabelStyle(value string) property {
+func (p property) LabelStyle(value any) property {
 	return p.set("labelStyle", value)
 }
 
@@ -57,11 +57,11 @@ func (p property) Source(value string) property {
 }
 
 // Style 外层 dom 的样式
-func (p property) Style(value string) property {
+func (p property) Style(value any) property {
 	return p.set("style", value)
 }
 
 // Title 标题
-func (p property) Title(value string) property {
+func (p property) Title(value any) property {
 	return p.set("title", value)
 }

@@ -7,7 +7,7 @@ func Divider() divider {
 	return make(divider).set("type", "divider")
 }
 
-func (d divider) set(key string, value interface{}) divider {
+func (d divider) set(key string, value any) divider {
 	d[key] = value
 	return d
 }
@@ -63,12 +63,12 @@ func (d divider) LineStyle(value string) divider {
 }
 
 // OnEvent 事件动作配置
-func (d divider) OnEvent(value string) divider {
+func (d divider) OnEvent(value any) divider {
 	return d.set("onEvent", value)
 }
 
 // Rotate 旋转角度
-func (d divider) Rotate(value string) divider {
+func (d divider) Rotate(value int) divider {
 	return d.set("rotate", value)
 }
 
@@ -108,7 +108,7 @@ func (d divider) StaticSchema(value string) divider {
 }
 
 // Style 组件样式
-func (d divider) Style(value string) divider {
+func (d divider) Style(value any) divider {
 	return d.set("style", value)
 }
 
@@ -123,7 +123,7 @@ func (d divider) Testid(value string) divider {
 }
 
 // Title 标题
-func (d divider) Title(value string) divider {
+func (d divider) Title(value any) divider {
 	return d.set("title", value)
 }
 

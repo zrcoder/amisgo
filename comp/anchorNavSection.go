@@ -8,13 +8,13 @@ func AnchorNavSection() anchorNavSection {
 	return make(anchorNavSection)
 }
 
-func (a anchorNavSection) set(key string, value interface{}) anchorNavSection {
+func (a anchorNavSection) set(key string, value any) anchorNavSection {
 	a[key] = value
 	return a
 }
 
 // 内容 (内容)
-func (a anchorNavSection) Body(value ...interface{}) anchorNavSection {
+func (a anchorNavSection) Body(value ...any) anchorNavSection {
 	return a.set("body", value)
 }
 
@@ -64,7 +64,7 @@ func (a anchorNavSection) Id(value string) anchorNavSection {
 }
 
 // 事件动作配置
-func (a anchorNavSection) OnEvent(value string) anchorNavSection {
+func (a anchorNavSection) OnEvent(value any) anchorNavSection {
 	return a.set("onEvent", value)
 }
 
@@ -103,7 +103,7 @@ func (a anchorNavSection) StaticSchema(value string) anchorNavSection {
 }
 
 // 组件样式
-func (a anchorNavSection) Style(value string) anchorNavSection {
+func (a anchorNavSection) Style(value any) anchorNavSection {
 	return a.set("style", value)
 }
 
@@ -116,7 +116,7 @@ func (a anchorNavSection) Testid(value string) anchorNavSection {
 }
 
 // 导航文字说明
-func (a anchorNavSection) Title(value string) anchorNavSection {
+func (a anchorNavSection) Title(value any) anchorNavSection {
 	return a.set("title", value)
 }
 

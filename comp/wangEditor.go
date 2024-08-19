@@ -12,7 +12,7 @@ func WangEditor() wangEditor {
 	return wangEditor{}.set("type", "custom-wang-editor")
 }
 
-func (we wangEditor) set(key string, value interface{}) wangEditor {
+func (we wangEditor) set(key string, value any) wangEditor {
 	we[key] = value
 	return we
 }

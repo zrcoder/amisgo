@@ -7,7 +7,7 @@ func InputColor() inputColor {
 	return make(inputColor).set("type", "input-color")
 }
 
-func (i inputColor) set(key string, value interface{}) inputColor {
+func (i inputColor) set(key string, value any) inputColor {
 	i[key] = value
 	return i
 }
@@ -158,7 +158,7 @@ func (i inputColor) Name(value string) inputColor {
 }
 
 // OnEvent 事件动作配置
-func (i inputColor) OnEvent(value string) inputColor {
+func (i inputColor) OnEvent(value any) inputColor {
 	return i.set("onEvent", value)
 }
 
@@ -248,7 +248,7 @@ func (i inputColor) StaticSchema(value string) inputColor {
 }
 
 // Style 组件样式
-func (i inputColor) Style(value string) inputColor {
+func (i inputColor) Style(value any) inputColor {
 	return i.set("style", value)
 }
 

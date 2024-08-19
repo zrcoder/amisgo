@@ -10,13 +10,13 @@ func Watermark() watermark {
 	return watermark{}.set("type", "custom-watermark")
 }
 
-func (wm watermark) set(key string, value interface{}) watermark {
+func (wm watermark) set(key string, value any) watermark {
 	wm[key] = value
 	return wm
 }
 
 // Body 内容
-func (wm watermark) Body(value ...interface{}) watermark {
+func (wm watermark) Body(value ...any) watermark {
 	return wm.set("body", value)
 }
 

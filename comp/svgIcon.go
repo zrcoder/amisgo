@@ -10,7 +10,7 @@ func SvgIcon() svgIcon {
 	return svgIcon{}.set("type", "custom-svg-icon")
 }
 
-func (s svgIcon) set(key string, value interface{}) svgIcon {
+func (s svgIcon) set(key string, value any) svgIcon {
 	s[key] = value
 	return s
 }

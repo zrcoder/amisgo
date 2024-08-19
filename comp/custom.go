@@ -8,7 +8,7 @@ func Custom() custom {
 	return make(custom).set("type", "custom")
 }
 
-func (c custom) set(key string, value interface{}) custom {
+func (c custom) set(key string, value any) custom {
 	c[key] = value
 	return c
 }

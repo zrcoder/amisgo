@@ -11,7 +11,7 @@ func InputYearRange() inputYearRange {
 }
 
 // set 是一个内部方法，用于设置字段值并返回自身的引用
-func (i inputYearRange) set(key string, value interface{}) inputYearRange {
+func (i inputYearRange) set(key string, value any) inputYearRange {
 	i[key] = value
 	return i
 }

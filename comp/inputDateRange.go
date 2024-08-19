@@ -9,7 +9,7 @@ func InputDateRange() inputDateRange {
 }
 
 // set 设置 key-value 对，并返回当前实例
-func (d inputDateRange) set(key string, value interface{}) inputDateRange {
+func (d inputDateRange) set(key string, value any) inputDateRange {
 	d[key] = value
 	return d
 }
@@ -220,7 +220,7 @@ func (d inputDateRange) Name(value string) inputDateRange {
 }
 
 // OnEvent 设置事件配置
-func (d inputDateRange) OnEvent(value string) inputDateRange {
+func (d inputDateRange) OnEvent(value any) inputDateRange {
 	return d.set("onEvent", value)
 }
 

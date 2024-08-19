@@ -11,7 +11,7 @@ func Operation() operation {
 }
 
 // set 设置字段值
-func (o operation) set(key string, value interface{}) operation {
+func (o operation) set(key string, value any) operation {
 	o[key] = value
 	return o
 }
@@ -67,7 +67,7 @@ func (o operation) Label(value string) operation {
 }
 
 // OnEvent 事件动作配置
-func (o operation) OnEvent(value string) operation {
+func (o operation) OnEvent(value any) operation {
 	return o.set("onEvent", value)
 }
 
@@ -112,7 +112,7 @@ func (o operation) StaticSchema(value string) operation {
 }
 
 // Style 组件样式
-func (o operation) Style(value string) operation {
+func (o operation) Style(value any) operation {
 	return o.set("style", value)
 }
 

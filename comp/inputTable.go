@@ -10,7 +10,7 @@ func InputTable() inputTable {
 	return inputTable{}.set("type", "input-table")
 }
 
-func (tc inputTable) set(key string, value interface{}) inputTable {
+func (tc inputTable) set(key string, value any) inputTable {
 	tc[key] = value
 	return tc
 }
@@ -96,7 +96,7 @@ func (tc inputTable) ClearValueOnHidden(value bool) inputTable {
 }
 
 // Columns 表格的列信息
-func (tc inputTable) Columns(value string) inputTable {
+func (tc inputTable) Columns(value ...any) inputTable {
 	return tc.set("columns", value)
 }
 
@@ -251,7 +251,7 @@ func (tc inputTable) FooterClassName(value string) inputTable {
 }
 
 // FooterTitle 底部标题
-func (tc inputTable) FooterTitle(value string) inputTable {
+func (tc inputTable) FooterTitle(value any) inputTable {
 	return tc.set("footerTitle", value)
 }
 
@@ -376,7 +376,7 @@ func (tc inputTable) OnDelete(value string) inputTable {
 }
 
 // OnEvent 事件触发器配置
-func (tc inputTable) OnEvent(value string) inputTable {
+func (tc inputTable) OnEvent(value any) inputTable {
 	return tc.set("onEvent", value)
 }
 

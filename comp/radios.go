@@ -10,7 +10,7 @@ func Radios() radios {
 	return radios{}.set("type", "radios")
 }
 
-func (rc radios) set(key string, value interface{}) radios {
+func (rc radios) set(key string, value any) radios {
 	rc[key] = value
 	return rc
 }
@@ -246,17 +246,17 @@ func (rc radios) Name(value string) radios {
 }
 
 // OnEvent 事件动作配置
-func (rc radios) OnEvent(value interface{}) radios {
+func (rc radios) OnEvent(value any) radios {
 	return rc.set("onEvent", value)
 }
 
 // Option 配置单选框的选项。 (配置单选框的选项。)
-func (rc radios) Option(value interface{}) radios {
+func (rc radios) Option(value any) radios {
 	return rc.set("option", value)
 }
 
 // Options 配置选项列表
-func (rc radios) Options(value interface{}) radios {
+func (rc radios) Options(value any) radios {
 	return rc.set("options", value)
 }
 
@@ -321,7 +321,7 @@ func (rc radios) Toggle(value bool) radios {
 }
 
 // Value 当前值
-func (rc radios) Value(value interface{}) radios {
+func (rc radios) Value(value any) radios {
 	return rc.set("value", value)
 }
 

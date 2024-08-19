@@ -8,7 +8,7 @@ func Formula() formula {
 	return make(formula).set("type", "formula")
 }
 
-func (fc formula) set(key string, value interface{}) formula {
+func (fc formula) set(key string, value any) formula {
 	fc[key] = value
 	return fc
 }
@@ -159,7 +159,7 @@ func (fc formula) Name(value string) formula {
 }
 
 // OnEvent 事件动作配置
-func (fc formula) OnEvent(value string) formula {
+func (fc formula) OnEvent(value any) formula {
 	return fc.set("onEvent", value)
 }
 
@@ -239,7 +239,7 @@ func (fc formula) StaticSchema(value string) formula {
 }
 
 // Style 组件样式
-func (fc formula) Style(value string) formula {
+func (fc formula) Style(value any) formula {
 	return fc.set("style", value)
 }
 

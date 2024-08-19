@@ -10,7 +10,7 @@ func InputRange() inputRange {
 	return inputRange{}.set("type", "input-range")
 }
 
-func (rc inputRange) set(key string, value interface{}) inputRange {
+func (rc inputRange) set(key string, value any) inputRange {
 	rc[key] = value
 	return rc
 }
@@ -176,7 +176,7 @@ func (rc inputRange) Name(value string) inputRange {
 }
 
 // OnEvent 事件动作配置
-func (rc inputRange) OnEvent(value string) inputRange {
+func (rc inputRange) OnEvent(value any) inputRange {
 	return rc.set("onEvent", value)
 }
 
@@ -276,7 +276,7 @@ func (rc inputRange) Step(value string) inputRange {
 }
 
 // Style 组件样式
-func (rc inputRange) Style(value string) inputRange {
+func (rc inputRange) Style(value any) inputRange {
 	return rc.set("style", value)
 }
 

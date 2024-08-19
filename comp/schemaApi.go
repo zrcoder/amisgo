@@ -10,7 +10,7 @@ func SchemaApi() schemaApi {
 	return schemaApi{}
 }
 
-func (s schemaApi) set(key string, value interface{}) schemaApi {
+func (s schemaApi) set(key string, value any) schemaApi {
 	s[key] = value
 	return s
 }

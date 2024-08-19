@@ -9,7 +9,7 @@ func InputTree() inputTree {
 	return inputTree{}.set("type", "input-tree")
 }
 
-func (tc inputTree) set(key string, value interface{}) inputTree {
+func (tc inputTree) set(key string, value any) inputTree {
 	tc[key] = value
 	return tc
 }
@@ -275,7 +275,7 @@ func (tc inputTree) NodeValue(value string) inputTree {
 }
 
 // Options 选项
-func (tc inputTree) Options(value interface{}) inputTree {
+func (tc inputTree) Options(value any) inputTree {
 	return tc.set("options", value)
 }
 
@@ -340,7 +340,7 @@ func (tc inputTree) Tips(value string) inputTree {
 }
 
 // Value 表单值
-func (tc inputTree) Value(value interface{}) inputTree {
+func (tc inputTree) Value(value any) inputTree {
 	return tc.set("value", value)
 }
 
@@ -395,7 +395,7 @@ func (tc inputTree) StaticSchema(value string) inputTree {
 }
 
 // Style 组件样式
-func (tc inputTree) Style(value string) inputTree {
+func (tc inputTree) Style(value any) inputTree {
 	return tc.set("style", value)
 }
 

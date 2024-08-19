@@ -10,7 +10,7 @@ func InputRepeat() inputRepeat {
 	return inputRepeat{}.set("type", "input-repeat")
 }
 
-func (rc inputRepeat) set(key string, value interface{}) inputRepeat {
+func (rc inputRepeat) set(key string, value any) inputRepeat {
 	rc[key] = value
 	return rc
 }
@@ -141,7 +141,7 @@ func (rc inputRepeat) Name(value string) inputRepeat {
 }
 
 // OnEvent 事件动作配置
-func (rc inputRepeat) OnEvent(value string) inputRepeat {
+func (rc inputRepeat) OnEvent(value any) inputRepeat {
 	return rc.set("onEvent", value)
 }
 
@@ -226,7 +226,7 @@ func (rc inputRepeat) StaticSchema(value string) inputRepeat {
 }
 
 // Style 组件样式
-func (rc inputRepeat) Style(value string) inputRepeat {
+func (rc inputRepeat) Style(value any) inputRepeat {
 	return rc.set("style", value)
 }
 

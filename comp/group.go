@@ -8,7 +8,7 @@ func Group() group {
 	return make(group).set("type", "group")
 }
 
-func (g group) set(key string, value interface{}) group {
+func (g group) set(key string, value any) group {
 	g[key] = value
 	return g
 }
@@ -19,7 +19,7 @@ func (g group) AutoFill(value string) group {
 }
 
 // Body FormItem 集合
-func (g group) Body(value ...interface{}) group {
+func (g group) Body(value ...any) group {
 	return g.set("body", value)
 }
 
@@ -154,7 +154,7 @@ func (g group) Name(value string) group {
 }
 
 // OnEvent 事件动作配置
-func (g group) OnEvent(value string) group {
+func (g group) OnEvent(value any) group {
 	return g.set("onEvent", value)
 }
 
@@ -234,7 +234,7 @@ func (g group) StaticSchema(value string) group {
 }
 
 // Style 组件样式
-func (g group) Style(value string) group {
+func (g group) Style(value any) group {
 	return g.set("style", value)
 }
 

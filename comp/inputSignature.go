@@ -12,7 +12,7 @@ func InputSignature() inputSignature {
 }
 
 // set 是一个内部方法，用于设置字段值并返回自身的引用
-func (i inputSignature) set(key string, value interface{}) inputSignature {
+func (i inputSignature) set(key string, value any) inputSignature {
 	i[key] = value
 	return i
 }
@@ -213,7 +213,7 @@ func (i inputSignature) Name(value string) inputSignature {
 }
 
 // OnEvent 事件动作配置
-func (i inputSignature) OnEvent(value string) inputSignature {
+func (i inputSignature) OnEvent(value any) inputSignature {
 	return i.set("onEvent", value)
 }
 
@@ -288,7 +288,7 @@ func (i inputSignature) StaticSchema(value string) inputSignature {
 }
 
 // Style 组件样式
-func (i inputSignature) Style(value string) inputSignature {
+func (i inputSignature) Style(value any) inputSignature {
 	return i.set("style", value)
 }
 

@@ -11,13 +11,13 @@ func TooltipWrapper() tooltipWrapper {
 	return tooltipWrapper{}.set("type", "tooltip-wrapper")
 }
 
-func (tw tooltipWrapper) set(key string, value interface{}) tooltipWrapper {
+func (tw tooltipWrapper) set(key string, value any) tooltipWrapper {
 	tw[key] = value
 	return tw
 }
 
 // Body 内容区域 (内容区域)
-func (tw tooltipWrapper) Body(value ...interface{}) tooltipWrapper {
+func (tw tooltipWrapper) Body(value ...any) tooltipWrapper {
 	return tw.set("body", value)
 }
 
@@ -87,7 +87,7 @@ func (tw tooltipWrapper) Offset(value string) tooltipWrapper {
 }
 
 // OnEvent 事件动作配置
-func (tw tooltipWrapper) OnEvent(value string) tooltipWrapper {
+func (tw tooltipWrapper) OnEvent(value any) tooltipWrapper {
 	return tw.set("onEvent", value)
 }
 
@@ -142,7 +142,7 @@ func (tw tooltipWrapper) StaticSchema(value string) tooltipWrapper {
 }
 
 // Style 内容区自定义样式
-func (tw tooltipWrapper) Style(value string) tooltipWrapper {
+func (tw tooltipWrapper) Style(value any) tooltipWrapper {
 	return tw.set("style", value)
 }
 
@@ -157,7 +157,7 @@ func (tw tooltipWrapper) Testid(value string) tooltipWrapper {
 }
 
 // Title 文字提示标题
-func (tw tooltipWrapper) Title(value string) tooltipWrapper {
+func (tw tooltipWrapper) Title(value any) tooltipWrapper {
 	return tw.set("title", value)
 }
 
@@ -172,7 +172,7 @@ func (tw tooltipWrapper) TooltipClassName(value string) tooltipWrapper {
 }
 
 // TooltipStyle 自定义提示浮层样式
-func (tw tooltipWrapper) TooltipStyle(value string) tooltipWrapper {
+func (tw tooltipWrapper) TooltipStyle(value any) tooltipWrapper {
 	return tw.set("tooltipStyle", value)
 }
 

@@ -10,7 +10,7 @@ func Step() step {
 	return step{}
 }
 
-func (s step) set(key string, value interface{}) step {
+func (s step) set(key string, value any) step {
 	s[key] = value
 	return s
 }
@@ -61,7 +61,7 @@ func (s step) Id(value string) step {
 }
 
 // OnEvent 事件动作配置
-func (s step) OnEvent(value string) step {
+func (s step) OnEvent(value any) step {
 	return s.set("onEvent", value)
 }
 
@@ -101,12 +101,12 @@ func (s step) StaticSchema(value string) step {
 }
 
 // Style 组件样式
-func (s step) Style(value string) step {
+func (s step) Style(value any) step {
 	return s.set("style", value)
 }
 
 // SubTitle 子标题
-func (s step) SubTitle(value string) step {
+func (s step) SubTitle(value any) step {
 	return s.set("subTitle", value)
 }
 
@@ -121,7 +121,7 @@ func (s step) Testid(value string) step {
 }
 
 // Title 标题
-func (s step) Title(value string) step {
+func (s step) Title(value any) step {
 	return s.set("title", value)
 }
 

@@ -6,13 +6,13 @@ func Collapse() collapse {
 	return make(collapse).set("type", "collapse")
 }
 
-func (c collapse) set(key string, value interface{}) collapse {
+func (c collapse) set(key string, value any) collapse {
 	c[key] = value
 	return c
 }
 
 // Body 设置 body 属性
-func (c collapse) Body(value ...interface{}) collapse {
+func (c collapse) Body(value ...any) collapse {
 	return c.set("body", value)
 }
 
@@ -36,12 +36,12 @@ func (c collapse) CollapseHeader(value string) collapse {
 	return c.set("collapseHeader", value)
 }
 
-// Collapsed 设置 collapsed 属性
+// Collapsed 初始状态是否折叠
 func (c collapse) Collapsed(value bool) collapse {
 	return c.set("collapsed", value)
 }
 
-// Disabled 设置 disabled 属性
+// Disabled 是否禁用
 func (c collapse) Disabled(value bool) collapse {
 	return c.set("disabled", value)
 }
@@ -67,7 +67,7 @@ func (c collapse) ExpandIcon(value string) collapse {
 }
 
 // Header 设置 header 属性
-func (c collapse) Header(value string) collapse {
+func (c collapse) Header(value ...any) collapse {
 	return c.set("header", value)
 }
 
@@ -107,7 +107,7 @@ func (c collapse) MountOnEnter(value bool) collapse {
 }
 
 // OnEvent 设置 onEvent 属性
-func (c collapse) OnEvent(value string) collapse {
+func (c collapse) OnEvent(value any) collapse {
 	return c.set("onEvent", value)
 }
 
@@ -157,7 +157,7 @@ func (c collapse) StaticSchema(value string) collapse {
 }
 
 // Style 设置 style 属性
-func (c collapse) Style(value string) collapse {
+func (c collapse) Style(value any) collapse {
 	return c.set("style", value)
 }
 

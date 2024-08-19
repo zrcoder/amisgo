@@ -9,7 +9,7 @@ func ButtonToolbar() buttonToolbar {
 }
 
 // Set 覆盖 BaseRenderer 的 Set 方法，返回 ButtonToolbar
-func (bt buttonToolbar) set(key string, value interface{}) buttonToolbar {
+func (bt buttonToolbar) set(key string, value any) buttonToolbar {
 	bt[key] = value
 	return bt
 }
@@ -55,7 +55,7 @@ func (bt buttonToolbar) Id(value string) buttonToolbar {
 }
 
 // OnEvent 设置事件动作配置
-func (bt buttonToolbar) OnEvent(value string) buttonToolbar {
+func (bt buttonToolbar) OnEvent(value any) buttonToolbar {
 	return bt.set("onEvent", value)
 }
 
@@ -95,7 +95,7 @@ func (bt buttonToolbar) StaticSchema(value string) buttonToolbar {
 }
 
 // Style 设置组件样式
-func (bt buttonToolbar) Style(value string) buttonToolbar {
+func (bt buttonToolbar) Style(value any) buttonToolbar {
 	return bt.set("style", value)
 }
 

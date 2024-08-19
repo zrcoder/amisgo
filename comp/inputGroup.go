@@ -8,7 +8,7 @@ func InputGroup() inputGroup {
 }
 
 // set 是一个内部方法，用于设置字段值并返回自身的引用
-func (i inputGroup) set(key string, value interface{}) inputGroup {
+func (i inputGroup) set(key string, value any) inputGroup {
 	i[key] = value
 	return i
 }
@@ -19,7 +19,7 @@ func (i inputGroup) AutoFill(value string) inputGroup {
 }
 
 // Body 设置 FormItem 集合
-func (i inputGroup) Body(value ...interface{}) inputGroup {
+func (i inputGroup) Body(value ...any) inputGroup {
 	return i.set("body", value)
 }
 
@@ -144,7 +144,7 @@ func (i inputGroup) Name(value string) inputGroup {
 }
 
 // OnEvent 设置事件动作配置
-func (i inputGroup) OnEvent(value string) inputGroup {
+func (i inputGroup) OnEvent(value any) inputGroup {
 	return i.set("onEvent", value)
 }
 
@@ -224,7 +224,7 @@ func (i inputGroup) StaticSchema(value string) inputGroup {
 }
 
 // Style 设置组件样式
-func (i inputGroup) Style(value string) inputGroup {
+func (i inputGroup) Style(value any) inputGroup {
 	return i.set("style", value)
 }
 

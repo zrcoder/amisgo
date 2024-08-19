@@ -8,13 +8,13 @@ func GridColumn() gridColumn {
 	return make(gridColumn)
 }
 
-func (c gridColumn) set(key string, value interface{}) gridColumn {
+func (c gridColumn) set(key string, value any) gridColumn {
 	c[key] = value
 	return c
 }
 
 // Body 设置列的内容
-func (c gridColumn) Body(value ...interface{}) gridColumn {
+func (c gridColumn) Body(value ...any) gridColumn {
 	return c.set("body", value)
 }
 
@@ -54,12 +54,12 @@ func (c gridColumn) Sm(value string) gridColumn {
 }
 
 // Style 样式
-func (c gridColumn) Style(value string) gridColumn {
+func (c gridColumn) Style(value any) gridColumn {
 	return c.set("style", value)
 }
 
 // ThemeCss 主题样式
-func (c gridColumn) ThemeCss(value string) gridColumn {
+func (c gridColumn) ThemeCSS(value any) gridColumn {
 	return c.set("themeCss", value)
 }
 
@@ -69,7 +69,7 @@ func (c gridColumn) Valign(value string) gridColumn {
 }
 
 // WrapperCustomStyle 自定义包装样式
-func (c gridColumn) WrapperCustomStyle(value string) gridColumn {
+func (c gridColumn) WrapperCustomStyle(value any) gridColumn {
 	return c.set("wrapperCustomStyle", value)
 }
 

@@ -8,7 +8,7 @@ func CollapseGroup() collapseGroup {
 	return make(collapseGroup).set("type", "collapse-group")
 }
 
-func (c collapseGroup) set(key string, value interface{}) collapseGroup {
+func (c collapseGroup) set(key string, value any) collapseGroup {
 	c[key] = value
 	return c
 }
@@ -19,12 +19,12 @@ func (c collapseGroup) Accordion(value bool) collapseGroup {
 }
 
 // ActiveKey 设置激活面板
-func (c collapseGroup) ActiveKey(value string) collapseGroup {
+func (c collapseGroup) ActiveKey(value any) collapseGroup {
 	return c.set("activeKey", value)
 }
 
 // Body 设置内容区域
-func (c collapseGroup) Body(value ...interface{}) collapseGroup {
+func (c collapseGroup) Body(value ...any) collapseGroup {
 	return c.set("body", value)
 }
 
@@ -54,7 +54,7 @@ func (c collapseGroup) EnableFieldSetStyle(value bool) collapseGroup {
 }
 
 // ExpandIcon 设置自定义切换图标
-func (c collapseGroup) ExpandIcon(value string) collapseGroup {
+func (c collapseGroup) ExpandIcon(value any) collapseGroup {
 	return c.set("expandIcon", value)
 }
 
@@ -79,7 +79,7 @@ func (c collapseGroup) ID(value string) collapseGroup {
 }
 
 // OnEvent 设置事件动作配置
-func (c collapseGroup) OnEvent(value string) collapseGroup {
+func (c collapseGroup) OnEvent(value any) collapseGroup {
 	return c.set("onEvent", value)
 }
 
@@ -119,7 +119,7 @@ func (c collapseGroup) StaticSchema(value string) collapseGroup {
 }
 
 // Style 设置组件样式
-func (c collapseGroup) Style(value string) collapseGroup {
+func (c collapseGroup) Style(value any) collapseGroup {
 	return c.set("style", value)
 }
 

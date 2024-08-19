@@ -8,7 +8,7 @@ func ConditionBuilder() conditionBuilder {
 	return make(conditionBuilder).set("type", "condition-builder")
 }
 
-func (c conditionBuilder) set(key string, value interface{}) conditionBuilder {
+func (c conditionBuilder) set(key string, value any) conditionBuilder {
 	c[key] = value
 	return c
 }
@@ -189,7 +189,7 @@ func (c conditionBuilder) Name(value string) conditionBuilder {
 }
 
 // OnEvent 设置事件动作配置
-func (c conditionBuilder) OnEvent(value string) conditionBuilder {
+func (c conditionBuilder) OnEvent(value any) conditionBuilder {
 	return c.set("onEvent", value)
 }
 
@@ -284,7 +284,7 @@ func (c conditionBuilder) StaticSchema(value string) conditionBuilder {
 }
 
 // Style 设置组件样式
-func (c conditionBuilder) Style(value string) conditionBuilder {
+func (c conditionBuilder) Style(value any) conditionBuilder {
 	return c.set("style", value)
 }
 

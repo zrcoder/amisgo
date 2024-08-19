@@ -7,7 +7,7 @@ func CopyButton() copyButton {
 	return make(copyButton).set("type", "button").set("actionType", "copy")
 }
 
-func (c copyButton) set(key string, value interface{}) copyButton {
+func (c copyButton) set(key string, value any) copyButton {
 	c[key] = value
 	return c
 }
@@ -33,7 +33,7 @@ func (c copyButton) Block(value bool) copyButton {
 }
 
 // Body 子内容
-func (c copyButton) Body(value ...interface{}) copyButton {
+func (c copyButton) Body(value ...any) copyButton {
 	return c.set("body", value)
 }
 
@@ -53,7 +53,7 @@ func (c copyButton) ConfirmText(value string) copyButton {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (c copyButton) ConfirmTitle(value string) copyButton {
+func (c copyButton) ConfirmTitle(value any) copyButton {
 	return c.set("confirmTitle", value)
 }
 
@@ -158,7 +158,7 @@ func (c copyButton) OnClick(value string) copyButton {
 }
 
 // OnEvent 事件动作配置
-func (c copyButton) OnEvent(value string) copyButton {
+func (c copyButton) OnEvent(value any) copyButton {
 	return c.set("onEvent", value)
 }
 
@@ -228,7 +228,7 @@ func (c copyButton) StaticSchema(value string) copyButton {
 }
 
 // Style 组件样式
-func (c copyButton) Style(value string) copyButton {
+func (c copyButton) Style(value any) copyButton {
 	return c.set("style", value)
 }
 

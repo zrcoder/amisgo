@@ -17,7 +17,7 @@ func (j json) ClassName(value string) json {
 	return j
 }
 
-func (j json) set(key string, value interface{}) json {
+func (j json) set(key string, value any) json {
 	j[key] = value
 	return j
 }
@@ -71,7 +71,7 @@ func (j json) HiddenOn(value string) json {
 }
 
 // IconStyle 图标风格
-func (j json) IconStyle(value string) json {
+func (j json) IconStyle(value any) json {
 	j.set("iconStyle", value)
 	return j
 }
@@ -95,7 +95,7 @@ func (j json) Mutable(value bool) json {
 }
 
 // OnEvent 事件动作配置
-func (j json) OnEvent(value string) json {
+func (j json) OnEvent(value any) json {
 	j.set("onEvent", value)
 	return j
 }
@@ -161,7 +161,7 @@ func (j json) StaticSchema(value string) json {
 }
 
 // Style 组件样式
-func (j json) Style(value string) json {
+func (j json) Style(value any) json {
 	j.set("style", value)
 	return j
 }

@@ -1,5 +1,5 @@
 package comp
 
-type AmisComp interface{}
+type AmisComp any
 
-type schema = map[string]interface{}
+type schema = map[string]any

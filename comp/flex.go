@@ -10,7 +10,7 @@ func Flex() flex {
 	return make(flex).set("type", "flex")
 }
 
-func (f flex) set(key string, value interface{}) flex {
+func (f flex) set(key string, value any) flex {
 	f[key] = value
 	return f
 }
@@ -21,11 +21,11 @@ func (f flex) AlignContent(value string) flex {
 }
 
 // AlignItems 设置垂直布局，可选值: stretch | start | flex-start | flex-end | end | center | baseline
-func (f flex) AlignItems(value string) flex {
+func (f flex) AlignItems(value ...any) flex {
 	return f.set("alignItems", value)
 }
 
-// ClassName 设置容器 css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// ClassName 设置容器 css 类名
 func (f flex) ClassName(value string) flex {
 	return f.set("className", value)
 }
@@ -66,7 +66,7 @@ func (f flex) ID(value string) flex {
 }
 
 // Items 设置每个 flex 的设置 (每个 flex 的设置)
-func (f flex) Items(value string) flex {
+func (f flex) Items(value ...any) flex {
 	return f.set("items", value)
 }
 
@@ -76,7 +76,7 @@ func (f flex) Justify(value string) flex {
 }
 
 // OnEvent 设置事件动作配置
-func (f flex) OnEvent(value string) flex {
+func (f flex) OnEvent(value any) flex {
 	return f.set("onEvent", value)
 }
 
@@ -116,7 +116,7 @@ func (f flex) StaticSchema(value string) flex {
 }
 
 // Style 设置自定义样式
-func (f flex) Style(value string) flex {
+func (f flex) Style(value any) flex {
 	return f.set("style", value)
 }
 

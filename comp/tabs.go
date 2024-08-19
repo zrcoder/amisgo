@@ -10,13 +10,13 @@ func Tabs() tabs {
 	return tabs{}.set("type", "tabs")
 }
 
-func (t tabs) set(key string, value interface{}) tabs {
+func (t tabs) set(key string, value any) tabs {
 	t[key] = value
 	return t
 }
 
-// ActiveKey 激活的选项卡，hash值或索引值，支持使用表达式
-func (t tabs) ActiveKey(value string) tabs {
+// ActiveKey 激活的选项卡，hash 值或索引值，支持使用表达式，可响应上下文数据变化
+func (t tabs) ActiveKey(value any) tabs {
 	return t.set("activeKey", value)
 }
 
@@ -55,8 +55,8 @@ func (t tabs) ContentClassName(value string) tabs {
 	return t.set("contentClassName", value)
 }
 
-// DefaultKey 初始化激活的选项卡
-func (t tabs) DefaultKey(value string) tabs {
+// DefaultKey 组件初始化时激活的选项卡，hash 值或索引值，支持使用表达式
+func (t tabs) DefaultKey(value any) tabs {
 	return t.set("defaultKey", value)
 }
 
@@ -111,7 +111,7 @@ func (t tabs) MountOnEnter(value bool) tabs {
 }
 
 // OnEvent 事件动作配置
-func (t tabs) OnEvent(value string) tabs {
+func (t tabs) OnEvent(value any) tabs {
 	return t.set("onEvent", value)
 }
 
@@ -176,7 +176,7 @@ func (t tabs) StaticSchema(value string) tabs {
 }
 
 // Style 组件样式
-func (t tabs) Style(value string) tabs {
+func (t tabs) Style(value any) tabs {
 	return t.set("style", value)
 }
 
@@ -196,11 +196,11 @@ func (t tabs) Swipeable(value bool) tabs {
 }
 
 // Tabs 选项卡成员
-func (t tabs) Tabs(value ...interface{}) tabs {
+func (t tabs) Tabs(value ...any) tabs {
 	return t.set("tabs", value)
 }
 
-// TabsMode 展示形式
+// TabsMode 展示模式，取值可以是 line、card、radio、vertical、chrome、simple、strong、tiled、sidebar
 func (t tabs) TabsMode(value string) tabs {
 	return t.set("tabsMode", value)
 }

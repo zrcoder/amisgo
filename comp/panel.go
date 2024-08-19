@@ -11,13 +11,13 @@ func Panel() panel {
 }
 
 // set 用于设置字段值
-func (p panel) set(key string, value interface{}) panel {
+func (p panel) set(key string, value any) panel {
 	p[key] = value
 	return p
 }
 
 // Actions 按钮集合
-func (p panel) Actions(value string) panel {
+func (p panel) Actions(value ...any) panel {
 	return p.set("actions", value)
 }
 
@@ -31,13 +31,13 @@ func (p panel) ActionsControlClassName(value string) panel {
 	return p.set("actionsControlClassName", value)
 }
 
-// AffixFooter 固定底部
-func (p panel) AffixFooter(value string) panel {
+// AffixFooter 是否固定底部
+func (p panel) AffixFooter(value bool) panel {
 	return p.set("affixFooter", value)
 }
 
 // Body 内容区域
-func (p panel) Body(value ...interface{}) panel {
+func (p panel) Body(value ...any) panel {
 	return p.set("body", value)
 }
 
@@ -72,7 +72,7 @@ func (p panel) EditorSetting(value string) panel {
 }
 
 // Footer 底部内容区域
-func (p panel) Footer(value string) panel {
+func (p panel) Footer(value ...any) panel {
 	return p.set("footer", value)
 }
 
@@ -86,8 +86,8 @@ func (p panel) FooterWrapClassName(value string) panel {
 	return p.set("footerWrapClassName", value)
 }
 
-// Header 头部内容, 和 title 二选一
-func (p panel) Header(value string) panel {
+// Header 头部内容
+func (p panel) Header(value ...any) panel {
 	return p.set("header", value)
 }
 
@@ -117,7 +117,7 @@ func (p panel) ID(value string) panel {
 }
 
 // OnEvent 事件动作配置
-func (p panel) OnEvent(value string) panel {
+func (p panel) OnEvent(value any) panel {
 	return p.set("onEvent", value)
 }
 
@@ -157,7 +157,7 @@ func (p panel) StaticSchema(value string) panel {
 }
 
 // Style 组件样式
-func (p panel) Style(value string) panel {
+func (p panel) Style(value any) panel {
 	return p.set("style", value)
 }
 
@@ -182,7 +182,7 @@ func (p panel) Testid(value string) panel {
 }
 
 // Title Panel 标题
-func (p panel) Title(value string) panel {
+func (p panel) Title(value ...any) panel {
 	return p.set("title", value)
 }
 

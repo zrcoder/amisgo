@@ -9,11 +9,11 @@ func Component() component {
 }
 
 // Set 用于设置组件的其他属性
-func (c component) Set(key string, value interface{}) component {
+func (c component) Set(key string, value any) component {
 	return c.set(key, value)
 }
 
-func (c component) set(key string, value interface{}) component {
+func (c component) set(key string, value any) component {
 	c[key] = value
 	return c
 }

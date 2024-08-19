@@ -11,7 +11,7 @@ func Option() option {
 }
 
 // set 设置字段值
-func (o option) set(key string, value interface{}) option {
+func (o option) set(key string, value any) option {
 	o[key] = value
 	return o
 }

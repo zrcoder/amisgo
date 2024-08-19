@@ -11,7 +11,7 @@ func NewListItem() ListItem {
 }
 
 // set 设置字段值
-func (li ListItem) set(key string, value interface{}) ListItem {
+func (li ListItem) set(key string, value any) ListItem {
 	li[key] = value
 	return li
 }
@@ -33,7 +33,7 @@ func (li ListItem) Avatar(value string) ListItem {
 }
 
 // Body 设置内容区域
-func (li ListItem) Body(value ...interface{}) ListItem {
+func (li ListItem) Body(value ...any) ListItem {
 	return li.set("body", value)
 }
 
@@ -82,7 +82,7 @@ func (li ListItem) Id(value string) ListItem {
 }
 
 // OnEvent 设置事件动作配置
-func (li ListItem) OnEvent(value string) ListItem {
+func (li ListItem) OnEvent(value any) ListItem {
 	return li.set("onEvent", value)
 }
 
@@ -131,13 +131,13 @@ func (li ListItem) StaticSchema(value string) ListItem {
 }
 
 // Style 设置组件样式
-func (li ListItem) Style(value string) ListItem {
+func (li ListItem) Style(value any) ListItem {
 	return li.set("style", value)
 }
 
 // SubTitle 设置副标题
 // 支持两种语法：1. `${xxx}` 或 `${xxx|upperCase}` 2. `<%= data.xxx %>`
-func (li ListItem) SubTitle(value string) ListItem {
+func (li ListItem) SubTitle(value any) ListItem {
 	return li.set("subTitle", value)
 }
 
@@ -153,7 +153,7 @@ func (li ListItem) Testid(value string) ListItem {
 
 // Title 设置标题
 // 支持两种语法：1. `${xxx}` 或 `${xxx|upperCase}` 2. `<%= data.xxx %>`
-func (li ListItem) Title(value string) ListItem {
+func (li ListItem) Title(value any) ListItem {
 	return li.set("title", value)
 }
 

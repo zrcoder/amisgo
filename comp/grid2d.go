@@ -1,5 +1,7 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // grid2d 二维布局渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/grid-2d
 type grid2d schema
 
@@ -8,14 +10,14 @@ func Grid2D() grid2d {
 	return make(grid2d).set("type", "grid-2d")
 }
 
-func (g grid2d) set(key string, value interface{}) grid2d {
+func (g grid2d) set(key string, value any) grid2d {
 	g[key] = value
 	return g
 }
 
 // ClassName 容器 css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
 func (g grid2d) ClassName(value string) grid2d {
-	return g.set("className", value)
+	return g.set("gridClassName", value)
 }
 
 // Cols 列数量，默认是 12
@@ -43,13 +45,13 @@ func (g grid2d) Gap(value string) grid2d {
 	return g.set("gap", value)
 }
 
-// GapRow 格子行级别的间距，如果不设置就和 gap 一样
-func (g grid2d) GapRow(value string) grid2d {
-	return g.set("gapRow", value)
+// RowGap 格子垂直间距
+func (g grid2d) RowGap(value string) grid2d {
+	return g.set("rowGap", value)
 }
 
 // Grids 每个格子的配置
-func (g grid2d) Grids(value string) grid2d {
+func (g grid2d) Grids(value ...model.GridSchema) grid2d {
 	return g.set("grids", value)
 }
 
@@ -69,7 +71,7 @@ func (g grid2d) ID(value string) grid2d {
 }
 
 // OnEvent 事件动作配置
-func (g grid2d) OnEvent(value string) grid2d {
+func (g grid2d) OnEvent(value any) grid2d {
 	return g.set("onEvent", value)
 }
 
@@ -114,7 +116,7 @@ func (g grid2d) StaticSchema(value string) grid2d {
 }
 
 // Style 组件样式
-func (g grid2d) Style(value string) grid2d {
+func (g grid2d) Style(value any) grid2d {
 	return g.set("style", value)
 }
 

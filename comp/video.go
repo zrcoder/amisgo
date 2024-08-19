@@ -10,7 +10,7 @@ func Video() video {
 	return video{}.set("type", "video")
 }
 
-func (v video) set(key string, value interface{}) video {
+func (v video) set(key string, value any) video {
 	v[key] = value
 	return v
 }
@@ -101,7 +101,7 @@ func (v video) Muted(value bool) video {
 }
 
 // onEvent 事件动作配置
-func (v video) OnEvent(value string) video {
+func (v video) OnEvent(value any) video {
 	return v.set("onEvent", value)
 }
 
@@ -171,7 +171,7 @@ func (v video) StopOnNextFrame(value bool) video {
 }
 
 // style 组件样式
-func (v video) Style(value string) video {
+func (v video) Style(value any) video {
 	return v.set("style", value)
 }
 

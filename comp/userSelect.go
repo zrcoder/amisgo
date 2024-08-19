@@ -9,7 +9,7 @@ func UsersSelect() userSelect {
 	return userSelect{}.set("type", "users-select")
 }
 
-func (usc userSelect) set(key string, value interface{}) userSelect {
+func (usc userSelect) set(key string, value any) userSelect {
 	usc[key] = value
 	return usc
 }
@@ -240,7 +240,7 @@ func (usc userSelect) Name(value string) userSelect {
 }
 
 // OnEvent 事件动作配置
-func (usc userSelect) OnEvent(value string) userSelect {
+func (usc userSelect) OnEvent(value any) userSelect {
 	return usc.set("onEvent", value)
 }
 

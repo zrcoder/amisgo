@@ -9,7 +9,7 @@ func InputTag() inputTag {
 	return inputTag{}.set("type", "input-tag")
 }
 
-func (t inputTag) set(key string, value interface{}) inputTag {
+func (t inputTag) set(key string, value any) inputTag {
 	t[key] = value
 	return t
 }
@@ -330,7 +330,7 @@ func (t inputTag) Touchable(value bool) inputTag {
 }
 
 // Value 表单项的值
-func (t inputTag) Value(value interface{}) inputTag {
+func (t inputTag) Value(value any) inputTag {
 	return t.set("value", value)
 }
 

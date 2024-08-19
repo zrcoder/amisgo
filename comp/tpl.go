@@ -8,7 +8,7 @@ func Tpl() tpl {
 	return tpl{}.set("type", "tpl")
 }
 
-func (t tpl) set(key string, value interface{}) tpl {
+func (t tpl) set(key string, value any) tpl {
 	t[key] = value
 	return t
 }
@@ -64,7 +64,7 @@ func (t tpl) Inline(value bool) tpl {
 }
 
 // OnEvent 事件动作配置
-func (t tpl) OnEvent(value string) tpl {
+func (t tpl) OnEvent(value any) tpl {
 	return t.set("onEvent", value)
 }
 
@@ -109,7 +109,7 @@ func (t tpl) StaticSchema(value string) tpl {
 }
 
 // Style 自定义样式
-func (t tpl) Style(value string) tpl {
+func (t tpl) Style(value any) tpl {
 	return t.set("style", value)
 }
 

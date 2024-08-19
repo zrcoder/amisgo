@@ -7,7 +7,7 @@ func Editor() editor {
 	return make(editor).set("type", "editor")
 }
 
-func (ec editor) set(key string, value interface{}) editor {
+func (ec editor) set(key string, value any) editor {
 	ec[key] = value
 	return ec
 }
@@ -153,7 +153,7 @@ func (ec editor) Name(value string) editor {
 }
 
 // OnEvent 事件动作配置
-func (ec editor) OnEvent(value string) editor {
+func (ec editor) OnEvent(value any) editor {
 	return ec.set("onEvent", value)
 }
 
@@ -233,7 +233,7 @@ func (ec editor) StaticSchema(value string) editor {
 }
 
 // Style 组件样式
-func (ec editor) Style(value string) editor {
+func (ec editor) Style(value any) editor {
 	return ec.set("style", value)
 }
 

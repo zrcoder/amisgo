@@ -8,7 +8,7 @@ func AnchorNav() anchorNav {
 	return make(anchorNav).set("type", "anchor-nav")
 }
 
-func (a anchorNav) set(key string, value interface{}) anchorNav {
+func (a anchorNav) set(key string, value any) anchorNav {
 	a[key] = value
 	return a
 }
@@ -69,7 +69,7 @@ func (a anchorNav) Links(value string) anchorNav {
 }
 
 // 事件动作配置
-func (a anchorNav) OnEvent(value string) anchorNav {
+func (a anchorNav) OnEvent(value any) anchorNav {
 	return a.set("onEvent", value)
 }
 
@@ -113,7 +113,7 @@ func (a anchorNav) StaticSchema(value string) anchorNav {
 }
 
 // 组件样式
-func (a anchorNav) Style(value string) anchorNav {
+func (a anchorNav) Style(value any) anchorNav {
 	return a.set("style", value)
 }
 

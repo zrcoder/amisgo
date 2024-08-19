@@ -10,7 +10,7 @@ func ReloadAction() reloadAction {
 	return reloadAction{}.set("type", "button").set("actionType", "reload")
 }
 
-func (ra reloadAction) set(key string, value interface{}) reloadAction {
+func (ra reloadAction) set(key string, value any) reloadAction {
 	ra[key] = value
 	return ra
 }
@@ -36,7 +36,7 @@ func (ra reloadAction) Block(value bool) reloadAction {
 }
 
 // Body 子内容
-func (ra reloadAction) Body(value ...interface{}) reloadAction {
+func (ra reloadAction) Body(value ...any) reloadAction {
 	return ra.set("body", value)
 }
 
@@ -56,7 +56,7 @@ func (ra reloadAction) ConfirmText(value string) reloadAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (ra reloadAction) ConfirmTitle(value string) reloadAction {
+func (ra reloadAction) ConfirmTitle(value any) reloadAction {
 	return ra.set("confirmTitle", value)
 }
 
@@ -151,7 +151,7 @@ func (ra reloadAction) OnClick(value string) reloadAction {
 }
 
 // OnEvent 事件动作配置
-func (ra reloadAction) OnEvent(value string) reloadAction {
+func (ra reloadAction) OnEvent(value any) reloadAction {
 	return ra.set("onEvent", value)
 }
 
@@ -221,7 +221,7 @@ func (ra reloadAction) StaticSchema(value string) reloadAction {
 }
 
 // Style 组件样式
-func (ra reloadAction) Style(value string) reloadAction {
+func (ra reloadAction) Style(value any) reloadAction {
 	return ra.set("style", value)
 }
 

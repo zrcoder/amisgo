@@ -202,7 +202,7 @@ func (m inputMonthRange) Name(value string) inputMonthRange {
 }
 
 // onEvent 事件动作配置
-func (m inputMonthRange) OnEvent(value string) inputMonthRange {
+func (m inputMonthRange) OnEvent(value any) inputMonthRange {
 	return m.set("onEvent", value)
 }
 
@@ -302,7 +302,7 @@ func (m inputMonthRange) StaticSchema(value string) inputMonthRange {
 }
 
 // style 组件样式
-func (m inputMonthRange) Style(value string) inputMonthRange {
+func (m inputMonthRange) Style(value any) inputMonthRange {
 	return m.set("style", value)
 }
 
@@ -371,7 +371,7 @@ func (m inputMonthRange) Width(value string) inputMonthRange {
 	return m.set("width", value)
 }
 
-func (m inputMonthRange) set(key string, value interface{}) inputMonthRange {
+func (m inputMonthRange) set(key string, value any) inputMonthRange {
 	m[key] = value
 	return m
 }

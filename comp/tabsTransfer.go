@@ -9,7 +9,7 @@ func TabsTransfer() tabsTransfer {
 	return tabsTransfer{}.set("type", "tabs-transfer")
 }
 
-func (t tabsTransfer) set(key string, value interface{}) tabsTransfer {
+func (t tabsTransfer) set(key string, value any) tabsTransfer {
 	t[key] = value
 	return t
 }
@@ -55,7 +55,7 @@ func (t tabsTransfer) Clearable(value bool) tabsTransfer {
 }
 
 // Columns 当 selectMode 为 table 时定义表格列信息。
-func (t tabsTransfer) Columns(value string) tabsTransfer {
+func (t tabsTransfer) Columns(value ...any) tabsTransfer {
 	return t.set("columns", value)
 }
 
@@ -425,6 +425,6 @@ func (t tabsTransfer) WrapperClassName(value string) tabsTransfer {
 }
 
 // WrapperStyle 配置 wrapper style
-func (t tabsTransfer) WrapperStyle(value string) tabsTransfer {
+func (t tabsTransfer) WrapperStyle(value any) tabsTransfer {
 	return t.set("wrapperStyle", value)
 }

@@ -10,7 +10,7 @@ func Log() log {
 	return log{}.set("type", "log")
 }
 
-func (l log) set(key string, value interface{}) log {
+func (l log) set(key string, value any) log {
 	l[key] = value
 	return l
 }

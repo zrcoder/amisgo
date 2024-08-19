@@ -8,7 +8,7 @@ func ButtonGroup() buttonGroup {
 	return make(buttonGroup).set("type", "button-group")
 }
 
-func (br buttonGroup) set(key string, value interface{}) buttonGroup {
+func (br buttonGroup) set(key string, value any) buttonGroup {
 	br[key] = value
 	return br
 }
@@ -74,7 +74,7 @@ func (bg buttonGroup) Id(value string) buttonGroup {
 }
 
 // OnEvent 设置事件动作配置
-func (bg buttonGroup) OnEvent(value string) buttonGroup {
+func (bg buttonGroup) OnEvent(value any) buttonGroup {
 	return bg.set("onEvent", value)
 }
 
@@ -119,7 +119,7 @@ func (bg buttonGroup) StaticSchema(value string) buttonGroup {
 }
 
 // Style 设置组件样式
-func (bg buttonGroup) Style(value string) buttonGroup {
+func (bg buttonGroup) Style(value any) buttonGroup {
 	return bg.set("style", value)
 }
 

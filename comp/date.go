@@ -8,7 +8,7 @@ func Date() date {
 	return make(date).set("type", "date")
 }
 
-func (d date) set(key string, value interface{}) date {
+func (d date) set(key string, value any) date {
 	d[key] = value
 	return d
 }
@@ -69,7 +69,7 @@ func (d date) ID(value string) date {
 }
 
 // OnEvent 事件动作配置
-func (d date) OnEvent(value string) date {
+func (d date) OnEvent(value any) date {
 	return d.set("onEvent", value)
 }
 
@@ -114,7 +114,7 @@ func (d date) StaticSchema(value string) date {
 }
 
 // Style 组件样式
-func (d date) Style(value string) date {
+func (d date) Style(value any) date {
 	return d.set("style", value)
 }
 

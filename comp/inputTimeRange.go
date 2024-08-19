@@ -11,7 +11,7 @@ func InputTimeRange() inputTimeRange {
 }
 
 // set 是一个内部方法，用于设置字段值并返回自身的引用
-func (i inputTimeRange) set(key string, value interface{}) inputTimeRange {
+func (i inputTimeRange) set(key string, value any) inputTimeRange {
 	i[key] = value
 	return i
 }

@@ -10,7 +10,7 @@ func Wizard() wizard {
 	return wizard{}.set("type", "wizard")
 }
 
-func (w wizard) set(key string, value interface{}) wizard {
+func (w wizard) set(key string, value any) wizard {
 	w[key] = value
 	return w
 }
@@ -121,7 +121,7 @@ func (w wizard) Name(value string) wizard {
 }
 
 // OnEvent 事件动作配置
-func (w wizard) OnEvent(value string) wizard {
+func (w wizard) OnEvent(value any) wizard {
 	return w.set("onEvent", value)
 }
 
@@ -196,7 +196,7 @@ func (w wizard) StepsClassName(value string) wizard {
 }
 
 // Style 组件样式
-func (w wizard) Style(value string) wizard {
+func (w wizard) Style(value any) wizard {
 	return w.set("style", value)
 }
 

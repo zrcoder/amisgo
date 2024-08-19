@@ -8,7 +8,7 @@ func DialogAction() dialogAction {
 	return make(dialogAction).set("type", "button").set("actionType", "dialog")
 }
 
-func (da dialogAction) set(key string, value interface{}) dialogAction {
+func (da dialogAction) set(key string, value any) dialogAction {
 	da[key] = value
 	return da
 }
@@ -34,7 +34,7 @@ func (da dialogAction) Block(value bool) dialogAction {
 }
 
 // Body 子内容 (子内容)
-func (da dialogAction) Body(value ...interface{}) dialogAction {
+func (da dialogAction) Body(value ...any) dialogAction {
 	return da.set("body", value)
 }
 
@@ -54,7 +54,7 @@ func (da dialogAction) ConfirmText(value string) dialogAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (da dialogAction) ConfirmTitle(value string) dialogAction {
+func (da dialogAction) ConfirmTitle(value any) dialogAction {
 	return da.set("confirmTitle", value)
 }
 
@@ -164,7 +164,7 @@ func (da dialogAction) OnClick(value string) dialogAction {
 }
 
 // OnEvent 事件动作配置
-func (da dialogAction) OnEvent(value string) dialogAction {
+func (da dialogAction) OnEvent(value any) dialogAction {
 	return da.set("onEvent", value)
 }
 
@@ -244,7 +244,7 @@ func (da dialogAction) StaticSchema(value string) dialogAction {
 }
 
 // Style 组件样式
-func (da dialogAction) Style(value string) dialogAction {
+func (da dialogAction) Style(value any) dialogAction {
 	return da.set("style", value)
 }
 

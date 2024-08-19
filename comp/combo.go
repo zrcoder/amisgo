@@ -8,7 +8,7 @@ func Combo() combo {
 	return make(combo).set("type", "combo")
 }
 
-func (cc combo) set(key string, value interface{}) combo {
+func (cc combo) set(key string, value any) combo {
 	cc[key] = value
 	return cc
 }
@@ -169,7 +169,7 @@ func (cc combo) InputClassName(value string) combo {
 }
 
 // Items 设置数组输入框的子项
-func (cc combo) Items(value string) combo {
+func (cc combo) Items(value ...any) combo {
 	return cc.set("items", value)
 }
 
@@ -254,7 +254,7 @@ func (cc combo) Nullable(value bool) combo {
 }
 
 // OnEvent 设置事件动作配置
-func (cc combo) OnEvent(value string) combo {
+func (cc combo) OnEvent(value any) combo {
 	return cc.set("onEvent", value)
 }
 

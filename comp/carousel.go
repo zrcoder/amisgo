@@ -8,7 +8,7 @@ func Carousel() carousel {
 	return make(carousel).set("type", "carousel")
 }
 
-func (c carousel) set(key string, value interface{}) carousel {
+func (c carousel) set(key string, value any) carousel {
 	c[key] = value
 	return c
 }
@@ -109,7 +109,7 @@ func (c carousel) Name(value string) carousel {
 }
 
 // OnEvent 设置 onEvent 属性
-func (c carousel) OnEvent(value string) carousel {
+func (c carousel) OnEvent(value any) carousel {
 	return c.set("onEvent", value)
 }
 
@@ -159,7 +159,7 @@ func (c carousel) StaticSchema(value string) carousel {
 }
 
 // Style 设置 style 属性
-func (c carousel) Style(value string) carousel {
+func (c carousel) Style(value any) carousel {
 	return c.set("style", value)
 }
 

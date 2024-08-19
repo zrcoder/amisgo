@@ -10,13 +10,13 @@ func SchemaPopOver() schemaPopOver {
 	return schemaPopOver{}
 }
 
-func (s schemaPopOver) set(key string, value interface{}) schemaPopOver {
+func (s schemaPopOver) set(key string, value any) schemaPopOver {
 	s[key] = value
 	return s
 }
 
 // Body
-func (s schemaPopOver) Body(value ...interface{}) schemaPopOver {
+func (s schemaPopOver) Body(value ...any) schemaPopOver {
 	return s.set("body", value)
 }
 
@@ -61,7 +61,7 @@ func (s schemaPopOver) Size(value string) schemaPopOver {
 }
 
 // Title 标题
-func (s schemaPopOver) Title(value string) schemaPopOver {
+func (s schemaPopOver) Title(value any) schemaPopOver {
 	return s.set("title", value)
 }
 

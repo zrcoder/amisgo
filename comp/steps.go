@@ -10,7 +10,7 @@ func Steps() steps {
 	return steps{}.set("type", "steps")
 }
 
-func (s steps) set(key string, value interface{}) steps {
+func (s steps) set(key string, value any) steps {
 	s[key] = value
 	return s
 }
@@ -66,7 +66,7 @@ func (s steps) Name(value string) steps {
 }
 
 // OnEvent 事件动作配置
-func (s steps) OnEvent(value string) steps {
+func (s steps) OnEvent(value any) steps {
 	return s.set("onEvent", value)
 }
 
@@ -126,7 +126,7 @@ func (s steps) Steps(value string) steps {
 }
 
 // Style 组件样式
-func (s steps) Style(value string) steps {
+func (s steps) Style(value any) steps {
 	return s.set("style", value)
 }
 

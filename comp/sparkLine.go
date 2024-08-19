@@ -10,7 +10,7 @@ func SparkLine() sparkLine {
 	return sparkLine{}.set("type", "sparkline")
 }
 
-func (s sparkLine) set(key string, value interface{}) sparkLine {
+func (s sparkLine) set(key string, value any) sparkLine {
 	s[key] = value
 	return s
 }
@@ -66,7 +66,7 @@ func (s sparkLine) Name(value string) sparkLine {
 }
 
 // OnEvent 事件动作配置
-func (s sparkLine) OnEvent(value string) sparkLine {
+func (s sparkLine) OnEvent(value any) sparkLine {
 	return s.set("onEvent", value)
 }
 
@@ -111,7 +111,7 @@ func (s sparkLine) StaticSchema(value string) sparkLine {
 }
 
 // Style 组件样式
-func (s sparkLine) Style(value string) sparkLine {
+func (s sparkLine) Style(value any) sparkLine {
 	return s.set("style", value)
 }
 

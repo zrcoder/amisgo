@@ -64,7 +64,7 @@ func (i iframe) Name(value string) iframe {
 }
 
 // OnEvent 事件动作配置
-func (i iframe) OnEvent(value string) iframe {
+func (i iframe) OnEvent(value any) iframe {
 	return i.set("onEvent", value)
 }
 
@@ -119,7 +119,7 @@ func (i iframe) StaticSchema(value string) iframe {
 }
 
 // Style 组件样式
-func (i iframe) Style(value string) iframe {
+func (i iframe) Style(value any) iframe {
 	return i.set("style", value)
 }
 
@@ -153,7 +153,7 @@ func (i iframe) Width(value string) iframe {
 	return i.set("width", value)
 }
 
-func (i iframe) set(key string, value interface{}) iframe {
+func (i iframe) set(key string, value any) iframe {
 	i[key] = value
 	return i
 }

@@ -10,7 +10,7 @@ func Service() service {
 	return service{}.set("type", "service")
 }
 
-func (s service) set(key string, value interface{}) service {
+func (s service) set(key string, value any) service {
 	s[key] = value
 	return s
 }
@@ -21,7 +21,7 @@ func (s service) Api(value string) service {
 }
 
 // Body 内容区域 (内容区域)
-func (s service) Body(value ...interface{}) service {
+func (s service) Body(value ...any) service {
 	return s.set("body", value)
 }
 
@@ -111,7 +111,7 @@ func (s service) Name(value string) service {
 }
 
 // OnEvent 事件动作配置
-func (s service) OnEvent(value string) service {
+func (s service) OnEvent(value any) service {
 	return s.set("onEvent", value)
 }
 
@@ -171,7 +171,7 @@ func (s service) StopAutoRefreshWhen(value string) service {
 }
 
 // Style 组件样式
-func (s service) Style(value string) service {
+func (s service) Style(value any) service {
 	return s.set("style", value)
 }
 

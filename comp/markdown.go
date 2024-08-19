@@ -10,7 +10,7 @@ func Markdown() markdown {
 	return markdown{}.set("type", "markdown")
 }
 
-func (m markdown) set(key string, value interface{}) markdown {
+func (m markdown) set(key string, value any) markdown {
 	m[key] = value
 	return m
 }

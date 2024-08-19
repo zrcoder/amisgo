@@ -11,7 +11,7 @@ func NewInputKV() InputKV {
 }
 
 // set 是一个内部方法，用于设置字段值并返回自身的引用
-func (i InputKV) set(key string, value interface{}) InputKV {
+func (i InputKV) set(key string, value any) InputKV {
 	i[key] = value
 	return i
 }

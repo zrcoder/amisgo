@@ -10,7 +10,7 @@ func Control() control {
 	return make(control).set("type", "control")
 }
 
-func (fc control) set(key string, value interface{}) control {
+func (fc control) set(key string, value any) control {
 	fc[key] = value
 	return fc
 }
@@ -21,7 +21,7 @@ func (fc control) AutoFill(value string) control {
 }
 
 // Body FormItem 内容
-func (fc control) Body(value ...interface{}) control {
+func (fc control) Body(value ...any) control {
 	return fc.set("body", value)
 }
 
@@ -146,7 +146,7 @@ func (fc control) Name(value string) control {
 }
 
 // OnEvent 事件动作配置
-func (fc control) OnEvent(value string) control {
+func (fc control) OnEvent(value any) control {
 	return fc.set("onEvent", value)
 }
 
@@ -226,7 +226,7 @@ func (fc control) StaticSchema(value string) control {
 }
 
 // Style 组件样式
-func (fc control) Style(value string) control {
+func (fc control) Style(value any) control {
 	return fc.set("style", value)
 }
 

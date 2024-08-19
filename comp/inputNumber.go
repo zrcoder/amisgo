@@ -11,7 +11,7 @@ func InputNumber() inputNumber {
 }
 
 // set 设置字段值
-func (nc inputNumber) set(key string, value interface{}) inputNumber {
+func (nc inputNumber) set(key string, value any) inputNumber {
 	nc[key] = value
 	return nc
 }
@@ -177,7 +177,7 @@ func (nc inputNumber) Name(value string) inputNumber {
 }
 
 // OnEvent 事件动作配置
-func (nc inputNumber) OnEvent(value string) inputNumber {
+func (nc inputNumber) OnEvent(value any) inputNumber {
 	return nc.set("onEvent", value)
 }
 
@@ -282,7 +282,7 @@ func (nc inputNumber) Step(value string) inputNumber {
 }
 
 // Style 组件样式
-func (nc inputNumber) Style(value string) inputNumber {
+func (nc inputNumber) Style(value any) inputNumber {
 	return nc.set("style", value)
 }
 

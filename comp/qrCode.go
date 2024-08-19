@@ -11,7 +11,7 @@ func QRCode() qrCode {
 		set("type", "qrcode")
 }
 
-func (q qrCode) set(key string, value interface{}) qrCode {
+func (q qrCode) set(key string, value any) qrCode {
 	q[key] = value
 	return q
 }
@@ -87,7 +87,7 @@ func (q qrCode) Name(value string) qrCode {
 }
 
 // OnEvent 事件动作配置
-func (q qrCode) OnEvent(value string) qrCode {
+func (q qrCode) OnEvent(value any) qrCode {
 	return q.set("onEvent", value)
 }
 
@@ -137,7 +137,7 @@ func (q qrCode) StaticSchema(value string) qrCode {
 }
 
 // Style 组件样式
-func (q qrCode) Style(value string) qrCode {
+func (q qrCode) Style(value any) qrCode {
 	return q.set("style", value)
 }
 

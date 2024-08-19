@@ -9,7 +9,7 @@ func Select() selectControl {
 	return selectControl{}.set("type", "select")
 }
 
-func (sc selectControl) set(key string, value interface{}) selectControl {
+func (sc selectControl) set(key string, value any) selectControl {
 	sc[key] = value
 	return sc
 }
@@ -75,7 +75,7 @@ func (sc selectControl) Clearable(value bool) selectControl {
 }
 
 // columns 当 selectMode 为 table 时定义表格列信息。
-func (sc selectControl) Columns(value string) selectControl {
+func (sc selectControl) Columns(value ...any) selectControl {
 	return sc.set("columns", value)
 }
 
@@ -295,7 +295,7 @@ func (sc selectControl) OnDialogConfirm(value string) selectControl {
 }
 
 // options 选项集合，主要用来配置下拉列表项。
-func (sc selectControl) Options(value ...interface{}) selectControl {
+func (sc selectControl) Options(value ...any) selectControl {
 	return sc.set("options", value)
 }
 

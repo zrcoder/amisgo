@@ -11,7 +11,7 @@ func Password() password {
 }
 
 // set 用于设置字段值
-func (p password) set(key string, value interface{}) password {
+func (p password) set(key string, value any) password {
 	p[key] = value
 	return p
 }
@@ -57,7 +57,7 @@ func (p password) MosaicText(value string) password {
 }
 
 // OnEvent 事件动作配置
-func (p password) OnEvent(value string) password {
+func (p password) OnEvent(value any) password {
 	return p.set("onEvent", value)
 }
 
@@ -97,7 +97,7 @@ func (p password) StaticSchema(value string) password {
 }
 
 // Style 组件样式
-func (p password) Style(value string) password {
+func (p password) Style(value any) password {
 	return p.set("style", value)
 }
 

@@ -10,7 +10,7 @@ func TableView() tableView {
 	return tableView{}.set("type", "table-view")
 }
 
-func (tv tableView) set(key string, value interface{}) tableView {
+func (tv tableView) set(key string, value any) tableView {
 	tv[key] = value
 	return tv
 }

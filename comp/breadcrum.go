@@ -8,7 +8,7 @@ func Breadcrumb() breadcrumb {
 	return make(breadcrumb)
 }
 
-func (b breadcrumb) set(key string, value interface{}) breadcrumb {
+func (b breadcrumb) set(key string, value any) breadcrumb {
 	b[key] = value
 	return b
 }
@@ -34,7 +34,7 @@ func (b breadcrumb) ItemClassName(value string) breadcrumb {
 }
 
 // Items 文本
-func (b breadcrumb) Items(value string) breadcrumb {
+func (b breadcrumb) Items(value ...any) breadcrumb {
 	return b.set("items", value)
 }
 

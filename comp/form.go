@@ -10,7 +10,7 @@ func Form() form {
 	return make(form).set("type", "form")
 }
 
-func (f form) set(key string, value interface{}) form {
+func (f form) set(key string, value any) form {
 	f[key] = value
 	return f
 }
@@ -31,7 +31,7 @@ func (f form) Mode(value string) form {
 }
 
 // Body Form 内容
-func (f form) Body(value ...interface{}) form {
+func (f form) Body(value ...any) form {
 	return f.set("body", value)
 }
 
@@ -91,7 +91,7 @@ func (f form) StopAutoRefreshWhen(value string) form {
 }
 
 // Style 组件样式
-func (f form) Style(value string) form {
+func (f form) Style(value any) form {
 	return f.set("style", value)
 }
 
@@ -131,7 +131,7 @@ func (f form) Testid(value string) form {
 }
 
 // Title 表单标题
-func (f form) Title(value string) form {
+func (f form) Title(value any) form {
 	return f.set("title", value)
 }
 

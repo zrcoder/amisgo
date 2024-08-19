@@ -8,7 +8,7 @@ func CrudCards() crudCards {
 	return make(crudCards).set("mode", "cards").set("type", "crud")
 }
 
-func (c crudCards) set(key string, value interface{}) crudCards {
+func (c crudCards) set(key string, value any) crudCards {
 	c[key] = value
 	return c
 }
@@ -54,7 +54,7 @@ func (c crudCards) BulkActions(value string) crudCards {
 }
 
 // Card 设置卡片配置
-func (c crudCards) Card(value interface{}) crudCards {
+func (c crudCards) Card(value any) crudCards {
 	return c.set("card", value)
 }
 
@@ -124,7 +124,7 @@ func (c crudCards) FilterTogglable(value bool) crudCards {
 }
 
 // Footer 设置底部区域
-func (c crudCards) Footer(value interface{}) crudCards {
+func (c crudCards) Footer(value any) crudCards {
 	return c.set("footer", value)
 }
 
@@ -134,7 +134,7 @@ func (c crudCards) FooterClassName(value string) crudCards {
 }
 
 // FooterToolbar 设置底部工具栏
-func (c crudCards) FooterToolbar(value interface{}) crudCards {
+func (c crudCards) FooterToolbar(value any) crudCards {
 	return c.set("footerToolbar", value)
 }
 
@@ -144,7 +144,7 @@ func (c crudCards) FooterToolbarClassName(value string) crudCards {
 }
 
 // Header 设置顶部区域
-func (c crudCards) Header(value interface{}) crudCards {
+func (c crudCards) Header(value any) crudCards {
 	return c.set("header", value)
 }
 
@@ -154,7 +154,7 @@ func (c crudCards) HeaderClassName(value string) crudCards {
 }
 
 // HeaderToolbar 设置顶部工具栏
-func (c crudCards) HeaderToolbar(value interface{}) crudCards {
+func (c crudCards) HeaderToolbar(value any) crudCards {
 	return c.set("headerToolbar", value)
 }
 
@@ -279,7 +279,7 @@ func (c crudCards) Name(value string) crudCards {
 }
 
 // OnEvent 设置事件动作配置
-func (c crudCards) OnEvent(value string) crudCards {
+func (c crudCards) OnEvent(value any) crudCards {
 	return c.set("onEvent", value)
 }
 
@@ -394,7 +394,7 @@ func (c crudCards) SyncLocation(value bool) crudCards {
 }
 
 // Title 设置标题
-func (c crudCards) Title(value string) crudCards {
+func (c crudCards) Title(value any) crudCards {
 	return c.set("title", value)
 }
 
@@ -429,7 +429,7 @@ func (c crudCards) WrapItemClassName(value string) crudCards {
 }
 
 // ExtraAction 设置额外操作
-func (c crudCards) ExtraAction(value interface{}) crudCards {
+func (c crudCards) ExtraAction(value any) crudCards {
 	return c.set("extraAction", value)
 }
 

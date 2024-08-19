@@ -8,7 +8,7 @@ func ConditionGroupValue() conditionGroupValue {
 	return make(conditionGroupValue).set("conjunction", "and")
 }
 
-func (c conditionGroupValue) set(key string, value interface{}) conditionGroupValue {
+func (c conditionGroupValue) set(key string, value any) conditionGroupValue {
 	c[key] = value
 	return c
 }

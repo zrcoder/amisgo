@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/zrcoder/amisgo/comp"
+	"github.com/zrcoder/amisgo/model"
 )
 
 /*
@@ -19,7 +20,7 @@ Page
 */
 var page = comp.Page().
 	Toolbar(
-		comp.Form().
+		comp.Form().StaticLabelClassName("").
 			PanelClassName("mb-0").
 			Body(
 				comp.Select().
@@ -54,12 +55,12 @@ var page = comp.Page().
 					Body(
 						comp.Tabs().
 							Tabs(
-								comp.Tab().
+								model.Tab().
 									Title("消费趋势").
 									Tab(
-										comp.Chart().API(trendRouter).Config("${config}"),
+										comp.Chart().Config(trendChartCOnfig),
 									),
-								comp.Tab().Title("账户余额").Tab("0.00"),
+								model.Tab().Title("账户余额").Tab("0.00"),
 							),
 					),
 				comp.Panel().
@@ -70,11 +71,11 @@ var page = comp.Page().
 			ClassName("m-t-sm").
 			Api(itemsRouter).
 			Columns(
-				comp.Column().Name("id").Label("ID"),
-				comp.Column().Name("engine").Label("Rendering engine"),
-				comp.Column().Name("browser").Label("Browser"),
-				comp.Column().Name("platform").Label("Platform(s)"),
-				comp.Column().Name("version").Label("Engine version"),
-				comp.Column().Name("grade").Label("CSS grade"),
+				model.Column().Name("id").Label("ID"),
+				model.Column().Name("engine").Label("Rendering engine"),
+				model.Column().Name("browser").Label("Browser"),
+				model.Column().Name("platform").Label("Platform(s)"),
+				model.Column().Name("version").Label("Engine version"),
+				model.Column().Name("grade").Label("CSS grade"),
 			),
 	)

@@ -8,7 +8,7 @@ func Code() code {
 	return make(code).set("type", "code")
 }
 
-func (c code) set(key string, value interface{}) code {
+func (c code) set(key string, value any) code {
 	c[key] = value
 	return c
 }

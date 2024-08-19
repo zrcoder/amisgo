@@ -9,7 +9,7 @@ func NavOverflow() navOverflow {
 }
 
 // set 方法用于设置属性并返回自身
-func (n navOverflow) set(key string, value interface{}) navOverflow {
+func (n navOverflow) set(key string, value any) navOverflow {
 	n[key] = value
 	return n
 }
@@ -60,7 +60,7 @@ func (n navOverflow) OverflowSuffix(value string) navOverflow {
 }
 
 // Style 设置自定义样式
-func (n navOverflow) Style(value string) navOverflow {
+func (n navOverflow) Style(value any) navOverflow {
 	return n.set("style", value)
 }
 

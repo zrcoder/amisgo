@@ -8,7 +8,7 @@ func FeedbackDialog() feedbackDialog {
 	return make(feedbackDialog)
 }
 
-func (f feedbackDialog) set(key string, value interface{}) feedbackDialog {
+func (f feedbackDialog) set(key string, value any) feedbackDialog {
 	f[key] = value
 	return f
 }
@@ -19,7 +19,7 @@ func (f feedbackDialog) Actions(value string) feedbackDialog {
 }
 
 // Body 内容区域
-func (f feedbackDialog) Body(value ...interface{}) feedbackDialog {
+func (f feedbackDialog) Body(value ...any) feedbackDialog {
 	return f.set("body", value)
 }
 
@@ -124,7 +124,7 @@ func (f feedbackDialog) Name(value string) feedbackDialog {
 }
 
 // OnEvent 事件动作配置
-func (f feedbackDialog) OnEvent(value string) feedbackDialog {
+func (f feedbackDialog) OnEvent(value any) feedbackDialog {
 	return f.set("onEvent", value)
 }
 
@@ -199,7 +199,7 @@ func (f feedbackDialog) StaticSchema(value string) feedbackDialog {
 }
 
 // Style 组件样式
-func (f feedbackDialog) Style(value string) feedbackDialog {
+func (f feedbackDialog) Style(value any) feedbackDialog {
 	return f.set("style", value)
 }
 
@@ -214,7 +214,7 @@ func (f feedbackDialog) Testid(value string) feedbackDialog {
 }
 
 // Title 请通过配置 title 设置标题
-func (f feedbackDialog) Title(value string) feedbackDialog {
+func (f feedbackDialog) Title(value any) feedbackDialog {
 	return f.set("title", value)
 }
 

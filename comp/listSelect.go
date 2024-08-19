@@ -10,7 +10,7 @@ func ListSelect() listSelect {
 }
 
 // set 设置字段值
-func (lc listSelect) set(key string, value interface{}) listSelect {
+func (lc listSelect) set(key string, value any) listSelect {
 	lc[key] = value
 	return lc
 }
@@ -261,7 +261,7 @@ func (lc listSelect) Name(value string) listSelect {
 }
 
 // OnEvent 事件动作配置
-func (lc listSelect) OnEvent(value string) listSelect {
+func (lc listSelect) OnEvent(value any) listSelect {
 	return lc.set("onEvent", value)
 }
 

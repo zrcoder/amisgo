@@ -8,7 +8,7 @@ func Image() image {
 	return make(image).set("type", "image")
 }
 
-func (i image) set(key string, value interface{}) image {
+func (i image) set(key string, value any) image {
 	i[key] = value
 	return i
 }
@@ -124,7 +124,7 @@ func (i image) Name(value string) image {
 }
 
 // OnEvent 事件动作配置
-func (i image) OnEvent(value string) image {
+func (i image) OnEvent(value any) image {
 	return i.set("onEvent", value)
 }
 
@@ -179,7 +179,7 @@ func (i image) StaticSchema(value string) image {
 }
 
 // Style 组件样式
-func (i image) Style(value string) image {
+func (i image) Style(value any) image {
 	return i.set("style", value)
 }
 
@@ -209,7 +209,7 @@ func (i image) ThumbRatio(value string) image {
 }
 
 // Title 图片标题
-func (i image) Title(value string) image {
+func (i image) Title(value any) image {
 	return i.set("title", value)
 }
 

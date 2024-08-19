@@ -8,7 +8,7 @@ func Color() color {
 	return make(color).set("type", "color")
 }
 
-func (c color) set(key string, value interface{}) color {
+func (c color) set(key string, value any) color {
 	c[key] = value
 	return c
 }
@@ -54,7 +54,7 @@ func (c color) ID(value string) color {
 }
 
 // OnEvent 设置事件动作配置
-func (c color) OnEvent(value string) color {
+func (c color) OnEvent(value any) color {
 	return c.set("onEvent", value)
 }
 
@@ -99,7 +99,7 @@ func (c color) StaticSchema(value string) color {
 }
 
 // Style 设置组件样式
-func (c color) Style(value string) color {
+func (c color) Style(value any) color {
 	return c.set("style", value)
 }
 

@@ -9,7 +9,7 @@ func InputYear() inputYear {
 	return inputYear{}.set("type", "input-year")
 }
 
-func (yc inputYear) set(key string, value interface{}) inputYear {
+func (yc inputYear) set(key string, value any) inputYear {
 	yc[key] = value
 	return yc
 }
@@ -175,7 +175,7 @@ func (yc inputYear) Name(value string) inputYear {
 }
 
 // OnEvent 事件动作配置
-func (yc inputYear) OnEvent(value string) inputYear {
+func (yc inputYear) OnEvent(value any) inputYear {
 	return yc.set("onEvent", value)
 }
 
@@ -260,7 +260,7 @@ func (yc inputYear) StaticSchema(value string) inputYear {
 }
 
 // Style 组件样式
-func (yc inputYear) Style(value string) inputYear {
+func (yc inputYear) Style(value any) inputYear {
 	return yc.set("style", value)
 }
 

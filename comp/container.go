@@ -8,13 +8,13 @@ func Container() container {
 	return make(container).set("type", "container")
 }
 
-func (c container) set(key string, value interface{}) container {
+func (c container) set(key string, value any) container {
 	c[key] = value
 	return c
 }
 
 // Body 设置内容
-func (c container) Body(value ...interface{}) container {
+func (c container) Body(value ...any) container {
 	return c.set("body", value)
 }
 
@@ -69,7 +69,7 @@ func (c container) ID(value string) container {
 }
 
 // OnEvent 设置事件动作配置
-func (c container) OnEvent(value string) container {
+func (c container) OnEvent(value any) container {
 	return c.set("onEvent", value)
 }
 
@@ -109,7 +109,7 @@ func (c container) StaticSchema(value string) container {
 }
 
 // Style 设置自定义样式
-func (c container) Style(value string) container {
+func (c container) Style(value any) container {
 	return c.set("style", value)
 }
 

@@ -10,7 +10,7 @@ func Picker() picker {
 	return picker{}.set("type", "picker")
 }
 
-func (pc picker) set(key string, value interface{}) picker {
+func (pc picker) set(key string, value any) picker {
 	pc[key] = value
 	return pc
 }
@@ -246,7 +246,7 @@ func (pc picker) ModalMode(value string) picker {
 }
 
 // ModalTitle 弹框标题
-func (pc picker) ModalTitle(value string) picker {
+func (pc picker) ModalTitle(value any) picker {
 	return pc.set("modalTitle", value)
 }
 
@@ -266,7 +266,7 @@ func (pc picker) Name(value string) picker {
 }
 
 // OnEvent 事件
-func (pc picker) OnEvent(value string) picker {
+func (pc picker) OnEvent(value any) picker {
 	return pc.set("onEvent", value)
 }
 
@@ -376,7 +376,7 @@ func (pc picker) StaticSchema(value string) picker {
 }
 
 // Style 自定义样式
-func (pc picker) Style(value string) picker {
+func (pc picker) Style(value any) picker {
 	return pc.set("style", value)
 }
 

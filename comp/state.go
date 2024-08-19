@@ -10,13 +10,13 @@ func State() state {
 	return state{}
 }
 
-func (s state) set(key string, value interface{}) state {
+func (s state) set(key string, value any) state {
 	s[key] = value
 	return s
 }
 
 // Body 内容 (内容)
-func (s state) Body(value ...interface{}) state {
+func (s state) Body(value ...any) state {
 	return s.set("body", value)
 }
 
@@ -56,7 +56,7 @@ func (s state) Id(value string) state {
 }
 
 // OnEvent 事件动作配置
-func (s state) OnEvent(value string) state {
+func (s state) OnEvent(value any) state {
 	return s.set("onEvent", value)
 }
 
@@ -96,7 +96,7 @@ func (s state) StaticSchema(value string) state {
 }
 
 // Style 组件样式
-func (s state) Style(value string) state {
+func (s state) Style(value any) state {
 	return s.set("style", value)
 }
 
@@ -111,7 +111,7 @@ func (s state) Testid(value string) state {
 }
 
 // Title 状态标题
-func (s state) Title(value string) state {
+func (s state) Title(value any) state {
 	return s.set("title", value)
 }
 

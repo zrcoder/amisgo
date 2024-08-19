@@ -12,7 +12,7 @@ func LocationPicker() locationPicker {
 	return locationPicker{}.set("type", "location-picker")
 }
 
-func (lc locationPicker) set(key string, value interface{}) locationPicker {
+func (lc locationPicker) set(key string, value any) locationPicker {
 	lc[key] = value
 	return lc
 }
@@ -186,7 +186,7 @@ func (lc locationPicker) Name(value string) locationPicker {
 }
 
 // OnEvent 事件动作配置
-func (lc locationPicker) OnEvent(value string) locationPicker {
+func (lc locationPicker) OnEvent(value any) locationPicker {
 	lc.set("onEvent", value)
 	return lc
 }
@@ -288,7 +288,7 @@ func (lc locationPicker) StaticSchema(value string) locationPicker {
 }
 
 // Style 组件样式
-func (lc locationPicker) Style(value string) locationPicker {
+func (lc locationPicker) Style(value any) locationPicker {
 	lc.set("style", value)
 	return lc
 }

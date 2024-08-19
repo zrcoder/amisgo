@@ -10,7 +10,7 @@ func Progress() progress {
 	return progress{}.set("type", "progress").set("mode", "line")
 }
 
-func (p progress) set(key string, value interface{}) progress {
+func (p progress) set(key string, value any) progress {
 	p[key] = value
 	return p
 }
@@ -81,7 +81,7 @@ func (p progress) Name(value string) progress {
 }
 
 // OnEvent 事件动作配置
-func (p progress) OnEvent(value string) progress {
+func (p progress) OnEvent(value any) progress {
 	return p.set("onEvent", value)
 }
 
@@ -151,7 +151,7 @@ func (p progress) StrokeWidth(value string) progress {
 }
 
 // Style 组件样式
-func (p progress) Style(value string) progress {
+func (p progress) Style(value any) progress {
 	return p.set("style", value)
 }
 

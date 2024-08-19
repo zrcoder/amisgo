@@ -7,7 +7,7 @@ func Hidden() hidden {
 	return make(hidden).set("type", "hidden")
 }
 
-func (h hidden) set(key string, value interface{}) hidden {
+func (h hidden) set(key string, value any) hidden {
 	h[key] = value
 	return h
 }
@@ -138,7 +138,7 @@ func (h hidden) Name(value string) hidden {
 }
 
 // OnEvent 事件动作配置
-func (h hidden) OnEvent(value string) hidden {
+func (h hidden) OnEvent(value any) hidden {
 	return h.set("onEvent", value)
 }
 
@@ -218,7 +218,7 @@ func (h hidden) StaticSchema(value string) hidden {
 }
 
 // Style 组件样式
-func (h hidden) Style(value string) hidden {
+func (h hidden) Style(value any) hidden {
 	return h.set("style", value)
 }
 

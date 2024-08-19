@@ -148,7 +148,7 @@ func (i inputDatetimeRange) VisibleOn(value string) inputDatetimeRange {
 	return i.set("visibleOn", value)
 }
 
-func (i inputDatetimeRange) set(key string, value interface{}) inputDatetimeRange {
+func (i inputDatetimeRange) set(key string, value any) inputDatetimeRange {
 	i[key] = value
 	return i
 }

@@ -8,7 +8,7 @@ func Card() card {
 	return make(card).set("type", "card")
 }
 
-func (c card) set(key string, value interface{}) card {
+func (c card) set(key string, value any) card {
 	c[key] = value
 	return c
 }
@@ -19,7 +19,7 @@ func (c card) Actions(value string) card {
 }
 
 // Body 设置 body 属性
-func (c card) Body(value ...interface{}) card {
+func (c card) Body(value ...any) card {
 	return c.set("body", value)
 }
 
@@ -89,7 +89,7 @@ func (c card) Media(value string) card {
 }
 
 // OnEvent 设置 onEvent 属性
-func (c card) OnEvent(value string) card {
+func (c card) OnEvent(value any) card {
 	return c.set("onEvent", value)
 }
 
@@ -134,7 +134,7 @@ func (c card) StaticSchema(value string) card {
 }
 
 // Style 设置 style 属性
-func (c card) Style(value string) card {
+func (c card) Style(value any) card {
 	return c.set("style", value)
 }
 

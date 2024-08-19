@@ -8,13 +8,13 @@ func ImageToolbarAction() imageToolbarAction {
 	return make(imageToolbarAction).set("key", "ROTATE_RIGHT")
 }
 
-func (a imageToolbarAction) set(key string, value interface{}) imageToolbarAction {
+func (a imageToolbarAction) set(key string, value any) imageToolbarAction {
 	a[key] = value
 	return a
 }
 
 // ConfirmTitle 确认弹窗标题
-func (a imageToolbarAction) ConfirmTitle(value string) imageToolbarAction {
+func (a imageToolbarAction) ConfirmTitle(value any) imageToolbarAction {
 	return a.set("confirmTitle", value)
 }
 

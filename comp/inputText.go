@@ -392,7 +392,7 @@ func (t inputText) ValidationErrors(value string) inputText {
 }
 
 // Value 表单项的值
-func (t inputText) Value(value interface{}) inputText {
+func (t inputText) Value(value any) inputText {
 	return t.set("value", value)
 }
 
@@ -422,12 +422,12 @@ func (t inputText) ValueType(value string) inputText {
 }
 
 // ValueOnEvent
-func (t inputText) ValueOnEvent(value string) inputText {
+func (t inputText) ValueOnEvent(value any) inputText {
 	return t.set("valueOnEvent", value)
 }
 
 // set 设置属性
-func (t inputText) set(key string, value interface{}) inputText {
+func (t inputText) set(key string, value any) inputText {
 	t[key] = value
 	return t
 }

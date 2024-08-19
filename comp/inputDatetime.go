@@ -7,7 +7,7 @@ func InputDatetime() inputDatetime {
 	return make(inputDatetime).set("type", "input-datetime")
 }
 
-func (d inputDatetime) set(key string, value interface{}) inputDatetime {
+func (d inputDatetime) set(key string, value any) inputDatetime {
 	d[key] = value
 	return d
 }
@@ -188,7 +188,7 @@ func (d inputDatetime) Name(value string) inputDatetime {
 }
 
 // OnEvent 事件动作配置
-func (d inputDatetime) OnEvent(value string) inputDatetime {
+func (d inputDatetime) OnEvent(value any) inputDatetime {
 	return d.set("onEvent", value)
 }
 
@@ -273,7 +273,7 @@ func (d inputDatetime) StaticSchema(value string) inputDatetime {
 }
 
 // Style 组件样式
-func (d inputDatetime) Style(value string) inputDatetime {
+func (d inputDatetime) Style(value any) inputDatetime {
 	return d.set("style", value)
 }
 

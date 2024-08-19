@@ -10,7 +10,7 @@ func VBox() vBox {
 	return vBox{}.set("type", "vbox")
 }
 
-func (v vBox) set(key string, value interface{}) vBox {
+func (v vBox) set(key string, value any) vBox {
 	v[key] = value
 	return v
 }
@@ -51,7 +51,7 @@ func (v vBox) Id(value string) vBox {
 }
 
 // onEvent 事件动作配置
-func (v vBox) OnEvent(value string) vBox {
+func (v vBox) OnEvent(value any) vBox {
 	return v.set("onEvent", value)
 }
 
@@ -96,7 +96,7 @@ func (v vBox) StaticSchema(value string) vBox {
 }
 
 // style 组件样式
-func (v vBox) Style(value string) vBox {
+func (v vBox) Style(value any) vBox {
 	return v.set("style", value)
 }
 

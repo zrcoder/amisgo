@@ -11,7 +11,7 @@ func Tasks() tasks {
 }
 
 // set 用于设置属性值，返回更新后的 Tasks 实例
-func (t tasks) set(key string, value interface{}) tasks {
+func (t tasks) set(key string, value any) tasks {
 	t[key] = value
 	return t
 }
@@ -92,7 +92,7 @@ func (t tasks) Interval(value string) tasks {
 }
 
 // Items
-func (t tasks) Items(value string) tasks {
+func (t tasks) Items(value ...any) tasks {
 	return t.set("items", value)
 }
 
@@ -112,7 +112,7 @@ func (t tasks) Name(value string) tasks {
 }
 
 // OnEvent 事件动作配置
-func (t tasks) OnEvent(value string) tasks {
+func (t tasks) OnEvent(value any) tasks {
 	return t.set("onEvent", value)
 }
 
@@ -197,7 +197,7 @@ func (t tasks) StatusTextMap(value string) tasks {
 }
 
 // Style 组件样式
-func (t tasks) Style(value string) tasks {
+func (t tasks) Style(value any) tasks {
 	return t.set("style", value)
 }
 

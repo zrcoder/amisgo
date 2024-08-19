@@ -9,7 +9,7 @@ func Nav() nav {
 }
 
 // set 方法用于设置属性并返回自身
-func (n nav) set(key string, value interface{}) nav {
+func (n nav) set(key string, value any) nav {
 	n[key] = value
 	return n
 }
@@ -125,7 +125,7 @@ func (n nav) Mode(value string) nav {
 }
 
 // OnEvent 设置事件动作配置
-func (n nav) OnEvent(value string) nav {
+func (n nav) OnEvent(value any) nav {
 	return n.set("onEvent", value)
 }
 
@@ -205,7 +205,7 @@ func (n nav) StaticSchema(value string) nav {
 }
 
 // Style 设置组件样式
-func (n nav) Style(value string) nav {
+func (n nav) Style(value any) nav {
 	return n.set("style", value)
 }
 

@@ -9,7 +9,7 @@ func TreeSelect() treeSelect {
 	return treeSelect{}.set("type", "tree-select")
 }
 
-func (tsc treeSelect) set(key string, value interface{}) treeSelect {
+func (tsc treeSelect) set(key string, value any) treeSelect {
 	tsc[key] = value
 	return tsc
 }
@@ -280,7 +280,7 @@ func (tsc treeSelect) Name(value string) treeSelect {
 }
 
 // Options 选项
-func (tsc treeSelect) Options(value interface{}) treeSelect {
+func (tsc treeSelect) Options(value any) treeSelect {
 	return tsc.set("options", value)
 }
 
@@ -335,7 +335,7 @@ func (tsc treeSelect) ReloadApi(value string) treeSelect {
 }
 
 // ResetValue 表单重置的值
-func (tsc treeSelect) ResetValue(value interface{}) treeSelect {
+func (tsc treeSelect) ResetValue(value any) treeSelect {
 	return tsc.set("resetValue", value)
 }
 
@@ -400,7 +400,7 @@ func (tsc treeSelect) Tip(value string) treeSelect {
 }
 
 // Value 表单项的值
-func (tsc treeSelect) Value(value interface{}) treeSelect {
+func (tsc treeSelect) Value(value any) treeSelect {
 	return tsc.set("value", value)
 }
 
@@ -435,7 +435,7 @@ func (tsc treeSelect) Wrapping(value bool) treeSelect {
 }
 
 // 自定义其他字段
-func (tsc treeSelect) Other(key string, value interface{}) treeSelect {
+func (tsc treeSelect) Other(key string, value any) treeSelect {
 	return tsc.set(key, value)
 }
 
@@ -505,7 +505,7 @@ func (tsc treeSelect) StaticSchema(value string) treeSelect {
 }
 
 // Style 组件样式
-func (tsc treeSelect) Style(value string) treeSelect {
+func (tsc treeSelect) Style(value any) treeSelect {
 	return tsc.set("style", value)
 }
 

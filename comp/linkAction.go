@@ -35,7 +35,7 @@ func (la linkAction) Block(value bool) linkAction {
 }
 
 // Body 子内容
-func (la linkAction) Body(value ...interface{}) linkAction {
+func (la linkAction) Body(value ...any) linkAction {
 	la.set("body", value)
 	return la
 }
@@ -59,7 +59,7 @@ func (la linkAction) ConfirmText(value string) linkAction {
 }
 
 // ConfirmTitle 确认弹窗标题
-func (la linkAction) ConfirmTitle(value string) linkAction {
+func (la linkAction) ConfirmTitle(value any) linkAction {
 	la.set("confirmTitle", value)
 	return la
 }
@@ -179,7 +179,7 @@ func (la linkAction) OnClick(value string) linkAction {
 }
 
 // OnEvent 事件动作配置
-func (la linkAction) OnEvent(value string) linkAction {
+func (la linkAction) OnEvent(value any) linkAction {
 	la.set("onEvent", value)
 	return la
 }
@@ -263,7 +263,7 @@ func (la linkAction) StaticSchema(value string) linkAction {
 }
 
 // Style 组件样式
-func (la linkAction) Style(value string) linkAction {
+func (la linkAction) Style(value any) linkAction {
 	la.set("style", value)
 	return la
 }
@@ -317,7 +317,7 @@ func (la linkAction) VisibleOn(value string) linkAction {
 }
 
 // set 设置键值对
-func (la linkAction) set(key string, value interface{}) linkAction {
+func (la linkAction) set(key string, value any) linkAction {
 	la[key] = value
 	return la
 }

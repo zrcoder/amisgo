@@ -11,13 +11,13 @@ func PaginationWrapper() paginationWrapper {
 }
 
 // set 用于设置字段值
-func (pw paginationWrapper) set(key string, value interface{}) paginationWrapper {
+func (pw paginationWrapper) set(key string, value any) paginationWrapper {
 	pw[key] = value
 	return pw
 }
 
 // Body 内容区域
-func (pw paginationWrapper) Body(value ...interface{}) paginationWrapper {
+func (pw paginationWrapper) Body(value ...any) paginationWrapper {
 	return pw.set("body", value)
 }
 
@@ -67,7 +67,7 @@ func (pw paginationWrapper) MaxButtons(value string) paginationWrapper {
 }
 
 // OnEvent 事件动作配置
-func (pw paginationWrapper) OnEvent(value string) paginationWrapper {
+func (pw paginationWrapper) OnEvent(value any) paginationWrapper {
 	return pw.set("onEvent", value)
 }
 
@@ -127,7 +127,7 @@ func (pw paginationWrapper) StaticSchema(value string) paginationWrapper {
 }
 
 // Style 组件样式
-func (pw paginationWrapper) Style(value string) paginationWrapper {
+func (pw paginationWrapper) Style(value any) paginationWrapper {
 	return pw.set("style", value)
 }
 
