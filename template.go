@@ -11,10 +11,9 @@ const htmlTemplate = `<!DOCTYPE html>
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    {{if eq .Theme "antd"}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/antd.min.css" />
-    {{else if eq .Theme "ang"}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/ang.min.css" />
+    
+    {{if .Theme}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/{{.Theme}}.min.css" />
     {{else}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/sdk.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/helper.min.css" />
@@ -39,15 +38,16 @@ const htmlTemplate = `<!DOCTYPE html>
     <script type="text/javascript">
       (function () {
         let amis = amisRequire('amis/embed');
-        let amisJSON = {{ .AmisJson }};
         let amisScoped = amis.embed(
         '#root', 
-        amisJSON, 
-        {},
-        {{if eq .Theme "antd"}}
-        {theme: 'antd'}
-        {{else if eq .Theme "ang"}}
-        {theme: 'ang'}
+        {{ .AmisJson }}, 
+        {
+          {{if eq .Lang "en"}}
+          locale: 'en-US'
+          {{end}}
+        },
+        {{if .Theme}}
+        {theme: '{{.Theme}}'}
         {{end}}
         );
       })();

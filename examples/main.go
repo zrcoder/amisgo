@@ -13,6 +13,12 @@ func main() {
 		),
 	)
 
+	cfg := &amisgo.Config{
+		Theme: amisgo.ThemeAntd,
+		Lang:  amisgo.LangEn,
+		Title: "test",
+	}
+
 	amisgo.Route("/", index)
-	panic(amisgo.ListenAndServe(":9090"))
+	panic(amisgo.ListenAndServe(":9090", cfg))
 }
