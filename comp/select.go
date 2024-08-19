@@ -269,6 +269,16 @@ func (sc selectControl) Name(value string) selectControl {
 	return sc.set("name", value)
 }
 
+// SelectFirst
+func (sc selectControl) SelectFirst(value bool) selectControl {
+	return sc.set("selectFirst", value)
+}
+
+// Mode | normal | inline | horizontal |
+func (sc selectControl) Mode(value string) selectControl {
+	return sc.set("mode", value)
+}
+
 // noneOptions 对于 `autoComplete` API 提供的值不被选择项本身支持的时候，用于配置没有值时的提示文字
 func (sc selectControl) NoneOptions(value string) selectControl {
 	return sc.set("noneOptions", value)
@@ -285,7 +295,7 @@ func (sc selectControl) OnDialogConfirm(value string) selectControl {
 }
 
 // options 选项集合，主要用来配置下拉列表项。
-func (sc selectControl) Options(value string) selectControl {
+func (sc selectControl) Options(value ...interface{}) selectControl {
 	return sc.set("options", value)
 }
 

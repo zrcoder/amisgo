@@ -134,6 +134,21 @@ func (d inputDateRange) Inline(value bool) inputDateRange {
 	return d.set("inline", value)
 }
 
+// Value 设置值
+func (d inputDateRange) Value(value string) inputDateRange {
+	return d.set("value", value)
+}
+
+// CloseOnSelect 设置是否在选择后关闭
+func (d inputDateRange) CloseOnSelect(value bool) inputDateRange {
+	return d.set("closeOnSelect", value)
+}
+
+// Clearable
+func (d inputDateRange) Clearable(value bool) inputDateRange {
+	return d.set("clearable", value)
+}
+
 // InputClassName 设置输入框的 class 名称
 func (d inputDateRange) InputClassName(value string) inputDateRange {
 	return d.set("inputClassName", value)

@@ -252,7 +252,7 @@ func (p page) Title(value string) page {
 }
 
 // Toolbar 页面顶部区域，当存在 title 时在右上角显示。
-func (p page) Toolbar(value string) page {
+func (p page) Toolbar(value ...interface{}) page {
 	return p.set("toolbar", value)
 }
 

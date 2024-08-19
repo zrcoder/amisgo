@@ -15,6 +15,11 @@ func (f form) set(key string, value interface{}) form {
 	return f
 }
 
+// PanelClassName 外层 panel 的类名
+func (f form) PanelClassName(value string) form {
+	return f.set("panelClassName", value)
+}
+
 // Reload 配置表单重新加载
 func (f form) Reload(value string) form {
 	return f.set("reload", value)

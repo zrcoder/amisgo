@@ -196,7 +196,7 @@ func (t tabs) Swipeable(value bool) tabs {
 }
 
 // Tabs 选项卡成员
-func (t tabs) Tabs(value string) tabs {
+func (t tabs) Tabs(value ...interface{}) tabs {
 	return t.set("tabs", value)
 }
 

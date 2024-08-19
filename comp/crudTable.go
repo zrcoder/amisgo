@@ -5,7 +5,12 @@ type crudTable schema
 
 // CrudTable 创建一个新的 CRUDTable 实例
 func CrudTable() crudTable {
-	return make(crudTable).set("type", "crud")
+	return crudTable{}.set("type", "crud")
+}
+
+// Crud
+func Crud() crudTable {
+	return CrudTable()
 }
 
 func (c crudTable) set(key string, value interface{}) crudTable {
@@ -26,7 +31,7 @@ func (c crudTable) AutoFillHeight(value interface{}) crudTable {
 }
 
 // Columns 设置表格列配置
-func (c crudTable) Columns(value string) crudTable {
+func (c crudTable) Columns(value ...interface{}) crudTable {
 	return c.set("columns", value)
 }
 

@@ -34,7 +34,7 @@ func (c chart) ClickAction(value string) chart {
 }
 
 // Config 配置echart的config，支持数据映射。如果用了数据映射，为了同步更新，请设置 trackExpression
-func (c chart) Config(value string) chart {
+func (c chart) Config(value interface{}) chart {
 	return c.set("config", value)
 }
 

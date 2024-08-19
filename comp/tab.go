@@ -7,7 +7,7 @@ type tab schema
 
 // Tab 创建一个新的 Tab 实例
 func Tab() tab {
-	return tab{}.set("type", "tab")
+	return tab{}
 }
 
 func (t tab) set(key string, value interface{}) tab {
@@ -146,7 +146,7 @@ func (t tab) Style(value string) tab {
 }
 
 // Tab 内容 (内容)
-func (t tab) Tab(value string) tab {
+func (t tab) Tab(value ...interface{}) tab {
 	return t.set("tab", value)
 }
 

@@ -63,6 +63,11 @@ func (c column) Name(value string) column {
 	return c.set("name", value)
 }
 
+// Label 设置标签
+func (c column) Label(value string) column {
+	return c.set("label", value)
+}
+
 // QuickEdit 配置快速编辑功能
 func (c column) QuickEdit(value string) column {
 	return c.set("quickEdit", value)

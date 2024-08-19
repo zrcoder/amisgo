@@ -24,7 +24,7 @@ func (g grid) ClassName(value string) grid {
 }
 
 // Columns 列集合
-func (g grid) Columns(value string) grid {
+func (g grid) Columns(value ...interface{}) grid {
 	return g.set("columns", value)
 }
 
