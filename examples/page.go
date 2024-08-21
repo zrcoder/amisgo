@@ -58,9 +58,12 @@ var page = comp.Page().
 								model.Tab().
 									Title("消费趋势").
 									Tab(
-										comp.Chart().Config(trendChartCOnfig),
+										comp.Chart().
+											Config(trendChartCOnfig),
 									),
-								model.Tab().Title("账户余额").Tab("0.00"),
+								model.Tab().
+									Title("账户余额").
+									Tab("0.00"),
 							),
 					),
 				comp.Panel().

@@ -6,7 +6,7 @@ The name stands for `amis go`, coincidentally means `friend` in Zulu.
 ## Inspired by
 
 Amisgo is inspired by and based on baidu [Amis](https://aisuda.bce.baidu.com/amis).  
-Read the [wiki](https://github.com/zrcoder/amisgo/wiki) for more background and details.
+Read the [wiki](https://github.com/zrcoder/amisgo/wiki)(Chinese) for more background and details.
 
 ## Usage
 
