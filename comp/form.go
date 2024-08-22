@@ -30,6 +30,21 @@ func (f form) Mode(value string) form {
 	return f.set("mode", value)
 }
 
+// Horizontal 当 mode 为 horizontal 时有用，用来控制 label 的展示占比， 默认 {"left":2, "right":10, "justify": false}
+func (f form) Horizontal(value any) form {
+	return f.set("horizontal", value)
+}
+
+// LabelAlign 表单项标签对齐方式，left | right, 默认右对齐，仅在 mode为horizontal 时生效
+func (f form) LabelAlign(value any) form {
+	return f.set("labelAlign", value)
+}
+
+// LabelWidth 表单项标签自定义宽度
+func (f form) LabelWidth(value any) form {
+	return f.set("labelWidth", value)
+}
+
 // Body Form 内容
 func (f form) Body(value ...any) form {
 	return f.set("body", value)
@@ -41,7 +56,7 @@ func (f form) ResetAfterSubmit(value bool) form {
 }
 
 // Rules 组合校验规则，选填
-func (f form) Rules(value string) form {
+func (f form) Rules(value ...any) form {
 	return f.set("rules", value)
 }
 
@@ -131,7 +146,7 @@ func (f form) Testid(value string) form {
 }
 
 // Title 表单标题
-func (f form) Title(value any) form {
+func (f form) Title(value string) form {
 	return f.set("title", value)
 }
 
@@ -153,4 +168,24 @@ func (f form) VisibleOn(value string) form {
 // WrapWithPanel 是否用 panel 包裹起来
 func (f form) WrapWithPanel(value bool) form {
 	return f.set("wrapWithPanel", value)
+}
+
+// Actions
+func (f form) Actions(value ...action) form {
+	return f.set("actions", value)
+}
+
+// InitApi 用来获取初始数据的 api
+func (f form) InitApi(value any) form {
+	return f.set("initApi", value)
+}
+
+// Api 用来保存数据的 api
+func (f form) Api(value any) form {
+	return f.set("api", value)
+}
+
+// Go 设置提交后的处理逻辑
+func (f form) Go(action func(map[string]any)) form {
+	return f.Api(serveApi(action))
 }
