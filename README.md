@@ -28,8 +28,7 @@ func main() {
 		),
 	)
 
-	amisgo.Route("/", index)
-	panic(amisgo.ListenAndServe(":9090"))
+	panic(amisgo.ListenAndServe(":9090", index))
 }
 ```
 
@@ -41,5 +40,5 @@ and then visit http://localhost:9090 , you will see a page like this:
 
 - [x] both ListenAndServe, GenerateStaticWebsite api
 - [x] Generate codes in the comp directory, based on schema.json in Amis' last release(or Amis' docs)
-- [ ] Tests and examples
+- [ ] Tests and examples(10%)
 - [ ] Go+ classfile improvement

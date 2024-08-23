@@ -6,41 +6,31 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 	"text/template"
 
 	"github.com/zrcoder/amisgo/comp"
 )
 
-var routers = map[string]comp.AmisComp{}
-
-func Route(patten string, component comp.AmisComp) {
-	routers[patten] = component
-}
-
-func ListenAndServe(addr string, cfg ...*Config) error {
+func ListenAndServe(addr string, component comp.AmisComp, cfg ...*Config) error {
 	config := getConfig(cfg)
-	for patten, component := range routers {
-		http.HandleFunc(patten, func(w http.ResponseWriter, r *http.Request) {
-			writeHtml(config, component, w)
-		})
-	}
+	http.HandleFunc(config.Route, func(w http.ResponseWriter, r *http.Request) {
+		writeHtml(config, component, w)
+	})
 	return http.ListenAndServe(addr, nil)
 }
 
-func GenerateStaticWebsite(cfg ...*Config) error {
+func GenerateStaticWebsite(outputDir string, component comp.AmisComp, cfg ...*Config) error {
 	config := getConfig(cfg)
-	for patten, component := range routers {
-		name := patten
-		if patten == "/" {
-			name = "index"
-		}
-		name += ".html"
-		writer := bytes.NewBuffer(nil)
-		writeHtml(config, component, writer)
-		err := os.WriteFile(name, writer.Bytes(), 0o640)
-		if err != nil {
-			return err
-		}
+	if outputDir == "" {
+		outputDir = "."
+	}
+	name := "index.html"
+	writer := bytes.NewBuffer(nil)
+	writeHtml(config, component, writer)
+	err := os.WriteFile(filepath.Join(outputDir, name), writer.Bytes(), 0o640)
+	if err != nil {
+		return err
 	}
 	return nil
 }

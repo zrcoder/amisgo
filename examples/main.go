@@ -7,6 +7,5 @@ import (
 func main() {
 	ServeApi()
 
-	amisgo.Route("/", page)
-	panic(amisgo.ListenAndServe(":8080"))
+	panic(amisgo.ListenAndServe(":8080", page))
 }

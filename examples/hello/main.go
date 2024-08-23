@@ -7,6 +7,5 @@ import (
 
 func main() {
 	page := comp.Page().Body("Hello World!")
-	amisgo.Route("/", page)
-	panic(amisgo.ListenAndServe(""))
+	panic(amisgo.ListenAndServe("", page))
 }

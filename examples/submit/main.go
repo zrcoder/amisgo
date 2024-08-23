@@ -20,6 +20,5 @@ func main() {
 		}),
 	)
 
-	amisgo.Route("/", index)
-	panic(amisgo.ListenAndServe(":9090"))
+	panic(amisgo.ListenAndServe(":9090", index))
 }
