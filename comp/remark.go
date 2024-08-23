@@ -140,6 +140,11 @@ func (rm remark) Title(value any) remark {
 	return rm.set("title", value)
 }
 
+// Body 主要内容
+func (rm remark) Body(value ...any) remark {
+	return rm.set("body", value)
+}
+
 // TooltipClassName css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"}
 func (rm remark) TooltipClassName(value string) remark {
 	return rm.set("tooltipClassName", value)

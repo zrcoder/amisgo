@@ -114,7 +114,7 @@ func (n nav) Level(value string) nav {
 	return n.set("level", value)
 }
 
-// Links 设置链接地址集合
+// Links 设置链接地址集合 TODO
 func (n nav) Links(value string) nav {
 	return n.set("links", value)
 }
