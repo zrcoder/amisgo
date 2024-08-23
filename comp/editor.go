@@ -192,7 +192,7 @@ func (ec editor) SaveImmediately(value bool) editor {
 	return ec.set("saveImmediately", value)
 }
 
-// Size 编辑器大小
+// Size 编辑器高度，取值可以是 md、lg、xl、xxl, 默认 md
 func (ec editor) Size(value string) editor {
 	return ec.set("size", value)
 }

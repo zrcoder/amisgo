@@ -150,6 +150,11 @@ func (f form) Title(value string) form {
 	return f.set("title", value)
 }
 
+// ColumnCount 表单显示的列数
+func (f form) ColumnCount(value int) form {
+	return f.set("columnCount", value)
+}
+
 // UseMobileUI 可以组件级别用来关闭移动端样式
 func (f form) UseMobileUI(value bool) form {
 	return f.set("useMobileUI", value)

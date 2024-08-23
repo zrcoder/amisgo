@@ -22,6 +22,7 @@ func serveApi(action func(map[string]any)) string {
 			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
+		defer r.Body.Close()
 		m := map[string]any{}
 		err = js.Unmarshal(input, &m)
 		if err != nil {
