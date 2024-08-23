@@ -28,11 +28,11 @@ func main() {
 		),
 	)
 
-	panic(amisgo.ListenAndServe(":9090", index))
+	panic(amisgo.ListenAndServe(index))
 }
 ```
 
-and then visit http://localhost:9090 , you will see a page like this:
+and then visit http://localhost, you will see a page like this:
 
 ![hello-amis](./hello-amis.png)
 

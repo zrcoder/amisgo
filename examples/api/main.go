@@ -7,5 +7,5 @@ import (
 func main() {
 	ServeApi()
 
-	panic(amisgo.ListenAndServe(":8080", page))
+	panic(amisgo.ListenAndServe(page))
 }

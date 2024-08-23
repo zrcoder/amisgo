@@ -7,5 +7,5 @@ import (
 
 func main() {
 	page := comp.Page().Body("Hello World!")
-	panic(amisgo.ListenAndServe("", page))
+	panic(amisgo.ListenAndServe(page))
 }

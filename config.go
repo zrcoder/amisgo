@@ -22,7 +22,8 @@ type Config struct {
 	Theme Theme
 	Lang  Lang
 	Title string
-	Route string
+	Addr  string
+	Path  string
 }
 
 func GetDefaultConfig() *Config {
@@ -30,7 +31,8 @@ func GetDefaultConfig() *Config {
 		Title: "Amisgo",
 		Lang:  LangDefault,
 		Theme: ThemeDefault,
-		Route: "/",
+		Addr:  ":80",
+		Path:  "/",
 	}
 }
 

@@ -19,5 +19,5 @@ func main() {
 			// ),
 		),
 	)
-	panic(amisgo.ListenAndServe(":9090", app))
+	panic(amisgo.ListenAndServe(app))
 }

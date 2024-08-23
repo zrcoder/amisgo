@@ -18,5 +18,5 @@ func main() {
 	cfg.Lang = amisgo.LangEn
 	cfg.Title = "test"
 
-	panic(amisgo.ListenAndServe(":9090", index, cfg))
+	panic(amisgo.ListenAndServe(index, cfg))
 }
