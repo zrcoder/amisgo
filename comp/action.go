@@ -8,6 +8,11 @@ func Action() action {
 	return make(action).set("type", "action")
 }
 
+// Submit submit行为按钮
+func Submit() action {
+	return Action().set("type", "submit")
+}
+
 // ActionType 【必填】这是 action 最核心的配置，来指定该 action 的作用类型 可选值: ajax | link | url | drawer | dialog | confirm | cancel | prev | next | copy | close
 func (a action) ActionType(value string) action {
 	return a.set("actionType", value)

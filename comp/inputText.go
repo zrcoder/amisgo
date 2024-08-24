@@ -61,6 +61,11 @@ func (t inputText) ClassName(value string) inputText {
 	return t.set("className", value)
 }
 
+// ColumnClassName
+func (t inputText) ColumnClassName(value string) inputText {
+	return t.set("columnClassName", value)
+}
+
 // ClearValueOnEmpty 在内容为空的时候清除值
 func (t inputText) ClearValueOnEmpty(value bool) inputText {
 	return t.set("clearValueOnEmpty", value)
@@ -111,7 +116,7 @@ func (t inputText) Delimiter(value string) inputText {
 	return t.set("delimiter", value)
 }
 
-// Desc
+// Desc 描述内容
 func (t inputText) Desc(value string) inputText {
 	return t.set("desc", value)
 }
@@ -236,6 +241,16 @@ func (t inputText) Label(value string) inputText {
 	return t.set("label", value)
 }
 
+// Size 尺寸 'xs' | 'sm' | 'md' | 'lg' | 'full'
+func (t inputText) Size(value string) inputText {
+	return t.set("size", value)
+}
+
+// Remark string or remark
+func (t inputText) Remark(value any) inputText {
+	return t.set("remark", value)
+}
+
 // LabelAlign 描述标题 可选值: right | left | top | inherit
 func (t inputText) LabelAlign(value string) inputText {
 	return t.set("labelAlign", value)
@@ -279,6 +294,11 @@ func (t inputText) Multiple(value bool) inputText {
 // Name 表单项名称
 func (t inputText) Name(value string) inputText {
 	return t.set("name", value)
+}
+
+// Required 是否必须输入
+func (t inputText) Required(value bool) inputText {
+	return t.set("required", value)
 }
 
 // Note

@@ -3,7 +3,8 @@ package main
 import (
 	"github.com/zrcoder/amisgo"
 	"github.com/zrcoder/amisgo/comp"
-	"github.com/zrcoder/amisgo/examples/all/pages/pages"
+	"github.com/zrcoder/amisgo/examples/all/pages/form"
+	"github.com/zrcoder/amisgo/examples/all/pages/page"
 	"github.com/zrcoder/amisgo/model"
 )
 
@@ -11,13 +12,17 @@ func main() {
 	app := comp.App().BrandName("Amisgo 示例").Pages(
 		model.Page().Children(
 			model.Page().Icon("fa fa-th").Label("页面").Url("/pages").Children(
-				model.Page().Url("simple").Label("简单页面").Schema(pages.Simple),
-				model.Page().Url("error").Label("初始化出错").Schema(pages.InitError),
-				model.Page().Url("form").Label("表单页面").Schema(pages.Form),
+				model.Page().Url("simple").Label("简单页面").Schema(page.Simple),
+				model.Page().Url("error").Label("初始化出错").Schema(page.InitError),
+				model.Page().Url("form").Label("表单页面").Schema(page.Form),
+			),
+		),
+		model.Page().Children(
+			model.Page().Icon("fa fa-list-alt").Label("表单").Url("/form").Children(
+				model.Page().Url("mode").Label("模式").Schema(form.Modes),
 			),
 		),
 		model.Page().Label("其他").Url("other").Children(
-			model.Page().Icon("fa fa-list-alt").Label("表单").Children(),
 			model.Page().Icon("fa fa-table").Label("增删改查").Children(),
 			model.Page().Icon("fa fa-bomb").Label("弹框").Children(),
 			model.Page().Icon("fa fa-clone").Label("选项卡").Children(),

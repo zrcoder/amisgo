@@ -15,6 +15,11 @@ func (f form) set(key string, value any) form {
 	return f
 }
 
+// ClassName
+func (f form) ClassName(value string) form {
+	return f.set("classname", value)
+}
+
 // PanelClassName 外层 panel 的类名
 func (f form) PanelClassName(value string) form {
 	return f.set("panelClassName", value)
@@ -28,6 +33,11 @@ func (f form) Reload(value string) form {
 // Mode 配置当前表单项展示模式 可选值: normal | inline | horizontal
 func (f form) Mode(value string) form {
 	return f.set("mode", value)
+}
+
+// AutoFocus 是否自动聚焦
+func (f form) AutoFocus(value bool) form {
+	return f.set("autoFocus", value)
 }
 
 // Horizontal 当 mode 为 horizontal 时有用，用来控制 label 的展示占比， 默认 {"left":2, "right":10, "justify": false}

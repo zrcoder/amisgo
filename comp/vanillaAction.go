@@ -133,6 +133,11 @@ func (v vanillaAction) Label(value string) vanillaAction {
 	return v.set("label", value)
 }
 
+// Url 按钮链接
+func (v vanillaAction) Url(value string) vanillaAction {
+	return v.set("url", value)
+}
+
 // Level 按钮样式 可选值: info | success | warning | danger | link | primary | dark | light | secondary
 func (v vanillaAction) Level(value string) vanillaAction {
 	return v.set("level", value)
