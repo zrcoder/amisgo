@@ -1,5 +1,7 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // wizardStep 表单向导的步骤
 
 // @version 6.7.0
@@ -71,7 +73,7 @@ func (ws wizardStep) ColumnCount(value string) wizardStep {
 }
 
 // Data
-func (ws wizardStep) Data(value string) wizardStep {
+func (ws wizardStep) Data(value model.Data) wizardStep {
 	return ws.set("data", value)
 }
 

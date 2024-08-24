@@ -141,7 +141,7 @@ func (rm remark) Title(value any) remark {
 }
 
 // Body 主要内容
-func (rm remark) Body(value ...any) remark {
+func (rm remark) Body(value any) remark {
 	return rm.set("body", value)
 }
 

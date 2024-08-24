@@ -1,5 +1,7 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // baseApi 基础 API 渲染器
 type baseApi schema
 
@@ -39,7 +41,7 @@ func (b baseApi) ConvertKeyToPath(value bool) baseApi {
 }
 
 // Data 用来控制携带数据
-func (b baseApi) Data(value string) baseApi {
+func (b baseApi) Data(value model.Data) baseApi {
 	return b.set("data", value)
 }
 

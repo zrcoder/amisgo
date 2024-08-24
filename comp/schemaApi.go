@@ -1,5 +1,7 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // schemaApi
 //
 // @version 6.7.0
@@ -36,7 +38,7 @@ func (s schemaApi) ConvertKeyToPath(value bool) schemaApi {
 }
 
 // Data 用来控制携带数据. 当key 为 `&` 值为 `$$` 时, 将所有原始数据打平设置到 data 中. 当值为 $$ 将所有原始数据赋值到对应的 key 中. 当值为 $ 打头时, 将变量值设置到 key 中.
-func (s schemaApi) Data(value string) schemaApi {
+func (s schemaApi) Data(value model.Data) schemaApi {
 	return s.set("data", value)
 }
 

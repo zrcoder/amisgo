@@ -1,8 +1,20 @@
 package pages
 
-import "github.com/zrcoder/amisgo/comp"
+import (
+	"fmt"
+	"time"
 
-var SimplePage = comp.Page().
+	"github.com/zrcoder/amisgo/comp"
+	"github.com/zrcoder/amisgo/model"
+)
+
+func getDate() string {
+	y, m, d := time.Now().Date()
+	mm := time.Now().UnixNano()
+	return fmt.Sprintf("%d-%d-%d %d", y, m, d, mm)
+}
+
+var Simple = comp.Page().
 	Title("标题").
 	Remark(comp.Remark().
 		Title("标题").
@@ -13,5 +25,7 @@ var SimplePage = comp.Page().
 		RootClose(true),
 	).Body("内容部分. 可以使用 \\${var} 获取变量。如: `\\$date`: ${date}").
 	Aside("边栏部分").
-	Toolbar("工具栏")
-	// InitApi("")
+	Toolbar("工具栏").
+	InitData(func() model.Data {
+		return model.Data{"date": getDate()}
+	})

@@ -1,5 +1,7 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // drawerAction 表示一个抽出式弹框中的操作按钮。
 type drawerAction schema
 
@@ -74,7 +76,7 @@ func (d drawerAction) CountDownTpl(value string) drawerAction {
 }
 
 // Data 数据映射
-func (d drawerAction) Data(value string) drawerAction {
+func (d drawerAction) Data(value model.Data) drawerAction {
 	return d.set("data", value)
 }
 

@@ -74,7 +74,7 @@ func (p page) CSSVars(value any) page {
 }
 
 // Data 页面级别的初始数据
-func (p page) Data(value string) page {
+func (p page) Data(value model.Data) page {
 	return p.set("data", value)
 }
 
@@ -121,6 +121,10 @@ func (p page) ID(value string) page {
 // InitApi 页面初始化 API
 func (p page) InitApi(value string) page {
 	return p.set("initApi", value)
+}
+
+func (p page) InitData(getter func() model.Data) page {
+	return p.InitApi(serveInitApi(getter))
 }
 
 // InitFetch 是否默认就拉取
@@ -173,8 +177,8 @@ func (p page) Regions(value string) page {
 	return p.set("regions", value)
 }
 
-// Remark 页面描述
-func (p page) Remark(value remark) page {
+// Remark 页面描述 string or remark
+func (p page) Remark(value any) page {
 	return p.set("remark", value)
 }
 
