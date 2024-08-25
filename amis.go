@@ -30,6 +30,16 @@ func GenerateStaticWebsite[T comp.AmisComp](outputDir string, component T, cfg .
 	return os.WriteFile(filepath.Join(outputDir, "index.html"), writer.Bytes(), 0o640)
 }
 
+func ListenAndServeAmisJson(jsonData []byte, cfg ...*Config) error {
+	m := map[string]any{}
+	err := json.Unmarshal(jsonData, &m)
+	if err != nil {
+		return err
+	}
+	ListenAndServe(m, cfg...)
+	return nil
+}
+
 func writeHtml[T comp.AmisComp](config *Config, component T, writer io.Writer) {
 	tmpl := template.Must(template.New("").Parse(htmlTemplate))
 	amisJson, _ := json.Marshal(component)

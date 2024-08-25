@@ -28,8 +28,8 @@ func (a action) ActiveLevel(value string) action {
 	return a.set("activeLevel", value)
 }
 
-// Api 设置 API 地址。
-func (a action) Api(value string) action {
+// Api 设置 API 地址/描述。
+func (a action) Api(value any) action {
 	return a.set("api", value)
 }
 
