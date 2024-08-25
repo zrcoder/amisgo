@@ -12,7 +12,7 @@ import (
 	"github.com/zrcoder/amisgo/comp"
 )
 
-func ListenAndServe(component comp.AmisComp, cfg ...*Config) error {
+func ListenAndServe[T comp.AmisComp](component T, cfg ...*Config) error {
 	config := getConfig(cfg)
 	http.HandleFunc(config.Path, func(w http.ResponseWriter, r *http.Request) {
 		writeHtml(config, component, w)
@@ -20,7 +20,7 @@ func ListenAndServe(component comp.AmisComp, cfg ...*Config) error {
 	return http.ListenAndServe(config.Addr, nil)
 }
 
-func GenerateStaticWebsite(outputDir string, component comp.AmisComp, cfg ...*Config) error {
+func GenerateStaticWebsite[T comp.AmisComp](outputDir string, component T, cfg ...*Config) error {
 	config := getConfig(cfg)
 	if outputDir == "" {
 		outputDir = "."
@@ -30,7 +30,7 @@ func GenerateStaticWebsite(outputDir string, component comp.AmisComp, cfg ...*Co
 	return os.WriteFile(filepath.Join(outputDir, "index.html"), writer.Bytes(), 0o640)
 }
 
-func writeHtml(config *Config, component comp.AmisComp, writer io.Writer) {
+func writeHtml[T comp.AmisComp](config *Config, component T, writer io.Writer) {
 	tmpl := template.Must(template.New("").Parse(htmlTemplate))
 	amisJson, _ := json.Marshal(component)
 

@@ -2,7 +2,9 @@ package comp
 
 import js "encoding/json"
 
-type AmisComp any
+type AmisComp interface {
+	~map[string]any
+}
 
 // schema 通用 model，键未指定的 map
 type schema = map[string]any
