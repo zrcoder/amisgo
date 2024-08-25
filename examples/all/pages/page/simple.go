@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/zrcoder/amisgo/comp"
-	"github.com/zrcoder/amisgo/model"
 )
 
 func getDate() string {
@@ -24,8 +23,9 @@ var Simple = comp.Page().
 		Trigger("click").
 		RootClose(true),
 	).Body("内容部分. 可以使用 \\${var} 获取变量。如: `\\$date`: ${date}").
-	Aside("边栏部分").
+	Aside("    边栏部分").
+	ClassName("white-space-pre").
 	Toolbar("工具栏").
-	InitData(func() model.Data {
-		return model.Data{"date": getDate()}
+	InitData(func() comp.Data {
+		return comp.Data{"date": getDate()}
 	})

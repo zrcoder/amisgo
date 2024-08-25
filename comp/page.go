@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 // page 代表 amis page 渲染器
 //
 // @version 6.7.0
@@ -74,7 +72,7 @@ func (p page) CSSVars(value any) page {
 }
 
 // Data 页面级别的初始数据
-func (p page) Data(value model.Data) page {
+func (p page) Data(value Data) page {
 	return p.set("data", value)
 }
 
@@ -123,7 +121,7 @@ func (p page) InitApi(value string) page {
 	return p.set("initApi", value)
 }
 
-func (p page) InitData(getter func() model.Data) page {
+func (p page) InitData(getter func() Data) page {
 	return p.InitApi(serveInitApi(getter))
 }
 
@@ -168,7 +166,7 @@ func (p page) OnEvent(value any) page {
 }
 
 // PullRefresh 下拉刷新配置
-func (p page) PullRefresh(value model.PullRefreshSchema) page {
+func (p page) PullRefresh(value pullRefresh) page {
 	return p.set("pullRefresh", value)
 }
 

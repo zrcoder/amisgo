@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 // dialogAction 代表一个对话框动作按钮的配置。
 type dialogAction schema
 
@@ -71,7 +69,7 @@ func (da dialogAction) CountDownTpl(value string) dialogAction {
 }
 
 // Data 数据映射
-func (da dialogAction) Data(value model.Data) dialogAction {
+func (da dialogAction) Data(value Data) dialogAction {
 	return da.set("data", value)
 }
 

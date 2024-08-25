@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 type dialog schema
 
 func Dialog() dialog {
@@ -49,7 +47,7 @@ func (d dialog) Confirm(value bool) dialog {
 }
 
 // Data 数据映射
-func (d dialog) Data(value model.Data) dialog {
+func (d dialog) Data(value Data) dialog {
 	return d.set("data", value)
 }
 

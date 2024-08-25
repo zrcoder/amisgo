@@ -280,7 +280,7 @@ func (sc selectControl) Mode(value string) selectControl {
 }
 
 // noneOptions 对于 `autoComplete` API 提供的值不被选择项本身支持的时候，用于配置没有值时的提示文字
-func (sc selectControl) NoneOptions(value string) selectControl {
+func (sc selectControl) NoneOptions(value ...option) selectControl {
 	return sc.set("noneOptions", value)
 }
 

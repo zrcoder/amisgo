@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/zrcoder/amisgo/comp"
-	"github.com/zrcoder/amisgo/model"
 )
 
 /*
@@ -55,13 +54,13 @@ var page = comp.Page().
 					Body(
 						comp.Tabs().
 							Tabs(
-								model.Tab().
+								comp.Tab().
 									Title("消费趋势").
 									Tab(
 										comp.Chart().
 											Config(trendChartCOnfig),
 									),
-								model.Tab().
+								comp.Tab().
 									Title("账户余额").
 									Tab("0.00"),
 							),
@@ -74,11 +73,11 @@ var page = comp.Page().
 			ClassName("m-t-sm").
 			Api(itemsRouter).
 			Columns(
-				model.Column().Name("id").Label("ID"),
-				model.Column().Name("engine").Label("Rendering engine"),
-				model.Column().Name("browser").Label("Browser"),
-				model.Column().Name("platform").Label("Platform(s)"),
-				model.Column().Name("version").Label("Engine version"),
-				model.Column().Name("grade").Label("CSS grade"),
+				comp.Column().Name("id").Label("ID"),
+				comp.Column().Name("engine").Label("Rendering engine"),
+				comp.Column().Name("browser").Label("Browser"),
+				comp.Column().Name("platform").Label("Platform(s)"),
+				comp.Column().Name("version").Label("Engine version"),
+				comp.Column().Name("grade").Label("CSS grade"),
 			),
 	)

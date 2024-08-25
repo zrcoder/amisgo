@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 // listenerAction 监听器操作
 //
 // @version 6.7.0
@@ -44,7 +42,7 @@ func (la listenerAction) ConfirmTitle(value any) listenerAction {
 }
 
 // Data 设置数据
-func (la listenerAction) Data(value model.Data) listenerAction {
+func (la listenerAction) Data(value Data) listenerAction {
 	return la.set("data", value)
 }
 

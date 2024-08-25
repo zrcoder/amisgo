@@ -157,12 +157,12 @@ func (nc inputNumber) LabelWidth(value string) inputNumber {
 }
 
 // Max 最大值
-func (nc inputNumber) Max(value string) inputNumber {
+func (nc inputNumber) Max(value int) inputNumber {
 	return nc.set("max", value)
 }
 
 // Min 最小值
-func (nc inputNumber) Min(value string) inputNumber {
+func (nc inputNumber) Min(value int) inputNumber {
 	return nc.set("min", value)
 }
 
@@ -302,7 +302,7 @@ func (nc inputNumber) TestIdBuilder(value string) inputNumber {
 }
 
 // UnitOptions 单位列表
-func (nc inputNumber) UnitOptions(value string) inputNumber {
+func (nc inputNumber) UnitOptions(value ...option) inputNumber {
 	return nc.set("unitOptions", value)
 }
 
@@ -332,7 +332,7 @@ func (nc inputNumber) Validations(value string) inputNumber {
 }
 
 // Value 默认值
-func (nc inputNumber) Value(value string) inputNumber {
+func (nc inputNumber) Value(value int) inputNumber {
 	return nc.set("value", value)
 }
 

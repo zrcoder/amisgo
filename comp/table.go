@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 // table 表格渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/table
 //
 // @version 6.7.0
@@ -73,7 +71,7 @@ func (t table) CombineNum(value string) table {
 }
 
 // Data 设置数据
-func (t table) Data(value model.Data) table {
+func (t table) Data(value Data) table {
 	return t.set("data", value)
 }
 

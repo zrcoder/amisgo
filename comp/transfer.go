@@ -281,7 +281,7 @@ func (tc transfer) Option(value string) transfer {
 }
 
 // Options 选项数据
-func (tc transfer) Options(value string) transfer {
+func (tc transfer) Options(value ...option) transfer {
 	return tc.set("options", value)
 }
 
@@ -296,7 +296,7 @@ func (tc transfer) ReadOnly(value bool) transfer {
 }
 
 // RemoteOptions 远程获取选项
-func (tc transfer) RemoteOptions(value string) transfer {
+func (tc transfer) RemoteOptions(value ...option) transfer {
 	return tc.set("remoteOptions", value)
 }
 
@@ -318,6 +318,26 @@ func (tc transfer) SaveImmediately(value bool) transfer {
 // Source 选项数据来源
 func (tc transfer) Source(value string) transfer {
 	return tc.set("source", value)
+}
+
+// Searchable
+func (tc transfer) Searchable(value bool) transfer {
+	return tc.set("searchable", value)
+}
+
+// SearchApi
+func (tc transfer) SearchApi(value string) transfer {
+	return tc.set("searchApi", value)
+}
+
+// SelectMode
+func (tc transfer) SelectMode(value string) transfer {
+	return tc.set("selectMode", value)
+}
+
+// Sortable
+func (tc transfer) Sortable(value bool) transfer {
+	return tc.set("sortable", value)
 }
 
 // StaticMode 控件是否静态显示

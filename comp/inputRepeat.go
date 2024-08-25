@@ -146,7 +146,7 @@ func (rc inputRepeat) OnEvent(value any) inputRepeat {
 }
 
 // Options
-func (rc inputRepeat) Options(value string) inputRepeat {
+func (rc inputRepeat) Options(value ...option) inputRepeat {
 	return rc.set("options", value)
 }
 

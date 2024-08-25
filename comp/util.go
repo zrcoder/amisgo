@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/zrcoder/amisgo/model"
 )
 
 var innerApiID = -1
@@ -36,10 +34,10 @@ func serveApi(action func(map[string]any)) string {
 	return route
 }
 
-func serveInitApi(getter func() model.Data) string {
+func serveInitApi(getter func() Data) string {
 	route := fmt.Sprintf("/__amisgo_initapi_%d", getInnerApiID())
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
-		resp := model.Response{Data: getter()}
+		resp := Response{Data: getter()}
 		data, _ := js.Marshal(resp)
 		w.Write(data)
 	})

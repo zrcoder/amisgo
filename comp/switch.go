@@ -151,7 +151,7 @@ func (s switchControl) Name(value string) switchControl {
 }
 
 // OffText 关闭时显示的内容
-func (s switchControl) OffText(value string) switchControl {
+func (s switchControl) OffText(value ...any) switchControl {
 	return s.set("offText", value)
 }
 
@@ -161,7 +161,7 @@ func (s switchControl) OnEvent(value any) switchControl {
 }
 
 // OnText 开启时显示的内容
-func (s switchControl) OnText(value string) switchControl {
+func (s switchControl) OnText(value ...any) switchControl {
 	return s.set("onText", value)
 }
 
@@ -291,7 +291,7 @@ func (s switchControl) Validations(value string) switchControl {
 }
 
 // Value 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。
-func (s switchControl) Value(value string) switchControl {
+func (s switchControl) Value(value any) switchControl {
 	return s.set("value", value)
 }
 

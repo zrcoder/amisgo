@@ -50,7 +50,7 @@ func (rc inputRating) Colors(value string) inputRating {
 }
 
 // Count 分数
-func (rc inputRating) Count(value string) inputRating {
+func (rc inputRating) Count(value any) inputRating {
 	return rc.set("count", value)
 }
 
@@ -310,7 +310,7 @@ func (rc inputRating) Validations(value string) inputRating {
 }
 
 // Value 默认值
-func (rc inputRating) Value(value string) inputRating {
+func (rc inputRating) Value(value any) inputRating {
 	return rc.set("value", value)
 }
 

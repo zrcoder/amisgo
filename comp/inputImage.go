@@ -64,12 +64,12 @@ func (i inputImage) Compress(value bool) inputImage {
 }
 
 // CompressOptions 压缩选项
-func (i inputImage) CompressOptions(value string) inputImage {
+func (i inputImage) CompressOptions(value ...option) inputImage {
 	return i.set("compressOptions", value)
 }
 
 // Crop 裁剪选项
-func (i inputImage) Crop(value string) inputImage {
+func (i inputImage) Crop(value any) inputImage {
 	return i.set("crop", value)
 }
 
@@ -143,8 +143,8 @@ func (i inputImage) ExtractValue(value bool) inputImage {
 	return i.set("extractValue", value)
 }
 
-// FixedSize 是否开启固定尺寸
-func (i inputImage) FixedSize(value bool) inputImage {
+// FixedSize 固定尺寸
+func (i inputImage) FixedSize(value any) inputImage {
 	return i.set("fixedSize", value)
 }
 
@@ -244,7 +244,7 @@ func (i inputImage) LabelWidth(value string) inputImage {
 }
 
 // Limit 限制图片大小
-func (i inputImage) Limit(value string) inputImage {
+func (i inputImage) Limit(value any) inputImage {
 	return i.set("limit", value)
 }
 

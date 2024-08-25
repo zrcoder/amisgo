@@ -56,6 +56,16 @@ func (i inputKVS) Label(value string) inputKVS {
 	return i.set("label", value)
 }
 
+// KeyItem
+func (i inputKVS) KeyItem(value any) inputKVS {
+	return i.set("keyItem", value)
+}
+
+// ValueItems
+func (i inputKVS) ValueItems(value ...any) inputKVS {
+	return i.set("valueItems", value)
+}
+
 // LabelAlign 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
 func (i inputKVS) LabelAlign(value string) inputKVS {
 	return i.set("labelAlign", value)

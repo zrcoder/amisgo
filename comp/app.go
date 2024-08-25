@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 type app schema
 
 // App 用于实现多页应用，适合于全屏模式，如果只是局部渲染请不要使用。
@@ -62,6 +60,6 @@ func (a app) Footer(value ...any) app {
 // Pages 具体的页面配置。 通常为数组，数组第一层为分组，
 // 一般只需要配置 label 集合，如果你不想分组，直接不配置，
 // 真正的页面请在第二层开始配置，即第一层的 children 中。
-func (a app) Pages(value ...model.PageSchema) app {
+func (a app) Pages(value ...pageItem) app {
 	return a.set("pages", value)
 }

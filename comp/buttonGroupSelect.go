@@ -263,6 +263,11 @@ func (bgc buttonGroupSelect) Name(value string) buttonGroupSelect {
 	return bgc.set("name", value)
 }
 
+// Value
+func (bgc buttonGroupSelect) Value(value any) buttonGroupSelect {
+	return bgc.set("value", value)
+}
+
 // OnChange 设置值变化时的回调函数
 func (bgc buttonGroupSelect) OnChange(value string) buttonGroupSelect {
 	return bgc.set("onChange", value)
@@ -289,7 +294,7 @@ func (bgc buttonGroupSelect) OptionValue(value string) buttonGroupSelect {
 }
 
 // Options 设置选项数组
-func (bgc buttonGroupSelect) Options(value string) buttonGroupSelect {
+func (bgc buttonGroupSelect) Options(value ...option) buttonGroupSelect {
 	return bgc.set("options", value)
 }
 

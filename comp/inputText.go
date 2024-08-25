@@ -37,7 +37,7 @@ func (t inputText) AddDialog(value string) inputText {
 }
 
 // AddOn
-func (t inputText) AddOn(value string) inputText {
+func (t inputText) AddOn(value any) inputText {
 	return t.set("addOn", value)
 }
 
@@ -337,7 +337,7 @@ func (t inputText) Option(value string) inputText {
 }
 
 // Options 选项列表
-func (t inputText) Options(value string) inputText {
+func (t inputText) Options(value ...string) inputText {
 	return t.set("options", value)
 }
 

@@ -244,7 +244,7 @@ func (c chainedSelect) OnEvent(value any) chainedSelect {
 }
 
 // Options 选项集合
-func (c chainedSelect) Options(value string) chainedSelect {
+func (c chainedSelect) Options(value ...option) chainedSelect {
 	return c.set("options", value)
 }
 

@@ -155,7 +155,7 @@ func (rc inputRichText) OnEvent(value any) inputRichText {
 }
 
 // Options tinymce 或 froala 的配置
-func (rc inputRichText) Options(value string) inputRichText {
+func (rc inputRichText) Options(value ...option) inputRichText {
 	return rc.set("options", value)
 }
 

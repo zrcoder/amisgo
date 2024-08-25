@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 // feedbackDialog 表示反馈对话框
 type feedbackDialog schema
 
@@ -51,7 +49,7 @@ func (f feedbackDialog) Confirm(value bool) feedbackDialog {
 }
 
 // Data 数据映射
-func (f feedbackDialog) Data(value model.Data) feedbackDialog {
+func (f feedbackDialog) Data(value Data) feedbackDialog {
 	return f.set("data", value)
 }
 

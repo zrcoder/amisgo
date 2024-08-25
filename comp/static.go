@@ -35,7 +35,7 @@ func (s static) ClearValueOnHidden(value bool) static {
 }
 
 // Copyable 配置点击复制功能 (配置点击复制功能)
-func (s static) Copyable(value bool) static {
+func (s static) Copyable(value any) static {
 	return s.set("copyable", value)
 }
 

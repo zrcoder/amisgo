@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 // grid2d 二维布局渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/grid-2d
 type grid2d schema
 
@@ -51,7 +49,7 @@ func (g grid2d) RowGap(value string) grid2d {
 }
 
 // Grids 每个格子的配置
-func (g grid2d) Grids(value ...model.GridSchema) grid2d {
+func (g grid2d) Grids(value ...gridItem) grid2d {
 	return g.set("grids", value)
 }
 

@@ -15,8 +15,13 @@ func (bt buttonToolbar) set(key string, value any) buttonToolbar {
 }
 
 // Buttons 设置按钮集合
-func (bt buttonToolbar) Buttons(value string) buttonToolbar {
+func (bt buttonToolbar) Buttons(value ...action) buttonToolbar {
 	return bt.set("buttons", value)
+}
+
+// Label
+func (bt buttonToolbar) Label(value string) buttonToolbar {
+	return bt.set("label", value)
 }
 
 // ClassName 设置容器的 CSS 类名

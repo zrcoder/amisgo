@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 // drawer 抽出式弹框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/drawer
 type drawer schema
 
@@ -50,7 +48,7 @@ func (d drawer) Confirm(value bool) drawer {
 }
 
 // Data 数据映射
-func (d drawer) Data(value model.Data) drawer {
+func (d drawer) Data(value Data) drawer {
 	return d.set("data", value)
 }
 

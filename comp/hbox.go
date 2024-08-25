@@ -1,7 +1,5 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
-
 // hBox 水平布局渲染器
 type hBox schema
 
@@ -26,7 +24,7 @@ func (h hBox) ClassName(value string) hBox {
 }
 
 // columns
-func (h hBox) Columns(value ...model.ColumnSchema) hBox {
+func (h hBox) Columns(value ...column) hBox {
 	return h.set("columns", value)
 }
 

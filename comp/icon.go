@@ -13,6 +13,11 @@ func (i icon) set(key string, value any) icon {
 	return i
 }
 
+// AddOnclassName
+func (i icon) AddOnclassName(value string) icon {
+	return i.set("addOnclassName", value)
+}
+
 // Badge 角标 (Badge 角标)
 func (i icon) Badge(value string) icon {
 	return i.set("badge", value)
