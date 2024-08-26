@@ -19,11 +19,13 @@ const (
 )
 
 type Config struct {
-	Theme Theme
-	Lang  Lang
-	Title string
-	Addr  string
-	Path  string
+	Theme   Theme
+	Lang    Lang
+	Title   string
+	Addr    string
+	Path    string
+	Icon    string
+	PngIcon string
 }
 
 func GetDefaultConfig() *Config {
