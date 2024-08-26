@@ -121,6 +121,7 @@ func (p page) InitApi(value string) page {
 	return p.set("initApi", value)
 }
 
+// InitData
 func (p page) InitData(getter func() Data) page {
 	return p.InitApi(serveInitApi(getter))
 }

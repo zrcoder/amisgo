@@ -1,5 +1,12 @@
 package comp
 
+import (
+	js "encoding/json"
+	"fmt"
+	"io"
+	"net/http"
+)
+
 // action 行为按钮 https://aisuda.bce.baidu.com/amis/zh-CN/components/action
 type action schema
 
@@ -16,6 +23,42 @@ func Submit() action {
 // ActionType 【必填】这是 action 最核心的配置，来指定该 action 的作用类型 可选值: ajax | link | url | drawer | dialog | confirm | cancel | prev | next | copy | close
 func (a action) ActionType(value string) action {
 	return a.set("actionType", value)
+}
+
+// Transform transform the src value with transfor, and renderer the result to dst component
+func (a action) Transform(src, dst, successMsg string, transfor func(input any) any) action {
+	route := fmt.Sprintf("/__amisgo_api_%d", getInnerApiID())
+	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+		inputData, err := io.ReadAll(r.Body)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		defer r.Body.Close()
+		m := map[string]any{}
+		js.Unmarshal(inputData, &m)
+		input := m["input"]
+		output := transfor(input)
+		resp := Response{Msg: successMsg, Data: Data{dst: output}}
+		w.Write(resp.Json())
+	})
+	src = fmt.Sprintf("${%s}", src)
+	return a.ActionType("ajax").Api(
+		Schema{
+			"url":  route,
+			"data": Schema{"input": src},
+			"responses": Schema{
+				"200": Schema{
+					"then": Schema{
+						"actionType": "setValue",
+						"args": Schema{
+							"value": "${response}",
+						},
+					},
+				},
+			},
+		},
+	)
 }
 
 // ActiveClassName 给按钮高亮添加类名。

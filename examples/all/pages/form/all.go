@@ -40,7 +40,7 @@ var All = comp.Page().Title("").Data(comp.Data{"id": 1}).Body(
 			"liyuanfang",
 		),
 		comp.Divider(),
-		comp.Static().Name("static2").Label("静态展示").Value("这是静态展示的值").Copyable(comp.Schema{}.Set("content", "blabla")),
+		comp.Static().Name("static2").Label("静态展示").Value("这是静态展示的值").Copyable(comp.Schema{"content": "blabla"}),
 		comp.Divider(),
 		comp.Checkboxes().Name("checkboxes").Label("多选框").Value(3).Options(
 			comp.Option().Label("option 1").Value(1),

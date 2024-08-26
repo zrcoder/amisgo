@@ -7,12 +7,6 @@ import (
 	"github.com/zrcoder/amisgo/comp"
 )
 
-func getDate() string {
-	y, m, d := time.Now().Date()
-	mm := time.Now().UnixNano()
-	return fmt.Sprintf("%d-%d-%d %d", y, m, d, mm)
-}
-
 var Simple = comp.Page().
 	Title("标题").
 	Remark(comp.Remark().
@@ -29,3 +23,9 @@ var Simple = comp.Page().
 	InitData(func() comp.Data {
 		return comp.Data{"date": getDate()}
 	})
+
+func getDate() string {
+	y, m, d := time.Now().Date()
+	mm := time.Now().UnixNano()
+	return fmt.Sprintf("%d-%d-%d %d", y, m, d, mm)
+}

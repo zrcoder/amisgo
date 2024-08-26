@@ -14,11 +14,6 @@ type (
 	Data   schema
 )
 
-func (s Schema) Set(key string, value any) Schema {
-	s[key] = value
-	return s
-}
-
 type Response struct {
 	Status int    `json:"status"`
 	Msg    string `json:"msg"`
@@ -28,4 +23,11 @@ type Response struct {
 func (r *Response) Json() []byte {
 	data, _ := js.Marshal(r)
 	return data
+}
+
+// RawJson create components from amis raw json
+func RawJson(data []byte) schema {
+	s := schema{}
+	js.Unmarshal(data, &s)
+	return s
 }
