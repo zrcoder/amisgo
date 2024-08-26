@@ -14,6 +14,15 @@ import (
 
 func ListenAndServe[T comp.AmisComp](component T, cfg ...*Config) error {
 	config := getConfig(cfg)
+	if config.AssertsPath != "" {
+		var handler http.Handler
+		if config.AssertsFS != nil {
+			handler = http.FileServer(http.FS(config.AssertsFS))
+		} else {
+			handler = http.FileServer(http.Dir(config.AssertsPath))
+		}
+		http.Handle(config.AssertsPath, handler)
+	}
 	http.HandleFunc(config.Path, func(w http.ResponseWriter, r *http.Request) {
 		writeHtml(config, component, w)
 	})

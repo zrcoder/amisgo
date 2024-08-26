@@ -26,7 +26,7 @@ func (a action) ActionType(value string) action {
 }
 
 // Transform transform the src value with transfor, and renderer the result to dst component
-func (a action) Transform(src, dst, successMsg string, transfor func(input any) any) action {
+func (a action) Transform(src, dst, successMsg string, transfor func(input any) (any, error)) action {
 	route := fmt.Sprintf("/__amisgo_api_%d", getInnerApiID())
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		inputData, err := io.ReadAll(r.Body)
@@ -38,7 +38,12 @@ func (a action) Transform(src, dst, successMsg string, transfor func(input any) 
 		m := map[string]any{}
 		js.Unmarshal(inputData, &m)
 		input := m["input"]
-		output := transfor(input)
+		output, err := transfor(input)
+		if err != nil {
+			resp := Response{Status: 1, Msg: err.Error()}
+			w.Write(resp.Json())
+			return
+		}
 		resp := Response{Msg: successMsg, Data: Data{dst: output}}
 		w.Write(resp.Json())
 	})

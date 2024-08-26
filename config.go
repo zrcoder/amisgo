@@ -1,5 +1,7 @@
 package amisgo
 
+import "io/fs"
+
 type Theme string
 
 const (
@@ -19,13 +21,15 @@ const (
 )
 
 type Config struct {
-	Theme   Theme
-	Lang    Lang
-	Title   string
-	Addr    string
-	Path    string
-	Icon    string
-	PngIcon string
+	Theme       Theme
+	Lang        Lang
+	Title       string
+	Icon        string
+	AssertsPath string
+	AssertsFS   fs.FS
+
+	Addr string
+	Path string
 }
 
 func GetDefaultConfig() *Config {

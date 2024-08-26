@@ -54,7 +54,7 @@ func (bgc buttonGroupSelect) BtnLevel(value string) buttonGroupSelect {
 }
 
 // Buttons 设置按钮集合
-func (bgc buttonGroupSelect) Buttons(value string) buttonGroupSelect {
+func (bgc buttonGroupSelect) Buttons(value ...any) buttonGroupSelect {
 	return bgc.set("buttons", value)
 }
 
@@ -294,7 +294,7 @@ func (bgc buttonGroupSelect) OptionValue(value string) buttonGroupSelect {
 }
 
 // Options 设置选项数组
-func (bgc buttonGroupSelect) Options(value ...option) buttonGroupSelect {
+func (bgc buttonGroupSelect) Options(value ...any) buttonGroupSelect {
 	return bgc.set("options", value)
 }
 

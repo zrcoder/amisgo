@@ -19,6 +19,7 @@ func (bg buttonGroup) BtnActiveClassName(value string) buttonGroup {
 }
 
 // BtnActiveLevel 设置按钮选中的样式级别
+// 'link' | 'primary' | 'secondary' | 'info'|'success' | 'warning' | 'danger' | 'light'| 'dark' | 'default'
 func (bg buttonGroup) BtnActiveLevel(value string) buttonGroup {
 	return bg.set("btnActiveLevel", value)
 }
@@ -29,12 +30,13 @@ func (bg buttonGroup) BtnClassName(value string) buttonGroup {
 }
 
 // BtnLevel 设置按钮样式级别
+// 'link' | 'primary' | 'secondary' | 'info'|'success' | 'warning' | 'danger' | 'light'| 'dark' | 'default'
 func (bg buttonGroup) BtnLevel(value string) buttonGroup {
 	return bg.set("btnLevel", value)
 }
 
 // Buttons 设置按钮集合
-func (bg buttonGroup) Buttons(value string) buttonGroup {
+func (bg buttonGroup) Buttons(value ...any) buttonGroup {
 	return bg.set("buttons", value)
 }
 

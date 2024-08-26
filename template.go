@@ -11,22 +11,16 @@ const htmlTemplate = `<!DOCTYPE html>
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-
     {{if .Icon}}
-    <link rel="icon" href="{{.Icon}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{.Icon}}" type="image/x-icon">
     {{end}}
-    {{if .PngIcon}}
-    <link rel="icon" href="{{.PngIcon}}" type="image/png">
-    {{end}} 
-    
     {{if .Theme}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/{{.Theme}}.min.css" />
     {{else}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/sdk.min.css" />
+    {{end}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/helper.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/iconfont.min.css" />
-    {{end}}
-
     <style>
       html,
       body,

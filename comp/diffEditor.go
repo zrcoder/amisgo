@@ -153,7 +153,7 @@ func (d diffEditor) OnEvent(value any) diffEditor {
 }
 
 // Options 编辑器配置
-func (d diffEditor) Options(value ...option) diffEditor {
+func (d diffEditor) Options(value Schema) diffEditor {
 	return d.set("options", value)
 }
 
