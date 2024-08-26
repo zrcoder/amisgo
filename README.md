@@ -36,6 +36,10 @@ and then visit http://localhost, you will see a page like this:
 
 ![hello-amis](./hello-amis.png)
 
+## Examples
+
+See our [examples repo](https://github.com/zrcoder/amisgo-examples)
+
 ## TODO
 
 - [x] both ListenAndServe, GenerateStaticWebsite api
