@@ -129,7 +129,7 @@ func (t tpl) Text(value string) tpl {
 }
 
 // Tpl 支持两种语法，但是不能混着用。分别是：1. `${xxx}` 或者 `${xxx|upperCase}` 2. `<%= data.xxx %>` 更多文档：https://aisuda.bce.baidu.com/amis/zh-CN/docs/concepts/template
-func (t tpl) Tpl(value string) tpl {
+func (t tpl) Tpl(value any) tpl {
 	return t.set("tpl", value)
 }
 
