@@ -20,9 +20,19 @@ func (s service) Api(value string) service {
 	return s.set("api", value)
 }
 
+// FetchData 通过内置 api 获取数据
+func (s service) FetchData(getter func() any) service {
+	return s.Api(serveInitData(getter))
+}
+
 // Body 内容区域 (内容区域)
 func (s service) Body(value ...any) service {
 	return s.set("body", value)
+}
+
+// Data 数据
+func (s service) Data(value any) service {
+	return s.set("data", value)
 }
 
 // ClassName 容器 css 类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
