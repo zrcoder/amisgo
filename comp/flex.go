@@ -21,7 +21,7 @@ func (f flex) AlignContent(value string) flex {
 }
 
 // AlignItems 设置垂直布局，可选值: stretch | start | flex-start | flex-end | end | center | baseline
-func (f flex) AlignItems(value ...any) flex {
+func (f flex) AlignItems(value string) flex {
 	return f.set("alignItems", value)
 }
 
