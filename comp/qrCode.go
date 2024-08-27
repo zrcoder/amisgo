@@ -27,7 +27,7 @@ func (q qrCode) ClassName(value string) qrCode {
 }
 
 // CodeSize 二维码的宽高大小，默认 128
-func (q qrCode) CodeSize(value string) qrCode {
+func (q qrCode) CodeSize(value int) qrCode {
 	return q.set("codeSize", value)
 }
 
@@ -71,7 +71,7 @@ func (q qrCode) ImageSettings(value string) qrCode {
 	return q.set("imageSettings", value)
 }
 
-// Level 二维码复杂级别
+// Level 二维码复杂级别 有（'L' 'M' 'Q' 'H'）四种
 func (q qrCode) Level(value string) qrCode {
 	return q.set("level", value)
 }
@@ -84,6 +84,11 @@ func (q qrCode) Mode(value string) qrCode {
 // Name 关联字段名
 func (q qrCode) Name(value string) qrCode {
 	return q.set("name", value)
+}
+
+// Value 原始数据, 即扫描二维码后得到的内容
+func (q qrCode) Value(value string) qrCode {
+	return q.set("value", value)
 }
 
 // OnEvent 事件动作配置
