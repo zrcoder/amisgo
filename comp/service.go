@@ -22,7 +22,7 @@ func (s service) Api(value string) service {
 
 // FetchData 通过内置 api 获取数据
 func (s service) FetchData(getter func() any) service {
-	return s.Api(serveInitData(getter))
+	return s.Api(serveInit(getter))
 }
 
 // Body 内容区域 (内容区域)

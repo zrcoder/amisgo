@@ -34,18 +34,8 @@ func serveApi(action func(map[string]any)) string {
 	return route
 }
 
-func serveInitApi(getter func() Data) string {
-	route := fmt.Sprintf("/__amisgo_initapi_%d", getInnerApiID())
-	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
-		resp := Response{Data: getter()}
-		data, _ := js.Marshal(resp)
-		w.Write(data)
-	})
-	return route
-}
-
-func serveInitData(getter func() any) string {
-	route := fmt.Sprintf("/__amisgo_initdata_%d", getInnerApiID())
+func serveInit(getter func() any) string {
+	route := fmt.Sprintf("/__amisgo_init_%d", getInnerApiID())
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		data, _ := js.Marshal(getter())
 		w.Write(data)

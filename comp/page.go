@@ -122,8 +122,8 @@ func (p page) InitApi(value string) page {
 }
 
 // InitData
-func (p page) InitData(getter func() Data) page {
-	return p.InitApi(serveInitApi(getter))
+func (p page) InitData(getter func() any) page {
+	return p.InitApi(serveInit(getter))
 }
 
 // InitFetch 是否默认就拉取

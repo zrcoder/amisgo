@@ -15,6 +15,10 @@ func Action() action {
 	return make(action).set("type", "action")
 }
 
+func Button() action {
+	return Action().set("type", "button")
+}
+
 // Submit submit行为按钮
 func Submit() action {
 	return Action().set("type", "submit")
@@ -164,6 +168,181 @@ func (a action) Tooltip(value string) action {
 // TooltipPlacement 如果配置了tooltip或者disabledTip，指定提示信息位置，可配置top、bottom、left、right。
 func (a action) TooltipPlacement(value string) action {
 	return a.set("tooltipPlacement", value)
+}
+
+// Badge 角标 (Badge 角标。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/badge)
+func (v action) Badge(value string) action {
+	return v.set("badge", value)
+}
+
+// Block 是否为块状展示，默认为内联。
+func (v action) Block(value bool) action {
+	return v.set("block", value)
+}
+
+// Body 子内容 (子内容)
+func (v action) Body(value ...any) action {
+	return v.set("body", value)
+}
+
+// CountDown 点击后的禁止倒计时（秒）
+func (v action) CountDown(value string) action {
+	return v.set("countDown", value)
+}
+
+// CountDownTpl 倒计时文字自定义
+func (v action) CountDownTpl(value string) action {
+	return v.set("countDownTpl", value)
+}
+
+// Disabled 是否禁用
+func (v action) Disabled(value bool) action {
+	return v.set("disabled", value)
+}
+
+// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+func (v action) DisabledOn(value string) action {
+	return v.set("disabledOn", value)
+}
+
+// DownloadFileName
+func (v action) DownloadFileName(value string) action {
+	return v.set("downloadFileName", value)
+}
+
+// EditorSetting 编辑器配置，运行时可以忽略
+func (v action) EditorSetting(value string) action {
+	return v.set("editorSetting", value)
+}
+
+// Hidden 是否隐藏
+func (v action) Hidden(value bool) action {
+	return v.set("hidden", value)
+}
+
+// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+func (v action) HiddenOn(value string) action {
+	return v.set("hiddenOn", value)
+}
+
+// HotKey 键盘快捷键
+func (v action) HotKey(value string) action {
+	return v.set("hotKey", value)
+}
+
+// Id 主要用于用户行为跟踪里区分是哪个按钮
+func (v action) Id(value string) action {
+	return v.set("id", value)
+}
+
+// Url 按钮链接
+func (v action) Url(value string) action {
+	return v.set("url", value)
+}
+
+// LoadingClassName loading 上的css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+func (v action) LoadingClassName(value string) action {
+	return v.set("loadingClassName", value)
+}
+
+// LoadingOn 是否显示loading效果
+func (v action) LoadingOn(value string) action {
+	return v.set("loadingOn", value)
+}
+
+// MergeData 是否将弹框中数据 merge 到父级作用域。
+func (v action) MergeData(value bool) action {
+	return v.set("mergeData", value)
+}
+
+// OnClick 自定义事件处理函数
+func (v action) OnClick(value string) action {
+	return v.set("onClick", value)
+}
+
+// OnEvent 事件动作配置
+func (v action) OnEvent(value any) action {
+	return v.set("onEvent", value)
+}
+
+// Primary
+func (v action) Primary(value bool) action {
+	return v.set("primary", value)
+}
+
+// RequireSelected 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
+func (v action) RequireSelected(value bool) action {
+	return v.set("requireSelected", value)
+}
+
+// Static 是否静态展示
+func (v action) Static(value bool) action {
+	return v.set("static", value)
+}
+
+// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+func (v action) StaticClassName(value string) action {
+	return v.set("staticClassName", value)
+}
+
+// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+func (v action) StaticInputClassName(value string) action {
+	return v.set("staticInputClassName", value)
+}
+
+// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+func (v action) StaticLabelClassName(value string) action {
+	return v.set("staticLabelClassName", value)
+}
+
+// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+func (v action) StaticOn(value string) action {
+	return v.set("staticOn", value)
+}
+
+// StaticPlaceholder 静态展示为空时的占位符。
+func (v action) StaticPlaceholder(value string) action {
+	return v.set("staticPlaceholder", value)
+}
+
+// StaticSchema 静态展示模式的 schema
+func (v action) StaticSchema(value string) action {
+	return v.set("staticSchema", value)
+}
+
+// Style 组件样式
+func (v action) Style(value any) action {
+	return v.set("style", value)
+}
+
+// Target 谁能触发这个动作。
+func (v action) Target(value string) action {
+	return v.set("target", value)
+}
+
+// TestIdBuilder 设置测试ID生成函数
+func (v action) TestIdBuilder(value string) action {
+	return v.set("testIdBuilder", value)
+}
+
+// Testid 测试ID
+func (v action) Testid(value string) action {
+	return v.set("testid", value)
+}
+
+// UseMobileUI 是否禁用移动端样式
+func (v action) UseMobileUI(value bool) action {
+	return v.set("useMobileUI", value)
+}
+
+// Visible 是否可见
+func (v action) Visible(value bool) action {
+	return v.set("visible", value)
+}
+
+// VisibleOn 是否可见表达式 (表达式，语法 `data.xxx > 5`。)
+func (v action) VisibleOn(value string) action {
+	return v.set("visibleOn", value)
 }
 
 func (a action) set(key string, value any) action {
