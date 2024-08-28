@@ -12,7 +12,7 @@ type action schema
 
 // Action 创建一个新的 Action 实例
 func Action() action {
-	return make(action).set("type", "action")
+	return action{}.set("type", "action")
 }
 
 func Button() action {

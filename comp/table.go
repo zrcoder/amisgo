@@ -10,6 +10,10 @@ func Table() table {
 	return table{}.set("type", "table")
 }
 
+func Table2() table {
+	return table{}.set("type", "table2")
+}
+
 func (t table) set(key string, value any) table {
 	t[key] = value
 	return t
@@ -253,4 +257,119 @@ func (t table) Visible(value bool) table {
 // VisibleOn 是否显示表达式
 func (t table) VisibleOn(value string) table {
 	return t.set("visibleOn", value)
+}
+
+// Actions 操作列配置
+func (t table) Actions(value string) table {
+	return t.set("actions", value)
+}
+
+// Bordered 是否展示边框
+func (t table) Bordered(value bool) table {
+	return t.set("bordered", value)
+}
+
+// ChildrenColumnName 数据源嵌套自定义字段名
+func (t table) ChildrenColumnName(value string) table {
+	return t.set("childrenColumnName", value)
+}
+
+// Expandable 表格行可展开配置 (表格行可展开配置)
+func (t table) Expandable(value bool) table {
+	return t.set("expandable", value)
+}
+
+// Footer 指定表尾
+func (t table) Footer(value string) table {
+	return t.set("footer", value)
+}
+
+// KeepItemSelectionOnPageChange 翻页是否保存数据
+func (t table) KeepItemSelectionOnPageChange(value bool) table {
+	return t.set("keepItemSelectionOnPageChange", value)
+}
+
+// KeyField 多选、嵌套展开记录的ID字段名 默认id
+func (t table) KeyField(value string) table {
+	return t.set("keyField", value)
+}
+
+// LazyRenderAfter 当一次性渲染太多列上有用，默认为 100，可以用来提升表格渲染性能
+func (t table) LazyRenderAfter(value string) table {
+	return t.set("lazyRenderAfter", value)
+}
+
+// LineHeight 是否固定内容行高度
+func (t table) LineHeight(value string) table {
+	return t.set("lineHeight", value)
+}
+
+// Loading 加载中
+func (t table) Loading(value string) table {
+	return t.set("loading", value)
+}
+
+// MaxKeepItemSelectionLength 批量操作最大限制数
+func (t table) MaxKeepItemSelectionLength(value string) table {
+	return t.set("maxKeepItemSelectionLength", value)
+}
+
+// Messages 接口报错信息配置 (消息文案配置，记住这个优先级是最低的，如果你的接口返回了 msg，接口返回的优先。)
+func (t table) Messages(value string) table {
+	return t.set("messages", value)
+}
+
+// Multiple 是否可多选 作用同rowSelection.type 兼容原CRUD属性 不设置认为是多选 仅设置selectable才起作用
+func (t table) Multiple(value bool) table {
+	return t.set("multiple", value)
+}
+
+// PopOverContainer 指定挂载dom
+func (t table) PopOverContainer(value string) table {
+	return t.set("popOverContainer", value)
+}
+
+// PrimaryField 设置ID字段名 作用同keyFiled 兼容原CURD属性
+func (t table) PrimaryField(value string) table {
+	return t.set("primaryField", value)
+}
+
+// QuickSaveApi 快速编辑后用来批量保存的 API (快速编辑后用来批量保存的 API)
+func (t table) QuickSaveApi(value string) table {
+	return t.set("quickSaveApi", value)
+}
+
+// QuickSaveItemApi 快速编辑配置成及时保存时使用的 API (快速编辑配置成及时保存时使用的 API)
+func (t table) QuickSaveItemApi(value string) table {
+	return t.set("quickSaveItemApi", value)
+}
+
+// Reload 重新加载的组件名称
+func (t table) Reload(value string) table {
+	return t.set("reload", value)
+}
+
+// RowSelection 表格可选择配置
+func (t table) RowSelection(value string) table {
+	return t.set("rowSelection", value)
+}
+
+// Selectable 是否可选择 作用同rowSelection 兼容原CRUD属性 默认多选
+func (t table) Selectable(value bool) table {
+	return t.set("selectable", value)
+}
+
+// ShowBadge 是否展示行角标
+func (t table) ShowBadge(value bool) table {
+	return t.set("showBadge", value)
+}
+
+// Sticky 粘性头部
+func (t table) Sticky(value bool) table {
+	return t.set("sticky", value)
+}
+
+// Size 表格尺寸，支持large、default、small，default是中等尺寸。
+func (t table) Size(value string) table {
+	return t.set("size", value)
 }
