@@ -31,6 +31,16 @@ func (a action) ActionType(value string) action {
 
 // Transform transform the src value with transfor, and renderer the result to dst component
 func (a action) Transform(src, dst, successMsg string, transfor func(input any) (any, error)) action {
+	return a.transform(src, dst, successMsg, transfor)
+}
+
+func (a action) TransformMultiple(input any, successMsg string, transfor func(any) (Data, error)) action {
+	return a.transform(input, "", successMsg, func(a any) (any, error) {
+		return transfor(input)
+	})
+}
+
+func (a action) transform(input any, dstKey, successMsg string, transfor func(any) (any, error)) action {
 	route := fmt.Sprintf("/__amisgo_api_%d", getInnerApiID())
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		inputData, err := io.ReadAll(r.Body)
@@ -48,14 +58,24 @@ func (a action) Transform(src, dst, successMsg string, transfor func(input any) 
 			w.Write(resp.Json())
 			return
 		}
-		resp := Response{Msg: successMsg, Data: Data{dst: output}}
+
+		resp := Response{}
+		if dstKey != "" {
+			resp = Response{Msg: successMsg, Data: Data{dstKey: output}}
+		} else {
+			resp = Response{Msg: successMsg, Data: output.(Data)}
+		}
+
 		w.Write(resp.Json())
 	})
-	src = fmt.Sprintf("${%s}", src)
+	ipt := input
+	if s, ok := input.(string); ok {
+		ipt = fmt.Sprintf("${%s}", s)
+	}
 	return a.ActionType("ajax").Api(
 		Schema{
 			"url":  route,
-			"data": Schema{"input": src},
+			"data": Schema{"input": ipt},
 			"responses": Schema{
 				"200": Schema{
 					"then": Schema{
