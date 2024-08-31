@@ -34,10 +34,9 @@ func (a action) Transform(src, dst, successMsg string, transfor func(input any) 
 	return a.transform(src, dst, successMsg, transfor)
 }
 
-func (a action) TransformMultiple(input any, successMsg string, transfor func(any) (Data, error)) action {
-	return a.transform(input, "", successMsg, func(a any) (any, error) {
-		return transfor(input)
-	})
+// TransformMultipletransform the inputs(single or multiple) with transfor, and renderer the result to multiple destinates
+func (a action) TransformMultiple(inputs any, successMsg string, transfor func(any) (any, error)) action {
+	return a.transform(inputs, "", successMsg, transfor)
 }
 
 func (a action) transform(input any, dstKey, successMsg string, transfor func(any) (any, error)) action {
@@ -65,9 +64,9 @@ func (a action) transform(input any, dstKey, successMsg string, transfor func(an
 		} else {
 			resp = Response{Msg: successMsg, Data: output.(Data)}
 		}
-
 		w.Write(resp.Json())
 	})
+
 	ipt := input
 	if s, ok := input.(string); ok {
 		ipt = fmt.Sprintf("${%s}", s)
