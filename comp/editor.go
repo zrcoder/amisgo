@@ -47,7 +47,7 @@ func (ec editor) DescriptionClassName(value string) editor {
 	return ec.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled 是否禁用/只读
 func (ec editor) Disabled(value bool) editor {
 	return ec.set("disabled", value)
 }
@@ -290,4 +290,11 @@ func (ec editor) VisibleOn(value string) editor {
 // Width 在 Table 中调整宽度
 func (ec editor) Width(value string) editor {
 	return ec.set("width", value)
+}
+
+// Options monaco 编辑器的其它配置，比如是否显示行号等，
+// 请参考https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html，
+// 不过无法设置 readOnly，只读模式需要使用 disabled: true
+func (e editor) Options(value Schema) editor {
+	return e.set("options", value)
 }
