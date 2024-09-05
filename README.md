@@ -8,9 +8,7 @@ The name stands for `amis go`, coincidentally means `friend` in Zulu.
 Amisgo is inspired by and based on baidu [Amis](https://aisuda.bce.baidu.com/amis).  
 Read the [wiki](https://github.com/zrcoder/amisgo/wiki)(Chinese) for more background and details.
 
-## Usage
-
-Hello world
+## Hello world
 
 ```go
 package main
@@ -32,9 +30,7 @@ func main() {
 }
 ```
 
-and then visit http://localhost, you will see a page like this:
-
-![hello-amis](./hello-amis.png)
+and then visit http://localhost to view the served site.
 
 ## Examples
 
@@ -44,5 +40,5 @@ See our [examples repo](https://github.com/zrcoder/amisgo-examples)
 
 - [x] both ListenAndServe, GenerateStaticWebsite api
 - [x] Generate codes in the comp directory, based on schema.json in Amis' last release(or Amis' docs)
-- [ ] Tests and examples(10%)
+- [ ] Tests and examples(20%)
 - [ ] Go+ classfile improvement
