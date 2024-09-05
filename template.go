@@ -38,7 +38,9 @@ const htmlTemplate = `<!DOCTYPE html>
     <div id="root" class="app-wrapper"></div>
     <script src="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/sdk.min.js"></script>
     {{if .CustomJS}}
+    <script type="text/javascript">
     {{.CustomJS}}
+    </script> 
     {{end}}
     <script type="text/javascript">
       (function () {
