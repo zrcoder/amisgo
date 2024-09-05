@@ -31,11 +31,15 @@ const htmlTemplate = `<!DOCTYPE html>
         margin: 0;
         padding: 0;
       }
+      {{.CustomCSS}}
     </style>
   </head>
   <body>
     <div id="root" class="app-wrapper"></div>
     <script src="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/sdk.min.js"></script>
+    {{if .CustomJS}}
+    {{.CustomJS}}
+    {{end}}
     <script type="text/javascript">
       (function () {
         let amis = amisRequire('amis/embed');

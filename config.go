@@ -27,6 +27,8 @@ type Config struct {
 	Icon        string
 	AssertsPath string
 	AssertsFS   fs.FS
+	CustomCSS   string
+	CustomJS    string
 
 	Addr string
 	Path string
