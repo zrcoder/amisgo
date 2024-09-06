@@ -16,18 +16,17 @@ import (
 func ListenAndServe[T comp.AmisComp](component T, cfg ...*Config) error {
 	config := getConfig(cfg)
 
-	mux := http.NewServeMux()
 	if config.StaticDir != "" {
 		dir := strings.Trim(config.StaticDir, "/")
 		path := "/" + dir + "/"
-		mux.Handle(path, http.StripPrefix(path, http.FileServer(http.Dir(dir))))
+		http.Handle(path, http.StripPrefix(path, http.FileServer(http.Dir(dir))))
 	}
 
-	mux.HandleFunc(config.Path, func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc(config.Path, func(w http.ResponseWriter, r *http.Request) {
 		writeHtml(config, component, w)
 	})
 
-	return http.ListenAndServe(config.Addr, mux)
+	return http.ListenAndServe(config.Addr, nil)
 }
 
 func GenerateStaticWebsite[T comp.AmisComp](outputDir string, component T, cfg ...*Config) error {
