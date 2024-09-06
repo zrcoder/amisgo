@@ -11,8 +11,9 @@ const htmlTemplate = `<!DOCTYPE html>
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{{ .Title }}</title>
-    <link rel="icon" href="{{.Icon}}" type="image/x-icon">
-
+    {{if .Icon}}
+    <link rel="icon" href="{{.Icon}}">
+    {{end}}
     {{if .Theme}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/{{.Theme}}.min.css" />
     {{else}}
