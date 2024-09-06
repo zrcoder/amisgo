@@ -1,7 +1,5 @@
 package amisgo
 
-import "io/fs"
-
 type Theme string
 
 const (
@@ -21,14 +19,13 @@ const (
 )
 
 type Config struct {
-	Theme       Theme
-	Lang        Lang
-	Title       string
-	Icon        string
-	AssertsPath string
-	AssertsFS   fs.FS
-	CustomCSS   string
-	CustomJS    string
+	Theme     Theme
+	Lang      Lang
+	Title     string
+	Icon      string
+	StaticDir string
+	CustomCSS string
+	CustomJS  string
 
 	Addr string
 	Path string

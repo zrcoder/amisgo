@@ -1,19 +1,18 @@
 package amisgo
 
 const htmlTemplate = `<!DOCTYPE html>
-<html lang={{ .Lang }}>
+<html lang="{{ .Lang }}">
   <head>
     <meta charset="UTF-8" />
-    <title>{{ .Title }}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    {{if .Icon}}
-    <link rel="shortcut icon" href="{{.Icon}}" type="image/x-icon">
-    {{end}}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ .Title }}</title>
+    <link rel="icon" href="{{.Icon}}" type="image/x-icon">
+
     {{if .Theme}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/{{.Theme}}.min.css" />
     {{else}}
@@ -38,11 +37,11 @@ const htmlTemplate = `<!DOCTYPE html>
     <div id="root" class="app-wrapper"></div>
     <script src="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/sdk.min.js"></script>
     {{if .CustomJS}}
-    <script type="text/javascript">
+    <script>
     {{.CustomJS}}
     </script> 
     {{end}}
-    <script type="text/javascript">
+    <script>
       (function () {
         let amis = amisRequire('amis/embed');
         let amisScoped = amis.embed(

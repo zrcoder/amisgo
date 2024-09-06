@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 	"text/template"
 
 	"github.com/zrcoder/amisgo/comp"
@@ -14,19 +15,19 @@ import (
 
 func ListenAndServe[T comp.AmisComp](component T, cfg ...*Config) error {
 	config := getConfig(cfg)
-	if config.AssertsPath != "" {
-		var handler http.Handler
-		if config.AssertsFS != nil {
-			handler = http.FileServer(http.FS(config.AssertsFS))
-		} else {
-			handler = http.FileServer(http.Dir(config.AssertsPath))
-		}
-		http.Handle(config.AssertsPath, handler)
+
+	mux := http.NewServeMux()
+	if config.StaticDir != "" {
+		dir := strings.Trim(config.StaticDir, "/")
+		path := "/" + dir + "/"
+		mux.Handle(path, http.StripPrefix(path, http.FileServer(http.Dir(dir))))
 	}
-	http.HandleFunc(config.Path, func(w http.ResponseWriter, r *http.Request) {
+
+	mux.HandleFunc(config.Path, func(w http.ResponseWriter, r *http.Request) {
 		writeHtml(config, component, w)
 	})
-	return http.ListenAndServe(config.Addr, nil)
+
+	return http.ListenAndServe(config.Addr, mux)
 }
 
 func GenerateStaticWebsite[T comp.AmisComp](outputDir string, component T, cfg ...*Config) error {
