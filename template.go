@@ -15,12 +15,12 @@ const htmlTemplate = `<!DOCTYPE html>
     <link rel="icon" href="{{.Icon}}" />
     {{end}}
     {{if .Theme}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/{{.Theme}}.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.8.0/sdk/{{.Theme}}.min.css" />
     {{else}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/sdk.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.8.0/sdk/sdk.min.css" />
     {{end}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/helper.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/iconfont.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.8.0/sdk/helper.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.8.0/sdk/iconfont.min.css" />
     <style>
       html,
       body,
@@ -36,7 +36,7 @@ const htmlTemplate = `<!DOCTYPE html>
   </head>
   <body>
     <div id="root" class="app-wrapper"></div>
-    <script src="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/sdk.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/amis@6.8.0/sdk/sdk.min.js"></script>
     {{if .CustomJS}}
     <script type="text/javascript">
     {{.CustomJS}}
