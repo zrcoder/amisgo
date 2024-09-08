@@ -18,8 +18,12 @@ func ListenAndServe[T comp.AmisComp](component T, cfg ...*Config) error {
 
 	if config.StaticDir != "" {
 		dir := strings.Trim(config.StaticDir, "/")
-		path := "/" + dir + "/"
-		http.Handle(path, http.StripPrefix(path, http.FileServer(http.Dir(dir))))
+		config.StaticDir = "/" + dir + "/"
+		if config.StaticFS == nil {
+			http.Handle(config.StaticDir, http.StripPrefix(config.StaticDir, http.FileServer(http.Dir(dir))))
+		} else {
+			http.Handle(config.StaticDir, http.FileServer(http.FS(config.StaticFS)))
+		}
 	}
 
 	http.HandleFunc(config.Path, func(w http.ResponseWriter, r *http.Request) {

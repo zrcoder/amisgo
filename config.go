@@ -1,5 +1,7 @@
 package amisgo
 
+import "io/fs"
+
 type Theme string
 
 const (
@@ -24,6 +26,8 @@ type Config struct {
 	Title     string
 	Icon      string
 	StaticDir string
+	// if you want to build you app as a single binary, pass a embed.FS to StaticFS is helpful
+	StaticFS  fs.FS
 	CustomCSS string
 	CustomJS  string
 

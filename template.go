@@ -10,9 +10,9 @@ const htmlTemplate = `<!DOCTYPE html>
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{ .Title }}</title>
+     <title>{{ .Title }}</title>
     {{if .Icon}}
-    <link rel="icon" href="{{.Icon}}">
+    <link rel="icon" href="{{.Icon}}" />
     {{end}}
     {{if .Theme}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/{{.Theme}}.min.css" />
@@ -38,11 +38,11 @@ const htmlTemplate = `<!DOCTYPE html>
     <div id="root" class="app-wrapper"></div>
     <script src="https://cdn.jsdelivr.net/npm/amis@6.7.0/sdk/sdk.min.js"></script>
     {{if .CustomJS}}
-    <script>
+    <script type="text/javascript">
     {{.CustomJS}}
     </script> 
     {{end}}
-    <script>
+    <script type="text/javascript">
       (function () {
         let amis = amisRequire('amis/embed');
         let amisScoped = amis.embed(
