@@ -135,6 +135,11 @@ func (a action) IconClassName(value string) action {
 	return a.set("iconClassName", value)
 }
 
+// Redirect 配置相对路径，实现单页跳转
+func (a action) Redirect(value string) action {
+	return a.set("redirect", value)
+}
+
 // Label 按钮文本。可用 '$[xxx]' 取值。
 func (a action) Label(value string) action {
 	return a.set("label", value)
