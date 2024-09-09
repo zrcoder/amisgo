@@ -1,8 +1,7 @@
 package comp
 
 // tabs 选项卡控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/tabs
-//
-// @version 6.7.0
+
 type tabs schema
 
 // Tabs 创建一个新的 Tabs 实例

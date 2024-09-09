@@ -2,7 +2,6 @@ package comp
 
 // searchBox
 
-// @version 6.7.0
 type searchBox schema
 
 // SearchBox 创建一个新的 SearchBox 实例

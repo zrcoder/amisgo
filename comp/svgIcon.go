@@ -1,8 +1,7 @@
 package comp
 
 // svgIcon 图标渲染器
-//
-// @version 6.7.0
+
 type svgIcon schema
 
 // SvgIcon 创建一个新的 SvgIcon 实例

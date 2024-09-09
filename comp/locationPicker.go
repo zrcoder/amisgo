@@ -1,10 +1,8 @@
 package comp
 
 // locationPicker 选点组件
-//
 // 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/location-picker
-//
-// @version 6.7.0
+
 type locationPicker schema
 
 // LocationPicker 创建一个新的 LocationPicker 实例

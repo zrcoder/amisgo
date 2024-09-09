@@ -2,7 +2,6 @@ package comp
 
 // wizardStep 表单向导的步骤
 
-// @version 6.7.0
 type wizardStep schema
 
 // WizardStep 创建一个新的 WizardStep 实例

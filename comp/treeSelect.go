@@ -1,8 +1,7 @@
 package comp
 
 // treeSelect 下拉选择框
-//
-// @version 6.7.0
+
 type treeSelect schema
 
 func TreeSelect() treeSelect {

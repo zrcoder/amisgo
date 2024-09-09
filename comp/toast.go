@@ -1,9 +1,7 @@
 package comp
 
 // toast 轻提示
-//
 
-// @version 6.7.0
 type toast schema
 
 // Toast 创建一个新的 Toast 实例

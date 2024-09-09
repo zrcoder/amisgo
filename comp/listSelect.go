@@ -1,8 +1,7 @@
 package comp
 
 // listSelect 列表控件
-//
-// @version 6.7.0
+
 type listSelect schema
 
 func ListSelect() listSelect {

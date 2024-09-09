@@ -1,8 +1,7 @@
 package comp
 
 // inputSubForm 子表单
-//
-// @version 6.7.0
+
 type inputSubForm schema
 
 func InputSubForm() inputSubForm {

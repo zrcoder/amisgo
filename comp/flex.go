@@ -1,8 +1,7 @@
 package comp
 
 // flex 布局 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/flex
-//
-// @version 6.7.0
+
 type flex schema
 
 // Flex 创建一个新的 Flex 实例

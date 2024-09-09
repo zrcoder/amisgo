@@ -1,8 +1,7 @@
 package comp
 
 // log 实时日志
-//
-// @version 6.7.0
+
 type log schema
 
 // Log 创建一个新的 Log 实例

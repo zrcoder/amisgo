@@ -1,8 +1,7 @@
 package comp
 
 // sparkLine
-//
-// @version 6.7.0
+
 type sparkLine schema
 
 // SparkLine 创建一个新的 SparkLine 实例

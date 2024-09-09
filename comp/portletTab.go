@@ -1,8 +1,7 @@
 package comp
 
 // portletTab
-//
-// @version 6.7.0
+
 type portletTab schema
 
 // PortletTab 创建一个新的 PortletTab 实例

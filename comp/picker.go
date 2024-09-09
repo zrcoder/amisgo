@@ -1,8 +1,7 @@
 package comp
 
 // picker 选择器控件
-//
-// @version 6.7.0
+
 type picker schema
 
 // Picker 创建一个新的 PickerControl 实例

@@ -1,8 +1,7 @@
 package comp
 
 // status 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/status
-//
-// @version 6.7.0
+
 type status schema
 
 // Status 创建一个新的 Status 实例

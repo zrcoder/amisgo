@@ -1,9 +1,7 @@
 package comp
 
 // inputSignature
-//
 
-// @version 6.7.0
 type inputSignature schema
 
 // InputSignature 创建一个新的 InputSignature 实例，并设置默认的 type

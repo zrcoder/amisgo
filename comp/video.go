@@ -1,8 +1,7 @@
 package comp
 
 // video 视频播放器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/video
-//
-// @version 6.7.0
+
 type video schema
 
 // Video 创建一个新的 Video 实例

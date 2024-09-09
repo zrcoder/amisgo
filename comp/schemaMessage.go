@@ -2,7 +2,6 @@ package comp
 
 // schemaMessage 消息文案配置，记住这个优先级是最低的，如果你的接口返回了 msg，接口返回的优先。
 
-// @version 6.7.0
 type schemaMessage schema
 
 // SchemaMessage 创建一个新的 SchemaMessage 实例

@@ -1,8 +1,7 @@
 package comp
 
 // tabsTransfer tabsTransfer 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tabs-transfer
-//
-// @version 6.7.0
+
 type tabsTransfer schema
 
 func TabsTransfer() tabsTransfer {

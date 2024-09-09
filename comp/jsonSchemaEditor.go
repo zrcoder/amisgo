@@ -1,9 +1,8 @@
 package comp
 
 // jsonSchemaEditor JSON Schema Editor 控件
-//
 // 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/json-schema-editor
-// @version 6.7.0
+
 type jsonSchemaEditor schema
 
 func JsonSchemaEditor() jsonSchemaEditor {

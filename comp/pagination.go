@@ -1,8 +1,7 @@
 package comp
 
 // pagination 代表 amis pagination 渲染器
-//
-// @version 6.7.0
+
 type pagination schema
 
 // Pagination 创建一个新的 Pagination 实例

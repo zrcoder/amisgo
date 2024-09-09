@@ -1,9 +1,7 @@
 package comp
 
 // tooltipWrapper
-//
 
-// @version 6.7.0
 type tooltipWrapper schema
 
 // TooltipWrapper 创建一个新的 TooltipWrapper 实例

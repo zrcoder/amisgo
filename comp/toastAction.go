@@ -1,8 +1,7 @@
 package comp
 
 // toastAction
-//
-// @version 6.7.0
+
 type toastAction schema
 
 // ToastAction 创建一个新的 ToastAction 实例

@@ -1,8 +1,7 @@
 package comp
 
 // inputQuarter represents a quarter selection control
-//
-// @version 6.7.0
+
 type inputQuarter schema
 
 func InputQuarter() inputQuarter {

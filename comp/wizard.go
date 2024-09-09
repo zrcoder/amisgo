@@ -2,7 +2,6 @@ package comp
 
 // wizard 表单向导 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/wizard
 
-// @version 6.7.0
 type wizard schema
 
 // Wizard 创建一个新的 Wizard 实例

@@ -1,8 +1,7 @@
 package comp
 
 // reloadAction 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/button
-//
-// @version 6.7.0
+
 type reloadAction schema
 
 // ReloadAction 创建一个新的 ReloadAction 实例

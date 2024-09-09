@@ -1,8 +1,7 @@
 package comp
 
 // panel 代表 amis panel 渲染器
-//
-// @version 6.7.0
+
 type panel schema
 
 // Panel 创建一个新的 Panel 实例

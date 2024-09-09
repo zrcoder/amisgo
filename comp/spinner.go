@@ -1,8 +1,7 @@
 package comp
 
 // spinner
-//
-// @version 6.7.0
+
 type spinner schema
 
 // Spinner 创建一个新的 Spinner 实例

@@ -1,8 +1,7 @@
 package comp
 
 // progress
-//
-// @version 6.7.0
+
 type progress schema
 
 // Progress 创建一个新的 Progress 实例

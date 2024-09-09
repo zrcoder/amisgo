@@ -1,8 +1,7 @@
 package comp
 
 // vBox 垂直布局控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/vbox
-//
-// @version 6.7.0
+
 type vBox schema
 
 // VBox 创建一个新的 VBox 实例

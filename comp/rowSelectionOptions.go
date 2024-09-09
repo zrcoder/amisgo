@@ -2,7 +2,6 @@ package comp
 
 // rowSelectionOptions
 
-// @version 6.7.0
 type rowSelectionOptions schema
 
 // RowSelectionOptions 创建一个新的 RowSelectionOptions 实例

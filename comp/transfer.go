@@ -1,8 +1,7 @@
 package comp
 
 // transfer 控件定义
-//
-// @version 6.7.0
+
 type transfer schema
 
 // NewTransferControl 创建一个新的 TransferControl 实例

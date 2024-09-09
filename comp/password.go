@@ -1,8 +1,7 @@
 package comp
 
 // password 代表 amis password 渲染器
-//
-// @version 6.7.0
+
 type password schema
 
 // Password 创建一个新的 Password 实例

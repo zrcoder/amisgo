@@ -2,7 +2,6 @@ package comp
 
 // inputRange 组件的范围控制
 
-// @version 6.7.0
 type inputRange schema
 
 // InputRange 创建一个新的 RangeControl 实例

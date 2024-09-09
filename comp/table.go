@@ -1,8 +1,7 @@
 package comp
 
 // table 表格渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/table
-//
-// @version 6.7.0
+
 type table schema
 
 // Table 创建一个新的 Table 实例

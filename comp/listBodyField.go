@@ -1,8 +1,7 @@
 package comp
 
 // listBodyField 列表体字段控件
-//
-// @version 6.7.0
+
 type listBodyField schema
 
 // ListBodyField 创建一个新的 ListBodyField 实例

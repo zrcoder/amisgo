@@ -1,8 +1,7 @@
 package comp
 
 // inputNumber 数字输入框
-//
-// @version 6.7.0
+
 type inputNumber schema
 
 // InputNumber 创建一个新的 NumberControl 实例

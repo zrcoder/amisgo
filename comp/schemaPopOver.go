@@ -2,7 +2,6 @@ package comp
 
 // schemaPopOver
 
-// @version 6.7.0
 type schemaPopOver schema
 
 // SchemaPopOver 创建一个新的 SchemaPopOver 实例

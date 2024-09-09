@@ -1,8 +1,7 @@
 package comp
 
 // urlAction URL 操作按钮控件
-//
-// @version 6.7.0
+
 type urlAction schema
 
 // UrlAction 创建一个新的 UrlAction 实例

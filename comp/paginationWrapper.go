@@ -1,8 +1,7 @@
 package comp
 
 // paginationWrapper 代表 amis paginationWrapper 渲染器
-//
-// @version 6.7.0
+
 type paginationWrapper schema
 
 // PaginationWrapper 创建一个新的 PaginationWrapper 实例

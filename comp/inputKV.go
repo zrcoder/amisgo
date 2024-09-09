@@ -1,8 +1,7 @@
 package comp
 
 // InputKV 键值对
-//
-// @version 6.7.0
+
 type InputKV schema
 
 // NewInputKV 创建一个新的 InputKV 实例，并设置默认的 type

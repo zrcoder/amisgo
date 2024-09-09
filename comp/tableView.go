@@ -1,8 +1,7 @@
 package comp
 
 // tableView 表格展现
-//
-// @version 6.7.0
+
 type tableView schema
 
 // TableView 创建一个新的 TableView 实例

@@ -1,8 +1,7 @@
 package comp
 
 // steps 文档
-//
-// @version 6.7.0
+
 type steps schema
 
 // Steps 创建一个新的 Steps 实例

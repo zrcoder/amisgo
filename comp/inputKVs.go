@@ -1,8 +1,7 @@
 package comp
 
 // inputKVS 键值对象
-//
-// @version 6.7.0
+
 type inputKVS schema
 
 // InputKVS 创建一个新的 InputKVS 实例，并设置默认的 type

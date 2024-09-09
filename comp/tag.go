@@ -1,8 +1,7 @@
 package comp
 
 // tag 代表一个标签组件
-//
-// @version 6.7.0
+
 type tag schema
 
 // Tag 创建一个新的 Tag 实例

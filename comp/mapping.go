@@ -1,8 +1,7 @@
 package comp
 
 // mapping 映射展示控件
-//
-// @version 6.7.0
+
 type mapping schema
 
 // Mapping 创建一个新的 Mapping 实例

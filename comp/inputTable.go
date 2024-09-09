@@ -1,8 +1,7 @@
 package comp
 
 // inputTable 表格控件
-//
-// @version 6.7.0
+
 type inputTable schema
 
 // InputTable 创建一个新的 TableControl 实例

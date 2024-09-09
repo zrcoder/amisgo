@@ -1,8 +1,7 @@
 package comp
 
 // control 表单项包裹。文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/control
-//
-// @version 6.7.0
+
 type control schema
 
 // Control 创建一个新的 Control 实例

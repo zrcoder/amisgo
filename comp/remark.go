@@ -1,8 +1,7 @@
 package comp
 
 // remark 提示渲染器，默认会显示个小图标，鼠标放上来的时候显示配置的内容.
-//
-// @version 6.7.0
+
 type remark schema
 
 // Remark 创建一个新的 Remark 实例

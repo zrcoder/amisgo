@@ -1,8 +1,7 @@
 package comp
 
 // qrCode
-//
-// @version 6.7.0
+
 type qrCode schema
 
 // QRCode 创建一个新的 QRCode 实例

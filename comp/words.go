@@ -2,7 +2,6 @@ package comp
 
 // words 表示一个显示文字的组件
 
-// @version 6.7.0
 type words schema
 
 // Words 创建一个新的 Words 实例

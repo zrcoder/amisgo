@@ -1,9 +1,8 @@
 package comp
 
 // link 链接展示控件
-//
 // 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/link
-// @version 6.7.0
+
 type link schema
 
 // Link 创建一个新的 Link 实例，并设置默认的 type

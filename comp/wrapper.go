@@ -1,9 +1,8 @@
 package comp
 
 // wrapper 表示一个容器渲染器
-//
 // 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/wrapper
-// @version 6.7.0
+
 type wrapper schema
 
 // Wrapper 创建一个新的 Wrapper 实例

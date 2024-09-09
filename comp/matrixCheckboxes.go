@@ -1,8 +1,7 @@
 package comp
 
 // matrixCheckboxes 选择控件，适合做权限勾选
-//
-// @version 6.7.0
+
 type matrixCheckboxes schema
 
 // MatrixCheckboxes 创建一个新的 MatrixControl 实例

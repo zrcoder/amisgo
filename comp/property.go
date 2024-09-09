@@ -1,8 +1,7 @@
 package comp
 
 // property
-//
-// @version 6.7.0
+
 type property schema
 
 // Property 创建一个新的 Property 实例

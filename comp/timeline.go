@@ -1,9 +1,7 @@
 package comp
 
 // timeline 时间轴渲染器
-//
 
-// @version 6.7.0
 type timeline schema
 
 // NewTimeline 创建一个新的 Timeline 实例

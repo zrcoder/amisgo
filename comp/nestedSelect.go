@@ -1,8 +1,7 @@
 package comp
 
 // nestedSelect 嵌套选择控件
-//
-// @version 6.7.0
+
 type nestedSelect schema
 
 func NestedSelect() nestedSelect {

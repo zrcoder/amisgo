@@ -1,8 +1,7 @@
 package comp
 
 // markdown 渲染
-//
-// @version 6.7.0
+
 type markdown schema
 
 // Markdown 创建一个新的 Markdown 实例

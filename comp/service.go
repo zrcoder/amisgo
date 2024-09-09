@@ -1,8 +1,7 @@
 package comp
 
 // service 服务类控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/service
-//
-// @version 6.7.0
+
 type service schema
 
 // Service 创建一个新的 Service 实例

@@ -1,8 +1,7 @@
 package comp
 
 // inputTimeRange 时间范围
-//
-// @version 6.7.0
+
 type inputTimeRange schema
 
 // InputTimeRange 创建一个新的 InputTimeRange 实例，并设置默认的 type

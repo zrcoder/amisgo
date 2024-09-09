@@ -1,9 +1,7 @@
 package comp
 
 // inputTime 时间选择控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/time
-//
 
-// @version 6.7.0
 type inputTime schema
 
 func InputTime() inputTime {

@@ -1,9 +1,8 @@
 package comp
 
 // inputMonth 月份选择控件
-//
 // 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/Month
-// @version 6.7.0
+
 type inputMonth schema
 
 func InputMonth() inputMonth {

@@ -1,8 +1,7 @@
 package comp
 
 // switchControl 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/switch
-//
-// @version 6.7.0
+
 type switchControl schema
 
 // Switch 创建一个新的 SwitchControl 实例

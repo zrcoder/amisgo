@@ -1,8 +1,7 @@
 package comp
 
 // timelineItem 时间轴项渲染器
-//
-// @version 6.7.0
+
 type timelineItem schema
 
 // NewTimelineItem 创建一个新的 TimelineItem 实例

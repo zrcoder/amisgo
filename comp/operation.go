@@ -1,8 +1,7 @@
 package comp
 
 // operation 操作栏渲染器
-//
-// @version 6.7.0
+
 type operation schema
 
 // Operation 创建一个新的 Operation 实例

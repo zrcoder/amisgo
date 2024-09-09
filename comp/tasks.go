@@ -2,7 +2,6 @@ package comp
 
 // tasks 渲染器，格式说明 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/tasks
 
-// @version 6.7.0
 type tasks schema
 
 // Tasks 创建一个新的 Tasks 实例

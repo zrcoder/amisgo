@@ -1,8 +1,7 @@
 package comp
 
 // linkAction 链接动作控件
-//
-// @version 6.7.0
+
 type linkAction schema
 
 // LinkAction 创建一个新的 LinkAction 实例，并设置默认的 type 和 actionType

@@ -1,8 +1,7 @@
 package comp
 
 // inputYear 年份选择控件
-//
-// @version 6.7.0
+
 type inputYear schema
 
 func InputYear() inputYear {

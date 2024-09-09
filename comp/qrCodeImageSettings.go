@@ -1,8 +1,7 @@
 package comp
 
 // qrCodeImageSettings
-//
-// @version 6.7.0
+
 type qrCodeImageSettings schema
 
 // QRCodeImageSettings 创建一个新的 QRCodeImageSettings 实例

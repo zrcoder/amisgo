@@ -3,8 +3,7 @@ package comp
 // 替换为实际的 upload 包路径
 
 // wangEditor
-//
-// @version 6.7.0
+
 type wangEditor schema
 
 // WangEditor 创建一个新的 WangEditor 实例

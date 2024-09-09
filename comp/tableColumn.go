@@ -1,8 +1,7 @@
 package comp
 
 // tableColumn 表格列，不指定类型时默认为文本类型。
-//
-// @version 6.7.0
+
 type tableColumn schema
 
 // TableColumn 创建一个新的 TableColumn 实例

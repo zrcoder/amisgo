@@ -1,8 +1,7 @@
 package comp
 
 // plain 纯文本渲染器
-//
-// @version 6.7.0
+
 type plain schema
 
 // Plain 创建一个新的 Plain 实例

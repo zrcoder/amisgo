@@ -1,8 +1,7 @@
 package comp
 
 // inputYearRange 年份范围
-//
-// @version 6.7.0
+
 type inputYearRange schema
 
 // InputYearRange 创建一个新的 InputYearRange 实例，并设置默认的 type

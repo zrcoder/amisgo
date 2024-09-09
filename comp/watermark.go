@@ -2,7 +2,6 @@ package comp
 
 // watermark 水印
 
-// @version 6.7.0
 type watermark schema
 
 // Watermark 创建一个新的 Watermark 实例

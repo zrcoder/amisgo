@@ -1,8 +1,7 @@
 package comp
 
 // form 表单渲染器。说明：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/index
-//
-// @version 6.7.0
+
 type form schema
 
 // Form 创建一个新的 Form 实例

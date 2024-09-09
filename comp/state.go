@@ -1,8 +1,7 @@
 package comp
 
 // state
-//
-// @version 6.7.0
+
 type state schema
 
 // State 创建一个新的 State 实例

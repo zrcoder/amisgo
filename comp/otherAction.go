@@ -1,6 +1,5 @@
 package comp
 
-// @version 6.7.0
 type otherAction schema
 
 func OtherAction() otherAction {

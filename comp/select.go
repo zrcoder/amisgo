@@ -1,8 +1,7 @@
 package comp
 
 // selectControl 下拉选择框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/select
-//
-// @version 6.7.0
+
 type selectControl schema
 
 func Select() selectControl {

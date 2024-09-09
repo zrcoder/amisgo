@@ -1,8 +1,7 @@
 package comp
 
 // options 选择器表单项
-//
-// @version 6.7.0
+
 type options schema
 
 // Options 创建一个新的 Options 实例

@@ -1,8 +1,7 @@
 package comp
 
 // page 代表 amis page 渲染器
-//
-// @version 6.7.0
+
 type page schema
 
 // Page 创建一个新的 Page 实例

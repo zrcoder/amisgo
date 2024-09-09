@@ -1,8 +1,7 @@
 package comp
 
 // userSelect 移动端人员选择。
-//
-// @version 6.7.0
+
 type userSelect schema
 
 func UsersSelect() userSelect {

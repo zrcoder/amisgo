@@ -2,7 +2,6 @@ package comp
 
 // schemaCopyable
 
-// @version 6.7.0
 type schemaCopyable schema
 
 // SchemaCopyable 创建一个新的 SchemaCopyable 实例

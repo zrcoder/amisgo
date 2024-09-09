@@ -1,8 +1,7 @@
 package comp
 
 // portlet
-//
-// @version 6.7.0
+
 type portlet schema
 
 // Portlet 创建一个新的 Portlet 实例

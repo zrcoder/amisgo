@@ -1,8 +1,7 @@
 package comp
 
 // schemaApi
-//
-// @version 6.7.0
+
 type schemaApi schema
 
 // SchemaApi 创建一个新的 SchemaApi 实例

@@ -1,8 +1,7 @@
 package comp
 
 // tabsTransferPicker 穿梭器的弹框形态 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tabs-transfer-picker
-//
-// @version 6.7.0
+
 type tabsTransferPicker schema
 
 func TabsTransferPicker() tabsTransferPicker {
