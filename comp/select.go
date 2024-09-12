@@ -359,7 +359,7 @@ func (sc selectControl) Type_(value string) selectControl {
 }
 
 // value 绑定值
-func (sc selectControl) Value(value string) selectControl {
+func (sc selectControl) Value(value any) selectControl {
 	return sc.set("value", value)
 }
 
@@ -381,4 +381,9 @@ func (sc selectControl) Virtual(value bool) selectControl {
 // width 组件宽度
 func (sc selectControl) Width(value string) selectControl {
 	return sc.set("width", value)
+}
+
+// OnEvent 设置事件监听
+func (sc selectControl) OnEvent(value any) selectControl {
+	return sc.set("onEvent", value)
 }

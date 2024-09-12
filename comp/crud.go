@@ -38,7 +38,7 @@ func (c crud) Api(value string) crud {
 
 // FetchData 设置获取数据的 api 实现方法
 func (c crud) FetchData(getter func() any) crud {
-	return c.Api(serveInit(getter))
+	return c.Api(serveData(getter))
 }
 
 // AutoFillHeight 设置内容区域是否占满屏幕剩余空间

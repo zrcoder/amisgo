@@ -5,7 +5,7 @@ type chart schema
 
 // Chart 创建一个新的 Chart 实例
 func Chart() chart {
-	return make(chart).set("type", "chart")
+	return chart{}.set("type", "chart")
 }
 
 func (c chart) set(key string, value any) chart {
@@ -16,6 +16,11 @@ func (c chart) set(key string, value any) chart {
 // API 图表配置接口 (图表配置接口)
 func (c chart) API(value string) chart {
 	return c.set("api", value)
+}
+
+// GetData 设置图表获取数据的方法
+func (c chart) GetData(value func() any) chart {
+	return c.API(serveData(value))
 }
 
 // ChartTheme Chart 主题配置
@@ -33,7 +38,7 @@ func (c chart) ClickAction(value string) chart {
 	return c.set("clickAction", value)
 }
 
-// Config 配置echart的config，支持数据映射。如果用了数据映射，为了同步更新，请设置 trackExpression
+// Config 配置echart的config，支持数据映射。如果用了数据映射，为了同步更新，请设置 TrackExpression
 func (c chart) Config(value any) chart {
 	return c.set("config", value)
 }
@@ -94,7 +99,7 @@ func (c chart) InitFetchOn(value string) chart {
 }
 
 // Interval 刷新时间
-func (c chart) Interval(value string) chart {
+func (c chart) Interval(value any) chart {
 	return c.set("interval", value)
 }
 

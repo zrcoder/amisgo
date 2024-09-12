@@ -21,7 +21,7 @@ func (s service) Api(value string) service {
 
 // FetchData 通过内置 api 获取数据
 func (s service) FetchData(getter func() any) service {
-	return s.Api(serveInit(getter))
+	return s.Api(serveData(getter))
 }
 
 // Body 内容区域 (内容区域)

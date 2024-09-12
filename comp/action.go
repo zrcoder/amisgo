@@ -15,6 +15,7 @@ func Action() action {
 	return action{}.set("type", "action")
 }
 
+// Button 实际为 Action 的 别名
 func Button() action {
 	return Action().set("type", "button")
 }
@@ -25,9 +26,16 @@ func Submit() action {
 }
 
 // ActionType 【必填】这是 action 最核心的配置，来指定该 action 的作用类型
-// 可选值: ajax | link | url | drawer | dialog | confirm | cancel | prev | next | copy | close
+// 可选值:
+// ajax | link | url | drawer | dialog | confirm | cancel | prev | next | copy | close
+// button | reset | submit | clear
 func (a action) ActionType(value string) action {
 	return a.set("actionType", value)
+}
+
+// Dialog
+func (a action) Dialog(value dialog) action {
+	return a.set("dialog", value)
 }
 
 // Transform transform the src value with transfor, and renderer the result to dst component
@@ -105,7 +113,8 @@ func (a action) ClassName(value string) action {
 	return a.set("className", value)
 }
 
-// Close 当action配置在dialog或drawer的actions中时，配置为true指定此次操作完后关闭当前dialog或drawer。当值为字符串，并且是祖先层弹框的名字的时候，会把祖先弹框关闭掉。
+// Close 当action配置在dialog或drawer的actions中时，配置为true指定此次操作完后关闭当前dialog或drawer。
+// 当值为字符串，并且是祖先层弹框的名字的时候，会把祖先弹框关闭掉。
 func (a action) Close(value string) action {
 	return a.set("close", value)
 }
@@ -121,7 +130,7 @@ func (a action) ConfirmTitle(value any) action {
 }
 
 // DisabledTip 被禁用后鼠标停留时弹出该段文字，也可以配置对象类型：字段为title和content。可用 '$[xxx]' 取值。
-func (a action) DisabledTip(value string) action {
+func (a action) DisabledTip(value any) action {
 	return a.set("disabledTip", value)
 }
 
@@ -145,7 +154,9 @@ func (a action) Label(value string) action {
 	return a.set("label", value)
 }
 
-// Level 按钮样式，支持：link /primary/secondary/info/success/warning/danger/light/dark/default。
+// Level 按钮样式
+// 'link' | 'primary' | 'enhance' | 'secondary' | 'info'|'success' |
+// 'warning' | 'danger' | 'light'| 'dark' | 'default'
 func (a action) Level(value string) action {
 	return a.set("level", value)
 }
@@ -155,17 +166,17 @@ func (a action) Link(value string) action {
 	return a.set("link", value)
 }
 
-// Reload 指定此次操作完后，需要刷新的目标组件名字（组件的name值，自己配置的），多个请用, 号隔开。
+// Reload 指定此次操作完后，需要刷新的目标组件名字（组件的name值，自己配置的），多个请用 "," 号隔开。
 func (a action) Reload(value string) action {
 	return a.set("reload", value)
 }
 
 // Required 配置字符串数组，指定在form中进行操作之前，需要指定的字段名的表单项通过验证
-func (a action) Required(value string) action {
+func (a action) Required(value ...string) action {
 	return a.set("required", value)
 }
 
-// RightIcon 在按钮文本右侧设置图标，例如fa fa-plus。
+// RightIcon 在按钮文本右侧设置图标，例如 "fa fa-plus"。
 func (a action) RightIcon(value string) action {
 	return a.set("rightIcon", value)
 }
@@ -188,6 +199,11 @@ func (a action) Tooltip(value string) action {
 // TooltipPlacement 如果配置了tooltip或者disabledTip，指定提示信息位置，可配置top、bottom、left、right。
 func (a action) TooltipPlacement(value string) action {
 	return a.set("tooltipPlacement", value)
+}
+
+// TooltipTrigger 'hover' | 'focus'
+func (a action) TooltipTrigger(value string) action {
+	return a.set("tooltipTrigger", value)
 }
 
 // Badge 角标 (Badge 角标。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/badge)
@@ -258,6 +274,11 @@ func (v action) Id(value string) action {
 // Url 按钮链接
 func (v action) Url(value string) action {
 	return v.set("url", value)
+}
+
+// Loading 是否显示按钮加载效果
+func (a action) Loading(value bool) action {
+	return a.set("loading", value)
 }
 
 // LoadingClassName loading 上的css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })

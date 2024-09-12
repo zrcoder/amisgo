@@ -14,8 +14,12 @@ func getInnerApiID() int {
 	return innerApiID
 }
 
+func getRoute() string {
+	return fmt.Sprintf("/__amisgo__%d", getInnerApiID())
+}
+
 func serveApi(action func(map[string]any)) string {
-	route := fmt.Sprintf("/__amisgo_api_%d", getInnerApiID())
+	route := getRoute()
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		input, err := io.ReadAll(r.Body)
 		if err != nil {
@@ -34,10 +38,15 @@ func serveApi(action func(map[string]any)) string {
 	return route
 }
 
-func serveInit(getter func() any) string {
-	route := fmt.Sprintf("/__amisgo_init_%d", getInnerApiID())
+func serveData(getter func() any) string {
+	route := getRoute()
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
-		data, _ := js.Marshal(getter())
+		data, err := js.Marshal(getter())
+		if err != nil {
+			resp := Response{Status: 1, Msg: err.Error()}
+			w.Write(resp.Json())
+			return
+		}
 		w.Write(data)
 	})
 	return route

@@ -122,7 +122,7 @@ func (p page) InitApi(value string) page {
 
 // InitData
 func (p page) InitData(getter func() any) page {
-	return p.InitApi(serveInit(getter))
+	return p.InitApi(serveData(getter))
 }
 
 // InitFetch 是否默认就拉取

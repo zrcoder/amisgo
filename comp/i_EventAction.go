@@ -38,6 +38,11 @@ func (la eventAction) ComponentName(value string) eventAction {
 	return la.set("componentName", value)
 }
 
+// Value
+func (ea eventAction) Value(value string) eventAction {
+	return ea.set("value", value)
+}
+
 // ConfirmTitle 设置确认弹窗标题
 func (la eventAction) ConfirmTitle(value any) eventAction {
 	return la.set("confirmTitle", value)
