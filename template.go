@@ -53,9 +53,14 @@ const htmlTemplate = `<!DOCTYPE html>
           locale: 'en-US'
           {{end}}
         },
-        {{if .Theme}}
-        {theme: '{{.Theme}}'}
-        {{end}}
+        {
+          {{if .Theme}}
+          theme: '{{ .Theme }}',
+          {{end}}
+          replaceText: {
+            HOST: "{{ .Host }}"
+          }
+        }
         );
       })();
     </script>

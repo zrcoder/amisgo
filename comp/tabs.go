@@ -129,7 +129,7 @@ func (t tabs) ShowTipClassName(value string) tabs {
 	return t.set("showTipClassName", value)
 }
 
-// SidePosition 编辑器模式，侧边的位置
+// SidePosition 编辑器模式，侧边的位置 left/right
 func (t tabs) SidePosition(value string) tabs {
 	return t.set("sidePosition", value)
 }

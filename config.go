@@ -31,6 +31,7 @@ type Config struct {
 	CustomCSS string
 	CustomJS  string
 
+	Host string
 	Addr string
 	Path string
 }
@@ -40,6 +41,7 @@ func GetDefaultConfig() *Config {
 		Title: "Amisgo",
 		Lang:  LangDefault,
 		Theme: ThemeDefault,
+		Host:  "http://localhost",
 		Addr:  ":80",
 		Path:  "/",
 	}
