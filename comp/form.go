@@ -200,6 +200,6 @@ func (f form) Api(value any) form {
 }
 
 // Go 设置提交后的处理逻辑
-func (f form) Go(action func(map[string]any)) form {
+func (f form) Go(action func(Data) error) form {
 	return f.Api(serveApi(action))
 }

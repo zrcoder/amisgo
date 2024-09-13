@@ -18,7 +18,7 @@ func getRoute() string {
 	return fmt.Sprintf("/__amisgo__%d", getInnerApiID())
 }
 
-func serveApi(action func(map[string]any)) string {
+func serveApi(action func(Data) error) string {
 	route := getRoute()
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		input, err := io.ReadAll(r.Body)
@@ -27,13 +27,17 @@ func serveApi(action func(map[string]any)) string {
 			return
 		}
 		defer r.Body.Close()
-		m := map[string]any{}
+		m := Data{}
 		err = js.Unmarshal(input, &m)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
-		action(m)
+		err = action(m)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
 	})
 	return route
 }

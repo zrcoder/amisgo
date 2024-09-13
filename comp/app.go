@@ -18,7 +18,7 @@ func (a app) Api(value any) app {
 }
 
 // Go 页面配置回调函数，是对 Api 方法的包装
-func (a app) Go(action func(map[string]any)) app {
+func (a app) Go(action func(Data) error) app {
 	return a.Api(serveApi(action))
 }
 

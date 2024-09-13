@@ -14,6 +14,14 @@ type (
 	Data   schema
 )
 
+func (d Data) Set(key string, value any) {
+	d[key] = value
+}
+
+func (d Data) Get(key string) any {
+	return d[key]
+}
+
 type Response struct {
 	Status int    `json:"status"`
 	Msg    string `json:"msg"`
