@@ -23,19 +23,17 @@ func serveApi(action func(Data) error) string {
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		input, err := io.ReadAll(r.Body)
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusBadRequest)
+			respError(w, err)
 			return
 		}
 		defer r.Body.Close()
 		m := Data{}
-		err = js.Unmarshal(input, &m)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusBadRequest)
+		if err = js.Unmarshal(input, &m); err != nil {
+			respError(w, err)
 			return
 		}
-		err = action(m)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusBadRequest)
+		if err = action(m); err != nil {
+			respError(w, err)
 			return
 		}
 	})
@@ -47,17 +45,20 @@ func serveData(getter func() (any, error)) string {
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		input, err := getter()
 		if err != nil {
-			resp := Response{Status: 1, Msg: err.Error()}
-			w.Write(resp.Json())
+			respError(w, err)
 			return
 		}
 		data, err := js.Marshal(input)
 		if err != nil {
-			resp := Response{Status: 1, Msg: err.Error()}
-			w.Write(resp.Json())
+			respError(w, err)
 			return
 		}
 		w.Write(data)
 	})
 	return route
+}
+
+func respError(w http.ResponseWriter, err error) {
+	resp := Response{Status: 1, Msg: err.Error()}
+	w.Write(resp.Json())
 }
