@@ -19,7 +19,7 @@ func (c chart) API(value string) chart {
 }
 
 // GetData 设置图表获取数据的方法
-func (c chart) GetData(value func() any) chart {
+func (c chart) GetData(value func() (any, error)) chart {
 	return c.API(serveData(value))
 }
 

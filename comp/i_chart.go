@@ -100,6 +100,10 @@ func (c ChartSeri) Data(value any) ChartSeri {
 	return c.set("data", value)
 }
 
+func (c ChartSeri) Label(value any) ChartSeri {
+	return c.set("label", value)
+}
+
 func (c ChartSeri) Smooth(value bool) ChartSeri {
 	return c.set("smooth", value)
 }

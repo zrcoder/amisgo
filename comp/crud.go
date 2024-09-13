@@ -37,7 +37,7 @@ func (c crud) Api(value string) crud {
 }
 
 // FetchData 设置获取数据的 api 实现方法
-func (c crud) FetchData(getter func() any) crud {
+func (c crud) FetchData(getter func() (any, error)) crud {
 	return c.Api(serveData(getter))
 }
 

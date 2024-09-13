@@ -42,10 +42,16 @@ func serveApi(action func(Data) error) string {
 	return route
 }
 
-func serveData(getter func() any) string {
+func serveData(getter func() (any, error)) string {
 	route := getRoute()
 	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
-		data, err := js.Marshal(getter())
+		input, err := getter()
+		if err != nil {
+			resp := Response{Status: 1, Msg: err.Error()}
+			w.Write(resp.Json())
+			return
+		}
+		data, err := js.Marshal(input)
 		if err != nil {
 			resp := Response{Status: 1, Msg: err.Error()}
 			w.Write(resp.Json())

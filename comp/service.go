@@ -19,8 +19,8 @@ func (s service) Api(value string) service {
 	return s.set("api", value)
 }
 
-// FetchData 通过内置 api 获取数据
-func (s service) FetchData(getter func() any) service {
+// GetData 通过内置 api 获取数据
+func (s service) GetData(getter func() (any, error)) service {
 	return s.Api(serveData(getter))
 }
 
