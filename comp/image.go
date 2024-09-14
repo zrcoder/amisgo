@@ -108,7 +108,7 @@ func (i image) ImageGallaryClassName(value string) image {
 	return i.set("imageGallaryClassName", value)
 }
 
-// ImageMode 图片展示模式
+// ImageMode 图片展示模式 thumb | original, 默认 thumb
 func (i image) ImageMode(value string) image {
 	return i.set("imageMode", value)
 }

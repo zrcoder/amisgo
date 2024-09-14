@@ -4,7 +4,7 @@ package comp
 
 type spinner schema
 
-// Spinner 创建一个新的 Spinner 实例
+// Spinner 创建一个 Spinner 实例
 func Spinner() spinner {
 	return spinner{}.set("type", "spinner")
 }

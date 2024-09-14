@@ -33,9 +33,19 @@ func (a action) ActionType(value string) action {
 	return a.set("actionType", value)
 }
 
-// Dialog
+// Dialog 配置按钮点击后的 dialog
 func (a action) Dialog(value dialog) action {
 	return a.set("dialog", value)
+}
+
+// Drawer 配置按钮点击后的 drawer
+func (a action) Drawer(value drawer) action {
+	return a.set("drawer", value)
+}
+
+// Toast 配置按钮点击后的 toast
+func (a action) Toast(value toast) action {
+	return a.set("toast", value)
 }
 
 // Transform transform the src value with transfor, and renderer the result to dst component
