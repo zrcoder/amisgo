@@ -9,11 +9,15 @@ import (
 	"path/filepath"
 	"strings"
 	"text/template"
-
-	"github.com/zrcoder/amisgo/comp"
 )
 
-func ListenAndServe[T comp.AmisComp](component T, cfg ...*Config) error {
+var routes = map[string]any{}
+
+func Serve(path string, component any) {
+	routes[path] = component
+}
+
+func ListenAndServe(addr string, cfg ...*Config) error {
 	config := getConfig(cfg)
 
 	if config.StaticDir != "" {
@@ -26,14 +30,16 @@ func ListenAndServe[T comp.AmisComp](component T, cfg ...*Config) error {
 		}
 	}
 
-	http.HandleFunc(config.Path, func(w http.ResponseWriter, r *http.Request) {
-		writeHtml(config, component, w)
-	})
+	for path, com := range routes {
+		http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+			writeHtml(config, com, w)
+		})
+	}
 
-	return http.ListenAndServe(config.Addr, nil)
+	return http.ListenAndServe(addr, nil)
 }
 
-func GenerateStaticWebsite[T comp.AmisComp](outputDir string, component T, cfg ...*Config) error {
+func GenerateStaticWebsite(outputDir string, component any, cfg ...*Config) error {
 	config := getConfig(cfg)
 	if outputDir == "" {
 		outputDir = "."
@@ -43,7 +49,7 @@ func GenerateStaticWebsite[T comp.AmisComp](outputDir string, component T, cfg .
 	return os.WriteFile(filepath.Join(outputDir, "index.html"), writer.Bytes(), 0o640)
 }
 
-func writeHtml[T comp.AmisComp](config *Config, component T, writer io.Writer) {
+func writeHtml(config *Config, component any, writer io.Writer) {
 	tmpl := template.Must(template.New("").Parse(htmlTemplate))
 	amisJson, _ := json.Marshal(component)
 

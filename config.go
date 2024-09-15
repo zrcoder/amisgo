@@ -32,8 +32,6 @@ type Config struct {
 	CustomJS  string
 
 	Host string
-	Addr string
-	Path string
 }
 
 func GetDefaultConfig() *Config {
@@ -42,8 +40,6 @@ func GetDefaultConfig() *Config {
 		Lang:  LangDefault,
 		Theme: ThemeDefault,
 		Host:  "http://localhost",
-		Addr:  ":80",
-		Path:  "/",
 	}
 }
 

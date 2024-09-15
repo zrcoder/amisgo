@@ -2,10 +2,6 @@ package comp
 
 import js "encoding/json"
 
-type AmisComp interface {
-	~map[string]any | ~[]byte | ~string
-}
-
 // schema 通用 model，键未指定的 map
 type schema = map[string]any
 
@@ -34,6 +30,6 @@ func (r *Response) Json() []byte {
 }
 
 // RawJson create components from amis raw json
-func RawJson[T AmisComp](input T) T {
+func RawJson(input any) any {
 	return input
 }
