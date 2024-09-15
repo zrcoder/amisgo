@@ -263,6 +263,11 @@ func (fc inputFile) Receiver(value string) inputFile {
 	return fc.set("receiver", value)
 }
 
+// Upload
+func (i inputFile) Upload(maxMemory int64, action func([]byte) (path string, err error)) inputFile {
+	return i.Receiver(serveUpload(maxMemory, action))
+}
+
 // RenderType 默认类型，值为： `input-file`， 表示普通文件上传控件 (值为： `input-file`， 表示普通文件上传控件)
 func (fc inputFile) RenderType(value string) inputFile {
 	return fc.set("renderType", value)

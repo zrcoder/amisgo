@@ -298,6 +298,11 @@ func (i inputImage) Receiver(value string) inputImage {
 	return i.set("receiver", value)
 }
 
+// Upload
+func (i inputImage) Upload(maxMemory int64, action func([]byte) (path string, err error)) inputImage {
+	return i.Receiver(serveUpload(maxMemory, action))
+}
+
 // Required 是否必填
 func (i inputImage) Required(value bool) inputImage {
 	return i.set("required", value)
