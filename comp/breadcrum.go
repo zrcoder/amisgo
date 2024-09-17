@@ -5,7 +5,7 @@ type breadcrumb schema
 
 // Breadcrumb 创建一个新的 Breadcrumb 实例
 func Breadcrumb() breadcrumb {
-	return make(breadcrumb)
+	return breadcrumb{}.set("type", "breadcrumb")
 }
 
 func (b breadcrumb) set(key string, value any) breadcrumb {
