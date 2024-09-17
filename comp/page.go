@@ -25,13 +25,13 @@ func (p page) AsideClassName(value string) page {
 	return p.set("asideClassName", value)
 }
 
-// AsideMaxWidth 边栏最小宽度
-func (p page) AsideMaxWidth(value string) page {
+// AsideMaxWidth 边栏最大宽度
+func (p page) AsideMaxWidth(value int) page {
 	return p.set("asideMaxWidth", value)
 }
 
 // AsideMinWidth 边栏最小宽度
-func (p page) AsideMinWidth(value string) page {
+func (p page) AsideMinWidth(value int) page {
 	return p.set("asideMinWidth", value)
 }
 

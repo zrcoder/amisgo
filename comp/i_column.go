@@ -19,6 +19,11 @@ func (c column) Align(value string) column {
 	return c.Set("align", value)
 }
 
+// Body 主体内容
+func (c column) Body(value ...any) column {
+	return c.Set("body", value)
+}
+
 // CanAccessSuperData 设置表格列单元格是否可以获取父级数据域值
 func (c column) CanAccessSuperData(value bool) column {
 	return c.Set("canAccessSuperData", value)

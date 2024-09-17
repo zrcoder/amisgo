@@ -119,7 +119,7 @@ func (n nav) Links(value ...any) nav {
 	return n.set("links", value)
 }
 
-// Mode 设置垂直模式下的菜单打开方式
+// Mode 设置垂直模式下的菜单打开方式 inline | float 默认 inline
 func (n nav) Mode(value string) nav {
 	return n.set("mode", value)
 }
