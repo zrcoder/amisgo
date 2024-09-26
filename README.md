@@ -34,11 +34,11 @@ and then visit http://localhost to view the served site.
 
 ## Examples
 
-See our [examples repo](https://github.com/zrcoder/amisgo-examples)
+See our [examples repo](https://github.com/zrcoder/amisgo-examples), or a live demo: [Dev-Toys](https://amisgo-examples.onrender.com)
 
 ## TODO
 
 - [x] both ListenAndServe, GenerateStaticWebsite api
 - [x] Generate codes in the comp directory, based on schema.json in Amis' last release(or Amis' docs)
-- [ ] Tests and examples(20%)
+- [ ] Tests and examples(40%)
 - [ ] Go+ classfile improvement

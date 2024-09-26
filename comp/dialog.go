@@ -12,7 +12,7 @@ func (d dialog) set(key string, value any) dialog {
 }
 
 // Actions 默认不用填写，自动会创建确认和取消按钮。
-func (d dialog) Actions(value string) dialog {
+func (d dialog) Actions(value ...action) dialog {
 	return d.set("actions", value)
 }
 

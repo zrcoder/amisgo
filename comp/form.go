@@ -199,6 +199,11 @@ func (f form) Api(value any) form {
 	return f.set("api", value)
 }
 
+// GetData 通过内置 api 获取数据
+func (s form) GetData(getter func() (any, error)) form {
+	return s.Api(serveData(getter))
+}
+
 // Go 设置提交后的处理逻辑
 func (f form) Go(action func(Data) error) form {
 	return f.Api(serveApi(action))

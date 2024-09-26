@@ -64,6 +64,11 @@ func (c column) Fixed(value string) column {
 	return c.Set("fixed", value)
 }
 
+// Type
+func (c column) Type(value string) column {
+	return c.Set("type", value)
+}
+
 // Name 设置指定列唯一标识
 func (c column) Name(value string) column {
 	return c.Set("name", value)
@@ -152,4 +157,9 @@ func (c column) Lg(value any) column {
 // Valign 当前列内垂直对齐 'top' | 'middle' | 'bottom' | 'between'
 func (c column) Valign(value string) column {
 	return c.Set("valign", value)
+}
+
+// Buttons
+func (c column) Buttons(value ...action) column {
+	return c.Set("buttons", value)
 }
