@@ -259,7 +259,7 @@ func (c crud) ParsePrimitiveQuery(value string) crud {
 }
 
 // PerPage 设置无限加载时每页加载数量
-func (c crud) PerPage(value string) crud {
+func (c crud) PerPage(value int) crud {
 	return c.set("perPage", value)
 }
 
@@ -641,11 +641,6 @@ func (c crud) ExtraAction(value any) crud {
 // AutoSaveOnChange 设置是否自动保存更改
 func (c crud) AutoSaveOnChange(value bool) crud {
 	return c.set("autoSaveOnChange", value)
-}
-
-// API 设置初始化数据 API (整合 CRUD2List 和 crudTable 的相同方法)
-func (c crud) API(value string) crud {
-	return c.set("api", value)
 }
 
 // ID 设置组件唯一 ID

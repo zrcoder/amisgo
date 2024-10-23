@@ -154,7 +154,7 @@ func (rc inputRichText) OnEvent(value any) inputRichText {
 }
 
 // Options tinymce 或 froala 的配置
-func (rc inputRichText) Options(value ...option) inputRichText {
+func (rc inputRichText) Options(value Schema) inputRichText {
 	return rc.set("options", value)
 }
 
@@ -198,7 +198,7 @@ func (rc inputRichText) SaveImmediately(value bool) inputRichText {
 	return rc.set("saveImmediately", value)
 }
 
-// Size 表单项大小 可选值: xs | sm | md | lg | full
+// Size 表单项大小 可选值: md | lg
 func (rc inputRichText) Size(value string) inputRichText {
 	return rc.set("size", value)
 }
@@ -283,7 +283,7 @@ func (rc inputRichText) Value(value string) inputRichText {
 	return rc.set("value", value)
 }
 
-// Vendor 编辑器类型 可选值: froala | tinymce
+// Vendor 编辑器类型 可选值: froala | tinymce， 默认 tinymce
 func (rc inputRichText) Vendor(value string) inputRichText {
 	return rc.set("vendor", value)
 }

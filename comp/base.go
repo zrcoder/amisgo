@@ -24,6 +24,14 @@ type Response struct {
 	Data   Data   `json:"data"`
 }
 
+func ErrorResponse(msg string) *Response {
+	return &Response{Status: -1, Msg: msg}
+}
+
+func SuccessResponse(msg string, data Data) *Response {
+	return &Response{Msg: msg, Data: data}
+}
+
 func (r *Response) Json() []byte {
 	data, _ := js.Marshal(r)
 	return data

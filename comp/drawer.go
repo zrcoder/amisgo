@@ -13,7 +13,7 @@ func (d drawer) set(key string, value any) drawer {
 }
 
 // Actions 默认不用填写，自动会创建确认和取消按钮。
-func (d drawer) Actions(value string) drawer {
+func (d drawer) Actions(value ...any) drawer {
 	return d.set("actions", value)
 }
 
@@ -87,8 +87,8 @@ func (d drawer) HeaderClassName(value string) drawer {
 	return d.set("headerClassName", value)
 }
 
-// Height 抽屉的高度 （当position为top | bottom时生效）
-func (d drawer) Height(value string) drawer {
+// Height 抽屉的高度 （string | number, 当position为top | bottom时生效）
+func (d drawer) Height(value any) drawer {
 	return d.set("height", value)
 }
 
@@ -147,7 +147,7 @@ func (d drawer) ShowErrorMsg(value bool) drawer {
 	return d.set("showErrorMsg", value)
 }
 
-// Size Dialog 大小 可选值: xs | sm | md | lg | full
+// Size 大小 可选值: xs、sm、md、lg、xl
 func (d drawer) Size(value string) drawer {
 	return d.set("size", value)
 }
@@ -222,7 +222,7 @@ func (d drawer) VisibleOn(value string) drawer {
 	return d.set("visibleOn", value)
 }
 
-// Width 抽屉的宽度 （当position为left | right时生效）
-func (d drawer) Width(value string) drawer {
+// Width 抽屉的宽度 （string | number, 当position为 left | right 时生效）
+func (d drawer) Width(value any) drawer {
 	return d.set("width", value)
 }

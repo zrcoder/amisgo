@@ -39,7 +39,7 @@ func (a action) Dialog(value dialog) action {
 }
 
 // Drawer 配置按钮点击后的 drawer
-func (a action) Drawer(value drawer) action {
+func (a action) Drawer(value any) action {
 	return a.set("drawer", value)
 }
 
@@ -179,6 +179,11 @@ func (a action) Link(value string) action {
 // Reload 指定此次操作完后，需要刷新的目标组件名字（组件的name值，自己配置的），多个请用 "," 号隔开。
 func (a action) Reload(value string) action {
 	return a.set("reload", value)
+}
+
+// ReloadWindow 刷新当前页面
+func (a action) ReloadWindow() action {
+	return a.Reload("window")
 }
 
 // Required 配置字符串数组，指定在form中进行操作之前，需要指定的字段名的表单项通过验证
