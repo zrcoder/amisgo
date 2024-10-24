@@ -27,7 +27,7 @@ func (m markdown) Name(value string) markdown {
 }
 
 // Options 设置 Markdown 的配置
-func (m markdown) Options(value ...option) markdown {
+func (m markdown) Options(value Schema) markdown {
 	m.set("options", value)
 	return m
 }
