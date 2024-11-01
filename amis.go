@@ -8,58 +8,91 @@ import (
 	"text/template"
 )
 
-var routes = map[string]any{}
-
+// Global template for HTML rendering
 var tmpl = template.Must(template.New("").Parse(htmlTemplate))
 
-func Serve(path string, component any) {
-	routes[path] = component
+// Engine represents the core web application structure
+type Engine struct {
+	routes map[string]any
+	Config *Config
 }
 
-func Redirect(src, dst string) {
+// New creates and initializes a new Engine instance
+func New() *Engine {
+	return &Engine{
+		routes: make(map[string]any),
+		Config: GetDefaultConfig(),
+	}
+}
+
+// Register associates a component with a URL path
+func (e *Engine) Register(path string, component any) {
+	e.routes[path] = component
+}
+
+// Redirect sets up a URL redirection from source to destination path
+func (e *Engine) Redirect(src, dst string) {
 	http.HandleFunc(src, func(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, dst, http.StatusTemporaryRedirect)
 	})
 }
 
-func ListenAndServe(addr string, cfg ...*Config) error {
-	config := getConfig(cfg)
-
-	if config.StaticDir != "" {
-		dir := strings.Trim(config.StaticDir, "/")
-		config.StaticDir = "/" + dir + "/"
-		if config.StaticFS == nil {
-			http.Handle(config.StaticDir, http.StripPrefix(config.StaticDir, http.FileServer(http.Dir(dir))))
+// Run starts the HTTP server with the specified address
+func (e *Engine) Run(addr string) error {
+	// Setup static file server if configured
+	if e.Config.StaticDir != "" {
+		dir := strings.Trim(e.Config.StaticDir, "/")
+		e.Config.StaticDir = "/" + dir + "/"
+		if e.Config.StaticFS == nil {
+			http.Handle(e.Config.StaticDir, http.StripPrefix(e.Config.StaticDir, http.FileServer(http.Dir(dir))))
 		} else {
-			http.Handle(config.StaticDir, http.FileServer(http.FS(config.StaticFS)))
+			http.Handle(e.Config.StaticDir, http.FileServer(http.FS(e.Config.StaticFS)))
 		}
 	}
 
-	for path, com := range routes {
-		com := com
+	// Register all routes to DefaultServeMux
+	for path, component := range e.routes {
+		component := component // Create new variable for closure
 		http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
-			writeHtml(config, com, w)
+			e.serveComponent(w, component)
 		})
 	}
 
 	return http.ListenAndServe(addr, nil)
 }
 
-func writeHtml(config *Config, component any, writer io.Writer) {
+// serveComponent handles the rendering of registered components
+func (e *Engine) serveComponent(w io.Writer, component any) {
 	amisJson, _ := json.Marshal(component)
-
-	type templateData struct {
+	data := struct {
 		*Config
 		AmisJson string
-	}
-
-	data := &templateData{
-		Config:   config,
+	}{
+		Config:   e.Config,
 		AmisJson: string(amisJson),
 	}
-
-	err := tmpl.Execute(writer, data)
-	if err != nil {
+	if err := tmpl.Execute(w, data); err != nil {
 		panic(err)
 	}
+}
+
+// For backward compatibility
+var defaultEngine = New()
+
+// Deprecated: Use Engine.Register instead
+func Serve(path string, component any) {
+	defaultEngine.Register(path, component)
+}
+
+// Deprecated: Use Engine.Redirect instead
+func Redirect(src, dst string) {
+	defaultEngine.Redirect(src, dst)
+}
+
+// Deprecated: Use Engine.Run instead
+func ListenAndServe(addr string, cfg ...*Config) error {
+	if len(cfg) > 0 {
+		defaultEngine.Config = cfg[0]
+	}
+	return defaultEngine.Run(addr)
 }
