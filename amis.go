@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
-	"strings"
 	"text/template"
 )
 
@@ -13,21 +12,21 @@ var tmpl = template.Must(template.New("").Parse(htmlTemplate))
 
 // Engine represents the core web application structure
 type Engine struct {
-	routes map[string]any
 	Config *Config
 }
 
 // New creates and initializes a new Engine instance
 func New() *Engine {
 	return &Engine{
-		routes: make(map[string]any),
 		Config: GetDefaultConfig(),
 	}
 }
 
 // Register associates a component with a URL path
 func (e *Engine) Register(path string, component any) {
-	e.routes[path] = component
+	http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+		e.serveComponent(w, component)
+	})
 }
 
 // Redirect sets up a URL redirection from source to destination path
@@ -39,25 +38,6 @@ func (e *Engine) Redirect(src, dst string) {
 
 // Run starts the HTTP server with the specified address
 func (e *Engine) Run(addr string) error {
-	// Setup static file server if configured
-	if e.Config.StaticDir != "" {
-		dir := strings.Trim(e.Config.StaticDir, "/")
-		e.Config.StaticDir = "/" + dir + "/"
-		if e.Config.StaticFS == nil {
-			http.Handle(e.Config.StaticDir, http.StripPrefix(e.Config.StaticDir, http.FileServer(http.Dir(dir))))
-		} else {
-			http.Handle(e.Config.StaticDir, http.FileServer(http.FS(e.Config.StaticFS)))
-		}
-	}
-
-	// Register all routes to DefaultServeMux
-	for path, component := range e.routes {
-		component := component // Create new variable for closure
-		http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
-			e.serveComponent(w, component)
-		})
-	}
-
 	return http.ListenAndServe(addr, nil)
 }
 

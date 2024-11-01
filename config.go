@@ -1,7 +1,5 @@
 package amisgo
 
-import "io/fs"
-
 // Theme represents the UI theme of the application
 type Theme string
 
@@ -30,9 +28,6 @@ type Config struct {
 	Lang      Lang
 	Title     string
 	Icon      string
-	StaticDir string
-	// StaticFS provides embedded filesystem support for single binary builds
-	StaticFS  fs.FS
 	CustomCSS string
 	CustomJS  string
 	Host      string
@@ -46,13 +41,4 @@ func GetDefaultConfig() *Config {
 		Theme: ThemeDefault,
 		Host:  "http://localhost",
 	}
-}
-
-// getConfig safely retrieves a config from a slice of configs
-// If the slice is empty, returns the default config
-func getConfig(cfg []*Config) *Config {
-	if len(cfg) > 0 {
-		return cfg[0]
-	}
-	return GetDefaultConfig()
 }
