@@ -1,12 +1,9 @@
 package amisgo
 
 import (
-	"bytes"
 	"encoding/json"
 	"io"
 	"net/http"
-	"os"
-	"path/filepath"
 	"strings"
 	"text/template"
 )
@@ -46,27 +43,6 @@ func ListenAndServe(addr string, cfg ...*Config) error {
 	}
 
 	return http.ListenAndServe(addr, nil)
-}
-
-func GenerateStaticWebsite(outputDir string, cfg ...*Config) error {
-	config := getConfig(cfg)
-	if outputDir == "" {
-		outputDir = "."
-	}
-	for path, com := range routes {
-		path = strings.TrimLeft(path, "/")
-		if path == "" {
-			path = "index"
-		}
-		path += ".html"
-		writer := bytes.NewBuffer(nil)
-		writeHtml(config, com, writer)
-		err := os.WriteFile(filepath.Join(outputDir, path), writer.Bytes(), 0o640)
-		if err != nil {
-			return err
-		}
-	}
-	return nil
 }
 
 func writeHtml(config *Config, component any, writer io.Writer) {
