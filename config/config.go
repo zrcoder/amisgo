@@ -1,4 +1,4 @@
-package amisgo
+package config
 
 // Theme represents the UI theme of the application
 type Theme string
@@ -41,4 +41,56 @@ func GetDefaultConfig() *Config {
 		Theme: ThemeDefault,
 		Host:  "http://localhost",
 	}
+}
+
+type Option func(*Config)
+
+func WithTheme(theme Theme) Option {
+	return func(c *Config) {
+		c.Theme = theme
+	}
+}
+
+func WithLang(lang Lang) Option {
+	return func(c *Config) {
+		c.Lang = lang
+	}
+}
+
+func WithTitle(title string) Option {
+	return func(c *Config) {
+		c.Title = title
+	}
+}
+
+func WithIcon(icon string) Option {
+	return func(c *Config) {
+		c.Icon = icon
+	}
+}
+
+func WithCustomCSS(customCSS string) Option {
+	return func(c *Config) {
+		c.CustomCSS = customCSS
+	}
+}
+
+func WithCustomJS(customJS string) Option {
+	return func(c *Config) {
+		c.CustomJS = customJS
+	}
+}
+
+func WithHost(host string) Option {
+	return func(c *Config) {
+		c.Host = host
+	}
+}
+
+func Apply(options ...Option) *Config {
+	cfg := GetDefaultConfig()
+	for _, option := range options {
+		option(cfg)
+	}
+	return cfg
 }

@@ -5,6 +5,8 @@ import (
 	"io"
 	"net/http"
 	"text/template"
+
+	"github.com/zrcoder/amisgo/config"
 )
 
 // Global template for HTML rendering
@@ -12,28 +14,34 @@ var tmpl = template.Must(template.New("").Parse(htmlTemplate))
 
 // Engine represents the core web application structure
 type Engine struct {
-	Config *Config
+	Config *config.Config
 }
 
 // New creates and initializes a new Engine instance
-func New() *Engine {
+func New(opts ...config.Option) *Engine {
+	cfg := config.GetDefaultConfig()
+	for _, opt := range opts {
+		opt(cfg)
+	}
 	return &Engine{
-		Config: GetDefaultConfig(),
+		Config: cfg,
 	}
 }
 
 // Register associates a component with a URL path
-func (e *Engine) Register(path string, component any) {
+func (e *Engine) Register(path string, component any) *Engine {
 	http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
 		e.serveComponent(w, component)
 	})
+	return e
 }
 
 // Redirect sets up a URL redirection from source to destination path
-func (e *Engine) Redirect(src, dst string) {
+func (e *Engine) Redirect(src, dst string) *Engine {
 	http.HandleFunc(src, func(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, dst, http.StatusTemporaryRedirect)
 	})
+	return e
 }
 
 // Run starts the HTTP server with the specified address
@@ -45,7 +53,7 @@ func (e *Engine) Run(addr string) error {
 func (e *Engine) serveComponent(w io.Writer, component any) {
 	amisJson, _ := json.Marshal(component)
 	data := struct {
-		*Config
+		*config.Config
 		AmisJson string
 	}{
 		Config:   e.Config,
@@ -70,7 +78,7 @@ func Redirect(src, dst string) {
 }
 
 // Deprecated: Use Engine.Run instead
-func ListenAndServe(addr string, cfg ...*Config) error {
+func ListenAndServe(addr string, cfg ...*config.Config) error {
 	if len(cfg) > 0 {
 		defaultEngine.Config = cfg[0]
 	}

@@ -25,8 +25,8 @@ func main() {
 			comp.InputEmail().Label("Email").Name("email"),
 		),
 	)
-	amisgo.Serve("/", index)
-	panic(amisgo.ListenAndServe(":80"))
+	ag := amisgo.New().Register("/", index)
+	panic(ag.Run(":80"))
 }
 ```
 
