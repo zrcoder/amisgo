@@ -63,24 +63,3 @@ func (e *Engine) serveComponent(w io.Writer, component any) {
 		panic(err)
 	}
 }
-
-// For backward compatibility
-var defaultEngine = New()
-
-// Deprecated: Use Engine.Register instead
-func Serve(path string, component any) {
-	defaultEngine.Register(path, component)
-}
-
-// Deprecated: Use Engine.Redirect instead
-func Redirect(src, dst string) {
-	defaultEngine.Redirect(src, dst)
-}
-
-// Deprecated: Use Engine.Run instead
-func ListenAndServe(addr string, cfg ...*config.Config) error {
-	if len(cfg) > 0 {
-		defaultEngine.Config = cfg[0]
-	}
-	return defaultEngine.Run(addr)
-}
