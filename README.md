@@ -1,44 +1,42 @@
 # Amisgo
 
-Amisgo is a low code frontend framework for gophers.  
-The name stands for `amis go`, coincidentally means `friend` in Zulu.
+A low-code frontend framework for Go developers, powered by Baidu's [Amis](https://aisuda.bce.baidu.com/amis).  
+The name combines `amis` and `go`, which coincidentally means "friend" in Zulu.
 
-## Inspired by
+For background information and detailed documentation, visit our [wiki](https://github.com/zrcoder/amisgo/wiki) (in Chinese).
 
-Amisgo is inspired by and based on baidu [Amis](https://aisuda.bce.baidu.com/amis).  
-Read the [wiki](https://github.com/zrcoder/amisgo/wiki)(Chinese) for more background and details.
-
-## Hello world
+## Quick Start
 
 ```go
 package main
 
 import (
-	"github.com/zrcoder/amisgo"
-	"github.com/zrcoder/amisgo/comp"
+    "github.com/zrcoder/amisgo"
+    "github.com/zrcoder/amisgo/comp"
 )
 
 func main() {
-	index := comp.Page().Title("Amisgo").Body(
-		comp.Form().Mode("horizontal").Body(
-			comp.InputText().Label("Name").Name("name"),
-			comp.InputEmail().Label("Email").Name("email"),
-		),
-	)
-	ag := amisgo.New().Register("/", index)
-	panic(ag.Run(":80"))
+    index := comp.Page().Title("Amisgo").Body(
+        comp.Form().Mode("horizontal").Body(
+            comp.InputText().Label("Name").Name("name"),
+            comp.InputEmail().Label("Email").Name("email"),
+        ),
+    )
+    ag := amisgo.New().Register("/", index)
+    panic(ag.Run(":80"))
 }
 ```
 
-and then visit http://localhost to view the served site.
+Visit http://localhost after running the code.
 
 ## Examples
 
-See our [examples repo](https://github.com/zrcoder/amisgo-examples), or a live demo: [Dev-Toys](https://amisgo-examples.onrender.com)
+Check out our [examples repository](https://github.com/zrcoder/amisgo-examples) or try the live demo: [Dev-Toys](https://amisgo-examples.onrender.com).
 
-## TODO
+## Project Status
 
-- [x] both ListenAndServe, GenerateStaticWebsite api
-- [x] Generate codes in the comp directory, based on schema.json in Amis' last release(or Amis' docs)
-- [ ] Tests and examples(40%)
-- [ ] Go+ classfile improvement
+- [x] Auto-generated components based on latest Amis schema
+- [ ] Tests and examples (60% complete)
+- [ ] Go+ classfile improvements
+
+> **Note**: API is not stable yet and subject to change.
