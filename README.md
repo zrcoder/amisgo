@@ -1,5 +1,7 @@
 # Amisgo
 
+<img alt="amisgo" src="amisgo.png" width="120" />
+
 A low-code frontend framework for Go developers, powered by Baidu's [Amis](https://aisuda.bce.baidu.com/amis).  
 The name combines `amis` and `go`, which coincidentally means "friend" in Zulu.
 
@@ -39,6 +41,5 @@ Check out our [examples repository](https://github.com/zrcoder/amisgo-examples) 
 
 - [x] Auto-generated components based on latest Amis schema
 - [ ] Tests and examples (60% complete)
-- [ ] Go+ classfile improvements
 
 > **Note**: API is not stable yet and subject to change.
