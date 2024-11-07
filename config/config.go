@@ -1,5 +1,10 @@
 package config
 
+import (
+	"net/http"
+	"strings"
+)
+
 // Theme represents the UI theme of the application
 type Theme string
 
@@ -24,13 +29,15 @@ const (
 
 // Config holds all configuration options for the application
 type Config struct {
-	Theme     Theme
-	Lang      Lang
-	Title     string
-	Icon      string
-	CustomCSS string
-	CustomJS  string
-	Host      string
+	Theme        Theme
+	Lang         Lang
+	Title        string
+	Icon         string
+	CustomCSS    string
+	CustomJS     string
+	Host         string
+	StaticPrefix string
+	StaticFS     http.FileSystem
 }
 
 // GetDefaultConfig returns a new Config instance with default settings
@@ -85,6 +92,31 @@ func WithHost(host string) Option {
 	return func(c *Config) {
 		c.Host = host
 	}
+}
+
+func WithStaticFS(urlPrefix string, staticFS http.FileSystem) Option {
+	if staticFS == nil {
+		panic("staticFS cannot be nil")
+	}
+	if urlPrefix == "" || urlPrefix == "/" {
+		return func(c *Config) {
+			c.StaticPrefix = "/"
+			c.StaticFS = staticFS
+		}
+	}
+	urlPrefix = "/" + strings.TrimLeft(urlPrefix, "/")
+	urlPrefix = strings.TrimRight(urlPrefix, "/") + "/"
+	return func(c *Config) {
+		c.StaticPrefix = urlPrefix
+		c.StaticFS = staticFS
+	}
+}
+
+func WithStatic(urlPrefix, path string) Option {
+	if path == "" {
+		panic("path cannot be empty")
+	}
+	return WithStaticFS(urlPrefix, http.Dir(path))
 }
 
 func Apply(options ...Option) *Config {
