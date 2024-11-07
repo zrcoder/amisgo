@@ -6,14 +6,9 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"text/template"
 
 	"github.com/zrcoder/amisgo/config"
 )
-
-// Global template for HTML rendering.
-// This template will be used to render all Amis components.
-var tmpl = template.Must(template.New("").Parse(htmlTemplate))
 
 // Engine represents the core web application structure.
 // It handles routing, static file serving, and component rendering.
@@ -24,9 +19,7 @@ type Engine struct {
 // New creates and initializes a new Engine instance with the given options.
 func New(opts ...config.Option) *Engine {
 	cfg := config.GetDefaultConfig()
-	for _, opt := range opts {
-		opt(cfg)
-	}
+	cfg.Apply(opts...)
 	return &Engine{
 		Config: cfg,
 	}
@@ -65,15 +58,18 @@ func (e *Engine) Redirect(src, dst string) *Engine {
 }
 
 // Run starts the HTTP server with the specified address.
-func (e *Engine) Run(addr string) error {
-	if addr == "" {
-		addr = ":80" // default port
+func (e *Engine) Run(addr ...string) error {
+	address := ":80"
+	if len(addr) > 0 && addr[0] != "" {
+		address = addr[0]
 	}
+
 	if e.Config.StaticFS != nil {
 		http.Handle(e.Config.StaticPrefix,
 			http.StripPrefix(e.Config.StaticPrefix, http.FileServer(e.Config.StaticFS)))
 	}
-	return http.ListenAndServe(addr, http.DefaultServeMux)
+
+	return http.ListenAndServe(address, http.DefaultServeMux)
 }
 
 // renderComponent handles the rendering of registered components.
@@ -87,7 +83,7 @@ func (e *Engine) renderComponent(w io.Writer, component any) {
 		Config:   e.Config,
 		AmisJson: string(amisJson),
 	}
-	if err := tmpl.Execute(w, data); err != nil {
+	if err := e.Config.AmisTemplate.Execute(w, data); err != nil {
 		panic(fmt.Sprintf("failed to execute template: %v", err))
 	}
 }
