@@ -17,7 +17,7 @@ import (
 
 func main() {
 	index := comp.Page().Title("Amisgo").Body(
-		comp.Form().Mode("horizontal").Body(
+		comp.Form().Body(
 			comp.InputText().Label("Name").Name("name"),
 			comp.InputEmail().Label("Email").Name("email"),
 		),
@@ -25,11 +25,11 @@ func main() {
 
 	ag := amisgo.New().Mount("/", index)
 
-	panic(ag.Run())
+	panic(ag.Run(":8080"))
 }
 ```
 
-Visit http://localhost after running the code.
+Visit http://localhost:8080 after running the code.
 
 ## Examples
 

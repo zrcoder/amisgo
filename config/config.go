@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/zrcoder/amisgo/template"
+	"github.com/zrcoder/amisgo/internal/template"
 )
 
 // Theme represents the UI theme of the application

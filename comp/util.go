@@ -5,13 +5,15 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"sync/atomic"
+
+	"github.com/zrcoder/amisgo/internal/servermux"
 )
 
-var innerApiID = -1
+var innerApiID int32 = -1
 
-func getInnerApiID() int {
-	innerApiID++
-	return innerApiID
+func getInnerApiID() int32 {
+	return atomic.AddInt32(&innerApiID, 1)
 }
 
 func getRoute() string {
@@ -20,7 +22,7 @@ func getRoute() string {
 
 func serveApi(action func(Data) error) string {
 	route := getRoute()
-	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		input, err := io.ReadAll(r.Body)
 		if err != nil {
 			respError(w, err)
@@ -44,7 +46,7 @@ func serveApi(action func(Data) error) string {
 
 func serveData(getter func() (any, error)) string {
 	route := getRoute()
-	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		input, err := getter()
 		if err != nil {
 			respError(w, err)
@@ -62,7 +64,7 @@ func serveData(getter func() (any, error)) string {
 
 func serveUpload(maxMemory int64, action func([]byte) (path string, err error)) string {
 	route := getRoute()
-	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		// Parse the form to get file data
 		err := r.ParseMultipartForm(maxMemory)
 		if err != nil {

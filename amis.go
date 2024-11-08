@@ -1,4 +1,4 @@
-// Package amisgo provides a lightweight web framework for building web applications using Amis.
+// Package amisgo provides a web framework for building Amis applications
 package amisgo
 
 import (
@@ -8,72 +8,77 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/config"
+	"github.com/zrcoder/amisgo/internal/servermux"
 )
 
-// Engine represents the core web application structure.
-// It handles routing, static file serving, and component rendering.
+// Engine represents the web application
 type Engine struct {
 	Config *config.Config
+	mux    *http.ServeMux
 }
 
-// New creates and initializes a new Engine instance with the given options.
+// New creates an Engine instance with options
 func New(opts ...config.Option) *Engine {
 	cfg := config.GetDefaultConfig()
 	cfg.Apply(opts...)
-	return &Engine{
+
+	e := &Engine{
 		Config: cfg,
+		mux:    servermux.Mux(),
 	}
+
+	if cfg.StaticFS != nil {
+		e.mux.Handle(cfg.StaticPrefix,
+			http.StripPrefix(cfg.StaticPrefix, http.FileServer(cfg.StaticFS)))
+	}
+
+	return e
 }
 
-// Mount associates an Amis component with a URL path.
-// The component will be rendered as JSON and embedded in the HTML template.
+// Mount registers an Amis component at the given path
 func (e *Engine) Mount(path string, component any) *Engine {
-	http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+	e.mux.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
 		e.renderComponent(w, component)
 	})
 	return e
 }
 
-// HandleFunc registers a new API endpoint with the given URL path and handler function.
-// This method is primarily used for handling API requests that require custom response handling.
-func (e *Engine) HandleFunc(path string, handler func(http.ResponseWriter, *http.Request)) *Engine {
-	http.HandleFunc(path, handler)
-	return e
-}
-
-// Handle registers a new API endpoint with the given URL path and http.Handler.
-// This method is primarily used for handling API requests with pre-defined http.Handler implementations.
-func (e *Engine) Handle(path string, handler http.Handler) *Engine {
-	http.Handle(path, handler)
-	return e
-}
-
-// Redirect sets up a URL redirection from source to destination path
-// using HTTP 307 Temporary Redirect.
+// Redirect sets up a URL redirection
 func (e *Engine) Redirect(src, dst string) *Engine {
-	http.HandleFunc(src, func(w http.ResponseWriter, r *http.Request) {
+	e.mux.HandleFunc(src, func(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, dst, http.StatusTemporaryRedirect)
 	})
 	return e
 }
 
-// Run starts the HTTP server with the specified address.
+// Handle registers a handler at the given path
+func (e *Engine) Handle(path string, handler http.Handler) *Engine {
+	e.mux.Handle(path, handler)
+	return e
+}
+
+// HandleFunc registers a handler function at the given path
+func (e *Engine) HandleFunc(path string, handler func(http.ResponseWriter, *http.Request)) *Engine {
+	e.mux.HandleFunc(path, handler)
+	return e
+}
+
+// Run starts the HTTP server
 func (e *Engine) Run(addr ...string) error {
 	address := ":80"
 	if len(addr) > 0 && addr[0] != "" {
 		address = addr[0]
 	}
 
-	if e.Config.StaticFS != nil {
-		http.Handle(e.Config.StaticPrefix,
-			http.StripPrefix(e.Config.StaticPrefix, http.FileServer(e.Config.StaticFS)))
-	}
-
-	return http.ListenAndServe(address, http.DefaultServeMux)
+	return http.ListenAndServe(address, e)
 }
 
-// renderComponent handles the rendering of registered components.
-// It converts the component to JSON and embeds it in the HTML template.
+// ServeHTTP implements http.Handler interface
+func (e *Engine) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	e.mux.ServeHTTP(w, r)
+}
+
+// renderComponent renders an Amis component
 func (e *Engine) renderComponent(w io.Writer, component any) {
 	amisJson, _ := json.Marshal(component)
 	data := struct {
