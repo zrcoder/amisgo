@@ -1,6 +1,4 @@
-# Amisgo
-
-<img alt="amisgo" src="amisgo.png" width="120" />
+# ![Amisgo](https://raw.githubusercontent.com/zrcoder/amisgo-assets/refs/heads/main/logo-with-text.svg)
 
 A low-code frontend framework for Go developers, powered by Baidu's [Amis](https://aisuda.bce.baidu.com/amis).  
 The name combines `amis` and `go`, which coincidentally means "friend" in Zulu.
