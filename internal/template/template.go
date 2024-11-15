@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	amisVersion = "6.8.0"
+	amisVersion = "6.9.0"
 	amisBaseURL = "https://cdn.jsdelivr.net/npm/amis"
 )
 
