@@ -13,8 +13,9 @@ import (
 
 // Engine represents the web application
 type Engine struct {
-	Config *config.Config
-	mux    *http.ServeMux
+	Config      *config.Config
+	mux         *http.ServeMux
+	middlewares []func(http.Handler) http.Handler
 }
 
 // New creates an Engine instance with options
@@ -46,7 +47,7 @@ func (e *Engine) Mount(path string, component any) *Engine {
 // Redirect sets up a URL redirection
 func (e *Engine) Redirect(src, dst string) *Engine {
 	e.mux.HandleFunc(src, func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, dst, http.StatusTemporaryRedirect)
+		Redirect(w, r, dst, http.StatusPermanentRedirect)
 	})
 	return e
 }
@@ -63,6 +64,12 @@ func (e *Engine) HandleFunc(path string, handler func(http.ResponseWriter, *http
 	return e
 }
 
+// Use adds a middleware function to the engine for processing requests
+func (e *Engine) Use(middleware func(http.Handler) http.Handler) *Engine {
+	e.middlewares = append(e.middlewares, middleware)
+	return e
+}
+
 // Run starts the HTTP server
 func (e *Engine) Run(addr ...string) error {
 	address := ":80"
@@ -75,7 +82,13 @@ func (e *Engine) Run(addr ...string) error {
 
 // ServeHTTP implements http.Handler interface
 func (e *Engine) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	e.mux.ServeHTTP(w, r)
+	var h http.Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		e.mux.ServeHTTP(w, r)
+	})
+	for _, m := range e.middlewares {
+		h = m(h)
+	}
+	h.ServeHTTP(w, r)
 }
 
 // renderComponent renders an Amis component

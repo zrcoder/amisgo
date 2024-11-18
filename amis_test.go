@@ -98,8 +98,8 @@ func TestRedirect(t *testing.T) {
 	r := httptest.NewRequest("GET", "/old", nil)
 	e.ServeHTTP(w, r)
 
-	if w.Code != http.StatusTemporaryRedirect {
-		t.Errorf("expected status 307, got %d", w.Code)
+	if w.Code != http.StatusPermanentRedirect {
+		t.Errorf("expected status 308, got %d", w.Code)
 	}
 
 	location := w.Header().Get("Location")
@@ -198,4 +198,33 @@ func TestAsHandler(t *testing.T) {
 			t.Error("unexpected file content")
 		}
 	})
+}
+
+func TestUse(t *testing.T) {
+	e := New()
+
+	middleware := func(next http.Handler) http.Handler {
+		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("X-Custom-Header", "Middleware Applied")
+			next.ServeHTTP(w, r)
+		})
+	}
+
+	e.Use(middleware)
+
+	e.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello, World!"))
+	})
+
+	w := httptest.NewRecorder()
+	r := httptest.NewRequest("GET", "/test", nil)
+	e.ServeHTTP(w, r)
+
+	assertStatus(t, w.Code, http.StatusOK)
+
+	assertBody(t, w.Body.String(), "Hello, World!")
+
+	if header := w.Header().Get("X-Custom-Header"); header != "Middleware Applied" {
+		t.Errorf("expected header X-Custom-Header to be 'Middleware Applied', got %s", header)
+	}
 }
