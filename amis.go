@@ -23,7 +23,7 @@ type Engine struct {
 
 // New creates an Engine instance with options
 func New(opts ...config.Option) *Engine {
-	cfg := config.GetDefaultConfig()
+	cfg := config.Default()
 	cfg.Apply(opts...)
 
 	e := &Engine{

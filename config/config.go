@@ -42,8 +42,8 @@ type Config struct {
 	template.Template
 }
 
-// GetDefaultConfig returns a new Config instance with default settings
-func GetDefaultConfig() *Config {
+// Default returns a new Config instance with default settings
+func Default() *Config {
 	return &Config{
 		Title:    "Amisgo",
 		Lang:     LangDefault,

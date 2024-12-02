@@ -389,7 +389,7 @@ func (c crud) AlwaysShowPagination(value bool) crud {
 }
 
 // AutoGenerateFilter 开启自动生成查询条件表单
-func (c crud) AutoGenerateFilter(value string) crud {
+func (c crud) AutoGenerateFilter(value any) crud {
 	return c.set("autoGenerateFilter", value)
 }
 
@@ -439,7 +439,7 @@ func (c crud) ExpandConfig(value string) crud {
 }
 
 // Filter 设置过滤器表单
-func (c crud) Filter(value string) crud {
+func (c crud) Filter(value form) crud {
 	return c.set("filter", value)
 }
 
