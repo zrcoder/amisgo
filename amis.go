@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"sync"
 
 	"github.com/zrcoder/amisgo/config"
 	"github.com/zrcoder/amisgo/internal/servermux"
@@ -16,6 +17,8 @@ type Engine struct {
 	Config      *config.Config
 	mux         *http.ServeMux
 	middlewares []func(http.Handler) http.Handler
+	handler     http.Handler
+	handlerOnce sync.Once
 }
 
 // New creates an Engine instance with options
@@ -82,13 +85,16 @@ func (e *Engine) Run(addr ...string) error {
 
 // ServeHTTP implements http.Handler interface
 func (e *Engine) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	var h http.Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		e.mux.ServeHTTP(w, r)
+	e.handlerOnce.Do(func() {
+		e.handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			e.mux.ServeHTTP(w, r)
+		})
+		for _, m := range e.middlewares {
+			e.handler = m(e.handler)
+		}
 	})
-	for _, m := range e.middlewares {
-		h = m(h)
-	}
-	h.ServeHTTP(w, r)
+
+	e.handler.ServeHTTP(w, r)
 }
 
 // renderComponent renders an Amis component
