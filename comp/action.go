@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+
+	"github.com/zrcoder/amisgo/internal/servermux"
 )
 
 // action 行为按钮 https://aisuda.bce.baidu.com/amis/zh-CN/components/action
@@ -60,7 +62,7 @@ func (a action) TransformMultiple(inputs any, successMsg string, transfor func(a
 
 func (a action) transform(input any, dstKey, successMsg string, transfor func(any) (any, error)) action {
 	route := fmt.Sprintf("/__amisgo_api_%d", getInnerApiID())
-	http.HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		inputData, err := io.ReadAll(r.Body)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
