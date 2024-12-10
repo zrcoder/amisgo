@@ -99,7 +99,11 @@ func (e *Engine) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 // renderComponent renders an Amis component
 func (e *Engine) renderComponent(w io.Writer, component any) {
-	amisJson, _ := json.Marshal(component)
+	amisJson, err := json.Marshal(component)
+	if err != nil {
+		http.Error(w.(http.ResponseWriter), "failed to marshal component:"+err.Error(), http.StatusInternalServerError)
+		return
+	}
 	data := struct {
 		*config.Config
 		AmisJson string
@@ -107,7 +111,7 @@ func (e *Engine) renderComponent(w io.Writer, component any) {
 		Config:   e.Config,
 		AmisJson: string(amisJson),
 	}
-	if err := e.Config.AmisTemplate.Execute(w, data); err != nil {
+	if err = e.Config.AmisTemplate.Execute(w, data); err != nil {
 		panic(fmt.Sprintf("failed to execute template: %v", err))
 	}
 }
