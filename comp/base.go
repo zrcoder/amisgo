@@ -18,6 +18,11 @@ func (d Data) Get(key string) any {
 	return d[key]
 }
 
+func (d Data) Json() []byte {
+	data, _ := js.Marshal(d)
+	return data
+}
+
 type Response struct {
 	Status int    `json:"status"`
 	Msg    string `json:"msg"`

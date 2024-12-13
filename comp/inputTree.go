@@ -274,7 +274,7 @@ func (tc inputTree) NodeValue(value string) inputTree {
 }
 
 // Options 选项
-func (tc inputTree) Options(value any) inputTree {
+func (tc inputTree) Options(value ...any) inputTree {
 	return tc.set("options", value)
 }
 
