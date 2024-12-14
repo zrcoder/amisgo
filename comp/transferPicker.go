@@ -179,7 +179,7 @@ func (tpc transferPicker) Horizontal(value string) transferPicker {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (tpc transferPicker) Id(value string) transferPicker {
+func (tpc transferPicker) ID(value string) transferPicker {
 	return tpc.set("id", value)
 }
 

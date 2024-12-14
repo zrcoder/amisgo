@@ -60,7 +60,7 @@ func (tw tooltipWrapper) HiddenOn(value string) tooltipWrapper {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (tw tooltipWrapper) Id(value string) tooltipWrapper {
+func (tw tooltipWrapper) ID(value string) tooltipWrapper {
 	return tw.set("id", value)
 }
 

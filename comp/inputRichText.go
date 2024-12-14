@@ -94,7 +94,7 @@ func (rc inputRichText) Horizontal(value string) inputRichText {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (rc inputRichText) Id(value string) inputRichText {
+func (rc inputRichText) ID(value string) inputRichText {
 	return rc.set("id", value)
 }
 

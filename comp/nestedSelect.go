@@ -180,7 +180,7 @@ func (nsc nestedSelect) Horizontal(value string) nestedSelect {
 }
 
 // Id 组件唯一 id
-func (nsc nestedSelect) Id(value string) nestedSelect {
+func (nsc nestedSelect) ID(value string) nestedSelect {
 	return nsc.set("id", value)
 }
 

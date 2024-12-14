@@ -60,7 +60,7 @@ func (s spinner) Icon(value string) spinner {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (s spinner) Id(value string) spinner {
+func (s spinner) ID(value string) spinner {
 	return s.set("id", value)
 }
 

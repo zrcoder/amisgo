@@ -93,7 +93,7 @@ func (lr ListRenderer) HideCheckToggler(value bool) ListRenderer {
 }
 
 // Id 设置组件唯一 id
-func (lr ListRenderer) Id(value string) ListRenderer {
+func (lr ListRenderer) ID(value string) ListRenderer {
 	return lr.set("id", value)
 }
 

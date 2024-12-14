@@ -121,7 +121,7 @@ func (qrc inputQuarterRange) Horizontal(value string) inputQuarterRange {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (qrc inputQuarterRange) Id(value string) inputQuarterRange {
+func (qrc inputQuarterRange) ID(value string) inputQuarterRange {
 	return qrc.set("id", value)
 }
 

@@ -71,7 +71,7 @@ func (bg buttonGroup) HiddenOn(value string) buttonGroup {
 }
 
 // Id 设置组件唯一 ID
-func (bg buttonGroup) Id(value string) buttonGroup {
+func (bg buttonGroup) ID(value string) buttonGroup {
 	return bg.set("id", value)
 }
 

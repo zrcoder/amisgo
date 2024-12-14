@@ -51,7 +51,7 @@ func (w wrapper) HiddenOn(value string) wrapper {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (w wrapper) Id(value string) wrapper {
+func (w wrapper) ID(value string) wrapper {
 	return w.set("id", value)
 }
 

@@ -76,7 +76,7 @@ func (t tasks) HiddenOn(value string) tasks {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (t tasks) Id(value string) tasks {
+func (t tasks) ID(value string) tasks {
 	return t.set("id", value)
 }
 

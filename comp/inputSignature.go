@@ -156,7 +156,7 @@ func (i inputSignature) Horizontal(value string) inputSignature {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (i inputSignature) Id(value string) inputSignature {
+func (i inputSignature) ID(value string) inputSignature {
 	return i.set("id", value)
 }
 

@@ -70,7 +70,7 @@ func (v video) HiddenOn(value string) video {
 }
 
 // id 组件唯一 id，主要用于日志采集
-func (v video) Id(value string) video {
+func (v video) ID(value string) video {
 	return v.set("id", value)
 }
 

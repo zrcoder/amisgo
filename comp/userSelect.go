@@ -164,7 +164,7 @@ func (usc userSelect) Horizontal(value string) userSelect {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (usc userSelect) Id(value string) userSelect {
+func (usc userSelect) ID(value string) userSelect {
 	return usc.set("id", value)
 }
 

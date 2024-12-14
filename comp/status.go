@@ -45,7 +45,7 @@ func (s status) HiddenOn(value string) status {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (s status) Id(value string) status {
+func (s status) ID(value string) status {
 	return s.set("id", value)
 }
 

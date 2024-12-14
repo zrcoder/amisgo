@@ -83,7 +83,7 @@ func (h hidden) Horizontal(value string) hidden {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (h hidden) Id(value string) hidden {
+func (h hidden) ID(value string) hidden {
 	return h.set("id", value)
 }
 

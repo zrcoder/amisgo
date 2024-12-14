@@ -170,7 +170,7 @@ func (lc listSelect) Horizontal(value string) listSelect {
 }
 
 // Id 组件唯一 id
-func (lc listSelect) Id(value string) listSelect {
+func (lc listSelect) ID(value string) listSelect {
 	return lc.set("id", value)
 }
 

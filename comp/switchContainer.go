@@ -45,7 +45,7 @@ func (s switchContainer) HiddenOn(value string) switchContainer {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (s switchContainer) Id(value string) switchContainer {
+func (s switchContainer) ID(value string) switchContainer {
 	return s.set("id", value)
 }
 

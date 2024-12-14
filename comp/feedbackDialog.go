@@ -109,7 +109,7 @@ func (f feedbackDialog) HiddenOn(value string) feedbackDialog {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (f feedbackDialog) Id(value string) feedbackDialog {
+func (f feedbackDialog) ID(value string) feedbackDialog {
 	return f.set("id", value)
 }
 

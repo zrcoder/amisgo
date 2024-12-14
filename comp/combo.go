@@ -149,7 +149,7 @@ func (cc combo) Horizontal(value string) combo {
 }
 
 // Id 设置组件唯一 id
-func (cc combo) Id(value string) combo {
+func (cc combo) ID(value string) combo {
 	return cc.set("id", value)
 }
 

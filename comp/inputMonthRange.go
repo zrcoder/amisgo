@@ -116,7 +116,7 @@ func (m inputMonthRange) Horizontal(value string) inputMonthRange {
 }
 
 // id 组件唯一 id，主要用于日志采集
-func (m inputMonthRange) Id(value string) inputMonthRange {
+func (m inputMonthRange) ID(value string) inputMonthRange {
 	return m.set("id", value)
 }
 

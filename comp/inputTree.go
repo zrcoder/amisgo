@@ -199,7 +199,7 @@ func (tc inputTree) Horizontal(value string) inputTree {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (tc inputTree) Id(value string) inputTree {
+func (tc inputTree) ID(value string) inputTree {
 	return tc.set("id", value)
 }
 

@@ -95,7 +95,7 @@ func (t tabs) HiddenOn(value string) tabs {
 }
 
 // Id 组件唯一 id
-func (t tabs) Id(value string) tabs {
+func (t tabs) ID(value string) tabs {
 	return t.set("id", value)
 }
 

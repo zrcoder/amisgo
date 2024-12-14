@@ -50,7 +50,7 @@ func (s state) HiddenOn(value string) state {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (s state) Id(value string) state {
+func (s state) ID(value string) state {
 	return s.set("id", value)
 }
 

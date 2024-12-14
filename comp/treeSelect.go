@@ -194,7 +194,7 @@ func (tsc treeSelect) Horizontal(value string) treeSelect {
 }
 
 // Id 组件唯一 id
-func (tsc treeSelect) Id(value string) treeSelect {
+func (tsc treeSelect) ID(value string) treeSelect {
 	return tsc.set("id", value)
 }
 

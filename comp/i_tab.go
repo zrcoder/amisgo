@@ -78,7 +78,7 @@ func (t tab) IconPosition(value string) tab {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (t tab) Id(value string) tab {
+func (t tab) ID(value string) tab {
 	return t.set("id", value)
 }
 

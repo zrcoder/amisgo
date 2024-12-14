@@ -107,7 +107,7 @@ func (d dialog) HiddenOn(value string) dialog {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (d dialog) Id(value string) dialog {
+func (d dialog) ID(value string) dialog {
 	return d.set("id", value)
 }
 

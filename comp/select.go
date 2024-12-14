@@ -199,7 +199,7 @@ func (sc selectControl) Horizontal(value string) selectControl {
 }
 
 // id 组件唯一 id，主要用于日志采集
-func (sc selectControl) Id(value string) selectControl {
+func (sc selectControl) ID(value string) selectControl {
 	return sc.set("id", value)
 }
 

@@ -54,7 +54,7 @@ func (t tpl) Html(value string) tpl {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (t tpl) Id(value string) tpl {
+func (t tpl) ID(value string) tpl {
 	return t.set("id", value)
 }
 

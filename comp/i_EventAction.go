@@ -16,11 +16,17 @@ func (la eventAction) set(key string, value any) eventAction {
 // ActionType 设置操作类型
 // 可选值：
 // toast ｜ ajax ｜ dialog ｜ closeDialog ｜ drawer ｜ closeDrawer ｜ confirmDialog ｜ alert
-// url | link | goBack | refresh | copy | print | email | setEventData | wait | custom
+// url | link | goBack | refresh | copy | print | email | setEventData | wait
 // setValue | reload | show | hidden | enabled | disabled | static | nonstatic
 // broadcast | loop | break | continue | switch | parallel |
+// custom
 func (la eventAction) ActionType(value string) eventAction {
 	return la.set("actionType", value)
+}
+
+// Script 在 actionType 为 custom 时设置自定义脚本
+func (ea eventAction) Script(value string) eventAction {
+	return ea.set("script", value)
 }
 
 // Args 设置参数
@@ -29,7 +35,7 @@ func (la eventAction) Args(value Schema) eventAction {
 }
 
 // ComponentId 设置组件 ID
-func (la eventAction) ComponentId(value string) eventAction {
+func (la eventAction) ComponentID(value string) eventAction {
 	return la.set("componentId", value)
 }
 

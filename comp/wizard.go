@@ -95,7 +95,7 @@ func (w wizard) HiddenOn(value string) wizard {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (w wizard) Id(value string) wizard {
+func (w wizard) ID(value string) wizard {
 	return w.set("id", value)
 }
 

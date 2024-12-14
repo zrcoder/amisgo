@@ -140,7 +140,7 @@ func (ws wizardStep) Icon(value string) wizardStep {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (ws wizardStep) Id(value string) wizardStep {
+func (ws wizardStep) ID(value string) wizardStep {
 	return ws.set("id", value)
 }
 

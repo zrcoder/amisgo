@@ -164,7 +164,7 @@ func (c chainedSelect) Horizontal(value string) chainedSelect {
 }
 
 // Id 组件唯一 id
-func (c chainedSelect) Id(value string) chainedSelect {
+func (c chainedSelect) ID(value string) chainedSelect {
 	return c.set("id", value)
 }
 

@@ -96,7 +96,7 @@ func (rc radio) Horizontal(value string) radio {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (rc radio) Id(value string) radio {
+func (rc radio) ID(value string) radio {
 	return rc.set("id", value)
 }
 

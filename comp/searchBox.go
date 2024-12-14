@@ -60,7 +60,7 @@ func (s searchBox) HiddenOn(value string) searchBox {
 }
 
 // Id 组件唯一 id
-func (s searchBox) Id(value string) searchBox {
+func (s searchBox) ID(value string) searchBox {
 	return s.set("id", value)
 }
 

@@ -75,7 +75,7 @@ func (s service) HiddenOn(value string) service {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (s service) Id(value string) service {
+func (s service) ID(value string) service {
 	return s.set("id", value)
 }
 

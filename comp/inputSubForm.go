@@ -119,7 +119,7 @@ func (s inputSubForm) Horizontal(value string) inputSubForm {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (s inputSubForm) Id(value string) inputSubForm {
+func (s inputSubForm) ID(value string) inputSubForm {
 	return s.set("id", value)
 }
 

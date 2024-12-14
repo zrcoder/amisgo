@@ -114,7 +114,7 @@ func (rc inputRating) Horizontal(value string) inputRating {
 }
 
 // Id 组件唯一 id
-func (rc inputRating) Id(value string) inputRating {
+func (rc inputRating) ID(value string) inputRating {
 	return rc.set("id", value)
 }
 

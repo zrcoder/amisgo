@@ -95,7 +95,7 @@ func (rc inputRange) Horizontal(value string) inputRange {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (rc inputRange) Id(value string) inputRange {
+func (rc inputRange) ID(value string) inputRange {
 	return rc.set("id", value)
 }
 

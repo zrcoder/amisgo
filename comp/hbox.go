@@ -59,7 +59,7 @@ func (h hBox) HiddenOn(value string) hBox {
 }
 
 // id 组件唯一 id
-func (h hBox) Id(value string) hBox {
+func (h hBox) ID(value string) hBox {
 	return h.set("id", value)
 }
 

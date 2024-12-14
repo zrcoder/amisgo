@@ -76,7 +76,7 @@ func (li ListItem) HiddenOn(value string) ListItem {
 }
 
 // Id 设置组件唯一 id
-func (li ListItem) Id(value string) ListItem {
+func (li ListItem) ID(value string) ListItem {
 	return li.set("id", value)
 }
 

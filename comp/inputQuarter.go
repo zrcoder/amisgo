@@ -109,7 +109,7 @@ func (q inputQuarter) Horizontal(value string) inputQuarter {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (q inputQuarter) Id(value string) inputQuarter {
+func (q inputQuarter) ID(value string) inputQuarter {
 	return q.set("id", value)
 }
 

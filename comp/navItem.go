@@ -75,7 +75,7 @@ func (n navItem) Icon(value string) navItem {
 }
 
 // Id 设置组件唯一 id
-func (n navItem) Id(value string) navItem {
+func (n navItem) ID(value string) navItem {
 	return n.set("id", value)
 }
 

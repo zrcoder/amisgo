@@ -55,7 +55,7 @@ func (s step) Icon(value string) step {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (s step) Id(value string) step {
+func (s step) ID(value string) step {
 	return s.set("id", value)
 }
 

@@ -115,7 +115,7 @@ func (ra reloadAction) IconClassName(value string) reloadAction {
 }
 
 // Id 主要用于用户行为跟踪里区分是哪个按钮
-func (ra reloadAction) Id(value string) reloadAction {
+func (ra reloadAction) ID(value string) reloadAction {
 	return ra.set("id", value)
 }
 

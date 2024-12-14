@@ -95,7 +95,7 @@ func (t textarea) Horizontal(value string) textarea {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (t textarea) Id(value string) textarea {
+func (t textarea) ID(value string) textarea {
 	return t.set("id", value)
 }
 

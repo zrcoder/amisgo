@@ -175,7 +175,7 @@ func (tc transfer) Horizontal(value string) transfer {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (tc transfer) Id(value string) transfer {
+func (tc transfer) ID(value string) transfer {
 	return tc.set("id", value)
 }
 

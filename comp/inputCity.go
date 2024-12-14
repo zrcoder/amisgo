@@ -108,7 +108,7 @@ func (i inputCity) Horizontal(value string) inputCity {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (i inputCity) Id(value string) inputCity {
+func (i inputCity) ID(value string) inputCity {
 	return i.set("id", value)
 }
 

@@ -115,7 +115,7 @@ func (ta toastAction) IconClassName(value string) toastAction {
 }
 
 // Id 主要用于用户行为跟踪里区分是哪个按钮
-func (ta toastAction) Id(value string) toastAction {
+func (ta toastAction) ID(value string) toastAction {
 	return ta.set("id", value)
 }
 

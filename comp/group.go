@@ -99,7 +99,7 @@ func (g group) Horizontal(value string) group {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (g group) Id(value string) group {
+func (g group) ID(value string) group {
 	return g.set("id", value)
 }
 

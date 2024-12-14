@@ -118,7 +118,7 @@ func (lc locationPicker) Horizontal(value string) locationPicker {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (lc locationPicker) Id(value string) locationPicker {
+func (lc locationPicker) ID(value string) locationPicker {
 	lc.set("id", value)
 	return lc
 }

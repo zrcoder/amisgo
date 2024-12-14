@@ -170,7 +170,7 @@ func (pc picker) Horizontal(value string) picker {
 }
 
 // Id 组件唯一 id
-func (pc picker) Id(value string) picker {
+func (pc picker) ID(value string) picker {
 	return pc.set("id", value)
 }
 

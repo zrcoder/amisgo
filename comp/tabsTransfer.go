@@ -174,7 +174,7 @@ func (t tabsTransfer) Horizontal(value string) tabsTransfer {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (t tabsTransfer) Id(value string) tabsTransfer {
+func (t tabsTransfer) ID(value string) tabsTransfer {
 	return t.set("id", value)
 }
 

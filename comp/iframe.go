@@ -54,7 +54,7 @@ func (i iframe) HiddenOn(value string) iframe {
 }
 
 // Id 组件唯一 id
-func (i iframe) Id(value string) iframe {
+func (i iframe) ID(value string) iframe {
 	return i.set("id", value)
 }
 

@@ -55,7 +55,7 @@ func (bt buttonToolbar) HiddenOn(value string) buttonToolbar {
 }
 
 // Id 设置组件唯一 ID
-func (bt buttonToolbar) Id(value string) buttonToolbar {
+func (bt buttonToolbar) ID(value string) buttonToolbar {
 	return bt.set("id", value)
 }
 

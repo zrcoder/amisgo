@@ -114,7 +114,7 @@ func (yc inputYear) Horizontal(value string) inputYear {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (yc inputYear) Id(value string) inputYear {
+func (yc inputYear) ID(value string) inputYear {
 	return yc.set("id", value)
 }
 

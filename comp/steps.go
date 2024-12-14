@@ -45,7 +45,7 @@ func (s steps) HiddenOn(value string) steps {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (s steps) Id(value string) steps {
+func (s steps) ID(value string) steps {
 	return s.set("id", value)
 }
 

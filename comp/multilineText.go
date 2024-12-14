@@ -55,7 +55,7 @@ func (m multilineText) HiddenOn(value string) multilineText {
 }
 
 // Id 设置组件唯一 id
-func (m multilineText) Id(value string) multilineText {
+func (m multilineText) ID(value string) multilineText {
 	return m.set("id", value)
 }
 

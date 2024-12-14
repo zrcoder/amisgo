@@ -90,7 +90,7 @@ func (s switchControl) Horizontal(value string) switchControl {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (s switchControl) Id(value string) switchControl {
+func (s switchControl) ID(value string) switchControl {
 	return s.set("id", value)
 }
 

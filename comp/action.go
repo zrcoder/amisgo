@@ -283,8 +283,8 @@ func (v action) HotKey(value string) action {
 	return v.set("hotKey", value)
 }
 
-// Id 主要用于用户行为跟踪里区分是哪个按钮
-func (v action) Id(value string) action {
+// ID 主要用于用户行为跟踪里区分是哪个按钮
+func (v action) ID(value string) action {
 	return v.set("id", value)
 }
 

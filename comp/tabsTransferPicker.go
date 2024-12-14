@@ -175,7 +175,7 @@ func (tpc tabsTransferPicker) Horizontal(value string) tabsTransferPicker {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (tpc tabsTransferPicker) Id(value string) tabsTransferPicker {
+func (tpc tabsTransferPicker) ID(value string) tabsTransferPicker {
 	return tpc.set("id", value)
 }
 

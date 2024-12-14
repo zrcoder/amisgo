@@ -59,7 +59,7 @@ func (a anchorNavSection) Href(value string) anchorNavSection {
 }
 
 // 组件唯一 id，主要用于日志采集
-func (a anchorNavSection) Id(value string) anchorNavSection {
+func (a anchorNavSection) ID(value string) anchorNavSection {
 	return a.set("id", value)
 }
 

@@ -64,7 +64,7 @@ func (i images) HiddenOn(value string) images {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (i images) Id(value string) images {
+func (i images) ID(value string) images {
 	return i.set("id", value)
 }
 

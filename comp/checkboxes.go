@@ -182,7 +182,7 @@ func (c checkboxes) Horizontal(value string) checkboxes {
 }
 
 // 组件唯一 id
-func (c checkboxes) Id(value string) checkboxes {
+func (c checkboxes) ID(value string) checkboxes {
 	return c.set("id", value)
 }
 

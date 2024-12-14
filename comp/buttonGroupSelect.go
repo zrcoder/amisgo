@@ -189,7 +189,7 @@ func (bgc buttonGroupSelect) Horizontal(value string) buttonGroupSelect {
 }
 
 // Id 设置组件唯一 ID
-func (bgc buttonGroupSelect) Id(value string) buttonGroupSelect {
+func (bgc buttonGroupSelect) ID(value string) buttonGroupSelect {
 	return bgc.set("id", value)
 }
 

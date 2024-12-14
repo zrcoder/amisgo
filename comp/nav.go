@@ -90,7 +90,7 @@ func (n nav) HiddenOn(value string) nav {
 }
 
 // Id 设置组件唯一 id
-func (n nav) Id(value string) nav {
+func (n nav) ID(value string) nav {
 	return n.set("id", value)
 }
 

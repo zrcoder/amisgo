@@ -54,7 +54,7 @@ func (a anchorNav) HiddenOn(value string) anchorNav {
 }
 
 // 组件唯一 id，主要用于日志采集
-func (a anchorNav) Id(value string) anchorNav {
+func (a anchorNav) ID(value string) anchorNav {
 	return a.set("id", value)
 }
 

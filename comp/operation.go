@@ -56,7 +56,7 @@ func (o operation) HiddenOn(value string) operation {
 }
 
 // Id 组件唯一 id
-func (o operation) Id(value string) operation {
+func (o operation) ID(value string) operation {
 	return o.set("id", value)
 }
 

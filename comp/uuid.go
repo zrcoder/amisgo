@@ -84,7 +84,7 @@ func (uc uuid) Horizontal(value string) uuid {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (uc uuid) Id(value string) uuid {
+func (uc uuid) ID(value string) uuid {
 	return uc.set("id", value)
 }
 

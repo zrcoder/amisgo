@@ -55,7 +55,7 @@ func (rm remark) Icon(value string) remark {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (rm remark) Id(value string) remark {
+func (rm remark) ID(value string) remark {
 	return rm.set("id", value)
 }
 

@@ -196,7 +196,7 @@ func (t inputText) Horizontal(value string) inputText {
 }
 
 // Id 组件唯一 id，主要用于日志采集
-func (t inputText) Id(value string) inputText {
+func (t inputText) ID(value string) inputText {
 	return t.set("id", value)
 }
 
