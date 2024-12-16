@@ -2,9 +2,6 @@
 package amisgo
 
 import (
-	"encoding/json"
-	"fmt"
-	"io"
 	"net/http"
 	"sync"
 
@@ -98,20 +95,15 @@ func (e *Engine) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 // renderComponent renders an Amis component
-func (e *Engine) renderComponent(w io.Writer, component any) {
-	amisJson, err := json.Marshal(component)
-	if err != nil {
-		http.Error(w.(http.ResponseWriter), "failed to marshal component:"+err.Error(), http.StatusInternalServerError)
-		return
-	}
+func (e *Engine) renderComponent(w http.ResponseWriter, component any) {
 	data := struct {
 		*config.Config
-		AmisJson string
+		AmisJson any
 	}{
 		Config:   e.Config,
-		AmisJson: string(amisJson),
+		AmisJson: component,
 	}
-	if err = e.Config.AmisTemplate.Execute(w, data); err != nil {
-		panic(fmt.Sprintf("failed to execute template: %v", err))
+	if err := e.Config.AmisTemplate.Execute(w, data); err != nil {
+		panic(err)
 	}
 }
