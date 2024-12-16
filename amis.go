@@ -3,6 +3,7 @@ package amisgo
 
 import (
 	"net/http"
+	"strings"
 	"sync"
 
 	"github.com/zrcoder/amisgo/config"
@@ -26,11 +27,6 @@ func New(opts ...config.Option) *Engine {
 	e := &Engine{
 		Config: cfg,
 		mux:    servermux.Mux(),
-	}
-
-	if cfg.StaticFS != nil {
-		e.mux.Handle(cfg.StaticPrefix,
-			http.StripPrefix(cfg.StaticPrefix, http.FileServer(cfg.StaticFS)))
 	}
 
 	return e
@@ -62,6 +58,22 @@ func (e *Engine) Handle(path string, handler http.Handler) *Engine {
 func (e *Engine) HandleFunc(path string, handler func(http.ResponseWriter, *http.Request)) *Engine {
 	e.mux.HandleFunc(path, handler)
 	return e
+}
+
+// StaticFS registers a file server for serving static files
+func (e *Engine) StaticFS(prefix string, fs http.FileSystem) *Engine {
+	if prefix == "" || prefix == "/" {
+		prefix = "/"
+	}
+	prefix = "/" + strings.TrimLeft(prefix, "/")
+	prefix = strings.TrimRight(prefix, "/") + "/"
+	e.mux.Handle(prefix, http.StripPrefix(prefix, http.FileServer(fs)))
+	return e
+}
+
+// StaticFiles registers a file server for serving static files
+func (e *Engine) StaticFiles(prefix string, root string) *Engine {
+	return e.StaticFS(prefix, http.Dir(root))
 }
 
 // Use adds a middleware function to the engine for processing requests

@@ -1,9 +1,6 @@
 package config
 
 import (
-	"net/http"
-	"strings"
-
 	"github.com/zrcoder/amisgo/internal/template"
 )
 
@@ -31,14 +28,12 @@ const (
 
 // Config holds all configuration options for the application
 type Config struct {
-	Theme        Theme
-	Lang         Lang
-	Title        string
-	Icon         string
-	CustomCSS    string
-	CustomJS     string
-	StaticPrefix string
-	StaticFS     http.FileSystem
+	Theme     Theme
+	Lang      Lang
+	Title     string
+	Icon      string
+	CustomCSS string
+	CustomJS  string
 	template.Template
 }
 
@@ -102,34 +97,4 @@ func WithCustomJS(customJS string) Option {
 	return func(c *Config) {
 		c.CustomJS = customJS
 	}
-}
-
-// WithStaticFS sets up static file system serving with the given URL prefix.
-// If urlPrefix is empty or "/", it serves files at the root path.
-// The urlPrefix will be normalized to have a leading and trailing slash.
-func WithStaticFS(urlPrefix string, staticFS http.FileSystem) Option {
-	if staticFS == nil {
-		panic("staticFS cannot be nil")
-	}
-	if urlPrefix == "" || urlPrefix == "/" {
-		return func(c *Config) {
-			c.StaticPrefix = "/"
-			c.StaticFS = staticFS
-		}
-	}
-	urlPrefix = "/" + strings.TrimLeft(urlPrefix, "/")
-	urlPrefix = strings.TrimRight(urlPrefix, "/") + "/"
-	return func(c *Config) {
-		c.StaticPrefix = urlPrefix
-		c.StaticFS = staticFS
-	}
-}
-
-// WithStatic is a convenience function that wraps WithStaticFS using a local directory.
-// It panics if the path is empty.
-func WithStatic(urlPrefix, path string) Option {
-	if path == "" {
-		panic("path cannot be empty")
-	}
-	return WithStaticFS(urlPrefix, http.Dir(path))
 }

@@ -8,8 +8,6 @@ import (
 	"os"
 	"strings"
 	"testing"
-
-	"github.com/zrcoder/amisgo/config"
 )
 
 const (
@@ -135,7 +133,7 @@ func TestStaticFiles(t *testing.T) {
 	tmpDir := t.TempDir()
 	createTestFile(t, tmpDir)
 
-	e := New(config.WithStaticFS("/static/", http.Dir(tmpDir)))
+	e := New().StaticFiles("/static/", tmpDir)
 
 	t.Run("serve static file", func(t *testing.T) {
 		w := httptest.NewRecorder()
@@ -167,8 +165,9 @@ func TestAsHandler(t *testing.T) {
 	tmpDir := t.TempDir()
 	createTestFile(t, tmpDir)
 
-	e := New(config.WithStaticFS("/admin/static/", http.Dir(tmpDir)))
-	e.Mount("/admin/page", struct{}{})
+	e := New().
+		Mount("/admin/page", struct{}{}).
+		StaticFS("/admin/static/", http.Dir(tmpDir))
 
 	// Create main mux and mount engine
 	mux := http.NewServeMux()
