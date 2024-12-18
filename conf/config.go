@@ -1,4 +1,4 @@
-package config
+package conf
 
 import (
 	"github.com/zrcoder/amisgo/internal/template"

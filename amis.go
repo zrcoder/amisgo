@@ -6,13 +6,13 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/zrcoder/amisgo/config"
+	"github.com/zrcoder/amisgo/conf"
 	"github.com/zrcoder/amisgo/internal/servermux"
 )
 
 // Engine represents the web application
 type Engine struct {
-	Config      *config.Config
+	Config      *conf.Config
 	mux         *http.ServeMux
 	middlewares []func(http.Handler) http.Handler
 	handler     http.Handler
@@ -20,8 +20,8 @@ type Engine struct {
 }
 
 // New creates an Engine instance with options
-func New(opts ...config.Option) *Engine {
-	cfg := config.Default()
+func New(opts ...conf.Option) *Engine {
+	cfg := conf.Default()
 	cfg.Apply(opts...)
 
 	e := &Engine{
@@ -109,7 +109,7 @@ func (e *Engine) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 // renderComponent renders an Amis component
 func (e *Engine) renderComponent(w http.ResponseWriter, component any) {
 	data := struct {
-		*config.Config
+		*conf.Config
 		AmisJson any
 	}{
 		Config:   e.Config,
