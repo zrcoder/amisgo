@@ -54,7 +54,7 @@ func (b api) ForceAppendDataToQuery(value bool) api {
 }
 
 // Headers 携带 headers，用法和 data 一样
-func (b api) Headers(value string) api {
+func (b api) Headers(value any) api {
 	return b.set("headers", value)
 }
 
@@ -106,4 +106,15 @@ func (b api) TrackExpression(value string) api {
 // Url API 发送目标地址
 func (b api) Url(value string) api {
 	return b.set("url", value)
+}
+
+// RequestAdaptor 发送适配器，在接口请求前，对请求进行一些自定义处理，例如修改发送数据体、添加请求头、等等，基本用法是，获取暴露的api参数，并且对该参数进行一些修改
+func (b api) RequestAdaptor(value string) api {
+	return b.set("requestAdaptor", value)
+}
+
+// Adaptor 接收适配器，如果接口返回不符合要求，可以通过配置一个适配器来处理成 amis 需要的数据
+// 如： "console.log(context); // 打印上下文数据 \nreturn {\n    ...payload,\n    status: payload.code === 200 ? 0 : payload.code\n}"
+func (b api) Adaptor(value string) api {
+	return b.set("adaptor", value)
 }
