@@ -65,16 +65,17 @@ func (a action) transform(input any, dstKey, successMsg string, transfor func(an
 	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		inputData, err := io.ReadAll(r.Body)
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
+			resp := ErrorResponse(err.Error())
+			w.Write(resp.Json())
 			return
 		}
 		defer r.Body.Close()
-		m := map[string]any{}
+		m := schema{}
 		js.Unmarshal(inputData, &m)
 		input := m["input"]
 		output, err := transfor(input)
 		if err != nil {
-			resp := Response{Status: 1, Msg: err.Error()}
+			resp := ErrorResponse(err.Error())
 			w.Write(resp.Json())
 			return
 		}
