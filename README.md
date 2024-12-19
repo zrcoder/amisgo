@@ -31,9 +31,13 @@ func main() {
 
 Visit http://localhost:8080 after running the code.
 
+## Tutorials
+
+Explore our [wiki](https://github.com/zrcoder/amisgo/wiki) for in-depth tutorials and guides.
+
 ## Examples
 
-Check out our [examples repository](https://github.com/zrcoder/amisgo-examples) or try the live demo: [Dev-Toys](https://amisgo-examples.onrender.com).
+Check out our [examples repository](https://github.com/zrcoder/amisgo-examples).
 
 ## Project Status
 
