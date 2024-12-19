@@ -30,7 +30,7 @@ type Response struct {
 }
 
 func ErrorResponse(msg string) *Response {
-	return &Response{Status: -1, Msg: msg}
+	return &Response{Status: 1, Msg: msg}
 }
 
 func SuccessResponse(msg string, data Data) *Response {

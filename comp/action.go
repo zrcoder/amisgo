@@ -61,12 +61,11 @@ func (a action) TransformMultiple(inputs any, successMsg string, transfor func(a
 }
 
 func (a action) transform(input any, dstKey, successMsg string, transfor func(any) (any, error)) action {
-	route := fmt.Sprintf("/__amisgo_api_%d", getInnerApiID())
+	route := getRoute()
 	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		inputData, err := io.ReadAll(r.Body)
 		if err != nil {
-			resp := ErrorResponse(err.Error())
-			w.Write(resp.Json())
+			respError(w, err)
 			return
 		}
 		defer r.Body.Close()
@@ -75,8 +74,7 @@ func (a action) transform(input any, dstKey, successMsg string, transfor func(an
 		input := m["input"]
 		output, err := transfor(input)
 		if err != nil {
-			resp := ErrorResponse(err.Error())
-			w.Write(resp.Json())
+			respError(w, err)
 			return
 		}
 

@@ -98,6 +98,6 @@ func serveUpload(maxMemory int64, action func([]byte) (path string, err error)) 
 }
 
 func respError(w http.ResponseWriter, err error) {
-	resp := Response{Status: 1, Msg: err.Error()}
+	resp := ErrorResponse(err.Error())
 	w.Write(resp.Json())
 }
