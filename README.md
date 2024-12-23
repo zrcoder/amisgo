@@ -3,7 +3,7 @@
 A low-code frontend framework for Go developers, powered by Baidu's [Amis](https://aisuda.bce.baidu.com/amis).  
 The name combines `amis` and `go`, which coincidentally means "friend" in Zulu.
 
-For background information and detailed documentation, visit our [wiki](https://github.com/zrcoder/amisgo/wiki) (in Chinese).
+For background info and deeper insights, check out our [documentation](https://amisgo-doc.pages.dev) (in Chinese).
 
 ## Quick Start
 
@@ -33,7 +33,7 @@ Visit http://localhost:8080 after running the code.
 
 ## Tutorials
 
-Explore our [wiki](https://github.com/zrcoder/amisgo/wiki) for in-depth tutorials and guides.
+Explore our [documentation](https://amisgo-doc.pages.dev) for in-depth tutorials and guides.
 
 ## Examples
 
