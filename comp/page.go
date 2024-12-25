@@ -2,7 +2,7 @@ package comp
 
 // page 代表 amis page 渲染器
 
-type page schema
+type page Schema
 
 // Page 创建一个新的 Page 实例
 func Page() page {

@@ -2,7 +2,7 @@ package comp
 
 // paginationWrapper 代表 amis paginationWrapper 渲染器
 
-type paginationWrapper schema
+type paginationWrapper Schema
 
 // PaginationWrapper 创建一个新的 PaginationWrapper 实例
 func PaginationWrapper() paginationWrapper {

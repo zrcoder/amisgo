@@ -1,6 +1,6 @@
 package comp
 
-type MGridItem schema
+type MGridItem Schema
 
 func GridItem() MGridItem {
 	return MGridItem{}

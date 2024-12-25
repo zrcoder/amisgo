@@ -1,7 +1,7 @@
 package comp
 
 // grid 格子布局渲染器
-type grid schema
+type grid Schema
 
 // Grid 创建一个新的 Grid 实例
 func Grid() grid {

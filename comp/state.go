@@ -2,7 +2,7 @@ package comp
 
 // state
 
-type state schema
+type state Schema
 
 // State 创建一个新的 State 实例
 func State() state {

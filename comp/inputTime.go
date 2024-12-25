@@ -2,7 +2,7 @@ package comp
 
 // inputTime 时间选择控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/time
 
-type inputTime schema
+type inputTime Schema
 
 func InputTime() inputTime {
 	return inputTime{}.set("type", "input-time")

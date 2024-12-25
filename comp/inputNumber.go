@@ -2,7 +2,7 @@ package comp
 
 // inputNumber 数字输入框
 
-type inputNumber schema
+type inputNumber Schema
 
 // InputNumber 创建一个新的 NumberControl 实例
 func InputNumber() inputNumber {

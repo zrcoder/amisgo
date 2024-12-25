@@ -1,6 +1,6 @@
 package comp
 
-type otherAction schema
+type otherAction Schema
 
 func OtherAction() otherAction {
 	return otherAction{}.set("type", "button").set("actionType", "prev")

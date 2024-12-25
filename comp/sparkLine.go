@@ -2,7 +2,7 @@ package comp
 
 // sparkLine
 
-type sparkLine schema
+type sparkLine Schema
 
 // SparkLine 创建一个新的 SparkLine 实例
 func SparkLine() sparkLine {

@@ -1,6 +1,6 @@
 package comp
 
-type text schema
+type text Schema
 
 func Text() text {
 	return text{}.set("type", "text")

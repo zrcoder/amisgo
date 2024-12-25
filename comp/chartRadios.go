@@ -1,7 +1,7 @@
 package comp
 
 // chartRadios 图表单选框
-type chartRadios schema
+type chartRadios Schema
 
 // ChartRadios 创建一个新的 ChartRadios 实例
 func ChartRadios() chartRadios {

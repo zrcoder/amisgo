@@ -1,7 +1,7 @@
 package comp
 
 // images 图片集展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/images
-type images schema
+type images Schema
 
 // Images 创建一个新的 Images 实例，并设置默认的 type
 func Images() images {

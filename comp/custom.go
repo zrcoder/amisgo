@@ -1,7 +1,7 @@
 package comp
 
 // custom 自定义组件
-type custom schema
+type custom Schema
 
 // Custom 创建一个新的 Custom 实例，并设置默认的 type
 func Custom() custom {

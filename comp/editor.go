@@ -1,7 +1,7 @@
 package comp
 
 // editor 表示代码编辑器
-type editor schema
+type editor Schema
 
 func Editor() editor {
 	return make(editor).set("type", "editor")

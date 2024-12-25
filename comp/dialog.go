@@ -1,6 +1,6 @@
 package comp
 
-type dialog schema
+type dialog Schema
 
 func Dialog() dialog {
 	return make(dialog).set("type", "dialog")

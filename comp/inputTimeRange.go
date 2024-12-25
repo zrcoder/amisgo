@@ -2,7 +2,7 @@ package comp
 
 // inputTimeRange 时间范围
 
-type inputTimeRange schema
+type inputTimeRange Schema
 
 // InputTimeRange 创建一个新的 InputTimeRange 实例，并设置默认的 type
 func InputTimeRange() inputTimeRange {

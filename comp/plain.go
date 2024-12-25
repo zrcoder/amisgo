@@ -2,7 +2,7 @@ package comp
 
 // plain 纯文本渲染器
 
-type plain schema
+type plain Schema
 
 // Plain 创建一个新的 Plain 实例
 func Plain() plain {

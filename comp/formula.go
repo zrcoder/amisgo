@@ -1,7 +1,7 @@
 package comp
 
 // formula 公式功能控件
-type formula schema
+type formula Schema
 
 // Formula 创建一个新的 FormulaControl 实例
 func Formula() formula {

@@ -2,7 +2,7 @@ package comp
 
 // radio 单选框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/radios
 
-type radio schema
+type radio Schema
 
 // Radio 创建一个新的 RadioControl 实例
 func Radio() radio {

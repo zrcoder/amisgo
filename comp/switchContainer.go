@@ -2,7 +2,7 @@ package comp
 
 // switchContainer 状态容器渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/state-container
 
-type switchContainer schema
+type switchContainer Schema
 
 // SwitchContainer 创建一个新的 SwitchContainer 实例
 func SwitchContainer() switchContainer {

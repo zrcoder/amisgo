@@ -1,7 +1,7 @@
 package comp
 
 // inputDate 日期选择控件
-type inputDate schema
+type inputDate Schema
 
 func InputDate() inputDate {
 	return make(inputDate).set("type", "input-date")

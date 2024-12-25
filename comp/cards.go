@@ -1,7 +1,7 @@
 package comp
 
 // cards
-type cards schema
+type cards Schema
 
 // Cards 创建一个新的 Cards 实例
 func Cards() cards {

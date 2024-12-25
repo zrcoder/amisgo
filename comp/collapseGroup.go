@@ -1,7 +1,7 @@
 package comp
 
 // collapseGroup 折叠渲染器
-type collapseGroup schema
+type collapseGroup Schema
 
 // CollapseGroup 创建一个新的 CollapseGroup 实例
 func CollapseGroup() collapseGroup {

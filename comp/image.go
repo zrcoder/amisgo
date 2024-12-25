@@ -1,7 +1,7 @@
 package comp
 
 // image 图片展示控件
-type image schema
+type image Schema
 
 // Image 创建一个新的 Image 实例
 func Image() image {

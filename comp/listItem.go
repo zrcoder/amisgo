@@ -2,7 +2,7 @@ package comp
 
 // ListItem 列表项
 
-type ListItem schema
+type ListItem Schema
 
 // NewListItem 创建一个新的 ListItem 实例
 func NewListItem() ListItem {

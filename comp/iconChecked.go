@@ -1,7 +1,7 @@
 package comp
 
 // iconChecked 图标选中渲染器
-type iconChecked schema
+type iconChecked Schema
 
 // IconChecked 创建一个新的 IconChecked 实例
 func IconChecked() iconChecked {

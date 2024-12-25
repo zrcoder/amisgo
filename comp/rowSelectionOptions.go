@@ -2,7 +2,7 @@ package comp
 
 // rowSelectionOptions
 
-type rowSelectionOptions schema
+type rowSelectionOptions Schema
 
 // RowSelectionOptions 创建一个新的 RowSelectionOptions 实例
 func RowSelectionOptions() rowSelectionOptions {

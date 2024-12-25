@@ -1,7 +1,7 @@
 package comp
 
 // chart 图表渲染器
-type chart schema
+type chart Schema
 
 // Chart 创建一个新的 Chart 实例
 func Chart() chart {

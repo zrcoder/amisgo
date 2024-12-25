@@ -1,6 +1,6 @@
 package comp
 
-type MPropertyItem schema
+type MPropertyItem Schema
 
 func PropertyItem() MPropertyItem {
 	return MPropertyItem{}

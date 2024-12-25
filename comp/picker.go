@@ -2,7 +2,7 @@ package comp
 
 // picker 选择器控件
 
-type picker schema
+type picker Schema
 
 // Picker 创建一个新的 PickerControl 实例
 func Picker() picker {

@@ -1,7 +1,7 @@
 package comp
 
 // drawerAction 表示一个抽出式弹框中的操作按钮。
-type drawerAction schema
+type drawerAction Schema
 
 // DrawerAction 创建一个新的 DrawerAction 实例，并设置默认的 type 和 actionType
 func DrawerAction() drawerAction {

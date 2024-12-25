@@ -2,7 +2,7 @@ package comp
 
 // listSelect 列表控件
 
-type listSelect schema
+type listSelect Schema
 
 func ListSelect() listSelect {
 	return make(listSelect).set("type", "list-select")

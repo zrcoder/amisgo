@@ -1,6 +1,6 @@
 package comp
 
-type checkboxes schema
+type checkboxes Schema
 
 func Checkboxes() checkboxes {
 	return make(checkboxes).set("type", "checkboxes")

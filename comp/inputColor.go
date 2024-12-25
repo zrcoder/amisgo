@@ -1,7 +1,7 @@
 package comp
 
 // inputColor 颜色选择框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-color
-type inputColor schema
+type inputColor Schema
 
 func InputColor() inputColor {
 	return make(inputColor).set("type", "input-color")

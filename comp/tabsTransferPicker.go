@@ -2,7 +2,7 @@ package comp
 
 // tabsTransferPicker 穿梭器的弹框形态 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tabs-transfer-picker
 
-type tabsTransferPicker schema
+type tabsTransferPicker Schema
 
 func TabsTransferPicker() tabsTransferPicker {
 	return tabsTransferPicker{}.set("type", "tabs-transfer-picker")

@@ -1,6 +1,6 @@
 package comp
 
-type MColumn schema
+type MColumn Schema
 
 func Column() MColumn {
 	return make(MColumn)

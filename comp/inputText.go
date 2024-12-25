@@ -2,7 +2,7 @@ package comp
 
 // inputText 文本输入框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/text
 
-type inputText schema
+type inputText Schema
 
 func InputText() inputText {
 	return inputText{}.set("type", "input-text")

@@ -3,7 +3,7 @@ package comp
 // inputMonthRange 月范围控件
 // 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/month-range
 
-type inputMonthRange schema
+type inputMonthRange Schema
 
 // InputMonthRange 创建一个新的 MonthRangeControl 实例
 func InputMonthRange() inputMonthRange {

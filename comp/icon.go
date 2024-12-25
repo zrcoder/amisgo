@@ -1,7 +1,7 @@
 package comp
 
 // icon 图标渲染器
-type icon schema
+type icon Schema
 
 // Icon 创建一个新的 Icon 实例，并设置默认的 type
 func Icon() icon {

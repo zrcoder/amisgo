@@ -1,7 +1,7 @@
 package comp
 
 // grid2d 二维布局渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/grid-2d
-type grid2d schema
+type grid2d Schema
 
 // Grid2D 创建一个新的 Grid2D 实例
 func Grid2D() grid2d {

@@ -2,7 +2,7 @@ package comp
 
 // uuid UUID 功能性组件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/uuid
 
-type uuid schema
+type uuid Schema
 
 func UUID() uuid {
 	return uuid{}.set("type", "uuid")

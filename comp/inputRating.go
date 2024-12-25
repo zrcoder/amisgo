@@ -2,7 +2,7 @@ package comp
 
 // inputRating 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/rating
 
-type inputRating schema
+type inputRating Schema
 
 func InputRating() inputRating {
 	return inputRating{}.set("type", "input-rating")

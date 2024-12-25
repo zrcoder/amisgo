@@ -1,7 +1,7 @@
 package comp
 
 // anchorNav 锚点导航渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
-type anchorNav schema
+type anchorNav Schema
 
 // AnchorNav 创建一个新的 AnchorNav 实例
 func AnchorNav() anchorNav {

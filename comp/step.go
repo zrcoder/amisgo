@@ -2,7 +2,7 @@ package comp
 
 // step 文档
 
-type step schema
+type step Schema
 
 // Step 创建一个新的 Step 实例
 func Step() step {

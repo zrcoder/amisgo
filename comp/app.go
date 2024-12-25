@@ -1,6 +1,6 @@
 package comp
 
-type app schema
+type app Schema
 
 // App 用于实现多页应用，适合于全屏模式，如果只是局部渲染请不要使用。
 func App() app {

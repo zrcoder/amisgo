@@ -2,7 +2,7 @@ package comp
 
 // inputSignature
 
-type inputSignature schema
+type inputSignature Schema
 
 // InputSignature 创建一个新的 InputSignature 实例，并设置默认的 type
 func InputSignature() inputSignature {

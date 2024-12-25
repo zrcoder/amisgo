@@ -2,7 +2,7 @@ package comp
 
 // transferPicker 穿梭器的弹框形态 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/transfer-picker
 
-type transferPicker schema
+type transferPicker Schema
 
 func TransferPicker() transferPicker {
 	return transferPicker{}.set("type", "transfer-picker")

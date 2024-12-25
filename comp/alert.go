@@ -2,7 +2,7 @@ package comp
 
 // alert 提示渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/alert
 
-type alert schema
+type alert Schema
 
 // Alert 创建一个新的 Alert 实例
 func Alert() alert {

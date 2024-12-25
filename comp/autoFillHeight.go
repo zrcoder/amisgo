@@ -1,7 +1,7 @@
 package comp
 
 // autoFillHeight 自动填充高度渲染器
-type autoFillHeight schema
+type autoFillHeight Schema
 
 // AutoFillHeight 创建一个新的 AutoFillHeight 实例
 func AutoFillHeight() autoFillHeight {

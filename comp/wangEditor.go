@@ -4,7 +4,7 @@ package comp
 
 // wangEditor
 
-type wangEditor schema
+type wangEditor Schema
 
 // WangEditor 创建一个新的 WangEditor 实例
 func WangEditor() wangEditor {

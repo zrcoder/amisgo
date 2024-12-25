@@ -1,7 +1,7 @@
 package comp
 
 // buttonGroup 代表按钮组渲染器
-type buttonGroup schema
+type buttonGroup Schema
 
 // ButtonGroup 创建一个新的 ButtonGroup 实例
 func ButtonGroup() buttonGroup {

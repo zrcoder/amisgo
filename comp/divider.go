@@ -1,7 +1,7 @@
 package comp
 
 // divider 分割线渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/divider
-type divider schema
+type divider Schema
 
 func Divider() divider {
 	return make(divider).set("type", "divider")

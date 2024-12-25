@@ -1,7 +1,7 @@
 package comp
 
 // hBox 水平布局渲染器
-type hBox schema
+type hBox Schema
 
 // HBox 创建一个新的 HBox 实例
 func HBox() hBox {

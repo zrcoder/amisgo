@@ -1,7 +1,7 @@
 package comp
 
 // inputFile 文件上传控件
-type inputFile schema
+type inputFile Schema
 
 func InputFile() inputFile {
 	f := make(inputFile)

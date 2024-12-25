@@ -2,7 +2,7 @@ package comp
 
 // words 表示一个显示文字的组件
 
-type words schema
+type words Schema
 
 // Words 创建一个新的 Words 实例
 func Words() words {

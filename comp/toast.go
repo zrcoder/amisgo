@@ -2,7 +2,7 @@ package comp
 
 // toast 轻提示
 
-type toast schema
+type toast Schema
 
 // Toast 创建一个新的 Toast 实例
 func Toast() toast {

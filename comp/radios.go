@@ -2,7 +2,7 @@ package comp
 
 // radios 单选框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/radios
 
-type radios schema
+type radios Schema
 
 // Radios 创建一个新的 RadiosControl 实例
 func Radios() radios {

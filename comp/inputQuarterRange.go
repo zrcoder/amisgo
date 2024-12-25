@@ -2,7 +2,7 @@ package comp
 
 // inputQuarterRange 季度范围控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-quarter-range
 
-type inputQuarterRange schema
+type inputQuarterRange Schema
 
 // InputQuarterRange 创建一个新的 QuarterRangeControl 实例
 func InputQuarterRange() inputQuarterRange {

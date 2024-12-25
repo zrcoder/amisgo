@@ -1,6 +1,6 @@
 package comp
 
-type MPageItem schema
+type MPageItem Schema
 
 func PageItem() MPageItem {
 	return MPageItem{}

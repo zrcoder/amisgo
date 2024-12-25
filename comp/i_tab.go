@@ -1,6 +1,6 @@
 package comp
 
-type MTab schema
+type MTab Schema
 
 // Tab 创建一个新的 Tab 实例
 func Tab() MTab {

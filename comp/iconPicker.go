@@ -1,7 +1,7 @@
 package comp
 
 // iconPicker 图标选择器
-type iconPicker schema
+type iconPicker Schema
 
 // IconPicker 创建一个新的 IconPicker 实例
 func IconPicker() iconPicker {

@@ -1,7 +1,7 @@
 package comp
 
 // buttonGroupSelect 代表按钮组控件渲染器
-type buttonGroupSelect schema
+type buttonGroupSelect Schema
 
 // ButtonGroupSelect 创建一个新的 ButtonGroupSelect 实例
 func ButtonGroupSelect() buttonGroupSelect {

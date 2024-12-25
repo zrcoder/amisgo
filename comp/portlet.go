@@ -2,7 +2,7 @@ package comp
 
 // portlet
 
-type portlet schema
+type portlet Schema
 
 // Portlet 创建一个新的 Portlet 实例
 func Portlet() portlet {

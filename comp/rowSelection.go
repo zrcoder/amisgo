@@ -2,7 +2,7 @@ package comp
 
 // rowSelection
 
-type rowSelection schema
+type rowSelection Schema
 
 // RowSelection 创建一个新的 RowSelection 实例
 func RowSelection() rowSelection {

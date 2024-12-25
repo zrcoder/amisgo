@@ -1,7 +1,7 @@
 package comp
 
 // conditionGroupValue 代表一个条件组合值，支持多种配置项
-type conditionGroupValue schema
+type conditionGroupValue Schema
 
 // ConditionGroupValue 创建一个新的 ConditionGroupValue 实例，并设置默认的 conjunction
 func ConditionGroupValue() conditionGroupValue {

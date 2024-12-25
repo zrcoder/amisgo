@@ -1,7 +1,7 @@
 package comp
 
 // inputCity 城市选择框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/city
-type inputCity schema
+type inputCity Schema
 
 func InputCity() inputCity {
 	return make(inputCity).set("type", "input-city")

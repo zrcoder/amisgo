@@ -2,7 +2,7 @@ package comp
 
 // inputRichText 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-rich-text
 
-type inputRichText schema
+type inputRichText Schema
 
 func InputRichText() inputRichText {
 	return inputRichText{}.set("type", "input-rich-text")

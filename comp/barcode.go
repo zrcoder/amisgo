@@ -1,7 +1,7 @@
 package comp
 
 // barcode 条形码渲染器
-type barcode schema
+type barcode Schema
 
 // Barcode 创建一个新的 Barcode 实例
 func Barcode() barcode {

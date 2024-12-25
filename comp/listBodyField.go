@@ -2,7 +2,7 @@ package comp
 
 // listBodyField 列表体字段控件
 
-type listBodyField schema
+type listBodyField Schema
 
 // ListBodyField 创建一个新的 ListBodyField 实例
 func ListBodyField() listBodyField {

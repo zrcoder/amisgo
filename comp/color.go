@@ -1,7 +1,7 @@
 package comp
 
 // color 显示渲染器
-type color schema
+type color Schema
 
 // Color 创建一个新的 Color 实例
 func Color() color {

@@ -2,7 +2,7 @@ package comp
 
 // inputYearRange 年份范围
 
-type inputYearRange schema
+type inputYearRange Schema
 
 // InputYearRange 创建一个新的 InputYearRange 实例，并设置默认的 type
 func InputYearRange() inputYearRange {

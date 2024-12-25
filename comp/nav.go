@@ -1,7 +1,7 @@
 package comp
 
 // nav 导航渲染器
-type nav schema
+type nav Schema
 
 // Nav 创建一个新的 Nav 实例
 func Nav() nav {

@@ -2,7 +2,7 @@ package comp
 
 // linkAction 链接动作控件
 
-type linkAction schema
+type linkAction Schema
 
 // LinkAction 创建一个新的 LinkAction 实例，并设置默认的 type 和 actionType
 func LinkAction() linkAction {

@@ -1,7 +1,7 @@
 package comp
 
 // audio 音频渲染器
-type audio schema
+type audio Schema
 
 func Audio() audio {
 	return make(audio).set("type", "audio")

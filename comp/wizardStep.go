@@ -2,7 +2,7 @@ package comp
 
 // wizardStep 表单向导的步骤
 
-type wizardStep schema
+type wizardStep Schema
 
 // WizardStep 创建一个新的 WizardStep 实例
 func WizardStep() wizardStep {

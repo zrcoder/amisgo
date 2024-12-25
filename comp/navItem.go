@@ -1,7 +1,7 @@
 package comp
 
 // navItem 导航项
-type navItem schema
+type navItem Schema
 
 // NavItem 创建一个新的 NavItem 实例
 func NavItem() navItem {

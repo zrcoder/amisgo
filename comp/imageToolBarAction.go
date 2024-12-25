@@ -1,7 +1,7 @@
 package comp
 
 // imageToolbarAction 图片工具栏操作
-type imageToolbarAction schema
+type imageToolbarAction Schema
 
 // ImageToolbarAction 创建一个新的 ImageToolbarAction 实例，并设置默认的 key
 func ImageToolbarAction() imageToolbarAction {

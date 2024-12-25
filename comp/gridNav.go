@@ -1,7 +1,7 @@
 package comp
 
 // gridNav 宫格导航
-type gridNav schema
+type gridNav Schema
 
 // GridNav 创建一个新的 GridNav 实例
 func GridNav() gridNav {

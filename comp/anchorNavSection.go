@@ -1,7 +1,7 @@
 package comp
 
 // anchorNavSection 锚点区域渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
-type anchorNavSection schema
+type anchorNavSection Schema
 
 // AnchorNavSection 创建一个新的 AnchorNavSection 实例
 func AnchorNavSection() anchorNavSection {

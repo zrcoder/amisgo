@@ -1,7 +1,7 @@
 package comp
 
 // date 展示渲染器
-type date schema
+type date Schema
 
 // Date 创建一个新的 Date 实例，并设置默认的 type
 func Date() date {

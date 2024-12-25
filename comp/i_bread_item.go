@@ -1,6 +1,6 @@
 package comp
 
-type MBreadcrumbItem schema
+type MBreadcrumbItem Schema
 
 func BreadcrumbItem() MBreadcrumbItem {
 	return MBreadcrumbItem{}

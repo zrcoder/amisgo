@@ -1,7 +1,7 @@
 package comp
 
 // inputDateRange 表示一个日期范围控件
-type inputDateRange schema
+type inputDateRange Schema
 
 // InputDateRange 创建一个新的 InputDateRange 实例，并设置默认的 type
 func InputDateRange() inputDateRange {

@@ -1,7 +1,7 @@
 package comp
 
 // avatar 头像渲染器
-type avatar schema
+type avatar Schema
 
 // Avatar 创建一个新的 Avatar 实例
 func Avatar() avatar {

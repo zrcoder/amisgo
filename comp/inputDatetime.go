@@ -1,7 +1,7 @@
 package comp
 
 // inputDatetime 日期时间选择控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-datetime
-type inputDatetime schema
+type inputDatetime Schema
 
 func InputDatetime() inputDatetime {
 	return make(inputDatetime).set("type", "input-datetime")

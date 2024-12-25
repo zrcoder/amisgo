@@ -2,7 +2,7 @@ package comp
 
 // inputTree 下拉选择框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tree
 
-type inputTree schema
+type inputTree Schema
 
 func InputTree() inputTree {
 	return inputTree{}.set("type", "input-tree")

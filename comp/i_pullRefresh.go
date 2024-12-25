@@ -1,6 +1,6 @@
 package comp
 
-type MPullRefresh schema
+type MPullRefresh Schema
 
 func PullRefresh() MPullRefresh {
 	return MPullRefresh{}

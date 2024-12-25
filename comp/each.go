@@ -1,7 +1,7 @@
 package comp
 
 // each 表示循环功能渲染器。
-type each schema
+type each Schema
 
 // Each 创建一个新的 Each 实例，并设置默认的 type 为 'each'
 func Each() each {

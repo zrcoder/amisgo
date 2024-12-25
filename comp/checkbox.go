@@ -1,7 +1,7 @@
 package comp
 
 // checkbox
-type checkbox schema
+type checkbox Schema
 
 // Checkbox 创建一个新的 Checkbox 实例
 func Checkbox() checkbox {

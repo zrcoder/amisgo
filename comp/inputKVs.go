@@ -2,7 +2,7 @@ package comp
 
 // inputKVS 键值对象
 
-type inputKVS schema
+type inputKVS Schema
 
 // InputKVS 创建一个新的 InputKVS 实例，并设置默认的 type
 func InputKVS() inputKVS {

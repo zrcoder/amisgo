@@ -2,7 +2,7 @@ package comp
 
 // schemaApi
 
-type schemaApi schema
+type schemaApi Schema
 
 // SchemaApi 创建一个新的 SchemaApi 实例
 func SchemaApi() schemaApi {

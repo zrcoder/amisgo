@@ -1,7 +1,7 @@
 package comp
 
 // iframe 渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/iframe
-type iframe schema
+type iframe Schema
 
 // Iframe 创建一个新的 Iframe 实例
 func Iframe() iframe {

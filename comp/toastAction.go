@@ -2,7 +2,7 @@ package comp
 
 // toastAction
 
-type toastAction schema
+type toastAction Schema
 
 // ToastAction 创建一个新的 ToastAction 实例
 func ToastAction() toastAction {

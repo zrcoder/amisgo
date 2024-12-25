@@ -2,7 +2,7 @@ package comp
 
 // spinner
 
-type spinner schema
+type spinner Schema
 
 // Spinner 创建一个 Spinner 实例
 func Spinner() spinner {

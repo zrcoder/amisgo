@@ -2,7 +2,7 @@ package comp
 
 // password 代表 amis password 渲染器
 
-type password schema
+type password Schema
 
 // Password 创建一个新的 Password 实例
 func Password() password {

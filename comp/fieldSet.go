@@ -1,7 +1,7 @@
 package comp
 
 // fieldSet 表单项集合
-type fieldSet schema
+type fieldSet Schema
 
 func FieldSet() fieldSet {
 	return make(fieldSet).set("type", "fieldset").set("titlePosition", "top")

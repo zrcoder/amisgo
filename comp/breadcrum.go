@@ -1,7 +1,7 @@
 package comp
 
 // breadcrumb 面包屑
-type breadcrumb schema
+type breadcrumb Schema
 
 // Breadcrumb 创建一个新的 Breadcrumb 实例
 func Breadcrumb() breadcrumb {

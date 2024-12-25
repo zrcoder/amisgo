@@ -2,7 +2,7 @@ package comp
 
 // tabs 选项卡控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/tabs
 
-type tabs schema
+type tabs Schema
 
 // Tabs 创建一个新的 Tabs 实例
 func Tabs() tabs {

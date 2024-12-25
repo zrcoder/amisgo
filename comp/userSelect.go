@@ -2,7 +2,7 @@ package comp
 
 // userSelect 移动端人员选择。
 
-type userSelect schema
+type userSelect Schema
 
 func UsersSelect() userSelect {
 	return userSelect{}.set("type", "users-select")

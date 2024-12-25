@@ -2,7 +2,7 @@ package comp
 
 // log 实时日志
 
-type log schema
+type log Schema
 
 // Log 创建一个新的 Log 实例
 func Log() log {

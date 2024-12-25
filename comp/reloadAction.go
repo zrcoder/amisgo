@@ -2,7 +2,7 @@ package comp
 
 // reloadAction 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/button
 
-type reloadAction schema
+type reloadAction Schema
 
 // ReloadAction 创建一个新的 ReloadAction 实例
 func ReloadAction() reloadAction {

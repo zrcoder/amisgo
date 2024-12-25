@@ -2,7 +2,7 @@ package comp
 
 // urlAction URL 操作按钮控件
 
-type urlAction schema
+type urlAction Schema
 
 // UrlAction 创建一个新的 UrlAction 实例
 func UrlAction() urlAction {

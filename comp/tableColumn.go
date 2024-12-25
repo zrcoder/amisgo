@@ -2,7 +2,7 @@ package comp
 
 // tableColumn 表格列，不指定类型时默认为文本类型。
 
-type tableColumn schema
+type tableColumn Schema
 
 // TableColumn 创建一个新的 TableColumn 实例
 func TableColumn() tableColumn {

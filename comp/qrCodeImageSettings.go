@@ -2,7 +2,7 @@ package comp
 
 // qrCodeImageSettings
 
-type qrCodeImageSettings schema
+type qrCodeImageSettings Schema
 
 // QRCodeImageSettings 创建一个新的 QRCodeImageSettings 实例
 func QRCodeImageSettings() qrCodeImageSettings {

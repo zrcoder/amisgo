@@ -2,7 +2,7 @@ package comp
 
 // service 服务类控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/service
 
-type service schema
+type service Schema
 
 // Service 创建一个新的 Service 实例
 func Service() service {

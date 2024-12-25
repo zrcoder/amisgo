@@ -1,7 +1,7 @@
 package comp
 
 // copyButton 代表复制行为的按钮
-type copyButton schema
+type copyButton Schema
 
 func CopyButton() copyButton {
 	return make(copyButton).set("type", "button").set("actionType", "copy")

@@ -1,7 +1,7 @@
 package comp
 
 // inputArray 数组输入框。 combo 的别名。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-array
-type inputArray schema
+type inputArray Schema
 
 // InputArray 创建一个新的 InputArray 实例
 func InputArray() inputArray {

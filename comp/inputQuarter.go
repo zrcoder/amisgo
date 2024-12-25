@@ -2,7 +2,7 @@ package comp
 
 // inputQuarter represents a quarter selection control
 
-type inputQuarter schema
+type inputQuarter Schema
 
 func InputQuarter() inputQuarter {
 	return inputQuarter{}.set("type", "input-quarter")

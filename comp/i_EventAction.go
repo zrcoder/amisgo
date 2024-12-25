@@ -1,6 +1,6 @@
 package comp
 
-type MEventAction schema
+type MEventAction Schema
 
 // EventAction 创建一个新的 EventAction 实例
 func EventAction() MEventAction {

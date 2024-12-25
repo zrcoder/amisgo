@@ -1,7 +1,7 @@
 package comp
 
 // dateRange 展示渲染器
-type dateRange schema
+type dateRange Schema
 
 // DateRange 创建一个新的 DateRange 实例，并设置默认的 type
 func DateRange() dateRange {

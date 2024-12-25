@@ -1,6 +1,6 @@
 package comp
 
-type MNavLink schema
+type MNavLink Schema
 
 func NavLink() MNavLink {
 	return MNavLink{}

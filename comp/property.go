@@ -2,7 +2,7 @@ package comp
 
 // property
 
-type property schema
+type property Schema
 
 // Property 创建一个新的 Property 实例
 func Property() property {

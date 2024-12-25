@@ -1,7 +1,7 @@
 package comp
 
 // component 代表一个灵活的组件，可以配置各种属性
-type component schema
+type component Schema
 
 // Component 创建一个新的 Component 实例，并设置默认类型
 func Component() component {

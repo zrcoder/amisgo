@@ -1,7 +1,7 @@
 package comp
 
 // inputImage 图片上传控件
-type inputImage schema
+type inputImage Schema
 
 // InputImage 创建一个新的 InputImage 实例
 func InputImage() inputImage {

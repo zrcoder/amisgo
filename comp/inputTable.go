@@ -2,7 +2,7 @@ package comp
 
 // inputTable 表格控件
 
-type inputTable schema
+type inputTable Schema
 
 // InputTable 创建一个新的 TableControl 实例
 func InputTable() inputTable {

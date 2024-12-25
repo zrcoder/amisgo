@@ -1,7 +1,7 @@
 package comp
 
 // hidden 隐藏域。功能性组件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/hidden
-type hidden schema
+type hidden Schema
 
 func Hidden() hidden {
 	return make(hidden).set("type", "hidden")

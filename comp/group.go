@@ -1,7 +1,7 @@
 package comp
 
 // group 表单集合渲染器，能让多个表单在一行显示
-type group schema
+type group Schema
 
 // Group 创建一个新的 GroupControl 实例
 func Group() group {

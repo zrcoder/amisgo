@@ -1,7 +1,7 @@
 package comp
 
 // calendar
-type calendar schema
+type calendar Schema
 
 // Calendar 创建一个新的 Calendar 实例
 func Calendar() calendar {

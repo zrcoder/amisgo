@@ -1,7 +1,7 @@
 package comp
 
 // inputExcel 解析 Excel。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/excel
-type inputExcel schema
+type inputExcel Schema
 
 // InputExcel 创建一个新的 InputExcel 实例，并设置默认的 type
 func InputExcel() inputExcel {

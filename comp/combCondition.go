@@ -1,7 +1,7 @@
 package comp
 
 // comboCondition 表示组合条件渲染器
-type comboCondition schema
+type comboCondition Schema
 
 // ComboCondition 创建一个新的 ComboCondition 实例
 func ComboCondition() comboCondition {

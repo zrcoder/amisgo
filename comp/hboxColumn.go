@@ -1,7 +1,7 @@
 package comp
 
 // hBoxColumn 列渲染器
-type hBoxColumn schema
+type hBoxColumn Schema
 
 // HBoxColumn 创建一个新的 HBoxColumn 实例
 func HBoxColumn() hBoxColumn {

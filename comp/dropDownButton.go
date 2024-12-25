@@ -1,7 +1,7 @@
 package comp
 
 // dropdownButton 表示下拉按钮渲染器。
-type dropdownButton schema
+type dropdownButton Schema
 
 // DropdownButton 创建一个新的 DropdownButton 实例，并设置默认的 type 为 'dropdown-button'
 func DropdownButton() dropdownButton {

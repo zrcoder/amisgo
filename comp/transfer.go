@@ -2,7 +2,7 @@ package comp
 
 // transfer 控件定义
 
-type transfer schema
+type transfer Schema
 
 // NewTransferControl 创建一个新的 TransferControl 实例
 func Transfer() transfer {

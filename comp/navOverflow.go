@@ -1,7 +1,7 @@
 package comp
 
 // navOverflow 导航溢出配置
-type navOverflow schema
+type navOverflow Schema
 
 // NavOverflow 创建一个新的 NavOverflow 实例
 func NavOverflow() navOverflow {

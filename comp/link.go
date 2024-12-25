@@ -3,7 +3,7 @@ package comp
 // link 链接展示控件
 // 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/link
 
-type link schema
+type link Schema
 
 // Link 创建一个新的 Link 实例，并设置默认的 type
 func Link() link {

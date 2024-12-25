@@ -2,7 +2,7 @@ package comp
 
 // inputRepeat 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/repeat
 
-type inputRepeat schema
+type inputRepeat Schema
 
 // InputRepeat 创建一个新的 RepeatControl 实例
 func InputRepeat() inputRepeat {

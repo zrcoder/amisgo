@@ -1,6 +1,6 @@
 package comp
 
-type collapse schema
+type collapse Schema
 
 func Collapse() collapse {
 	return make(collapse).set("type", "collapse")

@@ -3,7 +3,7 @@ package comp
 // jsonSchemaEditor JSON Schema Editor 控件
 // 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/json-schema-editor
 
-type jsonSchemaEditor schema
+type jsonSchemaEditor Schema
 
 func JsonSchemaEditor() jsonSchemaEditor {
 	return make(jsonSchemaEditor).set("type", "json-schema-editor")

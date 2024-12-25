@@ -1,7 +1,7 @@
 package comp
 
 // iconItem 图标项渲染器
-type iconItem schema
+type iconItem Schema
 
 // IconItem 创建一个新的 IconItem 实例
 func IconItem() iconItem {

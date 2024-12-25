@@ -2,7 +2,7 @@ package comp
 
 // searchBox
 
-type searchBox schema
+type searchBox Schema
 
 // SearchBox 创建一个新的 SearchBox 实例
 func SearchBox() searchBox {

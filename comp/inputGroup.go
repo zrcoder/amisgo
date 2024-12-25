@@ -1,7 +1,7 @@
 package comp
 
 // inputGroup 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-group
-type inputGroup schema
+type inputGroup Schema
 
 func InputGroup() inputGroup {
 	return make(inputGroup).set("type", "input-group")

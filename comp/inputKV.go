@@ -1,6 +1,6 @@
 package comp
 
-type inputKV schema
+type inputKV Schema
 
 // InputKV 创建一个新的 inputKV 实例，并设置默认的 type
 func InputKV() inputKV {

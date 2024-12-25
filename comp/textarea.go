@@ -2,7 +2,7 @@ package comp
 
 // textarea 多行文本输入框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/textarea
 
-type textarea schema
+type textarea Schema
 
 // NewTextareaControl 创建一个新的 TextareaControl 实例
 func Textarea() textarea {

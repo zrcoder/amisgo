@@ -2,7 +2,7 @@ package comp
 
 // nestedSelect 嵌套选择控件
 
-type nestedSelect schema
+type nestedSelect Schema
 
 func NestedSelect() nestedSelect {
 	return make(nestedSelect).set("type", "nested-select")

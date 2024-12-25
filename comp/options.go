@@ -2,7 +2,7 @@ package comp
 
 // options 选择器表单项
 
-type options schema
+type options Schema
 
 // Options 创建一个新的 Options 实例
 func Options() options {

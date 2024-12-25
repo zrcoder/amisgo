@@ -2,7 +2,7 @@ package comp
 
 // mapping 映射展示控件
 
-type mapping schema
+type mapping Schema
 
 // Mapping 创建一个新的 Mapping 实例
 func Mapping() mapping {

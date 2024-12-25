@@ -2,7 +2,7 @@ package comp
 
 // status 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/status
 
-type status schema
+type status Schema
 
 // Status 创建一个新的 Status 实例
 func Status() status {

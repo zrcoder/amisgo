@@ -2,7 +2,7 @@ package comp
 
 // progress
 
-type progress schema
+type progress Schema
 
 // Progress 创建一个新的 Progress 实例
 func Progress() progress {

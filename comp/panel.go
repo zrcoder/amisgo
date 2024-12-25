@@ -2,7 +2,7 @@ package comp
 
 // panel 代表 amis panel 渲染器
 
-type panel schema
+type panel Schema
 
 // Panel 创建一个新的 Panel 实例
 func Panel() panel {

@@ -1,7 +1,7 @@
 package comp
 
 // combo 组合输入框类型
-type combo schema
+type combo Schema
 
 // Combo 创建一个新的 Combo 实例
 func Combo() combo {

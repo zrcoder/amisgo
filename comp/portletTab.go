@@ -2,7 +2,7 @@ package comp
 
 // portletTab
 
-type portletTab schema
+type portletTab Schema
 
 // PortletTab 创建一个新的 PortletTab 实例
 func PortletTab() portletTab {

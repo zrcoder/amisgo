@@ -2,7 +2,7 @@ package comp
 
 // tooltipWrapper
 
-type tooltipWrapper schema
+type tooltipWrapper Schema
 
 // TooltipWrapper 创建一个新的 TooltipWrapper 实例
 func TooltipWrapper() tooltipWrapper {

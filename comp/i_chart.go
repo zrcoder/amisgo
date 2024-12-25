@@ -3,9 +3,9 @@ package comp
 import js "encoding/json"
 
 type (
-	ChartCfg  schema
-	ChartSeri schema
-	ChartAxis schema
+	ChartCfg  Schema
+	ChartSeri Schema
+	ChartAxis Schema
 )
 
 func ChartConfig() ChartCfg {

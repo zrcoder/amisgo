@@ -1,7 +1,7 @@
 package comp
 
 // code
-type code schema
+type code Schema
 
 // Code 创建一个新的 Code 实例
 func Code() code {

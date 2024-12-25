@@ -1,7 +1,7 @@
 package comp
 
 // multilineText 多行文本控件
-type multilineText schema
+type multilineText Schema
 
 // MultilineText 创建一个新的 MultilineText 实例
 func MultilineText() multilineText {

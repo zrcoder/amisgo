@@ -2,7 +2,7 @@ package comp
 
 // inputYear 年份选择控件
 
-type inputYear schema
+type inputYear Schema
 
 func InputYear() inputYear {
 	return inputYear{}.set("type", "input-year")

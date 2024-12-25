@@ -2,7 +2,7 @@ package comp
 
 // pagination 代表 amis pagination 渲染器
 
-type pagination schema
+type pagination Schema
 
 // Pagination 创建一个新的 Pagination 实例
 func Pagination() pagination {

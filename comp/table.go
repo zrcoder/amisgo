@@ -2,7 +2,7 @@ package comp
 
 // table 表格渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/table
 
-type table schema
+type table Schema
 
 // Table 创建一个新的 Table 实例
 func Table() table {

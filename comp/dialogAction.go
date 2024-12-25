@@ -1,7 +1,7 @@
 package comp
 
 // dialogAction 代表一个对话框动作按钮的配置。
-type dialogAction schema
+type dialogAction Schema
 
 // DialogAction 创建一个新的 DialogAction 实例，并初始化默认设置。
 func DialogAction() dialogAction {

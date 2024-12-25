@@ -2,7 +2,7 @@ package comp
 
 // timeline 时间轴渲染器
 
-type timeline schema
+type timeline Schema
 
 // NewTimeline 创建一个新的 Timeline 实例
 func NewTimeline() timeline {

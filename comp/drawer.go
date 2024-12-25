@@ -1,7 +1,7 @@
 package comp
 
 // drawer 抽出式弹框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/drawer
-type drawer schema
+type drawer Schema
 
 func Drawer() drawer {
 	return make(drawer).set("type", "drawer")

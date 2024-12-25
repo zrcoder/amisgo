@@ -1,6 +1,6 @@
 package comp
 
-type MApi schema
+type MApi Schema
 
 func Api() MApi {
 	return make(MApi)

@@ -2,7 +2,7 @@ package comp
 
 // schemaCopyable
 
-type schemaCopyable schema
+type schemaCopyable Schema
 
 // SchemaCopyable 创建一个新的 SchemaCopyable 实例
 func SchemaCopyable() schemaCopyable {

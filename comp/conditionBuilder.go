@@ -1,7 +1,7 @@
 package comp
 
 // conditionBuilder 代表一个条件组合控件，支持多种配置项
-type conditionBuilder schema
+type conditionBuilder Schema
 
 // ConditionBuilder 创建一个新的 ConditionBuilder 实例，并设置默认类型
 func ConditionBuilder() conditionBuilder {

@@ -2,7 +2,7 @@ package comp
 
 // tableView 表格展现
 
-type tableView schema
+type tableView Schema
 
 // TableView 创建一个新的 TableView 实例
 func TableView() tableView {

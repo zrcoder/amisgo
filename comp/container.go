@@ -1,7 +1,7 @@
 package comp
 
 // container 代表一个容器渲染器，支持多种配置项
-type container schema
+type container Schema
 
 // Container 创建一个新的 Container 实例，并设置默认的 type
 func Container() container {

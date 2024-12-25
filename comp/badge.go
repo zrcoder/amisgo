@@ -1,7 +1,7 @@
 package comp
 
 // badge 角标渲染器
-type badge schema
+type badge Schema
 
 // Badge 创建一个新的 Badge 实例
 func Badge() badge {

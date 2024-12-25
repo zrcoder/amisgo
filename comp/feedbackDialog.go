@@ -1,7 +1,7 @@
 package comp
 
 // feedbackDialog 表示反馈对话框
-type feedbackDialog schema
+type feedbackDialog Schema
 
 // FeedbackDialog 创建一个新的 FeedbackDialog 实例
 func FeedbackDialog() feedbackDialog {

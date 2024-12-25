@@ -2,7 +2,7 @@ package comp
 
 // tag 代表一个标签组件
 
-type tag schema
+type tag Schema
 
 // Tag 创建一个新的 Tag 实例
 func Tag() tag {

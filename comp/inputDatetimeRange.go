@@ -1,7 +1,7 @@
 package comp
 
 // inputDatetimeRange 日期时间范围。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/datetime-range
-type inputDatetimeRange schema
+type inputDatetimeRange Schema
 
 // InputDatetimeRange 创建一个新的 InputDatetimeRange 实例，并设置默认的 type
 func InputDatetimeRange() inputDatetimeRange {

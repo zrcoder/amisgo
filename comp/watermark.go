@@ -2,7 +2,7 @@ package comp
 
 // watermark 水印
 
-type watermark schema
+type watermark Schema
 
 // Watermark 创建一个新的 Watermark 实例
 func Watermark() watermark {

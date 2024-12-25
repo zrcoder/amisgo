@@ -1,7 +1,7 @@
 package comp
 
 // tpl 渲染器
-type tpl schema
+type tpl Schema
 
 // Tpl 创建一个新的 Tpl 实例
 func Tpl() tpl {

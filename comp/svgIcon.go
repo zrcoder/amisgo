@@ -2,7 +2,7 @@ package comp
 
 // svgIcon 图标渲染器
 
-type svgIcon schema
+type svgIcon Schema
 
 // SvgIcon 创建一个新的 SvgIcon 实例
 func SvgIcon() svgIcon {

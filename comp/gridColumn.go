@@ -1,7 +1,7 @@
 package comp
 
 // gridColumn 表示一个网格列
-type gridColumn schema
+type gridColumn Schema
 
 // GridColumn 创建一个新的 GridColumn 实例
 func GridColumn() gridColumn {

@@ -2,7 +2,7 @@ package comp
 
 // control 表单项包裹。文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/control
 
-type control schema
+type control Schema
 
 // Control 创建一个新的 Control 实例
 func Control() control {

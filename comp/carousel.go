@@ -1,7 +1,7 @@
 package comp
 
 // carousel
-type carousel schema
+type carousel Schema
 
 // Carousel 创建一个新的 Carousel 实例
 func Carousel() carousel {

@@ -1,7 +1,7 @@
 package comp
 
 // diffEditor 编辑器
-type diffEditor schema
+type diffEditor Schema
 
 func DiffEditor() diffEditor {
 	return make(diffEditor).set("type", "diff-editor")

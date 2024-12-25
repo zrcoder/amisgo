@@ -2,7 +2,7 @@ package comp
 
 // qrCode
 
-type qrCode schema
+type qrCode Schema
 
 // QRCode 创建一个新的 QRCode 实例
 func QRCode() qrCode {

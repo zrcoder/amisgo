@@ -2,7 +2,7 @@ package comp
 
 // treeSelect 下拉选择框
 
-type treeSelect schema
+type treeSelect Schema
 
 func TreeSelect() treeSelect {
 	return treeSelect{}.set("type", "tree-select")

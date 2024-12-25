@@ -2,7 +2,7 @@ package comp
 
 // vBox 垂直布局控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/vbox
 
-type vBox schema
+type vBox Schema
 
 // VBox 创建一个新的 VBox 实例
 func VBox() vBox {

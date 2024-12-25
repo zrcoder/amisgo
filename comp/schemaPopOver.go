@@ -2,7 +2,7 @@ package comp
 
 // schemaPopOver
 
-type schemaPopOver schema
+type schemaPopOver Schema
 
 // SchemaPopOver 创建一个新的 SchemaPopOver 实例
 func SchemaPopOver() schemaPopOver {

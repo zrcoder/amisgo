@@ -1,7 +1,7 @@
 package comp
 
 // autoGenerateFilter 自动生成过滤器渲染器
-type autoGenerateFilter schema
+type autoGenerateFilter Schema
 
 // AutoGenerateFilter 创建一个新的 AutoGenerateFilter 实例
 func AutoGenerateFilter() autoGenerateFilter {

@@ -3,7 +3,7 @@ package comp
 // json JSON 数据展示控件
 // 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/json
 
-type json schema
+type json Schema
 
 // Json 创建一个新的 Json 实例，并设置默认的 type
 func Json() json {

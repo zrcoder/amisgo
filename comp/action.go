@@ -10,7 +10,7 @@ import (
 )
 
 // action 行为按钮 https://aisuda.bce.baidu.com/amis/zh-CN/components/action
-type action schema
+type action Schema
 
 // Action 创建一个新的 Action 实例
 func Action() action {
@@ -69,7 +69,7 @@ func (a action) transform(input any, dstKey, successMsg string, transfor func(an
 			return
 		}
 		defer r.Body.Close()
-		m := schema{}
+		m := Schema{}
 		js.Unmarshal(inputData, &m)
 		input := m["input"]
 		output, err := transfor(input)
@@ -94,7 +94,7 @@ func (a action) transform(input any, dstKey, successMsg string, transfor func(an
 	return a.ActionType("ajax").Api(
 		Schema{
 			"url":  route,
-			"data": Schema{"input": ipt},
+			"data": Data{"input": ipt},
 			"responses": Schema{
 				"200": Schema{
 					"then": EventAction().ActionType("setValue").Args(Schema{"value": "${response}"}),

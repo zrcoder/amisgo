@@ -2,7 +2,7 @@ package comp
 
 // inputTag 输入框 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tag
 
-type inputTag schema
+type inputTag Schema
 
 func InputTag() inputTag {
 	return inputTag{}.set("type", "input-tag")

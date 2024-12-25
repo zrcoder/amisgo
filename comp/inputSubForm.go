@@ -2,7 +2,7 @@ package comp
 
 // inputSubForm 子表单
 
-type inputSubForm schema
+type inputSubForm Schema
 
 func InputSubForm() inputSubForm {
 	return inputSubForm{}.set("type", "input-sub-form")

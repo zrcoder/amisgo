@@ -2,24 +2,22 @@ package comp
 
 import js "encoding/json"
 
-// schema 通用 model，键未指定的 map
-type schema = map[string]any
-
 type (
-	Schema schema
-	Data   schema
+	// Schema 通用 model，键未指定的 map
+	Schema map[string]any
+	Data   = Schema
 )
 
-func (d Data) Set(key string, value any) {
-	d[key] = value
+func (s Schema) Set(key string, value any) {
+	s[key] = value
 }
 
-func (d Data) Get(key string) any {
-	return d[key]
+func (s Schema) Get(key string) any {
+	return s[key]
 }
 
-func (d Data) Json() []byte {
-	data, _ := js.Marshal(d)
+func (s Schema) Json() []byte {
+	data, _ := js.Marshal(s)
 	return data
 }
 

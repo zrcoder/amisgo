@@ -1,7 +1,7 @@
 package comp
 
 // MOption 选项
-type MOption schema
+type MOption Schema
 
 // Option 创建一个新的 Option 实例
 func Option() MOption {

@@ -1,6 +1,6 @@
 package comp
 
-type MHorizontal schema
+type MHorizontal Schema
 
 func Horizontal() MHorizontal {
 	return MHorizontal{}

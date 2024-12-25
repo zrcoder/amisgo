@@ -2,7 +2,7 @@ package comp
 
 // inputRange 组件的范围控制
 
-type inputRange schema
+type inputRange Schema
 
 // InputRange 创建一个新的 RangeControl 实例
 func InputRange() inputRange {

@@ -2,7 +2,7 @@ package comp
 
 // webComponent Web Component
 
-type webComponent schema
+type webComponent Schema
 
 // WebComponent 创建一个新的 WebComponent 实例
 func WebComponent() webComponent {

@@ -1,7 +1,7 @@
 package comp
 
 // emailAction 表示电子邮件动作按钮
-type emailAction schema
+type emailAction Schema
 
 // EmailAction 创建一个新的 EmailAction 实例，并设置默认的 type 和 actionType
 func EmailAction() emailAction {

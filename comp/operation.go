@@ -2,7 +2,7 @@ package comp
 
 // operation 操作栏渲染器
 
-type operation schema
+type operation Schema
 
 // Operation 创建一个新的 Operation 实例
 func Operation() operation {

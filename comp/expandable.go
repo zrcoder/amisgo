@@ -1,7 +1,7 @@
 package comp
 
 // expandable 表示可展开的渲染器
-type expandable schema
+type expandable Schema
 
 // Expandable 创建一个新的 Expandable 实例
 func Expandable() expandable {

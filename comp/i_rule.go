@@ -1,6 +1,6 @@
 package comp
 
-type MRule schema
+type MRule Schema
 
 // Rule 表单校验规则
 func Rule() MRule {

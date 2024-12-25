@@ -1,7 +1,7 @@
 package comp
 
 // crud 定义了 CRUD 表格和列表的渲染器
-type crud schema
+type crud Schema
 
 // Crud
 func Crud() crud {

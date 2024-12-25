@@ -2,7 +2,7 @@ package comp
 
 // markdown 渲染
 
-type markdown schema
+type markdown Schema
 
 // Markdown 创建一个新的 Markdown 实例
 func Markdown() markdown {

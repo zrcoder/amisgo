@@ -1,7 +1,7 @@
 package comp
 
 // buttonToolbar 代表按钮工具条控件渲染器
-type buttonToolbar schema
+type buttonToolbar Schema
 
 // ButtonToolbar 创建一个新的 ButtonToolbar 实例
 func ButtonToolbar() buttonToolbar {

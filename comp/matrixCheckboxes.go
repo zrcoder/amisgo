@@ -2,7 +2,7 @@ package comp
 
 // matrixCheckboxes 选择控件，适合做权限勾选
 
-type matrixCheckboxes schema
+type matrixCheckboxes Schema
 
 // MatrixCheckboxes 创建一个新的 MatrixControl 实例
 func MatrixCheckboxes() matrixCheckboxes {
