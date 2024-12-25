@@ -101,7 +101,7 @@ func (o options) Name(value string) options {
 }
 
 // Options 选项组，供用户选择
-func (o options) Options(value ...option) options {
+func (o options) Options(value ...MOption) options {
 	return o.set("options", value)
 }
 

@@ -244,7 +244,7 @@ func (usc userSelect) OnEvent(value any) userSelect {
 }
 
 // Options 选项集合
-func (usc userSelect) Options(value ...option) userSelect {
+func (usc userSelect) Options(value ...MOption) userSelect {
 	return usc.set("options", value)
 }
 
@@ -309,7 +309,7 @@ func (usc userSelect) StaticPlaceholder(value string) userSelect {
 }
 
 // StaticOptions 静态选项集合
-func (usc userSelect) StaticOptions(value ...option) userSelect {
+func (usc userSelect) StaticOptions(value ...MOption) userSelect {
 	return usc.set("staticOptions", value)
 }
 

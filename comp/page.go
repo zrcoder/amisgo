@@ -166,7 +166,7 @@ func (p page) OnEvent(value any) page {
 }
 
 // PullRefresh 下拉刷新配置
-func (p page) PullRefresh(value pullRefresh) page {
+func (p page) PullRefresh(value MPullRefresh) page {
 	return p.set("pullRefresh", value)
 }
 

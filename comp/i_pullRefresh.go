@@ -1,24 +1,24 @@
 package comp
 
-type pullRefresh schema
+type MPullRefresh schema
 
-func PullRefresh() pullRefresh {
-	return pullRefresh{}
+func PullRefresh() MPullRefresh {
+	return MPullRefresh{}
 }
 
-func (p pullRefresh) set(key string, value interface{}) pullRefresh {
+func (p MPullRefresh) set(key string, value interface{}) MPullRefresh {
 	p[key] = value
 	return p
 }
 
-func (p pullRefresh) Disabled(value bool) pullRefresh {
+func (p MPullRefresh) Disabled(value bool) MPullRefresh {
 	return p.set("disabled", value)
 }
 
-func (p pullRefresh) PullingText(value string) pullRefresh {
+func (p MPullRefresh) PullingText(value string) MPullRefresh {
 	return p.set("pullingText", value)
 }
 
-func (p pullRefresh) LoosingText(value string) pullRefresh {
+func (p MPullRefresh) LoosingText(value string) MPullRefresh {
 	return p.set("loosingText", value)
 }

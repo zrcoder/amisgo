@@ -49,7 +49,7 @@ func (g grid2d) RowGap(value string) grid2d {
 }
 
 // Grids 每个格子的配置
-func (g grid2d) Grids(value ...gridItem) grid2d {
+func (g grid2d) Grids(value ...MGridItem) grid2d {
 	return g.set("grids", value)
 }
 

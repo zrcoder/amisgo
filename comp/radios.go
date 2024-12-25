@@ -255,7 +255,7 @@ func (rc radios) Option(value any) radios {
 }
 
 // Options 配置选项列表
-func (rc radios) Options(value ...option) radios {
+func (rc radios) Options(value ...MOption) radios {
 	return rc.set("options", value)
 }
 

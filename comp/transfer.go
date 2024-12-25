@@ -280,7 +280,7 @@ func (tc transfer) Option(value string) transfer {
 }
 
 // Options 选项数据
-func (tc transfer) Options(value ...option) transfer {
+func (tc transfer) Options(value ...MOption) transfer {
 	return tc.set("options", value)
 }
 
@@ -295,7 +295,7 @@ func (tc transfer) ReadOnly(value bool) transfer {
 }
 
 // RemoteOptions 远程获取选项
-func (tc transfer) RemoteOptions(value ...option) transfer {
+func (tc transfer) RemoteOptions(value ...MOption) transfer {
 	return tc.set("remoteOptions", value)
 }
 

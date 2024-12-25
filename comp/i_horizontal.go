@@ -1,34 +1,34 @@
 package comp
 
-type horizontal schema
+type MHorizontal schema
 
-func Horizontal() horizontal {
-	return horizontal{}
+func Horizontal() MHorizontal {
+	return MHorizontal{}
 }
 
-func (h horizontal) set(key string, value any) horizontal {
+func (h MHorizontal) set(key string, value any) MHorizontal {
 	h[key] = value
 	return h
 }
 
-func (h horizontal) Left(value string) horizontal {
+func (h MHorizontal) Left(value string) MHorizontal {
 	return h.set("left", value)
 }
 
 // LeftFixed bool or string('xs' | 'sm' | 'md' | 'lg')
-func (h horizontal) LeftFixed(value any) horizontal {
+func (h MHorizontal) LeftFixed(value any) MHorizontal {
 	return h.set("leftFixed", value)
 }
 
-func (h horizontal) Right(value string) horizontal {
+func (h MHorizontal) Right(value string) MHorizontal {
 	return h.set("right", value)
 }
 
-func (h horizontal) Offset(value string) horizontal {
+func (h MHorizontal) Offset(value string) MHorizontal {
 	return h.set("offset", value)
 }
 
 // Justify 有时表单内容需要两端对齐，可在 horizontal 中增加 justify 配置，注意只对内联控件生效
-func (h horizontal) Justify(value bool) horizontal {
+func (h MHorizontal) Justify(value bool) MHorizontal {
 	return h.set("justify", value)
 }

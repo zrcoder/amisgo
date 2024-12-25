@@ -269,7 +269,7 @@ func (tpc transferPicker) Name(value string) transferPicker {
 }
 
 // Options 数据源配置
-func (tpc transferPicker) Options(value ...option) transferPicker {
+func (tpc transferPicker) Options(value ...MOption) transferPicker {
 	return tpc.set("options", value)
 }
 

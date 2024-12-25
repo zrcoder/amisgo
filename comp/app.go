@@ -60,6 +60,6 @@ func (a app) Footer(value ...any) app {
 // Pages 具体的页面配置。 通常为数组，数组第一层为分组，
 // 一般只需要配置 label 集合，如果你不想分组，直接不配置，
 // 真正的页面请在第二层开始配置，即第一层的 children 中。
-func (a app) Pages(value ...pageItem) app {
+func (a app) Pages(value ...MPageItem) app {
 	return a.set("pages", value)
 }

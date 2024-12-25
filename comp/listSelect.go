@@ -265,7 +265,7 @@ func (lc listSelect) OnEvent(value any) listSelect {
 }
 
 // Options 选项集合
-func (lc listSelect) Options(value ...option) listSelect {
+func (lc listSelect) Options(value ...MOption) listSelect {
 	return lc.set("options", value)
 }
 

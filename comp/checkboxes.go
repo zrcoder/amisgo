@@ -262,7 +262,7 @@ func (c checkboxes) OnEvent(value any) checkboxes {
 }
 
 // 选项集合
-func (c checkboxes) Options(value ...option) checkboxes {
+func (c checkboxes) Options(value ...MOption) checkboxes {
 	return c.set("options", value)
 }
 

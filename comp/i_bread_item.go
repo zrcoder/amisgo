@@ -1,28 +1,28 @@
 package comp
 
-type breadcrumbItem schema
+type MBreadcrumbItem schema
 
-func BreadcrumbItem() breadcrumbItem {
-	return breadcrumbItem{}
+func BreadcrumbItem() MBreadcrumbItem {
+	return MBreadcrumbItem{}
 }
 
-func (bi breadcrumbItem) set(key string, value any) breadcrumbItem {
+func (bi MBreadcrumbItem) set(key string, value any) MBreadcrumbItem {
 	bi[key] = value
 	return bi
 }
 
-func (bi breadcrumbItem) Label(value string) breadcrumbItem {
+func (bi MBreadcrumbItem) Label(value string) MBreadcrumbItem {
 	return bi.set("label", value)
 }
 
-func (bi breadcrumbItem) Href(value string) breadcrumbItem {
+func (bi MBreadcrumbItem) Href(value string) MBreadcrumbItem {
 	return bi.set("href", value)
 }
 
-func (bi breadcrumbItem) Icon(value string) breadcrumbItem {
+func (bi MBreadcrumbItem) Icon(value string) MBreadcrumbItem {
 	return bi.set("icon", value)
 }
 
-func (bi breadcrumbItem) Dropdown(value ...breadcrumbItem) breadcrumbItem {
+func (bi MBreadcrumbItem) Dropdown(value ...MBreadcrumbItem) MBreadcrumbItem {
 	return bi.set("dropdown", value)
 }

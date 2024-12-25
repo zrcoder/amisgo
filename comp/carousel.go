@@ -114,7 +114,7 @@ func (c carousel) OnEvent(value any) carousel {
 }
 
 // Options 设置 options 属性
-func (c carousel) Options(value ...option) carousel {
+func (c carousel) Options(value ...MOption) carousel {
 	return c.set("options", value)
 }
 

@@ -24,7 +24,7 @@ func (h hBox) ClassName(value string) hBox {
 }
 
 // columns
-func (h hBox) Columns(value ...column) hBox {
+func (h hBox) Columns(value ...MColumn) hBox {
 	return h.set("columns", value)
 }
 
