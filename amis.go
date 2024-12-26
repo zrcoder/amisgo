@@ -4,19 +4,16 @@ package amisgo
 import (
 	"net/http"
 	"strings"
-	"sync"
 
 	"github.com/zrcoder/amisgo/conf"
 	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/util"
 )
 
 // Engine represents the web application
 type Engine struct {
-	Config      *conf.Config
-	mux         *http.ServeMux
-	middlewares []func(http.Handler) http.Handler
-	handler     http.Handler
-	handlerOnce sync.Once
+	Config *conf.Config
+	mux    *http.ServeMux
 }
 
 // New creates an Engine instance with options
@@ -24,40 +21,39 @@ func New(opts ...conf.Option) *Engine {
 	cfg := conf.Default()
 	cfg.Apply(opts...)
 
-	e := &Engine{
+	return &Engine{
 		Config: cfg,
 		mux:    servermux.Mux(),
 	}
-
-	return e
 }
 
 // Mount registers an Amis component at the given path
-func (e *Engine) Mount(path string, component any) *Engine {
-	e.mux.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+func (e *Engine) Mount(path string, component any, middlewares ...func(http.Handler) http.Handler) *Engine {
+	var h http.Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		e.renderComponent(w, component)
 	})
+	h = util.WithMiddlewares(h, middlewares...)
+	e.mux.Handle(path, h)
 	return e
 }
 
 // Redirect sets up a URL redirection
-func (e *Engine) Redirect(src, dst string) *Engine {
+func (e *Engine) Redirect(src, dst string, code int) *Engine {
 	e.mux.HandleFunc(src, func(w http.ResponseWriter, r *http.Request) {
-		Redirect(w, r, dst, http.StatusPermanentRedirect)
+		util.Redirect(w, r, dst, code)
 	})
 	return e
 }
 
 // Handle registers a handler at the given path
-func (e *Engine) Handle(path string, handler http.Handler) *Engine {
-	e.mux.Handle(path, handler)
+func (e *Engine) Handle(path string, handler http.Handler, middlewares ...func(http.Handler) http.Handler) *Engine {
+	e.mux.Handle(path, util.WithMiddlewares(handler, middlewares...))
 	return e
 }
 
 // HandleFunc registers a handler function at the given path
-func (e *Engine) HandleFunc(path string, handler func(http.ResponseWriter, *http.Request)) *Engine {
-	e.mux.HandleFunc(path, handler)
-	return e
+func (e *Engine) HandleFunc(path string, handler http.HandlerFunc, middlewares ...func(http.Handler) http.Handler) *Engine {
+	return e.Handle(path, handler, middlewares...)
 }
 
 // StaticFS registers a file server for serving static files
@@ -76,12 +72,6 @@ func (e *Engine) StaticFiles(prefix string, root string) *Engine {
 	return e.StaticFS(prefix, http.Dir(root))
 }
 
-// Use adds a middleware function to the engine for processing requests
-func (e *Engine) Use(middleware func(http.Handler) http.Handler) *Engine {
-	e.middlewares = append(e.middlewares, middleware)
-	return e
-}
-
 // Run starts the HTTP server
 func (e *Engine) Run(addr ...string) error {
 	address := ":80"
@@ -94,16 +84,7 @@ func (e *Engine) Run(addr ...string) error {
 
 // ServeHTTP implements http.Handler interface
 func (e *Engine) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	e.handlerOnce.Do(func() {
-		e.handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			e.mux.ServeHTTP(w, r)
-		})
-		for _, m := range e.middlewares {
-			e.handler = m(e.handler)
-		}
-	})
-
-	e.handler.ServeHTTP(w, r)
+	e.mux.ServeHTTP(w, r)
 }
 
 // renderComponent renders an Amis component

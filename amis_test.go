@@ -90,7 +90,7 @@ func TestMount(t *testing.T) {
 
 func TestRedirect(t *testing.T) {
 	e := New()
-	e.Redirect("/old", "/new")
+	e.Redirect("/old", "/new", http.StatusPermanentRedirect)
 
 	w := httptest.NewRecorder()
 	r := httptest.NewRequest("GET", "/old", nil)
@@ -209,11 +209,9 @@ func TestUse(t *testing.T) {
 		})
 	}
 
-	e.Use(middleware)
-
 	e.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello, World!"))
-	})
+	}, middleware)
 
 	w := httptest.NewRecorder()
 	r := httptest.NewRequest("GET", "/test", nil)
