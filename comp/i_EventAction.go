@@ -24,6 +24,13 @@ func (la MEventAction) ActionType(value string) MEventAction {
 	return la.set("actionType", value)
 }
 
+// Drawer 定义弹出的抽屉
+func (ea MEventAction) Drawer(value any) MEventAction {
+	return ea.set("drawer", value)
+}
+
+// TODO all components
+
 // Script 在 actionType 为 custom 时设置自定义脚本
 func (ea MEventAction) Script(value string) MEventAction {
 	return ea.set("script", value)

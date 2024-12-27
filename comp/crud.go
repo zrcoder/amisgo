@@ -67,7 +67,7 @@ func (c crud) Footer(value string) crud {
 }
 
 // HeaderToolbar 设置顶部区域
-func (c crud) HeaderToolbar(value string) crud {
+func (c crud) HeaderToolbar(value ...any) crud {
 	return c.set("headerToolbar", value)
 }
 
@@ -174,7 +174,7 @@ func (c crud) EditorSetting(value string) crud {
 }
 
 // FooterToolbar 设置底部区域
-func (c crud) FooterToolbar(value string) crud {
+func (c crud) FooterToolbar(value ...any) crud {
 	return c.set("footerToolbar", value)
 }
 
@@ -394,7 +394,7 @@ func (c crud) AutoGenerateFilter(value any) crud {
 }
 
 // BulkActions 设置批量操作
-func (c crud) BulkActions(value string) crud {
+func (c crud) BulkActions(value ...any) crud {
 	return c.set("bulkActions", value)
 }
 
