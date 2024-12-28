@@ -204,7 +204,15 @@ func (s form) GetData(getter func() (any, error)) form {
 	return s.Api(serveData(getter))
 }
 
-// Go 设置提交后的处理逻辑
-func (f form) Go(action func(Data) error) form {
-	return f.Api(serveApi(action))
+// Submit 设置表单提交后的回调逻辑，使用通用的 Data 类型处理表单数据
+// 适用于需要灵活处理表单提交的场景
+func (f form) Submit(callback func(Data) error) form {
+	return f.Api(bindDataRoute(callback))
+}
+
+// SubmitTo 将表单数据提交到指定的结构体或映射，并执行自定义回调
+// receiver 可以是结构体指针、map 或其他可以被 JSON 反序列化的类型
+// callback 允许对接收到的数据进行进一步处理
+func (f form) SubmitTo(receiver any, callback func(any) error) form {
+	return f.Api(bindRouteTo(receiver, callback))
 }

@@ -17,11 +17,6 @@ func (a app) Api(value any) app {
 	return a.set("api", value)
 }
 
-// Go 页面配置回调函数，是对 Api 方法的包装
-func (a app) Go(action func(Data) error) app {
-	return a.Api(serveApi(action))
-}
-
 // BrandName 应用名称
 func (a app) BrandName(value string) app {
 	return a.set("brandName", value)
