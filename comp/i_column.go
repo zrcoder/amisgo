@@ -92,8 +92,8 @@ func (c MColumn) RowSpanExpr(value string) MColumn {
 	return c.Set("rowSpanExpr", value)
 }
 
-// Searchable 设置是否支持快速搜索
-func (c MColumn) Searchable(value bool) MColumn {
+// Searchable 设置是否支持快速搜索(bool), 或自定义搜索组件如 switch
+func (c MColumn) Searchable(value any) MColumn {
 	return c.Set("searchable", value)
 }
 

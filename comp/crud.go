@@ -448,8 +448,8 @@ func (c crud) FilterDefaultVisible(value bool) crud {
 	return c.set("filterDefaultVisible", value)
 }
 
-// FilterTogglable 设置过滤器是否可切换
-func (c crud) FilterTogglable(value bool) crud {
+// FilterTogglable boolean | {label: string; icon: string; activeLabel: string; activeIcon?: string;}, 默认 false
+func (c crud) FilterTogglable(value any) crud {
 	return c.set("filterTogglable", value)
 }
 
