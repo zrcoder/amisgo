@@ -54,7 +54,7 @@ func (g gridNav) ItemClassName(value string) gridNav {
 }
 
 // Options 列表项图标
-func (g gridNav) Options(value ...MOption) gridNav {
+func (g gridNav) Options(value ...any) gridNav {
 	return g.set("options", value)
 }
 

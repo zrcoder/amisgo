@@ -67,7 +67,7 @@ func (b MApi) Method(value string) MApi {
 }
 
 // QsOptions qs 配置项
-func (b MApi) QsOptions(value ...MOption) MApi {
+func (b MApi) QsOptions(value ...any) MApi {
 	return b.set("qsOptions", value)
 }
 

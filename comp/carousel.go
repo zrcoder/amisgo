@@ -99,7 +99,7 @@ func (c carousel) ItemSchema(value string) carousel {
 }
 
 // Multiple 设置 multiple 属性
-func (c carousel) Multiple(value string) carousel {
+func (c carousel) Multiple(value any) carousel {
 	return c.set("multiple", value)
 }
 
@@ -114,7 +114,7 @@ func (c carousel) OnEvent(value any) carousel {
 }
 
 // Options 设置 options 属性
-func (c carousel) Options(value ...MOption) carousel {
+func (c carousel) Options(value ...any) carousel {
 	return c.set("options", value)
 }
 
@@ -173,7 +173,7 @@ func (c carousel) TestID(value string) carousel {
 	return c.set("testid", value)
 }
 
-// ThumbMode 设置 thumbMode 属性
+// ThumbMode 设置 thumbMode 属性, contain | cover
 func (c carousel) ThumbMode(value string) carousel {
 	return c.set("thumbMode", value)
 }

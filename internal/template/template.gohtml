@@ -13,12 +13,27 @@
     <link rel="icon" href="{{.Icon}}" />
     {{ end }}
     {{ if .Theme }}
-    <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/{{ .Theme }}.min.css" />
+      {{ if .UseLocalSDK }}
+      <link rel="stylesheet" href="/__amisgo__sdk/{{ .Theme}}.css" />
+      {{ else }}
+      <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/{{ .Theme }}.min.css" />
+      {{ end }}
     {{ else }}
-    <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/sdk.min.css" />
+      {{ if .UseLocalSDK }} 
+      <link rel="stylesheet" href="/__amisgo__sdk/sdk.css" />
+      {{ else }}
+      <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/sdk.min.css" />
+      {{ end }}
     {{ end }}
+    
+    {{ if .UseLocalSDK }} 
+    <link rel="stylesheet" href="/__amisgo__sdk/helper.css" />
+    <link rel="stylesheet" href="/__amisgo__sdk/iconfont.css" />
+    {{ else }}
     <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/helper.min.css" />
     <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/iconfont.min.css" />
+    {{ end }}
+    
     <style>
       html,
       body,
@@ -34,7 +49,11 @@
   </head>
   <body>
     <div id="root" class="app-wrapper"></div>
+    {{ if .UseLocalSDK }}
+    <script src="/__amisgo__sdk/sdk.js"></script>
+    {{ else }}
     <script src="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/sdk.min.js"></script>
+    {{ end }}
     {{ if .CustomJS }}
     <script type="text/javascript">
     {{ .CustomJS }}

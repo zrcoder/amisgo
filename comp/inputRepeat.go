@@ -145,7 +145,7 @@ func (rc inputRepeat) OnEvent(value any) inputRepeat {
 }
 
 // Options
-func (rc inputRepeat) Options(value ...MOption) inputRepeat {
+func (rc inputRepeat) Options(value ...any) inputRepeat {
 	return rc.set("options", value)
 }
 

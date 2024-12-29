@@ -89,7 +89,7 @@ func (i images) OnEvent(value any) images {
 }
 
 // Options
-func (i images) Options(value ...MOption) images {
+func (i images) Options(value ...any) images {
 	return i.set("options", value)
 }
 

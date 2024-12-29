@@ -28,12 +28,13 @@ const (
 
 // Config holds all configuration options for the application
 type Config struct {
-	Theme     Theme
-	Lang      Lang
-	Title     string
-	Icon      string
-	CustomCSS string
-	CustomJS  string
+	Theme       Theme
+	Lang        Lang
+	Title       string
+	Icon        string
+	CustomCSS   string
+	CustomJS    string
+	UseLocalSDK bool
 	template.Template
 }
 

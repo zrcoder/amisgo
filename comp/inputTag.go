@@ -269,7 +269,7 @@ func (t inputTag) OnEvent(value map[string]string) inputTag {
 }
 
 // Options 选项 (选项)
-func (t inputTag) Options(value ...MOption) inputTag {
+func (t inputTag) Options(value ...any) inputTag {
 	return t.set("options", value)
 }
 

@@ -301,7 +301,7 @@ func (nc inputNumber) TestIdBuilder(value string) inputNumber {
 }
 
 // UnitOptions 单位列表
-func (nc inputNumber) UnitOptions(value ...MOption) inputNumber {
+func (nc inputNumber) UnitOptions(value ...any) inputNumber {
 	return nc.set("unitOptions", value)
 }
 

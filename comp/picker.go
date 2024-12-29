@@ -270,7 +270,7 @@ func (pc picker) OnEvent(value any) picker {
 }
 
 // Options 选项列表
-func (pc picker) Options(value ...MOption) picker {
+func (pc picker) Options(value ...any) picker {
 	return pc.set("options", value)
 }
 

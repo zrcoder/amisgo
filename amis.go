@@ -6,7 +6,6 @@ import (
 	"strings"
 
 	"github.com/zrcoder/amisgo/conf"
-	"github.com/zrcoder/amisgo/internal/servermux"
 	"github.com/zrcoder/amisgo/util"
 )
 
@@ -14,17 +13,6 @@ import (
 type Engine struct {
 	Config *conf.Config
 	mux    *http.ServeMux
-}
-
-// New creates an Engine instance with options
-func New(opts ...conf.Option) *Engine {
-	cfg := conf.Default()
-	cfg.Apply(opts...)
-
-	return &Engine{
-		Config: cfg,
-		mux:    servermux.Mux(),
-	}
 }
 
 // Mount registers an Amis component at the given path

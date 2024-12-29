@@ -65,7 +65,7 @@ func (s schemaApi) Method(value string) schemaApi {
 }
 
 // QsOptions qs 配置项
-func (s schemaApi) QsOptions(value ...MOption) schemaApi {
+func (s schemaApi) QsOptions(value ...any) schemaApi {
 	return s.set("qsOptions", value)
 }
 

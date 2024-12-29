@@ -269,7 +269,7 @@ func (t tabsTransfer) Nested(value bool) tabsTransfer {
 }
 
 // Options 选项
-func (t tabsTransfer) Options(value ...MOption) tabsTransfer {
+func (t tabsTransfer) Options(value ...any) tabsTransfer {
 	return t.set("options", value)
 }
 

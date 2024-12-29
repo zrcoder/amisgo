@@ -64,7 +64,7 @@ func (i inputImage) Compress(value bool) inputImage {
 }
 
 // CompressOptions 压缩选项
-func (i inputImage) CompressOptions(value ...MOption) inputImage {
+func (i inputImage) CompressOptions(value ...any) inputImage {
 	return i.set("compressOptions", value)
 }
 
