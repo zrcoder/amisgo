@@ -1,3 +1,5 @@
+//go:build amisgo_local_sdk
+
 package jssdk
 
 import (

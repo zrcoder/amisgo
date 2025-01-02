@@ -1,4 +1,4 @@
-//go:build amisgo_use_local_sdk
+//go:build amisgo_local_sdk
 
 package amisgo
 

@@ -71,7 +71,7 @@ func (a action) transform(input any, dstKey, successMsg string, transfor func(an
 		defer r.Body.Close()
 		m := Schema{}
 		js.Unmarshal(inputData, &m)
-		input := m["input"]
+		input := m["__amisgo__input"]
 		output, err := transfor(input)
 		if err != nil {
 			respError(w, err)
@@ -94,10 +94,10 @@ func (a action) transform(input any, dstKey, successMsg string, transfor func(an
 	return a.ActionType("ajax").Api(
 		Schema{
 			"url":  route,
-			"data": Data{"input": ipt},
-			"responses": Schema{
+			"data": Data{"__amisgo__input": ipt},
+			"__amisgo_resp": Schema{
 				"200": Schema{
-					"then": EventAction().ActionType("setValue").Args(Schema{"value": "${response}"}),
+					"then": EventAction().ActionType("setValue").Args(Schema{"value": "${__amisgo__resp}"}),
 				},
 			},
 		},
