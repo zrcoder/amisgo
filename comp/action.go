@@ -2,7 +2,6 @@ package comp
 
 import (
 	js "encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 
@@ -52,15 +51,17 @@ func (a action) Toast(value toast) action {
 
 // Transform transform the src value with transfor, and renderer the result to dst component
 func (a action) Transform(src, dst, successMsg string, transfor func(input any) (any, error)) action {
-	return a.transform(src, dst, successMsg, transfor)
+	return a.TransformMultiple(successMsg, func(d Data) (Data, error) {
+		output, err := transfor(d[src])
+		if err != nil {
+			return nil, err
+		}
+		return Data{dst: output}, nil
+	}, src)
 }
 
-// TransformMultipletransform the inputs(single or multiple) with transfor, and renderer the result to multiple destinates
-func (a action) TransformMultiple(inputs any, successMsg string, transfor func(any) (any, error)) action {
-	return a.transform(inputs, "", successMsg, transfor)
-}
-
-func (a action) transform(input any, dstKey, successMsg string, transfor func(any) (any, error)) action {
+// TransformMultiple transform the src with transfor, and renderer the result to multiple destinates
+func (a action) TransformMultiple(successMsg string, transfor func(Data) (Data, error), src ...string) action {
 	route := getRoute()
 	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		inputData, err := io.ReadAll(r.Body)
@@ -69,32 +70,29 @@ func (a action) transform(input any, dstKey, successMsg string, transfor func(an
 			return
 		}
 		defer r.Body.Close()
-		m := Schema{}
-		js.Unmarshal(inputData, &m)
-		input := m["__amisgo__input"]
-		output, err := transfor(input)
+		d := Data{}
+		err = js.Unmarshal(inputData, &d)
 		if err != nil {
 			respError(w, err)
 			return
 		}
-
-		resp := Response{}
-		if dstKey != "" {
-			resp = Response{Msg: successMsg, Data: Data{dstKey: output}}
-		} else {
-			resp = Response{Msg: successMsg, Data: output.(Data)}
+		output, err := transfor(d)
+		if err != nil {
+			respError(w, err)
+			return
 		}
+		resp := SuccessResponse(successMsg, output)
 		w.Write(resp.Json())
 	})
 
-	ipt := input
-	if s, ok := input.(string); ok {
-		ipt = fmt.Sprintf("${%s}", s)
+	data := make(Data, len(src))
+	for _, s := range src {
+		data.Set(s, "${"+s+"}")
 	}
 	return a.ActionType("ajax").Api(
 		Schema{
 			"url":  route,
-			"data": Data{"__amisgo__input": ipt},
+			"data": data,
 			"__amisgo_resp": Schema{
 				"200": Schema{
 					"then": EventAction().ActionType("setValue").Args(Schema{"value": "${__amisgo__resp}"}),
