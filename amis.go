@@ -2,6 +2,7 @@
 package amisgo
 
 import (
+	"context"
 	"net/http"
 	"strings"
 
@@ -13,6 +14,7 @@ import (
 type Engine struct {
 	Config *conf.Config
 	mux    *http.ServeMux
+	server *http.Server
 }
 
 // Mount registers an Amis component at the given path
@@ -66,8 +68,15 @@ func (e *Engine) Run(addr ...string) error {
 	if len(addr) > 0 && addr[0] != "" {
 		address = addr[0]
 	}
+	e.server = &http.Server{Addr: address, Handler: e}
 
-	return http.ListenAndServe(address, e)
+	return e.server.ListenAndServe()
+}
+
+// Shutdown gracefully shuts down the server without interrupting any
+// active connections.
+func (e *Engine) Shutdown(ctx context.Context) error {
+	return e.server.Shutdown(ctx)
 }
 
 // ServeHTTP implements http.Handler interface
