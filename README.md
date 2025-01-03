@@ -23,9 +23,9 @@ func main() {
 		),
 	)
 
-	ag := amisgo.New().Mount("/", index)
+	app := amisgo.New().Mount("/", index)
 
-	panic(ag.Run(":8080"))
+	panic(app.Run(":8080"))
 }
 ```
 
