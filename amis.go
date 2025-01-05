@@ -1,4 +1,4 @@
-// Package amisgo provides a web framework for building Amis applications
+// Package amisgo provides a web framework for building amis applications
 package amisgo
 
 import (
@@ -17,7 +17,7 @@ type Engine struct {
 	server *http.Server
 }
 
-// Mount registers an Amis component at the given path
+// Mount registers an amis component at the given path
 func (e *Engine) Mount(path string, component any, middlewares ...func(http.Handler) http.Handler) *Engine {
 	var h http.Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		e.renderComponent(w, component)
@@ -84,7 +84,7 @@ func (e *Engine) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	e.mux.ServeHTTP(w, r)
 }
 
-// renderComponent renders an Amis component
+// renderComponent renders an amis component
 func (e *Engine) renderComponent(w http.ResponseWriter, component any) {
 	data := struct {
 		*conf.Config

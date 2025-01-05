@@ -1,6 +1,6 @@
-# ![Amisgo](https://raw.githubusercontent.com/zrcoder/amisgo-assets/refs/heads/main/logo-with-text.svg)
+# ![amisgo](https://raw.githubusercontent.com/zrcoder/amisgo-assets/refs/heads/main/logo-with-text.svg)
 
-A low-code frontend framework for Go developers, powered by Baidu's [Amis](https://aisuda.bce.baidu.com/amis).  
+A low-code frontend framework for Go developers, powered by Baidu's [amis](https://aisuda.bce.baidu.com/amis).  
 The name combines `amis` and `go`, which coincidentally means "friend" in Zulu.
 
 For background info and deeper insights, check out our [documentation](https://amisgo.pages.dev) (in Chinese).
@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-	index := comp.Page().Title("Amisgo").Body(
+	index := comp.Page().Title("amisgo").Body(
 		comp.Form().Body(
 			comp.InputText().Label("Name").Name("name"),
 			comp.InputEmail().Label("Email").Name("email"),
@@ -41,7 +41,7 @@ Check out our [examples repository](https://github.com/zrcoder/amisgo-examples).
 
 ## Project Status
 
-- [x] Auto-generated components based on latest Amis schema
+- [x] Auto-generated components based on latest amis schema
 - [ ] Tests and examples (60% complete)
 
 > **Note**: API is not stable yet and subject to change.

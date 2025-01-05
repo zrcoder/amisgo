@@ -41,7 +41,7 @@ type Config struct {
 // Default returns a new Config instance with default settings
 func Default() *Config {
 	return &Config{
-		Title:    "Amisgo",
+		Title:    "amisgo",
 		Lang:     LangDefault,
 		Theme:    ThemeDefault,
 		Template: template.GetTemplate(),
