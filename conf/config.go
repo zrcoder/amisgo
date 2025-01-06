@@ -1,6 +1,8 @@
 package conf
 
 import (
+	"net/http"
+
 	"github.com/zrcoder/amisgo/internal/template"
 )
 
@@ -28,14 +30,18 @@ const (
 
 // Config holds all configuration options for the application
 type Config struct {
-	Theme       Theme
-	Lang        Lang
-	Title       string
-	Icon        string
-	CustomCSS   string
-	CustomJS    string
-	UseLocalSDK bool
+	Theme      Theme
+	Lang       Lang
+	Title      string
+	Icon       string
+	CustomCSS  string
+	CustomJS   string
+	LocalSdkFS http.FileSystem
 	template.Template
+}
+
+func (c *Config) UseLocalSDK() bool {
+	return c.LocalSdkFS != nil
 }
 
 // Default returns a new Config instance with default settings
@@ -97,5 +103,12 @@ func WithCustomCSS(customCSS string) Option {
 func WithCustomJS(customJS string) Option {
 	return func(c *Config) {
 		c.CustomJS = customJS
+	}
+}
+
+// WithLocalSdk sets the local SDK file system
+func WithLocalSdk(fs http.FileSystem) Option {
+	return func(c *Config) {
+		c.LocalSdkFS = fs
 	}
 }

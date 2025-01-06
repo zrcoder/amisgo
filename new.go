@@ -1,5 +1,3 @@
-//go:build !amisgo_local_sdk
-
 package amisgo
 
 import (
@@ -12,8 +10,14 @@ func New(opts ...conf.Option) *Engine {
 	cfg := conf.Default()
 	cfg.Apply(opts...)
 
-	return &Engine{
+	e := &Engine{
 		Config: cfg,
 		mux:    servermux.Mux(),
 	}
+
+	if cfg.LocalSdkFS != nil {
+		e.StaticFS("/__amisgo__sdk/", cfg.LocalSdkFS)
+	}
+
+	return e
 }
