@@ -4,7 +4,7 @@ package comp
 
 type tooltipWrapper Schema
 
-// TooltipWrapper 创建一个新的 TooltipWrapper 实例
+// TooltipWrapper creates a new TooltipWrapper instance
 func TooltipWrapper() tooltipWrapper {
 	return tooltipWrapper{}.set("type", "tooltip-wrapper")
 }
@@ -14,192 +14,192 @@ func (tw tooltipWrapper) set(key string, value any) tooltipWrapper {
 	return tw
 }
 
-// Body 内容区域 (内容区域)
+// Body sets the content area
 func (tw tooltipWrapper) Body(value ...any) tooltipWrapper {
 	return tw.set("body", value)
 }
 
-// ClassName 内容区CSS类名
+// ClassName sets the CSS class name for the content area
 func (tw tooltipWrapper) ClassName(value string) tooltipWrapper {
 	return tw.set("className", value)
 }
 
-// Content 文字提示内容，兼容 tooltip，但建议通过 content 来实现提示内容
+// Content sets the tooltip content
 func (tw tooltipWrapper) Content(value string) tooltipWrapper {
 	return tw.set("content", value)
 }
 
-// Disabled 是否禁用提示
+// Disabled sets whether the tooltip is disabled
 func (tw tooltipWrapper) Disabled(value bool) tooltipWrapper {
 	return tw.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to disable the tooltip
 func (tw tooltipWrapper) DisabledOn(value string) tooltipWrapper {
 	return tw.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (tw tooltipWrapper) EditorSetting(value string) tooltipWrapper {
 	return tw.set("editorSetting", value)
 }
 
-// Enterable 是否可以移入浮层中, 默认true
+// Enterable sets whether the tooltip can be entered
 func (tw tooltipWrapper) Enterable(value bool) tooltipWrapper {
 	return tw.set("enterable", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the tooltip is hidden
 func (tw tooltipWrapper) Hidden(value bool) tooltipWrapper {
 	return tw.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to hide the tooltip
 func (tw tooltipWrapper) HiddenOn(value string) tooltipWrapper {
 	return tw.set("hiddenOn", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique id for the component
 func (tw tooltipWrapper) ID(value string) tooltipWrapper {
 	return tw.set("id", value)
 }
 
-// Inline 内容区是否内联显示，默认为false
+// Inline sets whether the content area is displayed inline
 func (tw tooltipWrapper) Inline(value bool) tooltipWrapper {
 	return tw.set("inline", value)
 }
 
-// MouseEnterDelay 浮层延迟显示时间, 单位 ms
+// MouseEnterDelay sets the delay time for showing the tooltip
 func (tw tooltipWrapper) MouseEnterDelay(value string) tooltipWrapper {
 	return tw.set("mouseEnterDelay", value)
 }
 
-// MouseLeaveDelay 浮层延迟隐藏时间, 单位 ms
+// MouseLeaveDelay sets the delay time for hiding the tooltip
 func (tw tooltipWrapper) MouseLeaveDelay(value string) tooltipWrapper {
 	return tw.set("mouseLeaveDelay", value)
 }
 
-// Offset 浮层位置相对偏移量
+// Offset sets the offset for the tooltip position
 func (tw tooltipWrapper) Offset(value string) tooltipWrapper {
 	return tw.set("offset", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (tw tooltipWrapper) OnEvent(value any) tooltipWrapper {
 	return tw.set("onEvent", value)
 }
 
-// Placement 文字提示浮层出现位置，默认为top 可选值: top | right | bottom | left
+// Placement sets the position of the tooltip
 func (tw tooltipWrapper) Placement(value string) tooltipWrapper {
 	return tw.set("placement", value)
 }
 
-// RootClose 是否点击非内容区域关闭提示，默认为true
+// RootClose sets whether clicking outside closes the tooltip
 func (tw tooltipWrapper) RootClose(value bool) tooltipWrapper {
 	return tw.set("rootClose", value)
 }
 
-// ShowArrow 是否展示浮层指向箭头
+// ShowArrow sets whether to show the arrow on the tooltip
 func (tw tooltipWrapper) ShowArrow(value bool) tooltipWrapper {
 	return tw.set("showArrow", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the tooltip is displayed statically
 func (tw tooltipWrapper) Static(value bool) tooltipWrapper {
 	return tw.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the CSS class name for static display
 func (tw tooltipWrapper) StaticClassName(value string) tooltipWrapper {
 	return tw.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the CSS class name for static input display
 func (tw tooltipWrapper) StaticInputClassName(value string) tooltipWrapper {
 	return tw.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the CSS class name for static label display
 func (tw tooltipWrapper) StaticLabelClassName(value string) tooltipWrapper {
 	return tw.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression for static display
 func (tw tooltipWrapper) StaticOn(value string) tooltipWrapper {
 	return tw.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (tw tooltipWrapper) StaticPlaceholder(value string) tooltipWrapper {
 	return tw.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the schema for static display
 func (tw tooltipWrapper) StaticSchema(value string) tooltipWrapper {
 	return tw.set("staticSchema", value)
 }
 
-// Style 内容区自定义样式
+// Style sets the custom style for the content area
 func (tw tooltipWrapper) Style(value any) tooltipWrapper {
 	return tw.set("style", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (tw tooltipWrapper) TestIdBuilder(value string) tooltipWrapper {
 	return tw.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID
 func (tw tooltipWrapper) Testid(value string) tooltipWrapper {
 	return tw.set("testid", value)
 }
 
-// Title 文字提示标题
+// Title sets the tooltip title
 func (tw tooltipWrapper) Title(value any) tooltipWrapper {
 	return tw.set("title", value)
 }
 
-// Tooltip
+// Tooltip sets the tooltip text
 func (tw tooltipWrapper) Tooltip(value string) tooltipWrapper {
 	return tw.set("tooltip", value)
 }
 
-// TooltipClassName 文字提示浮层CSS类名
+// TooltipClassName sets the CSS class name for the tooltip
 func (tw tooltipWrapper) TooltipClassName(value string) tooltipWrapper {
 	return tw.set("tooltipClassName", value)
 }
 
-// TooltipStyle 自定义提示浮层样式
+// TooltipStyle sets the custom style for the tooltip
 func (tw tooltipWrapper) TooltipStyle(value any) tooltipWrapper {
 	return tw.set("tooltipStyle", value)
 }
 
-// TooltipTheme 主题样式， 默认为light 可选值: light | dark
+// TooltipTheme sets the theme for the tooltip
 func (tw tooltipWrapper) TooltipTheme(value string) tooltipWrapper {
 	return tw.set("tooltipTheme", value)
 }
 
-// Trigger 浮层触发方式，默认为hover
+// Trigger sets the trigger method for the tooltip
 func (tw tooltipWrapper) Trigger(value string) tooltipWrapper {
 	return tw.set("trigger", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (tw tooltipWrapper) UseMobileUI(value bool) tooltipWrapper {
 	return tw.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the tooltip is visible
 func (tw tooltipWrapper) Visible(value bool) tooltipWrapper {
 	return tw.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression for visibility
 func (tw tooltipWrapper) VisibleOn(value string) tooltipWrapper {
 	return tw.set("visibleOn", value)
 }
 
-// WrapperComponent 内容区包裹标签
+// WrapperComponent sets the wrapper component for the content area
 func (tw tooltipWrapper) WrapperComponent(value string) tooltipWrapper {
 	return tw.set("wrapperComponent", value)
 }

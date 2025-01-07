@@ -1,10 +1,10 @@
 package comp
 
-// transfer 控件定义
+// transfer control definition
 
 type transfer Schema
 
-// NewTransferControl 创建一个新的 TransferControl 实例
+// Transfer creates a new TransferControl instance
 func Transfer() transfer {
 	return transfer{}.set("type", "transfer")
 }
@@ -14,397 +14,397 @@ func (tc transfer) set(key string, value any) transfer {
 	return tc
 }
 
-// AddApi 添加时调用的接口
+// AddApi sets the API for adding items
 func (tc transfer) AddApi(value string) transfer {
 	return tc.set("addApi", value)
 }
 
-// AddControls 新增时的表单项。
+// AddControls sets the form items for adding
 func (tc transfer) AddControls(value string) transfer {
 	return tc.set("addControls", value)
 }
 
-// AddDialog 控制新增弹框设置项
+// AddDialog sets the dialog for adding items
 func (tc transfer) AddDialog(value string) transfer {
 	return tc.set("addDialog", value)
 }
 
-// AutoCheckChildren ui级联关系，true代表级联选中，false代表不级联，默认为true
+// AutoCheckChildren sets whether to auto-check children
 func (tc transfer) AutoCheckChildren(value bool) transfer {
 	return tc.set("autoCheckChildren", value)
 }
 
-// AutoFill 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+// AutoFill sets the auto-fill value
 func (tc transfer) AutoFill(value string) transfer {
 	return tc.set("autoFill", value)
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// ClassName sets the container CSS class name
 func (tc transfer) ClassName(value string) transfer {
 	return tc.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+// ClearValueOnHidden sets whether to clear value when hidden
 func (tc transfer) ClearValueOnHidden(value bool) transfer {
 	return tc.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否可清除。
+// Clearable sets whether the control is clearable
 func (tc transfer) Clearable(value bool) transfer {
 	return tc.set("clearable", value)
 }
 
-// Columns 当 selectMode 为 table 时定义表格列信息。
+// Columns sets the columns for table mode
 func (tc transfer) Columns(value ...any) transfer {
 	return tc.set("columns", value)
 }
 
-// Creatable 是否可以新增
+// Creatable sets whether new items can be created
 func (tc transfer) Creatable(value bool) transfer {
 	return tc.set("creatable", value)
 }
 
-// CreateBtnLabel 新增文字
+// CreateBtnLabel sets the label for the create button
 func (tc transfer) CreateBtnLabel(value string) transfer {
 	return tc.set("createBtnLabel", value)
 }
 
-// DeferApi 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
+// DeferApi sets the API for deferred loading
 func (tc transfer) DeferApi(value string) transfer {
 	return tc.set("deferApi", value)
 }
 
-// DeferField 懒加载字段
+// DeferField sets the field for deferred loading
 func (tc transfer) DeferField(value string) transfer {
 	return tc.set("deferField", value)
 }
 
-// DeleteApi 选项删除 API
+// DeleteApi sets the API for deleting items
 func (tc transfer) DeleteApi(value string) transfer {
 	return tc.set("deleteApi", value)
 }
 
-// DeleteConfirmText 选项删除提示文字。
+// DeleteConfirmText sets the confirmation text for deletion
 func (tc transfer) DeleteConfirmText(value string) transfer {
 	return tc.set("deleteConfirmText", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the delimiter
 func (tc transfer) Delimiter(value string) transfer {
 	return tc.set("delimiter", value)
 }
 
-// Desc
+// Desc sets the description
 func (tc transfer) Desc(value string) transfer {
 	return tc.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段。
+// Description sets the description content
 func (tc transfer) Description(value string) transfer {
 	return tc.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className (配置描述上的 className)
+// DescriptionClassName sets the CSS class name for the description
 func (tc transfer) DescriptionClassName(value string) transfer {
 	return tc.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the control is disabled
 func (tc transfer) Disabled(value bool) transfer {
 	return tc.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression for disabling the control
 func (tc transfer) DisabledOn(value string) transfer {
 	return tc.set("disabledOn", value)
 }
 
-// EditApi 编辑时调用的 API
+// EditApi sets the API for editing items
 func (tc transfer) EditApi(value string) transfer {
 	return tc.set("editApi", value)
 }
 
-// EditControls 选项修改的表单项
+// EditControls sets the form items for editing
 func (tc transfer) EditControls(value string) transfer {
 	return tc.set("editControls", value)
 }
 
-// EditDialog 控制编辑弹框设置项
+// EditDialog sets the dialog for editing items
 func (tc transfer) EditDialog(value string) transfer {
 	return tc.set("editDialog", value)
 }
 
-// Editable 是否可以编辑
+// Editable sets whether the control is editable
 func (tc transfer) Editable(value bool) transfer {
 	return tc.set("editable", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (tc transfer) EditorSetting(value string) transfer {
 	return tc.set("editorSetting", value)
 }
 
-// ExtraName 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+// ExtraName sets the extra field name
 func (tc transfer) ExtraName(value string) transfer {
 	return tc.set("extraName", value)
 }
 
-// ExtractValue 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+// ExtractValue sets whether to extract the value as an array
 func (tc transfer) ExtractValue(value bool) transfer {
 	return tc.set("extractValue", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the control is hidden
 func (tc transfer) Hidden(value bool) transfer {
 	return tc.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression for hiding the control
 func (tc transfer) HiddenOn(value string) transfer {
 	return tc.set("hiddenOn", value)
 }
 
-// Hint 输入提示，聚焦的时候显示
+// Hint sets the input hint
 func (tc transfer) Hint(value string) transfer {
 	return tc.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候，用来配置具体的左右分配。 (当配置为水平布局的时候，用来配置具体的左右分配。)
+// Horizontal sets the horizontal layout configuration
 func (tc transfer) Horizontal(value string) transfer {
 	return tc.set("horizontal", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique ID for the component
 func (tc transfer) ID(value string) transfer {
 	return tc.set("id", value)
 }
 
-// InitAutoFill
+// InitAutoFill sets the initial auto-fill value
 func (tc transfer) InitAutoFill(value string) transfer {
 	return tc.set("initAutoFill", value)
 }
 
-// InitFetch 配置 source 接口初始拉不拉取。
+// InitFetch sets whether to fetch data initially
 func (tc transfer) InitFetch(value bool) transfer {
 	return tc.set("initFetch", value)
 }
 
-// InitFetchOn 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets the expression for initial data fetch
 func (tc transfer) InitFetchOn(value string) transfer {
 	return tc.set("initFetchOn", value)
 }
 
-// InitiallyOpen 是否默认都展开
+// InitiallyOpen sets whether the control is initially open
 func (tc transfer) InitiallyOpen(value bool) transfer {
 	return tc.set("initiallyOpen", value)
 }
 
-// Inline 表单 control 是否为 inline 模式。
+// Inline sets whether the control is in inline mode
 func (tc transfer) Inline(value bool) transfer {
 	return tc.set("inline", value)
 }
 
-// InputClassName 配置 input className (配置 input className)
+// InputClassName sets the CSS class name for the input
 func (tc transfer) InputClassName(value string) transfer {
 	return tc.set("inputClassName", value)
 }
 
-// ItemHeight 单个选项的高度，主要用于虚拟渲染
+// ItemHeight sets the height of each item
 func (tc transfer) ItemHeight(value string) transfer {
 	return tc.set("itemHeight", value)
 }
 
-// JoinValues 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
+// JoinValues sets whether to join values with a delimiter
 func (tc transfer) JoinValues(value bool) transfer {
 	return tc.set("joinValues", value)
 }
 
-// Label 描述标题
+// Label sets the label
 func (tc transfer) Label(value string) transfer {
 	return tc.set("label", value)
 }
 
-// LabelAlign 描述标题 (描述标题) 可选值: right | left | top | inherit
+// LabelAlign sets the label alignment
 func (tc transfer) LabelAlign(value string) transfer {
 	return tc.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the CSS class name for the label
 func (tc transfer) LabelClassName(value string) transfer {
 	return tc.set("labelClassName", value)
 }
 
-// LabelRemark 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起 (显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起)
+// LabelRemark sets the remark for the label
 func (tc transfer) LabelRemark(value string) transfer {
 	return tc.set("labelRemark", value)
 }
 
-// LabelWidth label自定义宽度，默认单位为px
+// LabelWidth sets the custom width for the label
 func (tc transfer) LabelWidth(value string) transfer {
 	return tc.set("labelWidth", value)
 }
 
-// LeftMode 当 selectMode 为 associated 时用来定义左侧的选择模式 可选值: tree | list
+// LeftMode sets the selection mode for the left side
 func (tc transfer) LeftMode(value string) transfer {
 	return tc.set("leftMode", value)
 }
 
-// Max 可选项的最大值。
+// Max sets the maximum number of selectable items
 func (tc transfer) Max(value int) transfer {
 	return tc.set("max", value)
 }
 
-// Min 可选项的最小值。
+// Min sets the minimum number of selectable items
 func (tc transfer) Min(value int) transfer {
 	return tc.set("min", value)
 }
 
-// Name 表单项名称，内部表单渲染时需要
+// Name sets the form item name
 func (tc transfer) Name(value string) transfer {
 	return tc.set("name", value)
 }
 
-// OnChange 变化回调函数。
+// OnChange sets the callback function for changes
 func (tc transfer) OnChange(value string) transfer {
 	return tc.set("onChange", value)
 }
 
-// OnEvent 事件处理
+// OnEvent sets the event handler
 func (tc transfer) OnEvent(value any) transfer {
 	return tc.set("onEvent", value)
 }
 
-// Option
+// Option sets a single option
 func (tc transfer) Option(value string) transfer {
 	return tc.set("option", value)
 }
 
-// Options 选项数据
+// Options sets the options data
 func (tc transfer) Options(value ...any) transfer {
 	return tc.set("options", value)
 }
 
-// Placeholder 输入框提示语
+// Placeholder sets the input placeholder
 func (tc transfer) Placeholder(value string) transfer {
 	return tc.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the control is read-only
 func (tc transfer) ReadOnly(value bool) transfer {
 	return tc.set("readOnly", value)
 }
 
-// RemoteOptions 远程获取选项
+// RemoteOptions sets the remote options
 func (tc transfer) RemoteOptions(value ...any) transfer {
 	return tc.set("remoteOptions", value)
 }
 
-// Render 表单渲染模式，通常在内嵌时用
+// Render sets the form render mode
 func (tc transfer) Render(value string) transfer {
 	return tc.set("render", value)
 }
 
-// ResetValue 清空表单项内容时，设置该项的默认值
+// ResetValue sets the default value when the form is reset
 func (tc transfer) ResetValue(value string) transfer {
 	return tc.set("resetValue", value)
 }
 
-// SaveImmediately 表单项内容变更是否立即保存
+// SaveImmediately sets whether to save immediately on change
 func (tc transfer) SaveImmediately(value bool) transfer {
 	return tc.set("saveImmediately", value)
 }
 
-// Source 选项数据来源
+// Source sets the data source
 func (tc transfer) Source(value string) transfer {
 	return tc.set("source", value)
 }
 
-// Searchable
+// Searchable sets whether the control is searchable
 func (tc transfer) Searchable(value bool) transfer {
 	return tc.set("searchable", value)
 }
 
-// SearchApi
+// SearchApi sets the API for searching
 func (tc transfer) SearchApi(value string) transfer {
 	return tc.set("searchApi", value)
 }
 
-// SelectMode
+// SelectMode sets the selection mode
 func (tc transfer) SelectMode(value string) transfer {
 	return tc.set("selectMode", value)
 }
 
-// Sortable
+// Sortable sets whether the control is sortable
 func (tc transfer) Sortable(value bool) transfer {
 	return tc.set("sortable", value)
 }
 
-// StaticMode 控件是否静态显示
+// StaticMode sets whether the control is in static mode
 func (tc transfer) StaticMode(value bool) transfer {
 	return tc.set("staticMode", value)
 }
 
-// StaticClassName 静态模式下的样式类名
+// StaticClassName sets the CSS class name for static mode
 func (tc transfer) StaticClassName(value string) transfer {
 	return tc.set("staticClassName", value)
 }
 
-// StaticLabel 静态模式下的 label 内容
+// StaticLabel sets the label for static mode
 func (tc transfer) StaticLabel(value string) transfer {
 	return tc.set("staticLabel", value)
 }
 
-// StaticPlaceholder 静态模式下的 placeholder 内容
+// StaticPlaceholder sets the placeholder for static mode
 func (tc transfer) StaticPlaceholder(value string) transfer {
 	return tc.set("staticPlaceholder", value)
 }
 
-// StrictMode 是否严格模式，开启时只允许选中列表中的选项
+// StrictMode sets whether the control is in strict mode
 func (tc transfer) StrictMode(value bool) transfer {
 	return tc.set("strictMode", value)
 }
 
-// SubmitOnChange 表单项内容变更时是否触发表单提交
+// SubmitOnChange sets whether to submit the form on change
 func (tc transfer) SubmitOnChange(value bool) transfer {
 	return tc.set("submitOnChange", value)
 }
 
-// Sync(true) 设置值时是否同步 (设置值时是否同步)
+// Sync sets whether to sync the value
 func (tc transfer) Sync(value bool) transfer {
 	return tc.set("sync", value)
 }
 
-// TextField 设置选项的展示字段
+// TextField sets the display field for options
 func (tc transfer) TextField(value string) transfer {
 	return tc.set("textField", value)
 }
 
-// Value
+// Value sets the value
 func (tc transfer) Value(value any) transfer {
 	return tc.set("value", value)
 }
 
-// Visible 控件显示与否
+// Visible sets whether the control is visible
 func (tc transfer) Visible(value bool) transfer {
 	return tc.set("visible", value)
 }
 
-// VisibleOn 控件显示与否表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression for visibility
 func (tc transfer) VisibleOn(value string) transfer {
 	return tc.set("visibleOn", value)
 }
 
-// Width 控件宽度
+// Width sets the control width
 func (tc transfer) Width(value string) transfer {
 	return tc.set("width", value)
 }
 
-// Wrappers 包装组件
+// Wrappers sets the wrapper components
 func (tc transfer) Wrappers(value string) transfer {
 	return tc.set("wrappers", value)
 }
 
-// AllowMultiple 是否允许多选
+// AllowMultiple sets whether multiple selection is allowed
 func (tc transfer) AllowMultiple(value bool) transfer {
 	return tc.set("allowMultiple", value)
 }

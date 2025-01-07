@@ -1,6 +1,6 @@
 package comp
 
-// inputDate 日期选择控件
+// inputDate represents a date picker component
 type inputDate Schema
 
 func InputDate() inputDate {
@@ -12,337 +12,337 @@ func (d inputDate) set(key string, value any) inputDate {
 	return d
 }
 
-// AutoFill 自动填充
+// AutoFill sets autoFill value
 func (d inputDate) AutoFill(value string) inputDate {
 	return d.set("autoFill", value)
 }
 
-// BorderMode 边框模式
+// BorderMode sets border mode
 func (d inputDate) BorderMode(value string) inputDate {
 	return d.set("borderMode", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets container CSS class name
 func (d inputDate) ClassName(value string) inputDate {
 	return d.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时是否清除值
+// ClearValueOnHidden clears value when hidden
 func (d inputDate) ClearValueOnHidden(value bool) inputDate {
 	return d.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否显示清除按钮
+// Clearable shows clear button
 func (d inputDate) Clearable(value bool) inputDate {
 	return d.set("clearable", value)
 }
 
-// CloseOnSelect 点选日期后是否关闭弹窗
+// CloseOnSelect closes popup on date select
 func (d inputDate) CloseOnSelect(value bool) inputDate {
 	return d.set("closeOnSelect", value)
 }
 
-// Desc 描述内容
+// Desc sets description
 func (d inputDate) Desc(value string) inputDate {
 	return d.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段
+// Description sets HTML description
 func (d inputDate) Description(value string) inputDate {
 	return d.set("description", value)
 }
 
-// DescriptionClassName 描述内容的 className
+// DescriptionClassName sets description CSS class name
 func (d inputDate) DescriptionClassName(value string) inputDate {
 	return d.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled disables the component
 func (d inputDate) Disabled(value bool) inputDate {
 	return d.set("disabled", value)
 }
 
-// DisabledDate 禁用日期函数
+// DisabledDate sets disabled date function
 func (d inputDate) DisabledDate(value string) inputDate {
 	return d.set("disabledDate", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets disabled expression
 func (d inputDate) DisabledOn(value string) inputDate {
 	return d.set("disabledOn", value)
 }
 
-// DisplayFormat 日期展示格式
+// DisplayFormat sets display format
 func (d inputDate) DisplayFormat(value string) inputDate {
 	return d.set("displayFormat", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets editor configuration
 func (d inputDate) EditorSetting(value string) inputDate {
 	return d.set("editorSetting", value)
 }
 
-// Embed 是否为内联模式
+// Embed sets inline mode
 func (d inputDate) Embed(value bool) inputDate {
 	return d.set("embed", value)
 }
 
-// ExtraName 额外字段名
+// ExtraName sets extra field name
 func (d inputDate) ExtraName(value string) inputDate {
 	return d.set("extraName", value)
 }
 
-// Format 日期存储格式
+// Format sets storage format
 func (d inputDate) Format(value string) inputDate {
 	return d.set("format", value)
 }
 
-// Hidden 是否隐藏
+// Hidden hides the component
 func (d inputDate) Hidden(value bool) inputDate {
 	return d.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets hidden expression
 func (d inputDate) HiddenOn(value string) inputDate {
 	return d.set("hiddenOn", value)
 }
 
-// Hint 输入提示
+// Hint sets input hint
 func (d inputDate) Hint(value string) inputDate {
 	return d.set("hint", value)
 }
 
-// Horizontal 水平布局配置
+// Horizontal sets horizontal layout configuration
 func (d inputDate) Horizontal(value string) inputDate {
 	return d.set("horizontal", value)
 }
 
-// ID 组件唯一 id
+// ID sets unique component ID
 func (d inputDate) ID(value string) inputDate {
 	return d.set("id", value)
 }
 
-// InitAutoFill 初始化自动填充
+// InitAutoFill sets initial autoFill value
 func (d inputDate) InitAutoFill(value string) inputDate {
 	return d.set("initAutoFill", value)
 }
 
-// Inline 是否为 inline 模式
+// Inline sets inline mode
 func (d inputDate) Inline(value bool) inputDate {
 	return d.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets input CSS class name
 func (d inputDate) InputClassName(value string) inputDate {
 	return d.set("inputClassName", value)
 }
 
-// InputFormat 输入格式
+// InputFormat sets input format
 func (d inputDate) InputFormat(value string) inputDate {
 	return d.set("inputFormat", value)
 }
 
-// Label 描述标题
+// Label sets label
 func (d inputDate) Label(value string) inputDate {
 	return d.set("label", value)
 }
 
-// LabelAlign 描述标题对齐方式
+// LabelAlign sets label alignment
 func (d inputDate) LabelAlign(value string) inputDate {
 	return d.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets label CSS class name
 func (d inputDate) LabelClassName(value string) inputDate {
 	return d.set("labelClassName", value)
 }
 
-// LabelRemark 显示小图标，鼠标放上去显示提示内容
+// LabelRemark sets label remark
 func (d inputDate) LabelRemark(value string) inputDate {
 	return d.set("labelRemark", value)
 }
 
-// LabelWidth label 宽度
+// LabelWidth sets label width
 func (d inputDate) LabelWidth(value string) inputDate {
 	return d.set("labelWidth", value)
 }
 
-// MaxDate 限制最大日期
+// MaxDate sets maximum date
 func (d inputDate) MaxDate(value string) inputDate {
 	return d.set("maxDate", value)
 }
 
-// MinDate 限制最小日期
+// MinDate sets minimum date
 func (d inputDate) MinDate(value string) inputDate {
 	return d.set("minDate", value)
 }
 
-// Mode 组件展示模式
+// Mode sets display mode
 func (d inputDate) Mode(value string) inputDate {
 	return d.set("mode", value)
 }
 
-// Name 字段名
+// Name sets field name
 func (d inputDate) Name(value string) inputDate {
 	return d.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets event configuration
 func (d inputDate) OnEvent(value any) inputDate {
 	return d.set("onEvent", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets placeholder
 func (d inputDate) Placeholder(value string) inputDate {
 	return d.set("placeholder", value)
 }
 
-// PopOverContainerSelector 弹窗容器选择器
+// PopOverContainerSelector sets popup container selector
 func (d inputDate) PopOverContainerSelector(value string) inputDate {
 	return d.set("popOverContainerSelector", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets read-only mode
 func (d inputDate) ReadOnly(value bool) inputDate {
 	return d.set("readOnly", value)
 }
 
-// ReadOnlyOn 只读条件
+// ReadOnlyOn sets read-only expression
 func (d inputDate) ReadOnlyOn(value string) inputDate {
 	return d.set("readOnlyOn", value)
 }
 
-// Remark 小图标提示内容
+// Remark sets remark
 func (d inputDate) Remark(value string) inputDate {
 	return d.set("remark", value)
 }
 
-// Required 是否必填
+// Required sets required field
 func (d inputDate) Required(value bool) inputDate {
 	return d.set("required", value)
 }
 
-// Row 行配置
+// Row sets row configuration
 func (d inputDate) Row(value string) inputDate {
 	return d.set("row", value)
 }
 
-// SaveImmediately 是否立即保存
+// SaveImmediately sets immediate save
 func (d inputDate) SaveImmediately(value bool) inputDate {
 	return d.set("saveImmediately", value)
 }
 
-// Shortcuts 日期快捷键
+// Shortcuts sets date shortcuts
 func (d inputDate) Shortcuts(value string) inputDate {
 	return d.set("shortcuts", value)
 }
 
-// Size 表单项大小
+// Size sets component size
 func (d inputDate) Size(value string) inputDate {
 	return d.set("size", value)
 }
 
-// Static 是否静态展示
+// Static sets static display
 func (d inputDate) Static(value bool) inputDate {
 	return d.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets static CSS class name
 func (d inputDate) StaticClassName(value string) inputDate {
 	return d.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets static input CSS class name
 func (d inputDate) StaticInputClassName(value string) inputDate {
 	return d.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets static label CSS class name
 func (d inputDate) StaticLabelClassName(value string) inputDate {
 	return d.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets static display expression
 func (d inputDate) StaticOn(value string) inputDate {
 	return d.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets static placeholder
 func (d inputDate) StaticPlaceholder(value string) inputDate {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示 schema
+// StaticSchema sets static schema
 func (d inputDate) StaticSchema(value string) inputDate {
 	return d.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets component style
 func (d inputDate) Style(value any) inputDate {
 	return d.set("style", value)
 }
 
-// SubmitOnChange 修改时是否提交表单
+// SubmitOnChange submits form on change
 func (d inputDate) SubmitOnChange(value bool) inputDate {
 	return d.set("submitOnChange", value)
 }
 
-// TestIdBuilder 测试 id 构建器
+// TestIdBuilder sets test ID builder
 func (d inputDate) TestIdBuilder(value string) inputDate {
 	return d.set("testIdBuilder", value)
 }
 
-// UseMobileUI 关闭移动端样式
+// UseMobileUI sets mobile UI mode
 func (d inputDate) UseMobileUI(value bool) inputDate {
 	return d.set("useMobileUI", value)
 }
 
-// UTC 是否存储 UTC 时间
+// UTC sets UTC storage
 func (d inputDate) UTC(value bool) inputDate {
 	return d.set("utc", value)
 }
 
-// ValidateApi 远端校验表单项接口
+// ValidateApi sets remote validation API
 func (d inputDate) ValidateApi(value string) inputDate {
 	return d.set("validateApi", value)
 }
 
-// ValidateOnChange 是否在修改时触发验证
+// ValidateOnChange validates on change
 func (d inputDate) ValidateOnChange(value bool) inputDate {
 	return d.set("validateOnChange", value)
 }
 
-// ValidationErrors 验证失败的提示信息
+// ValidationErrors sets validation error messages
 func (d inputDate) ValidationErrors(value string) inputDate {
 	return d.set("validationErrors", value)
 }
 
-// Validations 验证规则
+// Validations sets validation rules
 func (d inputDate) Validations(value string) inputDate {
 	return d.set("validations", value)
 }
 
-// Value 默认值
+// Value sets default value
 func (d inputDate) Value(value string) inputDate {
 	return d.set("value", value)
 }
 
-// ValueFormat 替代 format
+// ValueFormat sets value format
 func (d inputDate) ValueFormat(value string) inputDate {
 	return d.set("valueFormat", value)
 }
 
-// Visible 是否显示
+// Visible sets visibility
 func (d inputDate) Visible(value bool) inputDate {
 	return d.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets visibility expression
 func (d inputDate) VisibleOn(value string) inputDate {
 	return d.set("visibleOn", value)
 }
 
-// Width 在 Table 中调整宽度
+// Width sets width in table
 func (d inputDate) Width(value string) inputDate {
 	return d.set("width", value)
 }

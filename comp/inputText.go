@@ -1,451 +1,455 @@
 package comp
 
-// inputText 文本输入框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/text
+// inputText represents a text input field. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/text
 
 type inputText Schema
 
+// InputText creates a text input field.
 func InputText() inputText {
 	return inputText{}.set("type", "input-text")
 }
 
+// InputEmail creates an email input field.
 func InputEmail() inputText {
 	return inputText{}.set("type", "input-email")
 }
 
+// InputUrl creates a URL input field.
 func InputUrl() inputText {
 	return inputText{}.set("type", "input-url")
 }
 
+// InputPassword creates a password input field.
 func InputPassword() inputText {
 	return inputText{}.set("type", "input-password")
 }
 
-// AddApi 添加时调用的接口
+// AddApi sets the API for adding data.
 func (t inputText) AddApi(value string) inputText {
 	return t.set("addApi", value)
 }
 
-// AddControls 新增时的表单项。
+// AddControls sets the form items for adding data.
 func (t inputText) AddControls(value string) inputText {
 	return t.set("addControls", value)
 }
 
-// AddDialog 控制新增弹框设置项
+// AddDialog sets the dialog options for adding data.
 func (t inputText) AddDialog(value string) inputText {
 	return t.set("addDialog", value)
 }
 
-// AddOn
+// AddOn sets additional options.
 func (t inputText) AddOn(value any) inputText {
 	return t.set("addOn", value)
 }
 
-// AutoComplete 自动完成 API，当输入部分文字的时候，会将这些文字通过 ${term} 可以取到，发送给接口。 接口可以返回匹配到的选项，帮助用户输入。
+// AutoComplete sets the API for autocomplete.
 func (t inputText) AutoComplete(value string) inputText {
 	return t.set("autoComplete", value)
 }
 
-// AutoFill 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+// AutoFill sets the autofill options.
 func (t inputText) AutoFill(value string) inputText {
 	return t.set("autoFill", value)
 }
 
-// BorderMode 边框模式，全边框，还是半边框，或者没边框。 可选值: full | half | none
+// BorderMode sets the border mode. Options: full, half, none.
 func (t inputText) BorderMode(value string) inputText {
 	return t.set("borderMode", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the CSS class name for the container.
 func (t inputText) ClassName(value string) inputText {
 	return t.set("className", value)
 }
 
-// ColumnClassName
+// ColumnClassName sets the CSS class name for the column.
 func (t inputText) ColumnClassName(value string) inputText {
 	return t.set("columnClassName", value)
 }
 
-// ClearValueOnEmpty 在内容为空的时候清除值
+// ClearValueOnEmpty clears the value when empty.
 func (t inputText) ClearValueOnEmpty(value bool) inputText {
 	return t.set("clearValueOnEmpty", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+// ClearValueOnHidden clears the value when hidden.
 func (t inputText) ClearValueOnHidden(value bool) inputText {
 	return t.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否可清除。
+// Clearable sets whether the input is clearable.
 func (t inputText) Clearable(value bool) inputText {
 	return t.set("clearable", value)
 }
 
-// Creatable 是否可以新增
+// Creatable sets whether new options can be created.
 func (t inputText) Creatable(value bool) inputText {
 	return t.set("creatable", value)
 }
 
-// CreateBtnLabel 新增文字
+// CreateBtnLabel sets the label for the create button.
 func (t inputText) CreateBtnLabel(value string) inputText {
 	return t.set("createBtnLabel", value)
 }
 
-// DeferApi 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
+// DeferApi sets the API for deferred loading.
 func (t inputText) DeferApi(value string) inputText {
 	return t.set("deferApi", value)
 }
 
-// DeferField 懒加载字段
+// DeferField sets the field for deferred loading.
 func (t inputText) DeferField(value string) inputText {
 	return t.set("deferField", value)
 }
 
-// DeleteApi 选项删除 API
+// DeleteApi sets the API for deleting options.
 func (t inputText) DeleteApi(value string) inputText {
 	return t.set("deleteApi", value)
 }
 
-// DeleteConfirmText 选项删除提示文字。
+// DeleteConfirmText sets the confirmation text for deletion.
 func (t inputText) DeleteConfirmText(value string) inputText {
 	return t.set("deleteConfirmText", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the delimiter for multiple values.
 func (t inputText) Delimiter(value string) inputText {
 	return t.set("delimiter", value)
 }
 
-// Desc 描述内容
+// Desc sets the description.
 func (t inputText) Desc(value string) inputText {
 	return t.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段。
+// Description sets the HTML description.
 func (t inputText) Description(value string) inputText {
 	return t.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className
+// DescriptionClassName sets the CSS class name for the description.
 func (t inputText) DescriptionClassName(value string) inputText {
 	return t.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the input is disabled.
 func (t inputText) Disabled(value bool) inputText {
 	return t.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to disable the input.
 func (t inputText) DisabledOn(value string) inputText {
 	return t.set("disabledOn", value)
 }
 
-// EditApi 编辑时调用的 API
+// EditApi sets the API for editing data.
 func (t inputText) EditApi(value string) inputText {
 	return t.set("editApi", value)
 }
 
-// EditControls 选项修改的表单项
+// EditControls sets the form items for editing data.
 func (t inputText) EditControls(value string) inputText {
 	return t.set("editControls", value)
 }
 
-// EditDialog 控制编辑弹框设置项
+// EditDialog sets the dialog options for editing data.
 func (t inputText) EditDialog(value string) inputText {
 	return t.set("editDialog", value)
 }
 
-// Editable 是否可以编辑
+// Editable sets whether the input is editable.
 func (t inputText) Editable(value bool) inputText {
 	return t.set("editable", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration.
 func (t inputText) EditorSetting(value string) inputText {
 	return t.set("editorSetting", value)
 }
 
-// ExtraName 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+// ExtraName sets the extra field name for range components.
 func (t inputText) ExtraName(value string) inputText {
 	return t.set("extraName", value)
 }
 
-// ExtractValue 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+// ExtractValue sets whether to extract the value as an array.
 func (t inputText) ExtractValue(value bool) inputText {
 	return t.set("extractValue", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the input is hidden.
 func (t inputText) Hidden(value bool) inputText {
 	return t.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to hide the input.
 func (t inputText) HiddenOn(value string) inputText {
 	return t.set("hiddenOn", value)
 }
 
-// Hint 输入提示，聚焦的时候显示
+// Hint sets the hint text.
 func (t inputText) Hint(value string) inputText {
 	return t.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候，用来配置具体的左右分配。
+// Horizontal sets the horizontal layout configuration.
 func (t inputText) Horizontal(value string) inputText {
 	return t.set("horizontal", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique ID for the component.
 func (t inputText) ID(value string) inputText {
 	return t.set("id", value)
 }
 
-// InitAutoFill
+// InitAutoFill sets the initial autofill value.
 func (t inputText) InitAutoFill(value string) inputText {
 	return t.set("initAutoFill", value)
 }
 
-// InitFetch 配置 source 接口初始拉不拉取。
+// InitFetch sets whether to fetch data initially.
 func (t inputText) InitFetch(value bool) inputText {
 	return t.set("initFetch", value)
 }
 
-// InitFetchOn 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets the expression to fetch data initially.
 func (t inputText) InitFetchOn(value string) inputText {
 	return t.set("initFetchOn", value)
 }
 
-// Inline 表单 control 是否为 inline 模式。
+// Inline sets whether the control is inline.
 func (t inputText) Inline(value bool) inputText {
 	return t.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the CSS class name for the input.
 func (t inputText) InputClassName(value string) inputText {
 	return t.set("inputClassName", value)
 }
 
-// InputControlClassName control节点的CSS类名
+// InputControlClassName sets the CSS class name for the control node.
 func (t inputText) InputControlClassName(value string) inputText {
 	return t.set("inputControlClassName", value)
 }
 
-// JoinValues 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 `value` 会通过 `delimiter` 连接起来，否则直接将以数组的形式提交值。
+// JoinValues sets whether to join values with a delimiter.
 func (t inputText) JoinValues(value bool) inputText {
 	return t.set("joinValues", value)
 }
 
-// Label 描述标题
+// Label sets the label text.
 func (t inputText) Label(value string) inputText {
 	return t.set("label", value)
 }
 
-// Size 尺寸 'xs' | 'sm' | 'md' | 'lg' | 'full'
+// Size sets the size of the input. Options: xs, sm, md, lg, full.
 func (t inputText) Size(value string) inputText {
 	return t.set("size", value)
 }
 
-// Remark string or remark
+// Remark sets the remark text or object.
 func (t inputText) Remark(value any) inputText {
 	return t.set("remark", value)
 }
 
-// LabelAlign 描述标题 可选值: right | left | top | inherit
+// LabelAlign sets the label alignment. Options: right, left, top, inherit.
 func (t inputText) LabelAlign(value string) inputText {
 	return t.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the CSS class name for the label.
 func (t inputText) LabelClassName(value string) inputText {
 	return t.set("labelClassName", value)
 }
 
-// LabelRemark 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+// LabelRemark sets the remark for the label.
 func (t inputText) LabelRemark(value string) inputText {
 	return t.set("labelRemark", value)
 }
 
-// LabelWidth label自定义宽度，默认单位为px
+// LabelWidth sets the custom width for the label.
 func (t inputText) LabelWidth(value string) inputText {
 	return t.set("labelWidth", value)
 }
 
-// MaxLength 限制文字最大输入个数
+// MaxLength sets the maximum length of the input.
 func (t inputText) MaxLength(value string) inputText {
 	return t.set("maxLength", value)
 }
 
-// MinLength 限制文字最小输入个数
+// MinLength sets the minimum length of the input.
 func (t inputText) MinLength(value string) inputText {
 	return t.set("minLength", value)
 }
 
-// Mode 配置当前表单项展示模式 可选值: normal | inline | horizontal
+// Mode sets the display mode. Options: normal, inline, horizontal.
 func (t inputText) Mode(value string) inputText {
 	return t.set("mode", value)
 }
 
-// Multiple 是否为多选模式
+// Multiple sets whether the input allows multiple values.
 func (t inputText) Multiple(value bool) inputText {
 	return t.set("multiple", value)
 }
 
-// Name 表单项名称
+// Name sets the name of the form item.
 func (t inputText) Name(value string) inputText {
 	return t.set("name", value)
 }
 
-// Required 是否必须输入
+// Required sets whether the input is required.
 func (t inputText) Required(value bool) inputText {
 	return t.set("required", value)
 }
 
-// Note
+// Note sets the note text.
 func (t inputText) Note(value string) inputText {
 	return t.set("note", value)
 }
 
-// OnChange 触发的事件
+// OnChange sets the event triggered on change.
 func (t inputText) OnChange(value string) inputText {
 	return t.set("onChange", value)
 }
 
-// OnFocus 触发的事件
+// OnFocus sets the event triggered on focus.
 func (t inputText) OnFocus(value string) inputText {
 	return t.set("onFocus", value)
 }
 
-// OnBlur 触发的事件
+// OnBlur sets the event triggered on blur.
 func (t inputText) OnBlur(value string) inputText {
 	return t.set("onBlur", value)
 }
 
-// OnInit 触发的事件
+// OnInit sets the event triggered on initialization.
 func (t inputText) OnInit(value string) inputText {
 	return t.set("onInit", value)
 }
 
-// OnSearch 触发的事件
+// OnSearch sets the event triggered on search.
 func (t inputText) OnSearch(value string) inputText {
 	return t.set("onSearch", value)
 }
 
-// Option
+// Option sets a single option.
 func (t inputText) Option(value string) inputText {
 	return t.set("option", value)
 }
 
-// Options 选项列表
+// Options sets multiple options.
 func (t inputText) Options(value ...string) inputText {
 	return t.set("options", value)
 }
 
-// OptionLabel 在多选模式下，选项的 label 位置。可选值: top | left | right
+// OptionLabel sets the label position for options in multi-select mode. Options: top, left, right.
 func (t inputText) OptionLabel(value string) inputText {
 	return t.set("optionLabel", value)
 }
 
-// Placeholder 提示文字
+// Placeholder sets the placeholder text.
 func (t inputText) Placeholder(value string) inputText {
 	return t.set("placeholder", value)
 }
 
-// ReadOnly 是否为只读模式
+// ReadOnly sets whether the input is read-only.
 func (t inputText) ReadOnly(value bool) inputText {
 	return t.set("readOnly", value)
 }
 
-// RefixApi 配置选择项的接口
+// RefixApi sets the API for fetching options.
 func (t inputText) RefixApi(value string) inputText {
 	return t.set("refixApi", value)
 }
 
-// ResetValue
+// ResetValue sets the reset value.
 func (t inputText) ResetValue(value string) inputText {
 	return t.set("resetValue", value)
 }
 
-// Rules 校验规则
+// Rules sets the validation rules.
 func (t inputText) Rules(value string) inputText {
 	return t.set("rules", value)
 }
 
-// SearchApi 搜索接口
+// SearchApi sets the API for searching options.
 func (t inputText) SearchApi(value string) inputText {
 	return t.set("searchApi", value)
 }
 
-// Source 数据来源
+// Source sets the data source.
 func (t inputText) Source(value string) inputText {
 	return t.set("source", value)
 }
 
-// StaticClassName 用于静态展示的类名
+// StaticClassName sets the CSS class name for static display.
 func (t inputText) StaticClassName(value string) inputText {
 	return t.set("staticClassName", value)
 }
 
-// StaticLabel 静态显示的标题
+// StaticLabel sets the label for static display.
 func (t inputText) StaticLabel(value string) inputText {
 	return t.set("staticLabel", value)
 }
 
-// StaticOn 静态显示的条件
+// StaticOn sets the condition for static display.
 func (t inputText) StaticOn(value string) inputText {
 	return t.set("staticOn", value)
 }
 
-// StaticValue 静态值
+// StaticValue sets the static value.
 func (t inputText) StaticValue(value string) inputText {
 	return t.set("staticValue", value)
 }
 
-// Tips 提示文本
+// Tips sets the tips text.
 func (t inputText) Tips(value string) inputText {
 	return t.set("tips", value)
 }
 
-// ValidationErrors 校验不通过时的提示信息
+// ValidationErrors sets the validation error messages.
 func (t inputText) ValidationErrors(value string) inputText {
 	return t.set("validationErrors", value)
 }
 
-// Value 表单项的值
+// Value sets the value of the form item.
 func (t inputText) Value(value any) inputText {
 	return t.set("value", value)
 }
 
-// Visible 控制组件是否可见
+// Visible sets whether the input is visible.
 func (t inputText) Visible(value bool) inputText {
 	return t.set("visible", value)
 }
 
-// VisibleOn 是否可见表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to control visibility.
 func (t inputText) VisibleOn(value string) inputText {
 	return t.set("visibleOn", value)
 }
 
-// Width 控件宽度
+// Width sets the width of the input.
 func (t inputText) Width(value string) inputText {
 	return t.set("width", value)
 }
 
-// OnInput 触发的事件
+// OnInput sets the event triggered on input.
 func (t inputText) OnInput(value string) inputText {
 	return t.set("onInput", value)
 }
 
-// ValueType
+// ValueType sets the type of the value.
 func (t inputText) ValueType(value string) inputText {
 	return t.set("valueType", value)
 }
 
-// ValueOnEvent
+// ValueOnEvent sets the value based on an event.
 func (t inputText) ValueOnEvent(value any) inputText {
 	return t.set("valueOnEvent", value)
 }
 
-// set 设置属性
+// set sets a property of the inputText.
 func (t inputText) set(key string, value any) inputText {
 	t[key] = value
 	return t

@@ -1,10 +1,10 @@
 package comp
 
-// switchContainer 状态容器渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/state-container
+// switchContainer is a state container renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/state-container
 
 type switchContainer Schema
 
-// SwitchContainer 创建一个新的 SwitchContainer 实例
+// SwitchContainer creates a new SwitchContainer instance
 func SwitchContainer() switchContainer {
 	return switchContainer{}.set("type", "switch-container")
 }
@@ -14,112 +14,112 @@ func (s switchContainer) set(key string, value any) switchContainer {
 	return s
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// ClassName sets the CSS class name for the container
 func (s switchContainer) ClassName(value string) switchContainer {
 	return s.set("className", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the container is disabled
 func (s switchContainer) Disabled(value bool) switchContainer {
 	return s.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine if the container is disabled
 func (s switchContainer) DisabledOn(value string) switchContainer {
 	return s.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, ignored at runtime
 func (s switchContainer) EditorSetting(value string) switchContainer {
 	return s.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the container is hidden
 func (s switchContainer) Hidden(value bool) switchContainer {
 	return s.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine if the container is hidden
 func (s switchContainer) HiddenOn(value string) switchContainer {
 	return s.set("hiddenOn", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique ID for the component, mainly for logging
 func (s switchContainer) ID(value string) switchContainer {
 	return s.set("id", value)
 }
 
-// Items 状态项列表
+// Items sets the list of state items
 func (s switchContainer) Items(value ...any) switchContainer {
 	return s.set("items", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (s switchContainer) OnEvent(value any) switchContainer {
 	return s.set("onEvent", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the container is displayed statically
 func (s switchContainer) Static(value bool) switchContainer {
 	return s.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticClassName sets the CSS class name for static display
 func (s switchContainer) StaticClassName(value string) switchContainer {
 	return s.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticInputClassName sets the CSS class name for static input display
 func (s switchContainer) StaticInputClassName(value string) switchContainer {
 	return s.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticLabelClassName sets the CSS class name for static label display
 func (s switchContainer) StaticLabelClassName(value string) switchContainer {
 	return s.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine if the container is displayed statically
 func (s switchContainer) StaticOn(value string) switchContainer {
 	return s.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (s switchContainer) StaticPlaceholder(value string) switchContainer {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the schema for static display
 func (s switchContainer) StaticSchema(value string) switchContainer {
 	return s.set("staticSchema", value)
 }
 
-// Style 自定义样式
+// Style sets custom styles for the container
 func (s switchContainer) Style(value any) switchContainer {
 	return s.set("style", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (s switchContainer) TestIdBuilder(value string) switchContainer {
 	return s.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID
 func (s switchContainer) Testid(value string) switchContainer {
 	return s.set("testid", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI styles
 func (s switchContainer) UseMobileUI(value bool) switchContainer {
 	return s.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the container is visible
 func (s switchContainer) Visible(value bool) switchContainer {
 	return s.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine if the container is visible
 func (s switchContainer) VisibleOn(value string) switchContainer {
 	return s.set("visibleOn", value)
 }

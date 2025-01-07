@@ -1,11 +1,11 @@
 package comp
 
-// wrapper 表示一个容器渲染器
-// 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/wrapper
+// wrapper represents a container renderer
+// Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/wrapper
 
 type wrapper Schema
 
-// Wrapper 创建一个新的 Wrapper 实例
+// Wrapper creates a new Wrapper instance
 func Wrapper() wrapper {
 	return wrapper{}.set("type", "wrapper")
 }
@@ -15,122 +15,122 @@ func (w wrapper) set(key string, value any) wrapper {
 	return w
 }
 
-// Body 内容 (内容)
+// Body sets the content
 func (w wrapper) Body(value ...any) wrapper {
 	return w.set("body", value)
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// ClassName sets the container CSS class name
 func (w wrapper) ClassName(value string) wrapper {
 	return w.set("className", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the container is disabled
 func (w wrapper) Disabled(value bool) wrapper {
 	return w.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine if the container is disabled
 func (w wrapper) DisabledOn(value string) wrapper {
 	return w.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, ignored at runtime
 func (w wrapper) EditorSetting(value string) wrapper {
 	return w.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the container is hidden
 func (w wrapper) Hidden(value bool) wrapper {
 	return w.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine if the container is hidden
 func (w wrapper) HiddenOn(value string) wrapper {
 	return w.set("hiddenOn", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique component ID, mainly for logging
 func (w wrapper) ID(value string) wrapper {
 	return w.set("id", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (w wrapper) OnEvent(value any) wrapper {
 	return w.set("onEvent", value)
 }
 
-// Size 可选值: xs | sm | md | lg | none
+// Size sets the size (xs | sm | md | lg | none)
 func (w wrapper) Size(value string) wrapper {
 	return w.set("size", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the container is displayed statically
 func (w wrapper) Static(value bool) wrapper {
 	return w.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticClassName sets the CSS class name for static display
 func (w wrapper) StaticClassName(value string) wrapper {
 	return w.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticInputClassName sets the CSS class name for static input display
 func (w wrapper) StaticInputClassName(value string) wrapper {
 	return w.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticLabelClassName sets the CSS class name for static label display
 func (w wrapper) StaticLabelClassName(value string) wrapper {
 	return w.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine if the container is displayed statically
 func (w wrapper) StaticOn(value string) wrapper {
 	return w.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (w wrapper) StaticPlaceholder(value string) wrapper {
 	return w.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the static schema
 func (w wrapper) StaticSchema(value string) wrapper {
 	return w.set("staticSchema", value)
 }
 
-// Style 自定义样式
+// Style sets custom styles
 func (w wrapper) Style(value any) wrapper {
 	return w.set("style", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (w wrapper) TestIdBuilder(value string) wrapper {
 	return w.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID
 func (w wrapper) Testid(value string) wrapper {
 	return w.set("testid", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI styles
 func (w wrapper) UseMobileUI(value bool) wrapper {
 	return w.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the container is visible
 func (w wrapper) Visible(value bool) wrapper {
 	return w.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine if the container is visible
 func (w wrapper) VisibleOn(value string) wrapper {
 	return w.set("visibleOn", value)
 }
 
-// Wrap
+// Wrap sets whether the container should wrap
 func (w wrapper) Wrap(value bool) wrapper {
 	return w.set("wrap", value)
 }

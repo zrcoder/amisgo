@@ -1,166 +1,166 @@
 package comp
 
-// inputYearRange 年份范围
+// inputYearRange represents a year range input component.
 
 type inputYearRange Schema
 
-// InputYearRange 创建一个新的 InputYearRange 实例，并设置默认的 type
+// InputYearRange creates a new instance of inputYearRange with default type.
 func InputYearRange() inputYearRange {
 	return make(inputYearRange).set("type", "input-year-range")
 }
 
-// set 是一个内部方法，用于设置字段值并返回自身的引用
+// set is an internal method to set a field value and return the instance.
 func (i inputYearRange) set(key string, value any) inputYearRange {
 	i[key] = value
 	return i
 }
 
-// AutoFill 数据录入配置，自动填充或者参照录入
+// AutoFill sets the autoFill value.
 func (i inputYearRange) AutoFill(value string) inputYearRange {
 	return i.set("autoFill", value)
 }
 
-// ClassName 表单最外层类名
+// ClassName sets the outermost class name of the form.
 func (i inputYearRange) ClassName(value string) inputYearRange {
 	return i.set("className", value)
 }
 
-// Clearable 是否可清除
+// Clearable sets whether the input is clearable.
 func (i inputYearRange) Clearable(value bool) inputYearRange {
 	return i.set("clearable", value)
 }
 
-// Description 表单项描述
+// Description sets the description of the form item.
 func (i inputYearRange) Description(value string) inputYearRange {
 	return i.set("description", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the input is disabled.
 func (i inputYearRange) Disabled(value bool) inputYearRange {
 	return i.set("disabled", value)
 }
 
-// DisabledOn 当前表单项是否禁用的条件
+// DisabledOn sets the condition to disable the input.
 func (i inputYearRange) DisabledOn(value string) inputYearRange {
 	return i.set("disabledOn", value)
 }
 
-// Embed 是否内联模式
+// Embed sets whether the input is in inline mode.
 func (i inputYearRange) Embed(value bool) inputYearRange {
 	return i.set("embed", value)
 }
 
-// Format 年份选择器值格式
+// Format sets the format of the year range value.
 func (i inputYearRange) Format(value string) inputYearRange {
 	return i.set("format", value)
 }
 
-// Inline 是否内联
+// Inline sets whether the input is inline.
 func (i inputYearRange) Inline(value bool) inputYearRange {
 	return i.set("inline", value)
 }
 
-// InputClassName 表单控制器类名
+// InputClassName sets the class name of the form controller.
 func (i inputYearRange) InputClassName(value string) inputYearRange {
 	return i.set("inputClassName", value)
 }
 
-// InputFormat 年份选择器显示格式
+// InputFormat sets the display format of the year range.
 func (i inputYearRange) InputFormat(value string) inputYearRange {
 	return i.set("inputFormat", value)
 }
 
-// Label 表单项标签
+// Label sets the label of the form item.
 func (i inputYearRange) Label(value string) inputYearRange {
 	return i.set("label", value)
 }
 
-// LabelAlign 表单项标签对齐方式，默认右对齐，仅在 mode 为 horizontal 时生效
+// LabelAlign sets the alignment of the label, effective only in horizontal mode.
 func (i inputYearRange) LabelAlign(value string) inputYearRange {
 	return i.set("labelAlign", value)
 }
 
-// LabelClassName label 的类名
+// LabelClassName sets the class name of the label.
 func (i inputYearRange) LabelClassName(value string) inputYearRange {
 	return i.set("labelClassName", value)
 }
 
-// LabelRemark 表单项标签描述
+// LabelRemark sets the remark of the label.
 func (i inputYearRange) LabelRemark(value string) inputYearRange {
 	return i.set("labelRemark", value)
 }
 
-// MaxDate 限制最大日期，用法同限制范围
+// MaxDate sets the maximum date limit.
 func (i inputYearRange) MaxDate(value string) inputYearRange {
 	return i.set("maxDate", value)
 }
 
-// MaxDuration 限制最大跨度，如：4year
+// MaxDuration sets the maximum duration limit, e.g., 4 years.
 func (i inputYearRange) MaxDuration(value string) inputYearRange {
 	return i.set("maxDuration", value)
 }
 
-// MinDate 限制最小日期，用法同限制范围
+// MinDate sets the minimum date limit.
 func (i inputYearRange) MinDate(value string) inputYearRange {
 	return i.set("minDate", value)
 }
 
-// MinDuration 限制最小跨度，如：2year
+// MinDuration sets the minimum duration limit, e.g., 2 years.
 func (i inputYearRange) MinDuration(value string) inputYearRange {
 	return i.set("minDuration", value)
 }
 
-// Name 字段名，指定该表单项提交时的 key
+// Name sets the field name for form submission.
 func (i inputYearRange) Name(value string) inputYearRange {
 	return i.set("name", value)
 }
 
-// Placeholder 占位文本
+// Placeholder sets the placeholder text.
 func (i inputYearRange) Placeholder(value string) inputYearRange {
 	return i.set("placeholder", value)
 }
 
-// Required 是否必填
+// Required sets whether the input is required.
 func (i inputYearRange) Required(value bool) inputYearRange {
 	return i.set("required", value)
 }
 
-// RequiredOn 通过表达式来配置当前表单项是否为必填
+// RequiredOn sets the condition to make the input required.
 func (i inputYearRange) RequiredOn(value string) inputYearRange {
 	return i.set("requiredOn", value)
 }
 
-// SubmitOnChange 是否该表单项值发生变化时就提交当前表单
+// SubmitOnChange sets whether to submit the form when the input value changes.
 func (i inputYearRange) SubmitOnChange(value bool) inputYearRange {
 	return i.set("submitOnChange", value)
 }
 
-// Utc 保存 UTC 值
+// Utc sets whether to save the value in UTC.
 func (i inputYearRange) Utc(value bool) inputYearRange {
 	return i.set("utc", value)
 }
 
-// ValidateApi 表单校验接口
+// ValidateApi sets the validation API.
 func (i inputYearRange) ValidateApi(value string) inputYearRange {
 	return i.set("validateApi", value)
 }
 
-// Validations 表单项值格式验证，支持设置多个，多个规则用英文逗号隔开
+// Validations sets the validation rules, multiple rules separated by commas.
 func (i inputYearRange) Validations(value string) inputYearRange {
 	return i.set("validations", value)
 }
 
-// Value 表单默认值
+// Value sets the default value of the form item.
 func (i inputYearRange) Value(value string) inputYearRange {
 	return i.set("value", value)
 }
 
-// Visible 是否可见
+// Visible sets whether the input is visible.
 func (i inputYearRange) Visible(value bool) inputYearRange {
 	return i.set("visible", value)
 }
 
-// VisibleOn 当前表单项是否禁用的条件
+// VisibleOn sets the condition to make the input visible.
 func (i inputYearRange) VisibleOn(value string) inputYearRange {
 	return i.set("visibleOn", value)
 }

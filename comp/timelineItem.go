@@ -1,10 +1,10 @@
 package comp
 
-// timelineItem 时间轴项渲染器
+// timelineItem represents a timeline item renderer
 
 type timelineItem Schema
 
-// NewTimelineItem 创建一个新的 TimelineItem 实例
+// NewTimelineItem creates a new TimelineItem instance
 func NewTimelineItem() timelineItem {
 	return timelineItem{}
 }
@@ -14,162 +14,162 @@ func (t timelineItem) set(key string, value any) timelineItem {
 	return t
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// ClassName sets the CSS class name
 func (t timelineItem) ClassName(value string) timelineItem {
 	return t.set("className", value)
 }
 
-// Color 时间点圆圈颜色
+// Color sets the color of the timeline point
 func (t timelineItem) Color(value string) timelineItem {
 	return t.set("color", value)
 }
 
-// Detail 详细内容
+// Detail sets the detailed content
 func (t timelineItem) Detail(value string) timelineItem {
 	return t.set("detail", value)
 }
 
-// DetailClassName 节点详情的CSS类名（优先级高于统一配置的detailClassName）
+// DetailClassName sets the CSS class name for the detail
 func (t timelineItem) DetailClassName(value string) timelineItem {
 	return t.set("detailClassName", value)
 }
 
-// DetailCollapsedText detail折叠时文案
+// DetailCollapsedText sets the text when detail is collapsed
 func (t timelineItem) DetailCollapsedText(value string) timelineItem {
 	return t.set("detailCollapsedText", value)
 }
 
-// DetailExpandedText detail展开时文案
+// DetailExpandedText sets the text when detail is expanded
 func (t timelineItem) DetailExpandedText(value string) timelineItem {
 	return t.set("detailExpandedText", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the item is disabled
 func (t timelineItem) Disabled(value bool) timelineItem {
 	return t.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine if the item is disabled
 func (t timelineItem) DisabledOn(value string) timelineItem {
 	return t.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (t timelineItem) EditorSetting(value string) timelineItem {
 	return t.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the item is hidden
 func (t timelineItem) Hidden(value bool) timelineItem {
 	return t.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine if the item is hidden
 func (t timelineItem) HiddenOn(value string) timelineItem {
 	return t.set("hiddenOn", value)
 }
 
-// Icon 图标
+// Icon sets the icon
 func (t timelineItem) Icon(value string) timelineItem {
 	return t.set("icon", value)
 }
 
-// IconClassName 图标的CSS类名
+// IconClassName sets the CSS class name for the icon
 func (t timelineItem) IconClassName(value string) timelineItem {
 	return t.set("iconClassName", value)
 }
 
-// ID 组件唯一 id，主要用于日志采集
+// ID sets the unique ID for the component
 func (t timelineItem) ID(value string) timelineItem {
 	return t.set("id", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (t timelineItem) OnEvent(value any) timelineItem {
 	return t.set("onEvent", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the item is displayed statically
 func (t timelineItem) Static(value bool) timelineItem {
 	return t.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticClassName sets the CSS class name for static display
 func (t timelineItem) StaticClassName(value string) timelineItem {
 	return t.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticInputClassName sets the CSS class name for static input display
 func (t timelineItem) StaticInputClassName(value string) timelineItem {
 	return t.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticLabelClassName sets the CSS class name for static label display
 func (t timelineItem) StaticLabelClassName(value string) timelineItem {
 	return t.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine if the item is displayed statically
 func (t timelineItem) StaticOn(value string) timelineItem {
 	return t.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (t timelineItem) StaticPlaceholder(value string) timelineItem {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the static schema
 func (t timelineItem) StaticSchema(value string) timelineItem {
 	return t.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (t timelineItem) Style(value any) timelineItem {
 	return t.set("style", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (t timelineItem) TestIdBuilder(value string) timelineItem {
 	return t.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID
 func (t timelineItem) Testid(value string) timelineItem {
 	return t.set("testid", value)
 }
 
-// Time 时间点
+// Time sets the time point
 func (t timelineItem) Time(value string) timelineItem {
 	return t.set("time", value)
 }
 
-// TimeClassName 节点时间的CSS类名（优先级高于统一配置的timeClassName）
+// TimeClassName sets the CSS class name for the time point
 func (t timelineItem) TimeClassName(value string) timelineItem {
 	return t.set("timeClassName", value)
 }
 
-// Title 时间节点标题 (时间节点标题)
+// Title sets the title of the time point
 func (t timelineItem) Title(value any) timelineItem {
 	return t.set("title", value)
 }
 
-// TitleClassName 节点标题的CSS类名（优先级高于统一配置的titleClassName）
+// TitleClassName sets the CSS class name for the title
 func (t timelineItem) TitleClassName(value string) timelineItem {
 	return t.set("titleClassName", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (t timelineItem) UseMobileUI(value bool) timelineItem {
 	return t.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the item is visible
 func (t timelineItem) Visible(value bool) timelineItem {
 	return t.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine if the item is visible
 func (t timelineItem) VisibleOn(value string) timelineItem {
 	return t.set("visibleOn", value)
 }

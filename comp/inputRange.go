@@ -1,10 +1,10 @@
 package comp
 
-// inputRange 组件的范围控制
+// inputRange controls the range of the component
 
 type inputRange Schema
 
-// InputRange 创建一个新的 RangeControl 实例
+// InputRange creates a new RangeControl instance
 func InputRange() inputRange {
 	return inputRange{}.set("type", "input-range")
 }
@@ -14,337 +14,337 @@ func (rc inputRange) set(key string, value any) inputRange {
 	return rc
 }
 
-// AutoFill 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+// AutoFill sets autoFill when an option is selected
 func (rc inputRange) AutoFill(value string) inputRange {
 	return rc.set("autoFill", value)
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。)
+// ClassName sets the container CSS class name
 func (rc inputRange) ClassName(value string) inputRange {
 	return rc.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值
+// ClearValueOnHidden removes the form item value when hidden
 func (rc inputRange) ClearValueOnHidden(value bool) inputRange {
 	return rc.set("clearValueOnHidden", value)
 }
 
-// Clearable 输入框是否可清除
+// Clearable sets whether the input box is clearable
 func (rc inputRange) Clearable(value bool) inputRange {
 	return rc.set("clearable", value)
 }
 
-// Delimiter 分隔符
+// Delimiter sets the delimiter
 func (rc inputRange) Delimiter(value string) inputRange {
 	return rc.set("delimiter", value)
 }
 
-// Desc 描述内容
+// Desc sets the description
 func (rc inputRange) Desc(value string) inputRange {
 	return rc.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段
+// Description sets the description, supports HTML
 func (rc inputRange) Description(value string) inputRange {
 	return rc.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className (配置描述上的 className)
+// DescriptionClassName sets the class name for the description
 func (rc inputRange) DescriptionClassName(value string) inputRange {
 	return rc.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the component is disabled
 func (rc inputRange) Disabled(value bool) inputRange {
 	return rc.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to disable the component
 func (rc inputRange) DisabledOn(value string) inputRange {
 	return rc.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (rc inputRange) EditorSetting(value string) inputRange {
 	return rc.set("editorSetting", value)
 }
 
-// ExtraName 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+// ExtraName sets an extra field name for range components
 func (rc inputRange) ExtraName(value string) inputRange {
 	return rc.set("extraName", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the component is hidden
 func (rc inputRange) Hidden(value bool) inputRange {
 	return rc.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to hide the component
 func (rc inputRange) HiddenOn(value string) inputRange {
 	return rc.set("hiddenOn", value)
 }
 
-// Hint 输入提示，聚焦的时候显示
+// Hint sets the input hint
 func (rc inputRange) Hint(value string) inputRange {
 	return rc.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候，用来配置具体的左右分配。
+// Horizontal sets the horizontal layout configuration
 func (rc inputRange) Horizontal(value string) inputRange {
 	return rc.set("horizontal", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique component ID
 func (rc inputRange) ID(value string) inputRange {
 	return rc.set("id", value)
 }
 
-// InitAutoFill
+// InitAutoFill sets the initial autoFill value
 func (rc inputRange) InitAutoFill(value string) inputRange {
 	return rc.set("initAutoFill", value)
 }
 
-// Inline 表单 control 是否为 inline 模式。
+// Inline sets whether the form control is inline
 func (rc inputRange) Inline(value bool) inputRange {
 	return rc.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the input class name
 func (rc inputRange) InputClassName(value string) inputRange {
 	return rc.set("inputClassName", value)
 }
 
-// JoinValues 是否通过分隔符连接
+// JoinValues sets whether to join values with a delimiter
 func (rc inputRange) JoinValues(value bool) inputRange {
 	return rc.set("joinValues", value)
 }
 
-// Label 描述标题
+// Label sets the label
 func (rc inputRange) Label(value string) inputRange {
 	return rc.set("label", value)
 }
 
-// LabelAlign 描述标题 (描述标题) 可选值: right | left | top | inherit
+// LabelAlign sets the label alignment
 func (rc inputRange) LabelAlign(value string) inputRange {
 	return rc.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the label class name
 func (rc inputRange) LabelClassName(value string) inputRange {
 	return rc.set("labelClassName", value)
 }
 
-// LabelRemark 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+// LabelRemark sets the label remark
 func (rc inputRange) LabelRemark(value string) inputRange {
 	return rc.set("labelRemark", value)
 }
 
-// LabelWidth label自定义宽度，默认单位为px
+// LabelWidth sets the custom label width
 func (rc inputRange) LabelWidth(value string) inputRange {
 	return rc.set("labelWidth", value)
 }
 
-// Marks 刻度
+// Marks sets the marks
 func (rc inputRange) Marks(value string) inputRange {
 	return rc.set("marks", value)
 }
 
-// Max 最大值
+// Max sets the maximum value
 func (rc inputRange) Max(value string) inputRange {
 	return rc.set("max", value)
 }
 
-// Min 最小值
+// Min sets the minimum value
 func (rc inputRange) Min(value string) inputRange {
 	return rc.set("min", value)
 }
 
-// Mode 配置当前表单项展示模式 可选值: normal | inline | horizontal
+// Mode sets the display mode
 func (rc inputRange) Mode(value string) inputRange {
 	return rc.set("mode", value)
 }
 
-// Multiple 是否为双滑块
+// Multiple sets whether to use dual sliders
 func (rc inputRange) Multiple(value bool) inputRange {
 	return rc.set("multiple", value)
 }
 
-// Name 字段名，表单提交时的 key，支持多层级，用.连接，如： a.b.c
+// Name sets the field name
 func (rc inputRange) Name(value string) inputRange {
 	return rc.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (rc inputRange) OnEvent(value any) inputRange {
 	return rc.set("onEvent", value)
 }
 
-// Parts 分割块数
+// Parts sets the number of segments
 func (rc inputRange) Parts(value string) inputRange {
 	return rc.set("parts", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the placeholder
 func (rc inputRange) Placeholder(value string) inputRange {
 	return rc.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the component is read-only
 func (rc inputRange) ReadOnly(value bool) inputRange {
 	return rc.set("readOnly", value)
 }
 
-// ReadOnlyOn 只读条件
+// ReadOnlyOn sets the expression for read-only
 func (rc inputRange) ReadOnlyOn(value string) inputRange {
 	return rc.set("readOnlyOn", value)
 }
 
-// Remark 显示一个小图标, 鼠标放上去的时候显示提示内容
+// Remark sets the remark
 func (rc inputRange) Remark(value string) inputRange {
 	return rc.set("remark", value)
 }
 
-// Required 是否为必填
+// Required sets whether the component is required
 func (rc inputRange) Required(value bool) inputRange {
 	return rc.set("required", value)
 }
 
-// Row
+// Row sets the row
 func (rc inputRange) Row(value string) inputRange {
 	return rc.set("row", value)
 }
 
-// SaveImmediately 是否立即保存(TableColumn中使用)
+// SaveImmediately sets whether to save immediately
 func (rc inputRange) SaveImmediately(value bool) inputRange {
 	return rc.set("saveImmediately", value)
 }
 
-// ShowInput 是否展示输入框
+// ShowInput sets whether to show the input box
 func (rc inputRange) ShowInput(value bool) inputRange {
 	return rc.set("showInput", value)
 }
 
-// ShowSteps 是否展示步长
+// ShowSteps sets whether to show steps
 func (rc inputRange) ShowSteps(value bool) inputRange {
 	return rc.set("showSteps", value)
 }
 
-// Size 表单项大小 可选值: xs | sm | md | lg | full
+// Size sets the size of the form item
 func (rc inputRange) Size(value string) inputRange {
 	return rc.set("size", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the component is static
 func (rc inputRange) Static(value bool) inputRange {
 	return rc.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the class name for static display
 func (rc inputRange) StaticClassName(value string) inputRange {
 	return rc.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the class name for static input value
 func (rc inputRange) StaticInputClassName(value string) inputRange {
 	return rc.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the class name for static label
 func (rc inputRange) StaticLabelClassName(value string) inputRange {
 	return rc.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression for static display
 func (rc inputRange) StaticOn(value string) inputRange {
 	return rc.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (rc inputRange) StaticPlaceholder(value string) inputRange {
 	return rc.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the static schema
 func (rc inputRange) StaticSchema(value string) inputRange {
 	return rc.set("staticSchema", value)
 }
 
-// Step 步长
+// Step sets the step value
 func (rc inputRange) Step(value string) inputRange {
 	return rc.set("step", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (rc inputRange) Style(value any) inputRange {
 	return rc.set("style", value)
 }
 
-// SubmitOnChange 当修改完的时候是否提交表单。
+// SubmitOnChange sets whether to submit the form on change
 func (rc inputRange) SubmitOnChange(value bool) inputRange {
 	return rc.set("submitOnChange", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (rc inputRange) TestIdBuilder(value string) inputRange {
 	return rc.set("testIdBuilder", value)
 }
 
-// TooltipPlacement 标签方向 (标签方向) 可选值: auto | top | right | bottom | left
+// TooltipPlacement sets the tooltip placement
 func (rc inputRange) TooltipPlacement(value string) inputRange {
 	return rc.set("tooltipPlacement", value)
 }
 
-// TooltipVisible 是否展示标签
+// TooltipVisible sets whether to show the tooltip
 func (rc inputRange) TooltipVisible(value bool) inputRange {
 	return rc.set("tooltipVisible", value)
 }
 
-// Unit 单位
+// Unit sets the unit
 func (rc inputRange) Unit(value string) inputRange {
 	return rc.set("unit", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (rc inputRange) UseMobileUI(value bool) inputRange {
 	return rc.set("useMobileUI", value)
 }
 
-// ValidateApi 远端校验表单项接口
+// ValidateApi sets the remote validation API
 func (rc inputRange) ValidateApi(value string) inputRange {
 	return rc.set("validateApi", value)
 }
 
-// ValidateOnChange 不设置时，当表单提交过后表单项每次修改都会触发重新验证， 如果设置了，则由此配置项来决定要不要每次修改都触发验证。
+// ValidateOnChange sets whether to validate on change
 func (rc inputRange) ValidateOnChange(value bool) inputRange {
 	return rc.set("validateOnChange", value)
 }
 
-// ValidationErrors 验证失败的提示信息
+// ValidationErrors sets the validation error messages
 func (rc inputRange) ValidationErrors(value string) inputRange {
 	return rc.set("validationErrors", value)
 }
 
-// Validations
+// Validations sets the validations
 func (rc inputRange) Validations(value string) inputRange {
 	return rc.set("validations", value)
 }
 
-// Value 滑块值 (Range 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/range)
+// Value sets the slider value
 func (rc inputRange) Value(value string) inputRange {
 	return rc.set("value", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the component is visible
 func (rc inputRange) Visible(value bool) inputRange {
 	return rc.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression for visibility
 func (rc inputRange) VisibleOn(value string) inputRange {
 	return rc.set("visibleOn", value)
 }
 
-// Width 在Table中调整宽度
+// Width sets the width in a table
 func (rc inputRange) Width(value string) inputRange {
 	return rc.set("width", value)
 }

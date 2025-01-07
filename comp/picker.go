@@ -1,10 +1,9 @@
 package comp
 
-// picker 选择器控件
-
+// picker represents the picker control
 type picker Schema
 
-// Picker 创建一个新的 PickerControl 实例
+// Picker creates a new PickerControl instance
 func Picker() picker {
 	return picker{}.set("type", "picker")
 }
@@ -14,432 +13,432 @@ func (pc picker) set(key string, value any) picker {
 	return pc
 }
 
-// AddApi 添加时调用的接口
+// AddApi sets the API for adding items
 func (pc picker) AddApi(value string) picker {
 	return pc.set("addApi", value)
 }
 
-// AddControls 新增时的表单项
+// AddControls sets the form items for adding
 func (pc picker) AddControls(value string) picker {
 	return pc.set("addControls", value)
 }
 
-// AddDialog 控制新增弹框设置项
+// AddDialog sets the dialog for adding items
 func (pc picker) AddDialog(value string) picker {
 	return pc.set("addDialog", value)
 }
 
-// AutoFill 自动填充
+// AutoFill sets the auto-fill option
 func (pc picker) AutoFill(value string) picker {
 	return pc.set("autoFill", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the CSS class name
 func (pc picker) ClassName(value string) picker {
 	return pc.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时是否在当前 Form 中删除掉该表单项值
+// ClearValueOnHidden sets whether to clear value when hidden
 func (pc picker) ClearValueOnHidden(value bool) picker {
 	return pc.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否可清除
+// Clearable sets whether the picker is clearable
 func (pc picker) Clearable(value bool) picker {
 	return pc.set("clearable", value)
 }
 
-// Creatable 是否可以新增
+// Creatable sets whether new items can be created
 func (pc picker) Creatable(value bool) picker {
 	return pc.set("creatable", value)
 }
 
-// CreateBtnLabel 新增文字
+// CreateBtnLabel sets the label for the create button
 func (pc picker) CreateBtnLabel(value string) picker {
 	return pc.set("createBtnLabel", value)
 }
 
-// DeferApi 延时加载的 API
+// DeferApi sets the API for deferred loading
 func (pc picker) DeferApi(value string) picker {
 	return pc.set("deferApi", value)
 }
 
-// DeferField 懒加载字段
+// DeferField sets the field for lazy loading
 func (pc picker) DeferField(value string) picker {
 	return pc.set("deferField", value)
 }
 
-// DeleteApi 选项删除 API
+// DeleteApi sets the API for deleting items
 func (pc picker) DeleteApi(value string) picker {
 	return pc.set("deleteApi", value)
 }
 
-// DeleteConfirmText 选项删除提示文字
+// DeleteConfirmText sets the confirmation text for deletion
 func (pc picker) DeleteConfirmText(value string) picker {
 	return pc.set("deleteConfirmText", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the delimiter
 func (pc picker) Delimiter(value string) picker {
 	return pc.set("delimiter", value)
 }
 
-// Desc 描述
+// Desc sets the description
 func (pc picker) Desc(value string) picker {
 	return pc.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段
+// Description sets the HTML description
 func (pc picker) Description(value string) picker {
 	return pc.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className
+// DescriptionClassName sets the CSS class name for the description
 func (pc picker) DescriptionClassName(value string) picker {
 	return pc.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the picker is disabled
 func (pc picker) Disabled(value bool) picker {
 	return pc.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression for disabling the picker
 func (pc picker) DisabledOn(value string) picker {
 	return pc.set("disabledOn", value)
 }
 
-// EditApi 编辑时调用的 API
+// EditApi sets the API for editing items
 func (pc picker) EditApi(value string) picker {
 	return pc.set("editApi", value)
 }
 
-// EditControls 选项修改的表单项
+// EditControls sets the form items for editing
 func (pc picker) EditControls(value string) picker {
 	return pc.set("editControls", value)
 }
 
-// EditDialog 控制编辑弹框设置项
+// EditDialog sets the dialog for editing items
 func (pc picker) EditDialog(value string) picker {
 	return pc.set("editDialog", value)
 }
 
-// Editable 是否可以编辑
+// Editable sets whether the picker is editable
 func (pc picker) Editable(value bool) picker {
 	return pc.set("editable", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets the editor configuration
 func (pc picker) EditorSetting(value string) picker {
 	return pc.set("editorSetting", value)
 }
 
-// Embed 内嵌模式
+// Embed sets whether the picker is in embedded mode
 func (pc picker) Embed(value bool) picker {
 	return pc.set("embed", value)
 }
 
-// ExtraName 额外的字段名
+// ExtraName sets the extra field name
 func (pc picker) ExtraName(value string) picker {
 	return pc.set("extraName", value)
 }
 
-// ExtractValue 开启后将选中的选项 value 的值封装为数组
+// ExtractValue sets whether to extract the value as an array
 func (pc picker) ExtractValue(value bool) picker {
 	return pc.set("extractValue", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the picker is hidden
 func (pc picker) Hidden(value bool) picker {
 	return pc.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression for hiding the picker
 func (pc picker) HiddenOn(value string) picker {
 	return pc.set("hiddenOn", value)
 }
 
-// Hint 输入提示
+// Hint sets the input hint
 func (pc picker) Hint(value string) picker {
 	return pc.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候，用来配置具体的左右分配
+// Horizontal sets the horizontal layout configuration
 func (pc picker) Horizontal(value string) picker {
 	return pc.set("horizontal", value)
 }
 
-// Id 组件唯一 id
+// ID sets the unique ID
 func (pc picker) ID(value string) picker {
 	return pc.set("id", value)
 }
 
-// InitAutoFill 配置 initAutoFill
+// InitAutoFill sets the initial auto-fill configuration
 func (pc picker) InitAutoFill(value string) picker {
 	return pc.set("initAutoFill", value)
 }
 
-// InitFetch 配置 source 接口初始拉不拉取
+// InitFetch sets whether to fetch data initially
 func (pc picker) InitFetch(value bool) picker {
 	return pc.set("initFetch", value)
 }
 
-// InitFetchOn 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets the expression for initial data fetch
 func (pc picker) InitFetchOn(value string) picker {
 	return pc.set("initFetchOn", value)
 }
 
-// Inline 表单 control 是否为 inline 模式
+// Inline sets whether the control is in inline mode
 func (pc picker) Inline(value bool) picker {
 	return pc.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the CSS class name for the input
 func (pc picker) InputClassName(value string) picker {
 	return pc.set("inputClassName", value)
 }
 
-// JoinValues 单选模式：当用户选中某个选项时
+// JoinValues sets whether to join values in single selection mode
 func (pc picker) JoinValues(value bool) picker {
 	return pc.set("joinValues", value)
 }
 
-// Label 描述标题
+// Label sets the label
 func (pc picker) Label(value string) picker {
 	return pc.set("label", value)
 }
 
-// LabelAlign 描述标题对齐方式
+// LabelAlign sets the label alignment
 func (pc picker) LabelAlign(value string) picker {
 	return pc.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the CSS class name for the label
 func (pc picker) LabelClassName(value string) picker {
 	return pc.set("labelClassName", value)
 }
 
-// LabelField 建议用 labelTpl 选中一个字段名用来显示
+// LabelField sets the field name for the label
 func (pc picker) LabelField(value string) picker {
 	return pc.set("labelField", value)
 }
 
-// LabelRemark 描述标题备注
+// LabelRemark sets the label remark
 func (pc picker) LabelRemark(value string) picker {
 	return pc.set("labelRemark", value)
 }
 
-// LabelTpl 标签渲染模版
+// LabelTpl sets the label template
 func (pc picker) LabelTpl(value string) picker {
 	return pc.set("labelTpl", value)
 }
 
-// LabelWidth 描述宽度
+// LabelWidth sets the label width
 func (pc picker) LabelWidth(value int) picker {
 	return pc.set("labelWidth", value)
 }
 
-// ModalMode 弹框模式
+// ModalMode sets the modal mode
 func (pc picker) ModalMode(value string) picker {
 	return pc.set("modalMode", value)
 }
 
-// ModalTitle 弹框标题
+// ModalTitle sets the modal title
 func (pc picker) ModalTitle(value any) picker {
 	return pc.set("modalTitle", value)
 }
 
-// Mode 组件模式
+// Mode sets the component mode
 func (pc picker) Mode(value string) picker {
 	return pc.set("mode", value)
 }
 
-// Multiple 是否支持多选
+// Multiple sets whether multiple selection is supported
 func (pc picker) Multiple(value bool) picker {
 	return pc.set("multiple", value)
 }
 
-// Name 组件名
+// Name sets the component name
 func (pc picker) Name(value string) picker {
 	return pc.set("name", value)
 }
 
-// OnEvent 事件
+// OnEvent sets the event handler
 func (pc picker) OnEvent(value any) picker {
 	return pc.set("onEvent", value)
 }
 
-// Options 选项列表
+// Options sets the options list
 func (pc picker) Options(value ...any) picker {
 	return pc.set("options", value)
 }
 
-// OverflowConfig 控制内容超出后的显示配置
+// OverflowConfig sets the overflow configuration
 func (pc picker) OverflowConfig(value string) picker {
 	return pc.set("overflowConfig", value)
 }
 
-// PickerSchema picker 的 schema
+// PickerSchema sets the picker schema
 func (pc picker) PickerSchema(value string) picker {
 	return pc.set("pickerSchema", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the placeholder text
 func (pc picker) Placeholder(value string) picker {
 	return pc.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the picker is read-only
 func (pc picker) ReadOnly(value bool) picker {
 	return pc.set("readOnly", value)
 }
 
-// ReadOnlyOn 只读条件
+// ReadOnlyOn sets the expression for read-only mode
 func (pc picker) ReadOnlyOn(value string) picker {
 	return pc.set("readOnlyOn", value)
 }
 
-// Removable 是否可删除
+// Removable sets whether the picker is removable
 func (pc picker) Removable(value bool) picker {
 	return pc.set("removable", value)
 }
 
-// Required 是否必填
+// Required sets whether the picker is required
 func (pc picker) Required(value bool) picker {
 	return pc.set("required", value)
 }
 
-// ResetValue 重置表单值
+// ResetValue sets the reset value
 func (pc picker) ResetValue(value string) picker {
 	return pc.set("resetValue", value)
 }
 
-// Row 控制表单项显示的行
+// Row sets the row for the form item
 func (pc picker) Row(value int) picker {
 	return pc.set("row", value)
 }
 
-// SaveImmediately 保存表单项
+// SaveImmediately sets whether to save immediately
 func (pc picker) SaveImmediately(value bool) picker {
 	return pc.set("saveImmediately", value)
 }
 
-// SelectFirst 是否选中第一个
+// SelectFirst sets whether to select the first item
 func (pc picker) SelectFirst(value bool) picker {
 	return pc.set("selectFirst", value)
 }
 
-// Size 大小
+// Size sets the size
 func (pc picker) Size(value string) picker {
 	return pc.set("size", value)
 }
 
-// Source 数据来源
+// Source sets the data source
 func (pc picker) Source(value string) picker {
 	return pc.set("source", value)
 }
 
-// Static 静态模式
+// Static sets whether the picker is in static mode
 func (pc picker) Static(value bool) picker {
 	return pc.set("static", value)
 }
 
-// StaticClassName 静态模式下的 css className
+// StaticClassName sets the CSS class name for static mode
 func (pc picker) StaticClassName(value string) picker {
 	return pc.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态模式下 input 的 css className
+// StaticInputClassName sets the CSS class name for static input
 func (pc picker) StaticInputClassName(value string) picker {
 	return pc.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态模式下 label 的 css className
+// StaticLabelClassName sets the CSS class name for static label
 func (pc picker) StaticLabelClassName(value string) picker {
 	return pc.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否开启静态模式
+// StaticOn sets the expression for static mode
 func (pc picker) StaticOn(value string) picker {
 	return pc.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态模式下占位符
+// StaticPlaceholder sets the placeholder for static mode
 func (pc picker) StaticPlaceholder(value string) picker {
 	return pc.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态模式下的 schema
+// StaticSchema sets the schema for static mode
 func (pc picker) StaticSchema(value string) picker {
 	return pc.set("staticSchema", value)
 }
 
-// Style 自定义样式
+// Style sets the custom style
 func (pc picker) Style(value any) picker {
 	return pc.set("style", value)
 }
 
-// SubmitOnChange 是否在改变时提交
+// SubmitOnChange sets whether to submit on change
 func (pc picker) SubmitOnChange(value bool) picker {
 	return pc.set("submitOnChange", value)
 }
 
-// TestIdBuilder 生成测试 ID 的函数
+// TestIdBuilder sets the function to generate test IDs
 func (pc picker) TestIdBuilder(value string) picker {
 	return pc.set("testIdBuilder", value)
 }
 
-// UseMobileUI 是否使用移动端 UI
+// UseMobileUI sets whether to use mobile UI
 func (pc picker) UseMobileUI(value bool) picker {
 	return pc.set("useMobileUI", value)
 }
 
-// ValidateApi 校验 API
+// ValidateApi sets the API for validation
 func (pc picker) ValidateApi(value string) picker {
 	return pc.set("validateApi", value)
 }
 
-// ValidateOnChange 是否在改变时校验
+// ValidateOnChange sets whether to validate on change
 func (pc picker) ValidateOnChange(value bool) picker {
 	return pc.set("validateOnChange", value)
 }
 
-// ValidationErrors 校验错误信息
+// ValidationErrors sets the validation error messages
 func (pc picker) ValidationErrors(value string) picker {
 	return pc.set("validationErrors", value)
 }
 
-// Validations 校验规则
+// Validations sets the validation rules
 func (pc picker) Validations(value string) picker {
 	return pc.set("validations", value)
 }
 
-// Value 值
+// Value sets the value
 func (pc picker) Value(value string) picker {
 	return pc.set("value", value)
 }
 
-// ValueField 值字段
+// ValueField sets the value field
 func (pc picker) ValueField(value string) picker {
 	return pc.set("valueField", value)
 }
 
-// ValuesNoWrap 是否不换行
+// ValuesNoWrap sets whether values should not wrap
 func (pc picker) ValuesNoWrap(value bool) picker {
 	return pc.set("valuesNoWrap", value)
 }
 
-// Visible 是否可见
+// Visible sets whether the picker is visible
 func (pc picker) Visible(value bool) picker {
 	return pc.set("visible", value)
 }
 
-// VisibleOn 是否可见表达式
+// VisibleOn sets the expression for visibility
 func (pc picker) VisibleOn(value string) picker {
 	return pc.set("visibleOn", value)
 }
 
-// Width 宽度
+// Width sets the width
 func (pc picker) Width(value int) picker {
 	return pc.set("width", value)
 }

@@ -1,140 +1,140 @@
 package comp
 
-// multilineText 多行文本控件
+// multilineText represents a multiline text component
 type multilineText Schema
 
-// MultilineText 创建一个新的 MultilineText 实例
+// MultilineText creates a new multilineText instance
 func MultilineText() multilineText {
 	return multilineText{}.set("type", "multiline-text")
 }
 
-// set 方法用于设置属性并返回自身
+// set sets a property and returns the instance
 func (m multilineText) set(key string, value any) multilineText {
 	m[key] = value
 	return m
 }
 
-// ClassName 设置容器 css 类名
+// ClassName sets the CSS class name
 func (m multilineText) ClassName(value string) multilineText {
 	return m.set("className", value)
 }
 
-// CollapseButtonText 设置收起按钮文本
+// CollapseButtonText sets the collapse button text
 func (m multilineText) CollapseButtonText(value string) multilineText {
 	return m.set("collapseButtonText", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled sets the disabled state
 func (m multilineText) Disabled(value bool) multilineText {
 	return m.set("disabled", value)
 }
 
-// DisabledOn 设置禁用表达式
+// DisabledOn sets the disabled expression
 func (m multilineText) DisabledOn(value string) multilineText {
 	return m.set("disabledOn", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting sets the editor configuration
 func (m multilineText) EditorSetting(value string) multilineText {
 	return m.set("editorSetting", value)
 }
 
-// ExpendButtonText 设置展开按钮文本
+// ExpendButtonText sets the expand button text
 func (m multilineText) ExpendButtonText(value string) multilineText {
 	return m.set("expendButtonText", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden sets the hidden state
 func (m multilineText) Hidden(value bool) multilineText {
 	return m.set("hidden", value)
 }
 
-// HiddenOn 设置隐藏表达式
+// HiddenOn sets the hidden expression
 func (m multilineText) HiddenOn(value string) multilineText {
 	return m.set("hiddenOn", value)
 }
 
-// Id 设置组件唯一 id
+// ID sets the unique component ID
 func (m multilineText) ID(value string) multilineText {
 	return m.set("id", value)
 }
 
-// MaxRows 设置最大行数
+// MaxRows sets the maximum number of rows
 func (m multilineText) MaxRows(value string) multilineText {
 	return m.set("maxRows", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent sets the event configuration
 func (m multilineText) OnEvent(value any) multilineText {
 	return m.set("onEvent", value)
 }
 
-// Static 设置是否静态展示
+// Static sets the static display state
 func (m multilineText) Static(value bool) multilineText {
 	return m.set("static", value)
 }
 
-// StaticClassName 设置静态展示表单项类名
+// StaticClassName sets the static display class name
 func (m multilineText) StaticClassName(value string) multilineText {
 	return m.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置静态展示表单项 Value 类名
+// StaticInputClassName sets the static input class name
 func (m multilineText) StaticInputClassName(value string) multilineText {
 	return m.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置静态展示表单项 Label 类名
+// StaticLabelClassName sets the static label class name
 func (m multilineText) StaticLabelClassName(value string) multilineText {
 	return m.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置静态展示表达式
+// StaticOn sets the static display expression
 func (m multilineText) StaticOn(value string) multilineText {
 	return m.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置静态展示空值占位
+// StaticPlaceholder sets the static placeholder
 func (m multilineText) StaticPlaceholder(value string) multilineText {
 	return m.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置静态展示 schema
+// StaticSchema sets the static schema
 func (m multilineText) StaticSchema(value string) multilineText {
 	return m.set("staticSchema", value)
 }
 
-// Style 设置组件样式
+// Style sets the component style
 func (m multilineText) Style(value any) multilineText {
 	return m.set("style", value)
 }
 
-// TestIdBuilder 设置测试 ID 构建器
+// TestIdBuilder sets the test ID builder
 func (m multilineText) TestIdBuilder(value string) multilineText {
 	return m.set("testIdBuilder", value)
 }
 
-// Testid 设置测试 ID
+// Testid sets the test ID
 func (m multilineText) Testid(value string) multilineText {
 	return m.set("testid", value)
 }
 
-// Text 设置文本内容
+// Text sets the text content
 func (m multilineText) Text(value string) multilineText {
 	return m.set("text", value)
 }
 
-// UseMobileUI 设置是否关闭移动端样式
+// UseMobileUI sets the mobile UI state
 func (m multilineText) UseMobileUI(value bool) multilineText {
 	return m.set("useMobileUI", value)
 }
 
-// Visible 设置是否显示
+// Visible sets the visibility state
 func (m multilineText) Visible(value bool) multilineText {
 	return m.set("visible", value)
 }
 
-// VisibleOn 设置显示表达式
+// VisibleOn sets the visibility expression
 func (m multilineText) VisibleOn(value string) multilineText {
 	return m.set("visibleOn", value)
 }

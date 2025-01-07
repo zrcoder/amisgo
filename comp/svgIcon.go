@@ -1,10 +1,10 @@
 package comp
 
-// svgIcon 图标渲染器
+// svgIcon represents an SVG icon renderer.
 
 type svgIcon Schema
 
-// SvgIcon 创建一个新的 SvgIcon 实例
+// SvgIcon creates a new SvgIcon instance.
 func SvgIcon() svgIcon {
 	return svgIcon{}.set("type", "custom-svg-icon")
 }
@@ -14,12 +14,12 @@ func (s svgIcon) set(key string, value any) svgIcon {
 	return s
 }
 
-// ClassName 设置图标的类名
+// ClassName sets the class name of the icon.
 func (s svgIcon) ClassName(value string) svgIcon {
 	return s.set("className", value)
 }
 
-// Icon 设置图标的名称
+// Icon sets the name of the icon.
 func (s svgIcon) Icon(value string) svgIcon {
 	return s.set("icon", value)
 }

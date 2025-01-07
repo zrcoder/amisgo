@@ -4,7 +4,6 @@ package comp
 
 type qrCodeImageSettings Schema
 
-// QRCodeImageSettings 创建一个新的 QRCodeImageSettings 实例
 func QRCodeImageSettings() qrCodeImageSettings {
 	return qrCodeImageSettings{}
 }
@@ -14,7 +13,7 @@ func (q qrCodeImageSettings) set(key string, value any) qrCodeImageSettings {
 	return q
 }
 
-// Excavate
+// Excavate sets the "excavate" property of qrCodeImageSettings and returns the updated settings.
 func (q qrCodeImageSettings) Excavate(value bool) qrCodeImageSettings {
 	return q.set("excavate", value)
 }

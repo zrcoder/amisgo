@@ -2,7 +2,7 @@ package comp
 
 type MRule Schema
 
-// Rule 表单校验规则
+// Rule returns an empty validation rule.
 func Rule() MRule {
 	return MRule{}
 }
@@ -12,17 +12,17 @@ func (r MRule) set(key string, value any) MRule {
 	return r
 }
 
-// Rule 校验规则 如 "data.user && data.email"
+// Rule sets the validation rule, e.g., "data.user && data.email".
 func (r MRule) Rule(value string) MRule {
 	return r.set("rule", value)
 }
 
-// Message 校验不通过时的提示语
+// Message sets the error message for validation failure.
 func (r MRule) Message(value string) MRule {
 	return r.set("message", value)
 }
 
-// Name
+// Name sets the name of the rule.
 func (r MRule) Name(value any) MRule {
 	return r.set("name", value)
 }

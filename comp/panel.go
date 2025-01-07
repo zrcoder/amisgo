@@ -1,201 +1,200 @@
 package comp
 
-// panel 代表 amis panel 渲染器
-
+// panel represents the amis panel renderer
 type panel Schema
 
-// Panel 创建一个新的 Panel 实例
+// Panel creates a new Panel instance
 func Panel() panel {
 	return panel{}.set("type", "panel")
 }
 
-// set 用于设置字段值
+// set sets a field value
 func (p panel) set(key string, value any) panel {
 	p[key] = value
 	return p
 }
 
-// Actions 按钮集合
+// Actions sets the actions
 func (p panel) Actions(value ...any) panel {
 	return p.set("actions", value)
 }
 
-// ActionsClassName 按钮集合外层类名
+// ActionsClassName sets the actions class name
 func (p panel) ActionsClassName(value string) panel {
 	return p.set("actionsClassName", value)
 }
 
-// ActionsControlClassName 按钮控制的类名
+// ActionsControlClassName sets the actions control class name
 func (p panel) ActionsControlClassName(value string) panel {
 	return p.set("actionsControlClassName", value)
 }
 
-// AffixFooter 是否固定底部
+// AffixFooter sets whether the footer is fixed
 func (p panel) AffixFooter(value bool) panel {
 	return p.set("affixFooter", value)
 }
 
-// Body 内容区域
+// Body sets the body content
 func (p panel) Body(value ...any) panel {
 	return p.set("body", value)
 }
 
-// BodyClassName 配置 Body 容器 className
+// BodyClassName sets the body container class name
 func (p panel) BodyClassName(value string) panel {
 	return p.set("bodyClassName", value)
 }
 
-// BodyControlClassName Body 控制的类名
+// BodyControlClassName sets the body control class name
 func (p panel) BodyControlClassName(value string) panel {
 	return p.set("bodyControlClassName", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the container CSS class name
 func (p panel) ClassName(value string) panel {
 	return p.set("className", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the panel is disabled
 func (p panel) Disabled(value bool) panel {
 	return p.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the disabled expression
 func (p panel) DisabledOn(value string) panel {
 	return p.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (p panel) EditorSetting(value string) panel {
 	return p.set("editorSetting", value)
 }
 
-// Footer 底部内容区域
+// Footer sets the footer content
 func (p panel) Footer(value ...any) panel {
 	return p.set("footer", value)
 }
 
-// FooterClassName 配置 footer 容器 className
+// FooterClassName sets the footer container class name
 func (p panel) FooterClassName(value string) panel {
 	return p.set("footerClassName", value)
 }
 
-// FooterWrapClassName footer 和 actions 外层 div 类名
+// FooterWrapClassName sets the footer and actions wrapper class name
 func (p panel) FooterWrapClassName(value string) panel {
 	return p.set("footerWrapClassName", value)
 }
 
-// Header 头部内容
+// Header sets the header content
 func (p panel) Header(value ...any) panel {
 	return p.set("header", value)
 }
 
-// HeaderClassName 配置 header 容器 className
+// HeaderClassName sets the header container class name
 func (p panel) HeaderClassName(value string) panel {
 	return p.set("headerClassName", value)
 }
 
-// HeaderControlClassName 头部控制的类名
+// HeaderControlClassName sets the header control class name
 func (p panel) HeaderControlClassName(value string) panel {
 	return p.set("headerControlClassName", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the panel is hidden
 func (p panel) Hidden(value bool) panel {
 	return p.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the hidden expression
 func (p panel) HiddenOn(value string) panel {
 	return p.set("hiddenOn", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique component ID
 func (p panel) ID(value string) panel {
 	return p.set("id", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event configuration
 func (p panel) OnEvent(value any) panel {
 	return p.set("onEvent", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the panel is static
 func (p panel) Static(value bool) panel {
 	return p.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the static form item class name
 func (p panel) StaticClassName(value string) panel {
 	return p.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项 Value 类名
+// StaticInputClassName sets the static form item value class name
 func (p panel) StaticInputClassName(value string) panel {
 	return p.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项 Label 类名
+// StaticLabelClassName sets the static form item label class name
 func (p panel) StaticLabelClassName(value string) panel {
 	return p.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the static expression
 func (p panel) StaticOn(value string) panel {
 	return p.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the static placeholder
 func (p panel) StaticPlaceholder(value string) panel {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示模式的 schema
+// StaticSchema sets the static schema
 func (p panel) StaticSchema(value string) panel {
 	return p.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (p panel) Style(value any) panel {
 	return p.set("style", value)
 }
 
-// SubFormHorizontal 如果是水平排版，这个属性可以细化水平排版的左右宽度占比
+// SubFormHorizontal sets the horizontal layout ratio for subforms
 func (p panel) SubFormHorizontal(value string) panel {
 	return p.set("subFormHorizontal", value)
 }
 
-// SubFormMode 配置子表单项默认的展示方式
+// SubFormMode sets the default display mode for subform items
 func (p panel) SubFormMode(value string) panel {
 	return p.set("subFormMode", value)
 }
 
-// TestIdBuilder 自定义测试 ID 构建器
+// TestIdBuilder sets the custom test ID builder
 func (p panel) TestIdBuilder(value string) panel {
 	return p.set("testIdBuilder", value)
 }
 
-// Testid 测试 ID
+// Testid sets the test ID
 func (p panel) Testid(value string) panel {
 	return p.set("testid", value)
 }
 
-// Title Panel 标题
+// Title sets the panel title
 func (p panel) Title(value ...any) panel {
 	return p.set("title", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (p panel) UseMobileUI(value bool) panel {
 	return p.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the panel is visible
 func (p panel) Visible(value bool) panel {
 	return p.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the visible expression
 func (p panel) VisibleOn(value string) panel {
 	return p.set("visibleOn", value)
 }

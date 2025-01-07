@@ -1,10 +1,10 @@
 package comp
 
-// tag 代表一个标签组件
+// tag represents a tag component
 
 type tag Schema
 
-// Tag 创建一个新的 Tag 实例
+// Tag creates a new Tag instance
 func Tag() tag {
 	return tag{}.set("type", "tag")
 }
@@ -14,147 +14,147 @@ func (t tag) set(key string, value any) tag {
 	return t
 }
 
-// Checkable 设置是否为可选标签
+// Checkable sets whether the tag is checkable
 func (t tag) Checkable(value bool) tag {
 	return t.set("checkable", value)
 }
 
-// Checked 设置是否选中
+// Checked sets whether the tag is checked
 func (t tag) Checked(value bool) tag {
 	return t.set("checked", value)
 }
 
-// ClassName 设置标签的类名
+// ClassName sets the class name of the tag
 func (t tag) ClassName(value string) tag {
 	return t.set("className", value)
 }
 
-// Closable 设置是否展示关闭按钮
+// Closable sets whether the tag is closable
 func (t tag) Closable(value bool) tag {
 	return t.set("closable", value)
 }
 
-// CloseIcon 设置关闭图标
+// CloseIcon sets the close icon of the tag
 func (t tag) CloseIcon(value string) tag {
 	return t.set("closeIcon", value)
 }
 
-// Color 设置标签颜色
+// Color sets the color of the tag
 func (t tag) Color(value string) tag {
 	return t.set("color", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled sets whether the tag is disabled
 func (t tag) Disabled(value bool) tag {
 	return t.set("disabled", value)
 }
 
-// DisabledOn 设置禁用表达式
+// DisabledOn sets the expression for disabling the tag
 func (t tag) DisabledOn(value string) tag {
 	return t.set("disabledOn", value)
 }
 
-// DisplayMode 设置标签的显示模式
+// DisplayMode sets the display mode of the tag
 func (t tag) DisplayMode(value string) tag {
 	return t.set("displayMode", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting sets the editor configuration
 func (t tag) EditorSetting(value string) tag {
 	return t.set("editorSetting", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden sets whether the tag is hidden
 func (t tag) Hidden(value bool) tag {
 	return t.set("hidden", value)
 }
 
-// HiddenOn 设置隐藏表达式
+// HiddenOn sets the expression for hiding the tag
 func (t tag) HiddenOn(value string) tag {
 	return t.set("hiddenOn", value)
 }
 
-// Icon 设置前置图标
+// Icon sets the icon of the tag
 func (t tag) Icon(value string) tag {
 	return t.set("icon", value)
 }
 
-// ID 设置组件唯一 ID
+// ID sets the unique ID of the tag
 func (t tag) ID(value string) tag {
 	return t.set("id", value)
 }
 
-// Label 设置标签文本内容
+// Label sets the label text of the tag
 func (t tag) Label(value string) tag {
 	return t.set("label", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent sets the event configuration
 func (t tag) OnEvent(value any) tag {
 	return t.set("onEvent", value)
 }
 
-// Static 设置是否静态展示
+// Static sets whether the tag is static
 func (t tag) Static(value bool) tag {
 	return t.set("static", value)
 }
 
-// StaticClassName 设置静态展示表单项类名
+// StaticClassName sets the class name for static display
 func (t tag) StaticClassName(value string) tag {
 	return t.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置静态展示表单项值类名
+// StaticInputClassName sets the class name for static input display
 func (t tag) StaticInputClassName(value string) tag {
 	return t.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置静态展示表单项标签类名
+// StaticLabelClassName sets the class name for static label display
 func (t tag) StaticLabelClassName(value string) tag {
 	return t.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置静态展示表达式
+// StaticOn sets the expression for static display
 func (t tag) StaticOn(value string) tag {
 	return t.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (t tag) StaticPlaceholder(value string) tag {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置静态展示的 schema
+// StaticSchema sets the schema for static display
 func (t tag) StaticSchema(value string) tag {
 	return t.set("staticSchema", value)
 }
 
-// Style 设置自定义样式
+// Style sets the custom style of the tag
 func (t tag) Style(value any) tag {
 	return t.set("style", value)
 }
 
-// TestIdBuilder 设置测试 ID 构建器
+// TestIdBuilder sets the test ID builder
 func (t tag) TestIdBuilder(value string) tag {
 	return t.set("testIdBuilder", value)
 }
 
-// Testid 设置测试 ID
+// Testid sets the test ID
 func (t tag) Testid(value string) tag {
 	return t.set("testid", value)
 }
 
-// UseMobileUI 设置是否使用移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (t tag) UseMobileUI(value bool) tag {
 	return t.set("useMobileUI", value)
 }
 
-// Visible 设置是否显示
+// Visible sets whether the tag is visible
 func (t tag) Visible(value bool) tag {
 	return t.set("visible", value)
 }
 
-// VisibleOn 设置显示表达式
+// VisibleOn sets the expression for visibility
 func (t tag) VisibleOn(value string) tag {
 	return t.set("visibleOn", value)
 }

@@ -1,173 +1,160 @@
 package comp
 
-// ListItem 列表项
-
+// ListItem represents a list item.
 type ListItem Schema
 
-// NewListItem 创建一个新的 ListItem 实例
+// NewListItem creates a new ListItem instance.
 func NewListItem() ListItem {
 	return make(ListItem)
 }
 
-// set 设置字段值
+// set sets a field value.
 func (li ListItem) set(key string, value any) ListItem {
 	li[key] = value
 	return li
 }
 
-// Actions 设置操作
+// Actions sets actions.
 func (li ListItem) Actions(value string) ListItem {
 	return li.set("actions", value)
 }
 
-// ActionsPosition 设置操作位置，默认在右侧，可以设置成左侧
-// 可选值: left | right
+// ActionsPosition sets the position of actions (left or right).
 func (li ListItem) ActionsPosition(value string) ListItem {
 	return li.set("actionsPosition", value)
 }
 
-// Avatar 设置图片地址
+// Avatar sets the image URL.
 func (li ListItem) Avatar(value string) ListItem {
 	return li.set("avatar", value)
 }
 
-// Body 设置内容区域
+// Body sets the content area.
 func (li ListItem) Body(value ...any) ListItem {
 	return li.set("body", value)
 }
 
-// ClassName 设置容器 css 类名
-// 支持字符串或对象配置
+// ClassName sets the container CSS class name.
 func (li ListItem) ClassName(value string) ListItem {
 	return li.set("className", value)
 }
 
-// Desc 设置描述
-// 支持两种语法：1. `${xxx}` 或 `${xxx|upperCase}` 2. `<%= data.xxx %>`
+// Desc sets the description.
 func (li ListItem) Desc(value string) ListItem {
 	return li.set("desc", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled sets whether the item is disabled.
 func (li ListItem) Disabled(value bool) ListItem {
 	return li.set("disabled", value)
 }
 
-// DisabledOn 设置是否禁用表达式
-// 表达式语法 `data.xxx > 5`
+// DisabledOn sets the expression to determine if the item is disabled.
 func (li ListItem) DisabledOn(value string) ListItem {
 	return li.set("disabledOn", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting sets the editor configuration.
 func (li ListItem) EditorSetting(value string) ListItem {
 	return li.set("editorSetting", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden sets whether the item is hidden.
 func (li ListItem) Hidden(value bool) ListItem {
 	return li.set("hidden", value)
 }
 
-// HiddenOn 设置是否隐藏表达式
-// 表达式语法 `data.xxx > 5`
+// HiddenOn sets the expression to determine if the item is hidden.
 func (li ListItem) HiddenOn(value string) ListItem {
 	return li.set("hiddenOn", value)
 }
 
-// Id 设置组件唯一 id
+// ID sets the unique component ID.
 func (li ListItem) ID(value string) ListItem {
 	return li.set("id", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent sets the event action configuration.
 func (li ListItem) OnEvent(value any) ListItem {
 	return li.set("onEvent", value)
 }
 
-// Remark 设置 tooltip 说明
+// Remark sets the tooltip description.
 func (li ListItem) Remark(value string) ListItem {
 	return li.set("remark", value)
 }
 
-// Static 设置是否静态展示
+// Static sets whether the item is displayed statically.
 func (li ListItem) Static(value bool) ListItem {
 	return li.set("static", value)
 }
 
-// StaticClassName 设置静态展示表单项类名
-// 支持字符串或对象配置
+// StaticClassName sets the CSS class name for static display.
 func (li ListItem) StaticClassName(value string) ListItem {
 	return li.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置静态展示表单项Value类名
-// 支持字符串或对象配置
+// StaticInputClassName sets the CSS class name for static input display.
 func (li ListItem) StaticInputClassName(value string) ListItem {
 	return li.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置静态展示表单项Label类名
-// 支持字符串或对象配置
+// StaticLabelClassName sets the CSS class name for static label display.
 func (li ListItem) StaticLabelClassName(value string) ListItem {
 	return li.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置是否静态展示表达式
-// 表达式语法 `data.xxx > 5`
+// StaticOn sets the expression to determine if the item is displayed statically.
 func (li ListItem) StaticOn(value string) ListItem {
 	return li.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display.
 func (li ListItem) StaticPlaceholder(value string) ListItem {
 	return li.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置静态展示模式的 schema
+// StaticSchema sets the schema for static display mode.
 func (li ListItem) StaticSchema(value string) ListItem {
 	return li.set("staticSchema", value)
 }
 
-// Style 设置组件样式
+// Style sets the component style.
 func (li ListItem) Style(value any) ListItem {
 	return li.set("style", value)
 }
 
-// SubTitle 设置副标题
-// 支持两种语法：1. `${xxx}` 或 `${xxx|upperCase}` 2. `<%= data.xxx %>`
+// SubTitle sets the subtitle.
 func (li ListItem) SubTitle(value any) ListItem {
 	return li.set("subTitle", value)
 }
 
-// TestIdBuilder 设置测试 ID 构建器
+// TestIdBuilder sets the test ID builder.
 func (li ListItem) TestIdBuilder(value string) ListItem {
 	return li.set("testIdBuilder", value)
 }
 
-// Testid 设置测试 ID
+// Testid sets the test ID.
 func (li ListItem) Testid(value string) ListItem {
 	return li.set("testid", value)
 }
 
-// Title 设置标题
-// 支持两种语法：1. `${xxx}` 或 `${xxx|upperCase}` 2. `<%= data.xxx %>`
+// Title sets the title.
 func (li ListItem) Title(value any) ListItem {
 	return li.set("title", value)
 }
 
-// UseMobileUI 设置是否使用移动端样式
+// UseMobileUI sets whether to use mobile UI.
 func (li ListItem) UseMobileUI(value bool) ListItem {
 	return li.set("useMobileUI", value)
 }
 
-// Visible 设置是否显示
+// Visible sets whether the item is visible.
 func (li ListItem) Visible(value bool) ListItem {
 	return li.set("visible", value)
 }
 
-// VisibleOn 设置是否显示表达式
-// 表达式语法 `data.xxx > 5`
+// VisibleOn sets the expression to determine if the item is visible.
 func (li ListItem) VisibleOn(value string) ListItem {
 	return li.set("visibleOn", value)
 }

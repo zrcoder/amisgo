@@ -1,126 +1,126 @@
 package comp
 
-// password 代表 amis password 渲染器
+// password represents the amis password renderer
 
 type password Schema
 
-// Password 创建一个新的 Password 实例
+// Password creates a new Password instance
 func Password() password {
 	return password{}.set("type", "password")
 }
 
-// set 用于设置字段值
+// set sets a field value
 func (p password) set(key string, value any) password {
 	p[key] = value
 	return p
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the container CSS class name
 func (p password) ClassName(value string) password {
 	return p.set("className", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the component is disabled
 func (p password) Disabled(value bool) password {
 	return p.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression for disabling the component
 func (p password) DisabledOn(value string) password {
 	return p.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, ignored at runtime
 func (p password) EditorSetting(value string) password {
 	return p.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the component is hidden
 func (p password) Hidden(value bool) password {
 	return p.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression for hiding the component
 func (p password) HiddenOn(value string) password {
 	return p.set("hiddenOn", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique component ID
 func (p password) ID(value string) password {
 	return p.set("id", value)
 }
 
-// MosaicText 打码模式的文本
+// MosaicText sets the text for mosaic mode
 func (p password) MosaicText(value string) password {
 	return p.set("mosaicText", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (p password) OnEvent(value any) password {
 	return p.set("onEvent", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the component is statically displayed
 func (p password) Static(value bool) password {
 	return p.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the CSS class name for static display
 func (p password) StaticClassName(value string) password {
 	return p.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项 Value 类名
+// StaticInputClassName sets the CSS class name for static input display
 func (p password) StaticInputClassName(value string) password {
 	return p.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项 Label 类名
+// StaticLabelClassName sets the CSS class name for static label display
 func (p password) StaticLabelClassName(value string) password {
 	return p.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the expression for static display
 func (p password) StaticOn(value string) password {
 	return p.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (p password) StaticPlaceholder(value string) password {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示模式的 schema
+// StaticSchema sets the schema for static display mode
 func (p password) StaticSchema(value string) password {
 	return p.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (p password) Style(value any) password {
 	return p.set("style", value)
 }
 
-// TestIdBuilder 自定义测试 ID 构建器
+// TestIdBuilder sets the custom test ID builder
 func (p password) TestIdBuilder(value string) password {
 	return p.set("testIdBuilder", value)
 }
 
-// Testid 测试 ID
+// Testid sets the test ID
 func (p password) Testid(value string) password {
 	return p.set("testid", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI styles
 func (p password) UseMobileUI(value bool) password {
 	return p.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the component is visible
 func (p password) Visible(value bool) password {
 	return p.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the expression for visibility
 func (p password) VisibleOn(value string) password {
 	return p.set("visibleOn", value)
 }

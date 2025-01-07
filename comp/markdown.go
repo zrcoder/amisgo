@@ -1,10 +1,10 @@
 package comp
 
-// markdown 渲染
+// Markdown rendering
 
 type markdown Schema
 
-// Markdown 创建一个新的 Markdown 实例
+// Markdown creates a new Markdown instance
 func Markdown() markdown {
 	return markdown{}.set("type", "markdown")
 }
@@ -14,31 +14,31 @@ func (m markdown) set(key string, value any) markdown {
 	return m
 }
 
-// ClassName 类名
+// ClassName sets the class name
 func (m markdown) ClassName(value string) markdown {
 	m.set("className", value)
 	return m
 }
 
-// Name 名称
+// Name sets the name
 func (m markdown) Name(value string) markdown {
 	m.set("name", value)
 	return m
 }
 
-// Options 设置 Markdown 的配置
+// Options sets the Markdown options
 func (m markdown) Options(value Schema) markdown {
 	m.set("options", value)
 	return m
 }
 
-// Src 外部地址
+// Src sets the external source URL
 func (m markdown) Src(value string) markdown {
 	m.set("src", value)
 	return m
 }
 
-// Value 静态值
+// Value sets the static value
 func (m markdown) Value(value string) markdown {
 	m.set("value", value)
 	return m

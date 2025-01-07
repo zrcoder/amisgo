@@ -1,14 +1,13 @@
 package comp
 
-// tableView 表格展现
-
 type tableView Schema
 
-// TableView 创建一个新的 TableView 实例
+// TableView creates a new TableView instance
 func TableView() tableView {
 	return tableView{}.set("type", "table-view")
 }
 
+// set assigns a value to a key in the tableView schema
 func (tv tableView) set(key string, value any) tableView {
 	tv[key] = value
 	return tv

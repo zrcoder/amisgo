@@ -1,10 +1,10 @@
 package comp
 
-// video 视频播放器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/video
+// video Video player component
 
 type video Schema
 
-// Video 创建一个新的 Video 实例
+// Video creates a new Video instance
 func Video() video {
 	return video{}.set("type", "video")
 }
@@ -14,192 +14,192 @@ func (v video) set(key string, value any) video {
 	return v
 }
 
-// aspectRatio 视频比率 可选值: auto | 4:3 | 16:9
+// AspectRatio sets the video aspect ratio
 func (v video) AspectRatio(value string) video {
 	return v.set("aspectRatio", value)
 }
 
-// autoPlay 是否自动播放
+// AutoPlay sets whether the video should autoplay
 func (v video) AutoPlay(value bool) video {
 	return v.set("autoPlay", value)
 }
 
-// className 容器 css 类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// ClassName sets the CSS class name for the container
 func (v video) ClassName(value string) video {
 	return v.set("className", value)
 }
 
-// columnsCount 如果显示切帧，通过此配置项可以控制每行显示多少帧
+// ColumnsCount sets the number of frames per row
 func (v video) ColumnsCount(value string) video {
 	return v.set("columnsCount", value)
 }
 
-// disabled 是否禁用
+// Disabled sets whether the video is disabled
 func (v video) Disabled(value bool) video {
 	return v.set("disabled", value)
 }
 
-// disabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to disable the video
 func (v video) DisabledOn(value string) video {
 	return v.set("disabledOn", value)
 }
 
-// editorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (v video) EditorSetting(value string) video {
 	return v.set("editorSetting", value)
 }
 
-// frames 设置后，可以显示切帧.点击帧的时候会将视频跳到对应时间。frames: {  '01:22': 'http://domain/xxx.jpg' }
+// Frames sets the frames for the video
 func (v video) Frames(value string) video {
 	return v.set("frames", value)
 }
 
-// framesClassName 配置帧列表容器className (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// FramesClassName sets the CSS class name for the frames container
 func (v video) FramesClassName(value string) video {
 	return v.set("framesClassName", value)
 }
 
-// hidden 是否隐藏
+// Hidden sets whether the video is hidden
 func (v video) Hidden(value bool) video {
 	return v.set("hidden", value)
 }
 
-// hiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to hide the video
 func (v video) HiddenOn(value string) video {
 	return v.set("hiddenOn", value)
 }
 
-// id 组件唯一 id，主要用于日志采集
+// ID sets the unique ID for the component
 func (v video) ID(value string) video {
 	return v.set("id", value)
 }
 
-// isLive 如果是实时的，请标记一下
+// IsLive sets whether the video is live
 func (v video) IsLive(value bool) video {
 	return v.set("isLive", value)
 }
 
-// jumpBufferDuration 跳转到帧时，往前多少秒。
+// JumpBufferDuration sets the buffer duration for frame jumps
 func (v video) JumpBufferDuration(value string) video {
 	return v.set("jumpBufferDuration", value)
 }
 
-// jumpFrame 点击帧画面时是否跳转视频对应的点
+// JumpFrame sets whether to jump to the frame on click
 func (v video) JumpFrame(value bool) video {
 	return v.set("jumpFrame", value)
 }
 
-// loop 是否循环播放
+// Loop sets whether the video should loop
 func (v video) Loop(value bool) video {
 	return v.set("loop", value)
 }
 
-// muted 是否初始静音
+// Muted sets whether the video is muted initially
 func (v video) Muted(value bool) video {
 	return v.set("muted", value)
 }
 
-// onEvent 事件动作配置
+// OnEvent sets the event configuration
 func (v video) OnEvent(value any) video {
 	return v.set("onEvent", value)
 }
 
-// playerClassName 配置播放器 className (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// PlayerClassName sets the CSS class name for the player
 func (v video) PlayerClassName(value string) video {
 	return v.set("playerClassName", value)
 }
 
-// poster 视频封面地址 (视频封面地址)
+// Poster sets the video poster URL
 func (v video) Poster(value string) video {
 	return v.set("poster", value)
 }
 
-// rates 视频速率
+// Rates sets the video playback rates
 func (v video) Rates(value string) video {
 	return v.set("rates", value)
 }
 
-// splitPoster 是否将视频和封面分开显示
+// SplitPoster sets whether to display the video and poster separately
 func (v video) SplitPoster(value bool) video {
 	return v.set("splitPoster", value)
 }
 
-// src 视频播放地址 (视频播放地址)
+// Src sets the video source URL
 func (v video) Src(value string) video {
 	return v.set("src", value)
 }
 
-// static 是否静态展示
+// Static sets whether the video is displayed statically
 func (v video) Static(value bool) video {
 	return v.set("static", value)
 }
 
-// staticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticClassName sets the CSS class name for static display
 func (v video) StaticClassName(value string) video {
 	return v.set("staticClassName", value)
 }
 
-// staticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticInputClassName sets the CSS class name for static input display
 func (v video) StaticInputClassName(value string) video {
 	return v.set("staticInputClassName", value)
 }
 
-// staticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticLabelClassName sets the CSS class name for static label display
 func (v video) StaticLabelClassName(value string) video {
 	return v.set("staticLabelClassName", value)
 }
 
-// staticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression for static display
 func (v video) StaticOn(value string) video {
 	return v.set("staticOn", value)
 }
 
-// staticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (v video) StaticPlaceholder(value string) video {
 	return v.set("staticPlaceholder", value)
 }
 
-// staticSchema
+// StaticSchema sets the schema for static display
 func (v video) StaticSchema(value string) video {
 	return v.set("staticSchema", value)
 }
 
-// stopOnNextFrame 默认播放的时候到了下一帧会继续播放，同时高亮下一帧。 如果配置这个则会停止播放，等待用户选择新的区间再播放。
+// StopOnNextFrame sets whether to stop on the next frame
 func (v video) StopOnNextFrame(value bool) video {
 	return v.set("stopOnNextFrame", value)
 }
 
-// style 组件样式
+// Style sets the component style
 func (v video) Style(value any) video {
 	return v.set("style", value)
 }
 
-// testIdBuilder
+// TestIdBuilder sets the test ID builder
 func (v video) TestIdBuilder(value string) video {
 	return v.set("testIdBuilder", value)
 }
 
-// testid
+// Testid sets the test ID
 func (v video) Testid(value string) video {
 	return v.set("testid", value)
 }
 
-// useMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (v video) UseMobileUI(value bool) video {
 	return v.set("useMobileUI", value)
 }
 
-// videoType 视频类型如： video/x-flv
+// VideoType sets the video type (e.g., video/x-flv)
 func (v video) VideoType(value string) video {
 	return v.set("videoType", value)
 }
 
-// visible 是否显示
+// Visible sets whether the video is visible
 func (v video) Visible(value bool) video {
 	return v.set("visible", value)
 }
 
-// visibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to show the video
 func (v video) VisibleOn(value string) video {
 	return v.set("visibleOn", value)
 }

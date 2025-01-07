@@ -1,345 +1,346 @@
 package comp
 
-// tabsTransferPicker 穿梭器的弹框形态 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tabs-transfer-picker
+// tabsTransferPicker represents the schema for the tabs transfer picker component.
 
 type tabsTransferPicker Schema
 
+// TabsTransferPicker initializes a new tabsTransferPicker instance.
 func TabsTransferPicker() tabsTransferPicker {
 	return tabsTransferPicker{}.set("type", "tabs-transfer-picker")
 }
 
-// set 设置指定的键值对并返回新的 TabsTransferPickerControl 实例
+// set sets a key-value pair and returns the updated tabsTransferPicker instance.
 func (tpc tabsTransferPicker) set(key string, value any) tabsTransferPicker {
 	tpc[key] = value
 	return tpc
 }
 
-// AddApi 添加时调用的接口
+// AddApi sets the API for adding items.
 func (tpc tabsTransferPicker) AddApi(value string) tabsTransferPicker {
 	return tpc.set("addApi", value)
 }
 
-// AddControls 新增时的表单项。
+// AddControls sets the controls for adding items.
 func (tpc tabsTransferPicker) AddControls(value string) tabsTransferPicker {
 	return tpc.set("addControls", value)
 }
 
-// AddDialog 控制新增弹框设置项 (控制新增弹框设置项)
+// AddDialog sets the dialog configuration for adding items.
 func (tpc tabsTransferPicker) AddDialog(value string) tabsTransferPicker {
 	return tpc.set("addDialog", value)
 }
 
-// AutoCheckChildren ui级联关系，true代表级联选中，false代表不级联，默认为true
+// AutoCheckChildren sets whether to auto-check child items.
 func (tpc tabsTransferPicker) AutoCheckChildren(value bool) tabsTransferPicker {
 	return tpc.set("autoCheckChildren", value)
 }
 
-// AutoFill 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+// AutoFill sets the auto-fill configuration.
 func (tpc tabsTransferPicker) AutoFill(value string) tabsTransferPicker {
 	return tpc.set("autoFill", value)
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// ClassName sets the CSS class name for the container.
 func (tpc tabsTransferPicker) ClassName(value string) tabsTransferPicker {
 	return tpc.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+// ClearValueOnHidden sets whether to clear the value when hidden.
 func (tpc tabsTransferPicker) ClearValueOnHidden(value bool) tabsTransferPicker {
 	return tpc.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否可清除。
+// Clearable sets whether the field is clearable.
 func (tpc tabsTransferPicker) Clearable(value bool) tabsTransferPicker {
 	return tpc.set("clearable", value)
 }
 
-// Columns 当 selectMode 为 table 时定义表格列信息。
+// Columns sets the columns configuration for table mode.
 func (tpc tabsTransferPicker) Columns(value ...any) tabsTransferPicker {
 	return tpc.set("columns", value)
 }
 
-// Creatable 是否可以新增
+// Creatable sets whether new items can be created.
 func (tpc tabsTransferPicker) Creatable(value bool) tabsTransferPicker {
 	return tpc.set("creatable", value)
 }
 
-// CreateBtnLabel 新增文字
+// CreateBtnLabel sets the label for the create button.
 func (tpc tabsTransferPicker) CreateBtnLabel(value string) tabsTransferPicker {
 	return tpc.set("createBtnLabel", value)
 }
 
-// DeferApi 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
+// DeferApi sets the API for deferred loading.
 func (tpc tabsTransferPicker) DeferApi(value string) tabsTransferPicker {
 	return tpc.set("deferApi", value)
 }
 
-// DeferField 懒加载字段
+// DeferField sets the field for deferred loading.
 func (tpc tabsTransferPicker) DeferField(value string) tabsTransferPicker {
 	return tpc.set("deferField", value)
 }
 
-// DeleteApi 选项删除 API
+// DeleteApi sets the API for deleting items.
 func (tpc tabsTransferPicker) DeleteApi(value string) tabsTransferPicker {
 	return tpc.set("deleteApi", value)
 }
 
-// DeleteConfirmText 选项删除提示文字。
+// DeleteConfirmText sets the confirmation text for deletions.
 func (tpc tabsTransferPicker) DeleteConfirmText(value string) tabsTransferPicker {
 	return tpc.set("deleteConfirmText", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the delimiter for values.
 func (tpc tabsTransferPicker) Delimiter(value string) tabsTransferPicker {
 	return tpc.set("delimiter", value)
 }
 
-// Desc
+// Desc sets the description.
 func (tpc tabsTransferPicker) Desc(value string) tabsTransferPicker {
 	return tpc.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段。
+// Description sets the HTML description content.
 func (tpc tabsTransferPicker) Description(value string) tabsTransferPicker {
 	return tpc.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className (配置描述上的 className)
+// DescriptionClassName sets the CSS class name for the description.
 func (tpc tabsTransferPicker) DescriptionClassName(value string) tabsTransferPicker {
 	return tpc.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the field is disabled.
 func (tpc tabsTransferPicker) Disabled(value bool) tabsTransferPicker {
 	return tpc.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine if the field is disabled.
 func (tpc tabsTransferPicker) DisabledOn(value string) tabsTransferPicker {
 	return tpc.set("disabledOn", value)
 }
 
-// EditApi 编辑时调用的 API
+// EditApi sets the API for editing items.
 func (tpc tabsTransferPicker) EditApi(value string) tabsTransferPicker {
 	return tpc.set("editApi", value)
 }
 
-// EditControls 选项修改的表单项
+// EditControls sets the controls for editing items.
 func (tpc tabsTransferPicker) EditControls(value string) tabsTransferPicker {
 	return tpc.set("editControls", value)
 }
 
-// EditDialog 控制编辑弹框设置项 (控制编辑弹框设置项)
+// EditDialog sets the dialog configuration for editing items.
 func (tpc tabsTransferPicker) EditDialog(value string) tabsTransferPicker {
 	return tpc.set("editDialog", value)
 }
 
-// Editable 是否可以编辑
+// Editable sets whether the field is editable.
 func (tpc tabsTransferPicker) Editable(value bool) tabsTransferPicker {
 	return tpc.set("editable", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration.
 func (tpc tabsTransferPicker) EditorSetting(value string) tabsTransferPicker {
 	return tpc.set("editorSetting", value)
 }
 
-// ExtraName 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+// ExtraName sets the extra field name for range components.
 func (tpc tabsTransferPicker) ExtraName(value string) tabsTransferPicker {
 	return tpc.set("extraName", value)
 }
 
-// ExtractValue 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+// ExtractValue sets whether to extract the value as an array.
 func (tpc tabsTransferPicker) ExtractValue(value bool) tabsTransferPicker {
 	return tpc.set("extractValue", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the field is hidden.
 func (tpc tabsTransferPicker) Hidden(value bool) tabsTransferPicker {
 	return tpc.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine if the field is hidden.
 func (tpc tabsTransferPicker) HiddenOn(value string) tabsTransferPicker {
 	return tpc.set("hiddenOn", value)
 }
 
-// Hint 输入提示，聚焦的时候显示
+// Hint sets the input hint.
 func (tpc tabsTransferPicker) Hint(value string) tabsTransferPicker {
 	return tpc.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候，用来配置具体的左右分配。 (当配置为水平布局的时候，用来配置具体的左右分配。)
+// Horizontal sets the horizontal layout configuration.
 func (tpc tabsTransferPicker) Horizontal(value string) tabsTransferPicker {
 	return tpc.set("horizontal", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique component ID.
 func (tpc tabsTransferPicker) ID(value string) tabsTransferPicker {
 	return tpc.set("id", value)
 }
 
-// InitAutoFill
+// InitAutoFill sets the initial auto-fill configuration.
 func (tpc tabsTransferPicker) InitAutoFill(value string) tabsTransferPicker {
 	return tpc.set("initAutoFill", value)
 }
 
-// InitFetch 配置 source 接口初始拉不拉取。
+// InitFetch sets whether to fetch data initially.
 func (tpc tabsTransferPicker) InitFetch(value bool) tabsTransferPicker {
 	return tpc.set("initFetch", value)
 }
 
-// InitFetchOn 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets the expression to determine if data should be fetched initially.
 func (tpc tabsTransferPicker) InitFetchOn(value string) tabsTransferPicker {
 	return tpc.set("initFetchOn", value)
 }
 
-// InitiallyOpen 是否默认都展开
+// InitiallyOpen sets whether the tabs are initially open.
 func (tpc tabsTransferPicker) InitiallyOpen(value bool) tabsTransferPicker {
 	return tpc.set("initiallyOpen", value)
 }
 
-// Inline 表单 control 是否为 inline 模式。
+// Inline sets whether the control is in inline mode.
 func (tpc tabsTransferPicker) Inline(value bool) tabsTransferPicker {
 	return tpc.set("inline", value)
 }
 
-// InputClassName 配置 input className (配置 input className)
+// InputClassName sets the CSS class name for the input.
 func (tpc tabsTransferPicker) InputClassName(value string) tabsTransferPicker {
 	return tpc.set("inputClassName", value)
 }
 
-// ItemHeight 单个选项的高度，主要用于虚拟渲染
+// ItemHeight sets the height of individual items for virtual rendering.
 func (tpc tabsTransferPicker) ItemHeight(value string) tabsTransferPicker {
 	return tpc.set("itemHeight", value)
 }
 
-// JoinValues 设置是否将值与选择项联动
+// JoinValues sets whether to link the value with the selected items.
 func (tpc tabsTransferPicker) JoinValues(value bool) tabsTransferPicker {
 	return tpc.set("joinValues", value)
 }
 
-// Label 标签
+// Label sets the label.
 func (tpc tabsTransferPicker) Label(value string) tabsTransferPicker {
 	return tpc.set("label", value)
 }
 
-// LabelClassName 标签的 CSS 类名
+// LabelClassName sets the CSS class name for the label.
 func (tpc tabsTransferPicker) LabelClassName(value string) tabsTransferPicker {
 	return tpc.set("labelClassName", value)
 }
 
-// LabelRemark 标签备注
+// LabelRemark sets the remark for the label.
 func (tpc tabsTransferPicker) LabelRemark(value string) tabsTransferPicker {
 	return tpc.set("labelRemark", value)
 }
 
-// MaxLength 最多选择的数量
+// MaxLength sets the maximum number of selectable items.
 func (tpc tabsTransferPicker) MaxLength(value int) tabsTransferPicker {
 	return tpc.set("maxLength", value)
 }
 
-// Mode 选择模式
+// Mode sets the selection mode.
 func (tpc tabsTransferPicker) Mode(value string) tabsTransferPicker {
 	return tpc.set("mode", value)
 }
 
-// Multiple 是否多选
+// Multiple sets whether multiple items can be selected.
 func (tpc tabsTransferPicker) Multiple(value bool) tabsTransferPicker {
 	return tpc.set("multiple", value)
 }
 
-// Name 表单项 name
+// Name sets the form item name.
 func (tpc tabsTransferPicker) Name(value string) tabsTransferPicker {
 	return tpc.set("name", value)
 }
 
-// OnChange 变化时回调
+// OnChange sets the callback for value changes.
 func (tpc tabsTransferPicker) OnChange(value string) tabsTransferPicker {
 	return tpc.set("onChange", value)
 }
 
-// Options 选项
+// Options sets the options.
 func (tpc tabsTransferPicker) Options(value any) tabsTransferPicker {
 	return tpc.set("options", value)
 }
 
-// OptionsSrc 选项数据接口
+// OptionsSrc sets the API for fetching options.
 func (tpc tabsTransferPicker) OptionsSrc(value string) tabsTransferPicker {
 	return tpc.set("optionsSrc", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the field is read-only.
 func (tpc tabsTransferPicker) ReadOnly(value bool) tabsTransferPicker {
 	return tpc.set("readOnly", value)
 }
 
-// Required 是否必填
+// Required sets whether the field is required.
 func (tpc tabsTransferPicker) Required(value bool) tabsTransferPicker {
 	return tpc.set("required", value)
 }
 
-// RequiredApi 提交时必填 API
+// RequiredApi sets the API for required validation.
 func (tpc tabsTransferPicker) RequiredApi(value string) tabsTransferPicker {
 	return tpc.set("requiredApi", value)
 }
 
-// Source 接口地址
+// Source sets the API for fetching data.
 func (tpc tabsTransferPicker) Source(value string) tabsTransferPicker {
 	return tpc.set("source", value)
 }
 
-// Tabs 选项卡
+// Tabs sets the tabs configuration.
 func (tpc tabsTransferPicker) Tabs(value any) tabsTransferPicker {
 	return tpc.set("tabs", value)
 }
 
-// Tooltip 提示信息
+// Tooltip sets the tooltip text.
 func (tpc tabsTransferPicker) Tooltip(value string) tabsTransferPicker {
 	return tpc.set("tooltip", value)
 }
 
-// Value 表单值
+// Value sets the form value.
 func (tpc tabsTransferPicker) Value(value any) tabsTransferPicker {
 	return tpc.set("value", value)
 }
 
-// Vertical 列表方向
+// Vertical sets whether the list is vertical.
 func (tpc tabsTransferPicker) Vertical(value bool) tabsTransferPicker {
 	return tpc.set("vertical", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the field is visible.
 func (tpc tabsTransferPicker) Visible(value bool) tabsTransferPicker {
 	return tpc.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the expression to determine if the field is visible.
 func (tpc tabsTransferPicker) VisibleOn(value string) tabsTransferPicker {
 	return tpc.set("visibleOn", value)
 }
 
-// Width 宽度
+// Width sets the width.
 func (tpc tabsTransferPicker) Width(value string) tabsTransferPicker {
 	return tpc.set("width", value)
 }
 
-// WidthConfig 配置宽度
+// WidthConfig sets the width configuration.
 func (tpc tabsTransferPicker) WidthConfig(value string) tabsTransferPicker {
 	return tpc.set("widthConfig", value)
 }
 
-// Xname 配置 key name
+// Xname sets the key name.
 func (tpc tabsTransferPicker) Xname(value string) tabsTransferPicker {
 	return tpc.set("xname", value)
 }
 
-// Xtype 配置类型
+// Xtype sets the type.
 func (tpc tabsTransferPicker) Xtype(value string) tabsTransferPicker {
 	return tpc.set("xtype", value)
 }
 
-// Component 配置自定义组件
+// Component sets the custom component.
 func (tpc tabsTransferPicker) Component(value string) tabsTransferPicker {
 	return tpc.set("component", value)
 }

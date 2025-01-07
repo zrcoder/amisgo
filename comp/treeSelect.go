@@ -1,7 +1,6 @@
 package comp
 
-// treeSelect 下拉选择框
-
+// treeSelect represents a dropdown tree select component
 type treeSelect Schema
 
 func TreeSelect() treeSelect {
@@ -13,542 +12,542 @@ func (tsc treeSelect) set(key string, value any) treeSelect {
 	return tsc
 }
 
-// AddApi 添加时调用的接口
+// AddApi sets the API for adding items
 func (tsc treeSelect) AddApi(value string) treeSelect {
 	return tsc.set("addApi", value)
 }
 
-// AddControls 新增时的表单项
+// AddControls sets the form items for adding
 func (tsc treeSelect) AddControls(value string) treeSelect {
 	return tsc.set("addControls", value)
 }
 
-// AddDialog 控制新增弹框设置项
+// AddDialog sets the dialog for adding items
 func (tsc treeSelect) AddDialog(value string) treeSelect {
 	return tsc.set("addDialog", value)
 }
 
-// AutoCheckChildren 是否自动选中子节点
+// AutoCheckChildren sets whether to auto-check child nodes
 func (tsc treeSelect) AutoCheckChildren(value string) treeSelect {
 	return tsc.set("autoCheckChildren", value)
 }
 
-// AutoFill 自动填充
+// AutoFill sets auto-fill
 func (tsc treeSelect) AutoFill(value string) treeSelect {
 	return tsc.set("autoFill", value)
 }
 
-// Cascade 父子之间是否完全独立
+// Cascade sets whether parent and child nodes are independent
 func (tsc treeSelect) Cascade(value bool) treeSelect {
 	return tsc.set("cascade", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the container CSS class name
 func (tsc treeSelect) ClassName(value string) treeSelect {
 	return tsc.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值
+// ClearValueOnHidden sets whether to clear the value when hidden
 func (tsc treeSelect) ClearValueOnHidden(value bool) treeSelect {
 	return tsc.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否可清除
+// Clearable sets whether the field is clearable
 func (tsc treeSelect) Clearable(value bool) treeSelect {
 	return tsc.set("clearable", value)
 }
 
-// Creatable 是否可以新增
+// Creatable sets whether new items can be created
 func (tsc treeSelect) Creatable(value bool) treeSelect {
 	return tsc.set("creatable", value)
 }
 
-// CreateBtnLabel 新增文字
+// CreateBtnLabel sets the label for the create button
 func (tsc treeSelect) CreateBtnLabel(value string) treeSelect {
 	return tsc.set("createBtnLabel", value)
 }
 
-// DeferApi 懒加载接口
+// DeferApi sets the API for lazy loading
 func (tsc treeSelect) DeferApi(value string) treeSelect {
 	return tsc.set("deferApi", value)
 }
 
-// DeferField 懒加载字段
+// DeferField sets the field for lazy loading
 func (tsc treeSelect) DeferField(value string) treeSelect {
 	return tsc.set("deferField", value)
 }
 
-// DeleteApi 选项删除 API
+// DeleteApi sets the API for deleting items
 func (tsc treeSelect) DeleteApi(value string) treeSelect {
 	return tsc.set("deleteApi", value)
 }
 
-// DeleteConfirmText 选项删除提示文字
+// DeleteConfirmText sets the confirmation text for deletion
 func (tsc treeSelect) DeleteConfirmText(value string) treeSelect {
 	return tsc.set("deleteConfirmText", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the delimiter
 func (tsc treeSelect) Delimiter(value string) treeSelect {
 	return tsc.set("delimiter", value)
 }
 
-// Desc
+// Desc sets the description
 func (tsc treeSelect) Desc(value string) treeSelect {
 	return tsc.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段
+// Description sets the description content (supports HTML)
 func (tsc treeSelect) Description(value string) treeSelect {
 	return tsc.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className
+// DescriptionClassName sets the CSS class name for the description
 func (tsc treeSelect) DescriptionClassName(value string) treeSelect {
 	return tsc.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the field is disabled
 func (tsc treeSelect) Disabled(value bool) treeSelect {
 	return tsc.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression for disabling the field
 func (tsc treeSelect) DisabledOn(value string) treeSelect {
 	return tsc.set("disabledOn", value)
 }
 
-// EditApi 编辑时调用的 API
+// EditApi sets the API for editing items
 func (tsc treeSelect) EditApi(value string) treeSelect {
 	return tsc.set("editApi", value)
 }
 
-// EditControls 选项修改的表单项
+// EditControls sets the form items for editing
 func (tsc treeSelect) EditControls(value string) treeSelect {
 	return tsc.set("editControls", value)
 }
 
-// EditDialog 控制编辑弹框设置项
+// EditDialog sets the dialog for editing items
 func (tsc treeSelect) EditDialog(value string) treeSelect {
 	return tsc.set("editDialog", value)
 }
 
-// Editable 是否可以编辑
+// Editable sets whether the field is editable
 func (tsc treeSelect) Editable(value bool) treeSelect {
 	return tsc.set("editable", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets the editor configuration
 func (tsc treeSelect) EditorSetting(value string) treeSelect {
 	return tsc.set("editorSetting", value)
 }
 
-// EnableDefaultIcon 是否为选项添加默认的Icon
+// EnableDefaultIcon sets whether to add a default icon to options
 func (tsc treeSelect) EnableDefaultIcon(value bool) treeSelect {
 	return tsc.set("enableDefaultIcon", value)
 }
 
-// EnableNodePath 是否开启节点路径模式
+// EnableNodePath sets whether to enable node path mode
 func (tsc treeSelect) EnableNodePath(value bool) treeSelect {
 	return tsc.set("enableNodePath", value)
 }
 
-// ExtraName 额外的字段名
+// ExtraName sets the extra field name
 func (tsc treeSelect) ExtraName(value string) treeSelect {
 	return tsc.set("extraName", value)
 }
 
-// ExtractValue 开启后将选中的选项 value 的值封装为数组
+// ExtractValue sets whether to wrap selected option values in an array
 func (tsc treeSelect) ExtractValue(value bool) treeSelect {
 	return tsc.set("extractValue", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the field is hidden
 func (tsc treeSelect) Hidden(value bool) treeSelect {
 	return tsc.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression for hiding the field
 func (tsc treeSelect) HiddenOn(value string) treeSelect {
 	return tsc.set("hiddenOn", value)
 }
 
-// HideNodePathLabel 是否隐藏选择框中已选中节点的祖先节点的文本信息
+// HideNodePathLabel sets whether to hide ancestor node text in the select box
 func (tsc treeSelect) HideNodePathLabel(value bool) treeSelect {
 	return tsc.set("hideNodePathLabel", value)
 }
 
-// HideRoot 是否隐藏顶级
+// HideRoot sets whether to hide the root node
 func (tsc treeSelect) HideRoot(value bool) treeSelect {
 	return tsc.set("hideRoot", value)
 }
 
-// Hint 输入提示
+// Hint sets the input hint
 func (tsc treeSelect) Hint(value string) treeSelect {
 	return tsc.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候，用来配置具体的左右分配
+// Horizontal sets the horizontal layout configuration
 func (tsc treeSelect) Horizontal(value string) treeSelect {
 	return tsc.set("horizontal", value)
 }
 
-// Id 组件唯一 id
+// ID sets the unique component ID
 func (tsc treeSelect) ID(value string) treeSelect {
 	return tsc.set("id", value)
 }
 
-// InitAutoFill
+// InitAutoFill sets the initial auto-fill value
 func (tsc treeSelect) InitAutoFill(value string) treeSelect {
 	return tsc.set("initAutoFill", value)
 }
 
-// InitFetch 配置 source 接口初始拉不拉取
+// InitFetch sets whether to fetch the source initially
 func (tsc treeSelect) InitFetch(value bool) treeSelect {
 	return tsc.set("initFetch", value)
 }
 
-// InitFetchOn 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets the expression for initial fetch
 func (tsc treeSelect) InitFetchOn(value string) treeSelect {
 	return tsc.set("initFetchOn", value)
 }
 
-// Inline 表单 control 是否为 inline 模式
+// Inline sets whether the form control is inline
 func (tsc treeSelect) Inline(value bool) treeSelect {
 	return tsc.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the input CSS class name
 func (tsc treeSelect) InputClassName(value string) treeSelect {
 	return tsc.set("inputClassName", value)
 }
 
-// JoinValues 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交
+// JoinValues sets whether to submit the value of the selected option in single select mode
 func (tsc treeSelect) JoinValues(value bool) treeSelect {
 	return tsc.set("joinValues", value)
 }
 
-// Label 描述标题
+// Label sets the label
 func (tsc treeSelect) Label(value string) treeSelect {
 	return tsc.set("label", value)
 }
 
-// LabelAlign 描述标题
+// LabelAlign sets the label alignment
 func (tsc treeSelect) LabelAlign(value string) treeSelect {
 	return tsc.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the label CSS class name
 func (tsc treeSelect) LabelClassName(value string) treeSelect {
 	return tsc.set("labelClassName", value)
 }
 
-// LabelField 设置label字段
+// LabelField sets the label field
 func (tsc treeSelect) LabelField(value string) treeSelect {
 	return tsc.set("labelField", value)
 }
 
-// LabelRemark 显示一个小图标, 鼠标放上去的时候显示提示内容
+// LabelRemark sets the label remark
 func (tsc treeSelect) LabelRemark(value string) treeSelect {
 	return tsc.set("labelRemark", value)
 }
 
-// LabelWidth label自定义宽度
+// LabelWidth sets the custom label width
 func (tsc treeSelect) LabelWidth(value string) treeSelect {
 	return tsc.set("labelWidth", value)
 }
 
-// MaxTagCount 标签的最大展示数量
+// MaxTagCount sets the maximum number of tags to display
 func (tsc treeSelect) MaxTagCount(value string) treeSelect {
 	return tsc.set("maxTagCount", value)
 }
 
-// MenuTpl 自定义选项
+// MenuTpl sets the custom option template
 func (tsc treeSelect) MenuTpl(value string) treeSelect {
 	return tsc.set("menuTpl", value)
 }
 
-// Multiple 是否多选
+// Multiple sets whether multiple selection is allowed
 func (tsc treeSelect) Multiple(value bool) treeSelect {
 	return tsc.set("multiple", value)
 }
 
-// Name 表单字段名
+// Name sets the form field name
 func (tsc treeSelect) Name(value string) treeSelect {
 	return tsc.set("name", value)
 }
 
-// Options 选项
+// Options sets the options
 func (tsc treeSelect) Options(value any) treeSelect {
 	return tsc.set("options", value)
 }
 
-// OptionValues
+// OptionValues sets the option values
 func (tsc treeSelect) OptionValues(value string) treeSelect {
 	return tsc.set("optionValues", value)
 }
 
-// OptionLabel
+// OptionLabel sets the option label
 func (tsc treeSelect) OptionLabel(value string) treeSelect {
 	return tsc.set("optionLabel", value)
 }
 
-// OptionName
+// OptionName sets the option name
 func (tsc treeSelect) OptionName(value string) treeSelect {
 	return tsc.set("optionName", value)
 }
 
-// OptionValue
+// OptionValue sets the option value
 func (tsc treeSelect) OptionValue(value string) treeSelect {
 	return tsc.set("optionValue", value)
 }
 
-// OptionIcon
+// OptionIcon sets the option icon
 func (tsc treeSelect) OptionIcon(value string) treeSelect {
 	return tsc.set("optionIcon", value)
 }
 
-// Placeholder 提示文案
+// Placeholder sets the placeholder text
 func (tsc treeSelect) Placeholder(value string) treeSelect {
 	return tsc.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the field is read-only
 func (tsc treeSelect) ReadOnly(value bool) treeSelect {
 	return tsc.set("readOnly", value)
 }
 
-// ReBuildApi 下拉框的重建接口
+// ReBuildApi sets the API for rebuilding the dropdown
 func (tsc treeSelect) ReBuildApi(value string) treeSelect {
 	return tsc.set("reBuildApi", value)
 }
 
-// Reload 是否可以通过 reloadApi 来刷新选项
+// Reload sets whether the options can be refreshed via reloadApi
 func (tsc treeSelect) Reload(value bool) treeSelect {
 	return tsc.set("reload", value)
 }
 
-// ReloadApi 刷新选项的 API
+// ReloadApi sets the API for refreshing options
 func (tsc treeSelect) ReloadApi(value string) treeSelect {
 	return tsc.set("reloadApi", value)
 }
 
-// ResetValue 表单重置的值
+// ResetValue sets the reset value for the form
 func (tsc treeSelect) ResetValue(value any) treeSelect {
 	return tsc.set("resetValue", value)
 }
 
-// RootLabel 根节点文本
+// RootLabel sets the root node label
 func (tsc treeSelect) RootLabel(value string) treeSelect {
 	return tsc.set("rootLabel", value)
 }
 
-// Selectable 用来控制下拉框中项是否可选
+// Selectable sets the expression for controlling whether items are selectable
 func (tsc treeSelect) Selectable(value string) treeSelect {
 	return tsc.set("selectable", value)
 }
 
-// ShowIcon 是否显示图标
+// ShowIcon sets whether to show icons
 func (tsc treeSelect) ShowIcon(value bool) treeSelect {
 	return tsc.set("showIcon", value)
 }
 
-// ShowRadio 是否展示单选框
+// ShowRadio sets whether to show radio buttons
 func (tsc treeSelect) ShowRadio(value bool) treeSelect {
 	return tsc.set("showRadio", value)
 }
 
-// ShowSearch 是否展示搜索框
+// ShowSearch sets whether to show the search box
 func (tsc treeSelect) ShowSearch(value bool) treeSelect {
 	return tsc.set("showSearch", value)
 }
 
-// Source 数据源
+// Source sets the data source
 func (tsc treeSelect) Source(value string) treeSelect {
 	return tsc.set("source", value)
 }
 
-// StaticClassName 静态 className
+// StaticClassName sets the static CSS class name
 func (tsc treeSelect) StaticClassName(value string) treeSelect {
 	return tsc.set("staticClassName", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the field is statically displayed
 func (tsc treeSelect) Static(value bool) treeSelect {
 	return tsc.set("static", value)
 }
 
-// StaticLabel 静态展示文案
+// StaticLabel sets the static display label
 func (tsc treeSelect) StaticLabel(value string) treeSelect {
 	return tsc.set("staticLabel", value)
 }
 
-// Taggable 是否可以添加 tag
+// Taggable sets whether tags can be added
 func (tsc treeSelect) Taggable(value bool) treeSelect {
 	return tsc.set("taggable", value)
 }
 
-// Tags 是否启用 tag
+// Tags sets whether tags are enabled
 func (tsc treeSelect) Tags(value bool) treeSelect {
 	return tsc.set("tags", value)
 }
 
-// Tip 提示
+// Tip sets the tip text
 func (tsc treeSelect) Tip(value string) treeSelect {
 	return tsc.set("tip", value)
 }
 
-// Value 表单项的值
+// Value sets the value of the form field
 func (tsc treeSelect) Value(value any) treeSelect {
 	return tsc.set("value", value)
 }
 
-// ValueField 选项的值字段
+// ValueField sets the value field for options
 func (tsc treeSelect) ValueField(value string) treeSelect {
 	return tsc.set("valueField", value)
 }
 
-// Vertical
+// Vertical sets the vertical layout configuration
 func (tsc treeSelect) Vertical(value string) treeSelect {
 	return tsc.set("vertical", value)
 }
 
-// Visible 是否可见
+// Visible sets whether the field is visible
 func (tsc treeSelect) Visible(value bool) treeSelect {
 	return tsc.set("visible", value)
 }
 
-// VisibleOn 是否可见表达式
+// VisibleOn sets the expression for visibility
 func (tsc treeSelect) VisibleOn(value string) treeSelect {
 	return tsc.set("visibleOn", value)
 }
 
-// Width 控件宽度
+// Width sets the width of the component
 func (tsc treeSelect) Width(value string) treeSelect {
 	return tsc.set("width", value)
 }
 
-// Wrapping 是否换行
+// Wrapping sets whether to wrap lines
 func (tsc treeSelect) Wrapping(value bool) treeSelect {
 	return tsc.set("wrapping", value)
 }
 
-// 自定义其他字段
+// Other sets custom fields
 func (tsc treeSelect) Other(key string, value any) treeSelect {
 	return tsc.set(key, value)
 }
 
-// RootCreatable 顶级节点是否可以创建子节点
+// RootCreatable sets whether the root node can create child nodes
 func (tsc treeSelect) RootCreatable(value bool) treeSelect {
 	return tsc.set("rootCreatable", value)
 }
 
-// RootValue 顶级选项的值
+// RootValue sets the value of the root option
 func (tsc treeSelect) RootValue(value string) treeSelect {
 	return tsc.set("rootValue", value)
 }
 
-// Row
+// Row sets the row value
 func (tsc treeSelect) Row(value string) treeSelect {
 	return tsc.set("row", value)
 }
 
-// SaveImmediately 是否立即保存(TableColumn中使用)
+// SaveImmediately sets whether to save immediately (used in TableColumn)
 func (tsc treeSelect) SaveImmediately(value bool) treeSelect {
 	return tsc.set("saveImmediately", value)
 }
 
-// Searchable 是否可搜索
+// Searchable sets whether the field is searchable
 func (tsc treeSelect) Searchable(value bool) treeSelect {
 	return tsc.set("searchable", value)
 }
 
-// SelectFirst 默认选择选项第一个值
+// SelectFirst sets whether to select the first option by default
 func (tsc treeSelect) SelectFirst(value bool) treeSelect {
 	return tsc.set("selectFirst", value)
 }
 
-// ShowOutline 是否显示展开线
+// ShowOutline sets whether to show the outline
 func (tsc treeSelect) ShowOutline(value bool) treeSelect {
 	return tsc.set("showOutline", value)
 }
 
-// Size 表单项大小
+// Size sets the size of the form field
 func (tsc treeSelect) Size(value string) treeSelect {
 	return tsc.set("size", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the CSS class name for the static input
 func (tsc treeSelect) StaticInputClassName(value string) treeSelect {
 	return tsc.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the CSS class name for the static label
 func (tsc treeSelect) StaticLabelClassName(value string) treeSelect {
 	return tsc.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the expression for static display
 func (tsc treeSelect) StaticOn(value string) treeSelect {
 	return tsc.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (tsc treeSelect) StaticPlaceholder(value string) treeSelect {
 	return tsc.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the static schema
 func (tsc treeSelect) StaticSchema(value string) treeSelect {
 	return tsc.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (tsc treeSelect) Style(value any) treeSelect {
 	return tsc.set("style", value)
 }
 
-// SubmitOnChange 当修改完的时候是否提交表单
+// SubmitOnChange sets whether to submit the form on change
 func (tsc treeSelect) SubmitOnChange(value bool) treeSelect {
 	return tsc.set("submitOnChange", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (tsc treeSelect) TestIdBuilder(value string) treeSelect {
 	return tsc.set("testIdBuilder", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (tsc treeSelect) UseMobileUI(value bool) treeSelect {
 	return tsc.set("useMobileUI", value)
 }
 
-// ValidateApi 远端校验表单项接口
+// ValidateApi sets the API for remote validation
 func (tsc treeSelect) ValidateApi(value string) treeSelect {
 	return tsc.set("validateApi", value)
 }
 
-// ValidateOnChange 不设置时，当表单提交过后表单项每次修改都会触发重新验证
+// ValidateOnChange sets whether to validate on change
 func (tsc treeSelect) ValidateOnChange(value bool) treeSelect {
 	return tsc.set("validateOnChange", value)
 }
 
-// ValidationErrors 验证失败的提示信息
+// ValidationErrors sets the validation error messages
 func (tsc treeSelect) ValidationErrors(value string) treeSelect {
 	return tsc.set("validationErrors", value)
 }
 
-// Validations
+// Validations sets the validations
 func (tsc treeSelect) Validations(value string) treeSelect {
 	return tsc.set("validations", value)
 }
 
-// ValuesNoWrap 多选模式，值太多时是否避免折行
+// ValuesNoWrap sets whether to avoid wrapping in multi-select mode
 func (tsc treeSelect) ValuesNoWrap(value bool) treeSelect {
 	return tsc.set("valuesNoWrap", value)
 }
 
-// WithChildren 选父级的时候是否把子节点的值也包含在内
+// WithChildren sets whether to include child node values when selecting a parent
 func (tsc treeSelect) WithChildren(value bool) treeSelect {
 	return tsc.set("withChildren", value)
 }

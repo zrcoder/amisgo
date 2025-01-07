@@ -4,7 +4,7 @@ package comp
 
 type portletTab Schema
 
-// PortletTab 创建一个新的 PortletTab 实例
+// PortletTab creates a new PortletTab instance
 func PortletTab() portletTab {
 	return portletTab{}
 }
@@ -14,152 +14,152 @@ func (p portletTab) set(key string, value any) portletTab {
 	return p
 }
 
-// Body 内容
+// Body sets the body content
 func (p portletTab) Body(value ...any) portletTab {
 	return p.set("body", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the container CSS class name
 func (p portletTab) ClassName(value string) portletTab {
 	return p.set("className", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets the disabled state
 func (p portletTab) Disabled(value bool) portletTab {
 	return p.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the disabled expression
 func (p portletTab) DisabledOn(value string) portletTab {
 	return p.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets the editor configuration
 func (p portletTab) EditorSetting(value string) portletTab {
 	return p.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets the hidden state
 func (p portletTab) Hidden(value bool) portletTab {
 	return p.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the hidden expression
 func (p portletTab) HiddenOn(value string) portletTab {
 	return p.set("hiddenOn", value)
 }
 
-// Icon 按钮图标
+// Icon sets the button icon
 func (p portletTab) Icon(value string) portletTab {
 	return p.set("icon", value)
 }
 
-// IconPosition 图标位置
+// IconPosition sets the icon position
 func (p portletTab) IconPosition(value string) portletTab {
 	return p.set("iconPosition", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique component ID
 func (p portletTab) ID(value string) portletTab {
 	return p.set("id", value)
 }
 
-// MountOnEnter 点开时才加载卡片内容
+// MountOnEnter sets whether to load content on tab click
 func (p portletTab) MountOnEnter(value bool) portletTab {
 	return p.set("mountOnEnter", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (p portletTab) OnEvent(value any) portletTab {
 	return p.set("onEvent", value)
 }
 
-// Reload 设置以后内容每次都会重新渲染
+// Reload sets whether to re-render content each time
 func (p portletTab) Reload(value bool) portletTab {
 	return p.set("reload", value)
 }
 
-// Static 是否静态展示
+// Static sets the static display state
 func (p portletTab) Static(value bool) portletTab {
 	return p.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the static display form item class name
 func (p portletTab) StaticClassName(value string) portletTab {
 	return p.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the static display form item value class name
 func (p portletTab) StaticInputClassName(value string) portletTab {
 	return p.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the static display form item label class name
 func (p portletTab) StaticLabelClassName(value string) portletTab {
 	return p.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the static display expression
 func (p portletTab) StaticOn(value string) portletTab {
 	return p.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the static display placeholder
 func (p portletTab) StaticPlaceholder(value string) portletTab {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示 schema
+// StaticSchema sets the static display schema
 func (p portletTab) StaticSchema(value string) portletTab {
 	return p.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (p portletTab) Style(value any) portletTab {
 	return p.set("style", value)
 }
 
-// Tab 内容
+// Tab sets the tab content
 func (p portletTab) Tab(value string) portletTab {
 	return p.set("tab", value)
 }
 
-// TestIdBuilder 测试 id 构造器
+// TestIdBuilder sets the test ID builder
 func (p portletTab) TestIdBuilder(value string) portletTab {
 	return p.set("testIdBuilder", value)
 }
 
-// Testid 测试 id
+// Testid sets the test ID
 func (p portletTab) Testid(value string) portletTab {
 	return p.set("testid", value)
 }
 
-// Title Tab 标题
+// Title sets the tab title
 func (p portletTab) Title(value any) portletTab {
 	return p.set("title", value)
 }
 
-// Toolbar 可以在右侧配置点其他功能按钮，随着 tab 切换而切换
+// Toolbar sets the toolbar configuration
 func (p portletTab) Toolbar(value string) portletTab {
 	return p.set("toolbar", value)
 }
 
-// UnmountOnExit 卡片隐藏就销毁卡片节点
+// UnmountOnExit sets whether to destroy the tab node on hide
 func (p portletTab) UnmountOnExit(value bool) portletTab {
 	return p.set("unmountOnExit", value)
 }
 
-// UseMobileUI 组件级别用来关闭移动端样式
+// UseMobileUI sets whether to disable mobile styles
 func (p portletTab) UseMobileUI(value bool) portletTab {
 	return p.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets the visibility state
 func (p portletTab) Visible(value bool) portletTab {
 	return p.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the visibility expression
 func (p portletTab) VisibleOn(value string) portletTab {
 	return p.set("visibleOn", value)
 }

@@ -4,7 +4,7 @@ package comp
 
 type property Schema
 
-// Property 创建一个新的 Property 实例
+// Property creates a new Property instance
 func Property() property {
 	return property{}.
 		set("type", "property")
@@ -15,52 +15,52 @@ func (p property) set(key string, value any) property {
 	return p
 }
 
-// ClassName 外层 dom 的类名
+// ClassName sets the class name of the outer DOM
 func (p property) ClassName(value string) property {
 	return p.set("className", value)
 }
 
-// Column 每行几列
+// Column sets the number of columns per row
 func (p property) Column(value string) property {
 	return p.set("column", value)
 }
 
-// ContentStyle 属性值的样式
+// ContentStyle sets the style of the property value
 func (p property) ContentStyle(value any) property {
 	return p.set("contentStyle", value)
 }
 
-// Items 属性项
+// Items sets the property items
 func (p property) Items(value ...any) property {
 	return p.set("items", value)
 }
 
-// LabelStyle 属性名的样式
+// LabelStyle sets the style of the property label
 func (p property) LabelStyle(value any) property {
 	return p.set("labelStyle", value)
 }
 
-// Mode 显示模式
+// Mode sets the display mode
 func (p property) Mode(value string) property {
 	return p.set("mode", value)
 }
 
-// Separator 模式下属性名和值之间的分隔符
+// Separator sets the separator between property name and value in mode
 func (p property) Separator(value string) property {
 	return p.set("separator", value)
 }
 
-// Source 数据源
+// Source sets the data source
 func (p property) Source(value string) property {
 	return p.set("source", value)
 }
 
-// Style 外层 dom 的样式
+// Style sets the style of the outer DOM
 func (p property) Style(value any) property {
 	return p.set("style", value)
 }
 
-// Title 标题
+// Title sets the title
 func (p property) Title(value any) property {
 	return p.set("title", value)
 }

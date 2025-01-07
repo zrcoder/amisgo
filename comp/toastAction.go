@@ -4,7 +4,7 @@ package comp
 
 type toastAction Schema
 
-// ToastAction 创建一个新的 ToastAction 实例
+// ToastAction creates a new ToastAction instance
 func ToastAction() toastAction {
 	return toastAction{}.set("type", "button").set("actionType", "toast")
 }
@@ -14,257 +14,257 @@ func (ta toastAction) set(key string, value any) toastAction {
 	return ta
 }
 
-// ActiveClassName 激活状态时的类名
+// ActiveClassName sets the active class name
 func (ta toastAction) ActiveClassName(value string) toastAction {
 	return ta.set("activeClassName", value)
 }
 
-// ActiveLevel 激活状态时的样式
+// ActiveLevel sets the active level style
 func (ta toastAction) ActiveLevel(value string) toastAction {
 	return ta.set("activeLevel", value)
 }
 
-// Badge 角标 (Badge 角标。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/badge)
+// Badge sets the badge
 func (ta toastAction) Badge(value string) toastAction {
 	return ta.set("badge", value)
 }
 
-// Block 是否为块状展示，默认为内联。
+// Block sets whether to display as block
 func (ta toastAction) Block(value bool) toastAction {
 	return ta.set("block", value)
 }
 
-// Body 子内容 (子内容)
+// Body sets the body content
 func (ta toastAction) Body(value ...any) toastAction {
 	return ta.set("body", value)
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// ClassName sets the container CSS class name
 func (ta toastAction) ClassName(value string) toastAction {
 	return ta.set("className", value)
 }
 
-// Close 如果按钮在弹框中，可以配置这个动作完成后是否关闭弹窗，或者指定关闭目标弹框。
+// Close sets the close action
 func (ta toastAction) Close(value string) toastAction {
 	return ta.set("close", value)
 }
 
-// ConfirmText 提示文字，配置了操作前会要求用户确认。
+// ConfirmText sets the confirmation text
 func (ta toastAction) ConfirmText(value string) toastAction {
 	return ta.set("confirmText", value)
 }
 
-// ConfirmTitle 确认弹窗标题
+// ConfirmTitle sets the confirmation dialog title
 func (ta toastAction) ConfirmTitle(value any) toastAction {
 	return ta.set("confirmTitle", value)
 }
 
-// CountDown 点击后的禁止倒计时（秒）
+// CountDown sets the countdown timer
 func (ta toastAction) CountDown(value string) toastAction {
 	return ta.set("countDown", value)
 }
 
-// CountDownTpl 倒计时文字自定义
+// CountDownTpl sets the countdown template
 func (ta toastAction) CountDownTpl(value string) toastAction {
 	return ta.set("countDownTpl", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the action is disabled
 func (ta toastAction) Disabled(value bool) toastAction {
 	return ta.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the disabled expression
 func (ta toastAction) DisabledOn(value string) toastAction {
 	return ta.set("disabledOn", value)
 }
 
-// DisabledTip 禁用时的文案提示。
+// DisabledTip sets the disabled tooltip
 func (ta toastAction) DisabledTip(value string) toastAction {
 	return ta.set("disabledTip", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (ta toastAction) EditorSetting(value string) toastAction {
 	return ta.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the action is hidden
 func (ta toastAction) Hidden(value bool) toastAction {
 	return ta.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the hidden expression
 func (ta toastAction) HiddenOn(value string) toastAction {
 	return ta.set("hiddenOn", value)
 }
 
-// HotKey 键盘快捷键
+// HotKey sets the keyboard shortcut
 func (ta toastAction) HotKey(value string) toastAction {
 	return ta.set("hotKey", value)
 }
 
-// Icon 按钮图标， iconfont 的类名 (iconfont 里面的类名。)
+// Icon sets the button icon
 func (ta toastAction) Icon(value string) toastAction {
 	return ta.set("icon", value)
 }
 
-// IconClassName icon 上的css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// IconClassName sets the icon CSS class name
 func (ta toastAction) IconClassName(value string) toastAction {
 	return ta.set("iconClassName", value)
 }
 
-// Id 主要用于用户行为跟踪里区分是哪个按钮
+// ID sets the button ID
 func (ta toastAction) ID(value string) toastAction {
 	return ta.set("id", value)
 }
 
-// Label 按钮文字
+// Label sets the button label
 func (ta toastAction) Label(value string) toastAction {
 	return ta.set("label", value)
 }
 
-// Level 按钮样式 可选值: info | success | warning | danger | link | primary | dark | light | secondary
+// Level sets the button style level
 func (ta toastAction) Level(value string) toastAction {
 	return ta.set("level", value)
 }
 
-// LoadingClassName loading 上的css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// LoadingClassName sets the loading CSS class name
 func (ta toastAction) LoadingClassName(value string) toastAction {
 	return ta.set("loadingClassName", value)
 }
 
-// LoadingOn 是否显示loading效果
+// LoadingOn sets the loading expression
 func (ta toastAction) LoadingOn(value string) toastAction {
 	return ta.set("loadingOn", value)
 }
 
-// MergeData 是否将弹框中数据 merge 到父级作用域。
+// MergeData sets whether to merge data into the parent scope
 func (ta toastAction) MergeData(value bool) toastAction {
 	return ta.set("mergeData", value)
 }
 
-// OnClick 自定义事件处理函数
+// OnClick sets the custom event handler
 func (ta toastAction) OnClick(value string) toastAction {
 	return ta.set("onClick", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (ta toastAction) OnEvent(value any) toastAction {
 	return ta.set("onEvent", value)
 }
 
-// Primary
+// Primary sets whether the action is primary
 func (ta toastAction) Primary(value bool) toastAction {
 	return ta.set("primary", value)
 }
 
-// RequireSelected 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
+// RequireSelected sets whether selection is required
 func (ta toastAction) RequireSelected(value bool) toastAction {
 	return ta.set("requireSelected", value)
 }
 
-// Required 如果按钮在form中，配置此属性会要求用户把指定的字段通过验证后才会触发行为。
+// Required sets the required field for form validation
 func (ta toastAction) Required(value string) toastAction {
 	return ta.set("required", value)
 }
 
-// RightIcon 右侧按钮图标， iconfont 的类名 (iconfont 里面的类名。)
+// RightIcon sets the right icon
 func (ta toastAction) RightIcon(value string) toastAction {
 	return ta.set("rightIcon", value)
 }
 
-// RightIconClassName 右侧 icon 上的 css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// RightIconClassName sets the right icon CSS class name
 func (ta toastAction) RightIconClassName(value string) toastAction {
 	return ta.set("rightIconClassName", value)
 }
 
-// Size 按钮大小 可选值: xs | sm | md | lg
+// Size sets the button size
 func (ta toastAction) Size(value string) toastAction {
 	return ta.set("size", value)
 }
 
-// Static 是否静态展示
+// Static sets whether to display statically
 func (ta toastAction) Static(value bool) toastAction {
 	return ta.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// StaticClassName sets the static display CSS class name
 func (ta toastAction) StaticClassName(value string) toastAction {
 	return ta.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// StaticInputClassName sets the static input CSS class name
 func (ta toastAction) StaticInputClassName(value string) toastAction {
 	return ta.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// StaticLabelClassName sets the static label CSS class name
 func (ta toastAction) StaticLabelClassName(value string) toastAction {
 	return ta.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the static display expression
 func (ta toastAction) StaticOn(value string) toastAction {
 	return ta.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the static display placeholder
 func (ta toastAction) StaticPlaceholder(value string) toastAction {
 	return ta.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the static schema
 func (ta toastAction) StaticSchema(value string) toastAction {
 	return ta.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (ta toastAction) Style(value any) toastAction {
 	return ta.set("style", value)
 }
 
-// Target 可以指定让谁来触发这个动作。
+// Target sets the target for the action
 func (ta toastAction) Target(value string) toastAction {
 	return ta.set("target", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (ta toastAction) TestIdBuilder(value string) toastAction {
 	return ta.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID
 func (ta toastAction) Testid(value string) toastAction {
 	return ta.set("testid", value)
 }
 
-// Toast 轻提示详情 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/toast (轻提示详情 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/toast)
+// Toast sets the toast details
 func (ta toastAction) Toast(value string) toastAction {
 	return ta.set("toast", value)
 }
 
-// Tooltip
+// Tooltip sets the tooltip
 func (ta toastAction) Tooltip(value string) toastAction {
 	return ta.set("tooltip", value)
 }
 
-// TooltipPlacement 可选值: top | right | bottom | left
+// TooltipPlacement sets the tooltip placement
 func (ta toastAction) TooltipPlacement(value string) toastAction {
 	return ta.set("tooltipPlacement", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (ta toastAction) UseMobileUI(value bool) toastAction {
 	return ta.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the action is visible
 func (ta toastAction) Visible(value bool) toastAction {
 	return ta.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the visible expression
 func (ta toastAction) VisibleOn(value string) toastAction {
 	return ta.set("visibleOn", value)
 }

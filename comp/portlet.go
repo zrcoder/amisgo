@@ -4,7 +4,7 @@ package comp
 
 type portlet Schema
 
-// Portlet 创建一个新的 Portlet 实例
+// Portlet creates a new Portlet instance
 func Portlet() portlet {
 	return portlet{}.set("type", "portlet")
 }
@@ -14,172 +14,172 @@ func (p portlet) set(key string, value any) portlet {
 	return p
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the container CSS class name
 func (p portlet) ClassName(value string) portlet {
 	return p.set("className", value)
 }
 
-// ContentClassName 内容类名
+// ContentClassName sets the content class name
 func (p portlet) ContentClassName(value string) portlet {
 	return p.set("contentClassName", value)
 }
 
-// Description 标题右侧的描述
+// Description sets the description on the right side of the title
 func (p portlet) Description(value string) portlet {
 	return p.set("description", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the portlet is disabled
 func (p portlet) Disabled(value bool) portlet {
 	return p.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression to determine if the portlet is disabled
 func (p portlet) DisabledOn(value string) portlet {
 	return p.set("disabledOn", value)
 }
 
-// Divider header和内容是否展示分割线
+// Divider sets whether to show a divider between the header and content
 func (p portlet) Divider(value bool) portlet {
 	return p.set("divider", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets the editor configuration
 func (p portlet) EditorSetting(value string) portlet {
 	return p.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the portlet is hidden
 func (p portlet) Hidden(value bool) portlet {
 	return p.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression to determine if the portlet is hidden
 func (p portlet) HiddenOn(value string) portlet {
 	return p.set("hiddenOn", value)
 }
 
-// HideHeader 隐藏头部
+// HideHeader sets whether to hide the header
 func (p portlet) HideHeader(value bool) portlet {
 	return p.set("hideHeader", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique component ID
 func (p portlet) ID(value string) portlet {
 	return p.set("id", value)
 }
 
-// LinksClassName 链接外层类名
+// LinksClassName sets the class name for the outer links
 func (p portlet) LinksClassName(value string) portlet {
 	return p.set("linksClassName", value)
 }
 
-// MountOnEnter 卡片是否只有在点开的时候加载
+// MountOnEnter sets whether to load the card only when opened
 func (p portlet) MountOnEnter(value bool) portlet {
 	return p.set("mountOnEnter", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (p portlet) OnEvent(value any) portlet {
 	return p.set("onEvent", value)
 }
 
-// Scrollable 是否支持溢出滚动
+// Scrollable sets whether to support overflow scrolling
 func (p portlet) Scrollable(value bool) portlet {
 	return p.set("scrollable", value)
 }
 
-// Source 关联已有数据
+// Source sets the associated existing data
 func (p portlet) Source(value string) portlet {
 	return p.set("source", value)
 }
 
-// Static 是否静态展示
+// Static sets whether to display statically
 func (p portlet) Static(value bool) portlet {
 	return p.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the class name for static display form items
 func (p portlet) StaticClassName(value string) portlet {
 	return p.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the class name for static display form item values
 func (p portlet) StaticInputClassName(value string) portlet {
 	return p.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the class name for static display form item labels
 func (p portlet) StaticLabelClassName(value string) portlet {
 	return p.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the expression to determine if the portlet is displayed statically
 func (p portlet) StaticOn(value string) portlet {
 	return p.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display empty values
 func (p portlet) StaticPlaceholder(value string) portlet {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示 schema
+// StaticSchema sets the static display schema
 func (p portlet) StaticSchema(value string) portlet {
 	return p.set("staticSchema", value)
 }
 
-// Style 自定义样式
+// Style sets custom styles
 func (p portlet) Style(value any) portlet {
 	return p.set("style", value)
 }
 
-// Tabs 标签页
+// Tabs sets the tabs
 func (p portlet) Tabs(value string) portlet {
 	return p.set("tabs", value)
 }
 
-// TabsClassName 标签页类名
+// TabsClassName sets the class name for the tabs
 func (p portlet) TabsClassName(value string) portlet {
 	return p.set("tabsClassName", value)
 }
 
-// TabsMode 展示形式
+// TabsMode sets the display mode for the tabs
 func (p portlet) TabsMode(value string) portlet {
 	return p.set("tabsMode", value)
 }
 
-// TestIdBuilder 测试 id 构造器
+// TestIdBuilder sets the test ID builder
 func (p portlet) TestIdBuilder(value string) portlet {
 	return p.set("testIdBuilder", value)
 }
 
-// Testid 测试 id
+// Testid sets the test ID
 func (p portlet) Testid(value string) portlet {
 	return p.set("testid", value)
 }
 
-// Toolbar 可以在右侧配置点其他功能按钮
+// Toolbar sets the toolbar for additional buttons on the right side
 func (p portlet) Toolbar(value string) portlet {
 	return p.set("toolbar", value)
 }
 
-// UnmountOnExit 卡片隐藏的时候是否销毁卡片内容
+// UnmountOnExit sets whether to destroy the card content when hidden
 func (p portlet) UnmountOnExit(value bool) portlet {
 	return p.set("unmountOnExit", value)
 }
 
-// UseMobileUI 组件级别关闭移动端样式
+// UseMobileUI sets whether to disable mobile UI styles at the component level
 func (p portlet) UseMobileUI(value bool) portlet {
 	return p.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the portlet is visible
 func (p portlet) Visible(value bool) portlet {
 	return p.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the expression to determine if the portlet is visible
 func (p portlet) VisibleOn(value string) portlet {
 	return p.set("visibleOn", value)
 }

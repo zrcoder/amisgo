@@ -1,239 +1,222 @@
 package comp
 
-// ListRenderer 列表展示控件
-
+// ListRenderer represents a list display component.
 type ListRenderer Schema
 
-// NewListRenderer 创建一个新的 ListRenderer 实例
+// NewListRenderer creates a new ListRenderer instance.
 func NewListRenderer() ListRenderer {
 	lr := make(ListRenderer)
 	lr.set("type", "list")
 	return lr
 }
 
-// set 设置字段值
+// set sets a field value.
 func (lr ListRenderer) set(key string, value any) ListRenderer {
 	lr[key] = value
 	return lr
 }
 
-// AffixFooter 设置是否固底
+// AffixFooter sets whether to fix the footer.
 func (lr ListRenderer) AffixFooter(value bool) ListRenderer {
 	return lr.set("affixFooter", value)
 }
 
-// AffixHeader 设置是否固顶
+// AffixHeader sets whether to fix the header.
 func (lr ListRenderer) AffixHeader(value bool) ListRenderer {
 	return lr.set("affixHeader", value)
 }
 
-// CheckOnItemClick 设置点击列表单行时是否选择
+// CheckOnItemClick sets whether to select on item click.
 func (lr ListRenderer) CheckOnItemClick(value bool) ListRenderer {
 	return lr.set("checkOnItemClick", value)
 }
 
-// ClassName 设置容器 css 类名
-// 支持字符串或对象配置
+// ClassName sets the container CSS class name.
 func (lr ListRenderer) ClassName(value string) ListRenderer {
 	return lr.set("className", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled sets whether the component is disabled.
 func (lr ListRenderer) Disabled(value bool) ListRenderer {
 	return lr.set("disabled", value)
 }
 
-// DisabledOn 设置是否禁用表达式
-// 表达式语法 `data.xxx > 5`
+// DisabledOn sets the expression to disable the component.
 func (lr ListRenderer) DisabledOn(value string) ListRenderer {
 	return lr.set("disabledOn", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting sets the editor configuration.
 func (lr ListRenderer) EditorSetting(value string) ListRenderer {
 	return lr.set("editorSetting", value)
 }
 
-// Footer 设置底部区域
+// Footer sets the footer area.
 func (lr ListRenderer) Footer(value string) ListRenderer {
 	return lr.set("footer", value)
 }
 
-// FooterClassName 设置底部区域类名
-// 支持字符串或对象配置
+// FooterClassName sets the footer area class name.
 func (lr ListRenderer) FooterClassName(value string) ListRenderer {
 	return lr.set("footerClassName", value)
 }
 
-// Header 设置顶部区域
+// Header sets the header area.
 func (lr ListRenderer) Header(value string) ListRenderer {
 	return lr.set("header", value)
 }
 
-// HeaderClassName 设置顶部区域类名
-// 支持字符串或对象配置
+// HeaderClassName sets the header area class name.
 func (lr ListRenderer) HeaderClassName(value string) ListRenderer {
 	return lr.set("headerClassName", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden sets whether the component is hidden.
 func (lr ListRenderer) Hidden(value bool) ListRenderer {
 	return lr.set("hidden", value)
 }
 
-// HiddenOn 设置是否隐藏表达式
-// 表达式语法 `data.xxx > 5`
+// HiddenOn sets the expression to hide the component.
 func (lr ListRenderer) HiddenOn(value string) ListRenderer {
 	return lr.set("hiddenOn", value)
 }
 
-// HideCheckToggler 设置是否隐藏勾选框
+// HideCheckToggler sets whether to hide the check toggler.
 func (lr ListRenderer) HideCheckToggler(value bool) ListRenderer {
 	return lr.set("hideCheckToggler", value)
 }
 
-// Id 设置组件唯一 id
+// ID sets the unique ID of the component.
 func (lr ListRenderer) ID(value string) ListRenderer {
 	return lr.set("id", value)
 }
 
-// ItemAction 设置点击列表项的行为
+// ItemAction sets the action on item click.
 func (lr ListRenderer) ItemAction(value string) ListRenderer {
 	return lr.set("itemAction", value)
 }
 
-// ItemCheckableOn 设置配置某项是否可以点选
-// 表达式语法 `data.xxx > 5`
+// ItemCheckableOn sets the expression to make an item checkable.
 func (lr ListRenderer) ItemCheckableOn(value string) ListRenderer {
 	return lr.set("itemCheckableOn", value)
 }
 
-// ItemDraggableOn 设置配置某项是否可拖拽排序
-// 表达式语法 `data.xxx > 5`
+// ItemDraggableOn sets the expression to make an item draggable.
 func (lr ListRenderer) ItemDraggableOn(value string) ListRenderer {
 	return lr.set("itemDraggableOn", value)
 }
 
-// ListItem 设置单条数据展示内容配置
+// ListItem sets the configuration for displaying a single item.
 func (lr ListRenderer) ListItem(value string) ListRenderer {
 	return lr.set("listItem", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent sets the event action configuration.
 func (lr ListRenderer) OnEvent(value any) ListRenderer {
 	return lr.set("onEvent", value)
 }
 
-// Placeholder 设置无数据提示
-// 支持两种语法：1. `${xxx}` 或 `${xxx|upperCase}` 2. `<%= data.xxx %>`
+// Placeholder sets the placeholder text when no data is available.
 func (lr ListRenderer) Placeholder(value string) ListRenderer {
 	return lr.set("placeholder", value)
 }
 
-// ShowFooter 设置是否显示底部
+// ShowFooter sets whether to show the footer.
 func (lr ListRenderer) ShowFooter(value bool) ListRenderer {
 	return lr.set("showFooter", value)
 }
 
-// ShowHeader 设置是否显示头部
+// ShowHeader sets whether to show the header.
 func (lr ListRenderer) ShowHeader(value bool) ListRenderer {
 	return lr.set("showHeader", value)
 }
 
-// Size 设置大小
-// 可选值: sm | base
+// Size sets the size of the component.
 func (lr ListRenderer) Size(value string) ListRenderer {
 	return lr.set("size", value)
 }
 
-// Source 设置数据源
+// Source sets the data source.
 func (lr ListRenderer) Source(value string) ListRenderer {
 	return lr.set("source", value)
 }
 
-// Static 设置是否静态展示
+// Static sets whether the component is static.
 func (lr ListRenderer) Static(value bool) ListRenderer {
 	return lr.set("static", value)
 }
 
-// StaticClassName 设置静态展示表单项类名
-// 支持字符串或对象配置
+// StaticClassName sets the static display form item class name.
 func (lr ListRenderer) StaticClassName(value string) ListRenderer {
 	return lr.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置静态展示表单项Value类名
-// 支持字符串或对象配置
+// StaticInputClassName sets the static display form item value class name.
 func (lr ListRenderer) StaticInputClassName(value string) ListRenderer {
 	return lr.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置静态展示表单项Label类名
-// 支持字符串或对象配置
+// StaticLabelClassName sets the static display form item label class name.
 func (lr ListRenderer) StaticLabelClassName(value string) ListRenderer {
 	return lr.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置是否静态展示表达式
-// 表达式语法 `data.xxx > 5`
+// StaticOn sets the expression to make the component static.
 func (lr ListRenderer) StaticOn(value string) ListRenderer {
 	return lr.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display.
 func (lr ListRenderer) StaticPlaceholder(value string) ListRenderer {
 	return lr.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置静态展示模式的 schema
+// StaticSchema sets the schema for static display mode.
 func (lr ListRenderer) StaticSchema(value string) ListRenderer {
 	return lr.set("staticSchema", value)
 }
 
-// Style 设置组件样式
+// Style sets the component style.
 func (lr ListRenderer) Style(value any) ListRenderer {
 	return lr.set("style", value)
 }
 
-// TestIdBuilder 设置测试 ID 构建器
+// TestIdBuilder sets the test ID builder.
 func (lr ListRenderer) TestIdBuilder(value string) ListRenderer {
 	return lr.set("testIdBuilder", value)
 }
 
-// Testid 设置测试 ID
+// Testid sets the test ID.
 func (lr ListRenderer) Testid(value string) ListRenderer {
 	return lr.set("testid", value)
 }
 
-// Title 设置标题
-// 支持两种语法：1. `${xxx}` 或 `${xxx|upperCase}` 2. `<%= data.xxx %>`
+// Title sets the title.
 func (lr ListRenderer) Title(value any) ListRenderer {
 	return lr.set("title", value)
 }
 
-// Type 设置为 List 列表展示控件
-// 可选值: list | static-list
+// Type sets the component type.
 func (lr ListRenderer) Type(value string) ListRenderer {
 	return lr.set("type", value)
 }
 
-// UseMobileUI 设置是否使用移动端样式
+// UseMobileUI sets whether to use mobile UI.
 func (lr ListRenderer) UseMobileUI(value bool) ListRenderer {
 	return lr.set("useMobileUI", value)
 }
 
-// ValueField 设置可以用来作为值的字段
+// ValueField sets the field used as the value.
 func (lr ListRenderer) ValueField(value string) ListRenderer {
 	return lr.set("valueField", value)
 }
 
-// Visible 设置是否显示
+// Visible sets whether the component is visible.
 func (lr ListRenderer) Visible(value bool) ListRenderer {
 	return lr.set("visible", value)
 }
 
-// VisibleOn 设置是否显示表达式
-// 表达式语法 `data.xxx > 5`
+// VisibleOn sets the expression to make the component visible.
 func (lr ListRenderer) VisibleOn(value string) ListRenderer {
 	return lr.set("visibleOn", value)
 }

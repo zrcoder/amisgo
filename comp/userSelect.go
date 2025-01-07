@@ -1,7 +1,6 @@
 package comp
 
-// userSelect 移动端人员选择。
-
+// userSelect represents a mobile user selector component.
 type userSelect Schema
 
 func UsersSelect() userSelect {
@@ -13,307 +12,307 @@ func (usc userSelect) set(key string, value any) userSelect {
 	return usc
 }
 
-// AddApi 添加时调用的接口
+// AddApi sets the API for adding users.
 func (usc userSelect) AddApi(value string) userSelect {
 	return usc.set("addApi", value)
 }
 
-// AddControls 新增时的表单项
+// AddControls sets the form controls for adding users.
 func (usc userSelect) AddControls(value string) userSelect {
 	return usc.set("addControls", value)
 }
 
-// AddDialog 控制新增弹框设置项
+// AddDialog sets the dialog options for adding users.
 func (usc userSelect) AddDialog(value string) userSelect {
 	return usc.set("addDialog", value)
 }
 
-// AutoFill 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内
+// AutoFill sets the auto-fill options.
 func (usc userSelect) AutoFill(value string) userSelect {
 	return usc.set("autoFill", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the CSS class name.
 func (usc userSelect) ClassName(value string) userSelect {
 	return usc.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值
+// ClearValueOnHidden sets whether to clear the value when hidden.
 func (usc userSelect) ClearValueOnHidden(value bool) userSelect {
 	return usc.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否可清除
+// Clearable sets whether the field is clearable.
 func (usc userSelect) Clearable(value bool) userSelect {
 	return usc.set("clearable", value)
 }
 
-// Creatable 是否可以新增
+// Creatable sets whether new users can be created.
 func (usc userSelect) Creatable(value bool) userSelect {
 	return usc.set("creatable", value)
 }
 
-// CreateBtnLabel 新增文字
+// CreateBtnLabel sets the label for the create button.
 func (usc userSelect) CreateBtnLabel(value string) userSelect {
 	return usc.set("createBtnLabel", value)
 }
 
-// DeferApi 延时加载的 API
+// DeferApi sets the API for deferred loading.
 func (usc userSelect) DeferApi(value string) userSelect {
 	return usc.set("deferApi", value)
 }
 
-// DeferField 懒加载字段
+// DeferField sets the field for lazy loading.
 func (usc userSelect) DeferField(value string) userSelect {
 	return usc.set("deferField", value)
 }
 
-// DeleteApi 选项删除 API
+// DeleteApi sets the API for deleting users.
 func (usc userSelect) DeleteApi(value string) userSelect {
 	return usc.set("deleteApi", value)
 }
 
-// DeleteConfirmText 选项删除提示文字
+// DeleteConfirmText sets the confirmation text for deletion.
 func (usc userSelect) DeleteConfirmText(value string) userSelect {
 	return usc.set("deleteConfirmText", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the delimiter.
 func (usc userSelect) Delimiter(value string) userSelect {
 	return usc.set("delimiter", value)
 }
 
-// Desc
+// Desc sets the description.
 func (usc userSelect) Desc(value string) userSelect {
 	return usc.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段
+// Description sets the HTML description.
 func (usc userSelect) Description(value string) userSelect {
 	return usc.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className
+// DescriptionClassName sets the CSS class name for the description.
 func (usc userSelect) DescriptionClassName(value string) userSelect {
 	return usc.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the field is disabled.
 func (usc userSelect) Disabled(value bool) userSelect {
 	return usc.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression for disabling the field.
 func (usc userSelect) DisabledOn(value string) userSelect {
 	return usc.set("disabledOn", value)
 }
 
-// EditApi 编辑时调用的 API
+// EditApi sets the API for editing users.
 func (usc userSelect) EditApi(value string) userSelect {
 	return usc.set("editApi", value)
 }
 
-// EditControls 选项修改的表单项
+// EditControls sets the form controls for editing users.
 func (usc userSelect) EditControls(value string) userSelect {
 	return usc.set("editControls", value)
 }
 
-// EditDialog 控制编辑弹框设置项
+// EditDialog sets the dialog options for editing users.
 func (usc userSelect) EditDialog(value string) userSelect {
 	return usc.set("editDialog", value)
 }
 
-// Editable 是否可以编辑
+// Editable sets whether the field is editable.
 func (usc userSelect) Editable(value bool) userSelect {
 	return usc.set("editable", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration.
 func (usc userSelect) EditorSetting(value string) userSelect {
 	return usc.set("editorSetting", value)
 }
 
-// ExtraName 额外的字段名
+// ExtraName sets the extra field name.
 func (usc userSelect) ExtraName(value string) userSelect {
 	return usc.set("extraName", value)
 }
 
-// ExtractValue 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值
+// ExtractValue sets whether to extract the value as an array.
 func (usc userSelect) ExtractValue(value bool) userSelect {
 	return usc.set("extractValue", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the field is hidden.
 func (usc userSelect) Hidden(value bool) userSelect {
 	return usc.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression for hiding the field.
 func (usc userSelect) HiddenOn(value string) userSelect {
 	return usc.set("hiddenOn", value)
 }
 
-// Hint 输入提示，聚焦的时候显示
+// Hint sets the input hint.
 func (usc userSelect) Hint(value string) userSelect {
 	return usc.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候，用来配置具体的左右分配
+// Horizontal sets the horizontal layout configuration.
 func (usc userSelect) Horizontal(value string) userSelect {
 	return usc.set("horizontal", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique component ID.
 func (usc userSelect) ID(value string) userSelect {
 	return usc.set("id", value)
 }
 
-// InitAutoFill
+// InitAutoFill sets the initial auto-fill options.
 func (usc userSelect) InitAutoFill(value string) userSelect {
 	return usc.set("initAutoFill", value)
 }
 
-// InitFetch 配置 source 接口初始拉不拉取
+// InitFetch sets whether to fetch data initially.
 func (usc userSelect) InitFetch(value bool) userSelect {
 	return usc.set("initFetch", value)
 }
 
-// InitFetchOn 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets the expression for initial data fetch.
 func (usc userSelect) InitFetchOn(value string) userSelect {
 	return usc.set("initFetchOn", value)
 }
 
-// Inline 表单 control 是否为 inline 模式
+// Inline sets whether the control is inline.
 func (usc userSelect) Inline(value bool) userSelect {
 	return usc.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the CSS class name for the input.
 func (usc userSelect) InputClassName(value string) userSelect {
 	return usc.set("inputClassName", value)
 }
 
-// JoinValues 单选模式或多选模式下的值处理
+// JoinValues sets whether to join values in single or multiple mode.
 func (usc userSelect) JoinValues(value bool) userSelect {
 	return usc.set("joinValues", value)
 }
 
-// Label 描述标题
+// Label sets the label.
 func (usc userSelect) Label(value string) userSelect {
 	return usc.set("label", value)
 }
 
-// LabelAlign 描述标题对齐方式
+// LabelAlign sets the label alignment.
 func (usc userSelect) LabelAlign(value string) userSelect {
 	return usc.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the CSS class name for the label.
 func (usc userSelect) LabelClassName(value string) userSelect {
 	return usc.set("labelClassName", value)
 }
 
-// LabelRemark 显示一个小图标，鼠标放上去的时候显示提示内容
+// LabelRemark sets the label remark.
 func (usc userSelect) LabelRemark(value string) userSelect {
 	return usc.set("labelRemark", value)
 }
 
-// LabelWidth label自定义宽度
+// LabelWidth sets the custom label width.
 func (usc userSelect) LabelWidth(value string) userSelect {
 	return usc.set("labelWidth", value)
 }
 
-// Mode 配置当前表单项展示模式
+// Mode sets the display mode.
 func (usc userSelect) Mode(value string) userSelect {
 	return usc.set("mode", value)
 }
 
-// Multiple 是否为多选模式
+// Multiple sets whether the field is in multiple selection mode.
 func (usc userSelect) Multiple(value bool) userSelect {
 	return usc.set("multiple", value)
 }
 
-// Name 字段名，表单提交时的 key
+// Name sets the field name.
 func (usc userSelect) Name(value string) userSelect {
 	return usc.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event actions.
 func (usc userSelect) OnEvent(value any) userSelect {
 	return usc.set("onEvent", value)
 }
 
-// Options 选项集合
+// Options sets the options.
 func (usc userSelect) Options(value ...any) userSelect {
 	return usc.set("options", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the placeholder text.
 func (usc userSelect) Placeholder(value string) userSelect {
 	return usc.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the field is read-only.
 func (usc userSelect) ReadOnly(value bool) userSelect {
 	return usc.set("readOnly", value)
 }
 
-// ReadOnlyOn 只读条件
+// ReadOnlyOn sets the expression for read-only condition.
 func (usc userSelect) ReadOnlyOn(value string) userSelect {
 	return usc.set("readOnlyOn", value)
 }
 
-// Remark 显示一个小图标，鼠标放上去的时候显示提示内容
+// Remark sets the remark.
 func (usc userSelect) Remark(value string) userSelect {
 	return usc.set("remark", value)
 }
 
-// Removable 是否可删除
+// Removable sets whether the field is removable.
 func (usc userSelect) Removable(value bool) userSelect {
 	return usc.set("removable", value)
 }
 
-// Required 是否为必填
+// Required sets whether the field is required.
 func (usc userSelect) Required(value bool) userSelect {
 	return usc.set("required", value)
 }
 
-// ResetValue 点清除按钮时，将表单项重置成的值
+// ResetValue sets the reset value.
 func (usc userSelect) ResetValue(value string) userSelect {
 	return usc.set("resetValue", value)
 }
 
-// ShowErrorMsg 验证失败时是否展示错误信息
+// ShowErrorMsg sets whether to show error messages.
 func (usc userSelect) ShowErrorMsg(value bool) userSelect {
 	return usc.set("showErrorMsg", value)
 }
 
-// Size 输入框大小
+// Size sets the input size.
 func (usc userSelect) Size(value string) userSelect {
 	return usc.set("size", value)
 }
 
-// StaticClassName 配置静态内容 className
+// StaticClassName sets the CSS class name for static content.
 func (usc userSelect) StaticClassName(value string) userSelect {
 	return usc.set("staticClassName", value)
 }
 
-// StaticLabel 静态展示时 label
+// StaticLabel sets the label for static display.
 func (usc userSelect) StaticLabel(value string) userSelect {
 	return usc.set("staticLabel", value)
 }
 
-// StaticPlaceholder 静态展示时 placeholder
+// StaticPlaceholder sets the placeholder for static display.
 func (usc userSelect) StaticPlaceholder(value string) userSelect {
 	return usc.set("staticPlaceholder", value)
 }
 
-// StaticOptions 静态选项集合
+// StaticOptions sets the static options.
 func (usc userSelect) StaticOptions(value ...any) userSelect {
 	return usc.set("staticOptions", value)
 }
 
-// Width 输入框宽度
+// Width sets the input width.
 func (usc userSelect) Width(value string) userSelect {
 	return usc.set("width", value)
 }

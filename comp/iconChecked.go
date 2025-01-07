@@ -1,9 +1,9 @@
 package comp
 
-// iconChecked 图标选中渲染器
+// iconChecked represents an icon checked renderer
 type iconChecked Schema
 
-// IconChecked 创建一个新的 IconChecked 实例
+// IconChecked creates a new IconChecked instance
 func IconChecked() iconChecked {
 	return make(iconChecked)
 }
@@ -13,17 +13,17 @@ func (i iconChecked) set(key string, value any) iconChecked {
 	return i
 }
 
-// ID 组件唯一 id
+// ID sets the unique id of the component
 func (i iconChecked) ID(value string) iconChecked {
 	return i.set("id", value)
 }
 
-// Name 组件名称
+// Name sets the name of the component
 func (i iconChecked) Name(value string) iconChecked {
 	return i.set("name", value)
 }
 
-// SVG SVG 图标
+// SVG sets the SVG icon
 func (i iconChecked) SVG(value string) iconChecked {
 	return i.set("svg", value)
 }

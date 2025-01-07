@@ -1,6 +1,6 @@
 package comp
 
-// nestedSelect 嵌套选择控件
+// nestedSelect represents a nested select component.
 
 type nestedSelect Schema
 
@@ -8,368 +8,368 @@ func NestedSelect() nestedSelect {
 	return make(nestedSelect).set("type", "nested-select")
 }
 
-// set 设置字段值
+// set sets a field value.
 func (nsc nestedSelect) set(key string, value any) nestedSelect {
 	nsc[key] = value
 	return nsc
 }
 
-// AddApi 添加时调用的接口
+// AddApi sets the API for adding items.
 func (nsc nestedSelect) AddApi(value string) nestedSelect {
 	return nsc.set("addApi", value)
 }
 
-// AddControls 新增时的表单项
+// AddControls sets the form items for adding.
 func (nsc nestedSelect) AddControls(value string) nestedSelect {
 	return nsc.set("addControls", value)
 }
 
-// AddDialog 控制新增弹框设置项
+// AddDialog sets the dialog for adding items.
 func (nsc nestedSelect) AddDialog(value string) nestedSelect {
 	return nsc.set("addDialog", value)
 }
 
-// AutoFill 自动填充
+// AutoFill sets auto-fill.
 func (nsc nestedSelect) AutoFill(value string) nestedSelect {
 	return nsc.set("autoFill", value)
 }
 
-// BorderMode 边框模式
+// BorderMode sets the border mode.
 func (nsc nestedSelect) BorderMode(value string) nestedSelect {
 	return nsc.set("borderMode", value)
 }
 
-// Cascade 父子之间是否完全独立
+// Cascade sets whether parent and child are independent.
 func (nsc nestedSelect) Cascade(value bool) nestedSelect {
 	return nsc.set("cascade", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the container CSS class.
 func (nsc nestedSelect) ClassName(value string) nestedSelect {
 	return nsc.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值
+// ClearValueOnHidden sets whether to clear value when hidden.
 func (nsc nestedSelect) ClearValueOnHidden(value bool) nestedSelect {
 	return nsc.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否可清除
+// Clearable sets whether the field is clearable.
 func (nsc nestedSelect) Clearable(value bool) nestedSelect {
 	return nsc.set("clearable", value)
 }
 
-// Creatable 是否可以新增
+// Creatable sets whether new items can be created.
 func (nsc nestedSelect) Creatable(value bool) nestedSelect {
 	return nsc.set("creatable", value)
 }
 
-// CreateBtnLabel 新增文字
+// CreateBtnLabel sets the label for the create button.
 func (nsc nestedSelect) CreateBtnLabel(value string) nestedSelect {
 	return nsc.set("createBtnLabel", value)
 }
 
-// DeferApi 延时加载的 API
+// DeferApi sets the API for deferred loading.
 func (nsc nestedSelect) DeferApi(value string) nestedSelect {
 	return nsc.set("deferApi", value)
 }
 
-// DeferField 懒加载字段
+// DeferField sets the field for lazy loading.
 func (nsc nestedSelect) DeferField(value string) nestedSelect {
 	return nsc.set("deferField", value)
 }
 
-// DeleteApi 选项删除 API
+// DeleteApi sets the API for deleting items.
 func (nsc nestedSelect) DeleteApi(value string) nestedSelect {
 	return nsc.set("deleteApi", value)
 }
 
-// DeleteConfirmText 选项删除提示文字
+// DeleteConfirmText sets the confirmation text for deletion.
 func (nsc nestedSelect) DeleteConfirmText(value string) nestedSelect {
 	return nsc.set("deleteConfirmText", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the delimiter.
 func (nsc nestedSelect) Delimiter(value string) nestedSelect {
 	return nsc.set("delimiter", value)
 }
 
-// Desc 描述
+// Desc sets the description.
 func (nsc nestedSelect) Desc(value string) nestedSelect {
 	return nsc.set("desc", value)
 }
 
-// Description 描述内容
+// Description sets the description content.
 func (nsc nestedSelect) Description(value string) nestedSelect {
 	return nsc.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className
+// DescriptionClassName sets the CSS class for the description.
 func (nsc nestedSelect) DescriptionClassName(value string) nestedSelect {
 	return nsc.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the field is disabled.
 func (nsc nestedSelect) Disabled(value bool) nestedSelect {
 	return nsc.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression for disabling the field.
 func (nsc nestedSelect) DisabledOn(value string) nestedSelect {
 	return nsc.set("disabledOn", value)
 }
 
-// EditApi 编辑时调用的 API
+// EditApi sets the API for editing items.
 func (nsc nestedSelect) EditApi(value string) nestedSelect {
 	return nsc.set("editApi", value)
 }
 
-// EditControls 选项修改的表单项
+// EditControls sets the form items for editing.
 func (nsc nestedSelect) EditControls(value string) nestedSelect {
 	return nsc.set("editControls", value)
 }
 
-// EditDialog 控制编辑弹框设置项
+// EditDialog sets the dialog for editing items.
 func (nsc nestedSelect) EditDialog(value string) nestedSelect {
 	return nsc.set("editDialog", value)
 }
 
-// Editable 是否可以编辑
+// Editable sets whether the field is editable.
 func (nsc nestedSelect) Editable(value bool) nestedSelect {
 	return nsc.set("editable", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets the editor configuration.
 func (nsc nestedSelect) EditorSetting(value string) nestedSelect {
 	return nsc.set("editorSetting", value)
 }
 
-// ExtraName 额外的字段名
+// ExtraName sets the extra field name.
 func (nsc nestedSelect) ExtraName(value string) nestedSelect {
 	return nsc.set("extraName", value)
 }
 
-// ExtractValue 开启后将选中的选项 value 的值封装为数组
+// ExtractValue sets whether to extract the value as an array.
 func (nsc nestedSelect) ExtractValue(value bool) nestedSelect {
 	return nsc.set("extractValue", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the field is hidden.
 func (nsc nestedSelect) Hidden(value bool) nestedSelect {
 	return nsc.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression for hiding the field.
 func (nsc nestedSelect) HiddenOn(value string) nestedSelect {
 	return nsc.set("hiddenOn", value)
 }
 
-// HideNodePathLabel 是否隐藏选择框中已选中节点的祖先节点的文本信息
+// HideNodePathLabel sets whether to hide the ancestor node text.
 func (nsc nestedSelect) HideNodePathLabel(value bool) nestedSelect {
 	return nsc.set("hideNodePathLabel", value)
 }
 
-// Hint 输入提示
+// Hint sets the input hint.
 func (nsc nestedSelect) Hint(value string) nestedSelect {
 	return nsc.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候
+// Horizontal sets the horizontal layout.
 func (nsc nestedSelect) Horizontal(value string) nestedSelect {
 	return nsc.set("horizontal", value)
 }
 
-// Id 组件唯一 id
+// ID sets the unique component ID.
 func (nsc nestedSelect) ID(value string) nestedSelect {
 	return nsc.set("id", value)
 }
 
-// InitAutoFill 初始化自动填充
+// InitAutoFill sets the initial auto-fill.
 func (nsc nestedSelect) InitAutoFill(value string) nestedSelect {
 	return nsc.set("initAutoFill", value)
 }
 
-// InitFetch 配置 source 接口初始拉不拉取
+// InitFetch sets whether to fetch the source initially.
 func (nsc nestedSelect) InitFetch(value bool) nestedSelect {
 	return nsc.set("initFetch", value)
 }
 
-// InitFetchOn 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets the expression for initial fetch.
 func (nsc nestedSelect) InitFetchOn(value string) nestedSelect {
 	return nsc.set("initFetchOn", value)
 }
 
-// Inline 表单 control 是否为 inline 模式
+// Inline sets whether the control is inline.
 func (nsc nestedSelect) Inline(value bool) nestedSelect {
 	return nsc.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the input CSS class.
 func (nsc nestedSelect) InputClassName(value string) nestedSelect {
 	return nsc.set("inputClassName", value)
 }
 
-// JoinValues 单选模式或多选模式
+// JoinValues sets whether to join values in single or multiple mode.
 func (nsc nestedSelect) JoinValues(value bool) nestedSelect {
 	return nsc.set("joinValues", value)
 }
 
-// Label 描述标题
+// Label sets the label.
 func (nsc nestedSelect) Label(value string) nestedSelect {
 	return nsc.set("label", value)
 }
 
-// LabelAlign 描述标题对齐
+// LabelAlign sets the label alignment.
 func (nsc nestedSelect) LabelAlign(value string) nestedSelect {
 	return nsc.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the label CSS class.
 func (nsc nestedSelect) LabelClassName(value string) nestedSelect {
 	return nsc.set("labelClassName", value)
 }
 
-// LabelRemark 显示一个小图标
+// LabelRemark sets the label remark.
 func (nsc nestedSelect) LabelRemark(value string) nestedSelect {
 	return nsc.set("labelRemark", value)
 }
 
-// LabelWidth label自定义宽度
+// LabelWidth sets the custom label width.
 func (nsc nestedSelect) LabelWidth(value string) nestedSelect {
 	return nsc.set("labelWidth", value)
 }
 
-// MaxTagCount 标签的最大展示数量
+// MaxTagCount sets the maximum number of tags to display.
 func (nsc nestedSelect) MaxTagCount(value string) nestedSelect {
 	return nsc.set("maxTagCount", value)
 }
 
-// MenuClassName 弹框的 css 类
+// MenuClassName sets the CSS class for the menu.
 func (nsc nestedSelect) MenuClassName(value string) nestedSelect {
 	return nsc.set("menuClassName", value)
 }
 
-// Mode 配置当前表单项展示模式
+// Mode sets the display mode.
 func (nsc nestedSelect) Mode(value string) nestedSelect {
 	return nsc.set("mode", value)
 }
 
-// Multiple 是否为多选模式
+// Multiple sets whether the field is in multiple selection mode.
 func (nsc nestedSelect) Multiple(value bool) nestedSelect {
 	return nsc.set("multiple", value)
 }
 
-// Name 字段名
+// Name sets the field name.
 func (nsc nestedSelect) Name(value string) nestedSelect {
 	return nsc.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event actions.
 func (nsc nestedSelect) OnEvent(value any) nestedSelect {
 	return nsc.set("onEvent", value)
 }
 
-// OnlyChildren 选父级的时候是否只把子节点的值包含在内
+// OnlyChildren sets whether to include only child nodes when selecting parent.
 func (nsc nestedSelect) OnlyChildren(value bool) nestedSelect {
 	return nsc.set("onlyChildren", value)
 }
 
-// Options 选项
+// Options sets the options.
 func (nsc nestedSelect) Options(value any) nestedSelect {
 	return nsc.set("options", value)
 }
 
-// OptionTpl 选项模板
+// OptionTpl sets the option template.
 func (nsc nestedSelect) OptionTpl(value string) nestedSelect {
 	return nsc.set("optionTpl", value)
 }
 
-// Placeholder 占位提示
+// Placeholder sets the placeholder text.
 func (nsc nestedSelect) Placeholder(value string) nestedSelect {
 	return nsc.set("placeholder", value)
 }
 
-// Remark 备注
+// Remark sets the remark.
 func (nsc nestedSelect) Remark(value string) nestedSelect {
 	return nsc.set("remark", value)
 }
 
-// Render 模板渲染方式
+// Render sets the render method.
 func (nsc nestedSelect) Render(value string) nestedSelect {
 	return nsc.set("render", value)
 }
 
-// SearchAble 是否可搜索
+// SearchAble sets whether the field is searchable.
 func (nsc nestedSelect) SearchAble(value bool) nestedSelect {
 	return nsc.set("searchAble", value)
 }
 
-// ShowDesc 显示描述
+// ShowDesc sets whether to show the description.
 func (nsc nestedSelect) ShowDesc(value bool) nestedSelect {
 	return nsc.set("showDesc", value)
 }
 
-// Size 大小
+// Size sets the size.
 func (nsc nestedSelect) Size(value string) nestedSelect {
 	return nsc.set("size", value)
 }
 
-// Static 动态属性
+// Static sets whether the field is static.
 func (nsc nestedSelect) Static(value bool) nestedSelect {
 	return nsc.set("static", value)
 }
 
-// StaticLabel 静态展示内容
+// StaticLabel sets the static label content.
 func (nsc nestedSelect) StaticLabel(value string) nestedSelect {
 	return nsc.set("staticLabel", value)
 }
 
-// Style 控件样式
+// Style sets the style.
 func (nsc nestedSelect) Style(value any) nestedSelect {
 	return nsc.set("style", value)
 }
 
-// Tips 提示文字
+// Tips sets the tips text.
 func (nsc nestedSelect) Tips(value string) nestedSelect {
 	return nsc.set("tips", value)
 }
 
-// Tree 子节点是否为树形结构
+// Tree sets whether the child nodes are in tree structure.
 func (nsc nestedSelect) Tree(value bool) nestedSelect {
 	return nsc.set("tree", value)
 }
 
-// Value 选中值
+// Value sets the selected value.
 func (nsc nestedSelect) Value(value any) nestedSelect {
 	return nsc.set("value", value)
 }
 
-// ValueField 表单项值字段
+// ValueField sets the value field.
 func (nsc nestedSelect) ValueField(value string) nestedSelect {
 	return nsc.set("valueField", value)
 }
 
-// Visible 控件是否可见
+// Visible sets whether the field is visible.
 func (nsc nestedSelect) Visible(value bool) nestedSelect {
 	return nsc.set("visible", value)
 }
 
-// VisibleOn 是否可见表达式
+// VisibleOn sets the expression for visibility.
 func (nsc nestedSelect) VisibleOn(value string) nestedSelect {
 	return nsc.set("visibleOn", value)
 }
 
-// WithChildren 是否包含子节点
+// WithChildren sets whether to include child nodes.
 func (nsc nestedSelect) WithChildren(value bool) nestedSelect {
 	return nsc.set("withChildren", value)
 }
 
-// WithLabelChildren 显示标签的子节点
+// WithLabelChildren sets whether to show label child nodes.
 func (nsc nestedSelect) WithLabelChildren(value bool) nestedSelect {
 	return nsc.set("withLabelChildren", value)
 }
 
-// WithSelect 用于选择节点是否选中
+// WithSelect sets whether to select nodes.
 func (nsc nestedSelect) WithSelect(value bool) nestedSelect {
 	return nsc.set("withSelect", value)
 }

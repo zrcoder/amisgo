@@ -1,10 +1,10 @@
 package comp
 
-// vBox 垂直布局控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/vbox
+// vBox represents a vertical layout component
 
 type vBox Schema
 
-// VBox 创建一个新的 VBox 实例
+// VBox creates a new VBox instance
 func VBox() vBox {
 	return vBox{}.set("type", "vbox")
 }
@@ -14,112 +14,112 @@ func (v vBox) set(key string, value any) vBox {
 	return v
 }
 
-// className 容器 css 类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// ClassName sets the CSS class name
 func (v vBox) ClassName(value string) vBox {
 	return v.set("className", value)
 }
 
-// disabled 是否禁用
+// Disabled sets whether the component is disabled
 func (v vBox) Disabled(value bool) vBox {
 	return v.set("disabled", value)
 }
 
-// disabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine if the component is disabled
 func (v vBox) DisabledOn(value string) vBox {
 	return v.set("disabledOn", value)
 }
 
-// editorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (v vBox) EditorSetting(value string) vBox {
 	return v.set("editorSetting", value)
 }
 
-// hidden 是否隐藏
+// Hidden sets whether the component is hidden
 func (v vBox) Hidden(value bool) vBox {
 	return v.set("hidden", value)
 }
 
-// hiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine if the component is hidden
 func (v vBox) HiddenOn(value string) vBox {
 	return v.set("hiddenOn", value)
 }
 
-// id 组件唯一 id，主要用于日志采集
+// ID sets the unique component ID
 func (v vBox) ID(value string) vBox {
 	return v.set("id", value)
 }
 
-// onEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (v vBox) OnEvent(value any) vBox {
 	return v.set("onEvent", value)
 }
 
-// rows 行集合
+// Rows sets the rows collection
 func (v vBox) Rows(value string) vBox {
 	return v.set("rows", value)
 }
 
-// static 是否静态展示
+// Static sets whether the component is static
 func (v vBox) Static(value bool) vBox {
 	return v.set("static", value)
 }
 
-// staticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticClassName sets the CSS class name for static display
 func (v vBox) StaticClassName(value string) vBox {
 	return v.set("staticClassName", value)
 }
 
-// staticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticInputClassName sets the CSS class name for static input display
 func (v vBox) StaticInputClassName(value string) vBox {
 	return v.set("staticInputClassName", value)
 }
 
-// staticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticLabelClassName sets the CSS class name for static label display
 func (v vBox) StaticLabelClassName(value string) vBox {
 	return v.set("staticLabelClassName", value)
 }
 
-// staticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine if the component is static
 func (v vBox) StaticOn(value string) vBox {
 	return v.set("staticOn", value)
 }
 
-// staticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (v vBox) StaticPlaceholder(value string) vBox {
 	return v.set("staticPlaceholder", value)
 }
 
-// staticSchema
+// StaticSchema sets the static schema
 func (v vBox) StaticSchema(value string) vBox {
 	return v.set("staticSchema", value)
 }
 
-// style 组件样式
+// Style sets the component style
 func (v vBox) Style(value any) vBox {
 	return v.set("style", value)
 }
 
-// testIdBuilder
+// TestIdBuilder sets the test ID builder
 func (v vBox) TestIdBuilder(value string) vBox {
 	return v.set("testIdBuilder", value)
 }
 
-// testid
+// Testid sets the test ID
 func (v vBox) Testid(value string) vBox {
 	return v.set("testid", value)
 }
 
-// useMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (v vBox) UseMobileUI(value bool) vBox {
 	return v.set("useMobileUI", value)
 }
 
-// visible 是否显示
+// Visible sets whether the component is visible
 func (v vBox) Visible(value bool) vBox {
 	return v.set("visible", value)
 }
 
-// visibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine if the component is visible
 func (v vBox) VisibleOn(value string) vBox {
 	return v.set("visibleOn", value)
 }

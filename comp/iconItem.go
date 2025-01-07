@@ -1,9 +1,9 @@
 package comp
 
-// iconItem 图标项渲染器
+// iconItem represents an icon item renderer
 type iconItem Schema
 
-// IconItem 创建一个新的 IconItem 实例
+// IconItem creates a new IconItem instance
 func IconItem() iconItem {
 	return make(iconItem)
 }
@@ -13,12 +13,12 @@ func (i iconItem) set(key string, value any) iconItem {
 	return i
 }
 
-// Icon iconfont 里面的类名
+// Icon sets the iconfont class name
 func (i iconItem) Icon(value string) iconItem {
 	return i.set("icon", value)
 }
 
-// Position 位置
+// Position sets the position
 func (i iconItem) Position(value string) iconItem {
 	return i.set("position", value)
 }

@@ -1,131 +1,131 @@
 package comp
 
-// inputKVS 键值对象
+// inputKVS represents a key-value object
 
 type inputKVS Schema
 
-// InputKVS 创建一个新的 InputKVS 实例，并设置默认的 type
+// InputKVS creates a new InputKVS instance with default type
 func InputKVS() inputKVS {
 	return make(inputKVS).set("type", "input-kvs")
 }
 
-// set 是一个内部方法，用于设置字段值并返回自身的引用
+// set sets a field value and returns the instance
 func (i inputKVS) set(key string, value any) inputKVS {
 	i[key] = value
 	return i
 }
 
-// AutoFill 数据录入配置，自动填充或者参照录入
+// AutoFill sets autoFill configuration
 func (i inputKVS) AutoFill(value string) inputKVS {
 	return i.set("autoFill", value)
 }
 
-// ClassName 表单最外层类名
+// ClassName sets the outermost class name of the form
 func (i inputKVS) ClassName(value string) inputKVS {
 	return i.set("className", value)
 }
 
-// Description 表单项描述
+// Description sets the form item description
 func (i inputKVS) Description(value string) inputKVS {
 	return i.set("description", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the form item is disabled
 func (i inputKVS) Disabled(value bool) inputKVS {
 	return i.set("disabled", value)
 }
 
-// DisabledOn 当前表单项是否禁用的条件
+// DisabledOn sets the condition for disabling the form item
 func (i inputKVS) DisabledOn(value string) inputKVS {
 	return i.set("disabledOn", value)
 }
 
-// Inline 是否内联
+// Inline sets whether the form item is inline
 func (i inputKVS) Inline(value bool) inputKVS {
 	return i.set("inline", value)
 }
 
-// InputClassName 表单控制器类名
+// InputClassName sets the class name of the form controller
 func (i inputKVS) InputClassName(value string) inputKVS {
 	return i.set("inputClassName", value)
 }
 
-// Label 表单项标签
+// Label sets the form item label
 func (i inputKVS) Label(value string) inputKVS {
 	return i.set("label", value)
 }
 
-// KeyItem
+// KeyItem sets the key item
 func (i inputKVS) KeyItem(value any) inputKVS {
 	return i.set("keyItem", value)
 }
 
-// ValueItems
+// ValueItems sets the value items
 func (i inputKVS) ValueItems(value ...any) inputKVS {
 	return i.set("valueItems", value)
 }
 
-// LabelAlign 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
+// LabelAlign sets the label alignment, effective only when mode is horizontal
 func (i inputKVS) LabelAlign(value string) inputKVS {
 	return i.set("labelAlign", value)
 }
 
-// LabelClassName label 的类名
+// LabelClassName sets the class name of the label
 func (i inputKVS) LabelClassName(value string) inputKVS {
 	return i.set("labelClassName", value)
 }
 
-// LabelRemark 表单项标签描述
+// LabelRemark sets the label remark
 func (i inputKVS) LabelRemark(value string) inputKVS {
 	return i.set("labelRemark", value)
 }
 
-// Name 字段名，指定该表单项提交时的 key
+// Name sets the field name, specifying the key when the form is submitted
 func (i inputKVS) Name(value string) inputKVS {
 	return i.set("name", value)
 }
 
-// Placeholder 表单项描述
+// Placeholder sets the form item placeholder
 func (i inputKVS) Placeholder(value string) inputKVS {
 	return i.set("placeholder", value)
 }
 
-// Required 是否必填
+// Required sets whether the form item is required
 func (i inputKVS) Required(value bool) inputKVS {
 	return i.set("required", value)
 }
 
-// RequiredOn 通过表达式来配置当前表单项是否为必填
+// RequiredOn sets the condition for the form item to be required
 func (i inputKVS) RequiredOn(value string) inputKVS {
 	return i.set("requiredOn", value)
 }
 
-// SubmitOnChange 是否该表单项值发生变化时就提交当前表单
+// SubmitOnChange sets whether to submit the form when the form item value changes
 func (i inputKVS) SubmitOnChange(value bool) inputKVS {
 	return i.set("submitOnChange", value)
 }
 
-// ValidateApi 表单校验接口
+// ValidateApi sets the form validation API
 func (i inputKVS) ValidateApi(value string) inputKVS {
 	return i.set("validateApi", value)
 }
 
-// Validations 表单项值格式验证，支持设置多个，多个规则用英文逗号隔开
+// Validations sets the form item value format validations
 func (i inputKVS) Validations(value string) inputKVS {
 	return i.set("validations", value)
 }
 
-// Value 表单默认值
+// Value sets the default value of the form item
 func (i inputKVS) Value(value string) inputKVS {
 	return i.set("value", value)
 }
 
-// Visible 是否可见
+// Visible sets whether the form item is visible
 func (i inputKVS) Visible(value bool) inputKVS {
 	return i.set("visible", value)
 }
 
-// VisibleOn 当前表单项是否禁用的条件
+// VisibleOn sets the condition for the form item to be visible
 func (i inputKVS) VisibleOn(value string) inputKVS {
 	return i.set("visibleOn", value)
 }

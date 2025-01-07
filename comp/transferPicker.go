@@ -1,6 +1,6 @@
 package comp
 
-// transferPicker 穿梭器的弹框形态 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/transfer-picker
+// transferPicker represents the transfer picker component
 
 type transferPicker Schema
 
@@ -13,352 +13,352 @@ func (tpc transferPicker) set(key string, value any) transferPicker {
 	return tpc
 }
 
-// AddApi 添加时调用的接口
+// AddApi sets the API for adding items
 func (tpc transferPicker) AddApi(value string) transferPicker {
 	return tpc.set("addApi", value)
 }
 
-// AddControls 新增时的表单项。
+// AddControls sets the form items for adding
 func (tpc transferPicker) AddControls(value string) transferPicker {
 	return tpc.set("addControls", value)
 }
 
-// AddDialog 控制新增弹框设置项 (控制新增弹框设置项)
+// AddDialog sets the dialog for adding items
 func (tpc transferPicker) AddDialog(value string) transferPicker {
 	return tpc.set("addDialog", value)
 }
 
-// AutoCheckChildren ui级联关系，true代表级联选中，false代表不级联，默认为true
+// AutoCheckChildren sets whether to auto-check children
 func (tpc transferPicker) AutoCheckChildren(value bool) transferPicker {
 	return tpc.set("autoCheckChildren", value)
 }
 
-// AutoFill 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。
+// AutoFill sets the auto-fill value
 func (tpc transferPicker) AutoFill(value string) transferPicker {
 	return tpc.set("autoFill", value)
 }
 
-// BorderMode 边框模式，全边框，还是半边框，或者没边框。 可选值: full | half | none
+// BorderMode sets the border mode
 func (tpc transferPicker) BorderMode(value string) transferPicker {
 	return tpc.set("borderMode", value)
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// ClassName sets the CSS class name
 func (tpc transferPicker) ClassName(value string) transferPicker {
 	return tpc.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉
+// ClearValueOnHidden sets whether to clear value when hidden
 func (tpc transferPicker) ClearValueOnHidden(value bool) transferPicker {
 	return tpc.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否可清除。
+// Clearable sets whether the component is clearable
 func (tpc transferPicker) Clearable(value bool) transferPicker {
 	return tpc.set("clearable", value)
 }
 
-// Columns 当 selectMode 为 table 时定义表格列信息。
+// Columns sets the columns for table mode
 func (tpc transferPicker) Columns(value ...any) transferPicker {
 	return tpc.set("columns", value)
 }
 
-// Creatable 是否可以新增
+// Creatable sets whether new items can be created
 func (tpc transferPicker) Creatable(value bool) transferPicker {
 	return tpc.set("creatable", value)
 }
 
-// CreateBtnLabel 新增文字
+// CreateBtnLabel sets the label for the create button
 func (tpc transferPicker) CreateBtnLabel(value string) transferPicker {
 	return tpc.set("createBtnLabel", value)
 }
 
-// DeferApi 延时加载的 API，当选项中有 defer: true 的选项时，点开会通过此接口扩充。
+// DeferApi sets the API for deferred loading
 func (tpc transferPicker) DeferApi(value string) transferPicker {
 	return tpc.set("deferApi", value)
 }
 
-// DeferField 懒加载字段
+// DeferField sets the field for deferred loading
 func (tpc transferPicker) DeferField(value string) transferPicker {
 	return tpc.set("deferField", value)
 }
 
-// DeleteApi 选项删除 API
+// DeleteApi sets the API for deleting items
 func (tpc transferPicker) DeleteApi(value string) transferPicker {
 	return tpc.set("deleteApi", value)
 }
 
-// DeleteConfirmText 选项删除提示文字。
+// DeleteConfirmText sets the confirmation text for deletion
 func (tpc transferPicker) DeleteConfirmText(value string) transferPicker {
 	return tpc.set("deleteConfirmText", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the delimiter
 func (tpc transferPicker) Delimiter(value string) transferPicker {
 	return tpc.set("delimiter", value)
 }
 
-// Desc
+// Desc sets the description
 func (tpc transferPicker) Desc(value string) transferPicker {
 	return tpc.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段。
+// Description sets the description content
 func (tpc transferPicker) Description(value string) transferPicker {
 	return tpc.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className (配置描述上的 className)
+// DescriptionClassName sets the CSS class name for the description
 func (tpc transferPicker) DescriptionClassName(value string) transferPicker {
 	return tpc.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the component is disabled
 func (tpc transferPicker) Disabled(value bool) transferPicker {
 	return tpc.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression for disabling the component
 func (tpc transferPicker) DisabledOn(value string) transferPicker {
 	return tpc.set("disabledOn", value)
 }
 
-// EditApi 编辑时调用的 API
+// EditApi sets the API for editing items
 func (tpc transferPicker) EditApi(value string) transferPicker {
 	return tpc.set("editApi", value)
 }
 
-// EditControls 选项修改的表单项
+// EditControls sets the form items for editing
 func (tpc transferPicker) EditControls(value string) transferPicker {
 	return tpc.set("editControls", value)
 }
 
-// EditDialog 控制编辑弹框设置项 (控制编辑弹框设置项)
+// EditDialog sets the dialog for editing items
 func (tpc transferPicker) EditDialog(value string) transferPicker {
 	return tpc.set("editDialog", value)
 }
 
-// Editable 是否可以编辑
+// Editable sets whether the component is editable
 func (tpc transferPicker) Editable(value bool) transferPicker {
 	return tpc.set("editable", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (tpc transferPicker) EditorSetting(value string) transferPicker {
 	return tpc.set("editorSetting", value)
 }
 
-// ExtraName 额外的字段名，当为范围组件时可以用来将另外一个值打平出来
+// ExtraName sets the extra field name
 func (tpc transferPicker) ExtraName(value string) transferPicker {
 	return tpc.set("extraName", value)
 }
 
-// ExtractValue 开启后将选中的选项 value 的值封装为数组，作为当前表单项的值。
+// ExtractValue sets whether to extract the value as an array
 func (tpc transferPicker) ExtractValue(value bool) transferPicker {
 	return tpc.set("extractValue", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the component is hidden
 func (tpc transferPicker) Hidden(value bool) transferPicker {
 	return tpc.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression for hiding the component
 func (tpc transferPicker) HiddenOn(value string) transferPicker {
 	return tpc.set("hiddenOn", value)
 }
 
-// Hint 输入提示，聚焦的时候显示
+// Hint sets the input hint
 func (tpc transferPicker) Hint(value string) transferPicker {
 	return tpc.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候，用来配置具体的左右分配。 (当配置为水平布局的时候，用来配置具体的左右分配。)
+// Horizontal sets the horizontal layout configuration
 func (tpc transferPicker) Horizontal(value string) transferPicker {
 	return tpc.set("horizontal", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique component ID
 func (tpc transferPicker) ID(value string) transferPicker {
 	return tpc.set("id", value)
 }
 
-// InitAutoFill
+// InitAutoFill sets the initial auto-fill value
 func (tpc transferPicker) InitAutoFill(value string) transferPicker {
 	return tpc.set("initAutoFill", value)
 }
 
-// InitFetch 配置 source 接口初始拉不拉取。
+// InitFetch sets whether to fetch data initially
 func (tpc transferPicker) InitFetch(value bool) transferPicker {
 	return tpc.set("initFetch", value)
 }
 
-// InitFetchOn 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets the expression for initial data fetch
 func (tpc transferPicker) InitFetchOn(value string) transferPicker {
 	return tpc.set("initFetchOn", value)
 }
 
-// InitiallyOpen 是否默认都展开
+// InitiallyOpen sets whether the component is initially open
 func (tpc transferPicker) InitiallyOpen(value bool) transferPicker {
 	return tpc.set("initiallyOpen", value)
 }
 
-// Inline 表单 control 是否为 inline 模式。
+// Inline sets whether the component is inline
 func (tpc transferPicker) Inline(value bool) transferPicker {
 	return tpc.set("inline", value)
 }
 
-// InputClassName 配置 input className (配置 input className)
+// InputClassName sets the CSS class name for the input
 func (tpc transferPicker) InputClassName(value string) transferPicker {
 	return tpc.set("inputClassName", value)
 }
 
-// ItemHeight 单个选项的高度，主要用于虚拟渲染
+// ItemHeight sets the height of each item
 func (tpc transferPicker) ItemHeight(value string) transferPicker {
 	return tpc.set("itemHeight", value)
 }
 
-// JoinValues 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的选项 value 会以数组形式提交。
+// JoinValues sets whether to join values in single select mode
 func (tpc transferPicker) JoinValues(value bool) transferPicker {
 	return tpc.set("joinValues", value)
 }
 
-// Label 文字标签
+// Label sets the label text
 func (tpc transferPicker) Label(value string) transferPicker {
 	return tpc.set("label", value)
 }
 
-// LabelAlign 标签对齐方式
+// LabelAlign sets the label alignment
 func (tpc transferPicker) LabelAlign(value string) transferPicker {
 	return tpc.set("labelAlign", value)
 }
 
-// LabelClassName 标签 css 类名
+// LabelClassName sets the CSS class name for the label
 func (tpc transferPicker) LabelClassName(value string) transferPicker {
 	return tpc.set("labelClassName", value)
 }
 
-// LabelRemark 标签补充说明
+// LabelRemark sets the label remark
 func (tpc transferPicker) LabelRemark(value string) transferPicker {
 	return tpc.set("labelRemark", value)
 }
 
-// Max 最大选项数
+// Max sets the maximum number of options
 func (tpc transferPicker) Max(value int) transferPicker {
 	return tpc.set("max", value)
 }
 
-// MergeDataSource 是否合并 source 数据，默认 false。设置为 true 时，将 source 数据合并到 options 数据中
+// MergeDataSource sets whether to merge the source data
 func (tpc transferPicker) MergeDataSource(value bool) transferPicker {
 	return tpc.set("mergeDataSource", value)
 }
 
-// Min 最小选项数
+// Min sets the minimum number of options
 func (tpc transferPicker) Min(value int) transferPicker {
 	return tpc.set("min", value)
 }
 
-// MultiLine 在多行模式下显示 (是否多行显示)
+// MultiLine sets whether to display in multi-line mode
 func (tpc transferPicker) MultiLine(value bool) transferPicker {
 	return tpc.set("multiLine", value)
 }
 
-// Name 组件名字
+// Name sets the component name
 func (tpc transferPicker) Name(value string) transferPicker {
 	return tpc.set("name", value)
 }
 
-// Options 数据源配置
+// Options sets the data source options
 func (tpc transferPicker) Options(value ...any) transferPicker {
 	return tpc.set("options", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the placeholder text
 func (tpc transferPicker) Placeholder(value string) transferPicker {
 	return tpc.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the component is read-only
 func (tpc transferPicker) ReadOnly(value bool) transferPicker {
 	return tpc.set("readOnly", value)
 }
 
-// Remark
+// Remark sets the remark
 func (tpc transferPicker) Remark(value string) transferPicker {
 	return tpc.set("remark", value)
 }
 
-// Removable 是否可移除
+// Removable sets whether the component is removable
 func (tpc transferPicker) Removable(value bool) transferPicker {
 	return tpc.set("removable", value)
 }
 
-// Renderer 组件渲染器类型 (组件渲染器类型)
+// Renderer sets the component renderer type
 func (tpc transferPicker) Renderer(value string) transferPicker {
 	return tpc.set("renderer", value)
 }
 
-// Source 配置数据源 (配置数据源)
+// Source sets the data source
 func (tpc transferPicker) Source(value string) transferPicker {
 	return tpc.set("source", value)
 }
 
-// SourceEmptyText 配置为空时文本 (配置为空时文本)
+// SourceEmptyText sets the text when the source is empty
 func (tpc transferPicker) SourceEmptyText(value string) transferPicker {
 	return tpc.set("sourceEmptyText", value)
 }
 
-// Static
+// Static sets whether the component is static
 func (tpc transferPicker) Static(value bool) transferPicker {
 	return tpc.set("static", value)
 }
 
-// StaticClassName
+// StaticClassName sets the CSS class name for the static component
 func (tpc transferPicker) StaticClassName(value string) transferPicker {
 	return tpc.set("staticClassName", value)
 }
 
-// Unset 删除某个选项
+// Unset removes a specific option
 func (tpc transferPicker) Unset(value string) transferPicker {
 	return tpc.set("unset", value)
 }
 
-// Value
+// Value sets the value
 func (tpc transferPicker) Value(value string) transferPicker {
 	return tpc.set("value", value)
 }
 
-// ValueField 指定数据源 value 字段，默认值为 value
+// ValueField sets the value field for the data source
 func (tpc transferPicker) ValueField(value string) transferPicker {
 	return tpc.set("valueField", value)
 }
 
-// ValueJoin 字段分隔符
+// ValueJoin sets the field delimiter
 func (tpc transferPicker) ValueJoin(value string) transferPicker {
 	return tpc.set("valueJoin", value)
 }
 
-// Vertical 当配置为垂直布局的时候，用来配置具体的上下分配。
+// Vertical sets the vertical layout configuration
 func (tpc transferPicker) Vertical(value string) transferPicker {
 	return tpc.set("vertical", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression for visibility
 func (tpc transferPicker) VisibleOn(value string) transferPicker {
 	return tpc.set("visibleOn", value)
 }
 
-// Width 宽度
+// Width sets the width
 func (tpc transferPicker) Width(value string) transferPicker {
 	return tpc.set("width", value)
 }
 
-// Wrap 折叠展示的最小宽度
+// Wrap sets the minimum width for collapsed display
 func (tpc transferPicker) Wrap(value string) transferPicker {
 	return tpc.set("wrap", value)
 }
 
-// ZIndex
+// ZIndex sets the z-index
 func (tpc transferPicker) ZIndex(value int) transferPicker {
 	return tpc.set("zIndex", value)
 }

@@ -1,12 +1,12 @@
 package comp
 
-// 替换为实际的 upload 包路径
+// Replace with the actual upload package path
 
 // wangEditor
 
 type wangEditor Schema
 
-// WangEditor 创建一个新的 WangEditor 实例
+// WangEditor creates a new WangEditor instance
 func WangEditor() wangEditor {
 	return wangEditor{}.set("type", "custom-wang-editor")
 }
@@ -16,167 +16,167 @@ func (we wangEditor) set(key string, value any) wangEditor {
 	return we
 }
 
-// autoFill 自动填充
+// AutoFill sets autoFill
 func (we wangEditor) AutoFill(value string) wangEditor {
 	return we.set("autoFill", value)
 }
 
-// autoFocus 自动获取焦点
+// AutoFocus sets autoFocus
 func (we wangEditor) AutoFocus(value bool) wangEditor {
 	return we.set("autoFocus", value)
 }
 
-// className 设置类名
+// ClassName sets className
 func (we wangEditor) ClassName(value string) wangEditor {
 	return we.set("className", value)
 }
 
-// clearValueOnHidden 当前表单项隐藏时是否清除值
+// ClearValueOnHidden sets clearValueOnHidden
 func (we wangEditor) ClearValueOnHidden(value bool) wangEditor {
 	return we.set("clearValueOnHidden", value)
 }
 
-// description 描述
+// Description sets description
 func (we wangEditor) Description(value string) wangEditor {
 	return we.set("description", value)
 }
 
-// disabled 是否禁用
+// Disabled sets disabled
 func (we wangEditor) Disabled(value bool) wangEditor {
 	return we.set("disabled", value)
 }
 
-// disabledOn 当前表单项是否禁用的条件
+// DisabledOn sets disabledOn condition
 func (we wangEditor) DisabledOn(value string) wangEditor {
 	return we.set("disabledOn", value)
 }
 
-// excludeKeys 排除按钮
+// ExcludeKeys sets excludeKeys
 func (we wangEditor) ExcludeKeys(value string) wangEditor {
 	return we.set("excludeKeys", value)
 }
 
-// height 编辑器高度 px
+// Height sets editor height in px
 func (we wangEditor) Height(value string) wangEditor {
 	return we.set("height", value)
 }
 
-// insertKeys 插入按钮
+// InsertKeys sets insertKeys
 func (we wangEditor) InsertKeys(value string) wangEditor {
 	return we.set("insertKeys", value)
 }
 
-// label 字段标签
+// Label sets label
 func (we wangEditor) Label(value string) wangEditor {
 	return we.set("label", value)
 }
 
-// labelAlign 表单项标签对齐方式，默认右对齐，仅在 mode为horizontal 时生效
+// LabelAlign sets label alignment, effective only in horizontal mode
 func (we wangEditor) LabelAlign(value string) wangEditor {
 	return we.set("labelAlign", value)
 }
 
-// labelRemark 表单项标签描述
+// LabelRemark sets label remark
 func (we wangEditor) LabelRemark(value string) wangEditor {
 	return we.set("labelRemark", value)
 }
 
-// maxLength 最大长度
+// MaxLength sets maxLength
 func (we wangEditor) MaxLength(value string) wangEditor {
 	return we.set("maxLength", value)
 }
 
-// name 字段名
+// Name sets name
 func (we wangEditor) Name(value string) wangEditor {
 	return we.set("name", value)
 }
 
-// placeholder 占位符
+// Placeholder sets placeholder
 func (we wangEditor) Placeholder(value string) wangEditor {
 	return we.set("placeholder", value)
 }
 
-// remark 备注
+// Remark sets remark
 func (we wangEditor) Remark(value string) wangEditor {
 	return we.set("remark", value)
 }
 
-// required 是否必填
+// Required sets required
 func (we wangEditor) Required(value bool) wangEditor {
 	return we.set("required", value)
 }
 
-// requiredOn 是否必填的条件
+// RequiredOn sets requiredOn condition
 func (we wangEditor) RequiredOn(value string) wangEditor {
 	return we.set("requiredOn", value)
 }
 
-// static 是否静态展示
+// Static sets static display
 func (we wangEditor) Static(value bool) wangEditor {
 	return we.set("static", value)
 }
 
-// toolbarKeys 工具栏按钮
+// ToolbarKeys sets toolbarKeys
 func (we wangEditor) ToolbarKeys(value string) wangEditor {
 	return we.set("toolbarKeys", value)
 }
 
-// uploadImageMaxNumber 上传图片的最大数量 默认 100
+// UploadImageMaxNumber sets max number of images to upload, default is 100
 func (we wangEditor) UploadImageMaxNumber(value string) wangEditor {
 	return we.set("uploadImageMaxNumber", value)
 }
 
-// uploadImageMaxSize 上传图片的最大大小 单位: K 默认 2M
+// UploadImageMaxSize sets max size of images to upload in KB, default is 2MB
 func (we wangEditor) UploadImageMaxSize(value string) wangEditor {
 	return we.set("uploadImageMaxSize", value)
 }
 
-// uploadImageServer 上传图片的服务器地址
+// UploadImageServer sets image upload server URL
 func (we wangEditor) UploadImageServer(value string) wangEditor {
 	return we.set("uploadImageServer", value)
 }
 
-// uploadVideoMaxNumber 上传视频的最大数量 默认 5
+// UploadVideoMaxNumber sets max number of videos to upload, default is 5
 func (we wangEditor) UploadVideoMaxNumber(value string) wangEditor {
 	return we.set("uploadVideoMaxNumber", value)
 }
 
-// uploadVideoMaxSize 上传视频的最大大小 单位: K 默认 10M
+// UploadVideoMaxSize sets max size of videos to upload in KB, default is 10MB
 func (we wangEditor) UploadVideoMaxSize(value string) wangEditor {
 	return we.set("uploadVideoMaxSize", value)
 }
 
-// uploadVideoServer 上传视频的服务器地址
+// UploadVideoServer sets video upload server URL
 func (we wangEditor) UploadVideoServer(value string) wangEditor {
 	return we.set("uploadVideoServer", value)
 }
 
-// validateApi 校验接口
+// ValidateApi sets validation API
 func (we wangEditor) ValidateApi(value string) wangEditor {
 	return we.set("validateApi", value)
 }
 
-// validationErrors 校验错误信息
+// ValidationErrors sets validation errors
 func (we wangEditor) ValidationErrors(value string) wangEditor {
 	return we.set("validationErrors", value)
 }
 
-// validations 校验规则
+// Validations sets validation rules
 func (we wangEditor) Validations(value string) wangEditor {
 	return we.set("validations", value)
 }
 
-// value 默认值
+// Value sets default value
 func (we wangEditor) Value(value string) wangEditor {
 	return we.set("value", value)
 }
 
-// visible 是否显示
+// Visible sets visibility
 func (we wangEditor) Visible(value bool) wangEditor {
 	return we.set("visible", value)
 }
 
-// visibleOn 当前表单项是否显示的条件
+// VisibleOn sets visibility condition
 func (we wangEditor) VisibleOn(value string) wangEditor {
 	return we.set("visibleOn", value)
 }

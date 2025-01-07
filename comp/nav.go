@@ -1,240 +1,240 @@
 package comp
 
-// nav 导航渲染器
+// nav represents a navigation renderer
 type nav Schema
 
-// Nav 创建一个新的 Nav 实例
+// Nav creates a new Nav instance
 func Nav() nav {
 	return nav{}.set("type", "nav")
 }
 
-// set 方法用于设置属性并返回自身
+// set sets a property and returns the nav instance
 func (n nav) set(key string, value any) nav {
 	n[key] = value
 	return n
 }
 
-// Accordion 设置手风琴展开，仅垂直inline模式支持
+// Accordion sets accordion mode, only supported in vertical inline mode
 func (n nav) Accordion(value bool) nav {
 	return n.set("accordion", value)
 }
 
-// Badge 设置角标
+// Badge sets the badge
 func (n nav) Badge(value string) nav {
 	return n.set("badge", value)
 }
 
-// ClassName 设置容器 css 类名
+// ClassName sets the container CSS class name
 func (n nav) ClassName(value string) nav {
 	return n.set("className", value)
 }
 
-// Collapsed 设置控制菜单缩起
+// Collapsed sets the collapsed state
 func (n nav) Collapsed(value bool) nav {
 	return n.set("collapsed", value)
 }
 
-// DefaultOpenLevel 设置默认展开层级
+// DefaultOpenLevel sets the default open level
 func (n nav) DefaultOpenLevel(value string) nav {
 	return n.set("defaultOpenLevel", value)
 }
 
-// DeferApi 设置懒加载 api
+// DeferApi sets the lazy load API
 func (n nav) DeferApi(value string) nav {
 	return n.set("deferApi", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled sets the disabled state
 func (n nav) Disabled(value bool) nav {
 	return n.set("disabled", value)
 }
 
-// DisabledOn 设置禁用表达式
+// DisabledOn sets the disabled expression
 func (n nav) DisabledOn(value string) nav {
 	return n.set("disabledOn", value)
 }
 
-// DragOnSameLevel 设置仅允许同层级拖拽
+// DragOnSameLevel sets whether dragging is allowed only on the same level
 func (n nav) DragOnSameLevel(value bool) nav {
 	return n.set("dragOnSameLevel", value)
 }
 
-// Draggable 设置可拖拽
+// Draggable sets the draggable state
 func (n nav) Draggable(value bool) nav {
 	return n.set("draggable", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting sets the editor configuration
 func (n nav) EditorSetting(value string) nav {
 	return n.set("editorSetting", value)
 }
 
-// ExpandIcon 设置自定义展开图标
+// ExpandIcon sets the custom expand icon
 func (n nav) ExpandIcon(value string) nav {
 	return n.set("expandIcon", value)
 }
 
-// ExpandPosition 设置自定义展开图标位置
+// ExpandPosition sets the custom expand icon position
 func (n nav) ExpandPosition(value string) nav {
 	return n.set("expandPosition", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden sets the hidden state
 func (n nav) Hidden(value bool) nav {
 	return n.set("hidden", value)
 }
 
-// HiddenOn 设置隐藏表达式
+// HiddenOn sets the hidden expression
 func (n nav) HiddenOn(value string) nav {
 	return n.set("hiddenOn", value)
 }
 
-// Id 设置组件唯一 id
+// ID sets the unique component ID
 func (n nav) ID(value string) nav {
 	return n.set("id", value)
 }
 
-// IndentSize 设置缩进大小
+// IndentSize sets the indent size
 func (n nav) IndentSize(value string) nav {
 	return n.set("indentSize", value)
 }
 
-// ItemActions 设置更多操作菜单列表
+// ItemActions sets the item actions menu list
 func (n nav) ItemActions(value string) nav {
 	return n.set("itemActions", value)
 }
 
-// ItemBadge 设置角标
+// ItemBadge sets the item badge
 func (n nav) ItemBadge(value string) nav {
 	return n.set("itemBadge", value)
 }
 
-// Level 设置最多展示多少层级
+// Level sets the maximum display level
 func (n nav) Level(value string) nav {
 	return n.set("level", value)
 }
 
-// Links 设置链接
+// Links sets the links
 func (n nav) Links(value ...any) nav {
 	return n.set("links", value)
 }
 
-// Mode 设置垂直模式下的菜单打开方式 inline | float 默认 inline
+// Mode sets the menu open mode in vertical mode: inline | float (default: inline)
 func (n nav) Mode(value string) nav {
 	return n.set("mode", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent sets the event action configuration
 func (n nav) OnEvent(value any) nav {
 	return n.set("onEvent", value)
 }
 
-// Overflow 设置横向导航时自动收纳配置
+// Overflow sets the auto-collapse configuration for horizontal navigation
 func (n nav) Overflow(value string) nav {
 	return n.set("overflow", value)
 }
 
-// PopupClassName 设置子菜单项展开浮层样式
+// PopupClassName sets the submenu popup layer style
 func (n nav) PopupClassName(value string) nav {
 	return n.set("popupClassName", value)
 }
 
-// SaveOrderApi 设置保存排序的 api
+// SaveOrderApi sets the API for saving the order
 func (n nav) SaveOrderApi(value string) nav {
 	return n.set("saveOrderApi", value)
 }
 
-// SearchConfig 设置搜索框相关配置
+// SearchConfig sets the search box configuration
 func (n nav) SearchConfig(value string) nav {
 	return n.set("searchConfig", value)
 }
 
-// Searchable 设置是否开启搜索
+// Searchable sets whether search is enabled
 func (n nav) Searchable(value bool) nav {
 	return n.set("searchable", value)
 }
 
-// ShowKey 控制仅展示指定key菜单下的子菜单项
+// ShowKey sets the key to display only the submenu items under the specified key
 func (n nav) ShowKey(value string) nav {
 	return n.set("showKey", value)
 }
 
-// Source 设置可以通过 API 拉取
+// Source sets the API for fetching data
 func (n nav) Source(value string) nav {
 	return n.set("source", value)
 }
 
-// Stacked 设置排列方式，true 为垂直排列，false 为水平排列
+// Stacked sets the layout: true for vertical, false for horizontal
 func (n nav) Stacked(value bool) nav {
 	return n.set("stacked", value)
 }
 
-// Static 设置是否静态展示
+// Static sets whether to display statically
 func (n nav) Static(value bool) nav {
 	return n.set("static", value)
 }
 
-// StaticClassName 设置静态展示表单项类名
+// StaticClassName sets the static display form item class name
 func (n nav) StaticClassName(value string) nav {
 	return n.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置静态展示表单项 Value 类名
+// StaticInputClassName sets the static display form item value class name
 func (n nav) StaticInputClassName(value string) nav {
 	return n.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置静态展示表单项 Label 类名
+// StaticLabelClassName sets the static display form item label class name
 func (n nav) StaticLabelClassName(value string) nav {
 	return n.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置静态展示表达式
+// StaticOn sets the static display expression
 func (n nav) StaticOn(value string) nav {
 	return n.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置静态展示空值占位
+// StaticPlaceholder sets the static display placeholder for empty values
 func (n nav) StaticPlaceholder(value string) nav {
 	return n.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置静态展示 schema
+// StaticSchema sets the static display schema
 func (n nav) StaticSchema(value string) nav {
 	return n.set("staticSchema", value)
 }
 
-// Style 设置组件样式
+// Style sets the component style
 func (n nav) Style(value any) nav {
 	return n.set("style", value)
 }
 
-// TestIdBuilder 设置测试 ID 构建器
+// TestIdBuilder sets the test ID builder
 func (n nav) TestIdBuilder(value string) nav {
 	return n.set("testIdBuilder", value)
 }
 
-// Testid 设置测试 ID
+// Testid sets the test ID
 func (n nav) Testid(value string) nav {
 	return n.set("testid", value)
 }
 
-// ThemeColor 设置主题配色
+// ThemeColor sets the theme color
 func (n nav) ThemeColor(value string) nav {
 	return n.set("themeColor", value)
 }
 
-// UseMobileUI 设置是否关闭移动端样式
+// UseMobileUI sets whether to disable mobile UI styles
 func (n nav) UseMobileUI(value bool) nav {
 	return n.set("useMobileUI", value)
 }
 
-// Visible 设置是否显示
+// Visible sets the visibility
 func (n nav) Visible(value bool) nav {
 	return n.set("visible", value)
 }
 
-// VisibleOn 设置显示表达式
+// VisibleOn sets the visibility expression
 func (n nav) VisibleOn(value string) nav {
 	return n.set("visibleOn", value)
 }

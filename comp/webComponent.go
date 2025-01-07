@@ -1,10 +1,10 @@
 package comp
 
-// webComponent Web Component
+// webComponent represents a Web Component
 
 type webComponent Schema
 
-// WebComponent 创建一个新的 WebComponent 实例
+// WebComponent creates a new WebComponent instance
 func WebComponent() webComponent {
 	return webComponent{}.set("type", "web-component")
 }
@@ -14,17 +14,17 @@ func (wc webComponent) set(key string, value any) webComponent {
 	return wc
 }
 
-// Body 子节点
+// Body sets child nodes
 func (wc webComponent) Body(value ...any) webComponent {
 	return wc.set("body", value)
 }
 
-// Props 标签上的属性
+// Props sets attributes on the tag
 func (wc webComponent) Props(value string) webComponent {
 	return wc.set("props", value)
 }
 
-// Tag 具体使用的 web-component 标签
+// Tag sets the specific web-component tag
 func (wc webComponent) Tag(value string) webComponent {
 	return wc.set("tag", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-// inputArray 数组输入框。 combo 的别名。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-array
+// inputArray is an alias for combo. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-array
 type inputArray Schema
 
-// InputArray 创建一个新的 InputArray 实例
+// InputArray creates a new InputArray instance
 func InputArray() inputArray {
 	return make(inputArray).set("type", "input-array")
 }
@@ -13,432 +13,432 @@ func (ac inputArray) set(key string, value any) inputArray {
 	return ac
 }
 
-// AddButtonClassName 设置新增按钮CSS类名
+// AddButtonClassName sets the CSS class name for the add button
 func (ac inputArray) AddButtonClassName(value string) inputArray {
 	return ac.set("addButtonClassName", value)
 }
 
-// AddButtonText 设置新增按钮文字
+// AddButtonText sets the text for the add button
 func (ac inputArray) AddButtonText(value string) inputArray {
 	return ac.set("addButtonText", value)
 }
 
-// Addable 设置是否可新增
+// Addable sets whether new items can be added
 func (ac inputArray) Addable(value bool) inputArray {
 	return ac.set("addable", value)
 }
 
-// Addattop 设置新增按钮是否添加在顶部
+// Addattop sets whether the add button is at the top
 func (ac inputArray) Addattop(value bool) inputArray {
 	return ac.set("addattop", value)
 }
 
-// AutoFill 设置自动填充
+// AutoFill sets the auto-fill value
 func (ac inputArray) AutoFill(value string) inputArray {
 	return ac.set("autoFill", value)
 }
 
-// CanAccessSuperData 设置是否可以访问父级数据
+// CanAccessSuperData sets whether parent data can be accessed
 func (ac inputArray) CanAccessSuperData(value bool) inputArray {
 	return ac.set("canAccessSuperData", value)
 }
 
-// ClassName 设置容器CSS类名
+// ClassName sets the CSS class name for the container
 func (ac inputArray) ClassName(value string) inputArray {
 	return ac.set("className", value)
 }
 
-// ClearValueOnHidden 设置表单项隐藏时是否删除值
+// ClearValueOnHidden sets whether to clear the value when hidden
 func (ac inputArray) ClearValueOnHidden(value bool) inputArray {
 	return ac.set("clearValueOnHidden", value)
 }
 
-// DeleteApi 设置删除时调用的API
+// DeleteApi sets the API to call when deleting
 func (ac inputArray) DeleteApi(value string) inputArray {
 	return ac.set("deleteApi", value)
 }
 
-// DeleteConfirmText 设置确认删除时的提示
+// DeleteConfirmText sets the confirmation text for deletion
 func (ac inputArray) DeleteConfirmText(value string) inputArray {
 	return ac.set("deleteConfirmText", value)
 }
 
-// Delimiter 设置扁平化时的分隔符
+// Delimiter sets the delimiter for flattening
 func (ac inputArray) Delimiter(value string) inputArray {
 	return ac.set("delimiter", value)
 }
 
-// Desc 设置描述
+// Desc sets the description
 func (ac inputArray) Desc(value string) inputArray {
 	return ac.set("desc", value)
 }
 
-// Description 设置描述内容
+// Description sets the description content
 func (ac inputArray) Description(value string) inputArray {
 	return ac.set("description", value)
 }
 
-// DescriptionClassName 设置描述上的className
+// DescriptionClassName sets the CSS class name for the description
 func (ac inputArray) DescriptionClassName(value string) inputArray {
 	return ac.set("descriptionClassName", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled sets whether the input is disabled
 func (ac inputArray) Disabled(value bool) inputArray {
 	return ac.set("disabled", value)
 }
 
-// DisabledOn 设置禁用表达式
+// DisabledOn sets the expression for disabling the input
 func (ac inputArray) DisabledOn(value string) inputArray {
 	return ac.set("disabledOn", value)
 }
 
-// Draggable 设置是否可拖拽排序
+// Draggable sets whether the items are draggable
 func (ac inputArray) Draggable(value bool) inputArray {
 	return ac.set("draggable", value)
 }
 
-// DraggableTip 设置拖拽提示信息
+// DraggableTip sets the tip for dragging
 func (ac inputArray) DraggableTip(value string) inputArray {
 	return ac.set("draggableTip", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting sets the editor configuration
 func (ac inputArray) EditorSetting(value string) inputArray {
 	return ac.set("editorSetting", value)
 }
 
-// ExtraName 设置额外字段名
+// ExtraName sets the extra field name
 func (ac inputArray) ExtraName(value string) inputArray {
 	return ac.set("extraName", value)
 }
 
-// Flat 设置是否将结果扁平化
+// Flat sets whether to flatten the result
 func (ac inputArray) Flat(value bool) inputArray {
 	return ac.set("flat", value)
 }
 
-// FormClassName 设置内部单组表单项的类名
+// FormClassName sets the CSS class name for the form items
 func (ac inputArray) FormClassName(value string) inputArray {
 	return ac.set("formClassName", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden sets whether the input is hidden
 func (ac inputArray) Hidden(value bool) inputArray {
 	return ac.set("hidden", value)
 }
 
-// HiddenOn 设置隐藏表达式
+// HiddenOn sets the expression for hiding the input
 func (ac inputArray) HiddenOn(value string) inputArray {
 	return ac.set("hiddenOn", value)
 }
 
-// Hint 设置输入提示
+// Hint sets the input hint
 func (ac inputArray) Hint(value string) inputArray {
 	return ac.set("hint", value)
 }
 
-// Horizontal 设置水平布局
+// Horizontal sets the horizontal layout
 func (ac inputArray) Horizontal(value string) inputArray {
 	return ac.set("horizontal", value)
 }
 
-// ID 设置组件唯一ID
+// ID sets the unique ID for the component
 func (ac inputArray) ID(value string) inputArray {
 	return ac.set("id", value)
 }
 
-// InitAutoFill 设置初始化自动填充
+// InitAutoFill sets the initial auto-fill value
 func (ac inputArray) InitAutoFill(value string) inputArray {
 	return ac.set("initAutoFill", value)
 }
 
-// Inline 设置是否为inline模式
+// Inline sets whether the input is inline
 func (ac inputArray) Inline(value bool) inputArray {
 	return ac.set("inline", value)
 }
 
-// InputClassName 设置input className
+// InputClassName sets the CSS class name for the input
 func (ac inputArray) InputClassName(value string) inputArray {
 	return ac.set("inputClassName", value)
 }
 
-// Items 设置成员渲染器配置
+// Items sets the configuration for the items
 func (ac inputArray) Items(value ...any) inputArray {
 	return ac.set("items", value)
 }
 
-// JoinValues 设置是否用分隔符发送给后端
+// JoinValues sets whether to send values with a delimiter to the backend
 func (ac inputArray) JoinValues(value bool) inputArray {
 	return ac.set("joinValues", value)
 }
 
-// Label 设置描述标题
+// Label sets the label
 func (ac inputArray) Label(value string) inputArray {
 	return ac.set("label", value)
 }
 
-// LabelAlign 设置描述标题对齐
+// LabelAlign sets the label alignment
 func (ac inputArray) LabelAlign(value string) inputArray {
 	return ac.set("labelAlign", value)
 }
 
-// LabelClassName 设置label className
+// LabelClassName sets the CSS class name for the label
 func (ac inputArray) LabelClassName(value string) inputArray {
 	return ac.set("labelClassName", value)
 }
 
-// LabelRemark 设置label备注
+// LabelRemark sets the label remark
 func (ac inputArray) LabelRemark(value string) inputArray {
 	return ac.set("labelRemark", value)
 }
 
-// LabelWidth 设置label宽度
+// LabelWidth sets the label width
 func (ac inputArray) LabelWidth(value string) inputArray {
 	return ac.set("labelWidth", value)
 }
 
-// LazyLoad 设置是否开启懒加载
+// LazyLoad sets whether to enable lazy loading
 func (ac inputArray) LazyLoad(value bool) inputArray {
 	return ac.set("lazyLoad", value)
 }
 
-// MaxLength 设置限制最大个数
+// MaxLength sets the maximum number of items
 func (ac inputArray) MaxLength(value string) inputArray {
 	return ac.set("maxLength", value)
 }
 
-// Messages 设置提示信息
+// Messages sets the messages
 func (ac inputArray) Messages(value string) inputArray {
 	return ac.set("messages", value)
 }
 
-// MinLength 设置限制最小个数
+// MinLength sets the minimum number of items
 func (ac inputArray) MinLength(value string) inputArray {
 	return ac.set("minLength", value)
 }
 
-// Mode 设置展示模式
+// Mode sets the display mode
 func (ac inputArray) Mode(value string) inputArray {
 	return ac.set("mode", value)
 }
 
-// MultiLine 设置是否多行模式
+// MultiLine sets whether the input is multi-line
 func (ac inputArray) MultiLine(value bool) inputArray {
 	return ac.set("multiLine", value)
 }
 
-// Multiple 设置是否可多选
+// Multiple sets whether multiple items can be selected
 func (ac inputArray) Multiple(value bool) inputArray {
 	return ac.set("multiple", value)
 }
 
-// Name 设置字段名
+// Name sets the field name
 func (ac inputArray) Name(value string) inputArray {
 	return ac.set("name", value)
 }
 
-// NoBorder 设置是否含有边框
+// NoBorder sets whether the input has no border
 func (ac inputArray) NoBorder(value bool) inputArray {
 	return ac.set("noBorder", value)
 }
 
-// Nullable 设置是否允许为空
+// Nullable sets whether the input can be null
 func (ac inputArray) Nullable(value bool) inputArray {
 	return ac.set("nullable", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent sets the event configuration
 func (ac inputArray) OnEvent(value any) inputArray {
 	return ac.set("onEvent", value)
 }
 
-// Placeholder 设置没有成员时的显示内容
+// Placeholder sets the placeholder text
 func (ac inputArray) Placeholder(value string) inputArray {
 	return ac.set("placeholder", value)
 }
 
-// ReadOnly 设置是否只读
+// ReadOnly sets whether the input is read-only
 func (ac inputArray) ReadOnly(value bool) inputArray {
 	return ac.set("readOnly", value)
 }
 
-// ReadOnlyOn 设置只读条件
+// ReadOnlyOn sets the expression for read-only
 func (ac inputArray) ReadOnlyOn(value string) inputArray {
 	return ac.set("readOnlyOn", value)
 }
 
-// Remark 设置备注
+// Remark sets the remark
 func (ac inputArray) Remark(value string) inputArray {
 	return ac.set("remark", value)
 }
 
-// Removable 设置是否可删除
+// Removable sets whether items can be removed
 func (ac inputArray) Removable(value bool) inputArray {
 	return ac.set("removable", value)
 }
 
-// Required 设置是否为必填
+// Required sets whether the input is required
 func (ac inputArray) Required(value bool) inputArray {
 	return ac.set("required", value)
 }
 
-// Row 设置行数
+// Row sets the number of rows
 func (ac inputArray) Row(value string) inputArray {
 	return ac.set("row", value)
 }
 
-// SaveImmediately 设置是否立即保存
+// SaveImmediately sets whether to save immediately
 func (ac inputArray) SaveImmediately(value bool) inputArray {
 	return ac.set("saveImmediately", value)
 }
 
-// Scaffold 设置新增成员时的默认值
+// Scaffold sets the default value for new items
 func (ac inputArray) Scaffold(value string) inputArray {
 	return ac.set("scaffold", value)
 }
 
-// Size 设置表单项大小
+// Size sets the size of the form item
 func (ac inputArray) Size(value string) inputArray {
 	return ac.set("size", value)
 }
 
-// Static 设置是否静态展示
+// Static sets whether the input is static
 func (ac inputArray) Static(value bool) inputArray {
 	return ac.set("static", value)
 }
 
-// StaticClassName 设置静态展示表单项类名
+// StaticClassName sets the CSS class name for static display
 func (ac inputArray) StaticClassName(value string) inputArray {
 	return ac.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置静态展示表单项Value类名
+// StaticInputClassName sets the CSS class name for static input value
 func (ac inputArray) StaticInputClassName(value string) inputArray {
 	return ac.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置静态展示表单项Label类名
+// StaticLabelClassName sets the CSS class name for static label
 func (ac inputArray) StaticLabelClassName(value string) inputArray {
 	return ac.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置是否静态展示表达式
+// StaticOn sets the expression for static display
 func (ac inputArray) StaticOn(value string) inputArray {
 	return ac.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (ac inputArray) StaticPlaceholder(value string) inputArray {
 	return ac.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置静态展示 schema
+// StaticSchema sets the schema for static display
 func (ac inputArray) StaticSchema(value string) inputArray {
 	return ac.set("staticSchema", value)
 }
 
-// StrictMode 设置严格模式
+// StrictMode sets whether to enable strict mode
 func (ac inputArray) StrictMode(value bool) inputArray {
 	return ac.set("strictMode", value)
 }
 
-// Style 设置组件样式
+// Style sets the component style
 func (ac inputArray) Style(value any) inputArray {
 	return ac.set("style", value)
 }
 
-// SubFormHorizontal 设置子表单水平排版宽度占比
+// SubFormHorizontal sets the horizontal width ratio for sub-forms
 func (ac inputArray) SubFormHorizontal(value string) inputArray {
 	return ac.set("subFormHorizontal", value)
 }
 
-// SubFormMode 设置子表单模式
+// SubFormMode sets the mode for sub-forms
 func (ac inputArray) SubFormMode(value string) inputArray {
 	return ac.set("subFormMode", value)
 }
 
-// SubmitOnChange 设置是否在修改后提交表单
+// SubmitOnChange sets whether to submit the form on change
 func (ac inputArray) SubmitOnChange(value bool) inputArray {
 	return ac.set("submitOnChange", value)
 }
 
-// SyncFields 配置同步字段
+// SyncFields sets the fields to synchronize
 func (ac inputArray) SyncFields(value string) inputArray {
 	return ac.set("syncFields", value)
 }
 
-// TabsLabelTpl 设置选项卡标题的生成模板
+// TabsLabelTpl sets the template for tab labels
 func (ac inputArray) TabsLabelTpl(value string) inputArray {
 	return ac.set("tabsLabelTpl", value)
 }
 
-// TabsMode 设置是否使用 Tabs 展示方式
+// TabsMode sets whether to use tabs for display
 func (ac inputArray) TabsMode(value bool) inputArray {
 	return ac.set("tabsMode", value)
 }
 
-// TabsStyle 设置 Tabs 的展示模式
+// TabsStyle sets the style for tabs
 func (ac inputArray) TabsStyle(value any) inputArray {
 	return ac.set("tabsStyle", value)
 }
 
-// TestIdBuilder 设置测试 ID 构建器
+// TestIdBuilder sets the test ID builder
 func (ac inputArray) TestIdBuilder(value string) inputArray {
 	return ac.set("testIdBuilder", value)
 }
 
-// TypeSwitchable 设置是否可切换条件
+// TypeSwitchable sets whether the type is switchable
 func (ac inputArray) TypeSwitchable(value bool) inputArray {
 	return ac.set("typeSwitchable", value)
 }
 
-// UpdatePristineAfterStoreDataReInit 设置是否在数据重新初始化后更新原始值
+// UpdatePristineAfterStoreDataReInit sets whether to update the pristine value after data re-initialization
 func (ac inputArray) UpdatePristineAfterStoreDataReInit(value bool) inputArray {
 	return ac.set("updatePristineAfterStoreDataReInit", value)
 }
 
-// UseMobileUI 设置是否使用移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (ac inputArray) UseMobileUI(value bool) inputArray {
 	return ac.set("useMobileUI", value)
 }
 
-// ValidateApi 设置远端校验表单项接口
+// ValidateApi sets the API for remote validation
 func (ac inputArray) ValidateApi(value string) inputArray {
 	return ac.set("validateApi", value)
 }
 
-// ValidateOnChange 设置是否在每次修改时触发验证
+// ValidateOnChange sets whether to validate on each change
 func (ac inputArray) ValidateOnChange(value bool) inputArray {
 	return ac.set("validateOnChange", value)
 }
 
-// ValidationErrors 设置验证失败的提示信息
+// ValidationErrors sets the validation error messages
 func (ac inputArray) ValidationErrors(value string) inputArray {
 	return ac.set("validationErrors", value)
 }
 
-// Validations 设置验证规则
+// Validations sets the validation rules
 func (ac inputArray) Validations(value string) inputArray {
 	return ac.set("validations", value)
 }
 
-// Value 设置默认值
+// Value sets the default value
 func (ac inputArray) Value(value string) inputArray {
 	return ac.set("value", value)
 }
 
-// Visible 设置是否显示
+// Visible sets whether the input is visible
 func (ac inputArray) Visible(value bool) inputArray {
 	return ac.set("visible", value)
 }
 
-// VisibleOn 设置显示条件表达式
+// VisibleOn sets the expression for visibility
 func (ac inputArray) VisibleOn(value string) inputArray {
 	return ac.set("visibleOn", value)
 }
 
-// Width 设置在 Table 中的宽度
+// Width sets the width in a table
 func (ac inputArray) Width(value string) inputArray {
 	return ac.set("width", value)
 }

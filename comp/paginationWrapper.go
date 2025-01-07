@@ -1,156 +1,156 @@
 package comp
 
-// paginationWrapper 代表 amis paginationWrapper 渲染器
+// paginationWrapper represents the amis paginationWrapper renderer
 
 type paginationWrapper Schema
 
-// PaginationWrapper 创建一个新的 PaginationWrapper 实例
+// PaginationWrapper creates a new PaginationWrapper instance
 func PaginationWrapper() paginationWrapper {
 	return paginationWrapper{}.set("type", "pagination-wrapper")
 }
 
-// set 用于设置字段值
+// set sets a field value
 func (pw paginationWrapper) set(key string, value any) paginationWrapper {
 	pw[key] = value
 	return pw
 }
 
-// Body 内容区域
+// Body sets the body content
 func (pw paginationWrapper) Body(value ...any) paginationWrapper {
 	return pw.set("body", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the container CSS class name
 func (pw paginationWrapper) ClassName(value string) paginationWrapper {
 	return pw.set("className", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets the disabled state
 func (pw paginationWrapper) Disabled(value bool) paginationWrapper {
 	return pw.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the disabled expression
 func (pw paginationWrapper) DisabledOn(value string) paginationWrapper {
 	return pw.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, ignored at runtime
 func (pw paginationWrapper) EditorSetting(value string) paginationWrapper {
 	return pw.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets the hidden state
 func (pw paginationWrapper) Hidden(value bool) paginationWrapper {
 	return pw.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the hidden expression
 func (pw paginationWrapper) HiddenOn(value string) paginationWrapper {
 	return pw.set("hiddenOn", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique component ID
 func (pw paginationWrapper) ID(value string) paginationWrapper {
 	return pw.set("id", value)
 }
 
-// InputName 输入字段名
+// InputName sets the input field name
 func (pw paginationWrapper) InputName(value string) paginationWrapper {
 	return pw.set("inputName", value)
 }
 
-// MaxButtons 最多显示多少个分页按钮
+// MaxButtons sets the maximum number of pagination buttons
 func (pw paginationWrapper) MaxButtons(value string) paginationWrapper {
 	return pw.set("maxButtons", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (pw paginationWrapper) OnEvent(value any) paginationWrapper {
 	return pw.set("onEvent", value)
 }
 
-// OutputName 输出字段名
+// OutputName sets the output field name
 func (pw paginationWrapper) OutputName(value string) paginationWrapper {
 	return pw.set("outputName", value)
 }
 
-// PerPage 每页显示多条数据
+// PerPage sets the number of items per page
 func (pw paginationWrapper) PerPage(value string) paginationWrapper {
 	return pw.set("perPage", value)
 }
 
-// Position 分页显示位置
+// Position sets the pagination position
 func (pw paginationWrapper) Position(value string) paginationWrapper {
 	return pw.set("position", value)
 }
 
-// ShowPageInput 是否显示快速跳转输入框
+// ShowPageInput sets whether to show the quick jump input box
 func (pw paginationWrapper) ShowPageInput(value bool) paginationWrapper {
 	return pw.set("showPageInput", value)
 }
 
-// Static 是否静态展示
+// Static sets the static display state
 func (pw paginationWrapper) Static(value bool) paginationWrapper {
 	return pw.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the static display form item class name
 func (pw paginationWrapper) StaticClassName(value string) paginationWrapper {
 	return pw.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项 Value 类名
+// StaticInputClassName sets the static display form item value class name
 func (pw paginationWrapper) StaticInputClassName(value string) paginationWrapper {
 	return pw.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项 Label 类名
+// StaticLabelClassName sets the static display form item label class name
 func (pw paginationWrapper) StaticLabelClassName(value string) paginationWrapper {
 	return pw.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the static display expression
 func (pw paginationWrapper) StaticOn(value string) paginationWrapper {
 	return pw.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the static display placeholder
 func (pw paginationWrapper) StaticPlaceholder(value string) paginationWrapper {
 	return pw.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示模式的 schema
+// StaticSchema sets the static display schema
 func (pw paginationWrapper) StaticSchema(value string) paginationWrapper {
 	return pw.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (pw paginationWrapper) Style(value any) paginationWrapper {
 	return pw.set("style", value)
 }
 
-// TestIdBuilder 自定义测试 ID 构建器
+// TestIdBuilder sets the custom test ID builder
 func (pw paginationWrapper) TestIdBuilder(value string) paginationWrapper {
 	return pw.set("testIdBuilder", value)
 }
 
-// Testid 测试 ID
+// Testid sets the test ID
 func (pw paginationWrapper) Testid(value string) paginationWrapper {
 	return pw.set("testid", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (pw paginationWrapper) UseMobileUI(value bool) paginationWrapper {
 	return pw.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets the visibility state
 func (pw paginationWrapper) Visible(value bool) paginationWrapper {
 	return pw.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the visibility expression
 func (pw paginationWrapper) VisibleOn(value string) paginationWrapper {
 	return pw.set("visibleOn", value)
 }

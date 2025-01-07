@@ -1,241 +1,241 @@
 package comp
 
-// tasks 渲染器，格式说明 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/tasks
+// tasks renderer, documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/tasks
 
 type tasks Schema
 
-// Tasks 创建一个新的 Tasks 实例
+// Tasks creates a new Tasks instance
 func Tasks() tasks {
 	return tasks{}.set("type", "tasks")
 }
 
-// set 用于设置属性值，返回更新后的 Tasks 实例
+// set sets a property value and returns the updated Tasks instance
 func (t tasks) set(key string, value any) tasks {
 	t[key] = value
 	return t
 }
 
-// BtnClassName css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     }
+// BtnClassName sets the CSS class name for the button
 func (t tasks) BtnClassName(value string) tasks {
 	return t.set("btnClassName", value)
 }
 
-// BtnText 操作按钮文字
+// BtnText sets the button text
 func (t tasks) BtnText(value string) tasks {
 	return t.set("btnText", value)
 }
 
-// CanRetryStatusCode
+// CanRetryStatusCode sets the status code for retryable tasks
 func (t tasks) CanRetryStatusCode(value string) tasks {
 	return t.set("canRetryStatusCode", value)
 }
 
-// CheckApi 用来获取任务状态的 API，当没有进行时任务时不会发送。 (用来获取任务状态的 API，当没有进行时任务时不会发送。)
+// CheckApi sets the API for checking task status
 func (t tasks) CheckApi(value string) tasks {
 	return t.set("checkApi", value)
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// ClassName sets the CSS class name for the container
 func (t tasks) ClassName(value string) tasks {
 	return t.set("className", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the component is disabled
 func (t tasks) Disabled(value bool) tasks {
 	return t.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine if the component is disabled
 func (t tasks) DisabledOn(value string) tasks {
 	return t.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration
 func (t tasks) EditorSetting(value string) tasks {
 	return t.set("editorSetting", value)
 }
 
-// ErrorStatusCode
+// ErrorStatusCode sets the error status code
 func (t tasks) ErrorStatusCode(value string) tasks {
 	return t.set("errorStatusCode", value)
 }
 
-// FinishStatusCode
+// FinishStatusCode sets the finish status code
 func (t tasks) FinishStatusCode(value string) tasks {
 	return t.set("finishStatusCode", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the component is hidden
 func (t tasks) Hidden(value bool) tasks {
 	return t.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine if the component is hidden
 func (t tasks) HiddenOn(value string) tasks {
 	return t.set("hiddenOn", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique ID for the component
 func (t tasks) ID(value string) tasks {
 	return t.set("id", value)
 }
 
-// InitialStatusCode
+// InitialStatusCode sets the initial status code
 func (t tasks) InitialStatusCode(value string) tasks {
 	return t.set("initialStatusCode", value)
 }
 
-// Interval 当有任务进行中，会每隔一段时间再次检测，而时间间隔就是通过此项配置，默认 3s。
+// Interval sets the interval for checking task status
 func (t tasks) Interval(value string) tasks {
 	return t.set("interval", value)
 }
 
-// Items
+// Items sets the items for the tasks
 func (t tasks) Items(value ...any) tasks {
 	return t.set("items", value)
 }
 
-// LoadingConfig
+// LoadingConfig sets the loading configuration
 func (t tasks) LoadingConfig(value string) tasks {
 	return t.set("loadingConfig", value)
 }
 
-// LoadingStatusCode
+// LoadingStatusCode sets the loading status code
 func (t tasks) LoadingStatusCode(value string) tasks {
 	return t.set("loadingStatusCode", value)
 }
 
-// Name 组件名字，这个名字可以用来定位，用于组件通信
+// Name sets the name of the component
 func (t tasks) Name(value string) tasks {
 	return t.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (t tasks) OnEvent(value any) tasks {
 	return t.set("onEvent", value)
 }
 
-// OperationLabel 操作列说明
+// OperationLabel sets the operation column label
 func (t tasks) OperationLabel(value string) tasks {
 	return t.set("operationLabel", value)
 }
 
-// ReSubmitApi 如果任务失败，且可以重试，提交的时候会使用此 API (如果任务失败，且可以重试，提交的时候会使用此 API)
+// ReSubmitApi sets the API for resubmitting failed tasks
 func (t tasks) ReSubmitApi(value string) tasks {
 	return t.set("reSubmitApi", value)
 }
 
-// ReadyStatusCode
+// ReadyStatusCode sets the ready status code
 func (t tasks) ReadyStatusCode(value string) tasks {
 	return t.set("readyStatusCode", value)
 }
 
-// RemarkLabel 备注列说明
+// RemarkLabel sets the remark column label
 func (t tasks) RemarkLabel(value string) tasks {
 	return t.set("remarkLabel", value)
 }
 
-// RetryBtnClassName 配置容器重试按钮 className (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// RetryBtnClassName sets the CSS class name for the retry button
 func (t tasks) RetryBtnClassName(value string) tasks {
 	return t.set("retryBtnClassName", value)
 }
 
-// RetryBtnText 重试操作按钮文字
+// RetryBtnText sets the retry button text
 func (t tasks) RetryBtnText(value string) tasks {
 	return t.set("retryBtnText", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the component is displayed statically
 func (t tasks) Static(value bool) tasks {
 	return t.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticClassName sets the CSS class name for static display
 func (t tasks) StaticClassName(value string) tasks {
 	return t.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticInputClassName sets the CSS class name for static input display
 func (t tasks) StaticInputClassName(value string) tasks {
 	return t.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticLabelClassName sets the CSS class name for static label display
 func (t tasks) StaticLabelClassName(value string) tasks {
 	return t.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine if the component is displayed statically
 func (t tasks) StaticOn(value string) tasks {
 	return t.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (t tasks) StaticPlaceholder(value string) tasks {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the schema for static display
 func (t tasks) StaticSchema(value string) tasks {
 	return t.set("staticSchema", value)
 }
 
-// StatusLabel 状态列说明
+// StatusLabel sets the status column label
 func (t tasks) StatusLabel(value string) tasks {
 	return t.set("statusLabel", value)
 }
 
-// StatusLabelMap 状态显示对应的类名配置。
+// StatusLabelMap sets the status label map
 func (t tasks) StatusLabelMap(value string) tasks {
 	return t.set("statusLabelMap", value)
 }
 
-// StatusTextMap 状态显示对应的文字显示配置。
+// StatusTextMap sets the status text map
 func (t tasks) StatusTextMap(value string) tasks {
 	return t.set("statusTextMap", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (t tasks) Style(value any) tasks {
 	return t.set("style", value)
 }
 
-// SubmitApi 提交任务使用的 API (提交任务使用的 API)
+// SubmitApi sets the API for submitting tasks
 func (t tasks) SubmitApi(value string) tasks {
 	return t.set("submitApi", value)
 }
 
-// TableClassName 配置 table className (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// TableClassName sets the CSS class name for the table
 func (t tasks) TableClassName(value string) tasks {
 	return t.set("tableClassName", value)
 }
 
-// TaskNameLabel 任务名称列说明
+// TaskNameLabel sets the task name column label
 func (t tasks) TaskNameLabel(value string) tasks {
 	return t.set("taskNameLabel", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (t tasks) TestIdBuilder(value string) tasks {
 	return t.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID
 func (t tasks) Testid(value string) tasks {
 	return t.set("testid", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (t tasks) UseMobileUI(value bool) tasks {
 	return t.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the component is visible
 func (t tasks) Visible(value bool) tasks {
 	return t.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine if the component is visible
 func (t tasks) VisibleOn(value string) tasks {
 	return t.set("visibleOn", value)
 }

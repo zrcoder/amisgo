@@ -1,70 +1,70 @@
 package comp
 
-// navOverflow 导航溢出配置
+// navOverflow represents the navigation overflow configuration.
 type navOverflow Schema
 
-// NavOverflow 创建一个新的 NavOverflow 实例
+// NavOverflow creates a new NavOverflow instance.
 func NavOverflow() navOverflow {
 	return navOverflow{}
 }
 
-// set 方法用于设置属性并返回自身
+// set sets a property and returns the instance.
 func (n navOverflow) set(key string, value any) navOverflow {
 	n[key] = value
 	return n
 }
 
-// Enable 设置是否开启响应式收纳
+// Enable sets whether responsive overflow is enabled.
 func (n navOverflow) Enable(value bool) navOverflow {
 	return n.set("enable", value)
 }
 
-// ItemWidth 设置导航项目宽度
+// ItemWidth sets the width of navigation items.
 func (n navOverflow) ItemWidth(value string) navOverflow {
 	return n.set("itemWidth", value)
 }
 
-// MaxVisibleCount 设置最大可显示数量
+// MaxVisibleCount sets the maximum number of visible items.
 func (n navOverflow) MaxVisibleCount(value string) navOverflow {
 	return n.set("maxVisibleCount", value)
 }
 
-// OverflowClassName 设置菜单触发按钮 CSS 类名
+// OverflowClassName sets the CSS class name for the overflow button.
 func (n navOverflow) OverflowClassName(value string) navOverflow {
 	return n.set("overflowClassName", value)
 }
 
-// OverflowIndicator 设置菜单触发按钮的图标
+// OverflowIndicator sets the icon for the overflow button.
 func (n navOverflow) OverflowIndicator(value string) navOverflow {
 	return n.set("overflowIndicator", value)
 }
 
-// OverflowLabel 设置菜单触发按钮的文字
+// OverflowLabel sets the text for the overflow button.
 func (n navOverflow) OverflowLabel(value string) navOverflow {
 	return n.set("overflowLabel", value)
 }
 
-// OverflowListClassName 设置菜单外层 CSS 类名
+// OverflowListClassName sets the CSS class name for the overflow list.
 func (n navOverflow) OverflowListClassName(value string) navOverflow {
 	return n.set("overflowListClassName", value)
 }
 
-// OverflowPopoverClassName 设置 Popover 浮层 CSS 类名
+// OverflowPopoverClassName sets the CSS class name for the popover.
 func (n navOverflow) OverflowPopoverClassName(value string) navOverflow {
 	return n.set("overflowPopoverClassName", value)
 }
 
-// OverflowSuffix 设置导航列表后缀节点
+// OverflowSuffix sets the suffix node for the navigation list.
 func (n navOverflow) OverflowSuffix(value string) navOverflow {
 	return n.set("overflowSuffix", value)
 }
 
-// Style 设置自定义样式
+// Style sets custom styles.
 func (n navOverflow) Style(value any) navOverflow {
 	return n.set("style", value)
 }
 
-// WrapperComponent 设置包裹导航的外层标签名
+// WrapperComponent sets the outer tag name for wrapping navigation.
 func (n navOverflow) WrapperComponent(value string) navOverflow {
 	return n.set("wrapperComponent", value)
 }
