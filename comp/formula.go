@@ -1,9 +1,9 @@
 package comp
 
-// formula 公式功能控件
+// formula represents a formula control component
 type formula Schema
 
-// Formula 创建一个新的 FormulaControl 实例
+// Formula creates a new FormulaControl instance
 func Formula() formula {
 	return make(formula).set("type", "formula")
 }
@@ -13,287 +13,287 @@ func (fc formula) set(key string, value any) formula {
 	return fc
 }
 
-// AutoFill 自动填充
+// AutoFill sets the autoFill property
 func (fc formula) AutoFill(value string) formula {
 	return fc.set("autoFill", value)
 }
 
-// AutoSet 是否自动应用
+// AutoSet sets the autoSet property
 func (fc formula) AutoSet(value bool) formula {
 	return fc.set("autoSet", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the CSS class name
 func (fc formula) ClassName(value string) formula {
 	return fc.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时是否删除值
+// ClearValueOnHidden sets whether to clear value when hidden
 func (fc formula) ClearValueOnHidden(value bool) formula {
 	return fc.set("clearValueOnHidden", value)
 }
 
-// Condition 触发公式的作用条件
+// Condition sets the condition to trigger the formula
 func (fc formula) Condition(value string) formula {
 	return fc.set("condition", value)
 }
 
-// Desc 描述内容
+// Desc sets the description
 func (fc formula) Desc(value string) formula {
 	return fc.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段
+// Description sets the HTML description
 func (fc formula) Description(value string) formula {
 	return fc.set("description", value)
 }
 
-// DescriptionClassName 描述上的 className
+// DescriptionClassName sets the CSS class name for the description
 func (fc formula) DescriptionClassName(value string) formula {
 	return fc.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the component is disabled
 func (fc formula) Disabled(value bool) formula {
 	return fc.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression to disable the component
 func (fc formula) DisabledOn(value string) formula {
 	return fc.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets the editor configuration
 func (fc formula) EditorSetting(value string) formula {
 	return fc.set("editorSetting", value)
 }
 
-// ExtraName 额外的字段名
+// ExtraName sets an extra field name
 func (fc formula) ExtraName(value string) formula {
 	return fc.set("extraName", value)
 }
 
-// Formula 公式
+// Formula sets the formula
 func (fc formula) Formula(value string) formula {
 	return fc.set("formula", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the component is hidden
 func (fc formula) Hidden(value bool) formula {
 	return fc.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression to hide the component
 func (fc formula) HiddenOn(value string) formula {
 	return fc.set("hiddenOn", value)
 }
 
-// Hint 输入提示
+// Hint sets the input hint
 func (fc formula) Hint(value string) formula {
 	return fc.set("hint", value)
 }
 
-// Horizontal 水平布局配置
+// Horizontal sets the horizontal layout configuration
 func (fc formula) Horizontal(value string) formula {
 	return fc.set("horizontal", value)
 }
 
-// ID 触发公式应用的按钮目标
+// ID sets the ID of the button to trigger the formula
 func (fc formula) ID(value string) formula {
 	return fc.set("id", value)
 }
 
-// InitAutoFill 初始化自动填充
+// InitAutoFill sets the initial auto-fill value
 func (fc formula) InitAutoFill(value string) formula {
 	return fc.set("initAutoFill", value)
 }
 
-// InitSet 是否初始应用
+// InitSet sets whether to apply initially
 func (fc formula) InitSet(value bool) formula {
 	return fc.set("initSet", value)
 }
 
-// Inline 表单 control 是否为 inline 模式
+// Inline sets whether the control is inline
 func (fc formula) Inline(value bool) formula {
 	return fc.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the CSS class name for the input
 func (fc formula) InputClassName(value string) formula {
 	return fc.set("inputClassName", value)
 }
 
-// Label 描述标题
+// Label sets the label
 func (fc formula) Label(value string) formula {
 	return fc.set("label", value)
 }
 
-// LabelAlign 描述标题对齐
+// LabelAlign sets the label alignment
 func (fc formula) LabelAlign(value string) formula {
 	return fc.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the CSS class name for the label
 func (fc formula) LabelClassName(value string) formula {
 	return fc.set("labelClassName", value)
 }
 
-// LabelRemark 显示一个小图标
+// LabelRemark sets the label remark
 func (fc formula) LabelRemark(value string) formula {
 	return fc.set("labelRemark", value)
 }
 
-// LabelWidth label自定义宽度
+// LabelWidth sets the custom width for the label
 func (fc formula) LabelWidth(value string) formula {
 	return fc.set("labelWidth", value)
 }
 
-// Mode 组件展示模式
+// Mode sets the display mode
 func (fc formula) Mode(value string) formula {
 	return fc.set("mode", value)
 }
 
-// Name 字段名
+// Name sets the field name
 func (fc formula) Name(value string) formula {
 	return fc.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event configuration
 func (fc formula) OnEvent(value any) formula {
 	return fc.set("onEvent", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the placeholder
 func (fc formula) Placeholder(value string) formula {
 	return fc.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the component is read-only
 func (fc formula) ReadOnly(value bool) formula {
 	return fc.set("readOnly", value)
 }
 
-// ReadOnlyOn 只读条件
+// ReadOnlyOn sets the expression to make the component read-only
 func (fc formula) ReadOnlyOn(value string) formula {
 	return fc.set("readOnlyOn", value)
 }
 
-// Remark 显示一个小图标
+// Remark sets the remark
 func (fc formula) Remark(value string) formula {
 	return fc.set("remark", value)
 }
 
-// Required 是否为必填
+// Required sets whether the field is required
 func (fc formula) Required(value bool) formula {
 	return fc.set("required", value)
 }
 
-// Row 行配置
+// Row sets the row configuration
 func (fc formula) Row(value string) formula {
 	return fc.set("row", value)
 }
 
-// SaveImmediately 是否立即保存
+// SaveImmediately sets whether to save immediately
 func (fc formula) SaveImmediately(value bool) formula {
 	return fc.set("saveImmediately", value)
 }
 
-// Size 表单项大小
+// Size sets the size of the form item
 func (fc formula) Size(value string) formula {
 	return fc.set("size", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the component is static
 func (fc formula) Static(value bool) formula {
 	return fc.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the CSS class name for static display
 func (fc formula) StaticClassName(value string) formula {
 	return fc.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the CSS class name for static input
 func (fc formula) StaticInputClassName(value string) formula {
 	return fc.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the CSS class name for static label
 func (fc formula) StaticLabelClassName(value string) formula {
 	return fc.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the expression for static display
 func (fc formula) StaticOn(value string) formula {
 	return fc.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (fc formula) StaticPlaceholder(value string) formula {
 	return fc.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示 schema
+// StaticSchema sets the schema for static display
 func (fc formula) StaticSchema(value string) formula {
 	return fc.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (fc formula) Style(value any) formula {
 	return fc.set("style", value)
 }
 
-// SubmitOnChange 当修改完的时候是否提交表单
+// SubmitOnChange sets whether to submit the form on change
 func (fc formula) SubmitOnChange(value bool) formula {
 	return fc.set("submitOnChange", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (fc formula) TestIdBuilder(value string) formula {
 	return fc.set("testIdBuilder", value)
 }
 
-// UseMobileUI 关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (fc formula) UseMobileUI(value bool) formula {
 	return fc.set("useMobileUI", value)
 }
 
-// ValidateApi 远端校验表单项接口
+// ValidateApi sets the API for remote validation
 func (fc formula) ValidateApi(value string) formula {
 	return fc.set("validateApi", value)
 }
 
-// ValidateOnChange 不设置时，当表单提交过后表单项每次修改都会触发重新验证
+// ValidateOnChange sets whether to validate on change
 func (fc formula) ValidateOnChange(value bool) formula {
 	return fc.set("validateOnChange", value)
 }
 
-// ValidationErrors 验证失败的提示信息
+// ValidationErrors sets the validation error messages
 func (fc formula) ValidationErrors(value string) formula {
 	return fc.set("validationErrors", value)
 }
 
-// Validations
+// Validations sets the validations
 func (fc formula) Validations(value string) formula {
 	return fc.set("validations", value)
 }
 
-// Value 默认值
+// Value sets the default value
 func (fc formula) Value(value string) formula {
 	return fc.set("value", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the component is visible
 func (fc formula) Visible(value bool) formula {
 	return fc.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the expression to make the component visible
 func (fc formula) VisibleOn(value string) formula {
 	return fc.set("visibleOn", value)
 }
 
-// Width 在Table中调整宽度
+// Width sets the width in a table
 func (fc formula) Width(value string) formula {
 	return fc.set("width", value)
 }

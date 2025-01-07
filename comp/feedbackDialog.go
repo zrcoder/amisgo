@@ -1,9 +1,9 @@
 package comp
 
-// feedbackDialog 表示反馈对话框
+// feedbackDialog represents a feedback dialog
 type feedbackDialog Schema
 
-// FeedbackDialog 创建一个新的 FeedbackDialog 实例
+// FeedbackDialog creates a new feedbackDialog instance
 func FeedbackDialog() feedbackDialog {
 	return make(feedbackDialog)
 }
@@ -13,227 +13,227 @@ func (f feedbackDialog) set(key string, value any) feedbackDialog {
 	return f
 }
 
-// Actions 默认不用填写，自动会创建确认和取消按钮
+// Actions sets the actions, default buttons are confirm and cancel
 func (f feedbackDialog) Actions(value string) feedbackDialog {
 	return f.set("actions", value)
 }
 
-// Body 内容区域
+// Body sets the content area
 func (f feedbackDialog) Body(value ...any) feedbackDialog {
 	return f.set("body", value)
 }
 
-// BodyClassName 配置 Body 容器 className
+// BodyClassName sets the class name for the body container
 func (f feedbackDialog) BodyClassName(value string) feedbackDialog {
 	return f.set("bodyClassName", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the CSS class name for the container
 func (f feedbackDialog) ClassName(value string) feedbackDialog {
 	return f.set("className", value)
 }
 
-// CloseOnEsc 是否支持按 ESC 关闭 Dialog
+// CloseOnEsc sets whether the dialog can be closed with the ESC key
 func (f feedbackDialog) CloseOnEsc(value bool) feedbackDialog {
 	return f.set("closeOnEsc", value)
 }
 
-// CloseOnOutside 是否支持点其它区域关闭 Dialog
+// CloseOnOutside sets whether the dialog can be closed by clicking outside
 func (f feedbackDialog) CloseOnOutside(value bool) feedbackDialog {
 	return f.set("closeOnOutside", value)
 }
 
-// Confirm 影响自动生成的按钮，如果自己配置了按钮这个配置无效
+// Confirm sets whether the confirm button is enabled
 func (f feedbackDialog) Confirm(value bool) feedbackDialog {
 	return f.set("confirm", value)
 }
 
-// Data 数据映射
+// Data sets the data mapping
 func (f feedbackDialog) Data(value Data) feedbackDialog {
 	return f.set("data", value)
 }
 
-// DialogType 弹框类型 confirm 确认弹框
+// DialogType sets the dialog type, e.g., confirm
 func (f feedbackDialog) DialogType(value string) feedbackDialog {
 	return f.set("dialogType", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the dialog is disabled
 func (f feedbackDialog) Disabled(value bool) feedbackDialog {
 	return f.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression to disable the dialog
 func (f feedbackDialog) DisabledOn(value string) feedbackDialog {
 	return f.set("disabledOn", value)
 }
 
-// Draggable 可拖拽
+// Draggable sets whether the dialog is draggable
 func (f feedbackDialog) Draggable(value bool) feedbackDialog {
 	return f.set("draggable", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, ignored at runtime
 func (f feedbackDialog) EditorSetting(value string) feedbackDialog {
 	return f.set("editorSetting", value)
 }
 
-// Footer
+// Footer sets the footer content
 func (f feedbackDialog) Footer(value string) feedbackDialog {
 	return f.set("footer", value)
 }
 
-// Header
+// Header sets the header content
 func (f feedbackDialog) Header(value string) feedbackDialog {
 	return f.set("header", value)
 }
 
-// HeaderClassName css类名，配置字符串，或者对象
+// HeaderClassName sets the class name for the header
 func (f feedbackDialog) HeaderClassName(value string) feedbackDialog {
 	return f.set("headerClassName", value)
 }
 
-// Height Dialog 高度
+// Height sets the dialog height
 func (f feedbackDialog) Height(value string) feedbackDialog {
 	return f.set("height", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the dialog is hidden
 func (f feedbackDialog) Hidden(value bool) feedbackDialog {
 	return f.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression to hide the dialog
 func (f feedbackDialog) HiddenOn(value string) feedbackDialog {
 	return f.set("hiddenOn", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique ID for the component, mainly for logging
 func (f feedbackDialog) ID(value string) feedbackDialog {
 	return f.set("id", value)
 }
 
-// InputParams 弹窗参数说明，值格式为 JSONSchema
+// InputParams sets the dialog parameters, formatted as JSONSchema
 func (f feedbackDialog) InputParams(value string) feedbackDialog {
 	return f.set("inputParams", value)
 }
 
-// Name 组件名字，这个名字可以用来定位，用于组件通信
+// Name sets the component name, used for locating and communication
 func (f feedbackDialog) Name(value string) feedbackDialog {
 	return f.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (f feedbackDialog) OnEvent(value any) feedbackDialog {
 	return f.set("onEvent", value)
 }
 
-// Overlay 是否显示蒙层
+// Overlay sets whether to show the overlay
 func (f feedbackDialog) Overlay(value bool) feedbackDialog {
 	return f.set("overlay", value)
 }
 
-// ShowCloseButton 是否显示关闭按钮
+// ShowCloseButton sets whether to show the close button
 func (f feedbackDialog) ShowCloseButton(value bool) feedbackDialog {
 	return f.set("showCloseButton", value)
 }
 
-// ShowErrorMsg 是否显示错误信息
+// ShowErrorMsg sets whether to show error messages
 func (f feedbackDialog) ShowErrorMsg(value bool) feedbackDialog {
 	return f.set("showErrorMsg", value)
 }
 
-// ShowLoading 是否显示 spinner
+// ShowLoading sets whether to show the loading spinner
 func (f feedbackDialog) ShowLoading(value bool) feedbackDialog {
 	return f.set("showLoading", value)
 }
 
-// Size Dialog 大小
+// Size sets the dialog size
 func (f feedbackDialog) Size(value string) feedbackDialog {
 	return f.set("size", value)
 }
 
-// SkipRestOnCancel feedback 弹框取消是否中断后续操作
+// SkipRestOnCancel sets whether to interrupt subsequent operations on cancel
 func (f feedbackDialog) SkipRestOnCancel(value bool) feedbackDialog {
 	return f.set("skipRestOnCancel", value)
 }
 
-// SkipRestOnConfirm feedback 弹框确认是否中断后续操作
+// SkipRestOnConfirm sets whether to interrupt subsequent operations on confirm
 func (f feedbackDialog) SkipRestOnConfirm(value bool) feedbackDialog {
 	return f.set("skipRestOnConfirm", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the dialog is displayed statically
 func (f feedbackDialog) Static(value bool) feedbackDialog {
 	return f.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the class name for static display form items
 func (f feedbackDialog) StaticClassName(value string) feedbackDialog {
 	return f.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the class name for static display form item values
 func (f feedbackDialog) StaticInputClassName(value string) feedbackDialog {
 	return f.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the class name for static display form item labels
 func (f feedbackDialog) StaticLabelClassName(value string) feedbackDialog {
 	return f.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the expression for static display
 func (f feedbackDialog) StaticOn(value string) feedbackDialog {
 	return f.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display empty values
 func (f feedbackDialog) StaticPlaceholder(value string) feedbackDialog {
 	return f.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the static schema
 func (f feedbackDialog) StaticSchema(value string) feedbackDialog {
 	return f.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (f feedbackDialog) Style(value any) feedbackDialog {
 	return f.set("style", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (f feedbackDialog) TestIdBuilder(value string) feedbackDialog {
 	return f.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID
 func (f feedbackDialog) Testid(value string) feedbackDialog {
 	return f.set("testid", value)
 }
 
-// Title 请通过配置 title 设置标题
+// Title sets the dialog title
 func (f feedbackDialog) Title(value any) feedbackDialog {
 	return f.set("title", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to disable mobile UI styles at the component level
 func (f feedbackDialog) UseMobileUI(value bool) feedbackDialog {
 	return f.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the dialog is visible
 func (f feedbackDialog) Visible(value bool) feedbackDialog {
 	return f.set("visible", value)
 }
 
-// VisibleOn 可以用来配置 feedback 的出现条件
+// VisibleOn sets the condition for the dialog to appear
 func (f feedbackDialog) VisibleOn(value string) feedbackDialog {
 	return f.set("visibleOn", value)
 }
 
-// Width Dialog 宽度
+// Width sets the dialog width
 func (f feedbackDialog) Width(value string) feedbackDialog {
 	return f.set("width", value)
 }

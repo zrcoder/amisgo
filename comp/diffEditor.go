@@ -1,8 +1,9 @@
 package comp
 
-// diffEditor 编辑器
+// diffEditor represents the editor schema
 type diffEditor Schema
 
+// DiffEditor creates a new diffEditor instance
 func DiffEditor() diffEditor {
 	return make(diffEditor).set("type", "diff-editor")
 }
@@ -12,282 +13,282 @@ func (d diffEditor) set(key string, value any) diffEditor {
 	return d
 }
 
-// AutoFill 自动填充
+// AutoFill sets the autoFill value
 func (d diffEditor) AutoFill(value string) diffEditor {
 	return d.set("autoFill", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the container CSS class name
 func (d diffEditor) ClassName(value string) diffEditor {
 	return d.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时是否删除
+// ClearValueOnHidden sets whether to clear the value when the form item is hidden
 func (d diffEditor) ClearValueOnHidden(value bool) diffEditor {
 	return d.set("clearValueOnHidden", value)
 }
 
-// Desc 描述
+// Desc sets the description
 func (d diffEditor) Desc(value string) diffEditor {
 	return d.set("desc", value)
 }
 
-// Description 描述内容
+// Description sets the description content
 func (d diffEditor) Description(value string) diffEditor {
 	return d.set("description", value)
 }
 
-// DescriptionClassName 描述上的 className
+// DescriptionClassName sets the class name for the description
 func (d diffEditor) DescriptionClassName(value string) diffEditor {
 	return d.set("descriptionClassName", value)
 }
 
-// DiffValue 左侧面板的值
+// DiffValue sets the value for the left panel
 func (d diffEditor) DiffValue(value string) diffEditor {
 	return d.set("diffValue", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the editor is disabled
 func (d diffEditor) Disabled(value bool) diffEditor {
 	return d.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression to determine if the editor is disabled
 func (d diffEditor) DisabledOn(value string) diffEditor {
 	return d.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets the editor configuration
 func (d diffEditor) EditorSetting(value string) diffEditor {
 	return d.set("editorSetting", value)
 }
 
-// ExtraName 额外字段名
+// ExtraName sets the extra field name
 func (d diffEditor) ExtraName(value string) diffEditor {
 	return d.set("extraName", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the editor is hidden
 func (d diffEditor) Hidden(value bool) diffEditor {
 	return d.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression to determine if the editor is hidden
 func (d diffEditor) HiddenOn(value string) diffEditor {
 	return d.set("hiddenOn", value)
 }
 
-// Hint 输入提示
+// Hint sets the input hint
 func (d diffEditor) Hint(value string) diffEditor {
 	return d.set("hint", value)
 }
 
-// Horizontal 水平布局配置
+// Horizontal sets the horizontal layout configuration
 func (d diffEditor) Horizontal(value string) diffEditor {
 	return d.set("horizontal", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique component ID
 func (d diffEditor) ID(value string) diffEditor {
 	return d.set("id", value)
 }
 
-// InitAutoFill 初始化自动填充
+// InitAutoFill sets the initial auto-fill value
 func (d diffEditor) InitAutoFill(value string) diffEditor {
 	return d.set("initAutoFill", value)
 }
 
-// Inline 表单控制是否为 inline 模式
+// Inline sets whether the form control is in inline mode
 func (d diffEditor) Inline(value bool) diffEditor {
 	return d.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the input class name
 func (d diffEditor) InputClassName(value string) diffEditor {
 	return d.set("inputClassName", value)
 }
 
-// Label 描述标题
+// Label sets the label
 func (d diffEditor) Label(value string) diffEditor {
 	return d.set("label", value)
 }
 
-// LabelAlign 描述标题对齐
+// LabelAlign sets the label alignment
 func (d diffEditor) LabelAlign(value string) diffEditor {
 	return d.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the label class name
 func (d diffEditor) LabelClassName(value string) diffEditor {
 	return d.set("labelClassName", value)
 }
 
-// LabelRemark 显示一个小图标，鼠标放上去的时候显示提示内容
+// LabelRemark sets the label remark
 func (d diffEditor) LabelRemark(value string) diffEditor {
 	return d.set("labelRemark", value)
 }
 
-// LabelWidth label 自定义宽度
+// LabelWidth sets the custom label width
 func (d diffEditor) LabelWidth(value string) diffEditor {
 	return d.set("labelWidth", value)
 }
 
-// Language 语言，参考 monaco-editor
+// Language sets the language, refer to monaco-editor
 func (d diffEditor) Language(value string) diffEditor {
 	return d.set("language", value)
 }
 
-// Mode 配置当前表单项展示模式
+// Mode sets the display mode of the current form item
 func (d diffEditor) Mode(value string) diffEditor {
 	return d.set("mode", value)
 }
 
-// Name 字段名
+// Name sets the field name
 func (d diffEditor) Name(value string) diffEditor {
 	return d.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (d diffEditor) OnEvent(value any) diffEditor {
 	return d.set("onEvent", value)
 }
 
-// Options 编辑器配置
+// Options sets the editor options
 func (d diffEditor) Options(value Schema) diffEditor {
 	return d.set("options", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the placeholder
 func (d diffEditor) Placeholder(value string) diffEditor {
 	return d.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the editor is read-only
 func (d diffEditor) ReadOnly(value bool) diffEditor {
 	return d.set("readOnly", value)
 }
 
-// ReadOnlyOn 只读条件
+// ReadOnlyOn sets the expression to determine if the editor is read-only
 func (d diffEditor) ReadOnlyOn(value string) diffEditor {
 	return d.set("readOnlyOn", value)
 }
 
-// Remark 显示一个小图标，鼠标放上去的时候显示提示内容
+// Remark sets the remark
 func (d diffEditor) Remark(value string) diffEditor {
 	return d.set("remark", value)
 }
 
-// Required 是否为必填
+// Required sets whether the field is required
 func (d diffEditor) Required(value bool) diffEditor {
 	return d.set("required", value)
 }
 
-// Row 行配置
+// Row sets the row configuration
 func (d diffEditor) Row(value string) diffEditor {
 	return d.set("row", value)
 }
 
-// SaveImmediately 是否立即保存
+// SaveImmediately sets whether to save immediately
 func (d diffEditor) SaveImmediately(value bool) diffEditor {
 	return d.set("saveImmediately", value)
 }
 
-// Size 表单项大小
+// Size sets the form item size
 func (d diffEditor) Size(value string) diffEditor {
 	return d.set("size", value)
 }
 
-// Static 是否静态展示
+// Static sets whether to display statically
 func (d diffEditor) Static(value bool) diffEditor {
 	return d.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the class name for static display form items
 func (d diffEditor) StaticClassName(value string) diffEditor {
 	return d.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the class name for static display form item values
 func (d diffEditor) StaticInputClassName(value string) diffEditor {
 	return d.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the class name for static display form item labels
 func (d diffEditor) StaticLabelClassName(value string) diffEditor {
 	return d.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the expression to determine if the editor is displayed statically
 func (d diffEditor) StaticOn(value string) diffEditor {
 	return d.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display
 func (d diffEditor) StaticPlaceholder(value string) diffEditor {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示 schema
+// StaticSchema sets the static display schema
 func (d diffEditor) StaticSchema(value string) diffEditor {
 	return d.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (d diffEditor) Style(value any) diffEditor {
 	return d.set("style", value)
 }
 
-// SubmitOnChange 当修改完的时候是否提交表单
+// SubmitOnChange sets whether to submit the form when changes are made
 func (d diffEditor) SubmitOnChange(value bool) diffEditor {
 	return d.set("submitOnChange", value)
 }
 
-// TestIdBuilder 测试 ID 构建器
+// TestIdBuilder sets the test ID builder
 func (d diffEditor) TestIdBuilder(value string) diffEditor {
 	return d.set("testIdBuilder", value)
 }
 
-// UseMobileUI 关闭移动端样式
+// UseMobileUI sets whether to disable mobile UI styles
 func (d diffEditor) UseMobileUI(value bool) diffEditor {
 	return d.set("useMobileUI", value)
 }
 
-// ValidateApi 远端校验表单项接口
+// ValidateApi sets the remote validation API for the form item
 func (d diffEditor) ValidateApi(value string) diffEditor {
 	return d.set("validateApi", value)
 }
 
-// ValidateOnChange 不设置时，每次修改都会触发验证
+// ValidateOnChange sets whether to validate on change
 func (d diffEditor) ValidateOnChange(value bool) diffEditor {
 	return d.set("validateOnChange", value)
 }
 
-// ValidationErrors 验证失败的提示信息
+// ValidationErrors sets the validation error messages
 func (d diffEditor) ValidationErrors(value string) diffEditor {
 	return d.set("validationErrors", value)
 }
 
-// Validations 验证配置
+// Validations sets the validation configuration
 func (d diffEditor) Validations(value string) diffEditor {
 	return d.set("validations", value)
 }
 
-// Value 默认值
+// Value sets the default value
 func (d diffEditor) Value(value string) diffEditor {
 	return d.set("value", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the editor is visible
 func (d diffEditor) Visible(value bool) diffEditor {
 	return d.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the expression to determine if the editor is visible
 func (d diffEditor) VisibleOn(value string) diffEditor {
 	return d.set("visibleOn", value)
 }
 
-// Width 在 Table 中调整宽度
+// Width sets the width in the table
 func (d diffEditor) Width(value string) diffEditor {
 	return d.set("width", value)
 }

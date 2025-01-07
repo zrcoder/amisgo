@@ -1,9 +1,9 @@
 package comp
 
-// cards
+// Cards represents a collection of card components renderer
 type cards Schema
 
-// Cards 创建一个新的 Cards 实例
+// Cards creates a new Cards instance
 func Cards() cards {
 	return make(cards).set("type", "cards")
 }
@@ -13,207 +13,207 @@ func (c cards) set(key string, value any) cards {
 	return c
 }
 
-// AffixFooter 设置 affixFooter 属性
+// AffixFooter enables or disables sticky footer positioning
 func (c cards) AffixFooter(value bool) cards {
 	return c.set("affixFooter", value)
 }
 
-// AffixHeader 设置 affixHeader 属性
+// AffixHeader enables or disables sticky header positioning
 func (c cards) AffixHeader(value bool) cards {
 	return c.set("affixHeader", value)
 }
 
-// Card 设置 card 属性
+// Card configures the individual card settings
 func (c cards) Card(value string) cards {
 	return c.set("card", value)
 }
 
-// CheckOnItemClick 设置 checkOnItemClick 属性
+// CheckOnItemClick enables or disables item selection on click
 func (c cards) CheckOnItemClick(value bool) cards {
 	return c.set("checkOnItemClick", value)
 }
 
-// ClassName 设置 className 属性
+// ClassName sets the CSS class name for the cards container
 func (c cards) ClassName(value string) cards {
 	return c.set("className", value)
 }
 
-// Disabled 设置 disabled 属性
+// Disabled enables or disables the cards component
 func (c cards) Disabled(value bool) cards {
 	return c.set("disabled", value)
 }
 
-// DisabledOn 设置 disabledOn 属性
+// DisabledOn sets a conditional expression for disabling the cards
 func (c cards) DisabledOn(value string) cards {
 	return c.set("disabledOn", value)
 }
 
-// EditorSetting 设置 editorSetting 属性
+// EditorSetting configures editor-specific settings
 func (c cards) EditorSetting(value string) cards {
 	return c.set("editorSetting", value)
 }
 
-// Footer 设置 footer 属性
+// Footer sets the footer content for the cards
 func (c cards) Footer(value string) cards {
 	return c.set("footer", value)
 }
 
-// FooterClassName 设置 footerClassName 属性
+// FooterClassName sets the CSS class name for the footer
 func (c cards) FooterClassName(value string) cards {
 	return c.set("footerClassName", value)
 }
 
-// Header 设置 header 属性
+// Header sets the header content for the cards
 func (c cards) Header(value string) cards {
 	return c.set("header", value)
 }
 
-// HeaderClassName 设置 headerClassName 属性
+// HeaderClassName sets the CSS class name for the header
 func (c cards) HeaderClassName(value string) cards {
 	return c.set("headerClassName", value)
 }
 
-// Hidden 设置 hidden 属性
+// Hidden controls the visibility of the cards component
 func (c cards) Hidden(value bool) cards {
 	return c.set("hidden", value)
 }
 
-// HiddenOn 设置 hiddenOn 属性
+// HiddenOn sets a conditional expression for hiding the cards
 func (c cards) HiddenOn(value string) cards {
 	return c.set("hiddenOn", value)
 }
 
-// HideCheckToggler 设置 hideCheckToggler 属性
+// HideCheckToggler enables or disables the checkbox toggle visibility
 func (c cards) HideCheckToggler(value bool) cards {
 	return c.set("hideCheckToggler", value)
 }
 
-// ID 设置 id 属性
+// ID sets a unique identifier for the cards component
 func (c cards) ID(value string) cards {
 	return c.set("id", value)
 }
 
-// ItemCheckableOn 设置 itemCheckableOn 属性
+// ItemCheckableOn sets a conditional expression for item checkability
 func (c cards) ItemCheckableOn(value string) cards {
 	return c.set("itemCheckableOn", value)
 }
 
-// ItemClassName 设置 itemClassName 属性
+// ItemClassName sets the CSS class name for individual card items
 func (c cards) ItemClassName(value string) cards {
 	return c.set("itemClassName", value)
 }
 
-// ItemDraggableOn 设置 itemDraggableOn 属性
+// ItemDraggableOn sets a conditional expression for item draggability
 func (c cards) ItemDraggableOn(value string) cards {
 	return c.set("itemDraggableOn", value)
 }
 
-// LoadingConfig 设置 loadingConfig 属性
+// LoadingConfig configures the loading state and appearance
 func (c cards) LoadingConfig(value string) cards {
 	return c.set("loadingConfig", value)
 }
 
-// MasonryLayout 设置 masonryLayout 属性
+// MasonryLayout enables or disables masonry-style layout
 func (c cards) MasonryLayout(value bool) cards {
 	return c.set("masonryLayout", value)
 }
 
-// OnEvent 设置 onEvent 属性
+// OnEvent configures event-driven actions
 func (c cards) OnEvent(value any) cards {
 	return c.set("onEvent", value)
 }
 
-// Placeholder 设置 placeholder 属性
+// Placeholder sets the content to display when no cards are present
 func (c cards) Placeholder(value string) cards {
 	return c.set("placeholder", value)
 }
 
-// ShowFooter 设置 showFooter 属性
+// ShowFooter enables or disables footer display
 func (c cards) ShowFooter(value bool) cards {
 	return c.set("showFooter", value)
 }
 
-// ShowHeader 设置 showHeader 属性
+// ShowHeader enables or disables header display
 func (c cards) ShowHeader(value bool) cards {
 	return c.set("showHeader", value)
 }
 
-// Source 设置 source 属性
+// Source sets the data source for populating cards
 func (c cards) Source(value string) cards {
 	return c.set("source", value)
 }
 
-// Static 设置 static 属性
+// Static determines if the cards are statically displayed
 func (c cards) Static(value bool) cards {
 	return c.set("static", value)
 }
 
-// StaticClassName 设置 staticClassName 属性
+// StaticClassName sets the CSS class name for static display
 func (c cards) StaticClassName(value string) cards {
 	return c.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置 staticInputClassName 属性
+// StaticInputClassName sets the CSS class name for static input display
 func (c cards) StaticInputClassName(value string) cards {
 	return c.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置 staticLabelClassName 属性
+// StaticLabelClassName sets the CSS class name for static label display
 func (c cards) StaticLabelClassName(value string) cards {
 	return c.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置 staticOn 属性
+// StaticOn sets a conditional expression for static display
 func (c cards) StaticOn(value string) cards {
 	return c.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置 staticPlaceholder 属性
+// StaticPlaceholder defines a placeholder for empty static values
 func (c cards) StaticPlaceholder(value string) cards {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置 staticSchema 属性
+// StaticSchema sets the schema for static display
 func (c cards) StaticSchema(value string) cards {
 	return c.set("staticSchema", value)
 }
 
-// Style 设置 style 属性
+// Style sets custom inline styles
 func (c cards) Style(value any) cards {
 	return c.set("style", value)
 }
 
-// TestIdBuilder 设置 testIdBuilder 属性
+// TestIdBuilder configures test ID generation
 func (c cards) TestIdBuilder(value string) cards {
 	return c.set("testIdBuilder", value)
 }
 
-// TestID 设置 testid 属性
+// TestID sets a specific test identifier
 func (c cards) TestID(value string) cards {
 	return c.set("testid", value)
 }
 
-// Title 设置 title 属性
+// Title sets the title for the cards component
 func (c cards) Title(value any) cards {
 	return c.set("title", value)
 }
 
-// UseMobileUI 设置 useMobileUI 属性
+// UseMobileUI enables or disables mobile UI styling
 func (c cards) UseMobileUI(value bool) cards {
 	return c.set("useMobileUI", value)
 }
 
-// ValueField 设置 valueField 属性
+// ValueField sets the field to use as the value for cards
 func (c cards) ValueField(value string) cards {
 	return c.set("valueField", value)
 }
 
-// Visible 设置 visible 属性
+// Visible controls the overall visibility of the cards
 func (c cards) Visible(value bool) cards {
 	return c.set("visible", value)
 }
 
-// VisibleOn 设置 visibleOn 属性
+// VisibleOn sets a conditional expression for cards visibility
 func (c cards) VisibleOn(value string) cards {
 	return c.set("visibleOn", value)
 }

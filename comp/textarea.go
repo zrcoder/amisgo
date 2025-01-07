@@ -4,7 +4,6 @@ package comp
 
 type textarea Schema
 
-// NewTextareaControl 创建一个新的 TextareaControl 实例
 func Textarea() textarea {
 	return textarea{}.set("type", "textarea")
 }

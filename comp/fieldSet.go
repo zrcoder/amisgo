@@ -1,6 +1,6 @@
 package comp
 
-// fieldSet 表单项集合
+// fieldSet represents a collection of form items
 type fieldSet Schema
 
 func FieldSet() fieldSet {
@@ -12,282 +12,282 @@ func (f fieldSet) set(key string, value any) fieldSet {
 	return f
 }
 
-// AutoFill 自动填充
+// AutoFill sets the autoFill value
 func (f fieldSet) AutoFill(value string) fieldSet {
 	return f.set("autoFill", value)
 }
 
-// Body 内容区域
+// Body sets the body content
 func (f fieldSet) Body(value ...any) fieldSet {
 	return f.set("body", value)
 }
 
-// BodyClassName 配置 Body 容器 className
+// BodyClassName sets the className for the body container
 func (f fieldSet) BodyClassName(value string) fieldSet {
 	return f.set("bodyClassName", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the CSS class name for the container
 func (f fieldSet) ClassName(value string) fieldSet {
 	return f.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值
+// ClearValueOnHidden sets whether to clear the value when the form item is hidden
 func (f fieldSet) ClearValueOnHidden(value bool) fieldSet {
 	return f.set("clearValueOnHidden", value)
 }
 
-// Collapsable 是否可折叠
+// Collapsable sets whether the fieldset is collapsable
 func (f fieldSet) Collapsable(value bool) fieldSet {
 	return f.set("collapsable", value)
 }
 
-// CollapseHeader 收起的标题
+// CollapseHeader sets the collapse header
 func (f fieldSet) CollapseHeader(value string) fieldSet {
 	return f.set("collapseHeader", value)
 }
 
-// CollapseTitle 收起的标题
+// CollapseTitle sets the collapse title
 func (f fieldSet) CollapseTitle(value any) fieldSet {
 	return f.set("collapseTitle", value)
 }
 
-// Collapsed 默认是否折叠
+// Collapsed sets whether the fieldset is collapsed by default
 func (f fieldSet) Collapsed(value bool) fieldSet {
 	return f.set("collapsed", value)
 }
 
-// Desc 描述
+// Desc sets the description
 func (f fieldSet) Desc(value string) fieldSet {
 	return f.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段
+// Description sets the description content, supports HTML
 func (f fieldSet) Description(value string) fieldSet {
 	return f.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className
+// DescriptionClassName sets the className for the description
 func (f fieldSet) DescriptionClassName(value string) fieldSet {
 	return f.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the fieldset is disabled
 func (f fieldSet) Disabled(value bool) fieldSet {
 	return f.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression to determine if the fieldset is disabled
 func (f fieldSet) DisabledOn(value string) fieldSet {
 	return f.set("disabledOn", value)
 }
 
-// DivideLine 标题内容分割线
+// DivideLine sets whether to show a dividing line
 func (f fieldSet) DivideLine(value bool) fieldSet {
 	return f.set("divideLine", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets the editor configuration
 func (f fieldSet) EditorSetting(value string) fieldSet {
 	return f.set("editorSetting", value)
 }
 
-// ExpandIcon 自定义切换图标
+// ExpandIcon sets the custom toggle icon
 func (f fieldSet) ExpandIcon(value string) fieldSet {
 	return f.set("expandIcon", value)
 }
 
-// ExtraName 额外的字段名
+// ExtraName sets an additional field name
 func (f fieldSet) ExtraName(value string) fieldSet {
 	return f.set("extraName", value)
 }
 
-// Header 标题
+// Header sets the header
 func (f fieldSet) Header(value string) fieldSet {
 	return f.set("header", value)
 }
 
-// HeaderPosition 标题展示位置
+// HeaderPosition sets the header position
 func (f fieldSet) HeaderPosition(value string) fieldSet {
 	return f.set("headerPosition", value)
 }
 
-// HeadingClassName 标题 CSS 类名
+// HeadingClassName sets the className for the heading
 func (f fieldSet) HeadingClassName(value string) fieldSet {
 	return f.set("headingClassName", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the fieldset is hidden
 func (f fieldSet) Hidden(value bool) fieldSet {
 	return f.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression to determine if the fieldset is hidden
 func (f fieldSet) HiddenOn(value string) fieldSet {
 	return f.set("hiddenOn", value)
 }
 
-// Hint 输入提示
+// Hint sets the input hint
 func (f fieldSet) Hint(value string) fieldSet {
 	return f.set("hint", value)
 }
 
-// Horizontal 水平布局具体的左右分配
+// Horizontal sets the horizontal layout
 func (f fieldSet) Horizontal(value string) fieldSet {
 	return f.set("horizontal", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique ID for the component
 func (f fieldSet) ID(value string) fieldSet {
 	return f.set("id", value)
 }
 
-// InitAutoFill 初始化自动填充
+// InitAutoFill sets the initial autoFill value
 func (f fieldSet) InitAutoFill(value string) fieldSet {
 	return f.set("initAutoFill", value)
 }
 
-// Inline 表单 control 是否为 inline 模式
+// Inline sets whether the form control is in inline mode
 func (f fieldSet) Inline(value bool) fieldSet {
 	return f.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the className for the input
 func (f fieldSet) InputClassName(value string) fieldSet {
 	return f.set("inputClassName", value)
 }
 
-// Key 标识
+// Key sets the key
 func (f fieldSet) Key(value string) fieldSet {
 	return f.set("key", value)
 }
 
-// Label 描述标题
+// Label sets the label
 func (f fieldSet) Label(value string) fieldSet {
 	return f.set("label", value)
 }
 
-// LabelAlign 描述标题对齐方式
+// LabelAlign sets the label alignment
 func (f fieldSet) LabelAlign(value string) fieldSet {
 	return f.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the className for the label
 func (f fieldSet) LabelClassName(value string) fieldSet {
 	return f.set("labelClassName", value)
 }
 
-// LabelRemark 显示一个小图标，鼠标放上去的时候显示提示内容
+// LabelRemark sets the label remark
 func (f fieldSet) LabelRemark(value string) fieldSet {
 	return f.set("labelRemark", value)
 }
 
-// LabelWidth label 自定义宽度
+// LabelWidth sets the custom width for the label
 func (f fieldSet) LabelWidth(value string) fieldSet {
 	return f.set("labelWidth", value)
 }
 
-// Mode 配置当前表单项展示模式
+// Mode sets the display mode for the form item
 func (f fieldSet) Mode(value string) fieldSet {
 	return f.set("mode", value)
 }
 
-// MountOnEnter 点开时才加载内容
+// MountOnEnter sets whether to load content only when opened
 func (f fieldSet) MountOnEnter(value bool) fieldSet {
 	return f.set("mountOnEnter", value)
 }
 
-// Name 字段名
+// Name sets the field name
 func (f fieldSet) Name(value string) fieldSet {
 	return f.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (f fieldSet) OnEvent(value any) fieldSet {
 	return f.set("onEvent", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the placeholder
 func (f fieldSet) Placeholder(value string) fieldSet {
 	return f.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly sets whether the fieldset is read-only
 func (f fieldSet) ReadOnly(value bool) fieldSet {
 	return f.set("readOnly", value)
 }
 
-// ReadOnlyOn 只读条件
+// ReadOnlyOn sets the expression to determine if the fieldset is read-only
 func (f fieldSet) ReadOnlyOn(value string) fieldSet {
 	return f.set("readOnlyOn", value)
 }
 
-// Remark 显示一个小图标，鼠标放上去的时候显示提示内容
+// Remark sets the remark
 func (f fieldSet) Remark(value string) fieldSet {
 	return f.set("remark", value)
 }
 
-// Required 是否为必填
+// Required sets whether the fieldset is required
 func (f fieldSet) Required(value bool) fieldSet {
 	return f.set("required", value)
 }
 
-// Row
+// Row sets the row
 func (f fieldSet) Row(value string) fieldSet {
 	return f.set("row", value)
 }
 
-// SaveImmediately 是否立即保存
+// SaveImmediately sets whether to save immediately
 func (f fieldSet) SaveImmediately(value bool) fieldSet {
 	return f.set("saveImmediately", value)
 }
 
-// ShowArrow 图标是否展示
+// ShowArrow sets whether to show the arrow icon
 func (f fieldSet) ShowArrow(value bool) fieldSet {
 	return f.set("showArrow", value)
 }
 
-// Size 控件大小
+// Size sets the size of the control
 func (f fieldSet) Size(value string) fieldSet {
 	return f.set("size", value)
 }
 
-// Static 是否静态展示
+// Static sets whether to display statically
 func (f fieldSet) Static(value bool) fieldSet {
 	return f.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the className for static display
 func (f fieldSet) StaticClassName(value string) fieldSet {
 	return f.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项 Value 类名
+// StaticInputClassName sets the className for static input display
 func (f fieldSet) StaticInputClassName(value string) fieldSet {
 	return f.set("staticInputClassName", value)
 }
 
-// SubmitOnChange 是否每次更改都提交
+// SubmitOnChange sets whether to submit on change
 func (f fieldSet) SubmitOnChange(value bool) fieldSet {
 	return f.set("submitOnChange", value)
 }
 
-// Title 标题
+// Title sets the title
 func (f fieldSet) Title(value any) fieldSet {
 	return f.set("title", value)
 }
 
-// TitlePosition 标题展示位置
+// TitlePosition sets the title position
 func (f fieldSet) TitlePosition(value string) fieldSet {
 	return f.set("titlePosition", value)
 }
 
-// Visible 组件显示条件
+// Visible sets the visibility condition
 func (f fieldSet) Visible(value bool) fieldSet {
 	return f.set("visible", value)
 }
 
-// VisibleOn 组件显示条件表达式
+// VisibleOn sets the expression to determine visibility
 func (f fieldSet) VisibleOn(value string) fieldSet {
 	return f.set("visibleOn", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-// breadcrumb 面包屑
+// Breadcrumb represents a breadcrumb navigation component
 type breadcrumb Schema
 
-// Breadcrumb 创建一个新的 Breadcrumb 实例
+// Breadcrumb creates a new Breadcrumb instance
 func Breadcrumb() breadcrumb {
 	return breadcrumb{}.set("type", "breadcrumb")
 }
@@ -13,52 +13,52 @@ func (b breadcrumb) set(key string, value any) breadcrumb {
 	return b
 }
 
-// ClassName 外层类名
+// ClassName sets the CSS class name for the outer container
 func (b breadcrumb) ClassName(value string) breadcrumb {
 	return b.set("className", value)
 }
 
-// DropdownClassName 下拉菜单类名
+// DropdownClassName sets the CSS class name for the dropdown menu
 func (b breadcrumb) DropdownClassName(value string) breadcrumb {
 	return b.set("dropdownClassName", value)
 }
 
-// DropdownItemClassName 下拉菜单项类名
+// DropdownItemClassName sets the CSS class name for dropdown menu items
 func (b breadcrumb) DropdownItemClassName(value string) breadcrumb {
 	return b.set("dropdownItemClassName", value)
 }
 
-// ItemClassName 导航项类名
+// ItemClassName sets the CSS class name for navigation items
 func (b breadcrumb) ItemClassName(value string) breadcrumb {
 	return b.set("itemClassName", value)
 }
 
-// Items 文本
+// Items configures the breadcrumb items
 func (b breadcrumb) Items(value ...any) breadcrumb {
 	return b.set("items", value)
 }
 
-// LabelMaxLength 最大展示长度
+// LabelMaxLength sets the maximum display length for labels
 func (b breadcrumb) LabelMaxLength(value string) breadcrumb {
 	return b.set("labelMaxLength", value)
 }
 
-// Separator 分隔符
+// Separator sets the separator character between breadcrumb items
 func (b breadcrumb) Separator(value string) breadcrumb {
 	return b.set("separator", value)
 }
 
-// SeparatorClassName 分割符类名
+// SeparatorClassName sets the CSS class name for the separator
 func (b breadcrumb) SeparatorClassName(value string) breadcrumb {
 	return b.set("separatorClassName", value)
 }
 
-// Source 动态数据
+// Source configures dynamic data source for breadcrumb items
 func (b breadcrumb) Source(value string) breadcrumb {
 	return b.set("source", value)
 }
 
-// TooltipPosition 浮窗提示位置
+// TooltipPosition sets the position of tooltip popups
 func (b breadcrumb) TooltipPosition(value string) breadcrumb {
 	return b.set("tooltipPosition", value)
 }

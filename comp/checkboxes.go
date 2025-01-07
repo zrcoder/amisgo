@@ -11,287 +11,289 @@ func (c checkboxes) set(key string, value any) checkboxes {
 	return c
 }
 
-// 添加时调用的接口
+// AddApi specifies the API endpoint for adding new items
 func (c checkboxes) AddApi(value string) checkboxes {
 	return c.set("addApi", value)
 }
 
-// 新增时的表单项
+// AddControls defines the form controls for adding new items
 func (c checkboxes) AddControls(value string) checkboxes {
 	return c.set("addControls", value)
 }
 
-// 控制新增弹框设置项
+// AddDialog configures the dialog settings for adding new items
 func (c checkboxes) AddDialog(value string) checkboxes {
 	return c.set("addDialog", value)
 }
 
-// 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内
+// AutoFill enables automatic synchronization of selected option values to the form
 func (c checkboxes) AutoFill(value string) checkboxes {
 	return c.set("autoFill", value)
 }
 
-// 是否开启全选功能
+// CheckAll enables or disables the select all functionality
 func (c checkboxes) CheckAll(value bool) checkboxes {
 	return c.set("checkAll", value)
 }
 
-// 全选/不选文案
+// CheckAllText sets the text for select all/none action
 func (c checkboxes) CheckAllText(value string) checkboxes {
 	return c.set("checkAllText", value)
 }
 
-// 容器 css 类名
+// ClassName sets the CSS class name for the container
 func (c checkboxes) ClassName(value string) checkboxes {
 	return c.set("className", value)
 }
 
-// 表单项隐藏时，是否在当前 Form 中删除掉该表单项值
+// ClearValueOnHidden determines whether to remove the form item's value when hidden
 func (c checkboxes) ClearValueOnHidden(value bool) checkboxes {
 	return c.set("clearValueOnHidden", value)
 }
 
-// 是否可清除
+// Clearable enables or disables the ability to clear selections
 func (c checkboxes) Clearable(value bool) checkboxes {
 	return c.set("clearable", value)
 }
 
-// 每行显示多少个
+// ColumnsCount sets the number of columns for displaying checkboxes
 func (c checkboxes) ColumnsCount(value string) checkboxes {
 	return c.set("columnsCount", value)
 }
 
-// 是否可以新增
+// Creatable enables or disables the ability to add new items
 func (c checkboxes) Creatable(value bool) checkboxes {
 	return c.set("creatable", value)
 }
 
-// 新增文字
+// CreateBtnLabel sets the text for the create new item button
 func (c checkboxes) CreateBtnLabel(value string) checkboxes {
 	return c.set("createBtnLabel", value)
 }
 
-// 是否默认全选
+// DefaultCheckAll sets whether all options are selected by default
 func (c checkboxes) DefaultCheckAll(value bool) checkboxes {
 	return c.set("defaultCheckAll", value)
 }
 
-// 延时加载的 API
+// DeferApi specifies the API endpoint for lazy loading
 func (c checkboxes) DeferApi(value string) checkboxes {
 	return c.set("deferApi", value)
 }
 
-// 懒加载字段
+// DeferField sets the field for lazy loading
 func (c checkboxes) DeferField(value string) checkboxes {
 	return c.set("deferField", value)
 }
 
-// 选项删除 API
+// DeleteApi specifies the API endpoint for deleting options
 func (c checkboxes) DeleteApi(value string) checkboxes {
 	return c.set("deleteApi", value)
 }
 
-// 选项删除提示文字
+// DeleteConfirmText sets the confirmation text for option deletion
 func (c checkboxes) DeleteConfirmText(value string) checkboxes {
 	return c.set("deleteConfirmText", value)
 }
 
-// 分割符
+// Delimiter sets the separator for joining multiple selected values
 func (c checkboxes) Delimiter(value string) checkboxes {
 	return c.set("delimiter", value)
 }
 
-// 描述内容
+// Desc sets a brief description for the checkboxes
 func (c checkboxes) Desc(value string) checkboxes {
 	return c.set("desc", value)
 }
 
-// 描述内容，支持 Html 片段
+// Description sets a detailed description that supports HTML fragments
 func (c checkboxes) Description(value string) checkboxes {
 	return c.set("description", value)
 }
 
-// 配置描述上的 className
+// DescriptionClassName sets the CSS class name for the description element
 func (c checkboxes) DescriptionClassName(value string) checkboxes {
 	return c.set("descriptionClassName", value)
 }
 
-// 是否禁用
+// Disabled enables or disables the entire checkboxes component
 func (c checkboxes) Disabled(value bool) checkboxes {
 	return c.set("disabled", value)
 }
 
-// 是否禁用表达式
+// DisabledOn sets a conditional expression to dynamically disable the component
 func (c checkboxes) DisabledOn(value string) checkboxes {
 	return c.set("disabledOn", value)
 }
 
-// 编辑时调用的 API
+// EditApi specifies the API endpoint for editing existing items
 func (c checkboxes) EditApi(value string) checkboxes {
 	return c.set("editApi", value)
 }
 
-// 选项修改的表单项
+// EditControls defines the form controls for modifying existing items
 func (c checkboxes) EditControls(value string) checkboxes {
 	return c.set("editControls", value)
 }
 
-// 控制编辑弹框设置项
+// EditDialog configures the dialog settings for editing existing items
 func (c checkboxes) EditDialog(value string) checkboxes {
 	return c.set("editDialog", value)
 }
 
-// 是否可以编辑
+// Editable enables or disables the ability to edit existing items
 func (c checkboxes) Editable(value bool) checkboxes {
 	return c.set("editable", value)
 }
 
-// 编辑器配置
+// EditorSetting configures editor-specific settings for the component
 func (c checkboxes) EditorSetting(value string) checkboxes {
 	return c.set("editorSetting", value)
 }
 
-// 额外的字段名
+// ExtraName sets an additional field name for the component
 func (c checkboxes) ExtraName(value string) checkboxes {
 	return c.set("extraName", value)
 }
 
-// 开启后将选中的选项 value 的值封装为数组
+// ExtractValue enables wrapping selected option values as an array
 func (c checkboxes) ExtractValue(value bool) checkboxes {
 	return c.set("extractValue", value)
 }
 
-// 是否隐藏
+// Hidden controls the visibility of the entire checkboxes component
 func (c checkboxes) Hidden(value bool) checkboxes {
 	return c.set("hidden", value)
 }
 
-// 是否隐藏表达式
+// HiddenOn sets a conditional expression to dynamically hide the component
 func (c checkboxes) HiddenOn(value string) checkboxes {
 	return c.set("hiddenOn", value)
 }
 
-// 输入提示
+// Hint provides an input hint or placeholder text
 func (c checkboxes) Hint(value string) checkboxes {
 	return c.set("hint", value)
 }
 
-// 当配置为水平布局的时候，用来配置具体的左右分配
+// Horizontal configures the specific left and right distribution when using horizontal layout
 func (c checkboxes) Horizontal(value string) checkboxes {
 	return c.set("horizontal", value)
 }
 
-// 组件唯一 id
+// ID sets a unique identifier for the component
 func (c checkboxes) ID(value string) checkboxes {
 	return c.set("id", value)
 }
 
-// 配置 source 接口初始拉不拉取
+// InitFetch determines whether to initially fetch data from the source API
 func (c checkboxes) InitFetch(value bool) checkboxes {
 	return c.set("initFetch", value)
 }
 
-// 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets a conditional expression to control initial data fetching
 func (c checkboxes) InitFetchOn(value string) checkboxes {
 	return c.set("initFetchOn", value)
 }
 
-// 表单 control 是否为 inline 模式
+// Inline determines if the form control should use inline mode
 func (c checkboxes) Inline(value bool) checkboxes {
 	return c.set("inline", value)
 }
 
-// 配置 input className
+// InputClassName sets the CSS class name for the input element
 func (c checkboxes) InputClassName(value string) checkboxes {
 	return c.set("inputClassName", value)
 }
 
-// 单选模式：当用户选中某个选项时，选项中的 value 将被作为该表单项的值提交，否则，整个选项对象都会作为该表单项的值提交。 多选模式：选中的多个选项的 value 会通过 delimiter 连接起来，否则直接将以数组的形式提交值
+// JoinValues configures value submission behavior:
+// - In single-select mode: submits either the selected value or the entire option object
+// - In multi-select mode: joins selected values or submits as an array
 func (c checkboxes) JoinValues(value bool) checkboxes {
 	return c.set("joinValues", value)
 }
 
-// 描述标题
+// Label sets the description label for the checkboxes
 func (c checkboxes) Label(value string) checkboxes {
 	return c.set("label", value)
 }
 
-// 描述标题 可选值: right | left | top | inherit
+// LabelAlign sets the alignment of the description label (right, left, top, or inherit)
 func (c checkboxes) LabelAlign(value string) checkboxes {
 	return c.set("labelAlign", value)
 }
 
-// 配置 label className
+// LabelClassName sets the CSS class name for the label element
 func (c checkboxes) LabelClassName(value string) checkboxes {
 	return c.set("labelClassName", value)
 }
 
-// 显示一个小图标, 鼠标放上去的时候显示提示内容, 这个小图标跟 label 在一起
+// LabelRemark adds a small icon that displays a tooltip when hovered
 func (c checkboxes) LabelRemark(value string) checkboxes {
 	return c.set("labelRemark", value)
 }
 
-// label自定义宽度，默认单位为px
+// LabelWidth sets a custom width for the label (default unit is px)
 func (c checkboxes) LabelWidth(value string) checkboxes {
 	return c.set("labelWidth", value)
 }
 
-// 自定义选项展示
+// MenuTpl enables custom rendering of checkbox options
 func (c checkboxes) MenuTpl(value string) checkboxes {
 	return c.set("menuTpl", value)
 }
 
-// 配置当前表单项展示模式
+// Mode configures the current form item display mode
 func (c checkboxes) Mode(value string) checkboxes {
 	return c.set("mode", value)
 }
 
-// 是否为多选模式
+// Multiple enables or disables multi-select mode
 func (c checkboxes) Multiple(value bool) checkboxes {
 	return c.set("multiple", value)
 }
 
-// 字段名，表单提交时的 key
+// Name sets the field name for form submission
 func (c checkboxes) Name(value string) checkboxes {
 	return c.set("name", value)
 }
 
-// 事件动作配置
+// OnEvent configures event-driven actions for the checkboxes
 func (c checkboxes) OnEvent(value any) checkboxes {
 	return c.set("onEvent", value)
 }
 
-// 选项集合
+// Options sets the collection of available checkbox options
 func (c checkboxes) Options(value ...any) checkboxes {
 	return c.set("options", value)
 }
 
-// 选项值字段
+// OptionValue sets the field used for option values
 func (c checkboxes) OptionValue(value string) checkboxes {
 	return c.set("optionValue", value)
 }
 
-// 是否为单选模式
+// Radio enables or disables single-select mode
 func (c checkboxes) Radio(value bool) checkboxes {
 	return c.set("radio", value)
 }
 
-// 刷新时是否重新加载选项
+// Reload determines whether to reload options when refreshing
 func (c checkboxes) Reload(value bool) checkboxes {
 	return c.set("reload", value)
 }
 
-// 自定义配置的值字段名
+// Source sets a custom configuration for the value field name
 func (c checkboxes) Source(value string) checkboxes {
 	return c.set("source", value)
 }
 
-// 默认值
+// Value sets the default selected value(s)
 func (c checkboxes) Value(value any) checkboxes {
 	return c.set("value", value)
 }
 
-// 初始值
+// DefaultValue sets the initial value before user interaction
 func (c checkboxes) DefaultValue(value string) checkboxes {
 	return c.set("defaultValue", value)
 }

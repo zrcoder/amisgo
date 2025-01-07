@@ -1,6 +1,6 @@
 package comp
 
-// drawer 抽出式弹框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/drawer
+// drawer represents a drawer component. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/drawer
 type drawer Schema
 
 func Drawer() drawer {
@@ -12,217 +12,217 @@ func (d drawer) set(key string, value any) drawer {
 	return d
 }
 
-// Actions 默认不用填写，自动会创建确认和取消按钮。
+// Actions sets the actions for the drawer. By default, confirm and cancel buttons are created automatically.
 func (d drawer) Actions(value ...any) drawer {
 	return d.set("actions", value)
 }
 
-// Body 内容区域 (内容区域)
+// Body sets the content area of the drawer.
 func (d drawer) Body(value ...any) drawer {
 	return d.set("body", value)
 }
 
-// BodyClassName 配置 Body 容器 className (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// BodyClassName sets the class name for the body container.
 func (d drawer) BodyClassName(value string) drawer {
 	return d.set("bodyClassName", value)
 }
 
-// ClassName 配置 外层 className (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// ClassName sets the class name for the outer container.
 func (d drawer) ClassName(value string) drawer {
 	return d.set("className", value)
 }
 
-// CloseOnEsc 是否支持按 ESC 关闭 Dialog
+// CloseOnEsc sets whether the drawer can be closed by pressing the ESC key.
 func (d drawer) CloseOnEsc(value bool) drawer {
 	return d.set("closeOnEsc", value)
 }
 
-// CloseOnOutside 点击外部的时候是否关闭弹框。
+// CloseOnOutside sets whether the drawer can be closed by clicking outside of it.
 func (d drawer) CloseOnOutside(value bool) drawer {
 	return d.set("closeOnOutside", value)
 }
 
-// Confirm 影响自动生成的按钮，如果自己配置了按钮这个配置无效。
+// Confirm sets whether the confirm button is automatically generated. This setting is ignored if custom buttons are configured.
 func (d drawer) Confirm(value bool) drawer {
 	return d.set("confirm", value)
 }
 
-// Data 数据映射
+// Data sets the data mapping for the drawer.
 func (d drawer) Data(value Data) drawer {
 	return d.set("data", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the drawer is disabled.
 func (d drawer) Disabled(value bool) drawer {
 	return d.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine whether the drawer is disabled.
 func (d drawer) DisabledOn(value string) drawer {
 	return d.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, which can be ignored at runtime.
 func (d drawer) EditorSetting(value string) drawer {
 	return d.set("editorSetting", value)
 }
 
-// Footer 底部 (底部)
+// Footer sets the footer content of the drawer.
 func (d drawer) Footer(value string) drawer {
 	return d.set("footer", value)
 }
 
-// FooterClassName 配置 头部 容器 className (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// FooterClassName sets the class name for the footer container.
 func (d drawer) FooterClassName(value string) drawer {
 	return d.set("footerClassName", value)
 }
 
-// Header 头部 (头部)
+// Header sets the header content of the drawer.
 func (d drawer) Header(value string) drawer {
 	return d.set("header", value)
 }
 
-// HeaderClassName 配置 头部 容器 className (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// HeaderClassName sets the class name for the header container.
 func (d drawer) HeaderClassName(value string) drawer {
 	return d.set("headerClassName", value)
 }
 
-// Height 抽屉的高度 （string | number, 当position为top | bottom时生效）
+// Height sets the height of the drawer. This is effective when the position is top or bottom.
 func (d drawer) Height(value any) drawer {
 	return d.set("height", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the drawer is hidden.
 func (d drawer) Hidden(value bool) drawer {
 	return d.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine whether the drawer is hidden.
 func (d drawer) HiddenOn(value string) drawer {
 	return d.set("hiddenOn", value)
 }
 
-// ID 组件唯一 id，主要用于日志采集
+// ID sets the unique ID for the component, mainly used for logging.
 func (d drawer) ID(value string) drawer {
 	return d.set("id", value)
 }
 
-// InputParams 弹窗参数说明，值格式为 JSONSchema。
+// InputParams sets the input parameters for the drawer in JSONSchema format.
 func (d drawer) InputParams(value string) drawer {
 	return d.set("inputParams", value)
 }
 
-// Name 组件名字，这个名字可以用来定位，用于组件通信
+// Name sets the name of the component, which can be used for locating and component communication.
 func (d drawer) Name(value string) drawer {
 	return d.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration for the drawer.
 func (d drawer) OnEvent(value any) drawer {
 	return d.set("onEvent", value)
 }
 
-// Overlay 是否显示蒙层
+// Overlay sets whether the overlay is displayed.
 func (d drawer) Overlay(value bool) drawer {
 	return d.set("overlay", value)
 }
 
-// Position 从什么位置弹出 可选值: left | right | top | bottom
+// Position sets the position from which the drawer pops out. Possible values: left, right, top, bottom.
 func (d drawer) Position(value string) drawer {
 	return d.set("position", value)
 }
 
-// Resizable 是否可以拖动弹窗大小
+// Resizable sets whether the drawer size can be resized.
 func (d drawer) Resizable(value bool) drawer {
 	return d.set("resizable", value)
 }
 
-// ShowCloseButton 是否展示关闭按钮 当值为false时，默认开启closeOnOutside
+// ShowCloseButton sets whether the close button is displayed. When false, closeOnOutside is enabled by default.
 func (d drawer) ShowCloseButton(value bool) drawer {
 	return d.set("showCloseButton", value)
 }
 
-// ShowErrorMsg 是否显示错误信息
+// ShowErrorMsg sets whether error messages are displayed.
 func (d drawer) ShowErrorMsg(value bool) drawer {
 	return d.set("showErrorMsg", value)
 }
 
-// Size 大小 可选值: xs、sm、md、lg、xl
+// Size sets the size of the drawer. Possible values: xs, sm, md, lg, xl.
 func (d drawer) Size(value string) drawer {
 	return d.set("size", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the drawer is displayed statically.
 func (d drawer) Static(value bool) drawer {
 	return d.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticClassName sets the class name for static display form items.
 func (d drawer) StaticClassName(value string) drawer {
 	return d.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticInputClassName sets the class name for static display form item values.
 func (d drawer) StaticInputClassName(value string) drawer {
 	return d.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticLabelClassName sets the class name for static display form item labels.
 func (d drawer) StaticLabelClassName(value string) drawer {
 	return d.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine whether the drawer is displayed statically.
 func (d drawer) StaticOn(value string) drawer {
 	return d.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display when the value is empty.
 func (d drawer) StaticPlaceholder(value string) drawer {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示 schema
+// StaticSchema sets the schema for static display.
 func (d drawer) StaticSchema(value string) drawer {
 	return d.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the style for the component.
 func (d drawer) Style(value any) drawer {
 	return d.set("style", value)
 }
 
-// TestIdBuilder 测试 ID 构建器
+// TestIdBuilder sets the test ID builder.
 func (d drawer) TestIdBuilder(value string) drawer {
 	return d.set("testIdBuilder", value)
 }
 
-// Testid 测试 id
+// Testid sets the test ID.
 func (d drawer) Testid(value string) drawer {
 	return d.set("testid", value)
 }
 
-// Title 请通过配置 title 设置标题 (请通过配置 title 设置标题)
+// Title sets the title of the drawer.
 func (d drawer) Title(value any) drawer {
 	return d.set("title", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to disable mobile UI styles at the component level.
 func (d drawer) UseMobileUI(value bool) drawer {
 	return d.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the drawer is visible.
 func (d drawer) Visible(value bool) drawer {
 	return d.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine whether the drawer is visible.
 func (d drawer) VisibleOn(value string) drawer {
 	return d.set("visibleOn", value)
 }
 
-// Width 抽屉的宽度 （string | number, 当position为 left | right 时生效）
+// Width sets the width of the drawer. This is effective when the position is left or right.
 func (d drawer) Width(value any) drawer {
 	return d.set("width", value)
 }

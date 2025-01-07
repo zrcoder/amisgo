@@ -1,10 +1,10 @@
 package comp
 
-// form 表单渲染器。说明：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/index
+// form represents a form renderer.
 
 type form Schema
 
-// Form 创建一个新的 Form 实例
+// Form creates a new Form instance.
 func Form() form {
 	return make(form).set("type", "form")
 }
@@ -14,205 +14,205 @@ func (f form) set(key string, value any) form {
 	return f
 }
 
-// ClassName
+// ClassName sets the class name.
 func (f form) ClassName(value string) form {
 	return f.set("classname", value)
 }
 
-// PanelClassName 外层 panel 的类名
+// PanelClassName sets the outer panel class name.
 func (f form) PanelClassName(value string) form {
 	return f.set("panelClassName", value)
 }
 
-// Reload 配置表单重新加载
+// Reload configures form reload.
 func (f form) Reload(value string) form {
 	return f.set("reload", value)
 }
 
-// Mode 配置当前表单项展示模式 可选值: normal | inline | horizontal
+// Mode sets the display mode: normal, inline, or horizontal.
 func (f form) Mode(value string) form {
 	return f.set("mode", value)
 }
 
-// AutoFocus 是否自动聚焦
+// AutoFocus sets whether to auto-focus.
 func (f form) AutoFocus(value bool) form {
 	return f.set("autoFocus", value)
 }
 
-// Horizontal 当 mode 为 horizontal 时有用，用来控制 label 的展示占比， 默认 {"left":2, "right":10, "justify": false}
+// Horizontal sets the label display ratio when mode is horizontal.
 func (f form) Horizontal(value any) form {
 	return f.set("horizontal", value)
 }
 
-// LabelAlign 表单项标签对齐方式，left | right, 默认右对齐，仅在 mode为horizontal 时生效
+// LabelAlign sets the label alignment: left or right.
 func (f form) LabelAlign(value any) form {
 	return f.set("labelAlign", value)
 }
 
-// LabelWidth 表单项标签自定义宽度
+// LabelWidth sets the custom label width.
 func (f form) LabelWidth(value any) form {
 	return f.set("labelWidth", value)
 }
 
-// Body Form 内容
+// Body sets the form content.
 func (f form) Body(value ...any) form {
 	return f.set("body", value)
 }
 
-// ResetAfterSubmit 提交后重置表单
+// ResetAfterSubmit sets whether to reset the form after submission.
 func (f form) ResetAfterSubmit(value bool) form {
 	return f.set("resetAfterSubmit", value)
 }
 
-// Rules 组合校验规则，选填
+// Rules sets the validation rules.
 func (f form) Rules(value ...any) form {
 	return f.set("rules", value)
 }
 
-// SilentPolling 是否静默拉取
+// SilentPolling sets whether to poll silently.
 func (f form) SilentPolling(value bool) form {
 	return f.set("silentPolling", value)
 }
 
-// Static 展示态时的className
+// Static sets the static display class name.
 func (f form) Static(value bool) form {
 	return f.set("static", value)
 }
 
-// StaticClassName css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" }
+// StaticClassName sets the static class name.
 func (f form) StaticClassName(value string) form {
 	return f.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticInputClassName sets the static input class name.
 func (f form) StaticInputClassName(value string) form {
 	return f.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticLabelClassName sets the static label class name.
 func (f form) StaticLabelClassName(value string) form {
 	return f.set("staticLabelClassName", value)
 }
 
-// StaticOn 表达式，语法 `data.xxx > 5`。
+// StaticOn sets the static display condition.
 func (f form) StaticOn(value string) form {
 	return f.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the static placeholder.
 func (f form) StaticPlaceholder(value string) form {
 	return f.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the static schema.
 func (f form) StaticSchema(value string) form {
 	return f.set("staticSchema", value)
 }
 
-// StopAutoRefreshWhen 配置停止轮询的条件
+// StopAutoRefreshWhen sets the condition to stop auto-refresh.
 func (f form) StopAutoRefreshWhen(value string) form {
 	return f.set("stopAutoRefreshWhen", value)
 }
 
-// Style 组件样式
+// Style sets the component style.
 func (f form) Style(value any) form {
 	return f.set("style", value)
 }
 
-// SubmitOnChange 修改的时候是否直接提交表单
+// SubmitOnChange sets whether to submit the form on change.
 func (f form) SubmitOnChange(value bool) form {
 	return f.set("submitOnChange", value)
 }
 
-// SubmitOnInit 表单初始先提交一次，联动的时候有用
+// SubmitOnInit sets whether to submit the form on initialization.
 func (f form) SubmitOnInit(value bool) form {
 	return f.set("submitOnInit", value)
 }
 
-// SubmitText 默认的提交按钮名称，如果设置成空，则可以把默认按钮去掉
+// SubmitText sets the default submit button text.
 func (f form) SubmitText(value string) form {
 	return f.set("submitText", value)
 }
 
-// Tabs 表单选项卡
+// Tabs sets the form tabs.
 func (f form) Tabs(value string) form {
 	return f.set("tabs", value)
 }
 
-// Target 默认表单提交自己会通过发送 api 保存数据，但是也可以设定另外一个 form 的 name 值，或者另外一个 `CRUD` 模型的 name 值。如果 target 目标是一个 `Form`，则目标 `Form` 会重新触发 `initApi` 和 `schemaApi`，api 可以拿到当前 form 数据。如果目标是一个 `CRUD` 模型，则目标模型会重新触发搜索，参数为当前 Form 数据
+// Target sets the target form or CRUD model name.
 func (f form) Target(value string) form {
 	return f.set("target", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder.
 func (f form) TestIdBuilder(value string) form {
 	return f.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID.
 func (f form) Testid(value string) form {
 	return f.set("testid", value)
 }
 
-// Title 表单标题
+// Title sets the form title.
 func (f form) Title(value string) form {
 	return f.set("title", value)
 }
 
-// ColumnCount 表单显示的列数
+// ColumnCount sets the number of columns.
 func (f form) ColumnCount(value int) form {
 	return f.set("columnCount", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI.
 func (f form) UseMobileUI(value bool) form {
 	return f.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the form is visible.
 func (f form) Visible(value bool) form {
 	return f.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the visibility condition.
 func (f form) VisibleOn(value string) form {
 	return f.set("visibleOn", value)
 }
 
-// WrapWithPanel 是否用 panel 包裹起来
+// WrapWithPanel sets whether to wrap the form with a panel.
 func (f form) WrapWithPanel(value bool) form {
 	return f.set("wrapWithPanel", value)
 }
 
-// Actions
+// Actions sets the form actions.
 func (f form) Actions(value ...action) form {
 	return f.set("actions", value)
 }
 
-// InitApi 用来获取初始数据的 api
+// InitApi sets the API to fetch initial data.
 func (f form) InitApi(value any) form {
 	return f.set("initApi", value)
 }
 
-// Api 用来保存数据的 api
+// Api sets the API to save data.
 func (f form) Api(value any) form {
 	return f.set("api", value)
 }
 
-// GetData 通过内置 api 获取数据
+// GetData fetches data using the provided getter function.
 func (s form) GetData(getter func() (any, error)) form {
 	return s.Api(serveData(getter))
 }
 
-// Submit 设置表单提交后的回调逻辑，使用通用的 Data 类型处理表单数据
-// 适用于需要灵活处理表单提交的场景
+// Submit sets the callback logic after form submission, using the generic Data type to handle form data
+// Suitable for scenarios where flexible handling of form submission is required
 func (f form) Submit(callback func(Data) error) form {
 	return f.Api(bindDataRoute(callback))
 }
 
-// SubmitTo 将表单数据提交到指定的结构体或映射，并执行自定义回调
-// receiver 可以是结构体指针、map 或其他可以被 JSON 反序列化的类型
-// callback 允许对接收到的数据进行进一步处理
+// SubmitTo submits the form data to the specified struct or map and executes a custom callback
+// receiver can be a struct pointer, map, or other types that can be deserialized from JSON
+// callback allows further processing of the received data
 func (f form) SubmitTo(receiver any, callback func(any) error) form {
 	return f.Api(bindRouteTo(receiver, callback))
 }

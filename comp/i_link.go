@@ -11,76 +11,77 @@ func (nl MNavLink) set(key string, value any) MNavLink {
 	return nl
 }
 
-// Label 名称
+// Label sets the link label.
 func (nl MNavLink) Label(value string) MNavLink {
 	return nl.set("label", value)
 }
 
-// To 链接地址
+// To sets the link URL.
 func (nl MNavLink) To(value string) MNavLink {
 	return nl.set("to", value)
 }
 
-// Target 链接关系
+// Target sets the link target.
 func (nl MNavLink) Target(value string) MNavLink {
 	return nl.set("target", value)
 }
 
-// Icon 图标
+// Icon sets the link icon.
 func (nl MNavLink) Icon(value string) MNavLink {
 	return nl.set("icon", value)
 }
 
-// Children 子链接
+// Children sets the child links.
 func (nl MNavLink) Children(value ...MNavLink) MNavLink {
 	return nl.set("children", value)
 }
 
-// Unfolded 初始是否展开
+// Unfolded sets whether the link is initially unfolded.
 func (nl MNavLink) Unfolded(value ...MNavLink) MNavLink {
 	return nl.set("unfolded", value)
 }
 
-// Active 是否激活
+// Active sets whether the link is active.
 func (nl MNavLink) Active(value bool) MNavLink {
 	return nl.set("active", value)
 }
 
-// ActiveOn 是否激活的条件，留空将自动分析链接地址
+// ActiveOn sets the condition for the link to be active.
 func (nl MNavLink) ActiveOn(value string) MNavLink {
 	return nl.set("activeOn", value)
 }
 
-// Defer 标记是否为懒加载项
+// Defer sets whether the link is lazy-loaded.
 func (nl MNavLink) Defer(value bool) MNavLink {
 	return nl.set("defer", value)
 }
 
-// DeferApi 可以不配置，如果配置优先级更高
+// DeferApi sets the API for lazy-loading.
 func (nl MNavLink) DeferApi(value any) MNavLink {
 	return nl.set("deferApi", value)
 }
 
-// Diaabled 是否禁用
+// Disabled sets whether the link is disabled.
 func (nl MNavLink) Disabled(value bool) MNavLink {
 	return nl.set("disabled", value)
 }
 
-// DisabledTip 禁用提示信息
+// DisabledTip sets the tooltip text when the link is disabled.
 func (nl MNavLink) DisabledTip(value string) MNavLink {
 	return nl.set("disabledTip", value)
 }
 
-// ClassName 自定义样式
+// ClassName sets the custom CSS class.
 func (nl MNavLink) ClassName(value string) MNavLink {
 	return nl.set("className", value)
 }
 
-// Mode 菜菜单项模式 "" | "group" | "divider"
+// Mode sets the menu item mode.
 func (nl MNavLink) Mode(value string) MNavLink {
 	return nl.set("mode", value)
 }
 
+// Overflow sets the overflow property.
 func (nl MNavLink) Overflow(value any) MNavLink {
 	return nl.set("overflow", value)
 }

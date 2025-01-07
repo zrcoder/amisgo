@@ -1,9 +1,9 @@
 package comp
 
-// barcode 条形码渲染器
+// Barcode represents a barcode renderer
 type barcode Schema
 
-// Barcode 创建一个新的 Barcode 实例
+// Barcode creates a new Barcode instance
 func Barcode() barcode {
 	return make(barcode).set("type", "barcode")
 }
@@ -13,7 +13,7 @@ func (b barcode) set(key string, value any) barcode {
 	return b
 }
 
-// ClassName 设置外层类名
+// ClassName sets the CSS class name for the outer container
 func (b barcode) ClassName(value string) barcode {
 	return b.set("className", value)
 }

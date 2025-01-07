@@ -11,65 +11,66 @@ func (p MPageItem) set(key string, value any) MPageItem {
 	return p
 }
 
-// Label 菜单名称。
+// Label sets the menu name.
 func (p MPageItem) Label(value string) MPageItem {
 	return p.set("label", value)
 }
 
-// Icon 菜单图标，比如：fa fa-file.
+// Icon sets the menu icon, e.g., fa fa-file.
 func (p MPageItem) Icon(value string) MPageItem {
 	return p.set("icon", value)
 }
 
-// url 页面路由路径，当路由命中该路径时，启用当前页面。
-// 当路径不是 / 打头时，会连接父级路径。比如：父级的路径为 folder，而此时配置 pageA, 那么当页面地址为 /folder/pageA 时才会命中此页面。
-// 当路径是 / 开头如： /crud/list 时，则不会拼接父级路径。
-// 另外还支持 /crud/view/:id 这类带参数的路由，页面中可以通过 ${params.id} 取到此值。
+// Url sets the page route path. When the route matches this path, the current page is activated.
+// If the path does not start with /, it will be concatenated with the parent path. For example, if the parent path is folder and the current path is pageA,
+// the page will be activated when the address is /folder/pageA.
+// If the path starts with /, such as /crud/list, the parent path will not be concatenated.
+// It also supports routes with parameters like /crud/view/:id, and the value can be accessed in the page using ${params.id}.
 func (p MPageItem) Url(value string) MPageItem {
 	return p.set("url", value)
 }
 
-// Schema 页面的配置，具体配置为 comp.Page
+// Schema sets the page configuration.
 func (p MPageItem) Schema(value any) MPageItem {
 	return p.set("schema", value)
 }
 
-// SchemaApi 如果想通过接口拉取，请配置。返回路径为 json>data。schema 和 SchemaApi 只能二选一。
+// SchemaApi sets the API to fetch the schema.
 func (p MPageItem) SchemaApi(value string) MPageItem {
 	return p.set("schemaApi", value)
 }
 
-// Link 如果想配置个外部链接菜单，只需要配置 link 即可。
+// Link sets an external link for the menu.
 func (p MPageItem) Link(value string) MPageItem {
 	return p.set("link", value)
 }
 
-// Redirect 跳转，当命中当前页面时，跳转到目标页面。
+// Redirect sets the redirect target when the current page is hit.
 func (p MPageItem) Redirect(value string) MPageItem {
 	return p.set("redirect", value)
 }
 
-// Rewrite 改成渲染其他路径的页面，这个方式页面地址不会发生修改。
+// Rewrite sets the path to render another page without changing the URL.
 func (p MPageItem) Rewrite(value string) MPageItem {
 	return p.set("rewrite", value)
 }
 
-// IsDefaultPage 当你需要自定义 404 页面的时候有用，不要出现多个这样的页面，因为只有第一个才会有用。
+// IsDefaultPage sets the page as the custom 404 page.
 func (p MPageItem) IsDefaultPage(value bool) MPageItem {
 	return p.set("isDefaultPage", value)
 }
 
-// Visible 有些页面可能不想出现在菜单中，可以配置成 false，另外带参数的路由无需配置，直接就是不可见的。
+// Visible sets the visibility of the page in the menu.
 func (p MPageItem) Visible(value bool) MPageItem {
 	return p.set("visible", value)
 }
 
-// ClassName 菜单类名。
+// ClassName sets the menu class name.
 func (p MPageItem) ClassName(value string) MPageItem {
 	return p.set("className", value)
 }
 
-// Children 子页面
+// Children sets the subpages.
 func (p MPageItem) Children(value ...MPageItem) MPageItem {
 	return p.set("children", value)
 }

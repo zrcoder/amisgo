@@ -11,42 +11,42 @@ func (g MGridItem) set(key string, value any) MGridItem {
 	return g
 }
 
-// X 格子起始位置的横坐标
+// X sets the starting X coordinate
 func (g MGridItem) X(value int) MGridItem {
 	return g.set("x", value)
 }
 
-// Y 格子起始位置的纵坐标
+// Y sets the starting Y coordinate
 func (g MGridItem) Y(value int) MGridItem {
 	return g.set("y", value)
 }
 
-// W 格子横跨几个宽度
+// W sets the width span
 func (g MGridItem) W(value int) MGridItem {
 	return g.set("w", value)
 }
 
-// H 格子纵跨几个高度
+// H sets the height span
 func (g MGridItem) H(value int) MGridItem {
 	return g.set("h", value)
 }
 
-// Width 格子所在列的宽度 int/string/"auto"
+// Width sets the column width (int/string/"auto")
 func (g MGridItem) Width(value any) MGridItem {
 	return g.set("width", value)
 }
 
-// Height 格子所在行的高度 int/string/"auto"
+// Height sets the row height (int/string/"auto")
 func (g MGridItem) Height(value any) MGridItem {
-	return g.set("width", value)
+	return g.set("height", value)
 }
 
-// Align 格子内容水平布局 left｜ center ｜ right ｜ auto
+// Align sets the horizontal alignment (left/center/right/auto)
 func (g MGridItem) Align(value string) MGridItem {
 	return g.set("align", value)
 }
 
-// Valign 格子内容垂直布局 top | bottom | middle ｜ auto
+// Valign sets the vertical alignment (top/bottom/middle/auto)
 func (g MGridItem) Valign(value string) MGridItem {
 	return g.set("valign", value)
 }

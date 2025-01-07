@@ -1,9 +1,9 @@
 package comp
 
-// avatar 头像渲染器
+// Avatar represents an avatar renderer
 type avatar Schema
 
-// Avatar 创建一个新的 Avatar 实例
+// Avatar creates a new Avatar instance with default cross-origin settings
 func Avatar() avatar {
 	return make(avatar).set("type", "avatar").set("crossOrigin", "anonymous")
 }
@@ -13,172 +13,172 @@ func (a avatar) set(key string, value any) avatar {
 	return a
 }
 
-// Alt 设置图片无法显示时的替换文字地址
+// Alt sets the alternative text for when the image cannot be displayed
 func (a avatar) Alt(value string) avatar {
 	return a.set("alt", value)
 }
 
-// Badge 设置角标
+// Badge configures the badge for the avatar
 func (a avatar) Badge(value string) avatar {
 	return a.set("badge", value)
 }
 
-// ClassName 设置类名
+// ClassName sets the CSS class name
 func (a avatar) ClassName(value string) avatar {
 	return a.set("className", value)
 }
 
-// CrossOrigin 设置图片CORS属性
+// CrossOrigin sets the CORS attribute for the image
 func (a avatar) CrossOrigin(value string) avatar {
 	return a.set("crossOrigin", value)
 }
 
-// DefaultAvatar 设置默认头像
+// DefaultAvatar sets the default avatar image
 func (a avatar) DefaultAvatar(value string) avatar {
 	return a.set("defaultAvatar", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled enables or disables the avatar component
 func (a avatar) Disabled(value bool) avatar {
 	return a.set("disabled", value)
 }
 
-// DisabledOn 设置是否禁用表达式
+// DisabledOn sets a conditional expression for disabling the avatar
 func (a avatar) DisabledOn(value string) avatar {
 	return a.set("disabledOn", value)
 }
 
-// Draggable 设置图片是否允许拖动
+// Draggable allows or prevents image dragging
 func (a avatar) Draggable(value bool) avatar {
 	return a.set("draggable", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting configures editor-specific settings (ignored during runtime)
 func (a avatar) EditorSetting(value string) avatar {
 	return a.set("editorSetting", value)
 }
 
-// Fit 设置图片相对于容器的缩放方式
+// Fit sets the image scaling method relative to the container
 func (a avatar) Fit(value string) avatar {
 	return a.set("fit", value)
 }
 
-// Gap 设置字符类型距离左右两侧边界单位像素
+// Gap sets the pixel distance for character-type avatars from left and right boundaries
 func (a avatar) Gap(value string) avatar {
 	return a.set("gap", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden controls the visibility of the avatar
 func (a avatar) Hidden(value bool) avatar {
 	return a.set("hidden", value)
 }
 
-// HiddenOn 设置是否隐藏表达式
+// HiddenOn sets a conditional expression for hiding the avatar
 func (a avatar) HiddenOn(value string) avatar {
 	return a.set("hiddenOn", value)
 }
 
-// Icon 设置图标
+// Icon sets the icon for the avatar
 func (a avatar) Icon(value string) avatar {
 	return a.set("icon", value)
 }
 
-// ID 设置组件唯一 id
+// ID sets a unique identifier for the component
 func (a avatar) ID(value string) avatar {
 	return a.set("id", value)
 }
 
-// OnError 设置图片加载失败的处理
+// OnError configures error handling for image loading failures
 func (a avatar) OnError(value string) avatar {
 	return a.set("onError", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent configures event-driven actions
 func (a avatar) OnEvent(value any) avatar {
 	return a.set("onEvent", value)
 }
 
-// Shape 设置形状
+// Shape sets the avatar shape
 func (a avatar) Shape(value string) avatar {
 	return a.set("shape", value)
 }
 
-// Size 设置大小
+// Size sets the avatar size
 func (a avatar) Size(value string) avatar {
 	return a.set("size", value)
 }
 
-// Src 设置图片地址
+// Src sets the image source URL
 func (a avatar) Src(value string) avatar {
 	return a.set("src", value)
 }
 
-// Static 设置是否静态展示
+// Static determines if the avatar is statically displayed
 func (a avatar) Static(value bool) avatar {
 	return a.set("static", value)
 }
 
-// StaticClassName 设置静态展示表单项类名
+// StaticClassName sets the CSS class for static display
 func (a avatar) StaticClassName(value string) avatar {
 	return a.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置静态展示表单项Value类名
+// StaticInputClassName sets the CSS class for static input display
 func (a avatar) StaticInputClassName(value string) avatar {
 	return a.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置静态展示表单项Label类名
+// StaticLabelClassName sets the CSS class for static label display
 func (a avatar) StaticLabelClassName(value string) avatar {
 	return a.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置是否静态展示表达式
+// StaticOn sets a conditional expression for static display
 func (a avatar) StaticOn(value string) avatar {
 	return a.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置静态展示空值占位
+// StaticPlaceholder defines a placeholder for empty static values
 func (a avatar) StaticPlaceholder(value string) avatar {
 	return a.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置静态展示模式
+// StaticSchema sets the schema for static display
 func (a avatar) StaticSchema(value string) avatar {
 	return a.set("staticSchema", value)
 }
 
-// Style 设置自定义样式
+// Style sets custom inline styles
 func (a avatar) Style(value any) avatar {
 	return a.set("style", value)
 }
 
-// TestIdBuilder 设置测试 ID 构建器
+// TestIdBuilder configures test ID generation
 func (a avatar) TestIdBuilder(value string) avatar {
 	return a.set("testIdBuilder", value)
 }
 
-// Testid 设置测试 ID
+// Testid sets a specific test identifier
 func (a avatar) Testid(value string) avatar {
 	return a.set("testid", value)
 }
 
-// Text 设置文本
+// Text sets the text content for the avatar
 func (a avatar) Text(value string) avatar {
 	return a.set("text", value)
 }
 
-// UseMobileUI 设置是否使用移动端样式
+// UseMobileUI enables or disables mobile-specific styling
 func (a avatar) UseMobileUI(value bool) avatar {
 	return a.set("useMobileUI", value)
 }
 
-// Visible 设置是否显示
+// Visible controls the overall visibility of the avatar
 func (a avatar) Visible(value bool) avatar {
 	return a.set("visible", value)
 }
 
-// VisibleOn 设置显示条件表达式
+// VisibleOn sets a conditional expression for avatar visibility
 func (a avatar) VisibleOn(value string) avatar {
 	return a.set("visibleOn", value)
 }

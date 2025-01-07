@@ -1,9 +1,9 @@
 package comp
 
-// buttonGroup 代表按钮组渲染器
+// ButtonGroup represents a button group renderer
 type buttonGroup Schema
 
-// ButtonGroup 创建一个新的 ButtonGroup 实例
+// ButtonGroup creates a new ButtonGroup instance
 func ButtonGroup() buttonGroup {
 	return make(buttonGroup).set("type", "button-group")
 }
@@ -13,149 +13,149 @@ func (br buttonGroup) set(key string, value any) buttonGroup {
 	return br
 }
 
-// BtnActiveClassName 设置按钮激活状态的类名
+// BtnActiveClassName sets the CSS class name for button active state
 func (bg buttonGroup) BtnActiveClassName(value string) buttonGroup {
 	return bg.set("btnActiveClassName", value)
 }
 
-// BtnActiveLevel 设置按钮选中的样式级别
-// 'link' | 'primary' | 'secondary' | 'info'|'success' | 'warning' | 'danger' | 'light'| 'dark' | 'default'
+// BtnActiveLevel sets the style level for selected buttons
+// Supported values: 'link' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'default'
 func (bg buttonGroup) BtnActiveLevel(value string) buttonGroup {
 	return bg.set("btnActiveLevel", value)
 }
 
-// BtnClassName 设置按钮的 CSS 类名
+// BtnClassName sets the CSS class name for buttons
 func (bg buttonGroup) BtnClassName(value string) buttonGroup {
 	return bg.set("btnClassName", value)
 }
 
-// BtnLevel 设置按钮样式级别
-// 'link' | 'primary' | 'secondary' | 'info'|'success' | 'warning' | 'danger' | 'light'| 'dark' | 'default'
+// BtnLevel sets the style level for buttons
+// Supported values: 'link' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger' | 'light' | 'dark' | 'default'
 func (bg buttonGroup) BtnLevel(value string) buttonGroup {
 	return bg.set("btnLevel", value)
 }
 
-// Buttons 设置按钮集合
+// Buttons configures the collection of buttons
 func (bg buttonGroup) Buttons(value ...any) buttonGroup {
 	return bg.set("buttons", value)
 }
 
-// ClassName 设置容器的 CSS 类名
+// ClassName sets the CSS class name for the container
 func (bg buttonGroup) ClassName(value string) buttonGroup {
 	return bg.set("className", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled enables or disables the button group
 func (bg buttonGroup) Disabled(value bool) buttonGroup {
 	return bg.set("disabled", value)
 }
 
-// DisabledOn 设置通过 JS 表达式来配置禁用状态
+// DisabledOn configures the disabled state using a JavaScript expression
 func (bg buttonGroup) DisabledOn(value string) buttonGroup {
 	return bg.set("disabledOn", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting configures editor-specific settings
 func (bg buttonGroup) EditorSetting(value string) buttonGroup {
 	return bg.set("editorSetting", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden controls the visibility of the button group
 func (bg buttonGroup) Hidden(value bool) buttonGroup {
 	return bg.set("hidden", value)
 }
 
-// HiddenOn 设置是否隐藏的表达式
+// HiddenOn sets a conditional expression for hiding the button group
 func (bg buttonGroup) HiddenOn(value string) buttonGroup {
 	return bg.set("hiddenOn", value)
 }
 
-// Id 设置组件唯一 ID
+// ID sets a unique identifier for the component
 func (bg buttonGroup) ID(value string) buttonGroup {
 	return bg.set("id", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent configures event-driven actions
 func (bg buttonGroup) OnEvent(value any) buttonGroup {
 	return bg.set("onEvent", value)
 }
 
-// Size 设置按钮大小
+// Size sets the button size
 func (bg buttonGroup) Size(value string) buttonGroup {
 	return bg.set("size", value)
 }
 
-// Static 设置是否静态展示
+// Static determines if the button group is statically displayed
 func (bg buttonGroup) Static(value bool) buttonGroup {
 	return bg.set("static", value)
 }
 
-// StaticClassName 设置静态展示表单项的 CSS 类名
+// StaticClassName sets the CSS class name for static display
 func (bg buttonGroup) StaticClassName(value string) buttonGroup {
 	return bg.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置静态展示表单项的 Value 类名
+// StaticInputClassName sets the CSS class name for static input display
 func (bg buttonGroup) StaticInputClassName(value string) buttonGroup {
 	return bg.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置静态展示表单项的 Label 类名
+// StaticLabelClassName sets the CSS class name for static label display
 func (bg buttonGroup) StaticLabelClassName(value string) buttonGroup {
 	return bg.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置静态展示的表达式
+// StaticOn sets a conditional expression for static display
 func (bg buttonGroup) StaticOn(value string) buttonGroup {
 	return bg.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置静态展示的空值占位
+// StaticPlaceholder defines a placeholder for empty static values
 func (bg buttonGroup) StaticPlaceholder(value string) buttonGroup {
 	return bg.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置静态展示的 Schema
+// StaticSchema sets the schema for static display
 func (bg buttonGroup) StaticSchema(value string) buttonGroup {
 	return bg.set("staticSchema", value)
 }
 
-// Style 设置组件样式
+// Style sets custom inline styles
 func (bg buttonGroup) Style(value any) buttonGroup {
 	return bg.set("style", value)
 }
 
-// TestIdBuilder 设置测试 ID 构建器
+// TestIdBuilder configures test ID generation
 func (bg buttonGroup) TestIdBuilder(value string) buttonGroup {
 	return bg.set("testIdBuilder", value)
 }
 
-// Testid 设置测试 ID
+// Testid sets a specific test identifier
 func (bg buttonGroup) Testid(value string) buttonGroup {
 	return bg.set("testid", value)
 }
 
-// Tiled 设置平铺展示
+// Tiled enables or disables tiled display
 func (bg buttonGroup) Tiled(value bool) buttonGroup {
 	return bg.set("tiled", value)
 }
 
-// UseMobileUI 设置是否使用移动端 UI 样式
+// UseMobileUI enables or disables mobile UI styling
 func (bg buttonGroup) UseMobileUI(value bool) buttonGroup {
 	return bg.set("useMobileUI", value)
 }
 
-// Vertical 设置是否垂直展示
+// Vertical controls vertical or horizontal layout
 func (bg buttonGroup) Vertical(value bool) buttonGroup {
 	return bg.set("vertical", value)
 }
 
-// Visible 设置是否显示
+// Visible controls the overall visibility of the button group
 func (bg buttonGroup) Visible(value bool) buttonGroup {
 	return bg.set("visible", value)
 }
 
-// VisibleOn 设置通过 JS 表达式来配置当前表单项是否显示
+// VisibleOn sets a conditional expression for button group visibility
 func (bg buttonGroup) VisibleOn(value string) buttonGroup {
 	return bg.set("visibleOn", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-// code
+// Code represents a code display and editing component
 type code Schema
 
-// Code 创建一个新的 Code 实例
+// Code creates a new Code instance
 func Code() code {
 	return make(code).set("type", "code")
 }
@@ -13,37 +13,37 @@ func (c code) set(key string, value any) code {
 	return c
 }
 
-// ClassName 设置 className 属性
+// ClassName sets the CSS class name for the code component
 func (c code) ClassName(value string) code {
 	return c.set("className", value)
 }
 
-// EditorTheme 设置 editorTheme 属性
+// EditorTheme sets the syntax highlighting theme for the code editor
 func (c code) EditorTheme(value string) code {
 	return c.set("editorTheme", value)
 }
 
-// Language 设置 language 属性
+// Language sets the programming language for syntax highlighting
 func (c code) Language(value string) code {
 	return c.set("language", value)
 }
 
-// Name 设置 name 属性
+// Name sets the field name for the code component
 func (c code) Name(value string) code {
 	return c.set("name", value)
 }
 
-// TabSize 设置 tabSize 属性
+// TabSize sets the number of spaces for a single tab indentation
 func (c code) TabSize(value string) code {
 	return c.set("tabSize", value)
 }
 
-// Value 设置 value 属性
+// Value sets the initial code content to be displayed
 func (c code) Value(value string) code {
 	return c.set("value", value)
 }
 
-// WordWrap 设置 wordWrap 属性
+// WordWrap enables or disables automatic line wrapping in the code editor
 func (c code) WordWrap(value bool) code {
 	return c.set("wordWrap", value)
 }

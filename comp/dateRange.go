@@ -1,9 +1,9 @@
 package comp
 
-// dateRange 展示渲染器
+// dateRange represents a date range renderer
 type dateRange Schema
 
-// DateRange 创建一个新的 DateRange 实例，并设置默认的 type
+// DateRange creates a new DateRange instance with default type set to "date-range"
 func DateRange() dateRange {
 	return make(dateRange).set("type", "date-range")
 }
@@ -13,132 +13,132 @@ func (d dateRange) set(key string, value any) dateRange {
 	return d
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the CSS class name for the container
 func (d dateRange) ClassName(value string) dateRange {
 	return d.set("className", value)
 }
 
-// Connector 连接符
+// Connector sets the connector for the date range
 func (d dateRange) Connector(value string) dateRange {
 	return d.set("connector", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the delimiter for the date range
 func (d dateRange) Delimiter(value string) dateRange {
 	return d.set("delimiter", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the date range is disabled
 func (d dateRange) Disabled(value bool) dateRange {
 	return d.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets a conditional expression for disabling the date range
 func (d dateRange) DisabledOn(value string) dateRange {
 	return d.set("disabledOn", value)
 }
 
-// DisplayFormat 展示的时间格式
+// DisplayFormat sets the display format for the date range
 func (d dateRange) DisplayFormat(value string) dateRange {
 	return d.set("displayFormat", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting configures editor-specific settings
 func (d dateRange) EditorSetting(value string) dateRange {
 	return d.set("editorSetting", value)
 }
 
-// Format 展示的时间格式
+// Format sets the format for the date range
 func (d dateRange) Format(value string) dateRange {
 	return d.set("format", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the date range is hidden
 func (d dateRange) Hidden(value bool) dateRange {
 	return d.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets a conditional expression for hiding the date range
 func (d dateRange) HiddenOn(value string) dateRange {
 	return d.set("hiddenOn", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique identifier for the date range component
 func (d dateRange) ID(value string) dateRange {
 	return d.set("id", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent configures event-driven actions
 func (d dateRange) OnEvent(value any) dateRange {
 	return d.set("onEvent", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the date range is statically displayed
 func (d dateRange) Static(value bool) dateRange {
 	return d.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the CSS class name for static display
 func (d dateRange) StaticClassName(value string) dateRange {
 	return d.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the CSS class name for static input display
 func (d dateRange) StaticInputClassName(value string) dateRange {
 	return d.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the CSS class name for static label display
 func (d dateRange) StaticLabelClassName(value string) dateRange {
 	return d.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets a conditional expression for static display
 func (d dateRange) StaticOn(value string) dateRange {
 	return d.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder defines a placeholder for empty static values
 func (d dateRange) StaticPlaceholder(value string) dateRange {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示 schema
+// StaticSchema sets the schema for static display
 func (d dateRange) StaticSchema(value string) dateRange {
 	return d.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets custom inline styles
 func (d dateRange) Style(value any) dateRange {
 	return d.set("style", value)
 }
 
-// TestIdBuilder 测试 id 构建器
+// TestIdBuilder configures test ID generation
 func (d dateRange) TestIdBuilder(value string) dateRange {
 	return d.set("testIdBuilder", value)
 }
 
-// TestID 测试 id
+// TestID sets a specific test identifier
 func (d dateRange) TestID(value string) dateRange {
 	return d.set("testid", value)
 }
 
-// UseMobileUI 关闭移动端样式
+// UseMobileUI sets whether to use mobile UI
 func (d dateRange) UseMobileUI(value bool) dateRange {
 	return d.set("useMobileUI", value)
 }
 
-// ValueFormat 值的时间格式
+// ValueFormat sets the format for the date range value
 func (d dateRange) ValueFormat(value string) dateRange {
 	return d.set("valueFormat", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the date range is visible
 func (d dateRange) Visible(value bool) dateRange {
 	return d.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets a conditional expression for visibility
 func (d dateRange) VisibleOn(value string) dateRange {
 	return d.set("visibleOn", value)
 }

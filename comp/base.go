@@ -3,7 +3,6 @@ package comp
 import js "encoding/json"
 
 type (
-	// Schema 通用 model，键未指定的 map
 	Schema map[string]any
 	Data   = Schema
 )

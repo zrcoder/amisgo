@@ -1,9 +1,9 @@
 package comp
 
-// expandable 表示可展开的渲染器
+// expandable represents an expandable renderer
 type expandable Schema
 
-// Expandable 创建一个新的 Expandable 实例
+// Expandable creates a new instance of expandable
 func Expandable() expandable {
 	return make(expandable)
 }
@@ -13,27 +13,27 @@ func (e expandable) set(key string, value any) expandable {
 	return e
 }
 
-// ExpandableOn 行是否可展开表达式
+// ExpandableOn sets the expression for whether a row is expandable
 func (e expandable) ExpandableOn(value string) expandable {
 	return e.set("expandableOn", value)
 }
 
-// ExpandedRowClassNameExpr 展开行自定义样式表达式
+// ExpandedRowClassNameExpr sets the expression for the expanded row class name
 func (e expandable) ExpandedRowClassNameExpr(value string) expandable {
 	return e.set("expandedRowClassNameExpr", value)
 }
 
-// ExpandedRowKeys 已展开的 key 值
+// ExpandedRowKeys sets the keys of the expanded rows
 func (e expandable) ExpandedRowKeys(value string) expandable {
 	return e.set("expandedRowKeys", value)
 }
 
-// ExpandedRowKeysExpr 已展开的 key 值表达式
+// ExpandedRowKeysExpr sets the expression for the keys of the expanded rows
 func (e expandable) ExpandedRowKeysExpr(value string) expandable {
 	return e.set("expandedRowKeysExpr", value)
 }
 
-// KeyField 对应数据源的 key 值
+// KeyField sets the key field corresponding to the data source
 func (e expandable) KeyField(value string) expandable {
 	return e.set("keyField", value)
 }

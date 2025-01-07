@@ -1,85 +1,85 @@
 package comp
 
-// MOption 选项
+// MOption represents an option schema
 type MOption Schema
 
-// Option 创建一个新的 Option 实例
+// Option creates a new MOption instance
 func Option() MOption {
 	return MOption{}
 }
 
-// Set 设置字段值
+// Set sets a field value
 func (o MOption) Set(key string, value any) MOption {
 	o[key] = value
 	return o
 }
 
-// Children 支持嵌套
+// Children supports nested options
 func (o MOption) Children(value ...MOption) MOption {
 	return o.Set("children", value)
 }
 
-// Defer 标记后数据延时加载
+// Defer marks data for deferred loading
 func (o MOption) Defer(value bool) MOption {
 	return o.Set("defer", value)
 }
 
-// DeferApi 如果设置了，优先级更高，不设置走 source 接口加载
+// DeferApi sets a higher priority API for deferred loading
 func (o MOption) DeferApi(value string) MOption {
 	return o.Set("deferApi", value)
 }
 
-// Description 描述，部分控件支持
+// Description sets a description
 func (o MOption) Description(value string) MOption {
 	return o.Set("description", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets the disabled state
 func (o MOption) Disabled(value bool) MOption {
 	return o.Set("disabled", value)
 }
 
-// Hidden 最好不要用！因为有 visible 就够了
+// Hidden sets the hidden state (use visible instead)
 func (o MOption) Hidden(value bool) MOption {
 	return o.Set("hidden", value)
 }
 
-// Label 用来显示的文字
+// Label sets the display text
 func (o MOption) Label(value string) MOption {
 	return o.Set("label", value)
 }
 
-// Loaded 只有设置了 defer 才有意义，内部字段不可以外部设置
+// Loaded indicates if deferred loading is complete (internal use only)
 func (o MOption) Loaded(value bool) MOption {
 	return o.Set("loaded", value)
 }
 
-// Loading 标记正在加载。只有 defer 为 true 时有意义。内部字段不可以外部设置
+// Loading marks as loading (internal use only)
 func (o MOption) Loading(value bool) MOption {
 	return o.Set("loading", value)
 }
 
-// ScopeLabel 可以用来给 Option 标记个范围，让数据展示更清晰。这个只有在数值展示的时候显示
+// ScopeLabel sets a scope label for clearer data display
 func (o MOption) ScopeLabel(value string) MOption {
 	return o.Set("scopeLabel", value)
 }
 
-// Value 请保证数值唯一，多个选项值一致会认为是同一个选项
+// Value sets a unique value for the option
 func (o MOption) Value(value any) MOption {
 	return o.Set("value", value)
 }
 
-// Visible 是否可见
+// Visible sets the visibility state
 func (o MOption) Visible(value bool) MOption {
 	return o.Set("visible", value)
 }
 
-// Image 图片路径
+// Image sets the image path
 func (o MOption) Image(value string) MOption {
 	return o.Set("image", value)
 }
 
-// Body
+// Body sets the body content
 func (o MOption) Body(value any) MOption {
 	return o.Set("body", value)
 }

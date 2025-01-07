@@ -1,9 +1,9 @@
 package comp
 
-// calendar
+// Calendar represents a calendar component renderer
 type calendar Schema
 
-// Calendar 创建一个新的 Calendar 实例
+// Calendar creates a new Calendar instance
 func Calendar() calendar {
 	return make(calendar).set("type", "calendar")
 }
@@ -13,132 +13,132 @@ func (c calendar) set(key string, value any) calendar {
 	return c
 }
 
-// ClassName 设置 className 属性
+// ClassName sets the CSS class name for the calendar
 func (c calendar) ClassName(value string) calendar {
 	return c.set("className", value)
 }
 
-// Disabled 设置 disabled 属性
+// Disabled enables or disables the calendar component
 func (c calendar) Disabled(value bool) calendar {
 	return c.set("disabled", value)
 }
 
-// DisabledOn 设置 disabledOn 属性
+// DisabledOn sets a conditional expression for disabling the calendar
 func (c calendar) DisabledOn(value string) calendar {
 	return c.set("disabledOn", value)
 }
 
-// EditorSetting 设置 editorSetting 属性
+// EditorSetting configures editor-specific settings
 func (c calendar) EditorSetting(value string) calendar {
 	return c.set("editorSetting", value)
 }
 
-// Hidden 设置 hidden 属性
+// Hidden controls the visibility of the calendar
 func (c calendar) Hidden(value bool) calendar {
 	return c.set("hidden", value)
 }
 
-// HiddenOn 设置 hiddenOn 属性
+// HiddenOn sets a conditional expression for hiding the calendar
 func (c calendar) HiddenOn(value string) calendar {
 	return c.set("hiddenOn", value)
 }
 
-// ID 设置 id 属性
+// ID sets a unique identifier for the calendar component
 func (c calendar) ID(value string) calendar {
 	return c.set("id", value)
 }
 
-// LargeMode 设置 largeMode 属性
+// LargeMode enables or disables large display mode
 func (c calendar) LargeMode(value bool) calendar {
 	return c.set("largeMode", value)
 }
 
-// OnEvent 设置 onEvent 属性
+// OnEvent configures event-driven actions
 func (c calendar) OnEvent(value any) calendar {
 	return c.set("onEvent", value)
 }
 
-// ScheduleAction 设置 scheduleAction 属性
+// ScheduleAction sets the action for schedule-related interactions
 func (c calendar) ScheduleAction(value string) calendar {
 	return c.set("scheduleAction", value)
 }
 
-// ScheduleClassNames 设置 scheduleClassNames 属性
+// ScheduleClassNames sets CSS class names for schedule elements
 func (c calendar) ScheduleClassNames(value string) calendar {
 	return c.set("scheduleClassNames", value)
 }
 
-// Schedules 设置 schedules 属性
+// Schedules configures the calendar's schedule data
 func (c calendar) Schedules(value string) calendar {
 	return c.set("schedules", value)
 }
 
-// Static 设置 static 属性
+// Static determines if the calendar is statically displayed
 func (c calendar) Static(value bool) calendar {
 	return c.set("static", value)
 }
 
-// StaticClassName 设置 staticClassName 属性
+// StaticClassName sets the CSS class name for static display
 func (c calendar) StaticClassName(value string) calendar {
 	return c.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置 staticInputClassName 属性
+// StaticInputClassName sets the CSS class name for static input display
 func (c calendar) StaticInputClassName(value string) calendar {
 	return c.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置 staticLabelClassName 属性
+// StaticLabelClassName sets the CSS class name for static label display
 func (c calendar) StaticLabelClassName(value string) calendar {
 	return c.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置 staticOn 属性
+// StaticOn sets a conditional expression for static display
 func (c calendar) StaticOn(value string) calendar {
 	return c.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置 staticPlaceholder 属性
+// StaticPlaceholder defines a placeholder for empty static values
 func (c calendar) StaticPlaceholder(value string) calendar {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置 staticSchema 属性
+// StaticSchema sets the schema for static display
 func (c calendar) StaticSchema(value string) calendar {
 	return c.set("staticSchema", value)
 }
 
-// Style 设置 style 属性
+// Style sets custom inline styles
 func (c calendar) Style(value any) calendar {
 	return c.set("style", value)
 }
 
-// TestIdBuilder 设置 testIdBuilder 属性
+// TestIdBuilder configures test ID generation
 func (c calendar) TestIdBuilder(value string) calendar {
 	return c.set("testIdBuilder", value)
 }
 
-// TestID 设置 testid 属性
+// TestID sets a specific test identifier
 func (c calendar) TestID(value string) calendar {
 	return c.set("testid", value)
 }
 
-// TodayActiveStyle 设置 todayActiveStyle 属性
+// TodayActiveStyle sets the style for the current day's active state
 func (c calendar) TodayActiveStyle(value any) calendar {
 	return c.set("todayActiveStyle", value)
 }
 
-// UseMobileUI 设置 useMobileUI 属性
+// UseMobileUI enables or disables mobile UI styling
 func (c calendar) UseMobileUI(value bool) calendar {
 	return c.set("useMobileUI", value)
 }
 
-// Visible 设置 visible 属性
+// Visible controls the overall visibility of the calendar
 func (c calendar) Visible(value bool) calendar {
 	return c.set("visible", value)
 }
 
-// VisibleOn 设置 visibleOn 属性
+// VisibleOn sets a conditional expression for calendar visibility
 func (c calendar) VisibleOn(value string) calendar {
 	return c.set("visibleOn", value)
 }

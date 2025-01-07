@@ -1,9 +1,9 @@
 package comp
 
-// grid2d 二维布局渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/grid-2d
+// grid2d represents a 2D grid layout renderer.
 type grid2d Schema
 
-// Grid2D 创建一个新的 Grid2D 实例
+// Grid2D creates a new Grid2D instance.
 func Grid2D() grid2d {
 	return make(grid2d).set("type", "grid-2d")
 }
@@ -13,137 +13,137 @@ func (g grid2d) set(key string, value any) grid2d {
 	return g
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// ClassName sets the CSS class name for the container.
 func (g grid2d) ClassName(value string) grid2d {
 	return g.set("gridClassName", value)
 }
 
-// Cols 列数量，默认是 12
+// Cols sets the number of columns, default is 12.
 func (g grid2d) Cols(value string) grid2d {
 	return g.set("cols", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the grid is disabled.
 func (g grid2d) Disabled(value bool) grid2d {
 	return g.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine if the grid is disabled.
 func (g grid2d) DisabledOn(value string) grid2d {
 	return g.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, ignored at runtime.
 func (g grid2d) EditorSetting(value string) grid2d {
 	return g.set("editorSetting", value)
 }
 
-// Gap 格子间距，默认 0，包含行和列
+// Gap sets the gap between grid items, default is 0.
 func (g grid2d) Gap(value string) grid2d {
 	return g.set("gap", value)
 }
 
-// RowGap 格子垂直间距
+// RowGap sets the vertical gap between grid items.
 func (g grid2d) RowGap(value string) grid2d {
 	return g.set("rowGap", value)
 }
 
-// Grids 每个格子的配置
+// Grids sets the configuration for each grid item.
 func (g grid2d) Grids(value ...MGridItem) grid2d {
 	return g.set("grids", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the grid is hidden.
 func (g grid2d) Hidden(value bool) grid2d {
 	return g.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine if the grid is hidden.
 func (g grid2d) HiddenOn(value string) grid2d {
 	return g.set("hiddenOn", value)
 }
 
-// ID 组件唯一 id，主要用于日志采集
+// ID sets the unique ID for the component, mainly for logging.
 func (g grid2d) ID(value string) grid2d {
 	return g.set("id", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration.
 func (g grid2d) OnEvent(value any) grid2d {
 	return g.set("onEvent", value)
 }
 
-// RowHeight 单位行高度，默认 50 px
+// RowHeight sets the height of each row, default is 50px.
 func (g grid2d) RowHeight(value string) grid2d {
 	return g.set("rowHeight", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the grid is displayed statically.
 func (g grid2d) Static(value bool) grid2d {
 	return g.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticClassName sets the CSS class name for static display.
 func (g grid2d) StaticClassName(value string) grid2d {
 	return g.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticInputClassName sets the CSS class name for static input display.
 func (g grid2d) StaticInputClassName(value string) grid2d {
 	return g.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticLabelClassName sets the CSS class name for static label display.
 func (g grid2d) StaticLabelClassName(value string) grid2d {
 	return g.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine if the grid is displayed statically.
 func (g grid2d) StaticOn(value string) grid2d {
 	return g.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display.
 func (g grid2d) StaticPlaceholder(value string) grid2d {
 	return g.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示模式的 schema
+// StaticSchema sets the schema for static display mode.
 func (g grid2d) StaticSchema(value string) grid2d {
 	return g.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the style for the component.
 func (g grid2d) Style(value any) grid2d {
 	return g.set("style", value)
 }
 
-// TestIdBuilder 测试 id 构建器
+// TestIdBuilder sets the test ID builder.
 func (g grid2d) TestIdBuilder(value string) grid2d {
 	return g.set("testIdBuilder", value)
 }
 
-// Testid 测试 id
+// Testid sets the test ID.
 func (g grid2d) Testid(value string) grid2d {
 	return g.set("testid", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI styles.
 func (g grid2d) UseMobileUI(value bool) grid2d {
 	return g.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the grid is visible.
 func (g grid2d) Visible(value bool) grid2d {
 	return g.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine if the grid is visible.
 func (g grid2d) VisibleOn(value string) grid2d {
 	return g.set("visibleOn", value)
 }
 
-// Width grid 2d 容器宽度，默认是 auto
+// Width sets the width of the grid container, default is auto.
 func (g grid2d) Width(value string) grid2d {
 	return g.set("width", value)
 }

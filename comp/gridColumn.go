@@ -1,9 +1,9 @@
 package comp
 
-// gridColumn 表示一个网格列
+// gridColumn represents a grid column
 type gridColumn Schema
 
-// GridColumn 创建一个新的 GridColumn 实例
+// GridColumn creates a new gridColumn instance
 func GridColumn() gridColumn {
 	return make(gridColumn)
 }
@@ -13,67 +13,67 @@ func (c gridColumn) set(key string, value any) gridColumn {
 	return c
 }
 
-// Body 设置列的内容
+// Body sets the content of the column
 func (c gridColumn) Body(value ...any) gridColumn {
 	return c.set("body", value)
 }
 
-// ColumnClassName 列类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// ColumnClassName sets the CSS class name of the column
 func (c gridColumn) ColumnClassName(value string) gridColumn {
 	return c.set("columnClassName", value)
 }
 
-// Horizontal 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
+// Horizontal sets the horizontal width ratio for horizontal layout
 func (c gridColumn) Horizontal(value string) gridColumn {
 	return c.set("horizontal", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique ID of the component
 func (c gridColumn) ID(value string) gridColumn {
 	return c.set("id", value)
 }
 
-// Lg 大屏时(>=1200px)宽度占比
+// Lg sets the width ratio for large screens (>=1200px)
 func (c gridColumn) Lg(value string) gridColumn {
 	return c.set("lg", value)
 }
 
-// Md 中屏时(>=992px)宽度占比
+// Md sets the width ratio for medium screens (>=992px)
 func (c gridColumn) Md(value string) gridColumn {
 	return c.set("md", value)
 }
 
-// Mode 配置子表单项默认的展示方式。可选值: normal | inline | horizontal
+// Mode sets the default display mode of sub-form items
 func (c gridColumn) Mode(value string) gridColumn {
 	return c.set("mode", value)
 }
 
-// Sm 小屏时（>=768px）宽度占比
+// Sm sets the width ratio for small screens (>=768px)
 func (c gridColumn) Sm(value string) gridColumn {
 	return c.set("sm", value)
 }
 
-// Style 样式
+// Style sets the style of the column
 func (c gridColumn) Style(value any) gridColumn {
 	return c.set("style", value)
 }
 
-// ThemeCss 主题样式
+// ThemeCSS sets the theme CSS of the column
 func (c gridColumn) ThemeCSS(value any) gridColumn {
 	return c.set("themeCss", value)
 }
 
-// Valign 垂直对齐方式 可选值: top | middle | bottom | between
+// Valign sets the vertical alignment of the column
 func (c gridColumn) Valign(value string) gridColumn {
 	return c.set("valign", value)
 }
 
-// WrapperCustomStyle 自定义包装样式
+// WrapperCustomStyle sets the custom wrapper style of the column
 func (c gridColumn) WrapperCustomStyle(value any) gridColumn {
 	return c.set("wrapperCustomStyle", value)
 }
 
-// Xs 极小屏（<768px）时宽度占比
+// Xs sets the width ratio for extra small screens (<768px)
 func (c gridColumn) Xs(value string) gridColumn {
 	return c.set("xs", value)
 }

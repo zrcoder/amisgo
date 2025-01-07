@@ -1,9 +1,9 @@
 package comp
 
-// grid 格子布局渲染器
+// grid represents a grid layout renderer
 type grid Schema
 
-// Grid 创建一个新的 Grid 实例
+// Grid creates a new Grid instance
 func Grid() grid {
 	return make(grid).set("type", "grid")
 }
@@ -13,127 +13,127 @@ func (g grid) set(key string, value any) grid {
 	return g
 }
 
-// Align 水平对齐方式 'left' | 'right' | 'between' | 'center'
+// Align sets horizontal alignment: 'left', 'right', 'between', 'center'
 func (g grid) Align(value string) grid {
 	return g.set("align", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the CSS class name for the container
 func (g grid) ClassName(value string) grid {
 	return g.set("className", value)
 }
 
-// Columns 列集合
+// Columns sets the columns collection
 func (g grid) Columns(value ...any) grid {
 	return g.set("columns", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the grid is disabled
 func (g grid) Disabled(value bool) grid {
 	return g.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression to determine if the grid is disabled
 func (g grid) DisabledOn(value string) grid {
 	return g.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting sets the editor configuration
 func (g grid) EditorSetting(value string) grid {
 	return g.set("editorSetting", value)
 }
 
-// Gap 水平间距 'xs' | 'sm' | 'base' | 'none' | 'md' | 'lg'
+// Gap sets the horizontal gap: 'xs', 'sm', 'base', 'none', 'md', 'lg'
 func (g grid) Gap(value string) grid {
 	return g.set("gap", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the grid is hidden
 func (g grid) Hidden(value bool) grid {
 	return g.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression to determine if the grid is hidden
 func (g grid) HiddenOn(value string) grid {
 	return g.set("hiddenOn", value)
 }
 
-// ID 组件唯一 id
+// ID sets the unique ID for the component
 func (g grid) ID(value string) grid {
 	return g.set("id", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (g grid) OnEvent(value any) grid {
 	return g.set("onEvent", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the grid is displayed statically
 func (g grid) Static(value bool) grid {
 	return g.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the CSS class name for static display form items
 func (g grid) StaticClassName(value string) grid {
 	return g.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名
+// StaticInputClassName sets the CSS class name for static display form item values
 func (g grid) StaticInputClassName(value string) grid {
 	return g.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名
+// StaticLabelClassName sets the CSS class name for static display form item labels
 func (g grid) StaticLabelClassName(value string) grid {
 	return g.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the expression to determine if the grid is displayed statically
 func (g grid) StaticOn(value string) grid {
 	return g.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display when the value is empty
 func (g grid) StaticPlaceholder(value string) grid {
 	return g.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示模式的 schema
+// StaticSchema sets the schema for static display mode
 func (g grid) StaticSchema(value string) grid {
 	return g.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style
 func (g grid) Style(value any) grid {
 	return g.set("style", value)
 }
 
-// TestIdBuilder 测试 id 构建器
+// TestIdBuilder sets the test ID builder
 func (g grid) TestIdBuilder(value string) grid {
 	return g.set("testIdBuilder", value)
 }
 
-// Testid 测试 id
+// Testid sets the test ID
 func (g grid) Testid(value string) grid {
 	return g.set("testid", value)
 }
 
-// UseMobileUI 组件级别关闭移动端样式
+// UseMobileUI sets whether to disable mobile UI styles at the component level
 func (g grid) UseMobileUI(value bool) grid {
 	return g.set("useMobileUI", value)
 }
 
-// Valign 垂直对齐方式 'top' | 'middle' | 'bottom' | 'between'
+// Valign sets vertical alignment: 'top', 'middle', 'bottom', 'between'
 func (g grid) Valign(value string) grid {
 	return g.set("valign", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the grid is visible
 func (g grid) Visible(value bool) grid {
 	return g.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the expression to determine if the grid is visible
 func (g grid) VisibleOn(value string) grid {
 	return g.set("visibleOn", value)
 }

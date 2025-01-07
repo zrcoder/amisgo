@@ -2,107 +2,104 @@ package comp
 
 type MEventAction Schema
 
-// EventAction 创建一个新的 EventAction 实例
+// EventAction creates a new EventAction instance
 func EventAction() MEventAction {
 	return MEventAction{}
 }
 
-// set 设置字段值
+// set sets a field value
 func (la MEventAction) set(key string, value any) MEventAction {
 	la[key] = value
 	return la
 }
 
-// ActionType 设置操作类型
-// 可选值：
-// toast ｜ ajax ｜ dialog ｜ closeDialog ｜ drawer ｜ closeDrawer ｜ confirmDialog ｜ alert
+// ActionType sets the action type
+// Possible values:
+// toast | ajax | dialog | closeDialog | drawer | closeDrawer | confirmDialog | alert
 // url | link | goBack | refresh | copy | print | email | setEventData | wait
 // setValue | reload | show | hidden | enabled | disabled | static | nonstatic
-// broadcast | loop | break | continue | switch | parallel |
-// custom
+// broadcast | loop | break | continue | switch | parallel | custom
 func (la MEventAction) ActionType(value string) MEventAction {
 	return la.set("actionType", value)
 }
 
-// Drawer 定义弹出的抽屉
+// Drawer defines the drawer to pop up
 func (ea MEventAction) Drawer(value any) MEventAction {
 	return ea.set("drawer", value)
 }
 
-// TODO all components
-
-// Script 在 actionType 为 custom 时设置自定义脚本
+// Script sets a custom script when actionType is custom
 func (ea MEventAction) Script(value string) MEventAction {
 	return ea.set("script", value)
 }
 
-// Args 设置参数
+// Args sets the arguments
 func (la MEventAction) Args(value Schema) MEventAction {
 	return la.set("args", value)
 }
 
-// ComponentId 设置组件 ID
+// ComponentID sets the component ID
 func (la MEventAction) ComponentID(value string) MEventAction {
 	return la.set("componentId", value)
 }
 
-// ComponentName 设置组件名称
+// ComponentName sets the component name
 func (la MEventAction) ComponentName(value string) MEventAction {
 	return la.set("componentName", value)
 }
 
-// Value
+// Value sets the value
 func (ea MEventAction) Value(value string) MEventAction {
 	return ea.set("value", value)
 }
 
-// ConfirmTitle 设置确认弹窗标题
+// ConfirmTitle sets the confirm dialog title
 func (la MEventAction) ConfirmTitle(value any) MEventAction {
 	return la.set("confirmTitle", value)
 }
 
-// Data 设置数据
+// Data sets the data
 func (la MEventAction) Data(value Data) MEventAction {
 	return la.set("data", value)
 }
 
-// DataMergeMode 设置数据合并模式
-// 可选值: merge | override
+// DataMergeMode sets the data merge mode
+// Possible values: merge | override
 func (la MEventAction) DataMergeMode(value string) MEventAction {
 	return la.set("dataMergeMode", value)
 }
 
-// Description 设置描述
+// Description sets the description
 func (la MEventAction) Description(value string) MEventAction {
 	return la.set("description", value)
 }
 
-// ExecOn 设置执行条件
+// ExecOn sets the execution condition
 func (la MEventAction) ExecOn(value string) MEventAction {
 	return la.set("execOn", value)
 }
 
-// Expression 执行条件 boolean|表达式|ConditionBuilder
+// Expression sets the execution condition as a boolean, expression, or ConditionBuilder
 func (la MEventAction) Expression(value any) MEventAction {
 	return la.set("expression", value)
 }
 
-// IgnoreError 设置是否忽略错误
+// IgnoreError sets whether to ignore errors
 func (la MEventAction) IgnoreError(value bool) MEventAction {
 	return la.set("ignoreError", value)
 }
 
-// OutputVar 设置输出变量
+// OutputVar sets the output variable
 func (la MEventAction) OutputVar(value string) MEventAction {
 	return la.set("outputVar", value)
 }
 
-// PreventDefault 设置是否阻止默认行为 boolean|表达式|ConditionBuilder
+// PreventDefault sets whether to prevent the default behavior as a boolean, expression, or ConditionBuilder
 func (la MEventAction) PreventDefault(value any) MEventAction {
 	return la.set("preventDefault", value)
 }
 
-// StopPropagation 设置是否阻止事件传播 boolean|表达式|ConditionBuilder
+// StopPropagation sets whether to stop event propagation as a boolean, expression, or ConditionBuilder
 func (la MEventAction) StopPropagation(value any) MEventAction {
 	return la.set("stopPropagation", value)
 }

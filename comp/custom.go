@@ -1,9 +1,9 @@
 package comp
 
-// custom 自定义组件
+// custom represents a custom component.
 type custom Schema
 
-// Custom 创建一个新的 Custom 实例，并设置默认的 type
+// Custom creates a new instance of custom and sets the default type.
 func Custom() custom {
 	return make(custom).set("type", "custom")
 }
@@ -13,42 +13,42 @@ func (c custom) set(key string, value any) custom {
 	return c
 }
 
-// ClassName 节点 class
+// ClassName sets the class of the node.
 func (c custom) ClassName(value string) custom {
 	return c.set("className", value)
 }
 
-// HTML 初始化节点 html
+// HTML sets the initial HTML of the node.
 func (c custom) HTML(value string) custom {
 	return c.set("html", value)
 }
 
-// ID 节点 id
+// ID sets the ID of the node.
 func (c custom) ID(value string) custom {
 	return c.set("id", value)
 }
 
-// Inline 默认使用 div 标签，如果 true 就使用 span 标签
+// Inline sets whether to use a span tag instead of a div tag.
 func (c custom) Inline(value bool) custom {
 	return c.set("inline", value)
 }
 
-// Name 节点 名称
+// Name sets the name of the node.
 func (c custom) Name(value string) custom {
 	return c.set("name", value)
 }
 
-// OnMount 节点初始化之后调用的函数
+// OnMount sets the function to be called after the node is mounted.
 func (c custom) OnMount(value string) custom {
 	return c.set("onMount", value)
 }
 
-// OnUnmount 节点销毁的时候调用的函数
+// OnUnmount sets the function to be called after the node is unmounted.
 func (c custom) OnUnmount(value string) custom {
 	return c.set("onUnmount", value)
 }
 
-// OnUpdate 数据有更新的时候调用的函数
+// OnUpdate sets the function to be called when the data is updated.
 func (c custom) OnUpdate(value string) custom {
 	return c.set("onUpdate", value)
 }

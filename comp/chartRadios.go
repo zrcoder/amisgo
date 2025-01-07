@@ -1,9 +1,9 @@
 package comp
 
-// chartRadios 图表单选框
+// ChartRadios represents a chart-based radio button selection component
 type chartRadios Schema
 
-// ChartRadios 创建一个新的 ChartRadios 实例
+// ChartRadios creates a new ChartRadios instance
 func ChartRadios() chartRadios {
 	return make(chartRadios).set("type", "chart-radios")
 }
@@ -13,17 +13,17 @@ func (c chartRadios) set(key string, value any) chartRadios {
 	return c
 }
 
-// ChartValueField 图表数值字段名
+// ChartValueField sets the field name for numerical values in the chart
 func (c chartRadios) ChartValueField(value string) chartRadios {
 	return c.set("chartValueField", value)
 }
 
-// Config 图表配置
+// Config sets the configuration for the chart
 func (c chartRadios) Config(value string) chartRadios {
 	return c.set("config", value)
 }
 
-// ShowTooltipOnHighlight 高亮的时候是否显示 tooltip
+// ShowTooltipOnHighlight enables or disables tooltip display when an item is highlighted
 func (c chartRadios) ShowTooltipOnHighlight(value bool) chartRadios {
 	return c.set("showTooltipOnHighlight", value)
 }

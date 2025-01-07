@@ -1,130 +1,130 @@
 package comp
 
-// buttonToolbar 代表按钮工具条控件渲染器
+// ButtonToolbar represents a button toolbar control renderer
 type buttonToolbar Schema
 
-// ButtonToolbar 创建一个新的 ButtonToolbar 实例
+// ButtonToolbar creates a new ButtonToolbar instance
 func ButtonToolbar() buttonToolbar {
 	return make(buttonToolbar).set("type", "button-toolbar")
 }
 
-// Set 覆盖 BaseRenderer 的 Set 方法，返回 ButtonToolbar
+// set overrides the BaseRenderer's Set method, returning ButtonToolbar
 func (bt buttonToolbar) set(key string, value any) buttonToolbar {
 	bt[key] = value
 	return bt
 }
 
-// Buttons 设置按钮集合
+// Buttons configures the collection of buttons
 func (bt buttonToolbar) Buttons(value ...action) buttonToolbar {
 	return bt.set("buttons", value)
 }
 
-// Label
+// Label sets the label for the button toolbar
 func (bt buttonToolbar) Label(value string) buttonToolbar {
 	return bt.set("label", value)
 }
 
-// ClassName 设置容器的 CSS 类名
+// ClassName sets the CSS class name for the container
 func (bt buttonToolbar) ClassName(value string) buttonToolbar {
 	return bt.set("className", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled enables or disables the button toolbar
 func (bt buttonToolbar) Disabled(value bool) buttonToolbar {
 	return bt.set("disabled", value)
 }
 
-// DisabledOn 设置禁用表达式
+// DisabledOn sets a conditional expression for disabling the button toolbar
 func (bt buttonToolbar) DisabledOn(value string) buttonToolbar {
 	return bt.set("disabledOn", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting configures editor-specific settings
 func (bt buttonToolbar) EditorSetting(value string) buttonToolbar {
 	return bt.set("editorSetting", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden controls the visibility of the button toolbar
 func (bt buttonToolbar) Hidden(value bool) buttonToolbar {
 	return bt.set("hidden", value)
 }
 
-// HiddenOn 设置隐藏表达式
+// HiddenOn sets a conditional expression for hiding the button toolbar
 func (bt buttonToolbar) HiddenOn(value string) buttonToolbar {
 	return bt.set("hiddenOn", value)
 }
 
-// Id 设置组件唯一 ID
+// ID sets a unique identifier for the component
 func (bt buttonToolbar) ID(value string) buttonToolbar {
 	return bt.set("id", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent configures event-driven actions
 func (bt buttonToolbar) OnEvent(value any) buttonToolbar {
 	return bt.set("onEvent", value)
 }
 
-// Static 设置是否静态展示
+// Static determines if the button toolbar is statically displayed
 func (bt buttonToolbar) Static(value bool) buttonToolbar {
 	return bt.set("static", value)
 }
 
-// StaticClassName 设置静态展示表单项类名
+// StaticClassName sets the CSS class name for static display
 func (bt buttonToolbar) StaticClassName(value string) buttonToolbar {
 	return bt.set("staticClassName", value)
 }
 
-// StaticInputClassName 设置静态展示表单项的值类名
+// StaticInputClassName sets the CSS class name for static input display
 func (bt buttonToolbar) StaticInputClassName(value string) buttonToolbar {
 	return bt.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 设置静态展示表单项的标签类名
+// StaticLabelClassName sets the CSS class name for static label display
 func (bt buttonToolbar) StaticLabelClassName(value string) buttonToolbar {
 	return bt.set("staticLabelClassName", value)
 }
 
-// StaticOn 设置静态展示表达式
+// StaticOn sets a conditional expression for static display
 func (bt buttonToolbar) StaticOn(value string) buttonToolbar {
 	return bt.set("staticOn", value)
 }
 
-// StaticPlaceholder 设置静态展示空值占位
+// StaticPlaceholder defines a placeholder for empty static values
 func (bt buttonToolbar) StaticPlaceholder(value string) buttonToolbar {
 	return bt.set("staticPlaceholder", value)
 }
 
-// StaticSchema 设置静态展示模式
+// StaticSchema sets the schema for static display
 func (bt buttonToolbar) StaticSchema(value string) buttonToolbar {
 	return bt.set("staticSchema", value)
 }
 
-// Style 设置组件样式
+// Style sets custom inline styles
 func (bt buttonToolbar) Style(value any) buttonToolbar {
 	return bt.set("style", value)
 }
 
-// TestIdBuilder 设置测试 ID 构建器
+// TestIdBuilder configures test ID generation
 func (bt buttonToolbar) TestIdBuilder(value string) buttonToolbar {
 	return bt.set("testIdBuilder", value)
 }
 
-// Testid 设置测试 ID
+// Testid sets a specific test identifier
 func (bt buttonToolbar) Testid(value string) buttonToolbar {
 	return bt.set("testid", value)
 }
 
-// UseMobileUI 设置是否使用移动端 UI
+// UseMobileUI enables or disables mobile UI styling
 func (bt buttonToolbar) UseMobileUI(value bool) buttonToolbar {
 	return bt.set("useMobileUI", value)
 }
 
-// Visible 设置是否显示
+// Visible controls the overall visibility of the button toolbar
 func (bt buttonToolbar) Visible(value bool) buttonToolbar {
 	return bt.set("visible", value)
 }
 
-// VisibleOn 设置显示表达式
+// VisibleOn sets a conditional expression for button toolbar visibility
 func (bt buttonToolbar) VisibleOn(value string) buttonToolbar {
 	return bt.set("visibleOn", value)
 }

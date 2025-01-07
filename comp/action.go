@@ -8,48 +8,46 @@ import (
 	"github.com/zrcoder/amisgo/internal/servermux"
 )
 
-// action 行为按钮 https://aisuda.bce.baidu.com/amis/zh-CN/components/action
+// action represents an action button. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/action
 type action Schema
 
-// Action 创建一个新的 Action 实例
+// Action creates a new Action instance.
 func Action() action {
 	return action{}.set("type", "action")
 }
 
-// Button 实际为 Action 的 别名
+// Button is an alias for Action with type "button".
 func Button() action {
 	return Action().set("type", "button")
 }
 
-// Submit submit行为按钮
+// Submit creates an Action with type "submit".
 func Submit() action {
 	return Action().set("type", "submit")
 }
 
-// ActionType 【必填】这是 action 最核心的配置，来指定该 action 的作用类型
-// 可选值:
-// ajax | link | url | drawer | dialog | confirm | cancel | prev | next | copy | close
-// button | reset | submit | clear
+// ActionType sets the core configuration for the action type.
+// Possible values: ajax, link, url, drawer, dialog, confirm, cancel, prev, next, copy, close, button, reset, submit, clear.
 func (a action) ActionType(value string) action {
 	return a.set("actionType", value)
 }
 
-// Dialog 配置按钮点击后的 dialog
+// Dialog configures the dialog that appears when the button is clicked.
 func (a action) Dialog(value dialog) action {
 	return a.set("dialog", value)
 }
 
-// Drawer 配置按钮点击后的 drawer
+// Drawer configures the drawer that appears when the button is clicked.
 func (a action) Drawer(value any) action {
 	return a.set("drawer", value)
 }
 
-// Toast 配置按钮点击后的 toast
+// Toast configures the toast that appears when the button is clicked.
 func (a action) Toast(value toast) action {
 	return a.set("toast", value)
 }
 
-// Transform transform the src value with transfor, and renderer the result to dst component
+// Transform transforms the src value with the provided function and renders the result to the dst component.
 func (a action) Transform(src, dst, successMsg string, transfor func(input any) (any, error)) action {
 	return a.TransformMultiple(successMsg, func(d Data) (Data, error) {
 		output, err := transfor(d[src])
@@ -60,7 +58,7 @@ func (a action) Transform(src, dst, successMsg string, transfor func(input any) 
 	}, src)
 }
 
-// TransformMultiple transform the src with transfor, and renderer the result to multiple destinates
+// TransformMultiple transforms the src values with the provided function and renders the result to multiple destinations.
 func (a action) TransformMultiple(successMsg string, transfor func(Data) (Data, error), src ...string) action {
 	route := getRoute()
 	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
@@ -102,300 +100,298 @@ func (a action) TransformMultiple(successMsg string, transfor func(Data) (Data, 
 	)
 }
 
-// ActiveClassName 给按钮高亮添加类名。
+// ActiveClassName sets the class name for the active state of the button.
 func (a action) ActiveClassName(value string) action {
 	return a.set("activeClassName", value)
 }
 
-// ActiveLevel 按钮高亮时的样式，配置支持同level。
+// ActiveLevel sets the style for the active state of the button.
 func (a action) ActiveLevel(value string) action {
 	return a.set("activeLevel", value)
 }
 
-// Api 设置 API 地址/描述。
+// Api sets the API address/description.
 func (a action) Api(value any) action {
 	return a.set("api", value)
 }
 
-// ClassName 添加类名。
+// ClassName adds a class name to the button.
 func (a action) ClassName(value string) action {
 	return a.set("className", value)
 }
 
-// Close 当action配置在dialog或drawer的actions中时，配置为true指定此次操作完后关闭当前dialog或drawer。
-// 当值为字符串，并且是祖先层弹框的名字的时候，会把祖先弹框关闭掉。
+// Close specifies whether to close the current dialog or drawer after the action is performed.
 func (a action) Close(value string) action {
 	return a.set("close", value)
 }
 
-// ConfirmText 当设置后，操作在开始前会询问用户。可用 '$[xxx]' 取值。
+// ConfirmText sets the text to be displayed in the confirmation dialog before the action is performed.
 func (a action) ConfirmText(value string) action {
 	return a.set("confirmText", value)
 }
 
-// ConfirmTitle 确认弹窗标题
+// ConfirmTitle sets the title of the confirmation dialog.
 func (a action) ConfirmTitle(value any) action {
 	return a.set("confirmTitle", value)
 }
 
-// DisabledTip 被禁用后鼠标停留时弹出该段文字，也可以配置对象类型：字段为title和content。可用 '$[xxx]' 取值。
+// DisabledTip sets the text to be displayed when the button is disabled.
 func (a action) DisabledTip(value any) action {
 	return a.set("disabledTip", value)
 }
 
-// Icon 设置图标，例如fa fa-plus。
+// Icon sets the icon for the button, e.g., "fa fa-plus".
 func (a action) Icon(value string) action {
 	return a.set("icon", value)
 }
 
-// IconClassName 给图标上添加类名。
+// IconClassName adds a class name to the icon.
 func (a action) IconClassName(value string) action {
 	return a.set("iconClassName", value)
 }
 
-// Redirect 配置相对路径，实现单页跳转
+// Redirect sets the relative path for single-page navigation.
 func (a action) Redirect(value string) action {
 	return a.set("redirect", value)
 }
 
-// Label 按钮文本。可用 '$[xxx]' 取值。
+// Label sets the button text.
 func (a action) Label(value string) action {
 	return a.set("label", value)
 }
 
-// Level 按钮样式
-// 'link' | 'primary' | 'enhance' | 'secondary' | 'info'|'success' |
-// 'warning' | 'danger' | 'light'| 'dark' | 'default'
+// Level sets the button style.
+// Possible values: link, primary, enhance, secondary, info, success, warning, danger, light, dark, default.
 func (a action) Level(value string) action {
 	return a.set("level", value)
 }
 
-// Link 设置链接。
+// Link sets the link for the button.
 func (a action) Link(value string) action {
 	return a.set("link", value)
 }
 
-// Reload 指定此次操作完后，需要刷新的目标组件名字（组件的name值，自己配置的），多个请用 "," 号隔开。
+// Reload specifies the target component(s) to be refreshed after the action is performed.
 func (a action) Reload(value string) action {
 	return a.set("reload", value)
 }
 
-// ReloadWindow 刷新当前页面
+// ReloadWindow refreshes the current page.
 func (a action) ReloadWindow() action {
 	return a.Reload("window")
 }
 
-// Required 配置字符串数组，指定在form中进行操作之前，需要指定的字段名的表单项通过验证
+// Required sets the required fields for the form before the action is performed.
 func (a action) Required(value ...string) action {
 	return a.set("required", value)
 }
 
-// RightIcon 在按钮文本右侧设置图标，例如 "fa fa-plus"。
+// RightIcon sets the icon on the right side of the button text.
 func (a action) RightIcon(value string) action {
 	return a.set("rightIcon", value)
 }
 
-// RightIconClassName 给右侧图标上添加类名。
+// RightIconClassName adds a class name to the right icon.
 func (a action) RightIconClassName(value string) action {
 	return a.set("rightIconClassName", value)
 }
 
-// Size 按钮大小，支持：xs、sm、md、lg。 可选值: xs | sm | md | lg
+// Size sets the button size. Possible values: xs, sm, md, lg.
 func (a action) Size(value string) action {
 	return a.set("size", value)
 }
 
-// Tooltip 鼠标停留时弹出该段文字，也可以配置对象类型：字段为title和content。可用 '$[xxx]' 取值。
+// Tooltip sets the text to be displayed when the mouse hovers over the button.
 func (a action) Tooltip(value string) action {
 	return a.set("tooltip", value)
 }
 
-// TooltipPlacement 如果配置了tooltip或者disabledTip，指定提示信息位置，可配置top、bottom、left、right。
+// TooltipPlacement sets the position of the tooltip. Possible values: top, bottom, left, right.
 func (a action) TooltipPlacement(value string) action {
 	return a.set("tooltipPlacement", value)
 }
 
-// TooltipTrigger 'hover' | 'focus'
+// TooltipTrigger sets the trigger for the tooltip. Possible values: hover, focus.
 func (a action) TooltipTrigger(value string) action {
 	return a.set("tooltipTrigger", value)
 }
 
-// Badge 角标 (Badge 角标。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/badge)
+// Badge sets the badge for the button. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/badge
 func (v action) Badge(value string) action {
 	return v.set("badge", value)
 }
 
-// Block 是否为块状展示，默认为内联。
+// Block sets whether the button is displayed as a block element.
 func (v action) Block(value bool) action {
 	return v.set("block", value)
 }
 
-// Body 子内容 (子内容)
+// Body sets the child content of the button.
 func (v action) Body(value ...any) action {
 	return v.set("body", value)
 }
 
-// CountDown 点击后的禁止倒计时（秒）
+// CountDown sets the countdown time (in seconds) after the button is clicked.
 func (v action) CountDown(value string) action {
 	return v.set("countDown", value)
 }
 
-// CountDownTpl 倒计时文字自定义
+// CountDownTpl sets the custom countdown text.
 func (v action) CountDownTpl(value string) action {
 	return v.set("countDownTpl", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the button is disabled.
 func (v action) Disabled(value bool) action {
 	return v.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine whether the button is disabled.
 func (v action) DisabledOn(value string) action {
 	return v.set("disabledOn", value)
 }
 
-// DownloadFileName
+// DownloadFileName sets the file name for the download.
 func (v action) DownloadFileName(value string) action {
 	return v.set("downloadFileName", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, which can be ignored at runtime.
 func (v action) EditorSetting(value string) action {
 	return v.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the button is hidden.
 func (v action) Hidden(value bool) action {
 	return v.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine whether the button is hidden.
 func (v action) HiddenOn(value string) action {
 	return v.set("hiddenOn", value)
 }
 
-// HotKey 键盘快捷键
+// HotKey sets the keyboard shortcut for the button.
 func (v action) HotKey(value string) action {
 	return v.set("hotKey", value)
 }
 
-// ID 主要用于用户行为跟踪里区分是哪个按钮
+// ID sets the ID for the button, mainly used for user behavior tracking.
 func (v action) ID(value string) action {
 	return v.set("id", value)
 }
 
-// Url 按钮链接
+// Url sets the URL for the button.
 func (v action) Url(value string) action {
 	return v.set("url", value)
 }
 
-// Loading 是否显示按钮加载效果
+// Loading sets whether to show the loading effect on the button.
 func (a action) Loading(value bool) action {
 	return a.set("loading", value)
 }
 
-// LoadingClassName loading 上的css 类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// LoadingClassName sets the CSS class name for the loading effect.
 func (v action) LoadingClassName(value string) action {
 	return v.set("loadingClassName", value)
 }
 
-// LoadingOn 是否显示loading效果
+// LoadingOn sets the expression to determine whether to show the loading effect.
 func (v action) LoadingOn(value string) action {
 	return v.set("loadingOn", value)
 }
 
-// MergeData 是否将弹框中数据 merge 到父级作用域。
+// MergeData sets whether to merge the data from the dialog or drawer into the parent scope.
 func (v action) MergeData(value bool) action {
 	return v.set("mergeData", value)
 }
 
-// OnClick 自定义事件处理函数
+// OnClick sets the custom event handler function for the button.
 func (v action) OnClick(value string) action {
 	return v.set("onClick", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration for the button.
 func (v action) OnEvent(value any) action {
 	return v.set("onEvent", value)
 }
 
-// Primary
+// Primary sets whether the button is a primary button.
 func (v action) Primary(value bool) action {
 	return v.set("primary", value)
 }
 
-// RequireSelected 当按钮时批量操作按钮时，默认必须有勾选元素才能可点击，如果此属性配置成 false，则没有点选成员也能点击。
+// RequireSelected sets whether the button requires selected elements to be clickable when used as a batch operation button.
 func (v action) RequireSelected(value bool) action {
 	return v.set("requireSelected", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the button is displayed statically.
 func (v action) Static(value bool) action {
 	return v.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticClassName sets the CSS class name for the static display of the form item.
 func (v action) StaticClassName(value string) action {
 	return v.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticInputClassName sets the CSS class name for the static display of the form item value.
 func (v action) StaticInputClassName(value string) action {
 	return v.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。 className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如： className: { "red": "data.progress > 80", "blue": "data.progress > 60" })
+// StaticLabelClassName sets the CSS class name for the static display of the form item label.
 func (v action) StaticLabelClassName(value string) action {
 	return v.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine whether the button is displayed statically.
 func (v action) StaticOn(value string) action {
 	return v.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示为空时的占位符。
+// StaticPlaceholder sets the placeholder text for the static display.
 func (v action) StaticPlaceholder(value string) action {
 	return v.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示模式的 schema
+// StaticSchema sets the schema for the static display mode.
 func (v action) StaticSchema(value string) action {
 	return v.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the style for the button.
 func (v action) Style(value any) action {
 	return v.set("style", value)
 }
 
-// Target 谁能触发这个动作。
+// Target sets the target component(s) that can trigger this action.
 func (v action) Target(value string) action {
 	return v.set("target", value)
 }
 
-// TestIdBuilder 设置测试ID生成函数
+// TestIdBuilder sets the function to generate test IDs.
 func (v action) TestIdBuilder(value string) action {
 	return v.set("testIdBuilder", value)
 }
 
-// Testid 测试ID
+// Testid sets the test ID for the button.
 func (v action) Testid(value string) action {
 	return v.set("testid", value)
 }
 
-// UseMobileUI 是否禁用移动端样式
+// UseMobileUI sets whether to disable mobile UI styles.
 func (v action) UseMobileUI(value bool) action {
 	return v.set("useMobileUI", value)
 }
 
-// Visible 是否可见
+// Visible sets whether the button is visible.
 func (v action) Visible(value bool) action {
 	return v.set("visible", value)
 }
 
-// VisibleOn 是否可见表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine whether the button is visible.
 func (v action) VisibleOn(value string) action {
 	return v.set("visibleOn", value)
 }

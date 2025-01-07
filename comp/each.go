@@ -1,9 +1,9 @@
 package comp
 
-// each 表示循环功能渲染器。
+// each represents a loop renderer.
 type each Schema
 
-// Each 创建一个新的 Each 实例，并设置默认的 type 为 'each'
+// Each creates a new Each instance with the default type set to 'each'.
 func Each() each {
 	return make(each).set("type", "each")
 }
@@ -13,137 +13,137 @@ func (e each) set(key string, value any) each {
 	return e
 }
 
-// ClassName 容器 CSS 类名
+// ClassName sets the CSS class name.
 func (e each) ClassName(value string) each {
 	return e.set("className", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the component is disabled.
 func (e each) Disabled(value bool) each {
 	return e.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets the expression to determine if the component is disabled.
 func (e each) DisabledOn(value string) each {
 	return e.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, ignored at runtime.
 func (e each) EditorSetting(value string) each {
 	return e.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the component is hidden.
 func (e each) Hidden(value bool) each {
 	return e.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets the expression to determine if the component is hidden.
 func (e each) HiddenOn(value string) each {
 	return e.set("hiddenOn", value)
 }
 
-// ID 组件唯一 ID，主要用于日志采集
+// ID sets the unique ID for the component, mainly for logging.
 func (e each) ID(value string) each {
 	return e.set("id", value)
 }
 
-// IndexKeyName 控制通过什么字段读取序号
+// IndexKeyName sets the field name to read the index.
 func (e each) IndexKeyName(value string) each {
 	return e.set("indexKeyName", value)
 }
 
-// ItemKeyName 控制通过什么字段读取成员数据
+// ItemKeyName sets the field name to read the item data.
 func (e each) ItemKeyName(value string) each {
 	return e.set("itemKeyName", value)
 }
 
-// Items 数据项
+// Items sets the data items.
 func (e each) Items(value ...any) each {
 	return e.set("items", value)
 }
 
-// Name 关联字段名
+// Name sets the associated field name.
 func (e each) Name(value string) each {
 	return e.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration.
 func (e each) OnEvent(value any) each {
 	return e.set("onEvent", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the placeholder text.
 func (e each) Placeholder(value string) each {
 	return e.set("placeholder", value)
 }
 
-// Source 关联字段名，支持数据映射
+// Source sets the associated field name, supporting data mapping.
 func (e each) Source(value string) each {
 	return e.set("source", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the component is displayed statically.
 func (e each) Static(value bool) each {
 	return e.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名
+// StaticClassName sets the CSS class name for static display.
 func (e each) StaticClassName(value string) each {
 	return e.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项值类名
+// StaticInputClassName sets the CSS class name for static input display.
 func (e each) StaticInputClassName(value string) each {
 	return e.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项标签类名
+// StaticLabelClassName sets the CSS class name for static label display.
 func (e each) StaticLabelClassName(value string) each {
 	return e.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式
+// StaticOn sets the expression to determine if the component is displayed statically.
 func (e each) StaticOn(value string) each {
 	return e.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder for static display when the value is empty.
 func (e each) StaticPlaceholder(value string) each {
 	return e.set("staticPlaceholder", value)
 }
 
-// StaticSchema 静态展示 schema
+// StaticSchema sets the schema for static display.
 func (e each) StaticSchema(value string) each {
 	return e.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component style.
 func (e each) Style(value any) each {
 	return e.set("style", value)
 }
 
-// TestIdBuilder 测试 ID 构造函数
+// TestIdBuilder sets the test ID builder function.
 func (e each) TestIdBuilder(value string) each {
 	return e.set("testIdBuilder", value)
 }
 
-// Testid 测试 ID
+// Testid sets the test ID.
 func (e each) Testid(value string) each {
 	return e.set("testid", value)
 }
 
-// UseMobileUI 组件级别用来关闭移动端样式
+// UseMobileUI sets whether to disable mobile UI styles.
 func (e each) UseMobileUI(value bool) each {
 	return e.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the component is visible.
 func (e each) Visible(value bool) each {
 	return e.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式
+// VisibleOn sets the expression to determine if the component is visible.
 func (e each) VisibleOn(value string) each {
 	return e.set("visibleOn", value)
 }

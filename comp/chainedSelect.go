@@ -1,9 +1,10 @@
 package comp
 
-// chainedSelect 链式下拉框 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/chained-select
+// ChainedSelect represents a chained select form component that allows hierarchical or cascading selections
+// Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/chained-select
 type chainedSelect Schema
 
-// ChainedSelect 创建一个新的 ChainedSelect 实例
+// ChainedSelect creates a new ChainedSelect instance
 func ChainedSelect() chainedSelect {
 	return make(chainedSelect).set("type", "chained-select")
 }
@@ -13,397 +14,397 @@ func (c chainedSelect) set(key string, value any) chainedSelect {
 	return c
 }
 
-// AddApi 添加时调用的接口
+// AddApi sets the API endpoint for adding new items to the select component
 func (c chainedSelect) AddApi(value string) chainedSelect {
 	return c.set("addApi", value)
 }
 
-// AddControls 新增时的表单项
+// AddControls configures the form fields displayed when adding new items
 func (c chainedSelect) AddControls(value string) chainedSelect {
 	return c.set("addControls", value)
 }
 
-// AddDialog 控制新增弹框设置项
+// AddDialog configures the settings for the add item dialog modal
 func (c chainedSelect) AddDialog(value string) chainedSelect {
 	return c.set("addDialog", value)
 }
 
-// AutoFill 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内
+// AutoFill enables automatic synchronization of selected option values to the form
 func (c chainedSelect) AutoFill(value string) chainedSelect {
 	return c.set("autoFill", value)
 }
 
-// ClassName 容器 css 类名
+// ClassName sets the CSS class name for the container element
 func (c chainedSelect) ClassName(value string) chainedSelect {
 	return c.set("className", value)
 }
 
-// ClearValueOnHidden 表单项隐藏时，是否在当前 Form 中删除掉该表单项值
+// ClearValueOnHidden determines whether to remove the form item's value when it becomes hidden
 func (c chainedSelect) ClearValueOnHidden(value bool) chainedSelect {
 	return c.set("clearValueOnHidden", value)
 }
 
-// Clearable 是否可清除
+// Clearable enables or disables the ability to clear the current selection
 func (c chainedSelect) Clearable(value bool) chainedSelect {
 	return c.set("clearable", value)
 }
 
-// Creatable 是否可以新增
+// Creatable enables or disables the ability to add new options
 func (c chainedSelect) Creatable(value bool) chainedSelect {
 	return c.set("creatable", value)
 }
 
-// CreateBtnLabel 新增文字
+// CreateBtnLabel sets the text for the button used to create new items
 func (c chainedSelect) CreateBtnLabel(value string) chainedSelect {
 	return c.set("createBtnLabel", value)
 }
 
-// DeferApi 延时加载的 API
+// DeferApi sets the API endpoint for lazy loading of options
 func (c chainedSelect) DeferApi(value string) chainedSelect {
 	return c.set("deferApi", value)
 }
 
-// DeferField 懒加载字段
+// DeferField specifies the field to be used for lazy loading
 func (c chainedSelect) DeferField(value string) chainedSelect {
 	return c.set("deferField", value)
 }
 
-// DeleteApi 选项删除 API
+// DeleteApi sets the API endpoint for deleting options
 func (c chainedSelect) DeleteApi(value string) chainedSelect {
 	return c.set("deleteApi", value)
 }
 
-// DeleteConfirmText 选项删除提示文字
+// DeleteConfirmText sets the confirmation message displayed when deleting an option
 func (c chainedSelect) DeleteConfirmText(value string) chainedSelect {
 	return c.set("deleteConfirmText", value)
 }
 
-// Delimiter 分割符
+// Delimiter sets the character used to separate multiple selected values
 func (c chainedSelect) Delimiter(value string) chainedSelect {
 	return c.set("delimiter", value)
 }
 
-// Desc
+// Desc sets a brief description for the component
 func (c chainedSelect) Desc(value string) chainedSelect {
 	return c.set("desc", value)
 }
 
-// Description 描述内容，支持 Html 片段
+// Description sets a detailed description that supports HTML fragments
 func (c chainedSelect) Description(value string) chainedSelect {
 	return c.set("description", value)
 }
 
-// DescriptionClassName 配置描述上的 className
+// DescriptionClassName sets the CSS class name for the description element
 func (c chainedSelect) DescriptionClassName(value string) chainedSelect {
 	return c.set("descriptionClassName", value)
 }
 
-// Disabled 是否禁用
+// Disabled enables or disables the entire component
 func (c chainedSelect) Disabled(value bool) chainedSelect {
 	return c.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式
+// DisabledOn sets a conditional expression to dynamically disable the component
 func (c chainedSelect) DisabledOn(value string) chainedSelect {
 	return c.set("disabledOn", value)
 }
 
-// EditApi 编辑时调用的 API
+// EditApi sets the API endpoint for editing existing options
 func (c chainedSelect) EditApi(value string) chainedSelect {
 	return c.set("editApi", value)
 }
 
-// EditControls 选项修改的表单项
+// EditControls configures the form fields used for modifying existing options
 func (c chainedSelect) EditControls(value string) chainedSelect {
 	return c.set("editControls", value)
 }
 
-// EditDialog 控制编辑弹框设置项
+// EditDialog configures the settings for the edit option dialog modal
 func (c chainedSelect) EditDialog(value string) chainedSelect {
 	return c.set("editDialog", value)
 }
 
-// Editable 是否可以编辑
+// Editable enables or disables the ability to edit existing options
 func (c chainedSelect) Editable(value bool) chainedSelect {
 	return c.set("editable", value)
 }
 
-// EditorSetting 编辑器配置
+// EditorSetting configures editor-specific settings for the component
 func (c chainedSelect) EditorSetting(value string) chainedSelect {
 	return c.set("editorSetting", value)
 }
 
-// ExtraName 额外的字段名
+// ExtraName sets an additional field name for the component
 func (c chainedSelect) ExtraName(value string) chainedSelect {
 	return c.set("extraName", value)
 }
 
-// ExtractValue 开启后将选中的选项 value 的值封装为数组
+// ExtractValue wraps the selected option's value into an array when enabled
 func (c chainedSelect) ExtractValue(value bool) chainedSelect {
 	return c.set("extractValue", value)
 }
 
-// Hidden 是否隐藏
+// Hidden controls the visibility of the component
 func (c chainedSelect) Hidden(value bool) chainedSelect {
 	return c.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式
+// HiddenOn sets a conditional expression to dynamically hide the component
 func (c chainedSelect) HiddenOn(value string) chainedSelect {
 	return c.set("hiddenOn", value)
 }
 
-// Hint 输入提示
+// Hint provides an input hint or placeholder text
 func (c chainedSelect) Hint(value string) chainedSelect {
 	return c.set("hint", value)
 }
 
-// Horizontal 当配置为水平布局的时候，用来配置具体的左右分配
+// Horizontal configures the specific left and right distribution when using horizontal layout
 func (c chainedSelect) Horizontal(value string) chainedSelect {
 	return c.set("horizontal", value)
 }
 
-// Id 组件唯一 id
+// ID sets a unique identifier for the component
 func (c chainedSelect) ID(value string) chainedSelect {
 	return c.set("id", value)
 }
 
-// InitAutoFill
+// InitAutoFill initializes automatic value filling
 func (c chainedSelect) InitAutoFill(value string) chainedSelect {
 	return c.set("initAutoFill", value)
 }
 
-// InitFetch 配置 source 接口初始拉不拉取
+// InitFetch configures whether to initially fetch data from the source API
 func (c chainedSelect) InitFetch(value bool) chainedSelect {
 	return c.set("initFetch", value)
 }
 
-// InitFetchOn 用表达式来配置 source 接口初始要不要拉取
+// InitFetchOn sets a conditional expression to determine initial API data fetching
 func (c chainedSelect) InitFetchOn(value string) chainedSelect {
 	return c.set("initFetchOn", value)
 }
 
-// Inline 表单 control 是否为 inline 模式
+// Inline determines if the form control should use inline mode
 func (c chainedSelect) Inline(value bool) chainedSelect {
 	return c.set("inline", value)
 }
 
-// InputClassName 配置 input className
+// InputClassName sets the CSS class name for the input element
 func (c chainedSelect) InputClassName(value string) chainedSelect {
 	return c.set("inputClassName", value)
 }
 
-// JoinValues 单选模式或多选模式值处理
+// JoinValues configures value handling for single or multiple selection modes
 func (c chainedSelect) JoinValues(value bool) chainedSelect {
 	return c.set("joinValues", value)
 }
 
-// Label 描述标题
+// Label sets the description title for the component
 func (c chainedSelect) Label(value string) chainedSelect {
 	return c.set("label", value)
 }
 
-// LabelAlign 描述标题对齐方式
+// LabelAlign sets the alignment style for the description title
 func (c chainedSelect) LabelAlign(value string) chainedSelect {
 	return c.set("labelAlign", value)
 }
 
-// LabelClassName 配置 label className
+// LabelClassName sets the CSS class name for the label element
 func (c chainedSelect) LabelClassName(value string) chainedSelect {
 	return c.set("labelClassName", value)
 }
 
-// LabelRemark 显示一个小图标，鼠标放上去的时候显示提示内容
+// LabelRemark adds a small icon that displays a tooltip when hovered
 func (c chainedSelect) LabelRemark(value string) chainedSelect {
 	return c.set("labelRemark", value)
 }
 
-// LabelWidth label 自定义宽度
+// LabelWidth sets a custom width for the label
 func (c chainedSelect) LabelWidth(value string) chainedSelect {
 	return c.set("labelWidth", value)
 }
 
-// Mode 配置当前表单项展示模式
+// Mode configures the current form item display mode
 func (c chainedSelect) Mode(value string) chainedSelect {
 	return c.set("mode", value)
 }
 
-// Multiple 是否为多选模式
+// Multiple enables or disables multiple selection mode
 func (c chainedSelect) Multiple(value bool) chainedSelect {
 	return c.set("multiple", value)
 }
 
-// Name 字段名
+// Name sets the field name for the component
 func (c chainedSelect) Name(value string) chainedSelect {
 	return c.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent configures event-driven actions for the component
 func (c chainedSelect) OnEvent(value any) chainedSelect {
 	return c.set("onEvent", value)
 }
 
-// Options 选项集合
+// Options sets the collection of selectable options
 func (c chainedSelect) Options(value ...any) chainedSelect {
 	return c.set("options", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the input placeholder text
 func (c chainedSelect) Placeholder(value string) chainedSelect {
 	return c.set("placeholder", value)
 }
 
-// ReadOnly 是否只读
+// ReadOnly enables or disables read-only mode
 func (c chainedSelect) ReadOnly(value bool) chainedSelect {
 	return c.set("readOnly", value)
 }
 
-// ReadOnlyOn 只读条件
+// ReadOnlyOn sets a conditional expression for read-only state
 func (c chainedSelect) ReadOnlyOn(value string) chainedSelect {
 	return c.set("readOnlyOn", value)
 }
 
-// Remark 显示一个小图标, 鼠标放上去的时候显示提示内容
+// Remark adds a small icon that displays a tooltip when hovered
 func (c chainedSelect) Remark(value string) chainedSelect {
 	return c.set("remark", value)
 }
 
-// Removable 是否可删除
+// Removable enables or disables the ability to remove options
 func (c chainedSelect) Removable(value bool) chainedSelect {
 	return c.set("removable", value)
 }
 
-// Required 是否为必填
+// Required determines if the field is mandatory
 func (c chainedSelect) Required(value bool) chainedSelect {
 	return c.set("required", value)
 }
 
-// ResetValue 点清除按钮时，将表单项设置成当前配置的值
+// ResetValue sets the form item's value when the clear button is clicked
 func (c chainedSelect) ResetValue(value string) chainedSelect {
 	return c.set("resetValue", value)
 }
 
-// Row
+// Row sets row-related configuration (context-specific)
 func (c chainedSelect) Row(value string) chainedSelect {
 	return c.set("row", value)
 }
 
-// SaveImmediately 是否立即保存(TableColumn中使用)
+// SaveImmediately enables immediate saving (used in TableColumn)
 func (c chainedSelect) SaveImmediately(value bool) chainedSelect {
 	return c.set("saveImmediately", value)
 }
 
-// SelectFirst 默认选择选项第一个值
+// SelectFirst automatically selects the first option by default
 func (c chainedSelect) SelectFirst(value bool) chainedSelect {
 	return c.set("selectFirst", value)
 }
 
-// Size 表单项大小 可选值: xs | sm | md | lg | full
+// Size sets the form item size (available values: xs | sm | md | lg | full)
 func (c chainedSelect) Size(value string) chainedSelect {
 	return c.set("size", value)
 }
 
-// Source 可用来通过 API 拉取 options
+// Source sets the API endpoint for fetching options
 func (c chainedSelect) Source(value string) chainedSelect {
 	return c.set("source", value)
 }
 
-// Static 是否静态展示
+// Static enables or disables static display mode
 func (c chainedSelect) Static(value bool) chainedSelect {
 	return c.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象)
+// StaticClassName sets the CSS class name for static form item display
 func (c chainedSelect) StaticClassName(value string) chainedSelect {
 	return c.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象)
+// StaticInputClassName sets the CSS class name for static input value display
 func (c chainedSelect) StaticInputClassName(value string) chainedSelect {
 	return c.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象)
+// StaticLabelClassName sets the CSS class name for static label display
 func (c chainedSelect) StaticLabelClassName(value string) chainedSelect {
 	return c.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`)
+// StaticOn sets a conditional expression for static display
 func (c chainedSelect) StaticOn(value string) chainedSelect {
 	return c.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder defines a placeholder for empty static values
 func (c chainedSelect) StaticPlaceholder(value string) chainedSelect {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the schema for static display
 func (c chainedSelect) StaticSchema(value string) chainedSelect {
 	return c.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets custom inline styles for the component
 func (c chainedSelect) Style(value any) chainedSelect {
 	return c.set("style", value)
 }
 
-// SubmitOnChange 当修改完的时候是否提交表单
+// SubmitOnChange determines if the form should be submitted after value modification
 func (c chainedSelect) SubmitOnChange(value bool) chainedSelect {
 	return c.set("submitOnChange", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder configures test ID generation
 func (c chainedSelect) TestIdBuilder(value string) chainedSelect {
 	return c.set("testIdBuilder", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI enables or disables mobile-specific UI styling
 func (c chainedSelect) UseMobileUI(value bool) chainedSelect {
 	return c.set("useMobileUI", value)
 }
 
-// ValidateApi 远端校验表单项接口
+// ValidateApi sets the remote validation endpoint for the form item
 func (c chainedSelect) ValidateApi(value string) chainedSelect {
 	return c.set("validateApi", value)
 }
 
-// ValidateOnChange 不设置时，当表单提交过后表单项每次修改都会触发重新验证
+// ValidateOnChange configures validation behavior after form submission
 func (c chainedSelect) ValidateOnChange(value bool) chainedSelect {
 	return c.set("validateOnChange", value)
 }
 
-// ValidationErrors 验证失败的提示信息
+// ValidationErrors sets the error messages for validation failures
 func (c chainedSelect) ValidationErrors(value string) chainedSelect {
 	return c.set("validationErrors", value)
 }
 
-// Validations
+// Validations sets validation rules
 func (c chainedSelect) Validations(value string) chainedSelect {
 	return c.set("validations", value)
 }
 
-// Value 默认值，切记只能是静态值，不支持取变量
+// Value sets the default value (must be a static value, variables not supported)
 func (c chainedSelect) Value(value string) chainedSelect {
 	return c.set("value", value)
 }
 
-// ValuesNoWrap 多选模式，值太多时是否避免折行
+// ValuesNoWrap prevents line wrapping for multiple selected values
 func (c chainedSelect) ValuesNoWrap(value bool) chainedSelect {
 	return c.set("valuesNoWrap", value)
 }
 
-// Visible 是否显示
+// Visible controls the overall visibility of the component
 func (c chainedSelect) Visible(value bool) chainedSelect {
 	return c.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`)
+// VisibleOn sets a conditional expression for component visibility
 func (c chainedSelect) VisibleOn(value string) chainedSelect {
 	return c.set("visibleOn", value)
 }
 
-// Width 在Table中调整宽度
+// Width adjusts the component width (typically used in Table contexts)
 func (c chainedSelect) Width(value string) chainedSelect {
 	return c.set("width", value)
 }

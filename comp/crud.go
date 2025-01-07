@@ -1,754 +1,752 @@
 package comp
 
-// crud 定义了 CRUD 表格和列表的渲染器
+// Crud represents a CRUD (Create, Read, Update, Delete) table and list renderer
 type crud Schema
 
-// Crud
+// Crud creates a default CRUD table
 func Crud() crud {
 	return CrudTable()
 }
 
-// CrudTable 创建一个新的 CRUDTable 实例
+// CrudTable creates a new CRUDTable instance
 func CrudTable() crud {
 	return crud{}.set("type", "crud").Mode("table")
 }
 
-// CrudList
+// CrudList creates a new CRUD list instance
 func CrudList() crud {
 	return crud{}.set("type", "crud").Mode("list")
 }
 
-// CrudCards
+// CrudCards creates a new CRUD cards instance
 func CrudCards() crud {
 	return crud{}.set("type", "crud").Mode("cards")
 }
 
-// Set 设置键值对，并返回当前实例
+// Set sets a key-value pair and returns the current instance
 func (c crud) set(key string, value any) crud {
 	c[key] = value
 	return c
 }
 
-// 常见配置字段
-
-// Api 设置初始化数据 API
+// Api sets the initial data retrieval API
 func (c crud) Api(value string) crud {
 	return c.set("api", value)
 }
 
-// FetchData 设置获取数据的 api 实现方法
+// FetchData sets the API implementation method for retrieving data
 func (c crud) FetchData(getter func() (any, error)) crud {
 	return c.Api(serveData(getter))
 }
 
-// AutoFillHeight 设置内容区域是否占满屏幕剩余空间
+// AutoFillHeight determines whether the content area should occupy the remaining screen space
 func (c crud) AutoFillHeight(value any) crud {
 	return c.set("autoFillHeight", value)
 }
 
-// Columns 设置表格列配置
+// Columns configures the table columns
 func (c crud) Columns(value ...any) crud {
 	return c.set("columns", value)
 }
 
-// Disabled 设置是否禁用
+// Disabled enables or disables the component
 func (c crud) Disabled(value bool) crud {
 	return c.set("disabled", value)
 }
 
-// Expandable 设置表格行可展开配置
+// Expandable configures whether table rows can be expanded
 func (c crud) Expandable(value bool) crud {
 	return c.set("expandable", value)
 }
 
-// Footer 设置指定表尾
+// Footer sets the table footer
 func (c crud) Footer(value string) crud {
 	return c.set("footer", value)
 }
 
-// HeaderToolbar 设置顶部区域
+// HeaderToolbar configures the top area of the component
 func (c crud) HeaderToolbar(value ...any) crud {
 	return c.set("headerToolbar", value)
 }
 
-// Hidden 设置是否隐藏
+// Hidden controls the overall visibility of the component
 func (c crud) Hidden(value bool) crud {
 	return c.set("hidden", value)
 }
 
-// Interval 设置自动刷新时间
+// Interval sets the auto-refresh time
 func (c crud) Interval(value string) crud {
 	return c.set("interval", value)
 }
 
-// Loading 设置加载中状态
+// Loading sets the loading state
 func (c crud) Loading(value string) crud {
 	return c.set("loading", value)
 }
 
-// Name 设置组件名字
+// Name sets the component name
 func (c crud) Name(value string) crud {
 	return c.set("name", value)
 }
 
-// Pagination 设置分页配置
+// Pagination configures pagination settings
 func (c crud) Pagination(value any) crud {
 	return c.set("pagination", value)
 }
 
-// Placeholder 设置列表空数据的提示
+// Placeholder sets the hint for empty list data
 func (c crud) Placeholder(value string) crud {
 	return c.set("placeholder", value)
 }
 
-// RowClassName 设置行 CSS 类名
+// RowClassName sets the CSS class name for rows
 func (c crud) RowClassName(value string) crud {
 	return c.set("rowClassName", value)
 }
 
-// Sticky 设置是否粘性头部
+// Sticky determines whether the header is sticky
 func (c crud) Sticky(value bool) crud {
 	return c.set("sticky", value)
 }
 
-// Style 设置组件样式
+// Style sets custom inline styles for the component
 func (c crud) Style(value any) crud {
 	return c.set("style", value)
 }
 
-// TableLayout 设置表格布局
+// TableLayout sets the table layout
 func (c crud) TableLayout(value string) crud {
 	return c.set("tableLayout", value)
 }
 
-// Title 设置表格标题
+// Title sets the table title
 func (c crud) Title(value any) crud {
 	return c.set("title", value)
 }
 
-// Width 设置宽度
+// Width sets the component width
 func (c crud) Width(value string) crud {
 	return c.set("width", value)
 }
 
-// CRUD2Table 特有字段
-
-// Actions 设置操作列配置
+// Actions configures the operation column
 func (c crud) Actions(value string) crud {
 	return c.set("actions", value)
 }
 
-// AutoJumpToTopOnPagerChange 设置是否自动跳到顶部
+// AutoJumpToTopOnPagerChange determines whether to automatically scroll to the top when changing pages
 func (c crud) AutoJumpToTopOnPagerChange(value bool) crud {
 	return c.set("autoJumpToTopOnPagerChange", value)
 }
 
-// Bordered 设置是否展示边框
+// Bordered enables or disables table border display
 func (c crud) Bordered(value bool) crud {
 	return c.set("bordered", value)
 }
 
-// CanAccessSuperData 设置表格是否可以获取父级数据域值
+// CanAccessSuperData determines whether the table can access parent-level data domain values
 func (c crud) CanAccessSuperData(value bool) crud {
 	return c.set("canAccessSuperData", value)
 }
 
-// ChildrenColumnName 设置数据源嵌套自定义字段名
+// ChildrenColumnName sets a custom field name for nested data sources
 func (c crud) ChildrenColumnName(value string) crud {
 	return c.set("childrenColumnName", value)
 }
 
-// ClassName 设置容器 css 类名
+// ClassName sets the CSS class name for the container
 func (c crud) ClassName(value string) crud {
 	return c.set("className", value)
 }
 
-// ColumnsTogglable 设置表格是否可自定义列
+// ColumnsTogglable enables or disables custom column configuration
 func (c crud) ColumnsTogglable(value bool) crud {
 	return c.set("columnsTogglable", value)
 }
 
-// EditorSetting 设置编辑器配置
+// EditorSetting configures editor-specific settings
 func (c crud) EditorSetting(value string) crud {
 	return c.set("editorSetting", value)
 }
 
-// FooterToolbar 设置底部区域
+// FooterToolbar configures the bottom area of the component
 func (c crud) FooterToolbar(value ...any) crud {
 	return c.set("footerToolbar", value)
 }
 
-// FooterToolbarClassName 设置底部区域 CSS 类名
+// FooterToolbarClassName sets the CSS class name for the footer toolbar
 func (c crud) FooterToolbarClassName(value string) crud {
 	return c.set("footerToolbarClassName", value)
 }
 
-// HeaderToolbarClassName 设置顶部区域 CSS 类名
+// HeaderToolbarClassName sets the CSS class name for the top toolbar area
 func (c crud) HeaderToolbarClassName(value string) crud {
 	return c.set("headerToolbarClassName", value)
 }
 
-// HideQuickSaveBtn 设置是否隐藏快速保存按钮
+// HideQuickSaveBtn controls the visibility of the quick save button
 func (c crud) HideQuickSaveBtn(value bool) crud {
 	return c.set("hideQuickSaveBtn", value)
 }
 
-// KeyField 设置多选、嵌套展开记录的 ID 字段名
+// KeyField sets the ID field name for multi-select and nested expansion records
 func (c crud) KeyField(value string) crud {
 	return c.set("keyField", value)
 }
 
-// LazyRenderAfter 设置一次性渲染的列数
+// LazyRenderAfter sets the number of columns to render at once
 func (c crud) LazyRenderAfter(value string) crud {
 	return c.set("lazyRenderAfter", value)
 }
 
-// LineHeight 设置是否固定内容行高度
+// LineHeight determines whether to fix the content row height
 func (c crud) LineHeight(value string) crud {
 	return c.set("lineHeight", value)
 }
 
-// LoadDataOnce 设置是否为前端单次加载模式
+// LoadDataOnce enables or disables front-end single-load mode
 func (c crud) LoadDataOnce(value bool) crud {
 	return c.set("loadDataOnce", value)
 }
 
-// LoadType 设置数据展示模式
+// LoadType sets the data display mode
 func (c crud) LoadType(value string) crud {
 	return c.set("loadType", value)
 }
 
-// LoadingConfig 设置加载中配置
+// LoadingConfig configures the loading state
 func (c crud) LoadingConfig(value string) crud {
 	return c.set("loadingConfig", value)
 }
 
-// MaxKeepItemSelectionLength 设置批量操作最大限制数
+// MaxKeepItemSelectionLength sets the maximum limit for batch operations
 func (c crud) MaxKeepItemSelectionLength(value string) crud {
 	return c.set("maxKeepItemSelectionLength", value)
 }
 
-// Messages 设置接口报错信息配置
+// Messages configures interface error message settings
 func (c crud) Messages(value string) crud {
 	return c.set("messages", value)
 }
 
-// Mode 设置指定内容区的展示模式 table | list | cards 默认 table
+// Mode specifies the content area display mode (table | list | cards, default is table)
 func (c crud) Mode(value string) crud {
 	return c.set("mode", value)
 }
 
-// Multiple 设置是否可以多选数据
+// Multiple enables or disables multi-select data
 func (c crud) Multiple(value bool) crud {
 	return c.set("multiple", value)
 }
 
-// OnEvent 设置事件动作配置
+// OnEvent configures event-driven actions
 func (c crud) OnEvent(value any) crud {
 	return c.set("onEvent", value)
 }
 
-// PageField 设置分页页码字段名
+// PageField sets the page number field name for pagination
 func (c crud) PageField(value string) crud {
 	return c.set("pageField", value)
 }
 
-// ParsePrimitiveQuery 设置是否开启 Query 信息转换
+// ParsePrimitiveQuery enables or disables Query information conversion
 func (c crud) ParsePrimitiveQuery(value string) crud {
 	return c.set("parsePrimitiveQuery", value)
 }
 
-// PerPage 设置无限加载时每页加载数量
+// PerPage sets the number of items loaded per page in infinite scroll mode
 func (c crud) PerPage(value int) crud {
 	return c.set("perPage", value)
 }
 
-// PerPageField 设置分页每页显示多少条数据的字段名
+// PerPageField sets the field name for specifying items per page
 func (c crud) PerPageField(value string) crud {
 	return c.set("perPageField", value)
 }
 
-// PopOverContainer 设置指定挂载 DOM
+// PopOverContainer specifies the target DOM for mounting
 func (c crud) PopOverContainer(value string) crud {
 	return c.set("popOverContainer", value)
 }
 
-// PrimaryField 设置行标识符
+// PrimaryField sets the row identifier
 func (c crud) PrimaryField(value string) crud {
 	return c.set("primaryField", value)
 }
 
-// QuickSaveApi 设置快速编辑后批量保存的 API
+// QuickSaveApi sets the API for batch saving after quick editing
 func (c crud) QuickSaveApi(value string) crud {
 	return c.set("quickSaveApi", value)
 }
 
-// QuickSaveItemApi 设置快速编辑即时保存的 API
+// QuickSaveItemApi sets the API for instant saving during quick editing
 func (c crud) QuickSaveItemApi(value string) crud {
 	return c.set("quickSaveItemApi", value)
 }
 
-// Reload 设置重新加载的组件名称
+// Reload sets the component name to be reloaded
 func (c crud) Reload(value string) crud {
 	return c.set("reload", value)
 }
 
-// RowClassNameExpr 设置自定义行样式
+// RowClassNameExpr sets custom row styling
 func (c crud) RowClassNameExpr(value string) crud {
 	return c.set("rowClassNameExpr", value)
 }
 
-// RowSelection 设置表格可选择配置
+// RowSelection configures table row selection settings
 func (c crud) RowSelection(value string) crud {
 	return c.set("rowSelection", value)
 }
 
-// SaveOrderApi 设置排序保存 API
+// SaveOrderApi sets the API for saving order
 func (c crud) SaveOrderApi(value string) crud {
 	return c.set("saveOrderApi", value)
 }
 
-// Selectable 设置是否可以选择表格数据
+// Selectable enables or disables table data selection
 func (c crud) Selectable(value bool) crud {
 	return c.set("selectable", value)
 }
 
-// ShowBadge 设置是否展示徽标
+// ShowBadge controls the display of badges
 func (c crud) ShowBadge(value bool) crud {
 	return c.set("showBadge", value)
 }
 
-// ShowHeader 设置是否展示头部
+// ShowHeader determines whether to display the header
 func (c crud) ShowHeader(value bool) crud {
 	return c.set("showHeader", value)
 }
 
-// ShowPagination 设置是否展示分页
+// ShowPagination controls the visibility of pagination
 func (c crud) ShowPagination(value bool) crud {
 	return c.set("showPagination", value)
 }
 
-// ShowQuickSaveBtn 设置是否展示快速保存按钮
+// ShowQuickSaveBtn determines whether to display the quick save button
 func (c crud) ShowQuickSaveBtn(value bool) crud {
 	return c.set("showQuickSaveBtn", value)
 }
 
-// ShowToolbar 设置是否展示工具栏
+// ShowToolbar controls the visibility of the toolbar
 func (c crud) ShowToolbar(value bool) crud {
 	return c.set("showToolbar", value)
 }
 
-// Source 设置数据源
+// Source sets the data source
 func (c crud) Source(value string) crud {
 	return c.set("source", value)
 }
 
-// Toolbar 设置指定表头工具栏
+// Toolbar specifies the table header toolbar
 func (c crud) Toolbar(value string) crud {
 	return c.set("toolbar", value)
 }
 
-// ToolbarClassName 设置工具栏 CSS 类名
+// ToolbarClassName sets the CSS class name for the toolbar
 func (c crud) ToolbarClassName(value string) crud {
 	return c.set("toolbarClassName", value)
 }
 
-// Unfoldable 设置是否允许展开或收起
+// Unfoldable enables or disables the ability to expand or collapse
 func (c crud) Unfoldable(value bool) crud {
 	return c.set("unfoldable", value)
 }
 
-// Validate 设置校验配置
+// Validate sets validation configuration
 func (c crud) Validate(value string) crud {
 	return c.set("validate", value)
 }
 
-// ValueField 设置表格数据的字段名称
+// ValueField sets the field name for table data
 func (c crud) ValueField(value string) crud {
 	return c.set("valueField", value)
 }
 
-// WidthMode 设置列宽模式
+// WidthMode sets the column width mode
 func (c crud) WidthMode(value string) crud {
 	return c.set("widthMode", value)
 }
 
-// AffixFooter 设置是否固底
+// AffixFooter determines whether to fix the footer at the bottom of the viewport
 func (c crud) AffixFooter(value bool) crud {
 	return c.set("affixFooter", value)
 }
 
-// AffixHeader 设置是否固顶
+// AffixHeader determines whether to fix the header at the top of the viewport
 func (c crud) AffixHeader(value bool) crud {
 	return c.set("affixHeader", value)
 }
 
-// AlwaysShowPagination 设置是否总是显示分页
+// AlwaysShowPagination controls whether pagination is always visible
 func (c crud) AlwaysShowPagination(value bool) crud {
 	return c.set("alwaysShowPagination", value)
 }
 
-// AutoGenerateFilter 开启自动生成查询条件表单
+// AutoGenerateFilter enables automatic generation of query condition form
 func (c crud) AutoGenerateFilter(value any) crud {
 	return c.set("autoGenerateFilter", value)
 }
 
-// BulkActions 设置批量操作
+// BulkActions configures batch operation actions
 func (c crud) BulkActions(value ...any) crud {
 	return c.set("bulkActions", value)
 }
 
-// Card 设置卡片配置
+// Card sets the card configuration
 func (c crud) Card(value any) crud {
 	return c.set("card", value)
 }
 
-// CheckOnItemClick 设置点击卡片时是否勾选卡片
+// CheckOnItemClick determines whether to select a card when clicking on it
 func (c crud) CheckOnItemClick(value bool) crud {
 	return c.set("checkOnItemClick", value)
 }
 
-// DefaultParams 设置默认参数
+// DefaultParams sets default parameters for the component
 func (c crud) DefaultParams(value string) crud {
 	return c.set("defaultParams", value)
 }
 
-// DeferApi 设置懒加载 API
+// DeferApi sets the lazy-loading API
 func (c crud) DeferApi(value string) crud {
 	return c.set("deferApi", value)
 }
 
-// DisabledOn 设置禁用表达式
+// DisabledOn sets a conditional expression for disabling the component
 func (c crud) DisabledOn(value string) crud {
 	return c.set("disabledOn", value)
 }
 
-// Draggable 设置是否可通过拖拽排序
+// Draggable enables or disables sorting through drag and drop
 func (c crud) Draggable(value bool) crud {
 	return c.set("draggable", value)
 }
 
-// DraggableOn 设置拖拽排序表达式
+// DraggableOn sets a conditional expression for drag and drop sorting
 func (c crud) DraggableOn(value string) crud {
 	return c.set("draggableOn", value)
 }
 
-// ExpandConfig 设置展开配置
+// ExpandConfig sets the configuration for row expansion
 func (c crud) ExpandConfig(value string) crud {
 	return c.set("expandConfig", value)
 }
 
-// Filter 设置过滤器表单
+// Filter sets the filter form configuration
 func (c crud) Filter(value form) crud {
 	return c.set("filter", value)
 }
 
-// FilterDefaultVisible 设置过滤器默认是否可见
+// FilterDefaultVisible determines the default visibility of the filter
 func (c crud) FilterDefaultVisible(value bool) crud {
 	return c.set("filterDefaultVisible", value)
 }
 
-// FilterTogglable boolean | {label: string; icon: string; activeLabel: string; activeIcon?: string;}, 默认 false
+// FilterTogglable configures the filter toggle behavior
+// Supports boolean or a configuration object with labels and icons
+// Default is false
 func (c crud) FilterTogglable(value any) crud {
 	return c.set("filterTogglable", value)
 }
 
-// FooterClassName 设置底部 CSS 类名
+// FooterClassName sets the CSS class name for the footer
 func (c crud) FooterClassName(value string) crud {
 	return c.set("footerClassName", value)
 }
 
-// Header 设置顶部区域
+// Header configures the top area of the component
 func (c crud) Header(value any) crud {
 	return c.set("header", value)
 }
 
-// HeaderClassName 设置顶部 CSS 类名
+// HeaderClassName sets the CSS class name for the header
 func (c crud) HeaderClassName(value string) crud {
 	return c.set("headerClassName", value)
 }
 
-// HiddenOn 设置隐藏表达式
+// HiddenOn sets a conditional expression for hiding the component
 func (c crud) HiddenOn(value string) crud {
 	return c.set("hiddenOn", value)
 }
 
-// HideCheckToggler 设置是否隐藏勾选框
+// HideCheckToggler controls the visibility of the checkbox toggler
 func (c crud) HideCheckToggler(value bool) crud {
 	return c.set("hideCheckToggler", value)
 }
 
-// InitFetch 设置初始是否拉取
+// InitFetch determines whether to fetch data initially
 func (c crud) InitFetch(value bool) crud {
 	return c.set("initFetch", value)
 }
 
-// InitFetchOn 设置初始拉取表达式
+// InitFetchOn sets a conditional expression for initial data fetching
 func (c crud) InitFetchOn(value string) crud {
 	return c.set("initFetchOn", value)
 }
 
-// InnerClassName 设置内部 DOM 的 CSS 类名
+// InnerClassName sets the CSS class name for the internal DOM
 func (c crud) InnerClassName(value string) crud {
 	return c.set("innerClassName", value)
 }
 
-// ItemActions 设置单条操作
+// ItemActions configures single-item actions
 func (c crud) ItemActions(value string) crud {
 	return c.set("itemActions", value)
 }
 
-// ItemCheckableOn 设置约束批量操作
+// ItemCheckableOn sets constraints for batch operations
 func (c crud) ItemCheckableOn(value string) crud {
 	return c.set("itemCheckableOn", value)
 }
 
-// ItemClassName 设置卡片 CSS 类名
+// ItemClassName sets the CSS class name for cards
 func (c crud) ItemClassName(value string) crud {
 	return c.set("itemClassName", value)
 }
 
-// ItemDraggableOn 设置项是否可拖拽排序
+// ItemDraggableOn determines whether items can be drag-sorted
 func (c crud) ItemDraggableOn(value string) crud {
 	return c.set("itemDraggableOn", value)
 }
 
-// KeepItemSelectionOnPageChange 设置分页时是否保留用户选择
+// KeepItemSelectionOnPageChange preserves user selection when changing pages
 func (c crud) KeepItemSelectionOnPageChange(value bool) crud {
 	return c.set("keepItemSelectionOnPageChange", value)
 }
 
-// LabelTpl 设置已勾选项的文案
+// LabelTpl sets the text for selected items
 func (c crud) LabelTpl(value string) crud {
 	return c.set("labelTpl", value)
 }
 
-// LoadDataOnceFetchOnFilter 设置 loadDataOnce 时的过滤条件
+// LoadDataOnceFetchOnFilter configures filtering when loading data once
 func (c crud) LoadDataOnceFetchOnFilter(value bool) crud {
 	return c.set("loadDataOnceFetchOnFilter", value)
 }
 
-// MasonryLayout 设置是否为瀑布流布局
+// MasonryLayout enables or disables masonry (waterfall) layout
 func (c crud) MasonryLayout(value bool) crud {
 	return c.set("masonryLayout", value)
 }
 
-// MatchFunc 设置自定义搜索匹配函数
+// MatchFunc sets a custom search matching function
 func (c crud) MatchFunc(value string) crud {
 	return c.set("matchFunc", value)
 }
 
-// OrderBy 设置默认排序字段
+// OrderBy sets the default sorting field
 func (c crud) OrderBy(value string) crud {
 	return c.set("orderBy", value)
 }
 
-// Query 设置查询字段
+// Query sets the query fields
 func (c crud) Query(value string) crud {
 	return c.set("query", value)
 }
 
-// Render设置是否渲染组件
+// Render determines whether to render the component
 func (c crud) Render(value bool) crud {
 	return c.set("render", value)
 }
 
-// ResetPage 设置是否重置分页
+// ResetPage controls whether to reset pagination
 func (c crud) ResetPage(value bool) crud {
 	return c.set("resetPage", value)
 }
 
-// Searchable 设置是否可搜索
+// Searchable enables or disables search functionality
 func (c crud) Searchable(value bool) crud {
 	return c.set("searchable", value)
 }
 
-// SearchPlaceholder 设置搜索占位符
+// SearchPlaceholder sets the search input placeholder text
 func (c crud) SearchPlaceholder(value string) crud {
 	return c.set("searchPlaceholder", value)
 }
 
-// ShowErrorMsg 设置是否显示错误信息
+// ShowErrorMsg controls the visibility of error messages
 func (c crud) ShowErrorMsg(value bool) crud {
 	return c.set("showErrorMsg", value)
 }
 
-// ShowSearch 设置是否显示搜索框
+// ShowSearch controls the visibility of the search input
 func (c crud) ShowSearch(value bool) crud {
 	return c.set("showSearch", value)
 }
 
-// ShowSort 设置是否显示排序
+// ShowSort controls the visibility of sorting options
 func (c crud) ShowSort(value bool) crud {
 	return c.set("showSort", value)
 }
 
-// ShowSwitch 设置是否显示切换按钮
+// ShowSwitch controls the visibility of the switch button
 func (c crud) ShowSwitch(value bool) crud {
 	return c.set("showSwitch", value)
 }
 
-// Size 设置组件尺寸
+// Size sets the component size
 func (c crud) Size(value string) crud {
 	return c.set("size", value)
 }
 
-// Sortable 设置是否可排序
+// Sortable enables or disables sorting functionality
 func (c crud) Sortable(value bool) crud {
 	return c.set("sortable", value)
 }
 
-// SubmitText 设置提交按钮文字
+// SubmitText sets the text for the submit button
 func (c crud) SubmitText(value string) crud {
 	return c.set("submitText", value)
 }
 
-// SyncLocation 设置是否同步 URL
+// SyncLocation determines whether to synchronize with URL
 func (c crud) SyncLocation(value bool) crud {
 	return c.set("syncLocation", value)
 }
 
-// Translations 设置多语言翻译
+// Translations sets multilingual translations
 func (c crud) Translations(value map[string]string) crud {
 	return c.set("translations", value)
 }
 
-// VerticalAlign 设置垂直对齐方式
+// VerticalAlign sets the vertical alignment method
 func (c crud) VerticalAlign(value string) crud {
 	return c.set("verticalAlign", value)
 }
 
-// Visible 设置是否可见
+// Visible controls the overall visibility of the component
 func (c crud) Visible(value bool) crud {
 	return c.set("visible", value)
 }
 
-// VisibleOn 设置可见性表达式
+// VisibleOn sets a conditional expression for component visibility
 func (c crud) VisibleOn(value string) crud {
 	return c.set("visibleOn", value)
 }
 
-// WrapItemClassName 设置包裹项的 CSS 类名
+// WrapItemClassName sets the CSS class name for wrap items
 func (c crud) WrapItemClassName(value string) crud {
 	return c.set("wrapItemClassName", value)
 }
 
-// ExtraAction 设置额外操作
+// ExtraAction sets extra actions
 func (c crud) ExtraAction(value any) crud {
 	return c.set("extraAction", value)
 }
 
-// AutoSaveOnChange 设置是否自动保存更改
+// AutoSaveOnChange sets whether to automatically save changes
 func (c crud) AutoSaveOnChange(value bool) crud {
 	return c.set("autoSaveOnChange", value)
 }
 
-// ID 设置组件唯一 ID
+// ID sets the component's unique ID
 func (c crud) ID(value string) crud {
 	return c.set("id", value)
 }
 
-// ItemAction 设置点击列表项的行为
+// ItemAction sets the behavior of clicking on a list item
 func (c crud) ItemAction(value string) crud {
 	return c.set("itemAction", value)
 }
 
-// ListItem 单条数据展示内容配置
+// ListItem sets the configuration for displaying a single item
 func (c crud) ListItem(value any) crud {
 	return c.set("listItem", value)
 }
 
-// QuickSaveItemActions 设置快速编辑按钮配置
+// QuickSaveItemActions sets the configuration for quick save actions
 func (c crud) QuickSaveItemActions(value string) crud {
 	return c.set("quickSaveItemActions", value)
 }
 
-// QuickSaveSuccessMessage 设置快速保存成功的提示信息
+// QuickSaveSuccessMessage sets the success message for quick save
 func (c crud) QuickSaveSuccessMessage(value string) crud {
 	return c.set("quickSaveSuccessMessage", value)
 }
 
-// RefreshInterval 设置自动刷新时间
+// RefreshInterval sets the automatic refresh interval
 func (c crud) RefreshInterval(value string) crud {
 	return c.set("refreshInterval", value)
 }
 
-// RemoteFilter 支持远程筛选
+// RemoteFilter sets whether to support remote filtering
 func (c crud) RemoteFilter(value bool) crud {
 	return c.set("remoteFilter", value)
 }
 
-// RenderType 设置渲染类型
+// RenderType sets the rendering type
 func (c crud) RenderType(value string) crud {
 	return c.set("renderType", value)
 }
 
-// ResetValueOnHidden 设置隐藏时是否重置值
+// ResetValueOnHidden sets whether to reset the value when hidden
 func (c crud) ResetValueOnHidden(value bool) crud {
 	return c.set("resetValueOnHidden", value)
 }
 
-// SearchFormClassName 设置搜索表单 CSS 类名
+// SearchFormClassName sets the CSS class name for the search form
 func (c crud) SearchFormClassName(value string) crud {
 	return c.set("searchFormClassName", value)
 }
 
-// SearchSchema 设置搜索表单
+// SearchSchema sets the search form schema
 func (c crud) SearchSchema(value any) crud {
 	return c.set("searchSchema", value)
 }
 
-// SortSettings 设置排序配置
+// SortSettings sets the sorting configuration
 func (c crud) SortSettings(value string) crud {
 	return c.set("sortSettings", value)
 }
 
-// SortFieldName 设置排序字段名
+// SortFieldName sets the sorting field name
 func (c crud) SortFieldName(value string) crud {
 	return c.set("sortFieldName", value)
 }
 
-// Stateful 设置是否保留状态
+// Stateful sets whether to keep the state
 func (c crud) Stateful(value bool) crud {
 	return c.set("stateful", value)
 }
 
-// TableClassName 设置表格 CSS 类名
+// TableClassName sets the CSS class name for the table
 func (c crud) TableClassName(value string) crud {
 	return c.set("tableClassName", value)
 }
 
-// Tooltip设置 提示信息配置
+// Tooltip sets the tooltip configuration
 func (c crud) Tooltip(value string) crud {
 	return c.set("tooltip", value)
 }
 
-// TransformItems 设置数据转换
+// TransformItems sets the data transformation
 func (c crud) TransformItems(value ...any) crud {
 	return c.set("transformItems", value)
 }
 
-// Virtualized 设置虚拟化
+// Virtualized sets whether to use virtualization
 func (c crud) Virtualized(value bool) crud {
 	return c.set("virtualized", value)
 }
 
-// EmptyText 设置无数据时的提示
+// EmptyText sets the text for when there is no data
 func (c crud) EmptyText(value string) crud {
 	return c.set("emptyText", value)
 }
 
-// Components 设置自定义组件
+// Components sets custom components
 func (c crud) Components(value any) crud {
 	return c.set("components", value)
 }
 
-// 其他 CRUD2List 特有字段和方法
+// Other CRUD2List specific fields and methods
 func (c crud) CustomField1(value string) crud {
 	return c.set("customField1", value)
 }
 
-// 其他 crudTable 特有字段和方法
+// Other crudTable specific fields and methods
 func (c crud) CustomField2(value string) crud {
 	return c.set("customField2", value)
 }

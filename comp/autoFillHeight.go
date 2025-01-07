@@ -1,9 +1,9 @@
 package comp
 
-// autoFillHeight 自动填充高度渲染器
+// AutoFillHeight represents a renderer for automatically filling height
 type autoFillHeight Schema
 
-// AutoFillHeight 创建一个新的 AutoFillHeight 实例
+// AutoFillHeight creates a new AutoFillHeight instance
 func AutoFillHeight() autoFillHeight {
 	return make(autoFillHeight)
 }
@@ -13,12 +13,12 @@ func (a autoFillHeight) set(key string, value any) autoFillHeight {
 	return a
 }
 
-// Height 设置高度
+// Height sets the component's height
 func (a autoFillHeight) Height(value string) autoFillHeight {
 	return a.set("height", value)
 }
 
-// MaxHeight 设置最大高度
+// MaxHeight sets the maximum height for the component
 func (a autoFillHeight) MaxHeight(value string) autoFillHeight {
 	return a.set("maxHeight", value)
 }

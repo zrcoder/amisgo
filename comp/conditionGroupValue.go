@@ -1,9 +1,9 @@
 package comp
 
-// conditionGroupValue 代表一个条件组合值，支持多种配置项
+// ConditionGroupValue represents a condition group value with multiple configuration options
 type conditionGroupValue Schema
 
-// ConditionGroupValue 创建一个新的 ConditionGroupValue 实例，并设置默认的 conjunction
+// ConditionGroupValue creates a new ConditionGroupValue instance with a default conjunction
 func ConditionGroupValue() conditionGroupValue {
 	return make(conditionGroupValue).set("conjunction", "and")
 }
@@ -13,27 +13,27 @@ func (c conditionGroupValue) set(key string, value any) conditionGroupValue {
 	return c
 }
 
-// Children 设置子条件
+// Children sets the child conditions
 func (c conditionGroupValue) Children(value string) conditionGroupValue {
 	return c.set("children", value)
 }
 
-// Conjunction 设置连接词，可选值: and | or
+// Conjunction sets the logical connector, with options: "and" | "or"
 func (c conditionGroupValue) Conjunction(value string) conditionGroupValue {
 	return c.set("conjunction", value)
 }
 
-// ID 设置 ID
+// ID sets a unique identifier
 func (c conditionGroupValue) ID(value string) conditionGroupValue {
 	return c.set("id", value)
 }
 
-// If 设置条件
+// If sets the condition expression
 func (c conditionGroupValue) If(value string) conditionGroupValue {
 	return c.set("if", value)
 }
 
-// Not 设置是否取反
+// Not enables or disables condition negation
 func (c conditionGroupValue) Not(value bool) conditionGroupValue {
 	return c.set("not", value)
 }
