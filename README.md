@@ -41,7 +41,4 @@ Check out our [examples repository](https://github.com/zrcoder/amisgo-examples).
 
 ## Project Status
 
-- [x] Auto-generated components based on latest amis schema
-- [ ] Tests and examples (60% complete)
-
-> **Note**: API is not stable yet and subject to change.
+The API is not yet stable and is subject to change. However, the overall architecture and the core components are already in place. We are actively working on improving the stability. If you encounter any issues or have any feature requests, please don't hesitate to open an issue.
