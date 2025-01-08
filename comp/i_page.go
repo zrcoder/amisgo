@@ -1,6 +1,8 @@
 package comp
 
-type MPageItem Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MPageItem model.Schema
 
 func PageItem() MPageItem {
 	return MPageItem{}
@@ -30,12 +32,12 @@ func (p MPageItem) Url(value string) MPageItem {
 	return p.set("url", value)
 }
 
-// Schema sets the page configuration.
+// model.Schema sets the page configuration.
 func (p MPageItem) Schema(value any) MPageItem {
 	return p.set("schema", value)
 }
 
-// SchemaApi sets the API to fetch the schema.
+// model.SchemaApi sets the API to fetch the schema.
 func (p MPageItem) SchemaApi(value string) MPageItem {
 	return p.set("schemaApi", value)
 }

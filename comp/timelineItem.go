@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // timelineItem represents a timeline item renderer
 
-type timelineItem Schema
+type timelineItem model.Schema
 
 // NewTimelineItem creates a new TimelineItem instance
 func NewTimelineItem() timelineItem {

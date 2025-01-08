@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputRange controls the range of the component
 
-type inputRange Schema
+type inputRange model.Schema
 
 // InputRange creates a new RangeControl instance
 func InputRange() inputRange {

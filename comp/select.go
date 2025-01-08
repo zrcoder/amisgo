@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // selectControl represents a select control configuration. Document: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/select
 
-type selectControl Schema
+type selectControl model.Schema
 
 // Select creates a new selectControl instance
 func Select() selectControl {

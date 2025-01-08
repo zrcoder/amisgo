@@ -1,6 +1,8 @@
 package comp
 
-type MBreadcrumbItem Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MBreadcrumbItem model.Schema
 
 func BreadcrumbItem() MBreadcrumbItem {
 	return MBreadcrumbItem{}

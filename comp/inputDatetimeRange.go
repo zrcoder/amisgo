@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputDatetimeRange represents a date-time range input component.
-type inputDatetimeRange Schema
+type inputDatetimeRange model.Schema
 
 // InputDatetimeRange creates a new instance with default type.
 func InputDatetimeRange() inputDatetimeRange {

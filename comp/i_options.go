@@ -1,6 +1,8 @@
 package comp
 
-type MOptions Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MOptions model.Schema
 
 // Options creates a new Options instance
 func Options() MOptions {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // hBoxColumn represents a column renderer
-type hBoxColumn Schema
+type hBoxColumn model.Schema
 
 // HBoxColumn creates a new hBoxColumn instance
 func HBoxColumn() hBoxColumn {

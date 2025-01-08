@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Code represents a code display and editing component
-type code Schema
+type code model.Schema
 
 // Code creates a new Code instance
 func Code() code {

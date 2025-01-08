@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // audio represents an audio renderer.
-type audio Schema
+type audio model.Schema
 
 // Audio creates a new audio renderer.
 func Audio() audio {

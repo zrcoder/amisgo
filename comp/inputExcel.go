@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputExcel parses Excel. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/excel
-type inputExcel Schema
+type inputExcel model.Schema
 
 // InputExcel creates a new InputExcel instance with default type
 func InputExcel() inputExcel {

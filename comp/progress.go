@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // progress
 
-type progress Schema
+type progress model.Schema
 
 // Progress creates a new Progress instance
 func Progress() progress {

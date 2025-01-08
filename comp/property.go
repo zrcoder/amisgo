@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // property
 
-type property Schema
+type property model.Schema
 
 // Property creates a new Property instance
 func Property() property {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // iconChecked represents an icon checked renderer
-type iconChecked Schema
+type iconChecked model.Schema
 
 // IconChecked creates a new IconChecked instance
 func IconChecked() iconChecked {

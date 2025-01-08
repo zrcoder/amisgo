@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // rowSelection
 
-type rowSelection Schema
+type rowSelection model.Schema
 
 func RowSelection() rowSelection {
 	return rowSelection{}

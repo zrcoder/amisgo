@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputRating documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/rating
 
-type inputRating Schema
+type inputRating model.Schema
 
 func InputRating() inputRating {
 	return inputRating{}.set("type", "input-rating")

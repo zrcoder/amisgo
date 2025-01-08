@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // ConditionBuilder represents a condition combination control with multiple configuration options
-type conditionBuilder Schema
+type conditionBuilder model.Schema
 
 // ConditionBuilder creates a new ConditionBuilder instance
 func ConditionBuilder() conditionBuilder {

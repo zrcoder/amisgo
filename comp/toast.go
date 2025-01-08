@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // toast represents a lightweight notification
 
-type toast Schema
+type toast model.Schema
 
 // Toast creates a new Toast instance
 func Toast() toast {

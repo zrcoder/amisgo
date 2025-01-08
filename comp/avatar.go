@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Avatar represents an avatar renderer
-type avatar Schema
+type avatar model.Schema
 
 // Avatar creates a new Avatar instance with default cross-origin settings
 func Avatar() avatar {

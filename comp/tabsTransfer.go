@@ -1,9 +1,11 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // TabsTransfer documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tabs-transfer
 
 // tabsTransfer represents the schema for tabs transfer component
-type tabsTransfer Schema
+type tabsTransfer model.Schema
 
 // TabsTransfer initializes a tabsTransfer with type "tabs-transfer"
 func TabsTransfer() tabsTransfer {

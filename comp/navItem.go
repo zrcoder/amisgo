@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // navItem represents a navigation item
-type navItem Schema
+type navItem model.Schema
 
 // NavItem creates a new navItem instance
 func NavItem() navItem {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // iconPicker represents an icon picker component
-type iconPicker Schema
+type iconPicker model.Schema
 
 // IconPicker creates a new IconPicker instance
 func IconPicker() iconPicker {

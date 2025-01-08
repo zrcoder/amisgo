@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // group represents a form group renderer that allows multiple forms to be displayed in a row.
-type group Schema
+type group model.Schema
 
 // Group creates a new GroupControl instance.
 func Group() group {

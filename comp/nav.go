@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // nav represents a navigation renderer
-type nav Schema
+type nav model.Schema
 
 // Nav creates a new Nav instance
 func Nav() nav {

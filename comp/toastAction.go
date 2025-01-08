@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // toastAction
 
-type toastAction Schema
+type toastAction model.Schema
 
 // ToastAction creates a new ToastAction instance
 func ToastAction() toastAction {

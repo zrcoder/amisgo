@@ -1,11 +1,15 @@
 package comp
 
-import js "encoding/json"
+import (
+	js "encoding/json"
+
+	"github.com/zrcoder/amisgo/model"
+)
 
 type (
-	ChartCfg  Schema
-	ChartSeri Schema
-	ChartAxis Schema
+	ChartCfg  model.Schema
+	ChartSeri model.Schema
+	ChartAxis model.Schema
 )
 
 func ChartConfig() ChartCfg {
@@ -108,11 +112,11 @@ func (c ChartSeri) Smooth(value bool) ChartSeri {
 	return c.set("smooth", value)
 }
 
-func (c ChartSeri) LineStyle(value Schema) ChartSeri {
+func (c ChartSeri) LineStyle(value model.Schema) ChartSeri {
 	return c.set("lineStyle", value)
 }
 
-func (c ChartSeri) AreaStyle(value Schema) ChartSeri {
+func (c ChartSeri) AreaStyle(value model.Schema) ChartSeri {
 	return c.set("areaStyle", value)
 }
 

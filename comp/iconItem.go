@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // iconItem represents an icon item renderer
-type iconItem Schema
+type iconItem model.Schema
 
 // IconItem creates a new IconItem instance
 func IconItem() iconItem {

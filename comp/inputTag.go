@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputTag represents an input tag component. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tag
 
-type inputTag Schema
+type inputTag model.Schema
 
 // InputTag initializes an input tag component.
 func InputTag() inputTag {

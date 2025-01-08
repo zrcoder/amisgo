@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // wizard form wizard documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/wizard
 
-type wizard Schema
+type wizard model.Schema
 
 // Wizard creates a new Wizard instance
 func Wizard() wizard {

@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // AnchorNav represents a navigation component with anchor points for document sections
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
-type anchorNav Schema
+type anchorNav model.Schema
 
 // AnchorNav creates a new AnchorNav instance
 func AnchorNav() anchorNav {

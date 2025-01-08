@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // icon represents an icon renderer
-type icon Schema
+type icon model.Schema
 
 // Icon creates a new Icon instance with default type
 func Icon() icon {

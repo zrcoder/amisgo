@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputColor represents a color picker input.
-type inputColor Schema
+type inputColor model.Schema
 
 func InputColor() inputColor {
 	return make(inputColor).set("type", "input-color")

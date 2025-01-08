@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputYear represents a year selection component.
 
-type inputYear Schema
+type inputYear model.Schema
 
 // InputYear creates a new input-year component.
 func InputYear() inputYear {

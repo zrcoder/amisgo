@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // ListItem represents a list item.
-type ListItem Schema
+type ListItem model.Schema
 
 // NewListItem creates a new ListItem instance.
 func NewListItem() ListItem {

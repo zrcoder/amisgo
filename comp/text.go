@@ -1,6 +1,8 @@
 package comp
 
-type text Schema
+import "github.com/zrcoder/amisgo/model"
+
+type text model.Schema
 
 func Text() text {
 	return text{}.set("type", "text")

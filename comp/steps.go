@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // steps represents a schema for steps component
 
-type steps Schema
+type steps model.Schema
 
 // Steps creates a new Steps instance
 func Steps() steps {

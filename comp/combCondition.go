@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // ComboCondition represents a composite condition rendering component
-type comboCondition Schema
+type comboCondition model.Schema
 
 // ComboCondition creates a new ComboCondition instance
 func ComboCondition() comboCondition {

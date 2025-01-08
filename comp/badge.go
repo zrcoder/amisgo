@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Badge represents a badge renderer
-type badge Schema
+type badge model.Schema
 
 // Badge creates a new Badge instance
 func Badge() badge {

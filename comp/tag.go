@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // tag represents a tag component
 
-type tag Schema
+type tag model.Schema
 
 // Tag creates a new Tag instance
 func Tag() tag {

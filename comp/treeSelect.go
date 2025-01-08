@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // treeSelect represents a dropdown tree select component
-type treeSelect Schema
+type treeSelect model.Schema
 
 func TreeSelect() treeSelect {
 	return treeSelect{}.set("type", "tree-select")

@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // switchControl documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/switch
 
-type switchControl Schema
+type switchControl model.Schema
 
 // Switch creates a new SwitchControl instance
 func Switch() switchControl {

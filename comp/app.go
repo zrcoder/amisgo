@@ -1,6 +1,8 @@
 package comp
 
-type app Schema
+import "github.com/zrcoder/amisgo/model"
+
+type app model.Schema
 
 // App creates an application for implementing multi-page interfaces
 // Suitable for full-screen mode. Not recommended for partial rendering.

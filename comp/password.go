@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // password represents the amis password renderer
 
-type password Schema
+type password model.Schema
 
 // Password creates a new Password instance
 func Password() password {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // words represents a text display component
-type words Schema
+type words model.Schema
 
 // Words creates a new Words instance
 func Words() words {

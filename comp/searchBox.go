@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // searchBox represents a search box configuration.
-type searchBox Schema
+type searchBox model.Schema
 
 // SearchBox creates a new SearchBox instance.
 func SearchBox() searchBox {

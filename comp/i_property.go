@@ -1,6 +1,8 @@
 package comp
 
-type MPropertyItem Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MPropertyItem model.Schema
 
 func PropertyItem() MPropertyItem {
 	return MPropertyItem{}

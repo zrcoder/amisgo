@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Tabs component. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/tabs
 
-type tabs Schema
+type tabs model.Schema
 
 // Tabs creates a new Tabs instance
 func Tabs() tabs {

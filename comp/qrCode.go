@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // qrCode
 
-type qrCode Schema
+type qrCode model.Schema
 
 // QRCode creates a new QRCode instance
 func QRCode() qrCode {

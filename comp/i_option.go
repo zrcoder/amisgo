@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // MOption represents an option schema
-type MOption Schema
+type MOption model.Schema
 
 // Option creates a new MOption instance
 func Option() MOption {

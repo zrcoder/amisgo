@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // anchorNavSection is an anchor area renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
-type anchorNavSection Schema
+type anchorNavSection model.Schema
 
 // AnchorNavSection creates a new instance of AnchorNavSection.
 func AnchorNavSection() anchorNavSection {

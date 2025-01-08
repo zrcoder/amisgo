@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // grid2d represents a 2D grid layout renderer.
-type grid2d Schema
+type grid2d model.Schema
 
 // Grid2D creates a new Grid2D instance.
 func Grid2D() grid2d {

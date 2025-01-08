@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // webComponent represents a Web Component
 
-type webComponent Schema
+type webComponent model.Schema
 
 // WebComponent creates a new WebComponent instance
 func WebComponent() webComponent {

@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // nestedSelect represents a nested select component.
 
-type nestedSelect Schema
+type nestedSelect model.Schema
 
 func NestedSelect() nestedSelect {
 	return make(nestedSelect).set("type", "nested-select")

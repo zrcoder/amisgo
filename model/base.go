@@ -1,4 +1,4 @@
-package comp
+package model
 
 import js "encoding/json"
 

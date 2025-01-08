@@ -1,15 +1,12 @@
 package comp
 
 import (
-	js "encoding/json"
-	"io"
-	"net/http"
-
 	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/model"
 )
 
 // action represents an action button. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/action
-type action Schema
+type action model.Schema
 
 // Action creates a new Action instance.
 func Action() action {
@@ -49,51 +46,25 @@ func (a action) Toast(value toast) action {
 
 // Transform transforms the src value with the provided function and renders the result to the dst component.
 func (a action) Transform(src, dst, successMsg string, transfor func(input any) (any, error)) action {
-	return a.TransformMultiple(successMsg, func(d Data) (Data, error) {
+	return a.TransformMultiple(successMsg, func(d model.Data) (model.Data, error) {
 		output, err := transfor(d[src])
 		if err != nil {
 			return nil, err
 		}
-		return Data{dst: output}, nil
+		return model.Data{dst: output}, nil
 	}, src)
 }
 
 // TransformMultiple transforms the src values with the provided function and renders the result to multiple destinations.
-func (a action) TransformMultiple(successMsg string, transfor func(Data) (Data, error), src ...string) action {
-	route := getRoute()
-	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
-		inputData, err := io.ReadAll(r.Body)
-		if err != nil {
-			respError(w, err)
-			return
-		}
-		defer r.Body.Close()
-		d := Data{}
-		err = js.Unmarshal(inputData, &d)
-		if err != nil {
-			respError(w, err)
-			return
-		}
-		output, err := transfor(d)
-		if err != nil {
-			respError(w, err)
-			return
-		}
-		resp := SuccessResponse(successMsg, output)
-		w.Write(resp.Json())
-	})
-
-	data := make(Data, len(src))
-	for _, s := range src {
-		data.Set(s, "${"+s+"}")
-	}
+func (a action) TransformMultiple(successMsg string, transfor func(model.Data) (model.Data, error), src ...string) action {
+	route, data := servermux.TransformMultiple(successMsg, transfor, src...)
 	return a.ActionType("ajax").Api(
-		Schema{
+		model.Schema{
 			"url":  route,
 			"data": data,
-			"__amisgo_resp": Schema{
-				"200": Schema{
-					"then": EventAction().ActionType("setValue").Args(Schema{"value": "${__amisgo__resp}"}),
+			"__amisgo_resp": model.Schema{
+				"200": model.Schema{
+					"then": EventAction().ActionType("setValue").Args(model.Schema{"value": "${__amisgo__resp}"}),
 				},
 			},
 		},

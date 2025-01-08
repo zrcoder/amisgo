@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // vBox represents a vertical layout component
 
-type vBox Schema
+type vBox model.Schema
 
 // VBox creates a new VBox instance
 func VBox() vBox {

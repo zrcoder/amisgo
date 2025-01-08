@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Checkbox represents a checkbox form component for boolean selections
-type checkbox Schema
+type checkbox model.Schema
 
 // Checkbox creates a new Checkbox instance
 func Checkbox() checkbox {

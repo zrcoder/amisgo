@@ -1,6 +1,8 @@
 package comp
 
-type checkboxes Schema
+import "github.com/zrcoder/amisgo/model"
+
+type checkboxes model.Schema
 
 func Checkboxes() checkboxes {
 	return make(checkboxes).set("type", "checkboxes")

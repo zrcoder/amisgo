@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // userSelect represents a mobile user selector component.
-type userSelect Schema
+type userSelect model.Schema
 
 func UsersSelect() userSelect {
 	return userSelect{}.set("type", "users-select")

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // gridColumn represents a grid column
-type gridColumn Schema
+type gridColumn model.Schema
 
 // GridColumn creates a new gridColumn instance
 func GridColumn() gridColumn {

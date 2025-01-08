@@ -1,10 +1,12 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Replace with the actual upload package path
 
 // wangEditor
 
-type wangEditor Schema
+type wangEditor model.Schema
 
 // WangEditor creates a new WangEditor instance
 func WangEditor() wangEditor {

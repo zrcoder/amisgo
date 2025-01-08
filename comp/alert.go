@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // alert represents the alert renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/alert
 
-type alert Schema
+type alert model.Schema
 
 // Alert creates a new Alert instance
 func Alert() alert {

@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // tableColumn represents a table column with default type as text.
 
-type tableColumn Schema
+type tableColumn model.Schema
 
 // TableColumn creates a new TableColumn instance.
 func TableColumn() tableColumn {

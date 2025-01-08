@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // mapping represents a display component
 
-type mapping Schema
+type mapping model.Schema
 
 // Mapping creates a new Mapping instance
 func Mapping() mapping {

@@ -1,7 +1,12 @@
 package comp
 
+import (
+	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/model"
+)
+
 // service represents a service configuration.
-type service Schema
+type service model.Schema
 
 // Service creates a new Service instance.
 func Service() service {
@@ -20,7 +25,7 @@ func (s service) Api(value string) service {
 
 // GetData fetches data using the internal API.
 func (s service) GetData(getter func() (any, error)) service {
-	return s.Api(serveData(getter))
+	return s.Api(servermux.ServeData(getter))
 }
 
 // Body sets the content area.
@@ -123,7 +128,7 @@ func (s service) OnEvent(value any) service {
 	return s.set("onEvent", value)
 }
 
-// SchemaApi sets the API for schema fetching.
+// model.SchemaApi sets the API for schema fetching.
 func (s service) SchemaApi(value string) service {
 	return s.set("schemaApi", value)
 }

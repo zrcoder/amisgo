@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // rowSelectionOptions
 
-type rowSelectionOptions Schema
+type rowSelectionOptions model.Schema
 
 // RowSelectionOptions creates a new RowSelectionOptions instance
 func RowSelectionOptions() rowSelectionOptions {

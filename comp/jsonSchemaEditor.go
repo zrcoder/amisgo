@@ -1,9 +1,11 @@
 package comp
 
-// jsonSchemaEditor JSON Schema Editor component
+import "github.com/zrcoder/amisgo/model"
+
+// jsonSchemaEditor JSON model.Schema Editor component
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/json-schema-editor
 
-type jsonSchemaEditor Schema
+type jsonSchemaEditor model.Schema
 
 func JsonSchemaEditor() jsonSchemaEditor {
 	return make(jsonSchemaEditor).set("type", "json-schema-editor")

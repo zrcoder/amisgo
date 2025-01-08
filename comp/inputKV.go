@@ -1,6 +1,8 @@
 package comp
 
-type inputKV Schema
+import "github.com/zrcoder/amisgo/model"
+
+type inputKV model.Schema
 
 // InputKV creates a new inputKV instance with default type
 func InputKV() inputKV {

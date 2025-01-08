@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // log represents a real-time log component
 
-type log Schema
+type log model.Schema
 
 // Log creates a new log instance
 func Log() log {

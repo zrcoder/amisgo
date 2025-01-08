@@ -1,6 +1,8 @@
 package comp
 
-type step Schema
+import "github.com/zrcoder/amisgo/model"
+
+type step model.Schema
 
 func Step() step {
 	return step{}

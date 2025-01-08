@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // emailAction represents an email action button
-type emailAction Schema
+type emailAction model.Schema
 
 // EmailAction creates a new EmailAction instance with default type and actionType
 func EmailAction() emailAction {

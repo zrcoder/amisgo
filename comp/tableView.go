@@ -1,6 +1,8 @@
 package comp
 
-type tableView Schema
+import "github.com/zrcoder/amisgo/model"
+
+type tableView model.Schema
 
 // TableView creates a new TableView instance
 func TableView() tableView {

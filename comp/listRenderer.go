@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // ListRenderer represents a list display component.
-type ListRenderer Schema
+type ListRenderer model.Schema
 
 // NewListRenderer creates a new ListRenderer instance.
 func NewListRenderer() ListRenderer {

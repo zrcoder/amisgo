@@ -1,9 +1,11 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // wrapper represents a container renderer
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/wrapper
 
-type wrapper Schema
+type wrapper model.Schema
 
 // Wrapper creates a new Wrapper instance
 func Wrapper() wrapper {

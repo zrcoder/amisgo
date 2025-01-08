@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // link represents a link display component.
 
-type link Schema
+type link model.Schema
 
 // Link creates a new Link instance with default type.
 func Link() link {

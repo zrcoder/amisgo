@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // uuid UUID functional component
 
-type uuid Schema
+type uuid model.Schema
 
 func UUID() uuid {
 	return uuid{}.set("type", "uuid")

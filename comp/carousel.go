@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Carousel represents a carousel component renderer
-type carousel Schema
+type carousel model.Schema
 
 // Carousel creates a new Carousel instance
 func Carousel() carousel {

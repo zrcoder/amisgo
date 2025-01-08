@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // imageToolbarAction represents an image toolbar action
-type imageToolbarAction Schema
+type imageToolbarAction model.Schema
 
 // ImageToolbarAction creates a new ImageToolbarAction instance with a default key
 func ImageToolbarAction() imageToolbarAction {

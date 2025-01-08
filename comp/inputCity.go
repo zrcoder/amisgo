@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputCity represents a city selection component.
-type inputCity Schema
+type inputCity model.Schema
 
 func InputCity() inputCity {
 	return make(inputCity).set("type", "input-city")

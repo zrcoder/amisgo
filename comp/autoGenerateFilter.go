@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // AutoGenerateFilter represents a renderer for automatically generating filter conditions
-type autoGenerateFilter Schema
+type autoGenerateFilter model.Schema
 
 // AutoGenerateFilter creates a new AutoGenerateFilter instance
 func AutoGenerateFilter() autoGenerateFilter {

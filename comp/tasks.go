@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // tasks renderer, documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/tasks
 
-type tasks Schema
+type tasks model.Schema
 
 // Tasks creates a new Tasks instance
 func Tasks() tasks {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // tpl renderer
-type tpl Schema
+type tpl model.Schema
 
 // Tpl creates a new Tpl instance
 func Tpl() tpl {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputNumber represents a number input field
-type inputNumber Schema
+type inputNumber model.Schema
 
 // InputNumber creates a new NumberControl instance
 func InputNumber() inputNumber {

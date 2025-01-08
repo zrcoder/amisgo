@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // remark 提示渲染器.
 
-type remark Schema
+type remark model.Schema
 
 // Remark creates a new remark.
 func Remark() remark {

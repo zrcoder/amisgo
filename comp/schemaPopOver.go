@@ -1,10 +1,12 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // schemaPopOver
 
-type schemaPopOver Schema
+type schemaPopOver model.Schema
 
-// SchemaPopOver creates a new SchemaPopOver instance
+// model.SchemaPopOver creates a new model.SchemaPopOver instance
 func SchemaPopOver() schemaPopOver {
 	return schemaPopOver{}
 }

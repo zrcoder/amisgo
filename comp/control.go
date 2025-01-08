@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Control represents a form item wrapper. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/control
-type control Schema
+type control model.Schema
 
 // Control creates a new Control instance with default type
 func Control() control {

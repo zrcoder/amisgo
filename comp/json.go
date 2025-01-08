@@ -1,9 +1,11 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // json JSON data display component
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/json
 
-type json Schema
+type json model.Schema
 
 // Json creates a new Json instance with default type
 func Json() json {

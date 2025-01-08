@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // dateRange represents a date range renderer
-type dateRange Schema
+type dateRange model.Schema
 
 // DateRange creates a new DateRange instance with default type set to "date-range"
 func DateRange() dateRange {

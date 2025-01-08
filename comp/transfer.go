@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // transfer control definition
 
-type transfer Schema
+type transfer model.Schema
 
 // Transfer creates a new TransferControl instance
 func Transfer() transfer {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // expandable represents an expandable renderer
-type expandable Schema
+type expandable model.Schema
 
 // Expandable creates a new instance of expandable
 func Expandable() expandable {

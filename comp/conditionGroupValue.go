@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // ConditionGroupValue represents a condition group value with multiple configuration options
-type conditionGroupValue Schema
+type conditionGroupValue model.Schema
 
 // ConditionGroupValue creates a new ConditionGroupValue instance with a default conjunction
 func ConditionGroupValue() conditionGroupValue {

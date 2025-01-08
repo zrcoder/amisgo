@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // grid represents a grid layout renderer
-type grid Schema
+type grid model.Schema
 
 // Grid creates a new Grid instance
 func Grid() grid {

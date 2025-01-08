@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // navOverflow represents the navigation overflow configuration.
-type navOverflow Schema
+type navOverflow model.Schema
 
 // NavOverflow creates a new NavOverflow instance.
 func NavOverflow() navOverflow {

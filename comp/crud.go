@@ -1,7 +1,12 @@
 package comp
 
+import (
+	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/model"
+)
+
 // Crud represents a CRUD (Create, Read, Update, Delete) table and list renderer
-type crud Schema
+type crud model.Schema
 
 // Crud creates a default CRUD table
 func Crud() crud {
@@ -36,7 +41,7 @@ func (c crud) Api(value string) crud {
 
 // FetchData sets the API implementation method for retrieving data
 func (c crud) FetchData(getter func() (any, error)) crud {
-	return c.Api(serveData(getter))
+	return c.Api(servermux.ServeData(getter))
 }
 
 // AutoFillHeight determines whether the content area should occupy the remaining screen space

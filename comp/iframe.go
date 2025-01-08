@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // iframe renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/iframe
-type iframe Schema
+type iframe model.Schema
 
 // Iframe creates a new Iframe instance
 func Iframe() iframe {

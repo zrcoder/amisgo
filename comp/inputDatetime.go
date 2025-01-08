@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputDatetime represents a datetime input control.
-type inputDatetime Schema
+type inputDatetime model.Schema
 
 func InputDatetime() inputDatetime {
 	return make(inputDatetime).set("type", "input-datetime")

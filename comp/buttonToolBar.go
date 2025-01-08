@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // ButtonToolbar represents a button toolbar control renderer
-type buttonToolbar Schema
+type buttonToolbar model.Schema
 
 // ButtonToolbar creates a new ButtonToolbar instance
 func ButtonToolbar() buttonToolbar {

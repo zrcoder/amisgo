@@ -1,7 +1,12 @@
 package comp
 
+import (
+	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/model"
+)
+
 // inputFile represents a file upload component
-type inputFile Schema
+type inputFile model.Schema
 
 func InputFile() inputFile {
 	f := make(inputFile)
@@ -265,7 +270,7 @@ func (fc inputFile) Receiver(value string) inputFile {
 
 // Upload sets the upload function.
 func (i inputFile) Upload(maxMemory int64, action func([]byte) (path string, err error)) inputFile {
-	return i.Receiver(serveUpload(maxMemory, action))
+	return i.Receiver(servermux.ServeUpload(maxMemory, action))
 }
 
 // RenderType sets the default render type.

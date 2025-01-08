@@ -1,6 +1,8 @@
 package comp
 
-type MNavLink Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MNavLink model.Schema
 
 func NavLink() MNavLink {
 	return MNavLink{}

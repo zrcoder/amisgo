@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Collapse represents a collapsible container component
-type collapse Schema
+type collapse model.Schema
 
 // Collapse creates a new Collapse instance
 func Collapse() collapse {

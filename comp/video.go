@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // video Video player component
 
-type video Schema
+type video model.Schema
 
 // Video creates a new Video instance
 func Video() video {

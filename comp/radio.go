@@ -1,9 +1,11 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Radio control for single selection.
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/radios
 
-type radio Schema
+type radio model.Schema
 
 // Radio creates a new RadioControl instance
 func Radio() radio {

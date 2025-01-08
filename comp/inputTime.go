@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputTime represents a time selection component. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/time
 
-type inputTime Schema
+type inputTime model.Schema
 
 // InputTime creates a new input-time component.
 func InputTime() inputTime {

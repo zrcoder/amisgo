@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // state represents a state configuration.
 
-type state Schema
+type state model.Schema
 
 // State creates a new State instance.
 func State() state {

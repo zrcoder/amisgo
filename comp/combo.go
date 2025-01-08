@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Combo represents a composite input field component with multiple input capabilities
-type combo Schema
+type combo model.Schema
 
 // Combo creates a new Combo instance
 func Combo() combo {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // hidden represents a hidden field component.
-type hidden Schema
+type hidden model.Schema
 
 func Hidden() hidden {
 	return make(hidden).set("type", "hidden")

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // CopyButton represents a button with copy behavior
-type copyButton Schema
+type copyButton model.Schema
 
 // CopyButton creates a new CopyButton instance with default copy action type
 func CopyButton() copyButton {

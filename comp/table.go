@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // table is a table renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/table
 
-type table Schema
+type table model.Schema
 
 // Table creates a new Table instance
 func Table() table {
@@ -74,7 +76,7 @@ func (t table) CombineNum(value string) table {
 }
 
 // Data sets the data
-func (t table) Data(value Data) table {
+func (t table) Data(value model.Data) table {
 	return t.set("data", value)
 }
 

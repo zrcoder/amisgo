@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputRichText Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-rich-text
 
-type inputRichText Schema
+type inputRichText model.Schema
 
 func InputRichText() inputRichText {
 	return inputRichText{}.set("type", "input-rich-text")
@@ -154,7 +156,7 @@ func (rc inputRichText) OnEvent(value any) inputRichText {
 }
 
 // Options sets the tinymce or froala configuration.
-func (rc inputRichText) Options(value Schema) inputRichText {
+func (rc inputRichText) Options(value model.Schema) inputRichText {
 	return rc.set("options", value)
 }
 

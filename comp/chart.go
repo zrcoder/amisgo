@@ -1,7 +1,12 @@
 package comp
 
+import (
+	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/model"
+)
+
 // Chart represents a chart renderer component for data visualization
-type chart Schema
+type chart model.Schema
 
 // Chart creates a new Chart instance
 func Chart() chart {
@@ -20,7 +25,7 @@ func (c chart) API(value string) chart {
 
 // GetData sets a custom method for retrieving chart data
 func (c chart) GetData(value func() (any, error)) chart {
-	return c.API(serveData(value))
+	return c.API(servermux.ServeData(value))
 }
 
 // ChartTheme configures the visual theme for the chart

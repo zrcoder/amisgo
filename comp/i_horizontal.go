@@ -1,6 +1,8 @@
 package comp
 
-type MHorizontal Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MHorizontal model.Schema
 
 func Horizontal() MHorizontal {
 	return MHorizontal{}

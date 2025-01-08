@@ -1,6 +1,8 @@
 package comp
 
-type otherAction Schema
+import "github.com/zrcoder/amisgo/model"
+
+type otherAction model.Schema
 
 func OtherAction() otherAction {
 	return otherAction{}.set("type", "button").set("actionType", "prev")

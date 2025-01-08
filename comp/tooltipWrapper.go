@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // tooltipWrapper
 
-type tooltipWrapper Schema
+type tooltipWrapper model.Schema
 
 // TooltipWrapper creates a new TooltipWrapper instance
 func TooltipWrapper() tooltipWrapper {

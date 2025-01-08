@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputTree represents a dropdown selection box. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tree
 
-type inputTree Schema
+type inputTree model.Schema
 
 // InputTree initializes an inputTree with type "input-tree".
 func InputTree() inputTree {

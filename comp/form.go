@@ -1,8 +1,13 @@
 package comp
 
+import (
+	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/model"
+)
+
 // form represents a form renderer.
 
-type form Schema
+type form model.Schema
 
 // Form creates a new Form instance.
 func Form() form {
@@ -201,18 +206,18 @@ func (f form) Api(value any) form {
 
 // GetData fetches data using the provided getter function.
 func (s form) GetData(getter func() (any, error)) form {
-	return s.Api(serveData(getter))
+	return s.Api(servermux.ServeData(getter))
 }
 
 // Submit sets the callback logic after form submission, using the generic Data type to handle form data
 // Suitable for scenarios where flexible handling of form submission is required
-func (f form) Submit(callback func(Data) error) form {
-	return f.Api(bindDataRoute(callback))
+func (f form) Submit(callback func(model.Data) error) form {
+	return f.Api(servermux.BindDataRoute(callback))
 }
 
 // SubmitTo submits the form data to the specified struct or map and executes a custom callback
 // receiver can be a struct pointer, map, or other types that can be deserialized from JSON
 // callback allows further processing of the received data
 func (f form) SubmitTo(receiver any, callback func(any) error) form {
-	return f.Api(bindRouteTo(receiver, callback))
+	return f.Api(servermux.BindRouteTo(receiver, callback))
 }

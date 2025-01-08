@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // fieldSet represents a collection of form items
-type fieldSet Schema
+type fieldSet model.Schema
 
 func FieldSet() fieldSet {
 	return make(fieldSet).set("type", "fieldset").set("titlePosition", "top")

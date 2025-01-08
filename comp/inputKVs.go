@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputKVS represents a key-value object
 
-type inputKVS Schema
+type inputKVS model.Schema
 
 // InputKVS creates a new InputKVS instance with default type
 func InputKVS() inputKVS {

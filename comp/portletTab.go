@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // portletTab
 
-type portletTab Schema
+type portletTab model.Schema
 
 // PortletTab creates a new PortletTab instance
 func PortletTab() portletTab {

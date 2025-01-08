@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // paginationWrapper represents the amis paginationWrapper renderer
 
-type paginationWrapper Schema
+type paginationWrapper model.Schema
 
 // PaginationWrapper creates a new PaginationWrapper instance
 func PaginationWrapper() paginationWrapper {

@@ -1,9 +1,11 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // locationPicker component
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/location-picker
 
-type locationPicker Schema
+type locationPicker model.Schema
 
 // LocationPicker creates a new LocationPicker instance
 func LocationPicker() locationPicker {

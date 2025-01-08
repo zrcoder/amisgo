@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Container represents a container renderer with multiple configuration options
-type container Schema
+type container model.Schema
 
 // Container creates a new Container instance
 func Container() container {

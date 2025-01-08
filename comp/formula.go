@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // formula represents a formula control component
-type formula Schema
+type formula model.Schema
 
 // Formula creates a new FormulaControl instance
 func Formula() formula {

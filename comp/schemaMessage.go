@@ -1,10 +1,12 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // schemaMessage represents a message configuration. Remember, this has the lowest priority. If your interface returns a msg, the interface return takes priority.
 
-type schemaMessage Schema
+type schemaMessage model.Schema
 
-// SchemaMessage creates a new SchemaMessage instance
+// model.SchemaMessage creates a new model.SchemaMessage instance
 func SchemaMessage() schemaMessage {
 	return schemaMessage{}
 }

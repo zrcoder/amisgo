@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputGroup represents the schema for an input group component.
-type inputGroup Schema
+type inputGroup model.Schema
 
 // InputGroup initializes an input group component.
 func InputGroup() inputGroup {

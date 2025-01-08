@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // panel represents the amis panel renderer
-type panel Schema
+type panel model.Schema
 
 // Panel creates a new Panel instance
 func Panel() panel {

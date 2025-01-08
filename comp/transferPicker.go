@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // transferPicker represents the transfer picker component
 
-type transferPicker Schema
+type transferPicker model.Schema
 
 func TransferPicker() transferPicker {
 	return transferPicker{}.set("type", "transfer-picker")

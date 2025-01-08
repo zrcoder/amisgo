@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Component represents a flexible component with configurable attributes
-type component Schema
+type component model.Schema
 
 // Component creates a new Component instance
 func Component() component {

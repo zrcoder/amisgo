@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Cards represents a collection of card components renderer
-type cards Schema
+type cards model.Schema
 
 // Cards creates a new Cards instance
 func Cards() cards {

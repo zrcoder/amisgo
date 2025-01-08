@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // feedbackDialog represents a feedback dialog
-type feedbackDialog Schema
+type feedbackDialog model.Schema
 
 // FeedbackDialog creates a new feedbackDialog instance
 func FeedbackDialog() feedbackDialog {
@@ -49,7 +51,7 @@ func (f feedbackDialog) Confirm(value bool) feedbackDialog {
 }
 
 // Data sets the data mapping
-func (f feedbackDialog) Data(value Data) feedbackDialog {
+func (f feedbackDialog) Data(value model.Data) feedbackDialog {
 	return f.set("data", value)
 }
 

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputArray is an alias for combo. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-array
-type inputArray Schema
+type inputArray model.Schema
 
 // InputArray creates a new InputArray instance
 func InputArray() inputArray {

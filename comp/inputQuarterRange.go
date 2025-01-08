@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputQuarterRange represents a quarter range control.
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-quarter-range
-type inputQuarterRange Schema
+type inputQuarterRange model.Schema
 
 // InputQuarterRange creates a new QuarterRangeControl instance
 func InputQuarterRange() inputQuarterRange {

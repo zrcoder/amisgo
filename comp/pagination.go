@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // pagination represents the amis pagination renderer
-type pagination Schema
+type pagination model.Schema
 
 // Pagination creates a new Pagination instance
 func Pagination() pagination {

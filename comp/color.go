@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Color represents a color selection and display component
-type color Schema
+type color model.Schema
 
 // Color creates a new Color instance
 func Color() color {

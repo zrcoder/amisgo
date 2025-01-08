@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // textarea represents a multi-line text input field. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/textarea
 
-type textarea Schema
+type textarea model.Schema
 
 // Textarea creates a new textarea component.
 func Textarea() textarea {

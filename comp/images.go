@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // images represents an image gallery component.
-type images Schema
+type images model.Schema
 
 // Images creates a new Images instance with default type.
 func Images() images {

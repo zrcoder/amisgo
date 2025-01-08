@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // sparkLine
 
-type sparkLine Schema
+type sparkLine model.Schema
 
 // SparkLine creates a new SparkLine instance
 func SparkLine() sparkLine {

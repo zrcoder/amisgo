@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // reloadAction reload action
-type reloadAction Schema
+type reloadAction model.Schema
 
 // ReloadAction creates a new ReloadAction instance
 func ReloadAction() reloadAction {

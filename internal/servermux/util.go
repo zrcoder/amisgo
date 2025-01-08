@@ -1,4 +1,4 @@
-package comp
+package servermux
 
 import (
 	js "encoding/json"
@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"sync/atomic"
 
-	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/model"
 )
 
 var innerApiID int32 = -1
@@ -20,9 +20,9 @@ func getRoute() string {
 	return fmt.Sprintf("/__amisgo__%d", getInnerApiID())
 }
 
-func bindDataRoute(callback func(Data) error) string {
+func BindDataRoute(callback func(model.Data) error) string {
 	return handleGenericRequest(func(input []byte) error {
-		obj := Data{}
+		obj := model.Data{}
 		if err := js.Unmarshal(input, &obj); err != nil {
 			return fmt.Errorf("data unmarshal: %w", err)
 		}
@@ -30,7 +30,7 @@ func bindDataRoute(callback func(Data) error) string {
 	})
 }
 
-func bindRouteTo(receiver any, callback func(any) error) string {
+func BindRouteTo(receiver any, callback func(any) error) string {
 	return handleGenericRequest(func(input []byte) error {
 		if err := js.Unmarshal(input, receiver); err != nil {
 			return fmt.Errorf("data unmarshal: %w", err)
@@ -41,7 +41,7 @@ func bindRouteTo(receiver any, callback func(any) error) string {
 
 func handleGenericRequest(requestProcessor func([]byte) error) string {
 	route := getRoute()
-	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+	Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		input, err := io.ReadAll(r.Body)
 		if err != nil {
 			respError(w, fmt.Errorf("failed to read request body: %w", err))
@@ -54,15 +54,15 @@ func handleGenericRequest(requestProcessor func([]byte) error) string {
 			return
 		}
 
-		rsp := Response{}
+		rsp := model.Response{}
 		w.Write(rsp.Json())
 	})
 	return route
 }
 
-func serveData(getter func() (any, error)) string {
+func ServeData(getter func() (any, error)) string {
 	route := getRoute()
-	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+	Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		input, err := getter()
 		if err != nil {
 			respError(w, err)
@@ -85,9 +85,9 @@ func writeJsonResponse(w http.ResponseWriter, data any) error {
 	return err
 }
 
-func serveUpload(maxMemory int64, action func([]byte) (path string, err error)) string {
+func ServeUpload(maxMemory int64, action func([]byte) (path string, err error)) string {
 	route := getRoute()
-	servermux.Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+	Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		// Parse the form to get file data
 		err := r.ParseMultipartForm(maxMemory)
 		if err != nil {
@@ -114,13 +114,45 @@ func serveUpload(maxMemory int64, action func([]byte) (path string, err error)) 
 			respError(w, err)
 			return
 		}
-		resp := Response{Data: Data{"value": path}}
+		resp := model.Response{Data: model.Data{"value": path}}
 		w.Write(resp.Json())
 	})
 	return route
 }
 
 func respError(w http.ResponseWriter, err error) {
-	resp := ErrorResponse(err.Error())
+	resp := model.ErrorResponse(err.Error())
 	w.Write(resp.Json())
+}
+
+func TransformMultiple(successMsg string, transfor func(model.Data) (model.Data, error), src ...string) (route string, data model.Data) {
+	route = getRoute()
+	Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+		inputData, err := io.ReadAll(r.Body)
+		if err != nil {
+			respError(w, err)
+			return
+		}
+		defer r.Body.Close()
+		d := model.Data{}
+		err = js.Unmarshal(inputData, &d)
+		if err != nil {
+			respError(w, err)
+			return
+		}
+		output, err := transfor(d)
+		if err != nil {
+			respError(w, err)
+			return
+		}
+		resp := model.SuccessResponse(successMsg, output)
+		w.Write(resp.Json())
+	})
+
+	data = make(model.Data, len(src))
+	for _, s := range src {
+		data.Set(s, "${"+s+"}")
+	}
+
+	return
 }

@@ -1,10 +1,12 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // schemaCopyable
 
-type schemaCopyable Schema
+type schemaCopyable model.Schema
 
-// SchemaCopyable creates a new SchemaCopyable instance
+// model.SchemaCopyable creates a new model.SchemaCopyable instance
 func SchemaCopyable() schemaCopyable {
 	return schemaCopyable{}
 }

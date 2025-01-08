@@ -1,7 +1,12 @@
 package comp
 
+import (
+	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/model"
+)
+
 // inputImage represents an image upload component
-type inputImage Schema
+type inputImage model.Schema
 
 // InputImage creates a new InputImage instance
 func InputImage() inputImage {
@@ -300,7 +305,7 @@ func (i inputImage) Receiver(value string) inputImage {
 
 // Upload sets the upload handler
 func (i inputImage) Upload(maxMemory int64, action func([]byte) (path string, err error)) inputImage {
-	return i.Receiver(serveUpload(maxMemory, action))
+	return i.Receiver(servermux.ServeUpload(maxMemory, action))
 }
 
 // Required sets the component as required
@@ -308,7 +313,7 @@ func (i inputImage) Required(value bool) inputImage {
 	return i.set("required", value)
 }
 
-// Schema sets the custom schema
+// model.Schema sets the custom schema
 func (i inputImage) Schema(value string) inputImage {
 	return i.set("schema", value)
 }

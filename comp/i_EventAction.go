@@ -1,6 +1,8 @@
 package comp
 
-type MEventAction Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MEventAction model.Schema
 
 // EventAction creates a new EventAction instance
 func EventAction() MEventAction {
@@ -34,7 +36,7 @@ func (ea MEventAction) Script(value string) MEventAction {
 }
 
 // Args sets the arguments
-func (la MEventAction) Args(value Schema) MEventAction {
+func (la MEventAction) Args(value model.Schema) MEventAction {
 	return la.set("args", value)
 }
 
@@ -59,7 +61,7 @@ func (la MEventAction) ConfirmTitle(value any) MEventAction {
 }
 
 // Data sets the data
-func (la MEventAction) Data(value Data) MEventAction {
+func (la MEventAction) Data(value model.Data) MEventAction {
 	return la.set("data", value)
 }
 

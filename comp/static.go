@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // static Document: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/static
 
-type static Schema
+type static model.Schema
 
 func Static() static {
 	return static{}.set("type", "static")

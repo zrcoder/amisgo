@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputRepeat documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/repeat
 
-type inputRepeat Schema
+type inputRepeat model.Schema
 
 // InputRepeat creates a new RepeatControl instance
 func InputRepeat() inputRepeat {

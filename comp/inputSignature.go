@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputSignature
 
-type inputSignature Schema
+type inputSignature model.Schema
 
 // InputSignature creates a new InputSignature instance with default type
 func InputSignature() inputSignature {

@@ -1,6 +1,8 @@
 package comp
 
-type MRule Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MRule model.Schema
 
 // Rule returns an empty validation rule.
 func Rule() MRule {

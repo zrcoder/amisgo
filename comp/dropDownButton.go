@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // dropdownButton represents a dropdown button renderer.
-type dropdownButton Schema
+type dropdownButton model.Schema
 
 // DropdownButton creates a new DropdownButton instance with the default type 'dropdown-button'.
 func DropdownButton() dropdownButton {

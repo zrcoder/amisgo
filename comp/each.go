@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // each represents a loop renderer.
-type each Schema
+type each model.Schema
 
 // Each creates a new Each instance with the default type set to 'each'.
 func Each() each {

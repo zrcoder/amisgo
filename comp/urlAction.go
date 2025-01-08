@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // urlAction represents a URL action button component
-type urlAction Schema
+type urlAction model.Schema
 
 // UrlAction creates a new UrlAction instance
 func UrlAction() urlAction {

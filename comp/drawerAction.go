@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // drawerAction represents a button in a drawer.
-type drawerAction Schema
+type drawerAction model.Schema
 
 // DrawerAction creates a new DrawerAction instance and sets the default type and actionType.
 func DrawerAction() drawerAction {
@@ -74,7 +76,7 @@ func (d drawerAction) CountDownTpl(value string) drawerAction {
 }
 
 // Data specifies the data mapping of the button.
-func (d drawerAction) Data(value Data) drawerAction {
+func (d drawerAction) Data(value model.Data) drawerAction {
 	return d.set("data", value)
 }
 

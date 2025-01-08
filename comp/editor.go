@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // editor represents a code editor
-type editor Schema
+type editor model.Schema
 
 func Editor() editor {
 	return make(editor).set("type", "editor")
@@ -293,6 +295,6 @@ func (ec editor) Width(value string) editor {
 }
 
 // Options sets additional options for the Monaco editor
-func (e editor) Options(value Schema) editor {
+func (e editor) Options(value model.Schema) editor {
 	return e.set("options", value)
 }

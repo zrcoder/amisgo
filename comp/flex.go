@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // flex layout documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/flex
 
-type flex Schema
+type flex model.Schema
 
 // Flex creates a new Flex instance
 func Flex() flex {

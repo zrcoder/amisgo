@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Date represents a date component.
-type date Schema
+type date model.Schema
 
 // Date creates a new date component and sets the default type.
 func Date() date {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // MListBodyField represents a list body field control
-type MListBodyField Schema
+type MListBodyField model.Schema
 
 // ListBodyField creates a new ListBodyField instance
 func ListBodyField() MListBodyField {

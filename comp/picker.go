@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // picker represents the picker control
-type picker Schema
+type picker model.Schema
 
 // Picker creates a new PickerControl instance
 func Picker() picker {

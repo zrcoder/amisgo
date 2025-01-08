@@ -1,6 +1,8 @@
 package comp
 
-type MColumn Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MColumn model.Schema
 
 func Column() MColumn {
 	return make(MColumn)

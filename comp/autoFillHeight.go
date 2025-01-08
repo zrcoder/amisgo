@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // AutoFillHeight represents a renderer for automatically filling height
-type autoFillHeight Schema
+type autoFillHeight model.Schema
 
 // AutoFillHeight creates a new AutoFillHeight instance
 func AutoFillHeight() autoFillHeight {

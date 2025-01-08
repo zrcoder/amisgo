@@ -1,9 +1,11 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputMonth represents a month selection component
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/Month
 
-type inputMonth Schema
+type inputMonth model.Schema
 
 func InputMonth() inputMonth {
 	return inputMonth{}.set("type", "input-month")

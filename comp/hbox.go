@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // hBox represents a horizontal layout renderer
-type hBox Schema
+type hBox model.Schema
 
 // HBox creates a new hBox instance
 func HBox() hBox {

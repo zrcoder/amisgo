@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Calendar represents a calendar component renderer
-type calendar Schema
+type calendar model.Schema
 
 // Calendar creates a new Calendar instance
 func Calendar() calendar {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // CollapseGroup represents a group of collapsible panels with shared behavior
-type collapseGroup Schema
+type collapseGroup model.Schema
 
 // CollapseGroup creates a new CollapseGroup instance
 func CollapseGroup() collapseGroup {

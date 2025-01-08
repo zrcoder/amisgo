@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // gridNav represents a grid navigation component
-type gridNav Schema
+type gridNav model.Schema
 
 // GridNav creates a new GridNav instance
 func GridNav() gridNav {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputSubForm represents a sub-form schema
-type inputSubForm Schema
+type inputSubForm model.Schema
 
 func InputSubForm() inputSubForm {
 	return inputSubForm{}.set("type", "input-sub-form")

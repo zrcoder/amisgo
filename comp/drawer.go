@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // drawer represents a drawer component. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/drawer
-type drawer Schema
+type drawer model.Schema
 
 func Drawer() drawer {
 	return make(drawer).set("type", "drawer")
@@ -48,7 +50,7 @@ func (d drawer) Confirm(value bool) drawer {
 }
 
 // Data sets the data mapping for the drawer.
-func (d drawer) Data(value Data) drawer {
+func (d drawer) Data(value model.Data) drawer {
 	return d.set("data", value)
 }
 

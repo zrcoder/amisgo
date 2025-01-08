@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // ButtonGroup represents a button group renderer
-type buttonGroup Schema
+type buttonGroup model.Schema
 
 // ButtonGroup creates a new ButtonGroup instance
 func ButtonGroup() buttonGroup {

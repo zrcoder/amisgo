@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputTable represents a table control
 
-type inputTable Schema
+type inputTable model.Schema
 
 // InputTable creates a new TableControl instance
 func InputTable() inputTable {

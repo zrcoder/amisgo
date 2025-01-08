@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // ChainedSelect represents a chained select form component that allows hierarchical or cascading selections
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/chained-select
-type chainedSelect Schema
+type chainedSelect model.Schema
 
 // ChainedSelect creates a new ChainedSelect instance
 func ChainedSelect() chainedSelect {

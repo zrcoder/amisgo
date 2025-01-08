@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // status Document: https://aisuda.bce.baidu.com/amis/zh-CN/components/status
 
-type status Schema
+type status model.Schema
 
 // Status creates a new Status instance
 func Status() status {

@@ -1,8 +1,13 @@
 package comp
 
+import (
+	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/model"
+)
+
 // page represents an AMIS page renderer
 
-type page Schema
+type page model.Schema
 
 // Page creates a new Page instance
 func Page() page {
@@ -71,7 +76,7 @@ func (p page) CSSVars(value any) page {
 }
 
 // Data sets initial page-level data
-func (p page) Data(value Data) page {
+func (p page) Data(value model.Data) page {
 	return p.set("data", value)
 }
 
@@ -122,7 +127,7 @@ func (p page) InitApi(value string) page {
 
 // InitData sets the initialization data
 func (p page) InitData(getter func() (any, error)) page {
-	return p.InitApi(serveData(getter))
+	return p.InitApi(servermux.ServeData(getter))
 }
 
 // InitFetch sets whether to fetch data by default

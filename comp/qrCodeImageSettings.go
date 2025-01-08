@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // qrCodeImageSettings
 
-type qrCodeImageSettings Schema
+type qrCodeImageSettings model.Schema
 
 func QRCodeImageSettings() qrCodeImageSettings {
 	return qrCodeImageSettings{}

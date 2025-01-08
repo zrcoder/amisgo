@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // custom represents a custom component.
-type custom Schema
+type custom model.Schema
 
 // Custom creates a new instance of custom and sets the default type.
 func Custom() custom {

@@ -1,6 +1,8 @@
 package comp
 
-type MTab Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MTab model.Schema
 
 // Tab creates a new Tab instance
 func Tab() MTab {

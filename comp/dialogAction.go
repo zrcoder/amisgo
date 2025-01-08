@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // dialogAction represents a dialog action button configuration.
-type dialogAction Schema
+type dialogAction model.Schema
 
 // DialogAction creates a new dialog action button instance and sets default settings.
 func DialogAction() dialogAction {
@@ -69,7 +71,7 @@ func (da dialogAction) CountDownTpl(value string) dialogAction {
 }
 
 // Data sets the data mapping.
-func (da dialogAction) Data(value Data) dialogAction {
+func (da dialogAction) Data(value model.Data) dialogAction {
 	return da.set("data", value)
 }
 

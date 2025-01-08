@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // svgIcon represents an SVG icon renderer.
 
-type svgIcon Schema
+type svgIcon model.Schema
 
 // SvgIcon creates a new SvgIcon instance.
 func SvgIcon() svgIcon {

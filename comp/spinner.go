@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // Spinner represents a spinner configuration.
-type spinner Schema
+type spinner model.Schema
 
 // Spinner creates a new Spinner instance.
 func Spinner() spinner {

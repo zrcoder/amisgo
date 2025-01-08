@@ -1,9 +1,11 @@
 package comp
 
-// schemaApi represents a schema API configuration.
-type schemaApi Schema
+import "github.com/zrcoder/amisgo/model"
 
-// SchemaApi creates a new schemaApi instance.
+// schemaApi represents a schema API configuration.
+type schemaApi model.Schema
+
+// model.SchemaApi creates a new schemaApi instance.
 func SchemaApi() schemaApi {
 	return schemaApi{}
 }
@@ -34,7 +36,7 @@ func (s schemaApi) ConvertKeyToPath(value bool) schemaApi {
 }
 
 // Data sets the data configuration.
-func (s schemaApi) Data(value Data) schemaApi {
+func (s schemaApi) Data(value model.Data) schemaApi {
 	return s.set("data", value)
 }
 

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // multilineText represents a multiline text component
-type multilineText Schema
+type multilineText model.Schema
 
 // MultilineText creates a new multilineText instance
 func MultilineText() multilineText {

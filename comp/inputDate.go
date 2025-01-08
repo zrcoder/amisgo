@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputDate represents a date picker component
-type inputDate Schema
+type inputDate model.Schema
 
 func InputDate() inputDate {
 	return make(inputDate).set("type", "input-date")

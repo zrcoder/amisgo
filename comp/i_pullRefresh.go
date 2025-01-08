@@ -1,6 +1,8 @@
 package comp
 
-type MPullRefresh Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MPullRefresh model.Schema
 
 func PullRefresh() MPullRefresh {
 	return MPullRefresh{}

@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // wizardStep represents a step in a wizard form
 
-type wizardStep Schema
+type wizardStep model.Schema
 
 // WizardStep creates a new WizardStep instance
 func WizardStep() wizardStep {
@@ -70,7 +72,7 @@ func (ws wizardStep) ColumnCount(value string) wizardStep {
 }
 
 // Data sets the form data
-func (ws wizardStep) Data(value Data) wizardStep {
+func (ws wizardStep) Data(value model.Data) wizardStep {
 	return ws.set("data", value)
 }
 

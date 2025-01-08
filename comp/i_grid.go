@@ -1,6 +1,8 @@
 package comp
 
-type MGridItem Schema
+import "github.com/zrcoder/amisgo/model"
+
+type MGridItem model.Schema
 
 func GridItem() MGridItem {
 	return MGridItem{}

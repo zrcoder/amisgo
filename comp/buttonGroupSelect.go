@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // ButtonGroupSelect represents a button group selection renderer
-type buttonGroupSelect Schema
+type buttonGroupSelect model.Schema
 
 // ButtonGroupSelect creates a new ButtonGroupSelect instance
 func ButtonGroupSelect() buttonGroupSelect {

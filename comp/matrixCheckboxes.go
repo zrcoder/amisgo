@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // matrixCheckboxes represents a checkbox matrix control.
 
-type matrixCheckboxes Schema
+type matrixCheckboxes model.Schema
 
 // MatrixCheckboxes creates a new MatrixControl instance.
 func MatrixCheckboxes() matrixCheckboxes {

@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // operation represents the operation renderer
 
-type operation Schema
+type operation model.Schema
 
 // Operation creates a new Operation instance
 func Operation() operation {

@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // inputMonthRange represents a month range control
-type inputMonthRange Schema
+type inputMonthRange model.Schema
 
 // InputMonthRange creates a new MonthRangeControl instance
 func InputMonthRange() inputMonthRange {

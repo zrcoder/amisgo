@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // listSelect represents a list control component
-type listSelect Schema
+type listSelect model.Schema
 
 func ListSelect() listSelect {
 	return make(listSelect).set("type", "list-select")

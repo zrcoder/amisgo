@@ -1,8 +1,10 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // plain is a plain text renderer
 
-type plain Schema
+type plain model.Schema
 
 // Plain creates a new Plain instance
 func Plain() plain {

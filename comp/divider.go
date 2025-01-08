@@ -1,7 +1,9 @@
 package comp
 
+import "github.com/zrcoder/amisgo/model"
+
 // divider Divider renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/divider
-type divider Schema
+type divider model.Schema
 
 func Divider() divider {
 	return make(divider).set("type", "divider")
