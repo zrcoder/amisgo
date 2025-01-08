@@ -1,10 +1,10 @@
 package comp
 
-// remark 提示渲染器，默认会显示个小图标，鼠标放上来的时候显示配置的内容.
+// remark 提示渲染器.
 
 type remark Schema
 
-// Remark 创建一个新的 Remark 实例
+// Remark creates a new remark.
 func Remark() remark {
 	return remark{}.set("type", "remark")
 }
@@ -14,157 +14,157 @@ func (rm remark) set(key string, value any) remark {
 	return rm
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// ClassName sets the container's CSS class name.
 func (rm remark) ClassName(value string) remark {
 	return rm.set("className", value)
 }
 
-// Content 提示内容 (支持两种语法，但是不能混着用。分别是：1. `${xxx}` 或者 `${xxx|upperCase}` 2. `<%= data.xxx %>` 更多文档：https://aisuda.bce.baidu.com/amis/zh-CN/docs/concepts/template)
+// Content sets the content of the remark.
 func (rm remark) Content(value string) remark {
 	return rm.set("content", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the remark is disabled.
 func (rm remark) Disabled(value bool) remark {
 	return rm.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets whether the remark is disabled by expression.
 func (rm remark) DisabledOn(value string) remark {
 	return rm.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor setting.
 func (rm remark) EditorSetting(value string) remark {
 	return rm.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the remark is hidden.
 func (rm remark) Hidden(value bool) remark {
 	return rm.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets whether the remark is hidden by expression.
 func (rm remark) HiddenOn(value string) remark {
 	return rm.set("hiddenOn", value)
 }
 
-// Icon iconfont 里面的类名。
+// Icon sets the icon of the remark.
 func (rm remark) Icon(value string) remark {
 	return rm.set("icon", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique ID of the remark.
 func (rm remark) ID(value string) remark {
 	return rm.set("id", value)
 }
 
-// Label
+// Label sets the label of the remark.
 func (rm remark) Label(value string) remark {
 	return rm.set("label", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event handler of the remark.
 func (rm remark) OnEvent(value any) remark {
 	return rm.set("onEvent", value)
 }
 
-// Placement 显示位置 可选值: top | right | bottom | left
+// Placement sets the placement of the remark.
 func (rm remark) Placement(value string) remark {
 	return rm.set("placement", value)
 }
 
-// RootClose 点击其他内容时是否关闭弹框信息
+// RootClose sets whether to close the remark when clicking outside.
 func (rm remark) RootClose(value bool) remark {
 	return rm.set("rootClose", value)
 }
 
-// Shape icon的形状 可选值: circle | square
+// Shape sets the shape of the icon.
 func (rm remark) Shape(value string) remark {
 	return rm.set("shape", value)
 }
 
-// Static 是否静态展示
+// Static sets whether the remark is static.
 func (rm remark) Static(value bool) remark {
 	return rm.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// StaticClassName sets the static CSS class name of the remark.
 func (rm remark) StaticClassName(value string) remark {
 	return rm.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// StaticInputClassName sets the static CSS class name of the input.
 func (rm remark) StaticInputClassName(value string) remark {
 	return rm.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"})
+// StaticLabelClassName sets the static CSS class name of the label.
 func (rm remark) StaticLabelClassName(value string) remark {
 	return rm.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the condition expression for static display.
 func (rm remark) StaticOn(value string) remark {
 	return rm.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder text for static display.
 func (rm remark) StaticPlaceholder(value string) remark {
 	return rm.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the schema for static display.
 func (rm remark) StaticSchema(value string) remark {
 	return rm.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets custom inline styles.
 func (rm remark) Style(value any) remark {
 	return rm.set("style", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder configures test ID generation.
 func (rm remark) TestIdBuilder(value string) remark {
 	return rm.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets a specific test identifier.
 func (rm remark) Testid(value string) remark {
 	return rm.set("testid", value)
 }
 
-// Title 提示标题
-func (rm remark) Title(value any) remark {
+// Title sets the title of the remark.
+func (rm remark) Title(value string) remark {
 	return rm.set("title", value)
 }
 
-// Body 主要内容
-func (rm remark) Body(value any) remark {
+// Body sets the body of the remark.
+func (rm remark) Body(value string) remark {
 	return rm.set("body", value)
 }
 
-// TooltipClassName css类名，配置字符串，或者对象。className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：className: {"red": "data.progress > 80", "blue": "data.progress > 60"}
+// TooltipClassName sets the tooltip CSS class name.
 func (rm remark) TooltipClassName(value string) remark {
 	return rm.set("tooltipClassName", value)
 }
 
-// Trigger 触发规则
+// Trigger sets the trigger rule of the remark.
 func (rm remark) Trigger(value string) remark {
 	return rm.set("trigger", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI.
 func (rm remark) UseMobileUI(value bool) remark {
 	return rm.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the remark is visible.
 func (rm remark) Visible(value bool) remark {
 	return rm.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets whether the remark is visible by expression.
 func (rm remark) VisibleOn(value string) remark {
 	return rm.set("visibleOn", value)
 }

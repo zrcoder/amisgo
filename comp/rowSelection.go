@@ -4,7 +4,6 @@ package comp
 
 type rowSelection Schema
 
-// RowSelection 创建一个新的 RowSelection 实例
 func RowSelection() rowSelection {
 	return rowSelection{}
 }
@@ -14,42 +13,42 @@ func (r rowSelection) set(key string, value any) rowSelection {
 	return r
 }
 
-// ColumnWidth 已选择的key值表达式
+// ColumnWidth sets the column width
 func (r rowSelection) ColumnWidth(value string) rowSelection {
 	return r.set("columnWidth", value)
 }
 
-// DisableOn 行是否禁用表达式
+// DisableOn sets the condition expression for disabling rows.
 func (r rowSelection) DisableOn(value string) rowSelection {
 	return r.set("disableOn", value)
 }
 
-// KeyField 对应数据源的key值
+// KeyField sets the key field that corresponds to the data source.
 func (r rowSelection) KeyField(value string) rowSelection {
 	return r.set("keyField", value)
 }
 
-// RowClick 是否点击行触发选中或取消选中
+// RowClick sets whether to trigger selection or deselection when clicking on a row.
 func (r rowSelection) RowClick(value bool) rowSelection {
 	return r.set("rowClick", value)
 }
 
-// SelectedRowKeys 已选择的key值
+// SelectedRowKeys sets the selected row keys.
 func (r rowSelection) SelectedRowKeys(value string) rowSelection {
 	return r.set("selectedRowKeys", value)
 }
 
-// SelectedRowKeysExpr 已选择的key值表达式
+// SelectedRowKeysExpr sets the expression for selected row keys.
 func (r rowSelection) SelectedRowKeysExpr(value string) rowSelection {
 	return r.set("selectedRowKeysExpr", value)
 }
 
-// Selections 自定义选择菜单
+// Selections sets the custom selection menu.
 func (r rowSelection) Selections(value string) rowSelection {
 	return r.set("selections", value)
 }
 
-// Type 选择类型 单选/多选
+// Type sets the selection type, either single or multiple.
 func (r rowSelection) Type(value string) rowSelection {
 	return r.set("type", value)
 }

@@ -4,7 +4,7 @@ package comp
 
 type rowSelectionOptions Schema
 
-// RowSelectionOptions 创建一个新的 RowSelectionOptions 实例
+// RowSelectionOptions creates a new RowSelectionOptions instance
 func RowSelectionOptions() rowSelectionOptions {
 	return rowSelectionOptions{}
 }
@@ -14,12 +14,12 @@ func (r rowSelectionOptions) set(key string, value any) rowSelectionOptions {
 	return r
 }
 
-// Key 选择类型 选择全部
+// Key sets the selection key
 func (r rowSelectionOptions) Key(value string) rowSelectionOptions {
 	return r.set("key", value)
 }
 
-// Text 选项显示文本
+// Text sets the option display text
 func (r rowSelectionOptions) Text(value string) rowSelectionOptions {
 	return r.set("text", value)
 }

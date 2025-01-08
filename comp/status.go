@@ -1,10 +1,10 @@
 package comp
 
-// status 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/status
+// status Document: https://aisuda.bce.baidu.com/amis/zh-CN/components/status
 
 type status Schema
 
-// Status 创建一个新的 Status 实例
+// Status creates a new Status instance
 func Status() status {
 	return status{}.set("type", "status")
 }
@@ -14,92 +14,94 @@ func (s status) set(key string, value any) status {
 	return s
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// ClassName sets the container CSS class name
+// Can be a string or an object for conditional classes
+// Example: {"red": "data.progress > 80", "blue": "data.progress > 60"}
 func (s status) ClassName(value string) status {
 	return s.set("className", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the status is disabled
 func (s status) Disabled(value bool) status {
 	return s.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to determine if the status should be disabled
 func (s status) DisabledOn(value string) status {
 	return s.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration, can be ignored at runtime
 func (s status) EditorSetting(value string) status {
 	return s.set("editorSetting", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the status is hidden
 func (s status) Hidden(value bool) status {
 	return s.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to determine if the status should be hidden
 func (s status) HiddenOn(value string) status {
 	return s.set("hiddenOn", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// Id sets the unique component ID, mainly used for log collection
 func (s status) ID(value string) status {
 	return s.set("id", value)
 }
 
-// LabelMap 文字映射关系
+// LabelMap sets the label mapping relationship
 func (s status) LabelMap(value string) status {
 	return s.set("labelMap", value)
 }
 
-// Map 状态图标映射关系
+// Map sets the status icon mapping relationship
 func (s status) Map(value string) status {
 	return s.set("map", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration
 func (s status) OnEvent(value any) status {
 	return s.set("onEvent", value)
 }
 
-// Placeholder 占位符
+// Placeholder sets the placeholder
 func (s status) Placeholder(value string) status {
 	return s.set("placeholder", value)
 }
 
-// Source 新版配置映射源的字段 可以兼容新版icon并且配置颜色 2.8.0 新增
+// Source sets the field of the new version configuration mapping source
 func (s status) Source(value string) status {
 	return s.set("source", value)
 }
 
-// Static 是否静态展示
+// Static sets whether to display in static mode
 func (s status) Static(value bool) status {
 	return s.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticClassName sets the CSS class for static display
 func (s status) StaticClassName(value string) status {
 	return s.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticInputClassName sets the CSS class for static value display
 func (s status) StaticInputClassName(value string) status {
 	return s.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticLabelClassName sets the CSS class for static label display
 func (s status) StaticLabelClassName(value string) status {
 	return s.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine if the status should be displayed in static mode
 func (s status) StaticOn(value string) status {
 	return s.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder text for empty values in static display
 func (s status) StaticPlaceholder(value string) status {
 	return s.set("staticPlaceholder", value)
 }
@@ -109,32 +111,32 @@ func (s status) StaticSchema(value string) status {
 	return s.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the component inline styles
 func (s status) Style(value any) status {
 	return s.set("style", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder
 func (s status) TestIdBuilder(value string) status {
 	return s.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID
 func (s status) Testid(value string) status {
 	return s.set("testid", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to disable mobile UI styles at component level
 func (s status) UseMobileUI(value bool) status {
 	return s.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the status is visible
 func (s status) Visible(value bool) status {
 	return s.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine if the status should be visible
 func (s status) VisibleOn(value string) status {
 	return s.set("visibleOn", value)
 }

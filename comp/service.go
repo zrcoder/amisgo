@@ -1,10 +1,9 @@
 package comp
 
-// service 服务类控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/service
-
+// service represents a service configuration.
 type service Schema
 
-// Service 创建一个新的 Service 实例
+// Service creates a new Service instance.
 func Service() service {
 	return service{}.set("type", "service")
 }
@@ -14,202 +13,202 @@ func (s service) set(key string, value any) service {
 	return s
 }
 
-// Api 页面初始化的时候，可以设置一个 API 让其取拉取，发送数据会携带当前 data 数据（包含地址栏参数），获取得数据会合并到 data 中，供组件内使用。 (页面初始化的时候，可以设置一个 API 让其取拉取，发送数据会携带当前 data 数据（包含地址栏参数），获取得数据会合并到 data 中，供组件内使用。)
+// Api sets the API for data fetching.
 func (s service) Api(value string) service {
 	return s.set("api", value)
 }
 
-// GetData 通过内置 api 获取数据
+// GetData fetches data using the internal API.
 func (s service) GetData(getter func() (any, error)) service {
 	return s.Api(serveData(getter))
 }
 
-// Body 内容区域 (内容区域)
+// Body sets the content area.
 func (s service) Body(value ...any) service {
 	return s.set("body", value)
 }
 
-// Data 数据
+// Data sets the data.
 func (s service) Data(value any) service {
 	return s.set("data", value)
 }
 
-// ClassName 容器 css 类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// ClassName sets the container CSS class name.
 func (s service) ClassName(value string) service {
 	return s.set("className", value)
 }
 
-// DataProvider 通过调用外部函数来获取数据 (通过调用外部函数来获取数据)
+// DataProvider sets the data provider.
 func (s service) DataProvider(value string) service {
 	return s.set("dataProvider", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the service is disabled.
 func (s service) Disabled(value bool) service {
 	return s.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to disable the service.
 func (s service) DisabledOn(value string) service {
 	return s.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration.
 func (s service) EditorSetting(value string) service {
 	return s.set("editorSetting", value)
 }
 
-// FetchOn 表达式，语法 `data.xxx > 5`。
+// FetchOn sets the fetch condition.
 func (s service) FetchOn(value string) service {
 	return s.set("fetchOn", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the service is hidden.
 func (s service) Hidden(value bool) service {
 	return s.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to hide the service.
 func (s service) HiddenOn(value string) service {
 	return s.set("hiddenOn", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// ID sets the unique component ID.
 func (s service) ID(value string) service {
 	return s.set("id", value)
 }
 
-// InitFetch 是否默认就拉取？
+// InitFetch sets whether to fetch initially.
 func (s service) InitFetch(value bool) service {
 	return s.set("initFetch", value)
 }
 
-// InitFetchOn 是否默认就拉取？通过表达式来决定. (表达式，语法 `data.xxx > 5`。)
+// InitFetchOn sets the expression to determine initial fetch.
 func (s service) InitFetchOn(value string) service {
 	return s.set("initFetchOn", value)
 }
 
-// InitFetchSchema 是否默认加载 schemaApi
+// InitFetchSchema sets whether to fetch schema initially.
 func (s service) InitFetchSchema(value bool) service {
 	return s.set("initFetchSchema", value)
 }
 
-// InitFetchSchemaOn 用表达式来配置。 (表达式，语法 `data.xxx > 5`。)
+// InitFetchSchemaOn sets the expression to determine initial schema fetch.
 func (s service) InitFetchSchemaOn(value string) service {
 	return s.set("initFetchSchemaOn", value)
 }
 
-// Interval 是否轮询拉取
+// Interval sets the interval for polling.
 func (s service) Interval(value string) service {
 	return s.set("interval", value)
 }
 
-// LoadingConfig
+// LoadingConfig sets the loading configuration.
 func (s service) LoadingConfig(value string) service {
 	return s.set("loadingConfig", value)
 }
 
-// Messages 消息文案配置，记住这个优先级是最低的，如果你的接口返回了 msg，接口返回的优先。
+// Messages sets the message configurations.
 func (s service) Messages(value string) service {
 	return s.set("messages", value)
 }
 
-// Name 组件名字，这个名字可以用来定位，用于组件通信
+// Name sets the component name.
 func (s service) Name(value string) service {
 	return s.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration.
 func (s service) OnEvent(value any) service {
 	return s.set("onEvent", value)
 }
 
-// SchemaApi 用来获取远程 Schema 的 api (用来获取远程 Schema 的 api)
+// SchemaApi sets the API for schema fetching.
 func (s service) SchemaApi(value string) service {
 	return s.set("schemaApi", value)
 }
 
-// ShowErrorMsg 是否以Alert的形式显示api接口响应的错误信息，默认展示
+// ShowErrorMsg sets whether to show error messages.
 func (s service) ShowErrorMsg(value bool) service {
 	return s.set("showErrorMsg", value)
 }
 
-// SilentPolling 是否静默拉取
+// SilentPolling sets whether to poll silently.
 func (s service) SilentPolling(value bool) service {
 	return s.set("silentPolling", value)
 }
 
-// Static 是否静态展示
+// Static sets whether to display statically.
 func (s service) Static(value bool) service {
 	return s.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticClassName sets the static display class name.
 func (s service) StaticClassName(value string) service {
 	return s.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticInputClassName sets the static input value class name.
 func (s service) StaticInputClassName(value string) service {
 	return s.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticLabelClassName sets the static label class name.
 func (s service) StaticLabelClassName(value string) service {
 	return s.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression for static display.
 func (s service) StaticOn(value string) service {
 	return s.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the static placeholder.
 func (s service) StaticPlaceholder(value string) service {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the static schema.
 func (s service) StaticSchema(value string) service {
 	return s.set("staticSchema", value)
 }
 
-// StopAutoRefreshWhen 关闭轮询的条件。 (表达式，语法 `data.xxx > 5`。)
+// StopAutoRefreshWhen sets the condition to stop auto refresh.
 func (s service) StopAutoRefreshWhen(value string) service {
 	return s.set("stopAutoRefreshWhen", value)
 }
 
-// Style 组件样式
+// Style sets the component style.
 func (s service) Style(value any) service {
 	return s.set("style", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder.
 func (s service) TestIdBuilder(value string) service {
 	return s.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID.
 func (s service) Testid(value string) service {
 	return s.set("testid", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to use mobile UI.
 func (s service) UseMobileUI(value bool) service {
 	return s.set("useMobileUI", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the service is visible.
 func (s service) Visible(value bool) service {
 	return s.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine visibility.
 func (s service) VisibleOn(value string) service {
 	return s.set("visibleOn", value)
 }
 
-// Ws WebScocket 地址，用于实时获取数据
+// Ws sets the WebSocket URL.
 func (s service) Ws(value string) service {
 	return s.set("ws", value)
 }

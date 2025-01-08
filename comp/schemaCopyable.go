@@ -4,7 +4,7 @@ package comp
 
 type schemaCopyable Schema
 
-// SchemaCopyable 创建一个新的 SchemaCopyable 实例
+// SchemaCopyable creates a new SchemaCopyable instance
 func SchemaCopyable() schemaCopyable {
 	return schemaCopyable{}
 }
@@ -14,18 +14,18 @@ func (s schemaCopyable) set(key string, value any) schemaCopyable {
 	return s
 }
 
-// Content 配置复制时的内容模板。 (支持两种语法，但是不能混着用。分别是：1. `${xxx}` 或者 `${xxx|upperCase}` 2. `<%= data.xxx %>`
-// 更多文档：https://aisuda.bce.baidu.com/amis/zh-CN/docs/concepts/template)
+// Content configures the content template when copying. (Supports two syntaxes, but cannot be mixed. They are: 1. `${xxx}` or `${xxx|upperCase}` 2. `<%= data.xxx %>`)
+// More documentation: https://aisuda.bce.baidu.com/amis/zh-CN/docs/concepts/template)
 func (s schemaCopyable) Content(value string) schemaCopyable {
 	return s.set("content", value)
 }
 
-// Icon 可以配置图标 (iconfont 里面的类名。)
+// Icon can configure the icon (class name in iconfont.)
 func (s schemaCopyable) Icon(value string) schemaCopyable {
 	return s.set("icon", value)
 }
 
-// Tooltip 提示文字内容
+// Tooltip sets the tooltip text content
 func (s schemaCopyable) Tooltip(value string) schemaCopyable {
 	return s.set("tooltip", value)
 }

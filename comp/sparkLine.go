@@ -4,7 +4,7 @@ package comp
 
 type sparkLine Schema
 
-// SparkLine 创建一个新的 SparkLine 实例
+// SparkLine creates a new SparkLine instance
 func SparkLine() sparkLine {
 	return sparkLine{}.set("type", "sparkline")
 }
@@ -14,137 +14,137 @@ func (s sparkLine) set(key string, value any) sparkLine {
 	return s
 }
 
-// ClassName css 类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// ClassName sets the custom sparkLine class
 func (s sparkLine) ClassName(value string) sparkLine {
 	return s.set("className", value)
 }
 
-// ClickAction 点击行为 (点击行为)
+// ClickAction sets the click action for the sparkLine
 func (s sparkLine) ClickAction(value string) sparkLine {
 	return s.set("clickAction", value)
 }
 
-// Disabled 是否禁用
+// Disabled sets whether the sparkLine is disabled
 func (s sparkLine) Disabled(value bool) sparkLine {
 	return s.set("disabled", value)
 }
 
-// DisabledOn 是否禁用表达式 (表达式，语法 `data.xxx > 5`。)
+// DisabledOn sets the expression to disable the sparkLine
 func (s sparkLine) DisabledOn(value string) sparkLine {
 	return s.set("disabledOn", value)
 }
 
-// EditorSetting 编辑器配置，运行时可以忽略
+// EditorSetting sets the editor configuration for the sparkLine
 func (s sparkLine) EditorSetting(value string) sparkLine {
 	return s.set("editorSetting", value)
 }
 
-// Height 高度
+// Height sets the height of the sparkLine
 func (s sparkLine) Height(value string) sparkLine {
 	return s.set("height", value)
 }
 
-// Hidden 是否隐藏
+// Hidden sets whether the sparkLine is hidden
 func (s sparkLine) Hidden(value bool) sparkLine {
 	return s.set("hidden", value)
 }
 
-// HiddenOn 是否隐藏表达式 (表达式，语法 `data.xxx > 5`。)
+// HiddenOn sets the expression to hide the sparkLine
 func (s sparkLine) HiddenOn(value string) sparkLine {
 	return s.set("hiddenOn", value)
 }
 
-// Id 组件唯一 id，主要用于日志采集
+// Id sets the unique component ID for the sparkLine
 func (s sparkLine) ID(value string) sparkLine {
 	return s.set("id", value)
 }
 
-// Name 关联数据变量。
+// Name sets the associated data variable for the sparkLine
 func (s sparkLine) Name(value string) sparkLine {
 	return s.set("name", value)
 }
 
-// OnEvent 事件动作配置
+// OnEvent sets the event action configuration for the sparkLine
 func (s sparkLine) OnEvent(value any) sparkLine {
 	return s.set("onEvent", value)
 }
 
-// Placeholder 空数据时显示的内容
+// Placeholder sets the placeholder text for the sparkLine
 func (s sparkLine) Placeholder(value string) sparkLine {
 	return s.set("placeholder", value)
 }
 
-// Static 是否静态展示
+// Static sets whether to display the sparkLine in static mode
 func (s sparkLine) Static(value bool) sparkLine {
 	return s.set("static", value)
 }
 
-// StaticClassName 静态展示表单项类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticClassName sets the CSS class for static display of the sparkLine
 func (s sparkLine) StaticClassName(value string) sparkLine {
 	return s.set("staticClassName", value)
 }
 
-// StaticInputClassName 静态展示表单项Value类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticInputClassName sets the CSS class for static value display of the sparkLine
 func (s sparkLine) StaticInputClassName(value string) sparkLine {
 	return s.set("staticInputClassName", value)
 }
 
-// StaticLabelClassName 静态展示表单项Label类名 (css类名，配置字符串，或者对象。    className: "red"用对象配置时意味着你能跟表达式一起搭配使用，如：    className: {         "red": "data.progress > 80",         "blue": "data.progress > 60"     })
+// StaticLabelClassName sets the CSS class for static label display of the sparkLine
 func (s sparkLine) StaticLabelClassName(value string) sparkLine {
 	return s.set("staticLabelClassName", value)
 }
 
-// StaticOn 是否静态展示表达式 (表达式，语法 `data.xxx > 5`。)
+// StaticOn sets the expression to determine if the sparkLine should be displayed in static mode
 func (s sparkLine) StaticOn(value string) sparkLine {
 	return s.set("staticOn", value)
 }
 
-// StaticPlaceholder 静态展示空值占位
+// StaticPlaceholder sets the placeholder text for empty values in static display of the sparkLine
 func (s sparkLine) StaticPlaceholder(value string) sparkLine {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema
+// StaticSchema sets the schema for static display of the sparkLine
 func (s sparkLine) StaticSchema(value string) sparkLine {
 	return s.set("staticSchema", value)
 }
 
-// Style 组件样式
+// Style sets the inline styles for the sparkLine
 func (s sparkLine) Style(value any) sparkLine {
 	return s.set("style", value)
 }
 
-// TestIdBuilder
+// TestIdBuilder sets the test ID builder for the sparkLine
 func (s sparkLine) TestIdBuilder(value string) sparkLine {
 	return s.set("testIdBuilder", value)
 }
 
-// Testid
+// Testid sets the test ID for the sparkLine
 func (s sparkLine) Testid(value string) sparkLine {
 	return s.set("testid", value)
 }
 
-// UseMobileUI 可以组件级别用来关闭移动端样式
+// UseMobileUI sets whether to disable mobile UI styles at component level for the sparkLine
 func (s sparkLine) UseMobileUI(value bool) sparkLine {
 	return s.set("useMobileUI", value)
 }
 
-// Value
+// Value sets the value for the sparkLine
 func (s sparkLine) Value(value string) sparkLine {
 	return s.set("value", value)
 }
 
-// Visible 是否显示
+// Visible sets whether the sparkLine is visible
 func (s sparkLine) Visible(value bool) sparkLine {
 	return s.set("visible", value)
 }
 
-// VisibleOn 是否显示表达式 (表达式，语法 `data.xxx > 5`。)
+// VisibleOn sets the expression to determine if the sparkLine should be visible
 func (s sparkLine) VisibleOn(value string) sparkLine {
 	return s.set("visibleOn", value)
 }
 
-// Width 宽度
+// Width sets the width of the sparkLine
 func (s sparkLine) Width(value string) sparkLine {
 	return s.set("width", value)
 }
