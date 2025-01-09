@@ -2,20 +2,21 @@ package comp
 
 import "github.com/zrcoder/amisgo/model"
 
-// rowSelection
-
+// rowSelection represents the configuration for row selection in a table.
 type rowSelection model.Schema
 
+// RowSelection creates and returns a new rowSelection instance.
 func RowSelection() rowSelection {
 	return rowSelection{}
 }
 
+// set is a helper method to set a key-value pair in the rowSelection.
 func (r rowSelection) set(key string, value any) rowSelection {
 	r[key] = value
 	return r
 }
 
-// ColumnWidth sets the column width
+// ColumnWidth sets the column width for the row selection.
 func (r rowSelection) ColumnWidth(value string) rowSelection {
 	return r.set("columnWidth", value)
 }
