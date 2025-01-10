@@ -204,6 +204,16 @@ func (f form) Api(value any) form {
 	return f.set("api", value)
 }
 
+// PreventEnterSubmit prevents form submission when the Enter key is pressed
+func (f form) PreventEnterSubmit(value bool) form {
+	return f.set("preventEnterSubmit", value)
+}
+
+// Redirect specifies the URL path to redirect to after form submission
+func (f form) Redirect(value string) form {
+	return f.set("redirect", value)
+}
+
 // GetData fetches data using the provided getter function.
 func (s form) GetData(getter func() (any, error)) form {
 	return s.Api(servermux.ServeData(getter))
