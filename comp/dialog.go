@@ -49,7 +49,7 @@ func (d dialog) Confirm(value bool) dialog {
 }
 
 // Data sets the data of the dialog.
-func (d dialog) Data(value model.Data) dialog {
+func (d dialog) Data(value any) dialog {
 	return d.set("data", value)
 }
 

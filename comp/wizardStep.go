@@ -72,7 +72,7 @@ func (ws wizardStep) ColumnCount(value string) wizardStep {
 }
 
 // Data sets the form data
-func (ws wizardStep) Data(value model.Data) wizardStep {
+func (ws wizardStep) Data(value any) wizardStep {
 	return ws.set("data", value)
 }
 

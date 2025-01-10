@@ -4,7 +4,6 @@ import js "encoding/json"
 
 type (
 	Schema map[string]any
-	Data   = Schema
 )
 
 func (s Schema) Set(key string, value any) {
@@ -23,14 +22,14 @@ func (s Schema) Json() []byte {
 type Response struct {
 	Status int    `json:"status"`
 	Msg    string `json:"msg"`
-	Data   Data   `json:"data"`
+	Data   Schema `json:"data"`
 }
 
 func ErrorResponse(msg string) *Response {
 	return &Response{Status: 1, Msg: msg}
 }
 
-func SuccessResponse(msg string, data Data) *Response {
+func SuccessResponse(msg string, data Schema) *Response {
 	return &Response{Msg: msg, Data: data}
 }
 

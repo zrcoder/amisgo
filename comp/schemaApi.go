@@ -36,7 +36,7 @@ func (s schemaApi) ConvertKeyToPath(value bool) schemaApi {
 }
 
 // Data sets the data configuration.
-func (s schemaApi) Data(value model.Data) schemaApi {
+func (s schemaApi) Data(value any) schemaApi {
 	return s.set("data", value)
 }
 

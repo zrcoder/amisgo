@@ -51,7 +51,7 @@ func (f feedbackDialog) Confirm(value bool) feedbackDialog {
 }
 
 // Data sets the data mapping
-func (f feedbackDialog) Data(value model.Data) feedbackDialog {
+func (f feedbackDialog) Data(value any) feedbackDialog {
 	return f.set("data", value)
 }
 

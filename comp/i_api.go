@@ -39,7 +39,7 @@ func (b MApi) ConvertKeyToPath(value bool) MApi {
 }
 
 // Data sets the data to be sent
-func (b MApi) Data(value model.Data) MApi {
+func (b MApi) Data(value any) MApi {
 	return b.set("data", value)
 }
 

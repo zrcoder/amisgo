@@ -76,7 +76,7 @@ func (p page) CSSVars(value any) page {
 }
 
 // Data sets initial page-level data
-func (p page) Data(value model.Data) page {
+func (p page) Data(value any) page {
 	return p.set("data", value)
 }
 

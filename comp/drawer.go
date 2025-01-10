@@ -50,7 +50,7 @@ func (d drawer) Confirm(value bool) drawer {
 }
 
 // Data sets the data mapping for the drawer.
-func (d drawer) Data(value model.Data) drawer {
+func (d drawer) Data(value any) drawer {
 	return d.set("data", value)
 }
 

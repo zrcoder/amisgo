@@ -76,7 +76,7 @@ func (d drawerAction) CountDownTpl(value string) drawerAction {
 }
 
 // Data specifies the data mapping of the button.
-func (d drawerAction) Data(value model.Data) drawerAction {
+func (d drawerAction) Data(value any) drawerAction {
 	return d.set("data", value)
 }
 

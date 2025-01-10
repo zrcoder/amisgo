@@ -46,17 +46,17 @@ func (a action) Toast(value toast) action {
 
 // Transform transforms the src value with the provided function and renders the result to the dst component.
 func (a action) Transform(src, dst, successMsg string, transfor func(input any) (any, error)) action {
-	return a.TransformMultiple(successMsg, func(d model.Data) (model.Data, error) {
+	return a.TransformMultiple(successMsg, func(d model.Schema) (model.Schema, error) {
 		output, err := transfor(d[src])
 		if err != nil {
 			return nil, err
 		}
-		return model.Data{dst: output}, nil
+		return model.Schema{dst: output}, nil
 	}, src)
 }
 
 // TransformMultiple transforms the src values with the provided function and renders the result to multiple destinations.
-func (a action) TransformMultiple(successMsg string, transfor func(model.Data) (model.Data, error), src ...string) action {
+func (a action) TransformMultiple(successMsg string, transfor func(model.Schema) (model.Schema, error), src ...string) action {
 	route, data := servermux.TransformMultiple(successMsg, transfor, src...)
 	return a.ActionType("ajax").Api(
 		model.Schema{

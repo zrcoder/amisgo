@@ -76,7 +76,7 @@ func (t table) CombineNum(value string) table {
 }
 
 // Data sets the data
-func (t table) Data(value model.Data) table {
+func (t table) Data(value any) table {
 	return t.set("data", value)
 }
 

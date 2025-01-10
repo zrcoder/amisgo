@@ -71,7 +71,7 @@ func (da dialogAction) CountDownTpl(value string) dialogAction {
 }
 
 // Data sets the data mapping.
-func (da dialogAction) Data(value model.Data) dialogAction {
+func (da dialogAction) Data(value any) dialogAction {
 	return da.set("data", value)
 }
 

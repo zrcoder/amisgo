@@ -61,7 +61,7 @@ func (la MEventAction) ConfirmTitle(value any) MEventAction {
 }
 
 // Data sets the data
-func (la MEventAction) Data(value model.Data) MEventAction {
+func (la MEventAction) Data(value any) MEventAction {
 	return la.set("data", value)
 }
 

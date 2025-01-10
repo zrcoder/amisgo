@@ -20,9 +20,9 @@ func getRoute() string {
 	return fmt.Sprintf("/__amisgo__%d", getInnerApiID())
 }
 
-func BindDataRoute(callback func(model.Data) error) string {
+func BindDataRoute(callback func(model.Schema) error) string {
 	return handleGenericRequest(func(input []byte) error {
-		obj := model.Data{}
+		obj := model.Schema{}
 		if err := js.Unmarshal(input, &obj); err != nil {
 			return fmt.Errorf("data unmarshal: %w", err)
 		}
@@ -114,7 +114,7 @@ func ServeUpload(maxMemory int64, action func([]byte) (path string, err error)) 
 			respError(w, err)
 			return
 		}
-		resp := model.Response{Data: model.Data{"value": path}}
+		resp := model.Response{Data: model.Schema{"value": path}}
 		w.Write(resp.Json())
 	})
 	return route
@@ -125,7 +125,7 @@ func respError(w http.ResponseWriter, err error) {
 	w.Write(resp.Json())
 }
 
-func TransformMultiple(successMsg string, transfor func(model.Data) (model.Data, error), src ...string) (route string, data model.Data) {
+func TransformMultiple(successMsg string, transfor func(model.Schema) (model.Schema, error), src ...string) (route string, data model.Schema) {
 	route = getRoute()
 	Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		inputData, err := io.ReadAll(r.Body)
@@ -134,7 +134,7 @@ func TransformMultiple(successMsg string, transfor func(model.Data) (model.Data,
 			return
 		}
 		defer r.Body.Close()
-		d := model.Data{}
+		d := model.Schema{}
 		err = js.Unmarshal(inputData, &d)
 		if err != nil {
 			respError(w, err)
@@ -149,7 +149,7 @@ func TransformMultiple(successMsg string, transfor func(model.Data) (model.Data,
 		w.Write(resp.Json())
 	})
 
-	data = make(model.Data, len(src))
+	data = make(model.Schema, len(src))
 	for _, s := range src {
 		data.Set(s, "${"+s+"}")
 	}
