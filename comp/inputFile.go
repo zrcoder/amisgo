@@ -9,7 +9,7 @@ import (
 type inputFile model.Schema
 
 func InputFile() inputFile {
-	f := make(inputFile)
+	f := inputFile{}
 	f.set("type", "input-file")
 	f.Receiver("/api/upload/file")
 	f.StartChunkApi("/api/upload/startChunk")

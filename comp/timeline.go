@@ -8,7 +8,7 @@ type timeline model.Schema
 
 // NewTimeline creates a new Timeline instance
 func NewTimeline() timeline {
-	return timeline{}.set("type", "timeline")
+	return timeline{"type": "timeline"}
 }
 
 func (t timeline) set(key string, value any) timeline {

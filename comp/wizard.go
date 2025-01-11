@@ -8,7 +8,7 @@ type wizard model.Schema
 
 // Wizard creates a new Wizard instance
 func Wizard() wizard {
-	return wizard{}.set("type", "wizard")
+	return wizard{"type": "wizard"}
 }
 
 func (w wizard) set(key string, value any) wizard {

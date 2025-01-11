@@ -8,7 +8,7 @@ type inputTimeRange model.Schema
 
 // InputTimeRange creates a new InputTimeRange instance with default type.
 func InputTimeRange() inputTimeRange {
-	return make(inputTimeRange).set("type", "input-time-range")
+	return inputTimeRange{"type": "input-time-range"}
 }
 
 // set sets a field value and returns the instance.

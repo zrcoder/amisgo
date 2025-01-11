@@ -8,7 +8,7 @@ type tabs model.Schema
 
 // Tabs creates a new Tabs instance
 func Tabs() tabs {
-	return tabs{}.set("type", "tabs")
+	return tabs{"type": "tabs"}
 }
 
 func (t tabs) set(key string, value any) tabs {

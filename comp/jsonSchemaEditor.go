@@ -8,7 +8,7 @@ import "github.com/zrcoder/amisgo/model"
 type jsonSchemaEditor model.Schema
 
 func JsonSchemaEditor() jsonSchemaEditor {
-	return make(jsonSchemaEditor).set("type", "json-schema-editor")
+	return jsonSchemaEditor{"type": "json-schema-editor"}
 }
 
 // set sets a field value and returns the editor

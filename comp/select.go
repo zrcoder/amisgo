@@ -8,7 +8,7 @@ type selectControl model.Schema
 
 // Select creates a new selectControl instance
 func Select() selectControl {
-	return selectControl{}.set("type", "select")
+	return selectControl{"type": "select"}
 }
 
 // set sets the key-value pair in the selectControl instance

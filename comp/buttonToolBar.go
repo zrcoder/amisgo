@@ -7,7 +7,7 @@ type buttonToolbar model.Schema
 
 // ButtonToolbar creates a new ButtonToolbar instance
 func ButtonToolbar() buttonToolbar {
-	return make(buttonToolbar).set("type", "button-toolbar")
+	return buttonToolbar{"type": "button-toolbar"}
 }
 
 // set overrides the BaseRenderer's Set method, returning ButtonToolbar

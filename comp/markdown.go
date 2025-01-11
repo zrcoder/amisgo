@@ -8,7 +8,7 @@ type markdown model.Schema
 
 // Markdown creates a new Markdown instance
 func Markdown() markdown {
-	return markdown{}.set("type", "markdown")
+	return markdown{"type": "markdown"}
 }
 
 func (m markdown) set(key string, value any) markdown {

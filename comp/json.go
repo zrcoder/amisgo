@@ -9,7 +9,7 @@ type json model.Schema
 
 // Json creates a new Json instance with default type
 func Json() json {
-	return make(json).set("type", "json")
+	return json{"type": "json"}
 }
 
 // ClassName sets the container CSS class name

@@ -8,7 +8,7 @@ type inputRepeat model.Schema
 
 // InputRepeat creates a new RepeatControl instance
 func InputRepeat() inputRepeat {
-	return inputRepeat{}.set("type", "input-repeat")
+	return inputRepeat{"type": "input-repeat"}
 }
 
 func (rc inputRepeat) set(key string, value any) inputRepeat {

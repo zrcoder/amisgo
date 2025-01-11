@@ -11,7 +11,7 @@ type form model.Schema
 
 // Form creates a new Form instance.
 func Form() form {
-	return make(form).set("type", "form")
+	return form{"type": "form"}
 }
 
 func (f form) set(key string, value any) form {

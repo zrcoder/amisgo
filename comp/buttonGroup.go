@@ -7,7 +7,7 @@ type buttonGroup model.Schema
 
 // ButtonGroup creates a new ButtonGroup instance
 func ButtonGroup() buttonGroup {
-	return make(buttonGroup).set("type", "button-group")
+	return buttonGroup{"type": "button-group"}
 }
 
 func (br buttonGroup) set(key string, value any) buttonGroup {

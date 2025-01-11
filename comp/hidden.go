@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type hidden model.Schema
 
 func Hidden() hidden {
-	return make(hidden).set("type", "hidden")
+	return hidden{"type": "hidden"}
 }
 
 func (h hidden) set(key string, value any) hidden {

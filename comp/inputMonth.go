@@ -8,7 +8,7 @@ import "github.com/zrcoder/amisgo/model"
 type inputMonth model.Schema
 
 func InputMonth() inputMonth {
-	return inputMonth{}.set("type", "input-month")
+	return inputMonth{"type": "input-month"}
 }
 
 func (mc inputMonth) set(key string, value any) inputMonth {

@@ -8,7 +8,7 @@ type inputTag model.Schema
 
 // InputTag initializes an input tag component.
 func InputTag() inputTag {
-	return inputTag{}.set("type", "input-tag")
+	return inputTag{"type": "input-tag"}
 }
 
 // set sets a key-value pair for the input tag component.

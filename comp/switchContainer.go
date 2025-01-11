@@ -8,7 +8,7 @@ type switchContainer model.Schema
 
 // SwitchContainer creates a new SwitchContainer instance
 func SwitchContainer() switchContainer {
-	return switchContainer{}.set("type", "switch-container")
+	return switchContainer{"type": "switch-container"}
 }
 
 func (s switchContainer) set(key string, value any) switchContainer {

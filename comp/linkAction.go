@@ -7,7 +7,7 @@ type linkAction model.Schema
 
 // LinkAction creates a new LinkAction instance with default type and actionType.
 func LinkAction() linkAction {
-	return make(linkAction).set("type", "button").set("actionType", "link")
+	return linkAction{"type": "button", "actionType": "link"}
 }
 
 // ActiveClassName sets the active class name.

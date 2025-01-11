@@ -8,7 +8,7 @@ type webComponent model.Schema
 
 // WebComponent creates a new WebComponent instance
 func WebComponent() webComponent {
-	return webComponent{}.set("type", "web-component")
+	return webComponent{"type": "web-component"}
 }
 
 func (wc webComponent) set(key string, value any) webComponent {

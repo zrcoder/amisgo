@@ -8,7 +8,7 @@ type inputTime model.Schema
 
 // InputTime creates a new input-time component.
 func InputTime() inputTime {
-	return inputTime{}.set("type", "input-time")
+	return inputTime{"type": "input-time"}
 }
 
 // AutoFill sets autoFill value to synchronize other values in the form when an option is selected.

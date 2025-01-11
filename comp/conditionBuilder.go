@@ -7,7 +7,7 @@ type conditionBuilder model.Schema
 
 // ConditionBuilder creates a new ConditionBuilder instance
 func ConditionBuilder() conditionBuilder {
-	return make(conditionBuilder).set("type", "condition-builder")
+	return conditionBuilder{"type": "condition-builder"}
 }
 
 func (c conditionBuilder) set(key string, value any) conditionBuilder {

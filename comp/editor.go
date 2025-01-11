@@ -6,7 +6,11 @@ import "github.com/zrcoder/amisgo/model"
 type editor model.Schema
 
 func Editor() editor {
-	return make(editor).set("type", "editor")
+	return editor{"type": "editor"}
+}
+
+func JsonEditor() editor {
+	return Editor().Language("json")
 }
 
 func (ec editor) set(key string, value any) editor {

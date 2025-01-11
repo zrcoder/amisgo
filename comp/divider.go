@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type divider model.Schema
 
 func Divider() divider {
-	return make(divider).set("type", "divider")
+	return divider{"type": "divider"}
 }
 
 func (d divider) set(key string, value any) divider {

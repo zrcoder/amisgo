@@ -7,7 +7,7 @@ import "github.com/zrcoder/amisgo/model"
 type static model.Schema
 
 func Static() static {
-	return static{}.set("type", "static")
+	return static{"type": "static"}
 }
 
 func (s static) set(key string, value any) static {

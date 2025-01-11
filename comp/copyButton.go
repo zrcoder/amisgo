@@ -7,7 +7,7 @@ type copyButton model.Schema
 
 // CopyButton creates a new CopyButton instance with default copy action type
 func CopyButton() copyButton {
-	return make(copyButton).set("type", "button").set("actionType", "copy")
+	return copyButton{"type": "button", "actionType": "copy"}
 }
 
 func (c copyButton) set(key string, value any) copyButton {

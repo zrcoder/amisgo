@@ -8,11 +8,11 @@ type table model.Schema
 
 // Table creates a new Table instance
 func Table() table {
-	return table{}.set("type", "table")
+	return table{"type": "table"}
 }
 
 func Table2() table {
-	return table{}.set("type", "table2")
+	return table{"type": "table2"}
 }
 
 func (t table) set(key string, value any) table {

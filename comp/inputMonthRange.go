@@ -7,7 +7,7 @@ type inputMonthRange model.Schema
 
 // InputMonthRange creates a new MonthRangeControl instance
 func InputMonthRange() inputMonthRange {
-	return inputMonthRange{}.set("type", "input-month-range")
+	return inputMonthRange{"type": "input-month-range"}
 }
 
 // Animation enables or disables cursor animation

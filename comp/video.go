@@ -8,7 +8,7 @@ type video model.Schema
 
 // Video creates a new Video instance
 func Video() video {
-	return video{}.set("type", "video")
+	return video{"type": "video"}
 }
 
 func (v video) set(key string, value any) video {

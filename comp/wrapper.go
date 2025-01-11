@@ -9,7 +9,7 @@ type wrapper model.Schema
 
 // Wrapper creates a new Wrapper instance
 func Wrapper() wrapper {
-	return wrapper{}.set("type", "wrapper")
+	return wrapper{"type": "wrapper"}
 }
 
 func (w wrapper) set(key string, value any) wrapper {

@@ -7,7 +7,7 @@ type hBox model.Schema
 
 // HBox creates a new hBox instance
 func HBox() hBox {
-	return make(hBox).set("type", "hbox")
+	return hBox{"type": "hbox"}
 }
 
 func (h hBox) set(key string, value any) hBox {

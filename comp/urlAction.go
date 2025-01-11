@@ -7,7 +7,7 @@ type urlAction model.Schema
 
 // UrlAction creates a new UrlAction instance
 func UrlAction() urlAction {
-	return urlAction{}.set("type", "button").set("actionType", "url")
+	return urlAction{"type": "button", "actionType": "url"}
 }
 
 func (ua urlAction) set(key string, value any) urlAction {

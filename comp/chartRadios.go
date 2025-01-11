@@ -7,7 +7,7 @@ type chartRadios model.Schema
 
 // ChartRadios creates a new ChartRadios instance
 func ChartRadios() chartRadios {
-	return make(chartRadios).set("type", "chart-radios")
+	return chartRadios{"type": "chart-radios"}
 }
 
 func (c chartRadios) set(key string, value any) chartRadios {

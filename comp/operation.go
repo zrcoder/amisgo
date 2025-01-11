@@ -8,7 +8,7 @@ type operation model.Schema
 
 // Operation creates a new Operation instance
 func Operation() operation {
-	return operation{}.set("type", "operation")
+	return operation{"type": "operation"}
 }
 
 // set sets a field value

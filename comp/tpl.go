@@ -7,7 +7,12 @@ type tpl model.Schema
 
 // Tpl creates a new Tpl instance
 func Tpl() tpl {
-	return tpl{}.set("type", "tpl")
+	return tpl{"type": "tpl"}
+}
+
+// Html creates a template with type set to "html".
+func Html() tpl {
+	return tpl{"type": "html"}
 }
 
 func (t tpl) set(key string, value any) tpl {

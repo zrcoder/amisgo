@@ -7,7 +7,7 @@ type checkbox model.Schema
 
 // Checkbox creates a new Checkbox instance
 func Checkbox() checkbox {
-	return make(checkbox).set("type", "checkbox")
+	return checkbox{"type": "checkbox"}
 }
 
 func (c checkbox) set(key string, value any) checkbox {

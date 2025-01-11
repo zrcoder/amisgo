@@ -7,7 +7,7 @@ type combo model.Schema
 
 // Combo creates a new Combo instance
 func Combo() combo {
-	return make(combo).set("type", "combo")
+	return combo{"type": "combo"}
 }
 
 func (cc combo) set(key string, value any) combo {

@@ -7,7 +7,7 @@ type color model.Schema
 
 // Color creates a new Color instance
 func Color() color {
-	return make(color).set("type", "color")
+	return color{"type": "color"}
 }
 
 func (c color) set(key string, value any) color {

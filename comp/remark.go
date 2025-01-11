@@ -8,7 +8,7 @@ type remark model.Schema
 
 // Remark creates a new remark.
 func Remark() remark {
-	return remark{}.set("type", "remark")
+	return remark{"type": "remark"}
 }
 
 func (rm remark) set(key string, value any) remark {

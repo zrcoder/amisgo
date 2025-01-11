@@ -7,7 +7,7 @@ import "github.com/zrcoder/amisgo/model"
 type transferPicker model.Schema
 
 func TransferPicker() transferPicker {
-	return transferPicker{}.set("type", "transfer-picker")
+	return transferPicker{"type": "transfer-picker"}
 }
 
 func (tpc transferPicker) set(key string, value any) transferPicker {

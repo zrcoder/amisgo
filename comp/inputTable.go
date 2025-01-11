@@ -8,7 +8,7 @@ type inputTable model.Schema
 
 // InputTable creates a new TableControl instance
 func InputTable() inputTable {
-	return inputTable{}.set("type", "input-table")
+	return inputTable{"type": "input-table"}
 }
 
 func (tc inputTable) set(key string, value any) inputTable {

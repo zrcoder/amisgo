@@ -8,7 +8,7 @@ type tasks model.Schema
 
 // Tasks creates a new Tasks instance
 func Tasks() tasks {
-	return tasks{}.set("type", "tasks")
+	return tasks{"type": "tasks"}
 }
 
 // set sets a property value and returns the updated Tasks instance

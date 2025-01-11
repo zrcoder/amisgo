@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type inputSubForm model.Schema
 
 func InputSubForm() inputSubForm {
-	return inputSubForm{}.set("type", "input-sub-form")
+	return inputSubForm{"type": "input-sub-form"}
 }
 
 func (s inputSubForm) set(key string, value any) inputSubForm {

@@ -8,7 +8,7 @@ type wizardStep model.Schema
 
 // WizardStep creates a new WizardStep instance
 func WizardStep() wizardStep {
-	return wizardStep{}.set("type", "wizard-step")
+	return wizardStep{"type": "wizard-step"}
 }
 
 func (ws wizardStep) set(key string, value any) wizardStep {

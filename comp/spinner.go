@@ -7,7 +7,7 @@ type spinner model.Schema
 
 // Spinner creates a new Spinner instance.
 func Spinner() spinner {
-	return spinner{}.set("type", "spinner")
+	return spinner{"type": "spinner"}
 }
 
 func (s spinner) set(key string, value any) spinner {

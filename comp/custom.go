@@ -7,7 +7,7 @@ type custom model.Schema
 
 // Custom creates a new instance of custom and sets the default type.
 func Custom() custom {
-	return make(custom).set("type", "custom")
+	return custom{"type": "custom"}
 }
 
 func (c custom) set(key string, value any) custom {

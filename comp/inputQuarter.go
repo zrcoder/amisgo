@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type inputQuarter model.Schema
 
 func InputQuarter() inputQuarter {
-	return inputQuarter{}.set("type", "input-quarter")
+	return inputQuarter{"type": "input-quarter"}
 }
 
 // AutoFill sets auto-fill value

@@ -8,7 +8,7 @@ type transfer model.Schema
 
 // Transfer creates a new TransferControl instance
 func Transfer() transfer {
-	return transfer{}.set("type", "transfer")
+	return transfer{"type": "transfer"}
 }
 
 func (tc transfer) set(key string, value any) transfer {

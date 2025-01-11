@@ -8,7 +8,7 @@ type password model.Schema
 
 // Password creates a new Password instance
 func Password() password {
-	return password{}.set("type", "password")
+	return password{"type": "password"}
 }
 
 // set sets a field value

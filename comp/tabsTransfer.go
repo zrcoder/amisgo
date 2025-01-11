@@ -9,7 +9,7 @@ type tabsTransfer model.Schema
 
 // TabsTransfer initializes a tabsTransfer with type "tabs-transfer"
 func TabsTransfer() tabsTransfer {
-	return tabsTransfer{}.set("type", "tabs-transfer")
+	return tabsTransfer{"type": "tabs-transfer"}
 }
 
 // set sets a key-value pair in tabsTransfer

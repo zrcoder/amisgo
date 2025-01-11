@@ -10,7 +10,7 @@ type wangEditor model.Schema
 
 // WangEditor creates a new WangEditor instance
 func WangEditor() wangEditor {
-	return wangEditor{}.set("type", "custom-wang-editor")
+	return wangEditor{"type": "custom-wang-editor"}
 }
 
 func (we wangEditor) set(key string, value any) wangEditor {

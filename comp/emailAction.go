@@ -7,7 +7,7 @@ type emailAction model.Schema
 
 // EmailAction creates a new EmailAction instance with default type and actionType
 func EmailAction() emailAction {
-	return make(emailAction).set("type", "button").set("actionType", "email")
+	return emailAction{"type": "button", "actionType": "email"}
 }
 
 func (ea emailAction) set(key string, value any) emailAction {

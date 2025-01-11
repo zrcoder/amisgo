@@ -8,7 +8,7 @@ type inputKVS model.Schema
 
 // InputKVS creates a new InputKVS instance with default type
 func InputKVS() inputKVS {
-	return make(inputKVS).set("type", "input-kvs")
+	return inputKVS{"type": "input-kvs"}
 }
 
 // set sets a field value and returns the instance

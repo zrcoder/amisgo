@@ -7,7 +7,7 @@ import "github.com/zrcoder/amisgo/model"
 type inputRichText model.Schema
 
 func InputRichText() inputRichText {
-	return inputRichText{}.set("type", "input-rich-text")
+	return inputRichText{"type": "input-rich-text"}
 }
 
 func (rc inputRichText) set(key string, value any) inputRichText {

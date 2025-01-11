@@ -5,7 +5,7 @@ import "github.com/zrcoder/amisgo/model"
 type text model.Schema
 
 func Text() text {
-	return text{}.set("type", "text")
+	return text{"type": "text"}
 }
 
 func (t text) set(key string, value any) text {

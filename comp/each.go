@@ -7,7 +7,7 @@ type each model.Schema
 
 // Each creates a new Each instance with the default type set to 'each'.
 func Each() each {
-	return make(each).set("type", "each")
+	return each{"type": "each"}
 }
 
 func (e each) set(key string, value any) each {

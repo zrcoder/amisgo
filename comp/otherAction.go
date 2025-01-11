@@ -5,7 +5,7 @@ import "github.com/zrcoder/amisgo/model"
 type otherAction model.Schema
 
 func OtherAction() otherAction {
-	return otherAction{}.set("type", "button").set("actionType", "prev")
+	return otherAction{"type": "button", "actionType": "prev"}
 }
 
 // set sets a field value

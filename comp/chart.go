@@ -10,7 +10,7 @@ type chart model.Schema
 
 // Chart creates a new Chart instance
 func Chart() chart {
-	return chart{}.set("type", "chart")
+	return chart{"type": "chart"}
 }
 
 func (c chart) set(key string, value any) chart {

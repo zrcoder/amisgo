@@ -8,7 +8,7 @@ type switchControl model.Schema
 
 // Switch creates a new SwitchControl instance
 func Switch() switchControl {
-	return switchControl{}.set("type", "switch")
+	return switchControl{"type": "switch"}
 }
 
 func (s switchControl) set(key string, value any) switchControl {

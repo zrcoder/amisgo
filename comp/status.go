@@ -8,7 +8,7 @@ type status model.Schema
 
 // Status creates a new Status instance
 func Status() status {
-	return status{}.set("type", "status")
+	return status{"type": "status"}
 }
 
 func (s status) set(key string, value any) status {

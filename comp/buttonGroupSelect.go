@@ -7,7 +7,7 @@ type buttonGroupSelect model.Schema
 
 // ButtonGroupSelect creates a new ButtonGroupSelect instance
 func ButtonGroupSelect() buttonGroupSelect {
-	return make(buttonGroupSelect).set("type", "button-group-select")
+	return buttonGroupSelect{"type": "button-group-select"}
 }
 
 func (bgc buttonGroupSelect) set(key string, value any) buttonGroupSelect {

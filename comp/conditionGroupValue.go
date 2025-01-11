@@ -7,7 +7,7 @@ type conditionGroupValue model.Schema
 
 // ConditionGroupValue creates a new ConditionGroupValue instance with a default conjunction
 func ConditionGroupValue() conditionGroupValue {
-	return make(conditionGroupValue).set("conjunction", "and")
+	return conditionGroupValue{"conjunction": "and"}
 }
 
 func (c conditionGroupValue) set(key string, value any) conditionGroupValue {

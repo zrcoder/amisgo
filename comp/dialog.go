@@ -5,7 +5,7 @@ import "github.com/zrcoder/amisgo/model"
 type dialog model.Schema
 
 func Dialog() dialog {
-	return make(dialog).set("type", "dialog")
+	return dialog{"type": "dialog"}
 }
 
 func (d dialog) set(key string, value any) dialog {

@@ -7,7 +7,7 @@ type collapse model.Schema
 
 // Collapse creates a new Collapse instance
 func Collapse() collapse {
-	return make(collapse).set("type", "collapse")
+	return collapse{"type": "collapse"}
 }
 
 func (c collapse) set(key string, value any) collapse {

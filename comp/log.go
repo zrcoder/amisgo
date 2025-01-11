@@ -8,7 +8,7 @@ type log model.Schema
 
 // Log creates a new log instance
 func Log() log {
-	return log{}.set("type", "log")
+	return log{"type": "log"}
 }
 
 func (l log) set(key string, value any) log {

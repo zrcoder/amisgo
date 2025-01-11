@@ -7,7 +7,7 @@ type grid model.Schema
 
 // Grid creates a new Grid instance
 func Grid() grid {
-	return make(grid).set("type", "grid")
+	return grid{"type": "grid"}
 }
 
 func (g grid) set(key string, value any) grid {

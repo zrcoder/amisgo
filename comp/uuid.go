@@ -7,7 +7,7 @@ import "github.com/zrcoder/amisgo/model"
 type uuid model.Schema
 
 func UUID() uuid {
-	return uuid{}.set("type", "uuid")
+	return uuid{"type": "uuid"}
 }
 
 func (uc uuid) set(key string, value any) uuid {

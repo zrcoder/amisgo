@@ -8,7 +8,7 @@ type matrixCheckboxes model.Schema
 
 // MatrixCheckboxes creates a new MatrixControl instance.
 func MatrixCheckboxes() matrixCheckboxes {
-	return matrixCheckboxes{}.set("type", "matrix-checkboxes")
+	return matrixCheckboxes{"type": "matrix-checkboxes"}
 }
 
 func (mc matrixCheckboxes) set(key string, value any) matrixCheckboxes {

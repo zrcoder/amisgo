@@ -7,7 +7,7 @@ type pagination model.Schema
 
 // Pagination creates a new Pagination instance
 func Pagination() pagination {
-	return pagination{}.set("type", "pagination")
+	return pagination{"type": "pagination"}
 }
 
 // set sets a field value

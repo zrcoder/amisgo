@@ -8,7 +8,7 @@ type portlet model.Schema
 
 // Portlet creates a new Portlet instance
 func Portlet() portlet {
-	return portlet{}.set("type", "portlet")
+	return portlet{"type": "portlet"}
 }
 
 func (p portlet) set(key string, value any) portlet {

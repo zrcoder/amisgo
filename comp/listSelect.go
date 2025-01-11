@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type listSelect model.Schema
 
 func ListSelect() listSelect {
-	return make(listSelect).set("type", "list-select")
+	return listSelect{"type": "list-select"}
 }
 
 // set sets a field value

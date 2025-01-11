@@ -7,7 +7,7 @@ type picker model.Schema
 
 // Picker creates a new PickerControl instance
 func Picker() picker {
-	return picker{}.set("type", "picker")
+	return picker{"type": "picker"}
 }
 
 func (pc picker) set(key string, value any) picker {

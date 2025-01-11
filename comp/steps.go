@@ -8,7 +8,7 @@ type steps model.Schema
 
 // Steps creates a new Steps instance
 func Steps() steps {
-	return steps{}.set("type", "steps")
+	return steps{"type": "steps"}
 }
 
 func (s steps) set(key string, value any) steps {

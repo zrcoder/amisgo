@@ -8,7 +8,7 @@ type toastAction model.Schema
 
 // ToastAction creates a new ToastAction instance
 func ToastAction() toastAction {
-	return toastAction{}.set("type", "button").set("actionType", "toast")
+	return toastAction{"type": "button", "actionType": "toast"}
 }
 
 func (ta toastAction) set(key string, value any) toastAction {

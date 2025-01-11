@@ -8,8 +8,7 @@ type property model.Schema
 
 // Property creates a new Property instance
 func Property() property {
-	return property{}.
-		set("type", "property")
+	return property{"type": "property"}
 }
 
 func (p property) set(key string, value any) property {

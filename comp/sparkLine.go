@@ -8,7 +8,7 @@ type sparkLine model.Schema
 
 // SparkLine creates a new SparkLine instance
 func SparkLine() sparkLine {
-	return sparkLine{}.set("type", "sparkline")
+	return sparkLine{"type": "sparkline"}
 }
 
 func (s sparkLine) set(key string, value any) sparkLine {

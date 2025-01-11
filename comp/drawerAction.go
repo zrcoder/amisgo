@@ -7,7 +7,7 @@ type drawerAction model.Schema
 
 // DrawerAction creates a new DrawerAction instance and sets the default type and actionType.
 func DrawerAction() drawerAction {
-	return make(drawerAction).set("type", "button").set("actionType", "drawer")
+	return drawerAction{"type": "button", "actionType": "drawer"}
 }
 
 func (d drawerAction) set(key string, value any) drawerAction {

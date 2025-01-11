@@ -9,7 +9,7 @@ type radio model.Schema
 
 // Radio creates a new RadioControl instance
 func Radio() radio {
-	return radio{}.set("type", "radio")
+	return radio{"type": "radio"}
 }
 
 // set is a private method for setting field values

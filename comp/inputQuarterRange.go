@@ -8,7 +8,7 @@ type inputQuarterRange model.Schema
 
 // InputQuarterRange creates a new QuarterRangeControl instance
 func InputQuarterRange() inputQuarterRange {
-	return inputQuarterRange{}.set("type", "input-quarter-range")
+	return inputQuarterRange{"type": "input-quarter-range"}
 }
 
 // set sets a field value

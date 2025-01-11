@@ -7,7 +7,7 @@ import "github.com/zrcoder/amisgo/model"
 type inputRating model.Schema
 
 func InputRating() inputRating {
-	return inputRating{}.set("type", "input-rating")
+	return inputRating{"type": "input-rating"}
 }
 
 func (rc inputRating) set(key string, value any) inputRating {

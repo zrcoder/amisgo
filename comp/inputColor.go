@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type inputColor model.Schema
 
 func InputColor() inputColor {
-	return make(inputColor).set("type", "input-color")
+	return inputColor{"type": "input-color"}
 }
 
 func (i inputColor) set(key string, value any) inputColor {

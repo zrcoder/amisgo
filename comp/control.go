@@ -7,7 +7,7 @@ type control model.Schema
 
 // Control creates a new Control instance with default type
 func Control() control {
-	return make(control).set("type", "control")
+	return control{"type": "control"}
 }
 
 func (fc control) set(key string, value any) control {

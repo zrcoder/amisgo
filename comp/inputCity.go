@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type inputCity model.Schema
 
 func InputCity() inputCity {
-	return make(inputCity).set("type", "input-city")
+	return inputCity{"type": "input-city"}
 }
 
 func (i inputCity) set(key string, value any) inputCity {

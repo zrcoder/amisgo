@@ -9,7 +9,7 @@ type radios model.Schema
 
 // Radios create a new RadiosControl instance
 func Radios() radios {
-	return radios{}.set("type", "radios")
+	return radios{"type": "radios"}
 }
 
 func (rc radios) set(key string, value any) radios {

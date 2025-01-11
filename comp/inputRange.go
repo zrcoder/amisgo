@@ -8,7 +8,7 @@ type inputRange model.Schema
 
 // InputRange creates a new RangeControl instance
 func InputRange() inputRange {
-	return inputRange{}.set("type", "input-range")
+	return inputRange{"type": "input-range"}
 }
 
 func (rc inputRange) set(key string, value any) inputRange {

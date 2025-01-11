@@ -7,7 +7,7 @@ type carousel model.Schema
 
 // Carousel creates a new Carousel instance
 func Carousel() carousel {
-	return make(carousel).set("type", "carousel")
+	return carousel{"type": "carousel"}
 }
 
 func (c carousel) set(key string, value any) carousel {

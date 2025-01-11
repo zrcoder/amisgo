@@ -7,7 +7,7 @@ type collapseGroup model.Schema
 
 // CollapseGroup creates a new CollapseGroup instance
 func CollapseGroup() collapseGroup {
-	return make(collapseGroup).set("type", "collapse-group")
+	return collapseGroup{"type": "collapse-group"}
 }
 
 func (c collapseGroup) set(key string, value any) collapseGroup {

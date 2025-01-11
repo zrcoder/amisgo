@@ -7,7 +7,7 @@ type code model.Schema
 
 // Code creates a new Code instance
 func Code() code {
-	return make(code).set("type", "code")
+	return code{"type": "code"}
 }
 
 func (c code) set(key string, value any) code {

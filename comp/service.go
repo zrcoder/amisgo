@@ -10,7 +10,7 @@ type service model.Schema
 
 // Service creates a new Service instance.
 func Service() service {
-	return service{}.set("type", "service")
+	return service{"type": "service"}
 }
 
 func (s service) set(key string, value any) service {

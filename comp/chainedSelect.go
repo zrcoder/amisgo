@@ -8,7 +8,7 @@ type chainedSelect model.Schema
 
 // ChainedSelect creates a new ChainedSelect instance
 func ChainedSelect() chainedSelect {
-	return make(chainedSelect).set("type", "chained-select")
+	return chainedSelect{"type": "chained-select"}
 }
 
 func (c chainedSelect) set(key string, value any) chainedSelect {

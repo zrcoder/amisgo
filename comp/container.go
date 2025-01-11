@@ -7,7 +7,7 @@ type container model.Schema
 
 // Container creates a new Container instance
 func Container() container {
-	return make(container).set("type", "container")
+	return container{"type": "container"}
 }
 
 func (c container) set(key string, value any) container {

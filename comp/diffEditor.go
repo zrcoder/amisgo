@@ -7,7 +7,7 @@ type diffEditor model.Schema
 
 // DiffEditor creates a new diffEditor instance
 func DiffEditor() diffEditor {
-	return make(diffEditor).set("type", "diff-editor")
+	return diffEditor{"type": "diff-editor"}
 }
 
 func (d diffEditor) set(key string, value any) diffEditor {

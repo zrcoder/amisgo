@@ -8,7 +8,7 @@ type tooltipWrapper model.Schema
 
 // TooltipWrapper creates a new TooltipWrapper instance
 func TooltipWrapper() tooltipWrapper {
-	return tooltipWrapper{}.set("type", "tooltip-wrapper")
+	return tooltipWrapper{"type": "tooltip-wrapper"}
 }
 
 func (tw tooltipWrapper) set(key string, value any) tooltipWrapper {

@@ -8,7 +8,7 @@ type vBox model.Schema
 
 // VBox creates a new VBox instance
 func VBox() vBox {
-	return vBox{}.set("type", "vbox")
+	return vBox{"type": "vbox"}
 }
 
 func (v vBox) set(key string, value any) vBox {

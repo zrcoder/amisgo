@@ -15,17 +15,17 @@ func Crud() crud {
 
 // CrudTable creates a new CRUDTable instance
 func CrudTable() crud {
-	return crud{}.set("type", "crud").Mode("table")
+	return crud{"type": "crud"}.Mode("table")
 }
 
 // CrudList creates a new CRUD list instance
 func CrudList() crud {
-	return crud{}.set("type", "crud").Mode("list")
+	return crud{"type": "crud"}.Mode("list")
 }
 
 // CrudCards creates a new CRUD cards instance
 func CrudCards() crud {
-	return crud{}.set("type", "crud").Mode("cards")
+	return crud{"type": "crud"}.Mode("cards")
 }
 
 // Set sets a key-value pair and returns the current instance

@@ -8,8 +8,7 @@ type qrCode model.Schema
 
 // QRCode creates a new QRCode instance
 func QRCode() qrCode {
-	return qrCode{}.
-		set("type", "qrcode")
+	return qrCode{"type": "qrcode"}
 }
 
 func (q qrCode) set(key string, value any) qrCode {

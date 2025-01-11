@@ -7,7 +7,7 @@ type cards model.Schema
 
 // Cards creates a new Cards instance
 func Cards() cards {
-	return make(cards).set("type", "cards")
+	return cards{"type": "cards"}
 }
 
 func (c cards) set(key string, value any) cards {

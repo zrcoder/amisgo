@@ -7,7 +7,7 @@ type image model.Schema
 
 // Image creates a new Image instance
 func Image() image {
-	return make(image).set("type", "image")
+	return image{"type": "image"}
 }
 
 func (i image) set(key string, value any) image {

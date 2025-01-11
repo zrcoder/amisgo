@@ -6,7 +6,7 @@ type tableView model.Schema
 
 // TableView creates a new TableView instance
 func TableView() tableView {
-	return tableView{}.set("type", "table-view")
+	return tableView{"type": "table-view"}
 }
 
 // set assigns a value to a key in the tableView schema

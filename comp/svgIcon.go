@@ -8,7 +8,7 @@ type svgIcon model.Schema
 
 // SvgIcon creates a new SvgIcon instance.
 func SvgIcon() svgIcon {
-	return svgIcon{}.set("type", "custom-svg-icon")
+	return svgIcon{"type": "custom-svg-icon"}
 }
 
 func (s svgIcon) set(key string, value any) svgIcon {

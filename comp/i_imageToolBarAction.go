@@ -7,7 +7,7 @@ type imageToolbarAction model.Schema
 
 // ImageToolbarAction creates a new ImageToolbarAction instance with a default key
 func ImageToolbarAction() imageToolbarAction {
-	return make(imageToolbarAction).set("key", "ROTATE_RIGHT")
+	return imageToolbarAction{"key": "ROTATE_RIGHT"}
 }
 
 func (a imageToolbarAction) set(key string, value any) imageToolbarAction {

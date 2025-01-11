@@ -7,7 +7,7 @@ type dropdownButton model.Schema
 
 // DropdownButton creates a new DropdownButton instance with the default type 'dropdown-button'.
 func DropdownButton() dropdownButton {
-	return make(dropdownButton).set("type", "dropdown-button")
+	return dropdownButton{"type": "dropdown-button"}
 }
 
 func (d dropdownButton) set(key string, value any) dropdownButton {

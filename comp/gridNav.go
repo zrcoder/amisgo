@@ -7,7 +7,7 @@ type gridNav model.Schema
 
 // GridNav creates a new GridNav instance
 func GridNav() gridNav {
-	return make(gridNav).set("type", "grid-nav")
+	return gridNav{"type": "grid-nav"}
 }
 
 func (g gridNav) set(key string, value any) gridNav {

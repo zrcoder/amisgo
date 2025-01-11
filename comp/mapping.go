@@ -8,7 +8,7 @@ type mapping model.Schema
 
 // Mapping creates a new Mapping instance
 func Mapping() mapping {
-	return mapping{}.set("type", "map")
+	return mapping{"type": "map"}
 }
 
 func (m mapping) set(key string, value any) mapping {

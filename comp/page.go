@@ -11,7 +11,7 @@ type page model.Schema
 
 // Page creates a new Page instance
 func Page() page {
-	return page{}.set("type", "page")
+	return page{"type": "page"}
 }
 
 // set sets a field value

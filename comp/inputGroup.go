@@ -7,7 +7,7 @@ type inputGroup model.Schema
 
 // InputGroup initializes an input group component.
 func InputGroup() inputGroup {
-	return make(inputGroup).set("type", "input-group")
+	return inputGroup{"type": "input-group"}
 }
 
 // set sets a key-value pair and returns the input group.

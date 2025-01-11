@@ -7,7 +7,7 @@ type inputArray model.Schema
 
 // InputArray creates a new InputArray instance
 func InputArray() inputArray {
-	return make(inputArray).set("type", "input-array")
+	return inputArray{"type": "input-array"}
 }
 
 func (ac inputArray) set(key string, value any) inputArray {

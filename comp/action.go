@@ -10,7 +10,7 @@ type action model.Schema
 
 // Action creates a new Action instance.
 func Action() action {
-	return action{}.set("type", "action")
+	return action{"type": "action"}
 }
 
 // Button is an alias for Action with type "button".

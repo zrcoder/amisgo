@@ -7,7 +7,7 @@ type watermark model.Schema
 
 // Watermark creates a new Watermark instance
 func Watermark() watermark {
-	return watermark{}.set("type", "custom-watermark")
+	return watermark{"type": "custom-watermark"}
 }
 
 func (wm watermark) set(key string, value any) watermark {

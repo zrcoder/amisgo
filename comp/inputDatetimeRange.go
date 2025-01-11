@@ -7,7 +7,7 @@ type inputDatetimeRange model.Schema
 
 // InputDatetimeRange creates a new instance with default type.
 func InputDatetimeRange() inputDatetimeRange {
-	return make(inputDatetimeRange).set("type", "input-datetime-range")
+	return inputDatetimeRange{"type": "input-datetime-range"}
 }
 
 // AutoFill sets auto-fill configuration.

@@ -7,7 +7,7 @@ type reloadAction model.Schema
 
 // ReloadAction creates a new ReloadAction instance
 func ReloadAction() reloadAction {
-	return reloadAction{}.set("type", "button").set("actionType", "reload")
+	return reloadAction{"type": "button", "actionType": "reload"}
 }
 
 func (ra reloadAction) set(key string, value any) reloadAction {

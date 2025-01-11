@@ -7,7 +7,7 @@ type group model.Schema
 
 // Group creates a new GroupControl instance.
 func Group() group {
-	return make(group).set("type", "group")
+	return group{"type": "group"}
 }
 
 func (g group) set(key string, value any) group {

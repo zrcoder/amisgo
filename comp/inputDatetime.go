@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type inputDatetime model.Schema
 
 func InputDatetime() inputDatetime {
-	return make(inputDatetime).set("type", "input-datetime")
+	return inputDatetime{"type": "input-datetime"}
 }
 
 func (d inputDatetime) set(key string, value any) inputDatetime {

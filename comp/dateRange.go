@@ -7,7 +7,7 @@ type dateRange model.Schema
 
 // DateRange creates a new DateRange instance with default type set to "date-range"
 func DateRange() dateRange {
-	return make(dateRange).set("type", "date-range")
+	return dateRange{"type": "date-range"}
 }
 
 func (d dateRange) set(key string, value any) dateRange {

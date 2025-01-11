@@ -7,7 +7,7 @@ type iconPicker model.Schema
 
 // IconPicker creates a new IconPicker instance
 func IconPicker() iconPicker {
-	return make(iconPicker).set("type", "icon-picker")
+	return iconPicker{"type": "icon-picker"}
 }
 
 func (i iconPicker) set(key string, value any) iconPicker {

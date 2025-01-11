@@ -7,7 +7,7 @@ type panel model.Schema
 
 // Panel creates a new Panel instance
 func Panel() panel {
-	return panel{}.set("type", "panel")
+	return panel{"type": "panel"}
 }
 
 // set sets a field value

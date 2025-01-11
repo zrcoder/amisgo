@@ -8,22 +8,22 @@ type inputText model.Schema
 
 // InputText creates a text input field.
 func InputText() inputText {
-	return inputText{}.set("type", "input-text")
+	return inputText{"type": "input-text"}
 }
 
 // InputEmail creates an email input field.
 func InputEmail() inputText {
-	return inputText{}.set("type", "input-email")
+	return inputText{"type": "input-email"}
 }
 
 // InputUrl creates a URL input field.
 func InputUrl() inputText {
-	return inputText{}.set("type", "input-url")
+	return inputText{"type": "input-url"}
 }
 
 // InputPassword creates a password input field.
 func InputPassword() inputText {
-	return inputText{}.set("type", "input-password")
+	return inputText{"type": "input-password"}
 }
 
 // AddApi sets the API for adding data.

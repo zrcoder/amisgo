@@ -8,7 +8,7 @@ type link model.Schema
 
 // Link creates a new Link instance with default type.
 func Link() link {
-	return make(link).set("type", "link")
+	return link{"type": "link"}
 }
 
 // Badge sets the badge value.

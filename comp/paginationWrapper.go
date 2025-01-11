@@ -8,7 +8,7 @@ type paginationWrapper model.Schema
 
 // PaginationWrapper creates a new PaginationWrapper instance
 func PaginationWrapper() paginationWrapper {
-	return paginationWrapper{}.set("type", "pagination-wrapper")
+	return paginationWrapper{"type": "pagination-wrapper"}
 }
 
 // set sets a field value

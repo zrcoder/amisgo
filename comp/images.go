@@ -7,7 +7,7 @@ type images model.Schema
 
 // Images creates a new Images instance with default type.
 func Images() images {
-	return make(images).set("type", "images")
+	return images{"type": "images"}
 }
 
 func (i images) set(key string, value any) images {

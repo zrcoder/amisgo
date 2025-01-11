@@ -7,7 +7,7 @@ type inputExcel model.Schema
 
 // InputExcel creates a new InputExcel instance with default type
 func InputExcel() inputExcel {
-	return make(inputExcel).set("type", "input-excel")
+	return inputExcel{"type": "input-excel"}
 }
 
 // set sets a field value and returns the instance

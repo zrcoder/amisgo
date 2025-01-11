@@ -7,7 +7,7 @@ type breadcrumb model.Schema
 
 // Breadcrumb creates a new Breadcrumb instance
 func Breadcrumb() breadcrumb {
-	return breadcrumb{}.set("type", "breadcrumb")
+	return breadcrumb{"type": "breadcrumb"}
 }
 
 func (b breadcrumb) set(key string, value any) breadcrumb {

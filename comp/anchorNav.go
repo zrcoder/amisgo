@@ -8,7 +8,7 @@ type anchorNav model.Schema
 
 // AnchorNav creates a new AnchorNav instance
 func AnchorNav() anchorNav {
-	return make(anchorNav).set("type", "anchor-nav")
+	return anchorNav{"type": "anchor-nav"}
 }
 
 func (a anchorNav) set(key string, value any) anchorNav {

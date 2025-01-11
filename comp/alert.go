@@ -8,7 +8,7 @@ type alert model.Schema
 
 // Alert creates a new Alert instance
 func Alert() alert {
-	return make(alert).set("type", "alert")
+	return alert{"type": "alert"}
 }
 
 func (a alert) set(key string, value any) alert {

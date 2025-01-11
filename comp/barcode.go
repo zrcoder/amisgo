@@ -7,7 +7,7 @@ type barcode model.Schema
 
 // Barcode creates a new Barcode instance
 func Barcode() barcode {
-	return make(barcode).set("type", "barcode")
+	return barcode{"type": "barcode"}
 }
 
 func (b barcode) set(key string, value any) barcode {

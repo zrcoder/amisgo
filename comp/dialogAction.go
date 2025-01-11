@@ -7,7 +7,7 @@ type dialogAction model.Schema
 
 // DialogAction creates a new dialog action button instance and sets default settings.
 func DialogAction() dialogAction {
-	return make(dialogAction).set("type", "button").set("actionType", "dialog")
+	return dialogAction{"type": "button", "actionType": "dialog"}
 }
 
 func (da dialogAction) set(key string, value any) dialogAction {

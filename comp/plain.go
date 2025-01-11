@@ -8,7 +8,7 @@ type plain model.Schema
 
 // Plain creates a new Plain instance
 func Plain() plain {
-	return plain{}.set("type", "plain")
+	return plain{"type": "plain"}
 }
 
 func (p plain) set(key string, value any) plain {

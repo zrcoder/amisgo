@@ -8,7 +8,7 @@ type tabsTransferPicker model.Schema
 
 // TabsTransferPicker initializes a new tabsTransferPicker instance.
 func TabsTransferPicker() tabsTransferPicker {
-	return tabsTransferPicker{}.set("type", "tabs-transfer-picker")
+	return tabsTransferPicker{"type": "tabs-transfer-picker"}
 }
 
 // set sets a key-value pair and returns the updated tabsTransferPicker instance.

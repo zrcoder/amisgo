@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type drawer model.Schema
 
 func Drawer() drawer {
-	return make(drawer).set("type", "drawer")
+	return drawer{"type": "drawer"}
 }
 
 func (d drawer) set(key string, value any) drawer {

@@ -8,7 +8,7 @@ type progress model.Schema
 
 // Progress creates a new Progress instance
 func Progress() progress {
-	return progress{}.set("type", "progress").set("mode", "line")
+	return progress{"type": "progress", "mode": "line"}
 }
 
 func (p progress) set(key string, value any) progress {

@@ -7,7 +7,7 @@ type iframe model.Schema
 
 // Iframe creates a new Iframe instance
 func Iframe() iframe {
-	return make(iframe).set("type", "iframe")
+	return iframe{"type": "iframe"}
 }
 
 // Allow sets the allow attribute

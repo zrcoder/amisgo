@@ -7,7 +7,7 @@ type formula model.Schema
 
 // Formula creates a new FormulaControl instance
 func Formula() formula {
-	return make(formula).set("type", "formula")
+	return formula{"type": "formula"}
 }
 
 func (fc formula) set(key string, value any) formula {

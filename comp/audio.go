@@ -7,7 +7,7 @@ type audio model.Schema
 
 // Audio creates a new audio renderer.
 func Audio() audio {
-	return make(audio).set("type", "audio")
+	return audio{"type": "audio"}
 }
 
 func (a audio) set(key string, value any) audio {

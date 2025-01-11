@@ -7,7 +7,7 @@ type nav model.Schema
 
 // Nav creates a new Nav instance
 func Nav() nav {
-	return nav{}.set("type", "nav")
+	return nav{"type": "nav"}
 }
 
 // set sets a property and returns the nav instance

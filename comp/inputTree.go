@@ -8,7 +8,7 @@ type inputTree model.Schema
 
 // InputTree initializes an inputTree with type "input-tree".
 func InputTree() inputTree {
-	return inputTree{}.set("type", "input-tree")
+	return inputTree{"type": "input-tree"}
 }
 
 // set sets a key-value pair in the inputTree.

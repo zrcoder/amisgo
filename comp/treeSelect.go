@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type treeSelect model.Schema
 
 func TreeSelect() treeSelect {
-	return treeSelect{}.set("type", "tree-select")
+	return treeSelect{"type": "tree-select"}
 }
 
 func (tsc treeSelect) set(key string, value any) treeSelect {

@@ -7,7 +7,7 @@ type app model.Schema
 // App creates an application for implementing multi-page interfaces
 // Suitable for full-screen mode. Not recommended for partial rendering.
 func App() app {
-	return app{}.set("type", "app")
+	return app{"type": "app"}
 }
 
 func (a app) set(key string, value any) app {

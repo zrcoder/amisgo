@@ -8,7 +8,7 @@ type tag model.Schema
 
 // Tag creates a new Tag instance
 func Tag() tag {
-	return tag{}.set("type", "tag")
+	return tag{"type": "tag"}
 }
 
 func (t tag) set(key string, value any) tag {

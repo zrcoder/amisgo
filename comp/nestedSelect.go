@@ -7,7 +7,7 @@ import "github.com/zrcoder/amisgo/model"
 type nestedSelect model.Schema
 
 func NestedSelect() nestedSelect {
-	return make(nestedSelect).set("type", "nested-select")
+	return nestedSelect{"type": "nested-select"}
 }
 
 // set sets a field value.

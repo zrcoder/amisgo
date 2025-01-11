@@ -7,7 +7,7 @@ type inputNumber model.Schema
 
 // InputNumber creates a new NumberControl instance
 func InputNumber() inputNumber {
-	return inputNumber{}.set("type", "input-number")
+	return inputNumber{"type": "input-number"}
 }
 
 // set sets a field value

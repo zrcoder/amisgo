@@ -7,7 +7,7 @@ type searchBox model.Schema
 
 // SearchBox creates a new SearchBox instance.
 func SearchBox() searchBox {
-	return searchBox{}.set("type", "search-box")
+	return searchBox{"type": "search-box"}
 }
 
 func (s searchBox) set(key string, value any) searchBox {

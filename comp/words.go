@@ -7,7 +7,7 @@ type words model.Schema
 
 // Words creates a new Words instance
 func Words() words {
-	return words{}.set("type", "words")
+	return words{"type": "words"}
 }
 
 func (w words) set(key string, value any) words {

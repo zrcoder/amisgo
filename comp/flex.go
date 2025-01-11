@@ -8,7 +8,7 @@ type flex model.Schema
 
 // Flex creates a new Flex instance
 func Flex() flex {
-	return make(flex).set("type", "flex")
+	return flex{"type": "flex"}
 }
 
 func (f flex) set(key string, value any) flex {

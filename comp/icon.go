@@ -7,7 +7,7 @@ type icon model.Schema
 
 // Icon creates a new Icon instance with default type
 func Icon() icon {
-	return make(icon).set("type", "icon")
+	return icon{"type": "icon"}
 }
 
 func (i icon) set(key string, value any) icon {

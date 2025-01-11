@@ -7,7 +7,7 @@ type calendar model.Schema
 
 // Calendar creates a new Calendar instance
 func Calendar() calendar {
-	return make(calendar).set("type", "calendar")
+	return calendar{"type": "calendar"}
 }
 
 func (c calendar) set(key string, value any) calendar {

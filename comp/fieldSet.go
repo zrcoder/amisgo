@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type fieldSet model.Schema
 
 func FieldSet() fieldSet {
-	return make(fieldSet).set("type", "fieldset").set("titlePosition", "top")
+	return fieldSet{"type": "fieldset", "titlePosition": "top"}
 }
 
 func (f fieldSet) set(key string, value any) fieldSet {

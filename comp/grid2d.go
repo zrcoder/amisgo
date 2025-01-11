@@ -7,7 +7,7 @@ type grid2d model.Schema
 
 // Grid2D creates a new Grid2D instance.
 func Grid2D() grid2d {
-	return make(grid2d).set("type", "grid-2d")
+	return grid2d{"type": "grid-2d"}
 }
 
 func (g grid2d) set(key string, value any) grid2d {

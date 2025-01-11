@@ -7,7 +7,7 @@ type inputDateRange model.Schema
 
 // InputDateRange creates a new InputDateRange instance with default type
 func InputDateRange() inputDateRange {
-	return make(inputDateRange).set("type", "input-date-range")
+	return inputDateRange{"type": "input-date-range"}
 }
 
 // set sets a key-value pair and returns the current instance

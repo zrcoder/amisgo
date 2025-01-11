@@ -5,7 +5,7 @@ import "github.com/zrcoder/amisgo/model"
 type checkboxes model.Schema
 
 func Checkboxes() checkboxes {
-	return make(checkboxes).set("type", "checkboxes")
+	return checkboxes{"type": "checkboxes"}
 }
 
 func (c checkboxes) set(key string, value any) checkboxes {

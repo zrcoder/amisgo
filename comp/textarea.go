@@ -8,7 +8,7 @@ type textarea model.Schema
 
 // Textarea creates a new textarea component.
 func Textarea() textarea {
-	return textarea{}.set("type", "textarea")
+	return textarea{"type": "textarea"}
 }
 
 // set sets a key-value pair for the textarea component.

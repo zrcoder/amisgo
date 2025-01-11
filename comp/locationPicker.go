@@ -9,7 +9,7 @@ type locationPicker model.Schema
 
 // LocationPicker creates a new LocationPicker instance
 func LocationPicker() locationPicker {
-	return locationPicker{}.set("type", "location-picker")
+	return locationPicker{"type": "location-picker"}
 }
 
 func (lc locationPicker) set(key string, value any) locationPicker {

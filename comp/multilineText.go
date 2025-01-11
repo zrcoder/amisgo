@@ -7,7 +7,7 @@ type multilineText model.Schema
 
 // MultilineText creates a new multilineText instance
 func MultilineText() multilineText {
-	return multilineText{}.set("type", "multiline-text")
+	return multilineText{"type": "multiline-text"}
 }
 
 // set sets a property and returns the instance

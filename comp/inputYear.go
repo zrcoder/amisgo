@@ -8,7 +8,7 @@ type inputYear model.Schema
 
 // InputYear creates a new input-year component.
 func InputYear() inputYear {
-	return inputYear{}.set("type", "input-year")
+	return inputYear{"type": "input-year"}
 }
 
 // set sets a key-value pair for the inputYear component.

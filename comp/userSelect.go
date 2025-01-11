@@ -6,7 +6,7 @@ import "github.com/zrcoder/amisgo/model"
 type userSelect model.Schema
 
 func UsersSelect() userSelect {
-	return userSelect{}.set("type", "users-select")
+	return userSelect{"type": "users-select"}
 }
 
 func (usc userSelect) set(key string, value any) userSelect {

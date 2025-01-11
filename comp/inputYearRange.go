@@ -8,7 +8,7 @@ type inputYearRange model.Schema
 
 // InputYearRange creates a new instance of inputYearRange with default type.
 func InputYearRange() inputYearRange {
-	return make(inputYearRange).set("type", "input-year-range")
+	return inputYearRange{"type": "input-year-range"}
 }
 
 // set is an internal method to set a field value and return the instance.

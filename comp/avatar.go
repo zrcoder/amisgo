@@ -7,7 +7,7 @@ type avatar model.Schema
 
 // Avatar creates a new Avatar instance with default cross-origin settings
 func Avatar() avatar {
-	return make(avatar).set("type", "avatar").set("crossOrigin", "anonymous")
+	return avatar{"type": "avatar", "crossOrigin": "anonymous"}
 }
 
 func (a avatar) set(key string, value any) avatar {

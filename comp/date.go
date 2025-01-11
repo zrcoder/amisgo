@@ -7,7 +7,7 @@ type date model.Schema
 
 // Date creates a new date component and sets the default type.
 func Date() date {
-	return make(date).set("type", "date")
+	return date{"type": "date"}
 }
 
 func (d date) set(key string, value any) date {

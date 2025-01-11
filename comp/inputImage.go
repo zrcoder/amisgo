@@ -10,7 +10,7 @@ type inputImage model.Schema
 
 // InputImage creates a new InputImage instance
 func InputImage() inputImage {
-	return make(inputImage).set("type", "input-image").Receiver("/api/upload")
+	return inputImage{"type": "input-image"}.Receiver("/api/upload")
 }
 
 func (i inputImage) set(key string, value any) inputImage {

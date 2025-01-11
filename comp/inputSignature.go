@@ -8,7 +8,7 @@ type inputSignature model.Schema
 
 // InputSignature creates a new InputSignature instance with default type
 func InputSignature() inputSignature {
-	return make(inputSignature).set("type", "input-signature")
+	return inputSignature{"type": "input-signature"}
 }
 
 // set sets a field value and returns the instance
