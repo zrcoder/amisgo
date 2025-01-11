@@ -219,7 +219,7 @@ func (s form) GetData(getter func() (any, error)) form {
 	return s.Api(servermux.ServeData(getter))
 }
 
-// Submit sets the callback logic after form submission, using the generic Data type to handle form data
+// Submit sets the callback logic after form submission, using the generic model.Schema type to handle form data
 // Suitable for scenarios where flexible handling of form submission is required
 func (f form) Submit(callback func(model.Schema) error) form {
 	return f.Api(servermux.BindDataRoute(callback))

@@ -125,7 +125,7 @@ func respError(w http.ResponseWriter, err error) {
 	w.Write(resp.Json())
 }
 
-func TransformMultiple(successMsg string, transfor func(model.Schema) (model.Schema, error), src ...string) (route string, data model.Schema) {
+func TransformMultiple(src []string, transfor func(model.Schema) (model.Schema, error)) (route string, data model.Schema) {
 	route = getRoute()
 	Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
 		inputData, err := io.ReadAll(r.Body)
@@ -145,7 +145,7 @@ func TransformMultiple(successMsg string, transfor func(model.Schema) (model.Sch
 			respError(w, err)
 			return
 		}
-		resp := model.SuccessResponse(successMsg, output)
+		resp := model.SuccessResponse(" ", output) // " " for empty msg
 		w.Write(resp.Json())
 	})
 
