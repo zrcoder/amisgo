@@ -23,15 +23,16 @@ func ButtonGroupSelect() selectControl {
 // ThemeSelect creates a new select instance for theme selection.
 // Note: Ensure that `conf.WithThemes` is called during app initialization to avoid a panic.
 func ThemeSelect() selectControl {
+	const theme = "theme"
 	themes := template.GetThemes()
 	if len(themes) == 0 {
 		panic("ThemeSelect: conf.WithThemes must be called during app initialization")
 	}
-	uri := servermux.ServeQuery(func(m map[string]string) error {
-		template.SetTheme(m["theme"])
+	url := servermux.ServeQuery(func(m map[string]string) error {
+		template.SetTheme(m[theme])
 		return nil
-	}, "theme")
-	return Select().Source(servermux.ServeData(func() (any, error) {
+	}, theme)
+	return Select().Name(theme).Source(servermux.ServeData(func() (any, error) {
 		options := make([]any, len(themes))
 		for i, v := range themes {
 			label := v
@@ -48,7 +49,7 @@ func ThemeSelect() selectControl {
 		model.Schema{
 			"change": model.Schema{
 				"actions": []any{
-					EventAction().ActionType("ajax").Api(uri + "?theme=${event.data.value}"),
+					EventAction().ActionType("ajax").Api(url + "?" + theme + "=${event.data.value}"),
 					EventAction().ActionType("refresh"),
 				},
 			},
