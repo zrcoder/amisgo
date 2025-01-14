@@ -30,7 +30,6 @@ const (
 
 // Config holds all configuration options for the application
 type Config struct {
-	Theme      Theme
 	Lang       Lang
 	Title      string
 	Icon       string
@@ -49,7 +48,6 @@ func Default() *Config {
 	return &Config{
 		Title:    "amisgo",
 		Lang:     LangDefault,
-		Theme:    ThemeDefault,
 		Template: template.GetTemplate(),
 	}
 }
@@ -67,7 +65,25 @@ type Option func(*Config)
 // WithTheme sets the UI theme.
 func WithTheme(theme Theme) Option {
 	return func(c *Config) {
-		c.Theme = theme
+		if len(template.GetThemes()) > 0 {
+			return
+		}
+		template.SetTheme(string(theme))
+	}
+}
+
+// WithThemes sets multiple UI themes, overriding an set theme via WithTheme.
+// Once themes are configured, you can use the comp.ThemeSelect or comp.ThemeButtonGroupSelect component in your pages to enable users to switch between the available themes.
+func WithThemes(themes ...Theme) Option {
+	return func(c *Config) {
+		if len(themes) < 2 {
+			panic("WithThemes: at least 2 themes are required")
+		}
+		ts := make([]string, len(themes))
+		for i, v := range themes {
+			ts[i] = string(v)
+		}
+		template.SetThemes(ts)
 	}
 }
 

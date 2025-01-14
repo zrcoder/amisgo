@@ -68,7 +68,7 @@ func ServeData(getter func() (any, error)) string {
 			respError(w, err)
 			return
 		}
-		if err := writeJsonResponse(w, input); err != nil {
+		if err = writeJsonResponse(w, input); err != nil {
 			respError(w, err)
 		}
 	})
@@ -155,4 +155,23 @@ func TransformMultiple(src []string, transfor func(model.Schema) (model.Schema, 
 	}
 
 	return
+}
+
+func ServeQuery(handler func(m map[string]string) error, queries ...string) string {
+	route := getRoute()
+	Mux().HandleFunc(route, func(w http.ResponseWriter, r *http.Request) {
+		query := r.URL.Query()
+		m := make(map[string]string, len(query))
+		for _, q := range queries {
+			m[q] = query.Get(q)
+		}
+		err := handler(m)
+		if err != nil {
+			respError(w, err)
+			return
+		}
+		resp := model.Response{}
+		w.Write(resp.Json())
+	})
+	return route
 }

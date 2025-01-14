@@ -1,20 +1,76 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import (
+	"github.com/zrcoder/amisgo/internal/servermux"
+	"github.com/zrcoder/amisgo/internal/template"
+	"github.com/zrcoder/amisgo/model"
+)
 
-// selectControl represents a select control configuration. Document: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/select
-
+// selectControl represents a select control configuration.
+// Document: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/select
 type selectControl model.Schema
 
-// Select creates a new selectControl instance
+// Select creates a new select instance
 func Select() selectControl {
 	return selectControl{"type": "select"}
+}
+
+// ButtonGroupSelect creates a new button group select instance
+func ButtonGroupSelect() selectControl {
+	return selectControl{"type": "button-group-select"}
+}
+
+// ThemeSelect creates a new select instance for theme selection.
+// Note: Ensure that `conf.WithThemes` is called during app initialization to avoid a panic.
+func ThemeSelect() selectControl {
+	themes := template.GetThemes()
+	if len(themes) == 0 {
+		panic("ThemeSelect: conf.WithThemes must be called during app initialization")
+	}
+	uri := servermux.ServeQuery(func(m map[string]string) error {
+		template.SetTheme(m["theme"])
+		return nil
+	}, "theme")
+	return Select().Source(servermux.ServeData(func() (any, error) {
+		options := make([]any, len(themes))
+		for i, v := range themes {
+			label := v
+			if v == "" {
+				label = "default"
+			}
+			options[i] = Option().Label(label).Value(v)
+		}
+		return model.SuccessResponse(" ", model.Schema{
+			"value":   template.GetTheme(),
+			"options": options,
+		}), nil
+	})).OnEvent(
+		model.Schema{
+			"change": model.Schema{
+				"actions": []any{
+					EventAction().ActionType("ajax").Api(uri + "?theme=${event.data.value}"),
+					EventAction().ActionType("refresh"),
+				},
+			},
+		},
+	)
+}
+
+// ThemeButtonGroupSelect creates a new button group select instance for theme selection.
+// Note: Ensure that `conf.WithThemes` is called during app initialization to avoid a panic.
+func ThemeButtonGroupSelect() selectControl {
+	return ThemeSelect().set("type", "button-group-select")
 }
 
 // set sets the key-value pair in the selectControl instance
 func (sc selectControl) set(key string, value any) selectControl {
 	sc[key] = value
 	return sc
+}
+
+// SelectMode sets the select mode. options: group, table, tree, chained, associated.
+func (sc selectControl) SelectMode(value string) selectControl {
+	return sc.set("selectMode", value)
 }
 
 // AddApi sets the API for adding
@@ -390,4 +446,79 @@ func (sc selectControl) Width(value string) selectControl {
 // OnEvent sets the event listener
 func (sc selectControl) OnEvent(value any) selectControl {
 	return sc.set("onEvent", value)
+}
+
+// BtnActiveClassName sets the CSS class name for button active state
+func (sc selectControl) BtnActiveClassName(value string) selectControl {
+	return sc.set("btnActiveClassName", value)
+}
+
+// BtnActiveLevel sets the style level for selected buttons
+func (sc selectControl) BtnActiveLevel(value string) selectControl {
+	return sc.set("btnActiveLevel", value)
+}
+
+// BtnClassName sets the CSS class name for buttons
+func (sc selectControl) BtnClassName(value string) selectControl {
+	return sc.set("btnClassName", value)
+}
+
+// BtnLevel sets the style level for buttons
+func (sc selectControl) BtnLevel(value string) selectControl {
+	return sc.set("btnLevel", value)
+}
+
+// Buttons configures the collection of buttons
+func (sc selectControl) Buttons(value ...any) selectControl {
+	return sc.set("buttons", value)
+}
+
+// LabelAlign sets the alignment for the description title
+func (sc selectControl) LabelAlign(value string) selectControl {
+	return sc.set("labelAlign", value)
+}
+
+// LabelWidth sets the width of the label
+func (sc selectControl) LabelWidth(value string) selectControl {
+	return sc.set("labelWidth", value)
+}
+
+// OptionIcon sets the option icon
+func (sc selectControl) OptionIcon(value string) selectControl {
+	return sc.set("optionIcon", value)
+}
+
+// OptionLabel sets the option label
+func (sc selectControl) OptionLabel(value string) selectControl {
+	return sc.set("optionLabel", value)
+}
+
+// OptionValue sets the option value
+func (sc selectControl) OptionValue(value string) selectControl {
+	return sc.set("optionValue", value)
+}
+
+// Outline enables or disables outline button style
+func (sc selectControl) Outline(value bool) selectControl {
+	return sc.set("outline", value)
+}
+
+// Overlay enables or disables Overlay
+func (sc selectControl) Overlay(value bool) selectControl {
+	return sc.set("overlay", value)
+}
+
+// Size sets the control size
+func (sc selectControl) Size(value string) selectControl {
+	return sc.set("size", value)
+}
+
+// ValueField sets the value field name
+func (sc selectControl) ValueField(value string) selectControl {
+	return sc.set("valueField", value)
+}
+
+// Validation sets the validation rules
+func (sc selectControl) Validation(value string) selectControl {
+	return sc.set("validation", value)
 }

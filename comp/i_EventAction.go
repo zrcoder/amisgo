@@ -25,6 +25,11 @@ func (la MEventAction) ActionType(value string) MEventAction {
 	return la.set("actionType", value)
 }
 
+// Api sets the api when actionType is "ajax"
+func (ea MEventAction) Api(value any) MEventAction {
+	return ea.set("api", value)
+}
+
 // Drawer defines the drawer to pop up
 func (ea MEventAction) Drawer(value any) MEventAction {
 	return ea.set("drawer", value)
