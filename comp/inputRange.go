@@ -151,13 +151,13 @@ func (rc inputRange) Marks(value string) inputRange {
 	return rc.set("marks", value)
 }
 
-// Max sets the maximum value
-func (rc inputRange) Max(value string) inputRange {
+// Max sets the maximum value, number | string
+func (rc inputRange) Max(value any) inputRange {
 	return rc.set("max", value)
 }
 
-// Min sets the minimum value
-func (rc inputRange) Min(value string) inputRange {
+// Min sets the minimum value, number | string
+func (rc inputRange) Min(value any) inputRange {
 	return rc.set("min", value)
 }
 
@@ -271,8 +271,8 @@ func (rc inputRange) StaticSchema(value string) inputRange {
 	return rc.set("staticSchema", value)
 }
 
-// Step sets the step value
-func (rc inputRange) Step(value string) inputRange {
+// Step sets the step value number | string
+func (rc inputRange) Step(value any) inputRange {
 	return rc.set("step", value)
 }
 
@@ -331,8 +331,8 @@ func (rc inputRange) Validations(value string) inputRange {
 	return rc.set("validations", value)
 }
 
-// Value sets the slider value
-func (rc inputRange) Value(value string) inputRange {
+// Value sets the slider value, number or string or {min: number, max: number} or [number, number]
+func (rc inputRange) Value(value any) inputRange {
 	return rc.set("value", value)
 }
 
