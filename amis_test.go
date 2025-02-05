@@ -133,7 +133,8 @@ func TestStaticFiles(t *testing.T) {
 	tmpDir := t.TempDir()
 	createTestFile(t, tmpDir)
 
-	e := New().StaticFiles("/static/", tmpDir)
+	e := New()
+	e.StaticFiles("/static/", tmpDir)
 
 	t.Run("serve static file", func(t *testing.T) {
 		w := httptest.NewRecorder()
@@ -165,9 +166,9 @@ func TestAsHandler(t *testing.T) {
 	tmpDir := t.TempDir()
 	createTestFile(t, tmpDir)
 
-	e := New().
-		Mount("/admin/page", struct{}{}).
-		StaticFS("/admin/static/", http.Dir(tmpDir))
+	e := New()
+	e.Mount("/admin/page", struct{}{})
+	e.StaticFS("/admin/static/", http.Dir(tmpDir))
 
 	// Create main mux and mount engine
 	mux := http.NewServeMux()
