@@ -18,12 +18,21 @@ func NewChartSeries() ChartSeri {
 	return ChartSeri{}
 }
 
-func (c ChartCfg) set(key string, value any) ChartCfg {
+func NewChartAxis() ChartAxis {
+	return ChartAxis{}
+}
+
+func (c ChartCfg) Set(key string, value any) ChartCfg {
 	c[key] = value
 	return c
 }
 
-func (c ChartSeri) set(key string, value any) ChartSeri {
+func (c ChartSeri) Set(key string, value any) ChartSeri {
+	c[key] = value
+	return c
+}
+
+func (c ChartAxis) Set(key string, value any) ChartAxis {
 	c[key] = value
 	return c
 }
@@ -38,90 +47,112 @@ func (c ChartCfg) JsonStr() string {
 }
 
 func (c ChartCfg) Title(value any) ChartCfg {
-	return c.set("title", value)
+	return c.Set("title", value)
 }
 
 func (c ChartCfg) Tooltip(value any) ChartCfg {
-	return c.set("tooltip", value)
+	return c.Set("tooltip", value)
 }
 
 func (c ChartCfg) Polar(value any) ChartCfg {
-	return c.set("polar", value)
+	return c.Set("polar", value)
 }
 
 func (c ChartCfg) Radar(value any) ChartCfg {
-	return c.set("radar", value)
+	return c.Set("radar", value)
 }
 
 func (c ChartCfg) XAxis(value ChartAxis) ChartCfg {
-	return c.set("xAxis", value)
+	return c.Set("xAxis", value)
 }
 
 func (c ChartCfg) YAxis(value ChartAxis) ChartCfg {
-	return c.set("yAxis", value)
+	return c.Set("yAxis", value)
 }
 
 func (c ChartCfg) RadiusAxis(value ChartAxis) ChartCfg {
-	return c.set("radiusAxis", value)
+	return c.Set("radiusAxis", value)
 }
 
 func (c ChartCfg) AngleAxis(value ChartAxis) ChartCfg {
-	return c.set("angleAxis", value)
+	return c.Set("angleAxis", value)
 }
 
 func (c ChartCfg) Series(value ...ChartSeri) ChartCfg {
-	return c.set("series", value)
+	return c.Set("series", value)
 }
 
 func (c ChartCfg) AnimationDuration(value int) ChartCfg {
-	return c.set("animationDuration", value)
+	return c.Set("animationDuration", value)
 }
 
 func (c ChartCfg) Legend(value any) ChartCfg {
-	return c.set("legend", value)
+	return c.Set("legend", value)
 }
 
 func (c ChartSeri) Name(value string) ChartSeri {
-	return c.set("name", value)
+	return c.Set("name", value)
 }
 
 // Type line | bar | pie | scatter | radar ...
 func (c ChartSeri) Type(value string) ChartSeri {
-	return c.set("type", value)
+	return c.Set("type", value)
 }
 
 func (c ChartSeri) ItemStyle(value any) ChartSeri {
-	return c.set("itemStyle", value)
+	return c.Set("itemStyle", value)
 }
 
 func (c ChartSeri) Radius(value string) ChartSeri {
-	return c.set("radius", value)
+	return c.Set("radius", value)
 }
 
 func (c ChartSeri) Data(value any) ChartSeri {
-	return c.set("data", value)
+	return c.Set("data", value)
 }
 
 func (c ChartSeri) Label(value any) ChartSeri {
-	return c.set("label", value)
+	return c.Set("label", value)
 }
 
 func (c ChartSeri) Smooth(value bool) ChartSeri {
-	return c.set("smooth", value)
+	return c.Set("smooth", value)
 }
 
 func (c ChartSeri) LineStyle(value Schema) ChartSeri {
-	return c.set("lineStyle", value)
+	return c.Set("lineStyle", value)
 }
 
 func (c ChartSeri) AreaStyle(value Schema) ChartSeri {
-	return c.set("areaStyle", value)
+	return c.Set("areaStyle", value)
 }
 
 func (c ChartSeri) CoordinateSystem(value string) ChartSeri {
-	return c.set("coordinateSystem", value)
+	return c.Set("coordinateSystem", value)
 }
 
 func (c ChartSeri) ShowSymbol(value bool) ChartSeri {
-	return c.set("showSymbol", value)
+	return c.Set("showSymbol", value)
+}
+
+func (c ChartAxis) Type(value string) ChartAxis {
+	return c.Set("type", value)
+}
+
+func (c ChartAxis) Data(value any) ChartAxis {
+	return c.Set("data", value)
+}
+
+func (c ChartAxis) StartAngle(value float64) ChartAxis {
+	return c.Set("startAngle", value)
+}
+
+// Min number | string
+func (c ChartAxis) Min(value any) ChartAxis {
+	return c.Set("min", value)
+}
+
+// Max number | string
+func (c ChartAxis) Max(value any) ChartAxis {
+	return c.Set("max", value)
 }

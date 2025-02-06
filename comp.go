@@ -214,6 +214,7 @@ func (e *App) TableColumn() model.TableColumn       { return model.NewTableColum
 func (e *App) Toast() model.Toast                   { return model.NewToast() }
 func (e *App) ChartConfig() model.ChartCfg          { return model.NewChartConfig() }
 func (e *App) ChartSeries() model.ChartSeri         { return model.NewChartSeries() }
+func (e *App) ChartAxis() model.ChartAxis           { return model.NewChartAxis() }
 func (e *App) NewListItem() model.ListItem          { return model.NewListItem() }
 func (e *App) Api() model.Api                       { return model.NewApi() }
 func (e *App) BreadcrumbItem() model.BreadcrumbItem { return model.NewBreadcrumbItem() }
