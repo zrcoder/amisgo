@@ -96,7 +96,7 @@ func (d DrawerAction) DisabledTip(value string) DrawerAction {
 }
 
 // Drawer specifies the drawer details of the button.
-func (d DrawerAction) Drawer(value string) DrawerAction {
+func (d DrawerAction) Drawer(value any) DrawerAction {
 	return d.set("drawer", value)
 }
 

@@ -18,7 +18,7 @@ func NewButton(mux *http.ServeMux) Action {
 	return NewAction(mux).set("type", "button")
 }
 
-func NewSubmit(mux *http.ServeMux) Action {
+func NewSubmitAction(mux *http.ServeMux) Action {
 	return NewAction(mux).set("type", "submit")
 }
 

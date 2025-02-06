@@ -145,7 +145,7 @@ func (e *App) Spinner() comp.Spinner                         { return comp.NewSp
 func (e *App) Static() comp.Static                           { return comp.NewStatic() }
 func (e *App) Status() comp.Status                           { return comp.NewStatus() }
 func (e *App) Steps() comp.Steps                             { return comp.NewSteps() }
-func (e *App) Submit() comp.Action                           { return comp.NewSubmit(e.mux) }
+func (e *App) SubmitAction() comp.Action                     { return comp.NewSubmitAction(e.mux) }
 func (e *App) SvgIcon() comp.SvgIcon                         { return comp.NewSvgIcon() }
 func (e *App) Switch() comp.SwitchControl                    { return comp.NewSwitch() }
 func (e *App) SwitchContainer() comp.SwitchContainer         { return comp.NewSwitchContainer() }
