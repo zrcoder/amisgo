@@ -4,18 +4,7 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/template"
-)
-
-// Theme represents the UI theme of the application
-type Theme string
-
-// Available themes for the application
-const (
-	ThemeDefault Theme = ""
-	ThemeCxd     Theme = "cxd"
-	ThemeAntd    Theme = "antd"
-	ThemeAng     Theme = "ang"
-	ThemeDark    Theme = "dark"
+	"github.com/zrcoder/amisgo/theme"
 )
 
 // Lang represents the language setting of the application
@@ -36,7 +25,7 @@ type Config struct {
 	CustomCSS  string
 	CustomJS   string
 	LocalSdkFS http.FileSystem
-	template.Template
+	*template.Templ
 }
 
 func (c *Config) UseLocalSDK() bool {
@@ -46,9 +35,9 @@ func (c *Config) UseLocalSDK() bool {
 // Default returns a new Config instance with default settings
 func Default() *Config {
 	return &Config{
-		Title:    "amisgo",
-		Lang:     LangDefault,
-		Template: template.GetTemplate(),
+		Title: "amisgo",
+		Lang:  LangDefault,
+		Templ: template.New(),
 	}
 }
 
@@ -63,27 +52,32 @@ func (c *Config) Apply(options ...Option) {
 type Option func(*Config)
 
 // WithTheme sets the UI theme.
-func WithTheme(theme Theme) Option {
+func WithTheme(name string) Option {
 	return func(c *Config) {
-		if len(template.GetThemes()) > 0 {
+		if len(c.Templ.GetThemes()) > 0 {
 			return
 		}
-		template.SetTheme(string(theme))
+		c.Templ.Theme = theme.Theme{Value: name, Label: name}
 	}
 }
 
 // WithThemes sets multiple UI themes, overriding an set theme via WithTheme.
 // Once themes are configured, you can use the comp.ThemeSelect or comp.ThemeButtonGroupSelect component in your pages to enable users to switch between the available themes.
-func WithThemes(themes ...Theme) Option {
+func WithThemes(themes ...theme.Theme) Option {
 	return func(c *Config) {
 		if len(themes) < 2 {
 			panic("WithThemes: at least 2 themes are required")
 		}
-		ts := make([]string, len(themes))
-		for i, v := range themes {
-			ts[i] = string(v)
+		regularThemes(themes)
+		c.Templ.SetThemes(themes)
+	}
+}
+
+func regularThemes(themes []theme.Theme) {
+	for i := range themes {
+		if themes[i].Label == "" {
+			themes[i].Label = themes[i].Value
 		}
-		template.SetThemes(ts)
 	}
 }
 

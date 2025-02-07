@@ -159,8 +159,6 @@ func (e *App) Tag() comp.Tag                                 { return comp.NewTa
 func (e *App) Tasks() comp.Tasks                             { return comp.NewTasks() }
 func (e *App) Text() comp.Text                               { return comp.NewText() }
 func (e *App) Textarea() comp.Textarea                       { return comp.NewTextarea() }
-func (e *App) ThemeButtonGroupSelect() comp.Select           { return comp.NewThemeButtonGroupSelect(e.mux) }
-func (e *App) ThemeSelect() comp.Select                      { return comp.NewThemeSelect(e.mux) }
 func (e *App) ToastAction() comp.ToastAction                 { return comp.NewToastAction() }
 func (e *App) TooltipWrapper() comp.TooltipWrapper           { return comp.NewTooltipWrapper() }
 func (e *App) Tpl() comp.Tpl                                 { return comp.NewTpl() }
@@ -179,6 +177,14 @@ func (e *App) Wizard() comp.Wizard                           { return comp.NewWi
 func (e *App) WizardStep() comp.WizardStep                   { return comp.NewWizardStep() }
 func (e *App) Words() comp.Words                             { return comp.NewWords() }
 func (e *App) Wrapper() comp.Wrapper                         { return comp.NewWrapper() }
+
+func (e *App) ThemeButtonGroupSelect() comp.Select {
+	return comp.NewThemeButtonGroupSelect(e.mux, e.Conf.Templ)
+}
+
+func (e *App) ThemeSelect() comp.Select {
+	return comp.NewThemeSelect(e.mux, e.Conf.Templ)
+}
 
 func (e *App) AnchorNavSection() model.AnchorNavSection     { return model.NewAnchorNavSection() }
 func (e *App) AutoFillHeight() model.AutoFillHeight         { return model.NewAutoFillHeight() }

@@ -12,7 +12,7 @@ import (
 
 // App represents the web application
 type App struct {
-	Config *conf.Config
+	Conf   *conf.Config
 	mux    *http.ServeMux
 	server *http.Server
 }
@@ -23,8 +23,8 @@ func New(opts ...conf.Option) *App {
 	cfg.Apply(opts...)
 
 	app := &App{
-		Config: cfg,
-		mux:    http.NewServeMux(),
+		Conf: cfg,
+		mux:  http.NewServeMux(),
 	}
 
 	if cfg.LocalSdkFS != nil {
@@ -103,10 +103,10 @@ func (a *App) renderComponent(w http.ResponseWriter, component any) {
 		*conf.Config
 		AmisJson any
 	}{
-		Config:   a.Config,
+		Config:   a.Conf,
 		AmisJson: component,
 	}
-	if err := a.Config.AmisTemplate.Execute(w, data); err != nil {
+	if err := a.Conf.AmisTempl.Execute(w, data); err != nil {
 		panic(err)
 	}
 }

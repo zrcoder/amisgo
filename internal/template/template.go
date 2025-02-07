@@ -3,6 +3,8 @@ package template
 import (
 	_ "embed"
 	"html/template"
+
+	"github.com/zrcoder/amisgo/theme"
 )
 
 const (
@@ -11,53 +13,50 @@ const (
 )
 
 //go:embed template.gohtml
-var amisTemplate string
+var amisTempl string
 
-var (
-	theme  = ""
-	themes []string
-)
-
-func SetTheme(t string) {
-	theme = t
+type Templ struct {
+	// Global template for HTML rendering.
+	// This template will be used to render all Amis components.
+	AmisTempl   *template.Template
+	AmisVersion string
+	AmisBaseURL string
+	Theme       theme.Theme
+	themes      []theme.Theme
 }
 
-func GetTheme() string {
-	return theme
-}
-
-func SetThemes(ts []string) {
-	themes = ts
-	if len(ts) > 0 {
-		theme = ts[0]
+func New() *Templ {
+	res := &Templ{
+		AmisVersion: amisVersion,
+		AmisBaseURL: amisBaseURL,
 	}
-}
-
-func GetThemes() []string {
-	return themes
-}
-
-// Global template for HTML rendering.
-// This template will be used to render all Amis components.
-// var tmpl = template.Must(template.New("").Parse(amisTemplate))
-
-type Template struct {
-	AmisTemplate *template.Template
-	AmisVersion  string
-	AmisBaseURL  string
-}
-
-func GetTemplate() Template {
 	funcs := template.FuncMap{
 		"GetTheme": func() string {
-			return theme
+			return res.Theme.Value
 		},
 	}
 	tmpl := template.New("").Funcs(funcs)
-	tmpl = template.Must(tmpl.Parse(amisTemplate))
-	return Template{
-		AmisTemplate: tmpl,
-		AmisVersion:  amisVersion,
-		AmisBaseURL:  amisBaseURL,
+	tmpl = template.Must(tmpl.Parse(amisTempl))
+	res.AmisTempl = tmpl
+	return res
+}
+
+func (t *Templ) SetThemes(ts []theme.Theme) {
+	t.themes = ts
+	if len(ts) > 0 {
+		t.Theme = ts[0]
 	}
+}
+
+func (t *Templ) GetThemes() []theme.Theme {
+	return t.themes
+}
+
+func (t *Templ) GetTheme(name string) theme.Theme {
+	for _, theme := range t.themes {
+		if theme.Value == name {
+			return theme
+		}
+	}
+	return theme.Theme{}
 }
