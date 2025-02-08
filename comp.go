@@ -1,7 +1,7 @@
 package amisgo
 
 import (
-	"github.com/zrcoder/amisgo/internal/comp"
+	"github.com/zrcoder/amisgo/comp"
 	"github.com/zrcoder/amisgo/model"
 )
 
