@@ -2,7 +2,7 @@ package theme
 
 // Available themes
 const (
-	Default = ""
+	Default = Cxd
 	Cxd     = "cxd"
 	Antd    = "antd"
 	Ang     = "ang"

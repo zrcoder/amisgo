@@ -12,18 +12,11 @@
     {{ if .Icon }}
     <link rel="icon" href="{{.Icon}}" />
     {{ end }}
-    {{ if GetTheme }}
-      {{ if .UseLocalSDK }}
-      <link rel="stylesheet" href="/__amisgo__sdk/{{ GetTheme }}.css" />
-      {{ else }}
-      <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/{{ GetTheme }}.min.css" />
-      {{ end }}
+
+    {{ if .UseLocalSDK }}
+    <link rel="stylesheet" href="/__amisgo__sdk/{{ GetTheme }}.css" />
     {{ else }}
-      {{ if .UseLocalSDK }} 
-      <link rel="stylesheet" href="/__amisgo__sdk/sdk.css" />
-      {{ else }}
-      <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/sdk.min.css" />
-      {{ end }}
+    <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/{{ GetTheme }}.min.css" />
     {{ end }}
     
     {{ if .UseLocalSDK }} 

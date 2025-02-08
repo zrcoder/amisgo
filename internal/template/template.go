@@ -29,6 +29,7 @@ func New() *Templ {
 	res := &Templ{
 		AmisVersion: amisVersion,
 		AmisBaseURL: amisBaseURL,
+		Theme:       theme.Theme{Value: theme.Default, Label: theme.Default},
 	}
 	funcs := template.FuncMap{
 		"GetTheme": func() string {

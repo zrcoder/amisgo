@@ -75,6 +75,9 @@ func WithThemes(themes ...theme.Theme) Option {
 
 func regularThemes(themes []theme.Theme) {
 	for i := range themes {
+		if themes[i].Value == "" {
+			themes[i].Value = theme.Default
+		}
 		if themes[i].Label == "" {
 			themes[i].Label = themes[i].Value
 		}
