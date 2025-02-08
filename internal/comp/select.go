@@ -21,9 +21,9 @@ func NewButtonGroupSelect() Select {
 	return Select{"type": "button-group-select"}
 }
 
-// NewThemeSelect creates a new select instance for theme selection.
+// Themes makes the select for theme selection.
 // Note: Ensure that `conf.WithThemes` is called during app initialization to avoid a panic.
-func NewThemeSelect(mux *http.ServeMux, templ *template.Templ) Select {
+func (s Select) Themes(mux *http.ServeMux, templ *template.Templ) Select {
 	const theme = "theme"
 	themes := templ.GetThemes()
 	if len(themes) == 0 {
@@ -33,7 +33,7 @@ func NewThemeSelect(mux *http.ServeMux, templ *template.Templ) Select {
 		templ.Theme = templ.GetTheme(m[theme])
 		return nil
 	}, theme)
-	return NewSelect().Name(theme).Source(servemux.ServeData(mux, func() (any, error) {
+	return s.Name(theme).Source(servemux.ServeData(mux, func() (any, error) {
 		return model.SuccessResponse(" ", model.Schema{
 			"value":   templ.Theme.Value,
 			"options": themes,
@@ -48,12 +48,6 @@ func NewThemeSelect(mux *http.ServeMux, templ *template.Templ) Select {
 			},
 		},
 	)
-}
-
-// NewThemeButtonGroupSelect creates a new button group select instance for theme selection.
-// Note: Ensure that `conf.WithThemes` is called during app initialization to avoid a panic.
-func NewThemeButtonGroupSelect(mux *http.ServeMux, templ *template.Templ) Select {
-	return NewThemeSelect(mux, templ).set("type", "button-group-select")
 }
 
 // set sets the key-value pair in the selectControl instance
