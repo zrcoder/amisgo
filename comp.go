@@ -179,6 +179,7 @@ func (e *App) Wizard() comp.Wizard                           { return icomp.NewW
 func (e *App) WizardStep() comp.WizardStep                   { return icomp.NewWizardStep() }
 func (e *App) Words() comp.Words                             { return icomp.NewWords() }
 func (e *App) Wrapper() comp.Wrapper                         { return icomp.NewWrapper() }
+func (e *App) Number() comp.Number                           { return icomp.NewNumber() }
 func (e *App) ThemeSelect() comp.Select                      { return icomp.NewSelect().Themes(e.mux, e.Conf.Templ) }
 func (e *App) ThemeButtonGroupSelect() comp.Select {
 	return icomp.NewButtonGroupSelect().Themes(e.mux, e.Conf.Templ)

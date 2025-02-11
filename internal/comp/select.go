@@ -510,3 +510,8 @@ func (sc Select) ValueField(value string) Select {
 func (sc Select) Validation(value string) Select {
 	return sc.set("validation", value)
 }
+
+// NoResultsText sets the text when no result found
+func (s Select) NoResultsText(value string) Select {
+	return s.set("noResultsText", value)
+}

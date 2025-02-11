@@ -2,7 +2,9 @@ package comp
 
 import "github.com/zrcoder/amisgo/model"
 
-// InputNumber represents a number input field
+// InputNumber represents a number input field.
+// The final display effect depends on the browser and only supports the `min`, `max`, and `step` attributes.
+// This feature is mainly for use in mobile browsers and is not recommended for use on PCs.
 type InputNumber model.Schema
 
 func NewInputNumber() InputNumber {
@@ -330,8 +332,8 @@ func (nc InputNumber) Validations(value string) InputNumber {
 	return nc.set("validations", value)
 }
 
-// Value sets default value
-func (nc InputNumber) Value(value int) InputNumber {
+// Value sets default value number | string
+func (nc InputNumber) Value(value any) InputNumber {
 	return nc.set("value", value)
 }
 

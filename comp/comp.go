@@ -178,4 +178,5 @@ type (
 	WizardStep          = comp.WizardStep
 	Words               = comp.Words
 	Wrapper             = comp.Wrapper
+	Number              = comp.Number
 )

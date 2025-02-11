@@ -33,8 +33,9 @@ func (t Table) AffixRow(value string) Table {
 	return t.set("affixRow", value)
 }
 
-// AutoFillHeight sets the table to auto-calculate height
-func (t Table) AutoFillHeight(value string) Table {
+// AutoFillHeight boolean | {height: number} | {maxHeight: number},
+// content area with adaptive height, options: adaptive, fixed height, or maximum height
+func (t Table) AutoFillHeight(value any) Table {
 	return t.set("autoFillHeight", value)
 }
 
@@ -294,7 +295,7 @@ func (t Table) KeyField(value string) Table {
 }
 
 // LazyRenderAfter sets the number of columns to render at once, default is 100, can improve table rendering performance
-func (t Table) LazyRenderAfter(value string) Table {
+func (t Table) LazyRenderAfter(value float64) Table {
 	return t.set("lazyRenderAfter", value)
 }
 
@@ -371,4 +372,9 @@ func (t Table) Sticky(value bool) Table {
 // Size sets the table size, supports large, default, small, default is medium size
 func (t Table) Size(value string) Table {
 	return t.set("size", value)
+}
+
+// TextOverflow sets the text overflow display mode, default is wrap. Options: 'ellipsis' for overflow hidden, 'noWrap' for no wrapping (only works when column is static text)
+func (t Table) TextOverflow(value string) Table {
+	return t.set("textOverflow", value)
 }

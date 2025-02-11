@@ -371,6 +371,16 @@ func (qrc InputQuarterRange) VisibleOn(value string) InputQuarterRange {
 	return qrc.set("visibleOn", value)
 }
 
+// UTC sets if use utc time
+func (q InputQuarterRange) UTC(value bool) InputQuarterRange {
+	return q.set("utc", value)
+}
+
+// Clearable sets if the month range can be cleared
+func (q InputQuarterRange) Clearable(value bool) InputQuarterRange {
+	return q.set("clearable", value)
+}
+
 // Width sets the width in Table
 func (qrc InputQuarterRange) Width(value string) InputQuarterRange {
 	return qrc.set("width", value)

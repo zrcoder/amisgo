@@ -369,6 +369,16 @@ func (m InputMonthRange) Width(value string) InputMonthRange {
 	return m.set("width", value)
 }
 
+// UTC sets if use utc time
+func (m InputMonthRange) UTC(value bool) InputMonthRange {
+	return m.set("utc", value)
+}
+
+// Clearable sets if the month range can be cleared
+func (m InputMonthRange) Clearable(value bool) InputMonthRange {
+	return m.set("clearable", value)
+}
+
 func (m InputMonthRange) set(key string, value any) InputMonthRange {
 	m[key] = value
 	return m

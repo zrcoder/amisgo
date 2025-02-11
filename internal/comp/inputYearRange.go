@@ -164,3 +164,13 @@ func (i InputYearRange) Visible(value bool) InputYearRange {
 func (i InputYearRange) VisibleOn(value string) InputYearRange {
 	return i.set("visibleOn", value)
 }
+
+// UTC sets if use utc time
+func (y InputYearRange) UTC(value bool) InputYearRange {
+	return y.set("utc", value)
+}
+
+// Animation enables or disables cursor animation, default is enabled
+func (y InputYearRange) Animation(value bool) InputYearRange {
+	return y.set("animation", value)
+}
