@@ -48,3 +48,13 @@ func (c Code) Value(value string) Code {
 func (c Code) WordWrap(value bool) Code {
 	return c.set("wordWrap", value)
 }
+
+// VisibleOn sets the expression to determine if the component is visible
+func (c Code) VisibleOn(value string) Code {
+	return c.set("visibleOn", value)
+}
+
+// HiddenOn sets the expression to determine if the component is hidden
+func (c Code) HiddenOn(value string) Code {
+	return c.set("hiddenOn", value)
+}
