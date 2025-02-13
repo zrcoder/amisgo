@@ -179,4 +179,5 @@ type (
 	Words               = comp.Words
 	Wrapper             = comp.Wrapper
 	Number              = comp.Number
+	Shape               = comp.Shape
 )
