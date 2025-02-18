@@ -240,7 +240,7 @@ func (ta ToastAction) Testid(value string) ToastAction {
 }
 
 // Toast sets the toast details
-func (ta ToastAction) Toast(value string) ToastAction {
+func (ta ToastAction) Toast(value any) ToastAction {
 	return ta.set("toast", value)
 }
 

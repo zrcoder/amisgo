@@ -218,6 +218,7 @@ func (a *App) State() model.State                   { return model.NewState() }
 func (a *App) Step() model.Step                     { return model.NewStep() }
 func (a *App) TableColumn() model.TableColumn       { return model.NewTableColumn() }
 func (a *App) Toast() model.Toast                   { return model.NewToast() }
+func (a *App) ToastItem() model.ToastItem           { return model.NewToastItem() }
 func (a *App) ChartConfig() model.ChartCfg          { return model.NewChartConfig() }
 func (a *App) ChartSeries() model.ChartSeri         { return model.NewChartSeries() }
 func (a *App) ChartAxis() model.ChartAxis           { return model.NewChartAxis() }

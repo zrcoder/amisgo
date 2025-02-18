@@ -23,7 +23,7 @@ func (t Toast) CloseButton(value bool) Toast {
 }
 
 // Items sets the notification content
-func (t Toast) Items(value ...any) Toast {
+func (t Toast) Items(value ...ToastItem) Toast {
 	return t.set("items", value)
 }
 
