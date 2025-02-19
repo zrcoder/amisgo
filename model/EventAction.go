@@ -10,12 +10,20 @@ func NewEventActionToast() EventAction {
 	return NewEventAction().ActionType("toast")
 }
 
-func NewEventActionDrawer() EventAction {
-	return NewEventAction().ActionType("drawer")
+func NewEventActionDrawer(drawer ...any) EventAction {
+	res := NewEventAction().ActionType("drawer")
+	if len(drawer) > 0 {
+		res.Drawer(drawer[0])
+	}
+	return res
 }
 
-func NewEventActionDialog() EventAction {
-	return NewEventAction().ActionType("dialog")
+func NewEventActionDialog(dialog ...any) EventAction {
+	res := NewEventAction().ActionType("dialog")
+	if len(dialog) > 0 {
+		res.Dialog(dialog[0])
+	}
+	return res
 }
 
 // set sets a field value

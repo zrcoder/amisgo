@@ -2,8 +2,12 @@ package model
 
 type EventActions Schema
 
-func NewEventActions() EventActions {
-	return EventActions{}
+func NewEventActions(value ...any) EventActions {
+	res := EventActions{}
+	if len(value) > 0 {
+		res.Actions(value...)
+	}
+	return res
 }
 
 func (e EventActions) set(key string, value any) EventActions {

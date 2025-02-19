@@ -210,27 +210,35 @@ func (a *App) RowSelection() model.RowSelection { return model.NewRowSelection()
 func (a *App) RowSelectionOptions() model.RowSelectionOptions {
 	return model.NewRowSelectionOptions()
 }
-func (a *App) SchemaApi() model.SchemaApi             { return model.NewSchemaApi() }
-func (a *App) SchemaCopyable() model.SchemaCopyable   { return model.NewSchemaCopyable() }
-func (a *App) SchemaMessage() model.SchemaMessage     { return model.NewSchemaMessage() }
-func (a *App) SchemaPopOver() model.SchemaPopOver     { return model.NewSchemaPopOver() }
-func (a *App) State() model.State                     { return model.NewState() }
-func (a *App) Step() model.Step                       { return model.NewStep() }
-func (a *App) TableColumn() model.TableColumn         { return model.NewTableColumn() }
-func (a *App) Toast() model.Toast                     { return model.NewToast() }
-func (a *App) ToastItem() model.ToastItem             { return model.NewToastItem() }
-func (a *App) ChartConfig() model.ChartCfg            { return model.NewChartConfig() }
-func (a *App) ChartSeries() model.ChartSeri           { return model.NewChartSeries() }
-func (a *App) ChartAxis() model.ChartAxis             { return model.NewChartAxis() }
-func (a *App) NewListItem() model.ListItem            { return model.NewListItem() }
-func (a *App) Api() model.Api                         { return model.NewApi() }
-func (a *App) BreadcrumbItem() model.BreadcrumbItem   { return model.NewBreadcrumbItem() }
-func (a *App) Column() model.Column                   { return model.NewColumn() }
-func (a *App) Event() model.Event                     { return model.NewEvent() }
-func (a *App) EventActions() model.EventActions       { return model.NewEventActions() }
-func (a *App) EventAction() model.EventAction         { return model.NewEventAction() }
-func (a *App) EventActionToast() model.EventAction    { return model.NewEventActionToast() }
-func (a *App) EventActionDrawer() model.EventAction   { return model.NewEventActionDrawer() }
+func (a *App) SchemaApi() model.SchemaApi           { return model.NewSchemaApi() }
+func (a *App) SchemaCopyable() model.SchemaCopyable { return model.NewSchemaCopyable() }
+func (a *App) SchemaMessage() model.SchemaMessage   { return model.NewSchemaMessage() }
+func (a *App) SchemaPopOver() model.SchemaPopOver   { return model.NewSchemaPopOver() }
+func (a *App) State() model.State                   { return model.NewState() }
+func (a *App) Step() model.Step                     { return model.NewStep() }
+func (a *App) TableColumn() model.TableColumn       { return model.NewTableColumn() }
+func (a *App) Toast() model.Toast                   { return model.NewToast() }
+func (a *App) ToastItem() model.ToastItem           { return model.NewToastItem() }
+func (a *App) ChartConfig() model.ChartCfg          { return model.NewChartConfig() }
+func (a *App) ChartSeries() model.ChartSeri         { return model.NewChartSeries() }
+func (a *App) ChartAxis() model.ChartAxis           { return model.NewChartAxis() }
+func (a *App) NewListItem() model.ListItem          { return model.NewListItem() }
+func (a *App) Api() model.Api                       { return model.NewApi() }
+func (a *App) BreadcrumbItem() model.BreadcrumbItem { return model.NewBreadcrumbItem() }
+func (a *App) Column() model.Column                 { return model.NewColumn() }
+func (a *App) Event() model.Event                   { return model.NewEvent() }
+func (a *App) EventActions(actions ...any) model.EventActions {
+	return model.NewEventActions(actions...)
+}
+func (a *App) EventAction() model.EventAction      { return model.NewEventAction() }
+func (a *App) EventActionToast() model.EventAction { return model.NewEventActionToast() }
+func (a *App) EventActionDrawer(drawer ...any) model.EventAction {
+	return model.NewEventActionDrawer(drawer...)
+}
+
+func (a *App) EventActionDialog(dialog ...any) model.EventAction {
+	return model.NewEventActionDialog(dialog...)
+}
 func (a *App) EventActionArgs() model.EventActionArgs { return model.NewEventActionArgs() }
 func (a *App) GridItem() model.GridItem               { return model.NewGridItem() }
 func (a *App) Horizontal() model.Horizontal           { return model.NewHorizontal() }
