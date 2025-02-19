@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Combo represents a composite input field component with multiple input capabilities
-type Combo model.Schema
+type Combo schema.Schema
 
 func NewCombo() Combo {
 	return Combo{"type": "combo"}
@@ -54,7 +54,7 @@ func (cc Combo) ClearValueOnHidden(value bool) Combo {
 	return cc.set("clearValueOnHidden", value)
 }
 
-// Conditions sets a schema that renders only when specific conditions are met
+// Conditions sets a schema.Schema that renders only when specific conditions are met
 func (cc Combo) Conditions(value string) Combo {
 	return cc.set("conditions", value)
 }

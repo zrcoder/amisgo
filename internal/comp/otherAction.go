@@ -1,8 +1,8 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-type OtherAction model.Schema
+type OtherAction schema.Schema
 
 func NewOtherAction() OtherAction {
 	return OtherAction{"type": "button", "actionType": "prev"}
@@ -219,7 +219,7 @@ func (oa OtherAction) StaticPlaceholder(value string) OtherAction {
 	return oa.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (oa OtherAction) StaticSchema(value string) OtherAction {
 	return oa.set("staticSchema", value)
 }

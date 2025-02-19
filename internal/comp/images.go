@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Images represents an image gallery component.
-type Images model.Schema
+type Images schema.Schema
 
 func NewImages() Images {
 	return Images{"type": "images"}
@@ -154,7 +154,7 @@ func (i Images) StaticPlaceholder(value string) Images {
 	return i.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (i Images) StaticSchema(value string) Images {
 	return i.set("staticSchema", value)
 }

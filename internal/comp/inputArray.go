@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputArray is an alias for combo. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-array
-type InputArray model.Schema
+type InputArray schema.Schema
 
 func NewInputArray() InputArray {
 	return InputArray{"type": "input-array"}
@@ -334,7 +334,7 @@ func (ac InputArray) StaticPlaceholder(value string) InputArray {
 	return ac.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (ac InputArray) StaticSchema(value string) InputArray {
 	return ac.set("staticSchema", value)
 }

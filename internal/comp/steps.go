@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-// Steps represents a schema for Steps component
-type Steps model.Schema
+// Steps represents a schema.Schema for Steps component
+type Steps schema.Schema
 
 func NewSteps() Steps {
 	return Steps{"type": "steps"}
@@ -109,7 +109,7 @@ func (s Steps) StaticPlaceholder(value string) Steps {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (s Steps) StaticSchema(value string) Steps {
 	return s.set("staticSchema", value)
 }

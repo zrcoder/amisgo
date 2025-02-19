@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputQuarterRange represents a quarter range control.
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-quarter-range
-type InputQuarterRange model.Schema
+type InputQuarterRange schema.Schema
 
 func NewInputQuarterRange() InputQuarterRange {
 	return InputQuarterRange{"type": "input-quarter-range"}
@@ -301,7 +301,7 @@ func (qrc InputQuarterRange) StaticPlaceholder(value string) InputQuarterRange {
 	return qrc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (qrc InputQuarterRange) StaticSchema(value string) InputQuarterRange {
 	return qrc.set("staticSchema", value)
 }

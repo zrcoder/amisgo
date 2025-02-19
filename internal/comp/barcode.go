@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Barcode represents a Barcode renderer
-type Barcode model.Schema
+type Barcode schema.Schema
 
 func NewBarcode() Barcode {
 	return Barcode{"type": "barcode"}

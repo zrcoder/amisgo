@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Words represents a text display component
-type Words model.Schema
+type Words schema.Schema
 
 func NewWords() Words {
 	return Words{"type": "words"}
@@ -119,7 +119,7 @@ func (w Words) StaticPlaceholder(value string) Words {
 	return w.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (w Words) StaticSchema(value string) Words {
 	return w.set("staticSchema", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // DropdownButton represents a dropdown button renderer.
-type DropdownButton model.Schema
+type DropdownButton schema.Schema
 
 // NewDropdownButton creates a new NewDropdownButton instance with the default type 'dropdown-button'.
 func NewDropdownButton() DropdownButton {
@@ -160,7 +160,7 @@ func (d DropdownButton) StaticPlaceholder(value string) DropdownButton {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema.
+// StaticSchema sets the static display schema.Schema.
 func (d DropdownButton) StaticSchema(value string) DropdownButton {
 	return d.set("staticSchema", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Control represents a form item wrapper. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/Control
-type Control model.Schema
+type Control schema.Schema
 
 func NewControl() Control {
 	return Control{"type": "control"}
@@ -219,7 +219,7 @@ func (fc Control) StaticPlaceholder(value string) Control {
 	return fc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (fc Control) StaticSchema(value string) Control {
 	return fc.set("staticSchema", value)
 }

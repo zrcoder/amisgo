@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Status Document: https://aisuda.bce.baidu.com/amis/zh-CN/components/Status
-type Status model.Schema
+type Status schema.Schema
 
 func NewStatus() Status {
 	return Status{"type": "status"}

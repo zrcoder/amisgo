@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Editor represents a code Editor
-type Editor model.Schema
+type Editor schema.Schema
 
 func NewEditor() Editor {
 	return Editor{"type": "editor"}
@@ -233,7 +233,7 @@ func (ec Editor) StaticPlaceholder(value string) Editor {
 	return ec.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (ec Editor) StaticSchema(value string) Editor {
 	return ec.set("staticSchema", value)
 }
@@ -299,6 +299,6 @@ func (ec Editor) Width(value string) Editor {
 }
 
 // Options sets additional options for the Monaco editor
-func (e Editor) Options(value model.Schema) Editor {
+func (e Editor) Options(value schema.Schema) Editor {
 	return e.set("options", value)
 }

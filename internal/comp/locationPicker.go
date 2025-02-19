@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // LocationPicker component
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/location-picker
-type LocationPicker model.Schema
+type LocationPicker schema.Schema
 
 func NewLocationPicker() LocationPicker {
 	return LocationPicker{"type": "location-picker"}
@@ -279,7 +279,7 @@ func (lc LocationPicker) StaticPlaceholder(value string) LocationPicker {
 	return lc
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (lc LocationPicker) StaticSchema(value string) LocationPicker {
 	lc.set("staticSchema", value)
 	return lc

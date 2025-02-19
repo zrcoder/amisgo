@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // IconPicker represents an icon picker component
-type IconPicker model.Schema
+type IconPicker schema.Schema
 
 func NewIconPicker() IconPicker {
 	return IconPicker{"type": "icon-picker"}
@@ -214,7 +214,7 @@ func (i IconPicker) StaticPlaceholder(value string) IconPicker {
 	return i.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets static schema
+// StaticSchema sets static schema.Schema
 func (i IconPicker) StaticSchema(value string) IconPicker {
 	return i.set("staticSchema", value)
 }

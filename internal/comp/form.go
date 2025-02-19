@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/servemux"
-	"github.com/zrcoder/amisgo/model"
+	"github.com/zrcoder/amisgo/schema"
 )
 
 // Form represents a form renderer.
-type Form model.Schema
+type Form schema.Schema
 
 func NewForm(mux *http.ServeMux) Form {
 	return Form{"type": "form", servemux.Key: mux}
@@ -109,7 +109,7 @@ func (f Form) StaticPlaceholder(value string) Form {
 	return f.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (f Form) StaticSchema(value string) Form {
 	return f.set("staticSchema", value)
 }
@@ -219,9 +219,9 @@ func (f Form) GetData(getter func() (any, error)) Form {
 	return f.Api(servemux.ServeData(f.mux(), getter))
 }
 
-// Submit sets the callback logic after form submission, using the generic model.Schema type to handle form data
+// Submit sets the callback logic after form submission, using the generic schema.Schema type to handle form data
 // Suitable for scenarios where flexible handling of form submission is required
-func (f Form) Submit(callback func(model.Schema) error) Form {
+func (f Form) Submit(callback func(schema.Schema) error) Form {
 	return f.Api(servemux.BindDataRoute(f.mux(), callback))
 }
 

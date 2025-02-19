@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputDate represents a date picker component
-type InputDate model.Schema
+type InputDate schema.Schema
 
 func NewInputDate() InputDate {
 	return InputDate{"type": "input-date"}
@@ -274,7 +274,7 @@ func (d InputDate) StaticPlaceholder(value string) InputDate {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets static schema
+// StaticSchema sets static schema.Schema
 func (d InputDate) StaticSchema(value string) InputDate {
 	return d.set("staticSchema", value)
 }

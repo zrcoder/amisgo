@@ -1,8 +1,8 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-type Remark model.Schema
+type Remark schema.Schema
 
 func NewRemark() Remark {
 	return Remark{"type": "remark"}
@@ -113,7 +113,7 @@ func (rm Remark) StaticPlaceholder(value string) Remark {
 	return rm.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display.
+// StaticSchema sets the schema.Schema for static display.
 func (rm Remark) StaticSchema(value string) Remark {
 	return rm.set("staticSchema", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Tag represents a tag component
-type Tag model.Schema
+type Tag schema.Schema
 
 func NewTag() Tag {
 	return Tag{"type": "tag"}
@@ -124,7 +124,7 @@ func (t Tag) StaticPlaceholder(value string) Tag {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (t Tag) StaticSchema(value string) Tag {
 	return t.set("staticSchema", value)
 }

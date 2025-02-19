@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // WangEditor
-type WangEditor model.Schema
+type WangEditor schema.Schema
 
 func NewWangEditor() WangEditor {
 	return WangEditor{"type": "custom-wang-editor"}

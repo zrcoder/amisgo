@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Picker represents the Picker control
-type Picker model.Schema
+type Picker schema.Schema
 
 func NewPicker() Picker {
 	return Picker{"type": "picker"}
@@ -279,7 +279,7 @@ func (pc Picker) OverflowConfig(value string) Picker {
 	return pc.set("overflowConfig", value)
 }
 
-// PickerSchema sets the picker schema
+// PickerSchema sets the picker schema.Schema
 func (pc Picker) PickerSchema(value string) Picker {
 	return pc.set("pickerSchema", value)
 }
@@ -369,7 +369,7 @@ func (pc Picker) StaticPlaceholder(value string) Picker {
 	return pc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static mode
+// StaticSchema sets the schema.Schema for static mode
 func (pc Picker) StaticSchema(value string) Picker {
 	return pc.set("staticSchema", value)
 }

@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputMonth represents a month selection component
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/Month
-type InputMonth model.Schema
+type InputMonth schema.Schema
 
 func NewInputMonth() InputMonth {
 	return InputMonth{"type": "input-month"}
@@ -255,7 +255,7 @@ func (mc InputMonth) StaticPlaceholder(value string) InputMonth {
 	return mc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets static schema
+// StaticSchema sets static schema.Schema
 func (mc InputMonth) StaticSchema(value string) InputMonth {
 	return mc.set("staticSchema", value)
 }

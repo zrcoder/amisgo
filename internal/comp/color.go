@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Color represents a Color selection and display component
-type Color model.Schema
+type Color schema.Schema
 
 func NewColor() Color {
 	return Color{"type": "color"}
@@ -94,7 +94,7 @@ func (c Color) StaticPlaceholder(value string) Color {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c Color) StaticSchema(value string) Color {
 	return c.set("staticSchema", value)
 }

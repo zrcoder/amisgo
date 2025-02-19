@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // SparkLine
-type SparkLine model.Schema
+type SparkLine  schema.Schema
 
 func NewSparkLine() SparkLine {
 	return SparkLine{"type": "sparkline"}
@@ -104,7 +104,7 @@ func (s SparkLine) StaticPlaceholder(value string) SparkLine {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display of the sparkLine
+// StaticSchema sets the schema.Schema for static display of the sparkLine
 func (s SparkLine) StaticSchema(value string) SparkLine {
 	return s.set("staticSchema", value)
 }

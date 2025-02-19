@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Grid2d represents a 2D grid layout renderer.
-type Grid2d model.Schema
+type Grid2d schema.Schema
 
 func NewGrid2D() Grid2d {
 	return Grid2d{"type": "grid-2d"}
@@ -50,7 +50,7 @@ func (g Grid2d) RowGap(value string) Grid2d {
 }
 
 // Grids sets the configuration for each grid item.
-func (g Grid2d) Grids(value ...model.GridItem) Grid2d {
+func (g Grid2d) Grids(value ...GridItem) Grid2d {
 	return g.set("grids", value)
 }
 
@@ -109,7 +109,7 @@ func (g Grid2d) StaticPlaceholder(value string) Grid2d {
 	return g.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display mode.
+// StaticSchema sets the schema.Schema for static display mode.
 func (g Grid2d) StaticSchema(value string) Grid2d {
 	return g.set("staticSchema", value)
 }

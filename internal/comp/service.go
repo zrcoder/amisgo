@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/servemux"
-	"github.com/zrcoder/amisgo/model"
+	"github.com/zrcoder/amisgo/schema"
 )
 
 // Service represents a Service configuration.
-type Service model.Schema
+type Service schema.Schema
 
 func NewService(mux *http.ServeMux) Service {
 	return Service{"type": "service", servemux.Key: mux}
@@ -94,12 +94,12 @@ func (s Service) InitFetchOn(value string) Service {
 	return s.set("initFetchOn", value)
 }
 
-// InitFetchSchema sets whether to fetch schema initially.
+// InitFetchSchema sets whether to fetch schema.Schema initially.
 func (s Service) InitFetchSchema(value bool) Service {
 	return s.set("initFetchSchema", value)
 }
 
-// InitFetchSchemaOn sets the expression to determine initial schema fetch.
+// InitFetchSchemaOn sets the expression to determine initial schema.Schema fetch.
 func (s Service) InitFetchSchemaOn(value string) Service {
 	return s.set("initFetchSchemaOn", value)
 }
@@ -129,7 +129,7 @@ func (s Service) OnEvent(value any) Service {
 	return s.set("onEvent", value)
 }
 
-// model.SchemaApi sets the API for schema fetching.
+// SchemaApi sets the API for schema.Schema fetching.
 func (s Service) SchemaApi(value string) Service {
 	return s.set("schemaApi", value)
 }
@@ -174,7 +174,7 @@ func (s Service) StaticPlaceholder(value string) Service {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (s Service) StaticSchema(value string) Service {
 	return s.set("staticSchema", value)
 }

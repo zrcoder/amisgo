@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Formula represents a Formula control component
-type Formula model.Schema
+type Formula schema.Schema
 
 func NewFormula() Formula {
 	return Formula{"type": "formula"}
@@ -234,7 +234,7 @@ func (fc Formula) StaticPlaceholder(value string) Formula {
 	return fc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (fc Formula) StaticSchema(value string) Formula {
 	return fc.set("staticSchema", value)
 }

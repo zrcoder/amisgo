@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputDatetime represents a datetime input control.
-type InputDatetime model.Schema
+type InputDatetime schema.Schema
 
 func NewInputDatetime() InputDatetime {
 	return InputDatetime{"type": "input-datetime"}
@@ -269,7 +269,7 @@ func (d InputDatetime) StaticPlaceholder(value string) InputDatetime {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets static schema.
+// StaticSchema sets static schema.Schema.
 func (d InputDatetime) StaticSchema(value string) InputDatetime {
 	return d.set("staticSchema", value)
 }

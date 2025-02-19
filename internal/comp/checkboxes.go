@@ -1,8 +1,8 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-type Checkboxes model.Schema
+type Checkboxes schema.Schema
 
 func NewCheckboxes() Checkboxes {
 	return Checkboxes{"type": "checkboxes"}

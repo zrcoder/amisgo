@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // PaginationWrapper represents the amis PaginationWrapper renderer
-type PaginationWrapper model.Schema
+type PaginationWrapper schema.Schema
 
 func NewPaginationWrapper() PaginationWrapper {
 	return PaginationWrapper{"type": "pagination-wrapper"}
@@ -120,7 +120,7 @@ func (pw PaginationWrapper) StaticPlaceholder(value string) PaginationWrapper {
 	return pw.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema
+// StaticSchema sets the static display schema.Schema
 func (pw PaginationWrapper) StaticSchema(value string) PaginationWrapper {
 	return pw.set("staticSchema", value)
 }

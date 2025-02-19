@@ -1,11 +1,11 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputNumber represents a number input field.
 // The final display effect depends on the browser and only supports the `min`, `max`, and `step` attributes.
 // This feature is mainly for use in mobile browsers and is not recommended for use on PCs.
-type InputNumber model.Schema
+type InputNumber schema.Schema
 
 func NewInputNumber() InputNumber {
 	return InputNumber{"type": "input-number"}
@@ -272,7 +272,7 @@ func (nc InputNumber) StaticPlaceholder(value string) InputNumber {
 	return nc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets static schema
+// StaticSchema sets static schema.Schema
 func (nc InputNumber) StaticSchema(value string) InputNumber {
 	return nc.set("staticSchema", value)
 }

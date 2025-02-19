@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Divider Divider renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Divider
-type Divider model.Schema
+type Divider schema.Schema
 
 func NewDivider() Divider {
 	return Divider{"type": "divider"}
@@ -104,7 +104,7 @@ func (d Divider) StaticPlaceholder(value string) Divider {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema Static display schema
+// StaticSchema Static display schema.Schema
 func (d Divider) StaticSchema(value string) Divider {
 	return d.set("staticSchema", value)
 }

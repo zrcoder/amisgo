@@ -1,8 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import (
+	"github.com/zrcoder/amisgo/schema"
+)
 
-type App model.Schema
+type App schema.Schema
 
 // NewApp creates an application for implementing multi-page interfaces
 // Suitable for full-screen mode. Not recommended for partial rendering.
@@ -64,6 +66,6 @@ func (a App) Footer(value ...any) App {
 // Usually only requires configuring labels
 // If no grouping is needed, leave unconfigured
 // Actual pages should be configured from the second layer (in the children of the first layer)
-func (a App) Pages(value ...model.PageItem) App {
+func (a App) Pages(value ...PageItem) App {
 	return a.set("pages", value)
 }

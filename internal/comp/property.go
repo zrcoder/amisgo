@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Property
-type Property model.Schema
+type Property schema.Schema
 
 func NewProperty() Property {
 	return Property{"type": "property"}

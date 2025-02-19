@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Static Document: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/Static
-type Static model.Schema
+type Static schema.Schema
 
 func NewStatic() Static {
 	return Static{"type": "static"}
@@ -234,7 +234,7 @@ func (s Static) StaticPlaceholder(value string) Static {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (s Static) StaticSchema(value string) Static {
 	return s.set("staticSchema", value)
 }

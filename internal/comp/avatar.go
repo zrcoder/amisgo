@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Avatar represents an Avatar renderer
-type Avatar model.Schema
+type Avatar schema.Schema
 
 func NewAvatar() Avatar {
 	return Avatar{"type": "avatar", "crossOrigin": "anonymous"}
@@ -144,7 +144,7 @@ func (a Avatar) StaticPlaceholder(value string) Avatar {
 	return a.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (a Avatar) StaticSchema(value string) Avatar {
 	return a.set("staticSchema", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // ReloadAction reload action
-type ReloadAction model.Schema
+type ReloadAction schema.Schema
 
 func NewReloadAction() ReloadAction {
 	return ReloadAction{"type": "button", "actionType": "reload"}
@@ -214,7 +214,7 @@ func (ra ReloadAction) StaticPlaceholder(value string) ReloadAction {
 	return ra.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets static schema
+// StaticSchema sets static schema.Schema
 func (ra ReloadAction) StaticSchema(value string) ReloadAction {
 	return ra.set("staticSchema", value)
 }

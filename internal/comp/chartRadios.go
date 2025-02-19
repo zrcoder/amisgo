@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // ChartRadios represents a chart-based radio button selection component
-type ChartRadios model.Schema
+type ChartRadios schema.Schema
 
 func NewChartRadios() ChartRadios {
 	return ChartRadios{"type": "chart-radios"}

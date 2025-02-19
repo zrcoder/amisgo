@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputTable represents a table control
-type InputTable model.Schema
+type InputTable schema.Schema
 
 func NewInputTable() InputTable {
 	return InputTable{"type": "input-table"}

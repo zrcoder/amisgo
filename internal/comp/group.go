@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Group represents a form Group renderer that allows multiple forms to be displayed in a row.
-type Group model.Schema
+type Group schema.Schema
 
 func NewGroup() Group {
 	return Group{"type": "group"}
@@ -229,7 +229,7 @@ func (g Group) StaticPlaceholder(value string) Group {
 	return g.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (g Group) StaticSchema(value string) Group {
 	return g.set("staticSchema", value)
 }

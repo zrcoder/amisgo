@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputYearRange represents a year range input component.
-type InputYearRange model.Schema
+type InputYearRange schema.Schema
 
 func NewInputYearRange() InputYearRange {
 	return InputYearRange{"type": "input-year-range"}

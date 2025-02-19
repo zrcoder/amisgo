@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // HBox represents a horizontal layout renderer
-type HBox model.Schema
+type HBox schema.Schema
 
 func NewHBox() HBox {
 	return HBox{"type": "hbox"}
@@ -25,7 +25,7 @@ func (h HBox) ClassName(value string) HBox {
 }
 
 // Columns sets the columns
-func (h HBox) Columns(value ...model.Column) HBox {
+func (h HBox) Columns(value ...Column) HBox {
 	return h.set("columns", value)
 }
 
@@ -99,7 +99,7 @@ func (h HBox) StaticPlaceholder(value string) HBox {
 	return h.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (h HBox) StaticSchema(value string) HBox {
 	return h.set("staticSchema", value)
 }

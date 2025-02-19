@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/servemux"
-	"github.com/zrcoder/amisgo/model"
+	"github.com/zrcoder/amisgo/schema"
 )
 
 // Page represents an AMIS Page renderer
-type Page model.Schema
+type Page schema.Schema
 
 func NewPage(mux *http.ServeMux) Page {
 	return Page{"type": "page", servemux.Key: mux}
@@ -171,7 +171,7 @@ func (p Page) OnEvent(value any) Page {
 }
 
 // PullRefresh sets the pull-to-refresh configuration
-func (p Page) PullRefresh(value model.PullRefresh) Page {
+func (p Page) PullRefresh(value PullRefresh) Page {
 	return p.set("pullRefresh", value)
 }
 
@@ -225,7 +225,7 @@ func (p Page) StaticPlaceholder(value string) Page {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (p Page) StaticSchema(value string) Page {
 	return p.set("staticSchema", value)
 }

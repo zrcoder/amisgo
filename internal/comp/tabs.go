@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Tabs component. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Tabs
-type Tabs model.Schema
+type Tabs schema.Schema
 
 func NewTabs() Tabs {
 	return Tabs{"type": "tabs"}
@@ -169,7 +169,7 @@ func (t Tabs) StaticPlaceholder(value string) Tabs {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (t Tabs) StaticSchema(value string) Tabs {
 	return t.set("staticSchema", value)
 }

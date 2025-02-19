@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // VBox represents a vertical layout component
-type VBox model.Schema
+type VBox schema.Schema
 
 func NewVBox() VBox {
 	return VBox{"type": "vbox"}
@@ -89,7 +89,7 @@ func (v VBox) StaticPlaceholder(value string) VBox {
 	return v.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (v VBox) StaticSchema(value string) VBox {
 	return v.set("staticSchema", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Transfer control definition
-type Transfer model.Schema
+type Transfer schema.Schema
 
 func NewTransfer() Transfer {
 	return Transfer{"type": "transfer"}

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputSignature
-type InputSignature model.Schema
+type InputSignature schema.Schema
 
 func NewInputSignature() InputSignature {
 	return InputSignature{"type": "input-signature"}
@@ -280,7 +280,7 @@ func (i InputSignature) StaticPlaceholder(value string) InputSignature {
 	return i.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets static schema
+// StaticSchema sets static schema.Schema
 func (i InputSignature) StaticSchema(value string) InputSignature {
 	return i.set("staticSchema", value)
 }

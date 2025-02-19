@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Flex layout documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/flex
-type Flex model.Schema
+type Flex schema.Schema
 
 func NewFlex() Flex {
 	return Flex{"type": "flex"}
@@ -109,7 +109,7 @@ func (f Flex) StaticPlaceholder(value string) Flex {
 	return f.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (f Flex) StaticSchema(value string) Flex {
 	return f.set("staticSchema", value)
 }

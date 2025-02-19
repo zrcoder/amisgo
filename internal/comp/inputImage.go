@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/servemux"
-	"github.com/zrcoder/amisgo/model"
+	"github.com/zrcoder/amisgo/schema"
 )
 
 // InputImage represents an image upload component
-type InputImage model.Schema
+type InputImage schema.Schema
 
 func NewInputImage(mux *http.ServeMux) InputImage {
 	return InputImage{"type": "input-image", servemux.Key: mux}.Receiver("/api/upload")
@@ -314,7 +314,7 @@ func (i InputImage) Required(value bool) InputImage {
 	return i.set("required", value)
 }
 
-// model.Schema sets the custom schema
+// Schema sets the custom Schema
 func (i InputImage) Schema(value string) InputImage {
 	return i.set("schema", value)
 }

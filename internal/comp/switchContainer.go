@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // SwitchContainer is a state container renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/state-container
-type SwitchContainer model.Schema
+type SwitchContainer schema.Schema
 
 func NewSwitchContainer() SwitchContainer {
 	return SwitchContainer{"type": "switch-container"}
@@ -89,7 +89,7 @@ func (s SwitchContainer) StaticPlaceholder(value string) SwitchContainer {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (s SwitchContainer) StaticSchema(value string) SwitchContainer {
 	return s.set("staticSchema", value)
 }

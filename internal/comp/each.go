@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Each represents a loop renderer.
-type Each model.Schema
+type Each schema.Schema
 
 func NewEach() Each {
 	return Each{"type": "each"}
@@ -114,7 +114,7 @@ func (e Each) StaticPlaceholder(value string) Each {
 	return e.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display.
+// StaticSchema sets the schema.Schema for static display.
 func (e Each) StaticSchema(value string) Each {
 	return e.set("staticSchema", value)
 }

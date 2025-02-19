@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-// InputRange controls the range of the component
-type InputRange model.Schema
+// Inpu"github.com/zrcoder/amisgo/schema"component
+type InputRange schema.Schema
 
 func NewInputRange() InputRange {
 	return InputRange{"type": "input-range"}
@@ -264,7 +264,7 @@ func (rc InputRange) StaticPlaceholder(value string) InputRange {
 	return rc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (rc InputRange) StaticSchema(value string) InputRange {
 	return rc.set("staticSchema", value)
 }

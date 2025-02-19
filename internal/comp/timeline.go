@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Timeline represents a Timeline renderer
-type Timeline model.Schema
+type Timeline schema.Schema
 
 func NewTimeline() Timeline {
 	return Timeline{"type": "timeline"}
@@ -124,7 +124,7 @@ func (t Timeline) StaticPlaceholder(value string) Timeline {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (t Timeline) StaticSchema(value string) Timeline {
 	return t.set("staticSchema", value)
 }

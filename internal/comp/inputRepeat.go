@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputRepeat documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/repeat
-type InputRepeat model.Schema
+type InputRepeat schema.Schema
 
 func NewInputRepeat() InputRepeat {
 	return InputRepeat{"type": "input-repeat"}
@@ -219,7 +219,7 @@ func (rc InputRepeat) StaticPlaceholder(value string) InputRepeat {
 	return rc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (rc InputRepeat) StaticSchema(value string) InputRepeat {
 	return rc.set("staticSchema", value)
 }

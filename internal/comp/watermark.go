@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-// Watermark represents a Watermark schema
-type Watermark model.Schema
+// Watermark represents a Watermark schema.Schema
+type Watermark schema.Schema
 
 func NewWatermark() Watermark {
 	return Watermark{"type": "custom-watermark"}

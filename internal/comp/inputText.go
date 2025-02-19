@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputText represents a text input field. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/text
-type InputText model.Schema
+type InputText schema.Schema
 
 func NewInputText() InputText {
 	return InputText{"type": "input-text"}

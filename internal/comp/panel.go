@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Panel represents the amis Panel renderer
-type Panel model.Schema
+type Panel schema.Schema
 
 func NewPanel() Panel {
 	return Panel{"type": "panel"}
@@ -150,7 +150,7 @@ func (p Panel) StaticPlaceholder(value string) Panel {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (p Panel) StaticSchema(value string) Panel {
 	return p.set("staticSchema", value)
 }

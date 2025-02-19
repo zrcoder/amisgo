@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Table is a Table renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Table
-type Table model.Schema
+type Table schema.Schema
 
 func NewTable() Table {
 	return Table{"type": "table"}
@@ -204,7 +204,7 @@ func (t Table) StaticPlaceholder(value string) Table {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (t Table) StaticSchema(value string) Table {
 	return t.set("staticSchema", value)
 }

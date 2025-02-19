@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // UUID UUID functional component
-type UUID model.Schema
+type UUID schema.Schema
 
 func NewUUID() UUID {
 	return UUID{"type": "uuid"}
@@ -219,7 +219,7 @@ func (uc UUID) StaticPlaceholder(value string) UUID {
 	return uc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets static schema
+// StaticSchema sets static schema.Schema
 func (uc UUID) StaticSchema(value string) UUID {
 	return uc.set("staticSchema", value)
 }

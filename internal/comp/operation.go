@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Operation represents the Operation renderer
-type Operation model.Schema
+type Operation schema.Schema
 
 func NewOperation() Operation {
 	return Operation{"type": "operation"}
@@ -105,7 +105,7 @@ func (o Operation) StaticPlaceholder(value string) Operation {
 	return o.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static mode schema
+// StaticSchema sets the static mode schema.Schema
 func (o Operation) StaticSchema(value string) Operation {
 	return o.set("staticSchema", value)
 }

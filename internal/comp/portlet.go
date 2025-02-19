@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Portlet
-type Portlet model.Schema
+type Portlet schema.Schema
 
 func NewPortlet() Portlet {
 	return Portlet{"type": "portlet"}
@@ -124,7 +124,7 @@ func (p Portlet) StaticPlaceholder(value string) Portlet {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema
+// StaticSchema sets the static display schema.Schema
 func (p Portlet) StaticSchema(value string) Portlet {
 	return p.set("staticSchema", value)
 }

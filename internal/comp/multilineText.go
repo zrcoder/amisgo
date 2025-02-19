@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // MultilineText represents a multiline text component
-type MultilineText model.Schema
+type MultilineText schema.Schema
 
 func NewMultilineText() MultilineText {
 	return MultilineText{"type": "multiline-text"}
@@ -100,7 +100,7 @@ func (m MultilineText) StaticPlaceholder(value string) MultilineText {
 	return m.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (m MultilineText) StaticSchema(value string) MultilineText {
 	return m.set("staticSchema", value)
 }

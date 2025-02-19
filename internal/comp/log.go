@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Log represents a real-time Log component
-type Log model.Schema
+type Log schema.Schema
 
 func NewLog() Log {
 	return Log{"type": "log"}

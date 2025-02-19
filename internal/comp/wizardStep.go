@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // WizardStep represents a step in a wizard form
-type WizardStep model.Schema
+type WizardStep schema.Schema
 
 func NewWizardStep() WizardStep {
 	return WizardStep{"type": "wizard-step"}
@@ -314,7 +314,7 @@ func (ws WizardStep) StaticPlaceholder(value string) WizardStep {
 	return ws.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (ws WizardStep) StaticSchema(value string) WizardStep {
 	return ws.set("staticSchema", value)
 }

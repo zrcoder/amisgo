@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // ToastAction
-type ToastAction model.Schema
+type ToastAction schema.Schema
 
 func NewToastAction() ToastAction {
 	return ToastAction{"type": "button", "actionType": "toast"}
@@ -214,7 +214,7 @@ func (ta ToastAction) StaticPlaceholder(value string) ToastAction {
 	return ta.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (ta ToastAction) StaticSchema(value string) ToastAction {
 	return ta.set("staticSchema", value)
 }

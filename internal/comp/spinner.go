@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Spinner represents a Spinner configuration.
-type Spinner model.Schema
+type Spinner schema.Schema
 
 func NewSpinner() Spinner {
 	return Spinner{"type": "spinner"}
@@ -134,7 +134,7 @@ func (s Spinner) StaticPlaceholder(value string) Spinner {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display.
+// StaticSchema sets the schema.Schema for static display.
 func (s Spinner) StaticSchema(value string) Spinner {
 	return s.set("staticSchema", value)
 }

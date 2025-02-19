@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/servemux"
-	"github.com/zrcoder/amisgo/model"
+	"github.com/zrcoder/amisgo/schema"
 )
 
 // Crud represents a CRUD (Create, Read, Update, Delete) table and list renderer
-type Crud model.Schema
+type Crud schema.Schema
 
 // NewCrud creates a default CRUD table
 func NewCrud(mux *http.ServeMux) Crud {
@@ -698,7 +698,7 @@ func (c Crud) SearchFormClassName(value string) Crud {
 	return c.set("searchFormClassName", value)
 }
 
-// SearchSchema sets the search form schema
+// SearchSchema sets the search form schema.Schema
 func (c Crud) SearchSchema(value any) Crud {
 	return c.set("searchSchema", value)
 }

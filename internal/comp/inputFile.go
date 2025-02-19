@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/servemux"
-	"github.com/zrcoder/amisgo/model"
+	"github.com/zrcoder/amisgo/schema"
 )
 
 // InputFile represents a file upload component
-type InputFile model.Schema
+type InputFile schema.Schema
 
 func NewInputFile(mux *http.ServeMux) InputFile {
 	f := InputFile{}

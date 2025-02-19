@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // TooltipWrapper
-type TooltipWrapper model.Schema
+type TooltipWrapper schema.Schema
 
 func NewTooltipWrapper() TooltipWrapper {
 	return TooltipWrapper{"type": "tooltip-wrapper"}
@@ -134,7 +134,7 @@ func (tw TooltipWrapper) StaticPlaceholder(value string) TooltipWrapper {
 	return tw.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (tw TooltipWrapper) StaticSchema(value string) TooltipWrapper {
 	return tw.set("staticSchema", value)
 }

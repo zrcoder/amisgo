@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/servemux"
-	"github.com/zrcoder/amisgo/model"
+	"github.com/zrcoder/amisgo/schema"
 )
 
 // Chart represents a Chart renderer component for data visualization
-type Chart model.Schema
+type Chart schema.Schema
 
 func NewChart(mux *http.ServeMux) Chart {
 	return Chart{"type": "chart", servemux.Key: mux}
@@ -177,7 +177,7 @@ func (c Chart) StaticPlaceholder(value string) Chart {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c Chart) StaticSchema(value string) Chart {
 	return c.set("staticSchema", value)
 }

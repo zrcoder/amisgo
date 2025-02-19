@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Drawer represents a Drawer component. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Drawer
-type Drawer model.Schema
+type Drawer schema.Schema
 
 func NewDrawer() Drawer {
 	return Drawer{"type": "drawer"}
@@ -184,7 +184,7 @@ func (d Drawer) StaticPlaceholder(value string) Drawer {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display.
+// StaticSchema sets the schema.Schema for static display.
 func (d Drawer) StaticSchema(value string) Drawer {
 	return d.set("staticSchema", value)
 }

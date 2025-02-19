@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Wizard form Wizard documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Wizard
-type Wizard model.Schema
+type Wizard schema.Schema
 
 func NewWizard() Wizard {
 	return Wizard{"type": "wizard"}
@@ -174,7 +174,7 @@ func (w Wizard) StaticPlaceholder(value string) Wizard {
 	return w.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (w Wizard) StaticSchema(value string) Wizard {
 	return w.set("staticSchema", value)
 }

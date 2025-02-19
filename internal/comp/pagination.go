@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Pagination represents the amis Pagination renderer
-type Pagination model.Schema
+type Pagination schema.Schema
 
 func NewPagination() Pagination {
 	return Pagination{"type": "pagination"}
@@ -135,7 +135,7 @@ func (p Pagination) StaticPlaceholder(value string) Pagination {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display mode
+// StaticSchema sets the schema.Schema for static display mode
 func (p Pagination) StaticSchema(value string) Pagination {
 	return p.set("staticSchema", value)
 }

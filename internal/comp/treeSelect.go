@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // TreeSelect represents a dropdown tree select component
-type TreeSelect model.Schema
+type TreeSelect schema.Schema
 
 func NewTreeSelect() TreeSelect {
 	return TreeSelect{"type": "tree-select"}
@@ -499,7 +499,7 @@ func (tsc TreeSelect) StaticPlaceholder(value string) TreeSelect {
 	return tsc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (tsc TreeSelect) StaticSchema(value string) TreeSelect {
 	return tsc.set("staticSchema", value)
 }

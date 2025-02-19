@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Iframe renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Iframe
-type Iframe model.Schema
+type Iframe schema.Schema
 
 func NewIframe() Iframe {
 	return Iframe{"type": "iframe"}
@@ -114,7 +114,7 @@ func (i Iframe) StaticPlaceholder(value string) Iframe {
 	return i.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (i Iframe) StaticSchema(value string) Iframe {
 	return i.set("staticSchema", value)
 }

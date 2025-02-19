@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // QRCode
-type QRCode model.Schema
+type QRCode schema.Schema
 
 func NewQRCode() QRCode {
 	return QRCode{"type": "qrcode"}
@@ -134,7 +134,7 @@ func (q QRCode) StaticPlaceholder(value string) QRCode {
 	return q.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema
+// StaticSchema sets the static display schema.Schema
 func (q QRCode) StaticSchema(value string) QRCode {
 	return q.set("staticSchema", value)
 }

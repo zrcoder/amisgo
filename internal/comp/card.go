@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Card represents a Card component renderer
-type Card model.Schema
+type Card  schema.Schema
 
 func NewCard() Card {
 	return Card{"type": "card"}
@@ -129,7 +129,7 @@ func (c Card) StaticPlaceholder(value string) Card {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c Card) StaticSchema(value string) Card {
 	return c.set("staticSchema", value)
 }

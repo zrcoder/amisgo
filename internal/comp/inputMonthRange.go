@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputMonthRange represents a month range control
-type InputMonthRange model.Schema
+type InputMonthRange schema.Schema
 
 func NewInputMonthRange() InputMonthRange {
 	return InputMonthRange{"type": "input-month-range"}
@@ -294,7 +294,7 @@ func (m InputMonthRange) StaticPlaceholder(value string) InputMonthRange {
 	return m.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets static display schema
+// StaticSchema sets static display schema.Schema
 func (m InputMonthRange) StaticSchema(value string) InputMonthRange {
 	return m.set("staticSchema", value)
 }

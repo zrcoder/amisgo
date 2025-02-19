@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Audio represents an Audio renderer.
-type Audio model.Schema
+type Audio schema.Schema
 
 func NewAudio() Audio {
 	return Audio{"type": "audio"}
@@ -114,7 +114,7 @@ func (a Audio) StaticPlaceholder(value string) Audio {
 	return a.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display.
+// StaticSchema sets the schema.Schema for static display.
 func (a Audio) StaticSchema(value string) Audio {
 	return a.set("staticSchema", value)
 }

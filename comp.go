@@ -3,8 +3,6 @@ package amisgo
 import (
 	"github.com/zrcoder/amisgo/comp"
 	icomp "github.com/zrcoder/amisgo/internal/comp"
-
-	"github.com/zrcoder/amisgo/model"
 )
 
 func (a *App) Action() comp.Action                           { return icomp.NewAction(a.mux) }
@@ -186,68 +184,68 @@ func (a *App) ThemeButtonGroupSelect() comp.Select {
 	return icomp.NewButtonGroupSelect().Themes(a.mux, a.Conf.Templ)
 }
 
-func (a *App) AnchorNavSection() model.AnchorNavSection     { return model.NewAnchorNavSection() }
-func (a *App) AutoFillHeight() model.AutoFillHeight         { return model.NewAutoFillHeight() }
-func (a *App) AutoGenerateFilter() model.AutoGenerateFilter { return model.NewAutoGenerateFilter() }
-func (a *App) Badge() model.Badge                           { return model.NewBadge() }
-func (a *App) ComboCondition() model.ComboCondition         { return model.NewComboCondition() }
-func (a *App) Component() model.Component                   { return model.NewComponent() }
-func (a *App) Expandable() model.Expandable                 { return model.NewExpandable() }
-func (a *App) FeedbackDialog() model.FeedbackDialog         { return model.NewFeedbackDialog() }
-func (a *App) GridColumn() model.GridColumn                 { return model.NewGridColumn() }
-func (a *App) HBoxColumn() model.HBoxColumn                 { return model.NewHBoxColumn() }
-func (a *App) IconChecked() model.IconChecked               { return model.NewIconChecked() }
-func (a *App) IconItem() model.IconItem                     { return model.NewIconItem() }
-func (a *App) ImageToolbarAction() model.ImageToolbarAction { return model.NewImageToolbarAction() }
-func (a *App) NavItem() model.NavItem                       { return model.NewNavItem() }
-func (a *App) NavOverflow() model.NavOverflow               { return model.NewNavOverflow() }
-func (a *App) NewTimelineItem() model.TimelineItem          { return model.NewTimelineItem() }
-func (a *App) PortletTab() model.PortletTab                 { return model.NewPortletTab() }
-func (a *App) QRCodeImageSettings() model.QRCodeImageSettings {
-	return model.NewQRCodeImageSettings()
+func (a *App) AnchorNavSection() comp.AnchorNavSection     { return icomp.NewAnchorNavSection() }
+func (a *App) AutoFillHeight() comp.AutoFillHeight         { return icomp.NewAutoFillHeight() }
+func (a *App) AutoGenerateFilter() comp.AutoGenerateFilter { return icomp.NewAutoGenerateFilter() }
+func (a *App) Badge() comp.Badge                           { return icomp.NewBadge() }
+func (a *App) ComboCondition() comp.ComboCondition         { return icomp.NewComboCondition() }
+func (a *App) Component() comp.Component                   { return icomp.NewComponent() }
+func (a *App) Expandable() comp.Expandable                 { return icomp.NewExpandable() }
+func (a *App) FeedbackDialog() comp.FeedbackDialog         { return icomp.NewFeedbackDialog() }
+func (a *App) GridColumn() comp.GridColumn                 { return icomp.NewGridColumn() }
+func (a *App) HBoxColumn() comp.HBoxColumn                 { return icomp.NewHBoxColumn() }
+func (a *App) IconChecked() comp.IconChecked               { return icomp.NewIconChecked() }
+func (a *App) IconItem() comp.IconItem                     { return icomp.NewIconItem() }
+func (a *App) ImageToolbarAction() comp.ImageToolbarAction { return icomp.NewImageToolbarAction() }
+func (a *App) NavItem() comp.NavItem                       { return icomp.NewNavItem() }
+func (a *App) NavOverflow() comp.NavOverflow               { return icomp.NewNavOverflow() }
+func (a *App) NewTimelineItem() comp.TimelineItem          { return icomp.NewTimelineItem() }
+func (a *App) PortletTab() comp.PortletTab                 { return icomp.NewPortletTab() }
+func (a *App) QRCodeImageSettings() comp.QRCodeImageSettings {
+	return icomp.NewQRCodeImageSettings()
 }
-func (a *App) RowSelection() model.RowSelection { return model.NewRowSelection() }
-func (a *App) RowSelectionOptions() model.RowSelectionOptions {
-	return model.NewRowSelectionOptions()
+func (a *App) RowSelection() comp.RowSelection { return icomp.NewRowSelection() }
+func (a *App) RowSelectionOptions() comp.RowSelectionOptions {
+	return icomp.NewRowSelectionOptions()
 }
-func (a *App) SchemaApi() model.SchemaApi           { return model.NewSchemaApi() }
-func (a *App) SchemaCopyable() model.SchemaCopyable { return model.NewSchemaCopyable() }
-func (a *App) SchemaMessage() model.SchemaMessage   { return model.NewSchemaMessage() }
-func (a *App) SchemaPopOver() model.SchemaPopOver   { return model.NewSchemaPopOver() }
-func (a *App) State() model.State                   { return model.NewState() }
-func (a *App) Step() model.Step                     { return model.NewStep() }
-func (a *App) TableColumn() model.TableColumn       { return model.NewTableColumn() }
-func (a *App) Toast() model.Toast                   { return model.NewToast() }
-func (a *App) ToastItem() model.ToastItem           { return model.NewToastItem() }
-func (a *App) ChartConfig() model.ChartCfg          { return model.NewChartConfig() }
-func (a *App) ChartSeries() model.ChartSeri         { return model.NewChartSeries() }
-func (a *App) ChartAxis() model.ChartAxis           { return model.NewChartAxis() }
-func (a *App) NewListItem() model.ListItem          { return model.NewListItem() }
-func (a *App) Api() model.Api                       { return model.NewApi() }
-func (a *App) BreadcrumbItem() model.BreadcrumbItem { return model.NewBreadcrumbItem() }
-func (a *App) Column() model.Column                 { return model.NewColumn() }
-func (a *App) Event() model.Event                   { return model.NewEvent() }
-func (a *App) EventActions(actions ...any) model.EventActions {
-	return model.NewEventActions(actions...)
+func (a *App) SchemaApi() comp.SchemaApi           { return icomp.NewSchemaApi() }
+func (a *App) SchemaCopyable() comp.SchemaCopyable { return icomp.NewSchemaCopyable() }
+func (a *App) SchemaMessage() comp.SchemaMessage   { return icomp.NewSchemaMessage() }
+func (a *App) SchemaPopOver() comp.SchemaPopOver   { return icomp.NewSchemaPopOver() }
+func (a *App) State() comp.State                   { return icomp.NewState() }
+func (a *App) Step() comp.Step                     { return icomp.NewStep() }
+func (a *App) TableColumn() comp.TableColumn       { return icomp.NewTableColumn() }
+func (a *App) Toast() comp.Toast                   { return icomp.NewToast() }
+func (a *App) ToastItem() comp.ToastItem           { return icomp.NewToastItem() }
+func (a *App) ChartConfig() comp.ChartCfg          { return icomp.NewChartConfig() }
+func (a *App) ChartSeries() comp.ChartSeri         { return icomp.NewChartSeries() }
+func (a *App) ChartAxis() comp.ChartAxis           { return icomp.NewChartAxis() }
+func (a *App) NewListItem() comp.ListItem          { return icomp.NewListItem() }
+func (a *App) Api() comp.Api                       { return icomp.NewApi() }
+func (a *App) BreadcrumbItem() comp.BreadcrumbItem { return icomp.NewBreadcrumbItem() }
+func (a *App) Column() comp.Column                 { return icomp.NewColumn() }
+func (a *App) Event() comp.Event                   { return icomp.NewEvent() }
+func (a *App) EventActions(actions ...any) icomp.EventActions {
+	return icomp.NewEventActions(actions...)
 }
-func (a *App) EventAction() model.EventAction      { return model.NewEventAction() }
-func (a *App) EventActionToast() model.EventAction { return model.NewEventActionToast() }
-func (a *App) EventActionDrawer(drawer ...any) model.EventAction {
-	return model.NewEventActionDrawer(drawer...)
+func (a *App) EventAction() comp.EventAction      { return icomp.NewEventAction() }
+func (a *App) EventActionToast() comp.EventAction { return icomp.NewEventActionToast() }
+func (a *App) EventActionDrawer(drawer ...any) icomp.EventAction {
+	return icomp.NewEventActionDrawer(drawer...)
 }
 
-func (a *App) EventActionDialog(dialog ...any) model.EventAction {
-	return model.NewEventActionDialog(dialog...)
+func (a *App) EventActionDialog(dialog ...any) icomp.EventAction {
+	return icomp.NewEventActionDialog(dialog...)
 }
-func (a *App) EventActionArgs() model.EventActionArgs { return model.NewEventActionArgs() }
-func (a *App) GridItem() model.GridItem               { return model.NewGridItem() }
-func (a *App) Horizontal() model.Horizontal           { return model.NewHorizontal() }
-func (a *App) ListBodyField() model.ListBodyField     { return model.NewListBodyField() }
-func (a *App) NavLink() model.NavLink                 { return model.NewNavLink() }
-func (a *App) Option() model.Option                   { return model.NewOption() }
-func (a *App) Options() model.Options                 { return model.NewOptions() }
-func (a *App) PageItem() model.PageItem               { return model.NewPageItem() }
-func (a *App) PropertyItem() model.PropertyItem       { return model.NewPropertyItem() }
-func (a *App) PullRefresh() model.PullRefresh         { return model.NewPullRefresh() }
-func (a *App) Rule() model.Rule                       { return model.NewRule() }
-func (a *App) Tab() model.Tab                         { return model.NewTab() }
+func (a *App) EventActionArgs() comp.EventActionArgs { return icomp.NewEventActionArgs() }
+func (a *App) GridItem() comp.GridItem               { return icomp.NewGridItem() }
+func (a *App) Horizontal() comp.Horizontal           { return icomp.NewHorizontal() }
+func (a *App) ListBodyField() comp.ListBodyField     { return icomp.NewListBodyField() }
+func (a *App) NavLink() comp.NavLink                 { return icomp.NewNavLink() }
+func (a *App) Option() comp.Option                   { return icomp.NewOption() }
+func (a *App) Options() comp.Options                 { return icomp.NewOptions() }
+func (a *App) PageItem() comp.PageItem               { return icomp.NewPageItem() }
+func (a *App) PropertyItem() comp.PropertyItem       { return icomp.NewPropertyItem() }
+func (a *App) PullRefresh() comp.PullRefresh         { return icomp.NewPullRefresh() }
+func (a *App) Rule() comp.Rule                       { return icomp.NewRule() }
+func (a *App) Tab() comp.Tab                         { return icomp.NewTab() }

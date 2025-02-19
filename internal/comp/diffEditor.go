@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-// DiffEditor represents the editor schema
-type DiffEditor model.Schema
+// DiffEditor represents the editor schema.Schema
+type DiffEditor schema.Schema
 
 func NewDiffEditor() DiffEditor {
 	return DiffEditor{"type": "diff-editor"}
@@ -155,7 +155,7 @@ func (d DiffEditor) OnEvent(value any) DiffEditor {
 }
 
 // Options sets the editor options
-func (d DiffEditor) Options(value model.Schema) DiffEditor {
+func (d DiffEditor) Options(value schema.Schema) DiffEditor {
 	return d.set("options", value)
 }
 
@@ -229,7 +229,7 @@ func (d DiffEditor) StaticPlaceholder(value string) DiffEditor {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema
+// StaticSchema sets the static display schema.Schema
 func (d DiffEditor) StaticSchema(value string) DiffEditor {
 	return d.set("staticSchema", value)
 }

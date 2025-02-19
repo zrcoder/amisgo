@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // SwitchControl documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/switch
-type SwitchControl model.Schema
+type SwitchControl schema.Schema
 
 func NewSwitch() SwitchControl {
 	return SwitchControl{"type": "switch"}
@@ -239,7 +239,7 @@ func (s SwitchControl) StaticPlaceholder(value string) SwitchControl {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (s SwitchControl) StaticSchema(value string) SwitchControl {
 	return s.set("staticSchema", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Grid represents a Grid layout renderer
-type Grid model.Schema
+type Grid schema.Schema
 
 func NewGrid() Grid {
 	return Grid{"type": "grid"}
@@ -99,7 +99,7 @@ func (g Grid) StaticPlaceholder(value string) Grid {
 	return g.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display mode
+// StaticSchema sets the schema.Schema for static display mode
 func (g Grid) StaticSchema(value string) Grid {
 	return g.set("staticSchema", value)
 }

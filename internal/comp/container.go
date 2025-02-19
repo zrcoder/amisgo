@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Container represents a Container renderer with multiple configuration options
-type Container model.Schema
+type Container schema.Schema
 
 func NewContainer() Container {
 	return Container{"type": "container"}
@@ -104,7 +104,7 @@ func (c Container) StaticPlaceholder(value string) Container {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c Container) StaticSchema(value string) Container {
 	return c.set("staticSchema", value)
 }

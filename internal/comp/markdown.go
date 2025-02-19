@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Markdown rendering
-type Markdown model.Schema
+type Markdown schema.Schema
 
 func NewMarkdown() Markdown {
 	return Markdown{"type": "markdown"}
@@ -27,7 +27,7 @@ func (m Markdown) Name(value string) Markdown {
 }
 
 // Options sets the Markdown options
-func (m Markdown) Options(value model.Schema) Markdown {
+func (m Markdown) Options(value schema.Schema) Markdown {
 	m.set("options", value)
 	return m
 }

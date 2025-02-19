@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Textarea represents a multi-line text input field. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/Textarea
-type Textarea model.Schema
+type Textarea schema.Schema
 
 func NewTextarea() Textarea {
 	return Textarea{"type": "textarea"}
@@ -250,7 +250,7 @@ func (t Textarea) StaticPlaceholder(value string) Textarea {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (t Textarea) StaticSchema(value string) Textarea {
 	return t.set("staticSchema", value)
 }

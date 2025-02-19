@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-// InputSubForm represents a sub-form schema
-type InputSubForm model.Schema
+// InputSubForm represents a sub-form schema.Schema
+type InputSubForm schema.Schema
 
 func NewInputSubForm() InputSubForm {
 	return InputSubForm{"type": "input-sub-form"}
@@ -294,7 +294,7 @@ func (s InputSubForm) StaticPlaceholder(value string) InputSubForm {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (s InputSubForm) StaticSchema(value string) InputSubForm {
 	return s.set("staticSchema", value)
 }

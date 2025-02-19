@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // AnchorNav represents a navigation component with anchor points for document sections
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
-type AnchorNav model.Schema
+type AnchorNav schema.Schema
 
 func NewAnchorNav() AnchorNav {
 	return AnchorNav{"type": "anchor-nav"}
@@ -118,7 +118,7 @@ func (a AnchorNav) StaticPlaceholder(value string) AnchorNav {
 	return a.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (a AnchorNav) StaticSchema(value string) AnchorNav {
 	return a.set("staticSchema", value)
 }

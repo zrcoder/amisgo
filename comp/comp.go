@@ -5,8 +5,7 @@ import (
 )
 
 type (
-	Action = comp.Action
-
+	Action              = comp.Action
 	Alert               = comp.Alert
 	AnchorNav           = comp.AnchorNav
 	App                 = comp.App
@@ -180,4 +179,63 @@ type (
 	Wrapper             = comp.Wrapper
 	Number              = comp.Number
 	Shape               = comp.Shape
+
+	AnchorNavSection    = comp.AnchorNavSection
+	AutoFillHeight      = comp.AutoFillHeight
+	AutoGenerateFilter  = comp.AutoGenerateFilter
+	Badge               = comp.Badge
+	ComboCondition      = comp.ComboCondition
+	Component           = comp.Component
+	Expandable          = comp.Expandable
+	FeedbackDialog      = comp.FeedbackDialog
+	GridColumn          = comp.GridColumn
+	HBoxColumn          = comp.HBoxColumn
+	IconChecked         = comp.IconChecked
+	IconItem            = comp.IconItem
+	ImageToolbarAction  = comp.ImageToolbarAction
+	NavItem             = comp.NavItem
+	NavOverflow         = comp.NavOverflow
+	NewTimelineItem     = comp.TimelineItem
+	PortletTab          = comp.PortletTab
+	QRCodeImageSettings = comp.QRCodeImageSettings
+	RowSelection        = comp.RowSelection
+	RowSelectionOptions = comp.RowSelectionOptions
+	SchemaApi           = comp.SchemaApi
+	SchemaCopyable      = comp.SchemaCopyable
+	SchemaMessage       = comp.SchemaMessage
+	SchemaPopOver       = comp.SchemaPopOver
+	State               = comp.State
+	Step                = comp.Step
+	TableColumn         = comp.TableColumn
+	Toast               = comp.Toast
+	ToastItem           = comp.ToastItem
+	ChartConfig         = comp.ChartCfg
+	ChartSeries         = comp.ChartSeri
+	ChartAxis           = comp.ChartAxis
+	NewListItem         = comp.ListItem
+	Api                 = comp.Api
+	BreadcrumbItem      = comp.BreadcrumbItem
+	Column              = comp.Column
+	Event               = comp.Event
+	EventActions        = comp.EventActions
+	EventAction         = comp.EventAction
+	EventActionToast    = comp.EventAction
+	EventActionDrawer   = comp.EventAction
+	EventActionDialog   = comp.EventAction
+	EventActionArgs     = comp.EventActionArgs
+	GridItem            = comp.GridItem
+	Horizontal          = comp.Horizontal
+	ListBodyField       = comp.ListBodyField
+	NavLink             = comp.NavLink
+	Option              = comp.Option
+	Options             = comp.Options
+	PageItem            = comp.PageItem
+	PropertyItem        = comp.PropertyItem
+	PullRefresh         = comp.PullRefresh
+	Rule                = comp.Rule
+	Tab                 = comp.Tab
+	ChartCfg            = comp.ChartCfg
+	ChartSeri           = comp.ChartSeri
+	ListItem            = comp.ListItem
+	TimelineItem        = comp.TimelineItem
 )

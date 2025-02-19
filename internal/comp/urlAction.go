@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // UrlAction represents a URL action button component
-type UrlAction model.Schema
+type UrlAction schema.Schema
 
 func NewUrlAction() UrlAction {
 	return UrlAction{"type": "button", "actionType": "url"}
@@ -224,7 +224,7 @@ func (ua UrlAction) StaticPlaceholder(value string) UrlAction {
 	return ua.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (ua UrlAction) StaticSchema(value string) UrlAction {
 	return ua.set("staticSchema", value)
 }

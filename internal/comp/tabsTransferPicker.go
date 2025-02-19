@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-// TabsTransferPicker represents the schema for the tabs transfer picker component.
-type TabsTransferPicker model.Schema
+// TabsTransferPicker represents the schema.Schema for the tabs transfer picker component.
+type TabsTransferPicker schema.Schema
 
 func NewTabsTransferPicker() TabsTransferPicker {
 	return TabsTransferPicker{"type": "tabs-transfer-picker"}

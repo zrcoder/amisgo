@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // SearchBox represents a search box configuration.
-type SearchBox model.Schema
+type SearchBox schema.Schema
 
 func NewSearchBox() SearchBox {
 	return SearchBox{"type": "search-box"}
@@ -124,7 +124,7 @@ func (s SearchBox) StaticPlaceholder(value string) SearchBox {
 	return s.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (s SearchBox) StaticSchema(value string) SearchBox {
 	return s.set("staticSchema", value)
 }

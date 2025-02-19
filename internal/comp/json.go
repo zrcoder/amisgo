@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Json JSON data display component
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Json
-type Json model.Schema
+type Json schema.Schema
 
 func NewJson() Json {
 	return Json{"type": "json"}
@@ -153,7 +153,7 @@ func (j Json) StaticPlaceholder(value string) Json {
 	return j
 }
 
-// StaticSchema sets the static display schema
+// StaticSchema sets the static display schema.Schema
 func (j Json) StaticSchema(value string) Json {
 	j.set("staticSchema", value)
 	return j

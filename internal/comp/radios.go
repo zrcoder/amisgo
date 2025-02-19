@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Radios single selection.
 // Doc: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/Radios
-type Radios model.Schema
+type Radios schema.Schema
 
 func NewRadios() Radios {
 	return Radios{"type": "radios"}

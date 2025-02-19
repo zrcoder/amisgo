@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Progress
-type Progress model.Schema
+type Progress schema.Schema
 
 func NewProgress() Progress {
 	return Progress{"type": "progress", "mode": "line"}
@@ -134,7 +134,7 @@ func (p Progress) StaticPlaceholder(value string) Progress {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema
+// StaticSchema sets the static display schema.Schema
 func (p Progress) StaticSchema(value string) Progress {
 	return p.set("staticSchema", value)
 }

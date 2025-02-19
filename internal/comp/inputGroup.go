@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-// InputGroup represents the schema for an input group component.
-type InputGroup model.Schema
+// InputGroup represents the schema.Schema for an input group component.
+type InputGroup schema.Schema
 
 func NewInputGroup() InputGroup {
 	return InputGroup{"type": "input-group"}
@@ -220,7 +220,7 @@ func (i InputGroup) StaticPlaceholder(value string) InputGroup {
 	return i.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display.
+// StaticSchema sets the schema.Schema for static display.
 func (i InputGroup) StaticSchema(value string) InputGroup {
 	return i.set("staticSchema", value)
 }

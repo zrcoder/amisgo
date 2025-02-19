@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // ButtonGroup represents a button group renderer
-type ButtonGroup model.Schema
+type ButtonGroup schema.Schema
 
 func NewButtonGroup() ButtonGroup {
 	return ButtonGroup{"type": "button-group"}
@@ -116,7 +116,7 @@ func (bg ButtonGroup) StaticPlaceholder(value string) ButtonGroup {
 	return bg.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (bg ButtonGroup) StaticSchema(value string) ButtonGroup {
 	return bg.set("staticSchema", value)
 }

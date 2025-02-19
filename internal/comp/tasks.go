@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Tasks renderer, documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Tasks
-type Tasks model.Schema
+type Tasks schema.Schema
 
 func NewTasks() Tasks {
 	return Tasks{"type": "tasks"}
@@ -175,7 +175,7 @@ func (t Tasks) StaticPlaceholder(value string) Tasks {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (t Tasks) StaticSchema(value string) Tasks {
 	return t.set("staticSchema", value)
 }

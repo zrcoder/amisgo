@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // alert represents the alert renderer. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/alert
 
-type Alert model.Schema
+type Alert schema.Schema
 
 func NewAlert() Alert {
 	return Alert{"type": "alert"}
@@ -125,7 +125,7 @@ func (a Alert) StaticPlaceholder(value string) Alert {
 	return a.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (a Alert) StaticSchema(value string) Alert {
 	return a.set("staticSchema", value)
 }

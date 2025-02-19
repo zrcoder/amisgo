@@ -1,8 +1,8 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-type InputKV model.Schema
+type InputKV schema.Schema
 
 func NewInputKV() InputKV {
 	return InputKV{"type": "input-kv"}

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Link represents a Link display component.
-type Link model.Schema
+type Link schema.Schema
 
 func NewLink() Link {
 	return Link{"type": "link"}
@@ -114,7 +114,7 @@ func (l Link) StaticPlaceholder(value string) Link {
 	return l.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema.
+// StaticSchema sets the static display schema.Schema.
 func (l Link) StaticSchema(value string) Link {
 	return l.set("staticSchema", value)
 }

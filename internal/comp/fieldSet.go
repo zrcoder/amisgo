@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // FieldSet represents a collection of form items
-type FieldSet model.Schema
+type FieldSet schema.Schema
 
 func NewFieldSet() FieldSet {
 	return FieldSet{"type": "fieldset", "titlePosition": "top"}

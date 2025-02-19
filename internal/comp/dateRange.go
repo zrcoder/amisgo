@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // DateRange represents a date range renderer
-type DateRange model.Schema
+type DateRange schema.Schema
 
 func NewDateRange() DateRange {
 	return DateRange{"type": "date-range"}
@@ -104,7 +104,7 @@ func (d DateRange) StaticPlaceholder(value string) DateRange {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (d DateRange) StaticSchema(value string) DateRange {
 	return d.set("staticSchema", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // List represents a List display component.
-type List model.Schema
+type List schema.Schema
 
 func NewList() List {
 	return List{"type": "list"}
@@ -170,7 +170,7 @@ func (lr List) StaticPlaceholder(value string) List {
 	return lr.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display mode.
+// StaticSchema sets the schema.Schema for static display mode.
 func (lr List) StaticSchema(value string) List {
 	return lr.set("staticSchema", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputTime represents a time selection component. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/time
-type InputTime model.Schema
+type InputTime schema.Schema
 
 func NewInputTime() InputTime {
 	return InputTime{"type": "input-time"}
@@ -249,7 +249,7 @@ func (tc InputTime) StaticPlaceholder(value string) InputTime {
 	return tc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (tc InputTime) StaticSchema(value string) InputTime {
 	return tc.set("staticSchema", value)
 }

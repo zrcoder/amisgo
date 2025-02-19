@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Nav represents a navigation renderer
-type Nav model.Schema
+type Nav schema.Schema
 
 func NewNav() Nav {
 	return Nav{"type": "nav"}
@@ -200,7 +200,7 @@ func (n Nav) StaticPlaceholder(value string) Nav {
 	return n.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema
+// StaticSchema sets the static display schema.Schema
 func (n Nav) StaticSchema(value string) Nav {
 	return n.set("staticSchema", value)
 }

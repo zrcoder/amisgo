@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // DialogAction represents a dialog action button configuration.
-type DialogAction model.Schema
+type DialogAction schema.Schema
 
 func NewDialogAction() DialogAction {
 	return DialogAction{"type": "button", "actionType": "dialog"}
@@ -239,7 +239,7 @@ func (da DialogAction) StaticPlaceholder(value string) DialogAction {
 	return da.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (da DialogAction) StaticSchema(value string) DialogAction {
 	return da.set("staticSchema", value)
 }

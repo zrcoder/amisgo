@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // ButtonToolbar represents a button toolbar control renderer
-type ButtonToolbar model.Schema
+type ButtonToolbar schema.Schema
 
 func NewButtonToolbar() ButtonToolbar {
 	return ButtonToolbar{"type": "button-toolbar"}
@@ -95,7 +95,7 @@ func (bt ButtonToolbar) StaticPlaceholder(value string) ButtonToolbar {
 	return bt.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (bt ButtonToolbar) StaticSchema(value string) ButtonToolbar {
 	return bt.set("staticSchema", value)
 }

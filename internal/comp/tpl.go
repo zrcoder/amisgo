@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Tpl renderer
-type Tpl model.Schema
+type Tpl schema.Schema
 
 func NewTpl() Tpl {
 	return Tpl{"type": "tpl"}
@@ -108,7 +108,7 @@ func (t Tpl) StaticPlaceholder(value string) Tpl {
 	return t.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (t Tpl) StaticSchema(value string) Tpl {
 	return t.set("staticSchema", value)
 }

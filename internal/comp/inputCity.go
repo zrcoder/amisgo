@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputCity represents a city selection component.
-type InputCity model.Schema
+type InputCity schema.Schema
 
 func NewInputCity() InputCity {
 	return InputCity{"type": "input-city"}
@@ -259,7 +259,7 @@ func (i InputCity) StaticPlaceholder(value string) InputCity {
 	return i.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (i InputCity) StaticSchema(value string) InputCity {
 	return i.set("staticSchema", value)
 }

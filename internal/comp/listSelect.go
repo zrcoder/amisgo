@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // ListSelect represents a list control component
-type ListSelect model.Schema
+type ListSelect schema.Schema
 
 func NewListSelect() ListSelect {
 	return ListSelect{"type": "list-select"}
@@ -15,7 +15,7 @@ func (lc ListSelect) set(key string, value any) ListSelect {
 	return lc
 }
 
-// ActiveItemSchema sets the active item schema
+// ActiveItemSchema sets the active item schema.Schema
 func (lc ListSelect) ActiveItemSchema(value string) ListSelect {
 	return lc.set("activeItemSchema", value)
 }

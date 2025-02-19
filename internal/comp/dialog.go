@@ -1,8 +1,8 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-type Dialog model.Schema
+type Dialog schema.Schema
 
 func NewDialog() Dialog {
 	return Dialog{"type": "dialog"}
@@ -183,7 +183,7 @@ func (d Dialog) StaticPlaceholder(value string) Dialog {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema of the static dialog.
+// StaticSchema sets the schema.Schema of the static dialog.
 func (d Dialog) StaticSchema(value string) Dialog {
 	return d.set("staticSchema", value)
 }

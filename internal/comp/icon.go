@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Icon represents an Icon renderer
-type Icon model.Schema
+type Icon schema.Schema
 
 func NewIcon() Icon {
 	return Icon{"type": "icon"}
@@ -99,7 +99,7 @@ func (i Icon) StaticPlaceholder(value string) Icon {
 	return i.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (i Icon) StaticSchema(value string) Icon {
 	return i.set("staticSchema", value)
 }

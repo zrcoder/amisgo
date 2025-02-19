@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Date represents a Date component.
-type Date model.Schema
+type Date schema.Schema
 
 func NewDate() Date {
 	return Date{"type": "date"}
@@ -109,7 +109,7 @@ func (d Date) StaticPlaceholder(value string) Date {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for statically displayed form items.
+// StaticSchema sets the schema.Schema for statically displayed form items.
 func (d Date) StaticSchema(value string) Date {
 	return d.set("staticSchema", value)
 }

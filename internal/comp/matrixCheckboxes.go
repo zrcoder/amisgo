@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // MatrixCheckboxes represents a checkbox matrix control.
-type MatrixCheckboxes model.Schema
+type MatrixCheckboxes schema.Schema
 
 func NewMatrixCheckboxes() MatrixCheckboxes {
 	return MatrixCheckboxes{"type": "matrix-checkboxes"}
@@ -290,7 +290,7 @@ func (mc MatrixCheckboxes) StaticPlaceholder(value string) MatrixCheckboxes {
 	return mc
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (mc MatrixCheckboxes) StaticSchema(value string) MatrixCheckboxes {
 	mc.set("staticSchema", value)
 	return mc

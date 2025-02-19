@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputQuarter represents a quarter selection control
-type InputQuarter model.Schema
+type InputQuarter schema.Schema
 
 func NewInputQuarter() InputQuarter {
 	return InputQuarter{"type": "input-quarter"}

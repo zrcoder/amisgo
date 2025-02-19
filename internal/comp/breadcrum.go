@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Breadcrumb represents a Breadcrumb navigation component
-type Breadcrumb model.Schema
+type Breadcrumb schema.Schema
 
 func NewBreadcrumb() Breadcrumb {
 	return Breadcrumb{"type": "breadcrumb"}

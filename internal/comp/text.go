@@ -1,8 +1,8 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-type Text model.Schema
+type Text schema.Schema
 
 func NewText() Text {
 	return Text{"type": "text"}

@@ -5,12 +5,12 @@ import (
 
 	"github.com/zrcoder/amisgo/internal/servemux"
 	"github.com/zrcoder/amisgo/internal/template"
-	"github.com/zrcoder/amisgo/model"
+	"github.com/zrcoder/amisgo/schema"
 )
 
 // Select represents a select control configuration.
 // Document: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/select
-type Select model.Schema
+type Select schema.Schema
 
 func NewSelect() Select {
 	return Select{"type": "select"}
@@ -34,19 +34,16 @@ func (s Select) Themes(mux *http.ServeMux, templ *template.Templ) Select {
 		return nil
 	}, theme)
 	return s.Name(theme).Source(servemux.ServeData(mux, func() (any, error) {
-		return model.SuccessResponse(" ", model.Schema{
+		return schema.SuccessResponse(" ", schema.Schema{
 			"value":   templ.Theme.Value,
 			"options": themes,
 		}), nil
 	})).OnEvent(
-		model.Schema{
-			"change": model.Schema{
-				"actions": []any{
-					model.NewEventAction().ActionType("ajax").Api(url + "?" + theme + "=${event.data.value}"),
-					model.NewEventAction().ActionType("refresh"),
-				},
-			},
-		},
+		NewEvent().Change(
+			NewEventActions(NewEventAction().ActionType("ajax").Api(url+"?"+theme+"=${event.data.value}"),
+				NewEventAction().ActionType("refresh"),
+			),
+		),
 	)
 }
 

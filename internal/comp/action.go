@@ -4,11 +4,12 @@ import (
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/servemux"
-	"github.com/zrcoder/amisgo/model"
+
+	"github.com/zrcoder/amisgo/schema"
 )
 
 // Action represents an Action button. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Action
-type Action model.Schema
+type Action schema.Schema
 
 func NewAction(mux *http.ServeMux) Action {
 	return Action{"type": "action", servemux.Key: mux}
@@ -39,34 +40,33 @@ func (a Action) Drawer(value any) Action {
 }
 
 // Toast configures the toast that appears when the button is clicked.
-func (a Action) Toast(value model.Toast) Action {
+func (a Action) Toast(value any) Action {
 	return a.set("toast", value)
 }
 
 // Transform transforms the src component value with the provided function and renders the result to the dst component.
 func (a Action) Transform(transfor func(input any) (any, error), src, dst string) Action {
-	return a.TransformMultiple(func(d model.Schema) (model.Schema, error) {
+	return a.TransformMultiple(func(d schema.Schema) (schema.Schema, error) {
 		output, err := transfor(d[src])
 		if err != nil {
 			return nil, err
 		}
-		return model.Schema{dst: output}, nil
+		return schema.Schema{dst: output}, nil
 	}, src)
 }
 
 // TransformMultiple transforms the src components' values with the provided function and renders the result to multiple destinations.
-func (a Action) TransformMultiple(transfor func(model.Schema) (model.Schema, error), src ...string) Action {
+func (a Action) TransformMultiple(transfor func(schema.Schema) (schema.Schema, error), src ...string) Action {
 	route, data := servemux.TransformMultiple(a.mux(), src, transfor)
 	return a.ActionType("ajax").Api(
-		model.Schema{
-			"url":  route,
-			"data": data,
-			"__amisgo_resp": model.Schema{
-				"200": model.Schema{
-					"then": model.NewEventAction().ActionType("setValue").Args(model.Schema{"value": "${__amisgo__resp}"}),
+		NewApi().Url(route).Data(data).Set(
+			"__amisgo_resp",
+			schema.Schema{
+				"200": schema.Schema{
+					"then": NewEventAction().ActionType("setValue").Args(NewEventActionArgs().Value("${__amisgo__resp}")),
 				},
 			},
-		},
+		),
 	)
 }
 
@@ -326,7 +326,7 @@ func (v Action) StaticPlaceholder(value string) Action {
 	return v.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for the static display mode.
+// StaticSchema sets the schema.Schema for the static display mode.
 func (v Action) StaticSchema(value string) Action {
 	return v.set("staticSchema", value)
 }

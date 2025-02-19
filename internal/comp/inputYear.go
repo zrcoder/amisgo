@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputYear represents a year selection component.
-type InputYear model.Schema
+type InputYear schema.Schema
 
 func NewInputYear() InputYear {
 	return InputYear{"type": "input-year"}
@@ -255,7 +255,7 @@ func (yc InputYear) StaticPlaceholder(value string) InputYear {
 	return yc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (yc InputYear) StaticSchema(value string) InputYear {
 	return yc.set("staticSchema", value)
 }

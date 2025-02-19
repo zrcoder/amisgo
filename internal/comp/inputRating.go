@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputRating documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/rating
-type InputRating model.Schema
+type InputRating schema.Schema
 
 func NewInputRating() InputRating {
 	return InputRating{"type": "input-rating"}
@@ -249,7 +249,7 @@ func (rc InputRating) StaticPlaceholder(value string) InputRating {
 	return rc.set("staticPlaceholder", value)
 }
 
-// StaticSchema static schema
+// StaticSchema static schema.Schema
 func (rc InputRating) StaticSchema(value string) InputRating {
 	return rc.set("staticSchema", value)
 }

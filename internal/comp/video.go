@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Video Video player component
-type Video model.Schema
+type Video schema.Schema
 
 func NewVideo() Video {
 	return Video{"type": "video"}
@@ -159,7 +159,7 @@ func (v Video) StaticPlaceholder(value string) Video {
 	return v.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (v Video) StaticSchema(value string) Video {
 	return v.set("staticSchema", value)
 }

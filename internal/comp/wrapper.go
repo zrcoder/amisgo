@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Wrapper represents a container renderer
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/Wrapper
-type Wrapper model.Schema
+type Wrapper schema.Schema
 
 func NewWrapper() Wrapper {
 	return Wrapper{"type": "wrapper"}
@@ -95,7 +95,7 @@ func (w Wrapper) StaticPlaceholder(value string) Wrapper {
 	return w.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (w Wrapper) StaticSchema(value string) Wrapper {
 	return w.set("staticSchema", value)
 }

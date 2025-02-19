@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Mapping represents a display component
-type Mapping model.Schema
+type Mapping schema.Schema
 
 func NewMapping() Mapping {
 	return Mapping{"type": "map"}
@@ -134,7 +134,7 @@ func (m Mapping) StaticPlaceholder(value string) Mapping {
 	return m
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (m Mapping) StaticSchema(value string) Mapping {
 	m.set("staticSchema", value)
 	return m

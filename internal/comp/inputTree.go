@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputTree represents a dropdown selection box. Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tree
-type InputTree model.Schema
+type InputTree schema.Schema
 
 func NewInputTree() InputTree {
 	return InputTree{"type": "input-tree"}
@@ -390,7 +390,7 @@ func (tc InputTree) StaticPlaceholder(value string) InputTree {
 	return tc.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema.
+// StaticSchema sets the static display schema.Schema.
 func (tc InputTree) StaticSchema(value string) InputTree {
 	return tc.set("staticSchema", value)
 }

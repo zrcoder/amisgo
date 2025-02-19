@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // ChainedSelect represents a chained select form component that allows hierarchical or cascading selections
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/chained-select
-type ChainedSelect model.Schema
+type ChainedSelect schema.Schema
 
 func NewChainedSelect() ChainedSelect {
 	return ChainedSelect{"type": "chained-select"}
@@ -340,7 +340,7 @@ func (c ChainedSelect) StaticPlaceholder(value string) ChainedSelect {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c ChainedSelect) StaticSchema(value string) ChainedSelect {
 	return c.set("staticSchema", value)
 }

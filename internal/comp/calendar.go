@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Calendar represents a Calendar component renderer
-type Calendar model.Schema
+type Calendar schema.Schema
 
 func NewCalendar() Calendar {
 	return Calendar{"type": "calendar"}
@@ -104,7 +104,7 @@ func (c Calendar) StaticPlaceholder(value string) Calendar {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c Calendar) StaticSchema(value string) Calendar {
 	return c.set("staticSchema", value)
 }

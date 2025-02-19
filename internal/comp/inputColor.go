@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // InputColor represents a color picker input.
-type InputColor model.Schema
+type InputColor schema.Schema
 
 func NewInputColor() InputColor {
 	return InputColor{"type": "input-color"}
@@ -244,7 +244,7 @@ func (i InputColor) StaticPlaceholder(value string) InputColor {
 	return i.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (i InputColor) StaticSchema(value string) InputColor {
 	return i.set("staticSchema", value)
 }

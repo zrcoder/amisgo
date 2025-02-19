@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Plain is a Plain text renderer
-type Plain model.Schema
+type Plain schema.Schema
 
 func NewPlain() Plain {
 	return Plain{"type": "plain"}
@@ -94,7 +94,7 @@ func (p Plain) StaticPlaceholder(value string) Plain {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema
+// StaticSchema sets the static schema.Schema
 func (p Plain) StaticSchema(value string) Plain {
 	return p.set("staticSchema", value)
 }

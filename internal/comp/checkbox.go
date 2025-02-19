@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Checkbox represents a Checkbox form component for boolean selections
-type Checkbox model.Schema
+type Checkbox schema.Schema
 
 func NewCheckbox() Checkbox {
 	return Checkbox{"type": "checkbox"}
@@ -244,7 +244,7 @@ func (c Checkbox) StaticPlaceholder(value string) Checkbox {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c Checkbox) StaticSchema(value string) Checkbox {
 	return c.set("staticSchema", value)
 }

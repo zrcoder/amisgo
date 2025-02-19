@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Collapse represents a collapsible container component
-type Collapse model.Schema
+type Collapse schema.Schema
 
 func NewCollapse() Collapse {
 	return Collapse{"type": "collapse"}
@@ -154,7 +154,7 @@ func (c Collapse) StaticPlaceholder(value string) Collapse {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c Collapse) StaticSchema(value string) Collapse {
 	return c.set("staticSchema", value)
 }

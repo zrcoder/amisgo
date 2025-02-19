@@ -1,8 +1,8 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-type Shape model.Schema
+type Shape schema.Schema
 
 func NewShape() Shape {
 	return Shape{"type": "shape"}

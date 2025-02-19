@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Password represents the amis Password renderer
-type Password model.Schema
+type Password schema.Schema
 
 func NewPassword() Password {
 	return Password{"type": "password"}
@@ -90,7 +90,7 @@ func (p Password) StaticPlaceholder(value string) Password {
 	return p.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display mode
+// StaticSchema sets the schema.Schema for static display mode
 func (p Password) StaticSchema(value string) Password {
 	return p.set("staticSchema", value)
 }

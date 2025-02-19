@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Image represents an Image display component
-type Image model.Schema
+type Image schema.Schema
 
 func NewImage() Image {
 	return Image{"type": "image"}
@@ -174,7 +174,7 @@ func (i Image) StaticPlaceholder(value string) Image {
 	return i.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (i Image) StaticSchema(value string) Image {
 	return i.set("staticSchema", value)
 }

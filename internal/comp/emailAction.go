@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // EmailAction represents an email action button
-type EmailAction model.Schema
+type EmailAction schema.Schema
 
 // NewEmailAction creates a new NewEmailAction instance with default type and actionType
 func NewEmailAction() EmailAction {
@@ -225,7 +225,7 @@ func (ea EmailAction) StaticPlaceholder(value string) EmailAction {
 	return ea.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (ea EmailAction) StaticSchema(value string) EmailAction {
 	return ea.set("staticSchema", value)
 }

@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Carousel represents a Carousel component renderer
-type Carousel model.Schema
+type Carousel schema.Schema
 
 func NewCarousel() Carousel {
 	return Carousel{"type": "carousel"}
@@ -94,7 +94,7 @@ func (c Carousel) Interval(value string) Carousel {
 	return c.set("interval", value)
 }
 
-// ItemSchema defines the schema for individual carousel items
+// ItemSchema defines the schema.Schema for individual carousel items
 func (c Carousel) ItemSchema(value string) Carousel {
 	return c.set("itemSchema", value)
 }
@@ -154,7 +154,7 @@ func (c Carousel) StaticPlaceholder(value string) Carousel {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c Carousel) StaticSchema(value string) Carousel {
 	return c.set("staticSchema", value)
 }

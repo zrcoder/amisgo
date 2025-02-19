@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // Hidden represents a Hidden field component.
-type Hidden model.Schema
+type Hidden schema.Schema
 
 func NewHidden() Hidden {
 	return Hidden{"type": "hidden"}
@@ -214,7 +214,7 @@ func (h Hidden) StaticPlaceholder(value string) Hidden {
 	return h.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static schema.
+// StaticSchema sets the static schema.Schema.
 func (h Hidden) StaticSchema(value string) Hidden {
 	return h.set("staticSchema", value)
 }

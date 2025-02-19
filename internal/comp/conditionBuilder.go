@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // ConditionBuilder represents a condition combination control with multiple configuration options
-type ConditionBuilder model.Schema
+type ConditionBuilder schema.Schema
 
 func NewConditionBuilder() ConditionBuilder {
 	return ConditionBuilder{"type": "condition-builder"}
@@ -279,7 +279,7 @@ func (c ConditionBuilder) StaticPlaceholder(value string) ConditionBuilder {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c ConditionBuilder) StaticSchema(value string) ConditionBuilder {
 	return c.set("staticSchema", value)
 }

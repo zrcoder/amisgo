@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // CollapseGroup represents a group of collapsible panels with shared behavior
-type CollapseGroup model.Schema
+type CollapseGroup schema.Schema
 
 func NewCollapseGroup() CollapseGroup {
 	return CollapseGroup{"type": "collapse-group"}
@@ -114,7 +114,7 @@ func (c CollapseGroup) StaticPlaceholder(value string) CollapseGroup {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c CollapseGroup) StaticSchema(value string) CollapseGroup {
 	return c.set("staticSchema", value)
 }

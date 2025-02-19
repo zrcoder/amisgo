@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // LinkAction represents a link action component.
-type LinkAction model.Schema
+type LinkAction schema.Schema
 
 func NewLinkAction() LinkAction {
 	return LinkAction{"type": "button", "actionType": "link"}
@@ -255,7 +255,7 @@ func (la LinkAction) StaticPlaceholder(value string) LinkAction {
 	return la
 }
 
-// StaticSchema sets the schema for static display.
+// StaticSchema sets the schema.Schema for static display.
 func (la LinkAction) StaticSchema(value string) LinkAction {
 	la.set("staticSchema", value)
 	return la

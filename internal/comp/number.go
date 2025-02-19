@@ -1,8 +1,8 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-type Number model.Schema
+type Number schema.Schema
 
 func NewNumber() Number {
 	return Number{"type": "number"}

@@ -1,10 +1,10 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
-// JsonSchemaEditor JSON model.Schema Editor component
+// JsonSchemaEditor JSON schema.Schema Editor component
 // Documentation: https://aisuda.bce.baidu.com/amis/zh-CN/components/form/json-schema-editor
-type JsonSchemaEditor model.Schema
+type JsonSchemaEditor schema.Schema
 
 func NewJsonSchemaEditor() JsonSchemaEditor {
 	return JsonSchemaEditor{"type": "json-schema-editor"}
@@ -251,7 +251,7 @@ func (j JsonSchemaEditor) StaticPlaceholder(value string) JsonSchemaEditor {
 	return j.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the static display schema
+// StaticSchema sets the static display schema.Schema
 func (j JsonSchemaEditor) StaticSchema(value string) JsonSchemaEditor {
 	return j.set("staticSchema", value)
 }

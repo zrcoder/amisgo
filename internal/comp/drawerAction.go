@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // DrawerAction represents a button in a drawer.
-type DrawerAction model.Schema
+type DrawerAction schema.Schema
 
 // NewDrawerAction creates a new NewDrawerAction instance and sets the default type and actionType.
 func NewDrawerAction() DrawerAction {
@@ -245,7 +245,7 @@ func (d DrawerAction) StaticPlaceholder(value string) DrawerAction {
 	return d.set("staticPlaceholder", value)
 }
 
-// StaticSchema specifies the static schema of the button.
+// StaticSchema specifies the static schema.Schema of the button.
 func (d DrawerAction) StaticSchema(value string) DrawerAction {
 	return d.set("staticSchema", value)
 }

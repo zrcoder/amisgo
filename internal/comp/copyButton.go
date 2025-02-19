@@ -1,9 +1,9 @@
 package comp
 
-import "github.com/zrcoder/amisgo/model"
+import "github.com/zrcoder/amisgo/schema"
 
 // CopyButton represents a button with copy behavior
-type CopyButton model.Schema
+type CopyButton schema.Schema
 
 func NewCopyButton() CopyButton {
 	return CopyButton{"type": "button", "actionType": "copy"}
@@ -224,7 +224,7 @@ func (c CopyButton) StaticPlaceholder(value string) CopyButton {
 	return c.set("staticPlaceholder", value)
 }
 
-// StaticSchema sets the schema for static display
+// StaticSchema sets the schema.Schema for static display
 func (c CopyButton) StaticSchema(value string) CopyButton {
 	return c.set("staticSchema", value)
 }
