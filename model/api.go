@@ -57,7 +57,7 @@ func (b Api) Headers(value any) Api {
 }
 
 // Messages sets the message to be displayed
-func (b Api) Messages(value string) Api {
+func (b Api) Messages(value any) Api {
 	return b.set("messages", value)
 }
 
@@ -77,7 +77,7 @@ func (b Api) ReplaceData(value bool) Api {
 }
 
 // ResponseData maps the response data
-func (b Api) ResponseData(value string) Api {
+func (b Api) ResponseData(value any) Api {
 	return b.set("responseData", value)
 }
 

@@ -6,6 +6,18 @@ func NewEventAction() EventAction {
 	return EventAction{}
 }
 
+func NewEventActionToast() EventAction {
+	return NewEventAction().ActionType("toast")
+}
+
+func NewEventActionDrawer() EventAction {
+	return NewEventAction().ActionType("drawer")
+}
+
+func NewEventActionDialog() EventAction {
+	return NewEventAction().ActionType("dialog")
+}
+
 // set sets a field value
 func (la EventAction) set(key string, value any) EventAction {
 	la[key] = value
@@ -17,19 +29,28 @@ func (la EventAction) set(key string, value any) EventAction {
 // toast | ajax | dialog | closeDialog | drawer | closeDrawer | confirmDialog | alert
 // url | link | goBack | refresh | copy | print | email | setEventData | wait
 // setValue | reload | show | hidden | enabled | disabled | static | nonstatic
-// broadcast | loop | break | continue | switch | parallel | custom
+// broadcast | loop | break | continue | switch | parallel | validate | custom
 func (la EventAction) ActionType(value string) EventAction {
 	return la.set("actionType", value)
 }
 
-// Api sets the api when actionType is "ajax"
+func (ea EventAction) Children(value ...EventAction) EventAction {
+	return ea.set("children", value)
+}
+
+// Api sets the api when actionType is ajax
 func (ea EventAction) Api(value any) EventAction {
 	return ea.set("api", value)
 }
 
-// Drawer defines the drawer to pop up
+// Drawer defines the drawer when the actionType is drawer
 func (ea EventAction) Drawer(value any) EventAction {
 	return ea.set("drawer", value)
+}
+
+// Dialog defines the dialog when the actionType is dialog
+func (ea EventAction) Dialog(value any) EventAction {
+	return ea.set("dialog", value)
 }
 
 // Script sets a custom script when actionType is custom
@@ -38,7 +59,7 @@ func (ea EventAction) Script(value string) EventAction {
 }
 
 // Args sets the arguments
-func (la EventAction) Args(value Schema) EventAction {
+func (la EventAction) Args(value any) EventAction {
 	return la.set("args", value)
 }
 
@@ -96,6 +117,11 @@ func (la EventAction) IgnoreError(value bool) EventAction {
 // OutputVar sets the output variable
 func (la EventAction) OutputVar(value string) EventAction {
 	return la.set("outputVar", value)
+}
+
+// WaitForAction sets if wait the dialog/drawer action
+func (ea EventAction) WaitForAction(value bool) EventAction {
+	return ea.set("waitForAction", value)
 }
 
 // PreventDefault sets whether to prevent the default behavior as a boolean, expression, or ConditionBuilder
