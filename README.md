@@ -39,7 +39,3 @@ Explore our [documentation](https://amisgo.pages.dev) for in-depth tutorials and
 ## Examples
 
 Check out our [examples repository](https://github.com/zrcoder/amisgo-examples).
-
-## Project Status
-
-The API is not yet stable and is subject to change. However, the overall architecture and the core components are already in place. We are actively working on improving the stability. If you encounter any issues or have any feature requests, please don't hesitate to open an issue.
