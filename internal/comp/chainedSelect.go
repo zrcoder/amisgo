@@ -241,7 +241,7 @@ func (c ChainedSelect) Name(value string) ChainedSelect {
 }
 
 // OnEvent configures event-driven actions for the component
-func (c ChainedSelect) OnEvent(value any) ChainedSelect {
+func (c ChainedSelect) OnEvent(value Event) ChainedSelect {
 	return c.set("onEvent", value)
 }
 

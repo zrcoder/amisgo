@@ -56,7 +56,7 @@ func (p Password) MosaicText(value string) Password {
 }
 
 // OnEvent sets the event action configuration
-func (p Password) OnEvent(value any) Password {
+func (p Password) OnEvent(value Event) Password {
 	return p.set("onEvent", value)
 }
 

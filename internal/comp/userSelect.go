@@ -240,7 +240,7 @@ func (usc UserSelect) Name(value string) UserSelect {
 }
 
 // OnEvent sets the event actions.
-func (usc UserSelect) OnEvent(value any) UserSelect {
+func (usc UserSelect) OnEvent(value Event) UserSelect {
 	return usc.set("onEvent", value)
 }
 

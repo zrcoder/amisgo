@@ -15,7 +15,7 @@ func (f FeedbackDialog) set(key string, value any) FeedbackDialog {
 }
 
 // Actions sets the actions, default buttons are confirm and cancel
-func (f FeedbackDialog) Actions(value string) FeedbackDialog {
+func (f FeedbackDialog) Actions(value ...Action) FeedbackDialog {
 	return f.set("actions", value)
 }
 
@@ -125,7 +125,7 @@ func (f FeedbackDialog) Name(value string) FeedbackDialog {
 }
 
 // OnEvent sets the event action configuration
-func (f FeedbackDialog) OnEvent(value any) FeedbackDialog {
+func (f FeedbackDialog) OnEvent(value Event) FeedbackDialog {
 	return f.set("onEvent", value)
 }
 

@@ -160,7 +160,7 @@ func (fc Formula) Name(value string) Formula {
 }
 
 // OnEvent sets the event configuration
-func (fc Formula) OnEvent(value any) Formula {
+func (fc Formula) OnEvent(value Event) Formula {
 	return fc.set("onEvent", value)
 }
 

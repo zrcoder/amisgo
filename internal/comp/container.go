@@ -70,7 +70,7 @@ func (c Container) ID(value string) Container {
 }
 
 // OnEvent configures event-driven actions for the component
-func (c Container) OnEvent(value any) Container {
+func (c Container) OnEvent(value Event) Container {
 	return c.set("onEvent", value)
 }
 

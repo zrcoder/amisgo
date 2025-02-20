@@ -176,7 +176,7 @@ func (mc InputMonth) Name(value string) InputMonth {
 }
 
 // OnEvent sets event actions
-func (mc InputMonth) OnEvent(value any) InputMonth {
+func (mc InputMonth) OnEvent(value Event) InputMonth {
 	return mc.set("onEvent", value)
 }
 

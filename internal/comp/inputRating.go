@@ -175,7 +175,7 @@ func (rc InputRating) Name(value string) InputRating {
 }
 
 // OnEvent event action configuration
-func (rc InputRating) OnEvent(value any) InputRating {
+func (rc InputRating) OnEvent(value Event) InputRating {
 	return rc.set("onEvent", value)
 }
 

@@ -111,7 +111,7 @@ func (t Tasks) Name(value string) Tasks {
 }
 
 // OnEvent sets the event action configuration
-func (t Tasks) OnEvent(value any) Tasks {
+func (t Tasks) OnEvent(value Event) Tasks {
 	return t.set("onEvent", value)
 }
 

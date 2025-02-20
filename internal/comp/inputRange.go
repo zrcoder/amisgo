@@ -175,7 +175,7 @@ func (rc InputRange) Name(value string) InputRange {
 }
 
 // OnEvent sets the event action configuration
-func (rc InputRange) OnEvent(value any) InputRange {
+func (rc InputRange) OnEvent(value Event) InputRange {
 	return rc.set("onEvent", value)
 }
 

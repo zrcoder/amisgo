@@ -150,7 +150,7 @@ func (ta ToastAction) OnClick(value string) ToastAction {
 }
 
 // OnEvent sets the event action configuration
-func (ta ToastAction) OnEvent(value any) ToastAction {
+func (ta ToastAction) OnEvent(value Event) ToastAction {
 	return ta.set("onEvent", value)
 }
 
@@ -240,7 +240,7 @@ func (ta ToastAction) Testid(value string) ToastAction {
 }
 
 // Toast sets the toast details
-func (ta ToastAction) Toast(value any) ToastAction {
+func (ta ToastAction) Toast(value Toast) ToastAction {
 	return ta.set("toast", value)
 }
 

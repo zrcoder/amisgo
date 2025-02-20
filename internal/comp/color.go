@@ -55,7 +55,7 @@ func (c Color) ID(value string) Color {
 }
 
 // OnEvent configures event-driven actions for the color picker
-func (c Color) OnEvent(value any) Color {
+func (c Color) OnEvent(value Event) Color {
 	return c.set("onEvent", value)
 }
 

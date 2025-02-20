@@ -145,7 +145,7 @@ func (uc UUID) Name(value string) UUID {
 }
 
 // OnEvent sets event actions
-func (uc UUID) OnEvent(value any) UUID {
+func (uc UUID) OnEvent(value Event) UUID {
 	return uc.set("onEvent", value)
 }
 

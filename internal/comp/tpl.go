@@ -69,7 +69,7 @@ func (t Tpl) Inline(value bool) Tpl {
 }
 
 // OnEvent sets the event action configuration
-func (t Tpl) OnEvent(value any) Tpl {
+func (t Tpl) OnEvent(value Event) Tpl {
 	return t.set("onEvent", value)
 }
 

@@ -56,7 +56,7 @@ func (w Wrapper) ID(value string) Wrapper {
 }
 
 // OnEvent sets the event action configuration
-func (w Wrapper) OnEvent(value any) Wrapper {
+func (w Wrapper) OnEvent(value Event) Wrapper {
 	return w.set("onEvent", value)
 }
 

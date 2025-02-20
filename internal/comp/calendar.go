@@ -55,7 +55,7 @@ func (c Calendar) LargeMode(value bool) Calendar {
 }
 
 // OnEvent configures event-driven actions
-func (c Calendar) OnEvent(value any) Calendar {
+func (c Calendar) OnEvent(value Event) Calendar {
 	return c.set("onEvent", value)
 }
 

@@ -207,7 +207,7 @@ func (qrc InputQuarterRange) Name(value string) InputQuarterRange {
 }
 
 // OnEvent sets the event action configuration
-func (qrc InputQuarterRange) OnEvent(value any) InputQuarterRange {
+func (qrc InputQuarterRange) OnEvent(value Event) InputQuarterRange {
 	return qrc.set("onEvent", value)
 }
 

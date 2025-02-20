@@ -155,7 +155,7 @@ func (oa OtherAction) OnClick(value string) OtherAction {
 }
 
 // OnEvent sets the event configuration
-func (oa OtherAction) OnEvent(value any) OtherAction {
+func (oa OtherAction) OnEvent(value Event) OtherAction {
 	return oa.set("onEvent", value)
 }
 

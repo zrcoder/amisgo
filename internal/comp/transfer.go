@@ -270,7 +270,7 @@ func (tc Transfer) OnChange(value string) Transfer {
 }
 
 // OnEvent sets the event handler
-func (tc Transfer) OnEvent(value any) Transfer {
+func (tc Transfer) OnEvent(value Event) Transfer {
 	return tc.set("onEvent", value)
 }
 

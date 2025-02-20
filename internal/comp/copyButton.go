@@ -160,7 +160,7 @@ func (c CopyButton) OnClick(value string) CopyButton {
 }
 
 // OnEvent configures event-driven actions for the component
-func (c CopyButton) OnEvent(value any) CopyButton {
+func (c CopyButton) OnEvent(value Event) CopyButton {
 	return c.set("onEvent", value)
 }
 

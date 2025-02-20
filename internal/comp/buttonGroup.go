@@ -37,7 +37,7 @@ func (bg ButtonGroup) BtnLevel(value string) ButtonGroup {
 }
 
 // Buttons configures the collection of buttons
-func (bg ButtonGroup) Buttons(value ...any) ButtonGroup {
+func (bg ButtonGroup) Buttons(value ...Action) ButtonGroup {
 	return bg.set("buttons", value)
 }
 
@@ -77,7 +77,7 @@ func (bg ButtonGroup) ID(value string) ButtonGroup {
 }
 
 // OnEvent configures event-driven actions
-func (bg ButtonGroup) OnEvent(value any) ButtonGroup {
+func (bg ButtonGroup) OnEvent(value Event) ButtonGroup {
 	return bg.set("onEvent", value)
 }
 

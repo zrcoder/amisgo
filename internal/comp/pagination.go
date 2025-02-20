@@ -76,7 +76,7 @@ func (p Pagination) Mode(value string) Pagination {
 }
 
 // OnEvent sets the event action configuration
-func (p Pagination) OnEvent(value any) Pagination {
+func (p Pagination) OnEvent(value Event) Pagination {
 	return p.set("onEvent", value)
 }
 

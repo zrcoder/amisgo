@@ -70,7 +70,7 @@ func (e Each) Name(value string) Each {
 }
 
 // OnEvent sets the event action configuration.
-func (e Each) OnEvent(value any) Each {
+func (e Each) OnEvent(value Event) Each {
 	return e.set("onEvent", value)
 }
 

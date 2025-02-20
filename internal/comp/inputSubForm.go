@@ -205,7 +205,7 @@ func (s InputSubForm) Name(value string) InputSubForm {
 }
 
 // OnEvent sets the event configuration
-func (s InputSubForm) OnEvent(value any) InputSubForm {
+func (s InputSubForm) OnEvent(value Event) InputSubForm {
 	return s.set("onEvent", value)
 }
 

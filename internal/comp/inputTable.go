@@ -290,7 +290,7 @@ func (tc InputTable) ItemActionItem(value string) InputTable {
 }
 
 // ItemActions sets the related action items
-func (tc InputTable) ItemActions(value string) InputTable {
+func (tc InputTable) ItemActions(value ...Action) InputTable {
 	return tc.set("itemActions", value)
 }
 
@@ -375,7 +375,7 @@ func (tc InputTable) OnDelete(value string) InputTable {
 }
 
 // OnEvent sets the event trigger configuration
-func (tc InputTable) OnEvent(value any) InputTable {
+func (tc InputTable) OnEvent(value Event) InputTable {
 	return tc.set("onEvent", value)
 }
 

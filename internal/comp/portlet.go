@@ -80,7 +80,7 @@ func (p Portlet) MountOnEnter(value bool) Portlet {
 }
 
 // OnEvent sets the event action configuration
-func (p Portlet) OnEvent(value any) Portlet {
+func (p Portlet) OnEvent(value Event) Portlet {
 	return p.set("onEvent", value)
 }
 

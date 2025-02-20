@@ -16,7 +16,7 @@ func (p Panel) set(key string, value any) Panel {
 }
 
 // Actions sets the actions
-func (p Panel) Actions(value ...any) Panel {
+func (p Panel) Actions(value ...Action) Panel {
 	return p.set("actions", value)
 }
 
@@ -116,7 +116,7 @@ func (p Panel) ID(value string) Panel {
 }
 
 // OnEvent sets the event configuration
-func (p Panel) OnEvent(value any) Panel {
+func (p Panel) OnEvent(value Event) Panel {
 	return p.set("onEvent", value)
 }
 

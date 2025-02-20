@@ -70,7 +70,7 @@ func (d Date) ID(value string) Date {
 }
 
 // OnEvent sets the event handler configuration.
-func (d Date) OnEvent(value any) Date {
+func (d Date) OnEvent(value Event) Date {
 	return d.set("onEvent", value)
 }
 

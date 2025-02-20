@@ -221,7 +221,7 @@ func (d InputDateRange) Name(value string) InputDateRange {
 }
 
 // OnEvent sets the event configuration
-func (d InputDateRange) OnEvent(value any) InputDateRange {
+func (d InputDateRange) OnEvent(value Event) InputDateRange {
 	return d.set("onEvent", value)
 }
 

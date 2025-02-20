@@ -155,7 +155,7 @@ func (s SwitchControl) OffText(value ...any) SwitchControl {
 }
 
 // OnEvent sets the event action configuration.
-func (s SwitchControl) OnEvent(value any) SwitchControl {
+func (s SwitchControl) OnEvent(value Event) SwitchControl {
 	return s.set("onEvent", value)
 }
 

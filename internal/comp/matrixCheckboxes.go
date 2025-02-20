@@ -177,7 +177,7 @@ func (mc MatrixCheckboxes) Name(value string) MatrixCheckboxes {
 }
 
 // OnEvent sets the event configuration.
-func (mc MatrixCheckboxes) OnEvent(value any) MatrixCheckboxes {
+func (mc MatrixCheckboxes) OnEvent(value Event) MatrixCheckboxes {
 	mc.set("onEvent", value)
 	return mc
 }

@@ -35,12 +35,12 @@ func (a Action) Dialog(value Dialog) Action {
 }
 
 // Drawer configures the drawer that appears when the button is clicked.
-func (a Action) Drawer(value any) Action {
+func (a Action) Drawer(value Drawer) Action {
 	return a.set("drawer", value)
 }
 
 // Toast configures the toast that appears when the button is clicked.
-func (a Action) Toast(value any) Action {
+func (a Action) Toast(value Toast) Action {
 	return a.set("toast", value)
 }
 
@@ -282,7 +282,7 @@ func (v Action) OnClick(value string) Action {
 }
 
 // OnEvent sets the event action configuration for the button.
-func (v Action) OnEvent(value any) Action {
+func (v Action) OnEvent(value Event) Action {
 	return v.set("onEvent", value)
 }
 

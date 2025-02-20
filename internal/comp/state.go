@@ -55,7 +55,7 @@ func (s State) ID(value string) State {
 }
 
 // OnEvent sets the event action configuration.
-func (s State) OnEvent(value any) State {
+func (s State) OnEvent(value Event) State {
 	return s.set("onEvent", value)
 }
 

@@ -15,7 +15,7 @@ func (d Drawer) set(key string, value any) Drawer {
 }
 
 // Actions sets the actions for the drawer. By default, confirm and cancel buttons are created automatically.
-func (d Drawer) Actions(value ...any) Drawer {
+func (d Drawer) Actions(value ...Action) Drawer {
 	return d.set("actions", value)
 }
 
@@ -120,7 +120,7 @@ func (d Drawer) Name(value string) Drawer {
 }
 
 // OnEvent sets the event action configuration for the drawer.
-func (d Drawer) OnEvent(value any) Drawer {
+func (d Drawer) OnEvent(value Event) Drawer {
 	return d.set("onEvent", value)
 }
 

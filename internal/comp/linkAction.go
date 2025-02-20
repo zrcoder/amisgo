@@ -178,7 +178,7 @@ func (la LinkAction) OnClick(value string) LinkAction {
 }
 
 // OnEvent sets the event action configuration.
-func (la LinkAction) OnEvent(value any) LinkAction {
+func (la LinkAction) OnEvent(value Event) LinkAction {
 	la.set("onEvent", value)
 	return la
 }

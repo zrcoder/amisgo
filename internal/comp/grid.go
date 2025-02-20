@@ -65,7 +65,7 @@ func (g Grid) ID(value string) Grid {
 }
 
 // OnEvent sets the event action configuration
-func (g Grid) OnEvent(value any) Grid {
+func (g Grid) OnEvent(value Event) Grid {
 	return g.set("onEvent", value)
 }
 

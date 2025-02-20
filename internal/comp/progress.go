@@ -80,7 +80,7 @@ func (p Progress) Name(value string) Progress {
 }
 
 // OnEvent sets the event action configuration
-func (p Progress) OnEvent(value any) Progress {
+func (p Progress) OnEvent(value Event) Progress {
 	return p.set("onEvent", value)
 }
 

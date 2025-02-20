@@ -238,4 +238,5 @@ type (
 	ChartSeri           = comp.ChartSeri
 	ListItem            = comp.ListItem
 	TimelineItem        = comp.TimelineItem
+	CarouselOption      = comp.CarouselOption
 )

@@ -46,7 +46,7 @@ func (c Chart) ClickAction(value string) Chart {
 
 // Config sets the ECharts configuration, supporting data mapping
 // If data mapping is used, set TrackExpression to ensure synchronous updates
-func (c Chart) Config(value any) Chart {
+func (c Chart) Config(value ChartCfg) Chart {
 	return c.set("config", value)
 }
 
@@ -132,7 +132,7 @@ func (c Chart) Name(value string) Chart {
 }
 
 // OnEvent configures event-driven actions for the chart
-func (c Chart) OnEvent(value any) Chart {
+func (c Chart) OnEvent(value Event) Chart {
 	return c.set("onEvent", value)
 }
 

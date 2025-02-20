@@ -85,7 +85,7 @@ func (w Words) Limit(value string) Words {
 }
 
 // OnEvent sets the event configuration
-func (w Words) OnEvent(value any) Words {
+func (w Words) OnEvent(value Event) Words {
 	return w.set("onEvent", value)
 }
 

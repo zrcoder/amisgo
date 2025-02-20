@@ -255,7 +255,7 @@ func (cc Combo) Nullable(value bool) Combo {
 }
 
 // OnEvent configures event-driven actions for the component
-func (cc Combo) OnEvent(value any) Combo {
+func (cc Combo) OnEvent(value Event) Combo {
 	return cc.set("onEvent", value)
 }
 

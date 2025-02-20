@@ -19,7 +19,7 @@ func (c CollapseGroup) Accordion(value bool) CollapseGroup {
 	return c.set("accordion", value)
 }
 
-// ActiveKey sets the currently active panel(s)
+// ActiveKey sets the currently active panel(s), Array<string | number | never> | string | number
 func (c CollapseGroup) ActiveKey(value any) CollapseGroup {
 	return c.set("activeKey", value)
 }
@@ -80,7 +80,7 @@ func (c CollapseGroup) ID(value string) CollapseGroup {
 }
 
 // OnEvent configures event-driven actions for the collapse group
-func (c CollapseGroup) OnEvent(value any) CollapseGroup {
+func (c CollapseGroup) OnEvent(value Event) CollapseGroup {
 	return c.set("onEvent", value)
 }
 

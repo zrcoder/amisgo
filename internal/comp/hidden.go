@@ -140,7 +140,7 @@ func (h Hidden) Name(value string) Hidden {
 }
 
 // OnEvent sets the event action configuration.
-func (h Hidden) OnEvent(value any) Hidden {
+func (h Hidden) OnEvent(value Event) Hidden {
 	return h.set("onEvent", value)
 }
 

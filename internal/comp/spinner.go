@@ -75,7 +75,7 @@ func (s Spinner) Mode(value string) Spinner {
 }
 
 // OnEvent sets the event action configuration.
-func (s Spinner) OnEvent(value any) Spinner {
+func (s Spinner) OnEvent(value Event) Spinner {
 	return s.set("onEvent", value)
 }
 

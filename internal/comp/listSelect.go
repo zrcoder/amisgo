@@ -261,7 +261,7 @@ func (lc ListSelect) Name(value string) ListSelect {
 }
 
 // OnEvent sets the event actions
-func (lc ListSelect) OnEvent(value any) ListSelect {
+func (lc ListSelect) OnEvent(value Event) ListSelect {
 	return lc.set("onEvent", value)
 }
 

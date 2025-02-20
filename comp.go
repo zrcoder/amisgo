@@ -225,16 +225,16 @@ func (a *App) Api() comp.Api                       { return icomp.NewApi() }
 func (a *App) BreadcrumbItem() comp.BreadcrumbItem { return icomp.NewBreadcrumbItem() }
 func (a *App) Column() comp.Column                 { return icomp.NewColumn() }
 func (a *App) Event() comp.Event                   { return icomp.NewEvent() }
-func (a *App) EventActions(actions ...any) icomp.EventActions {
+func (a *App) EventActions(actions ...comp.EventAction) icomp.EventActions {
 	return icomp.NewEventActions(actions...)
 }
 func (a *App) EventAction() comp.EventAction      { return icomp.NewEventAction() }
 func (a *App) EventActionToast() comp.EventAction { return icomp.NewEventActionToast() }
-func (a *App) EventActionDrawer(drawer ...any) icomp.EventAction {
+func (a *App) EventActionDrawer(drawer ...comp.Drawer) icomp.EventAction {
 	return icomp.NewEventActionDrawer(drawer...)
 }
 
-func (a *App) EventActionDialog(dialog ...any) icomp.EventAction {
+func (a *App) EventActionDialog(dialog ...comp.Dialog) icomp.EventAction {
 	return icomp.NewEventActionDialog(dialog...)
 }
 func (a *App) EventActionArgs() comp.EventActionArgs { return icomp.NewEventActionArgs() }
@@ -249,3 +249,4 @@ func (a *App) PropertyItem() comp.PropertyItem       { return icomp.NewPropertyI
 func (a *App) PullRefresh() comp.PullRefresh         { return icomp.NewPullRefresh() }
 func (a *App) Rule() comp.Rule                       { return icomp.NewRule() }
 func (a *App) Tab() comp.Tab                         { return icomp.NewTab() }
+func (a *App) CarouselOption() comp.CarouselOption   { return icomp.NewCarouselOption() }

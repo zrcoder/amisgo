@@ -110,12 +110,12 @@ func (c Carousel) Name(value string) Carousel {
 }
 
 // OnEvent configures event-driven actions
-func (c Carousel) OnEvent(value any) Carousel {
+func (c Carousel) OnEvent(value Event) Carousel {
 	return c.set("onEvent", value)
 }
 
 // Options sets the collection of carousel items
-func (c Carousel) Options(value ...any) Carousel {
+func (c Carousel) Options(value ...CarouselOption) Carousel {
 	return c.set("options", value)
 }
 

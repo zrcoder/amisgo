@@ -110,7 +110,7 @@ func (c Collapse) MountOnEnter(value bool) Collapse {
 }
 
 // OnEvent configures event-driven actions for the component
-func (c Collapse) OnEvent(value any) Collapse {
+func (c Collapse) OnEvent(value Event) Collapse {
 	return c.set("onEvent", value)
 }
 

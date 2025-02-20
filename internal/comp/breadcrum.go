@@ -35,7 +35,7 @@ func (b Breadcrumb) ItemClassName(value string) Breadcrumb {
 }
 
 // Items configures the breadcrumb items
-func (b Breadcrumb) Items(value ...any) Breadcrumb {
+func (b Breadcrumb) Items(value ...BreadcrumbItem) Breadcrumb {
 	return b.set("items", value)
 }
 

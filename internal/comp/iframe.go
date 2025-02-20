@@ -65,7 +65,7 @@ func (i Iframe) Name(value string) Iframe {
 }
 
 // OnEvent sets the event action configuration
-func (i Iframe) OnEvent(value any) Iframe {
+func (i Iframe) OnEvent(value Event) Iframe {
 	return i.set("onEvent", value)
 }
 

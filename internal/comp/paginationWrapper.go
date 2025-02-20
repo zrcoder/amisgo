@@ -66,7 +66,7 @@ func (pw PaginationWrapper) MaxButtons(value string) PaginationWrapper {
 }
 
 // OnEvent sets the event action configuration
-func (pw PaginationWrapper) OnEvent(value any) PaginationWrapper {
+func (pw PaginationWrapper) OnEvent(value Event) PaginationWrapper {
 	return pw.set("onEvent", value)
 }
 

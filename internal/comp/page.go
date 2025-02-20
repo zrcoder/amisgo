@@ -166,7 +166,7 @@ func (p Page) Name(value string) Page {
 }
 
 // OnEvent sets the event action configuration
-func (p Page) OnEvent(value any) Page {
+func (p Page) OnEvent(value Event) Page {
 	return p.set("onEvent", value)
 }
 

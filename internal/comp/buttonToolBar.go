@@ -61,7 +61,7 @@ func (bt ButtonToolbar) ID(value string) ButtonToolbar {
 }
 
 // OnEvent configures event-driven actions
-func (bt ButtonToolbar) OnEvent(value any) ButtonToolbar {
+func (bt ButtonToolbar) OnEvent(value Event) ButtonToolbar {
 	return bt.set("onEvent", value)
 }
 

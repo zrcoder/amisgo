@@ -70,7 +70,7 @@ func (d DateRange) ID(value string) DateRange {
 }
 
 // OnEvent configures event-driven actions
-func (d DateRange) OnEvent(value any) DateRange {
+func (d DateRange) OnEvent(value Event) DateRange {
 	return d.set("onEvent", value)
 }
 

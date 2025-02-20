@@ -167,7 +167,7 @@ func (j JsonSchemaEditor) Name(value string) JsonSchemaEditor {
 }
 
 // OnEvent sets the event actions
-func (j JsonSchemaEditor) OnEvent(value any) JsonSchemaEditor {
+func (j JsonSchemaEditor) OnEvent(value Event) JsonSchemaEditor {
 	return j.set("onEvent", value)
 }
 

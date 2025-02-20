@@ -190,7 +190,7 @@ func (d InputDatetime) Name(value string) InputDatetime {
 }
 
 // OnEvent sets event actions.
-func (d InputDatetime) OnEvent(value any) InputDatetime {
+func (d InputDatetime) OnEvent(value Event) InputDatetime {
 	return d.set("onEvent", value)
 }
 

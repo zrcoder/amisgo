@@ -205,7 +205,7 @@ func (f FieldSet) Name(value string) FieldSet {
 }
 
 // OnEvent sets the event action configuration
-func (f FieldSet) OnEvent(value any) FieldSet {
+func (f FieldSet) OnEvent(value Event) FieldSet {
 	return f.set("onEvent", value)
 }
 

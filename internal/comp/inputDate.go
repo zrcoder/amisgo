@@ -190,7 +190,7 @@ func (d InputDate) Name(value string) InputDate {
 }
 
 // OnEvent sets event configuration
-func (d InputDate) OnEvent(value any) InputDate {
+func (d InputDate) OnEvent(value Event) InputDate {
 	return d.set("onEvent", value)
 }
 

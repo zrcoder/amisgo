@@ -65,7 +65,7 @@ func (i Icon) ID(value string) Icon {
 }
 
 // OnEvent sets the event action configuration
-func (i Icon) OnEvent(value any) Icon {
+func (i Icon) OnEvent(value Event) Icon {
 	return i.set("onEvent", value)
 }
 

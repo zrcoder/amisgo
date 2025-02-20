@@ -146,7 +146,7 @@ func (i InputGroup) Name(value string) InputGroup {
 }
 
 // OnEvent sets the event configuration.
-func (i InputGroup) OnEvent(value any) InputGroup {
+func (i InputGroup) OnEvent(value Event) InputGroup {
 	return i.set("onEvent", value)
 }
 

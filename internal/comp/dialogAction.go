@@ -165,7 +165,7 @@ func (da DialogAction) OnClick(value string) DialogAction {
 }
 
 // OnEvent sets the event action configuration.
-func (da DialogAction) OnEvent(value any) DialogAction {
+func (da DialogAction) OnEvent(value Event) DialogAction {
 	return da.set("onEvent", value)
 }
 

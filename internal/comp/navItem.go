@@ -96,7 +96,7 @@ func (n NavItem) Mode(value string) NavItem {
 }
 
 // OnEvent sets the event configuration
-func (n NavItem) OnEvent(value any) NavItem {
+func (n NavItem) OnEvent(value Event) NavItem {
 	return n.set("onEvent", value)
 }
 

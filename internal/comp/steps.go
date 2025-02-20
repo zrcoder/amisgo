@@ -65,7 +65,7 @@ func (s Steps) Name(value string) Steps {
 }
 
 // OnEvent sets the event action configuration
-func (s Steps) OnEvent(value any) Steps {
+func (s Steps) OnEvent(value Event) Steps {
 	return s.set("onEvent", value)
 }
 

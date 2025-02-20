@@ -160,7 +160,7 @@ func (ua UrlAction) OnClick(value string) UrlAction {
 }
 
 // OnEvent sets the event action configuration
-func (ua UrlAction) OnEvent(value any) UrlAction {
+func (ua UrlAction) OnEvent(value Event) UrlAction {
 	return ua.set("onEvent", value)
 }
 

@@ -150,7 +150,7 @@ func (s Static) Name(value string) Static {
 }
 
 // OnEvent sets the event action configuration
-func (s Static) OnEvent(value any) Static {
+func (s Static) OnEvent(value Event) Static {
 	return s.set("onEvent", value)
 }
 

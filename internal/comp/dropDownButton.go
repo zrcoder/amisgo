@@ -111,7 +111,7 @@ func (d DropdownButton) MenuClassName(value string) DropdownButton {
 }
 
 // OnEvent sets the event action configuration.
-func (d DropdownButton) OnEvent(value any) DropdownButton {
+func (d DropdownButton) OnEvent(value Event) DropdownButton {
 	return d.set("onEvent", value)
 }
 

@@ -80,7 +80,7 @@ func (s SearchBox) Name(value string) SearchBox {
 }
 
 // OnEvent sets the event action configuration.
-func (s SearchBox) OnEvent(value any) SearchBox {
+func (s SearchBox) OnEvent(value Event) SearchBox {
 	return s.set("onEvent", value)
 }
 

@@ -77,7 +77,7 @@ func (a AnchorNav) Links(value string) AnchorNav {
 }
 
 // OnEvent configures event-driven actions
-func (a AnchorNav) OnEvent(value any) AnchorNav {
+func (a AnchorNav) OnEvent(value Event) AnchorNav {
 	return a.set("onEvent", value)
 }
 

@@ -62,7 +62,7 @@ func (s Status) Map(value string) Status {
 }
 
 // OnEvent sets the event action configuration
-func (s Status) OnEvent(value any) Status {
+func (s Status) OnEvent(value Event) Status {
 	return s.set("onEvent", value)
 }
 

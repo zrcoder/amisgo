@@ -85,7 +85,7 @@ func (t TimelineItem) ID(value string) TimelineItem {
 }
 
 // OnEvent sets the event action configuration
-func (t TimelineItem) OnEvent(value any) TimelineItem {
+func (t TimelineItem) OnEvent(value Event) TimelineItem {
 	return t.set("onEvent", value)
 }
 

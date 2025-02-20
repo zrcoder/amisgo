@@ -190,7 +190,7 @@ func (c ConditionBuilder) Name(value string) ConditionBuilder {
 }
 
 // OnEvent configures event-driven actions for the component
-func (c ConditionBuilder) OnEvent(value any) ConditionBuilder {
+func (c ConditionBuilder) OnEvent(value Event) ConditionBuilder {
 	return c.set("onEvent", value)
 }
 

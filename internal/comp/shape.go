@@ -70,6 +70,6 @@ func (s Shape) Paths(value ...string) Shape {
 }
 
 // OnEvent sets the event action configuration
-func (s Shape) OnEvent(value any) Shape {
+func (s Shape) OnEvent(value Event) Shape {
 	return s.set("onEvent", value)
 }

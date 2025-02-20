@@ -170,7 +170,7 @@ func (tc InputTime) Name(value string) InputTime {
 }
 
 // OnEvent sets the event action configuration.
-func (tc InputTime) OnEvent(value any) InputTime {
+func (tc InputTime) OnEvent(value Event) InputTime {
 	return tc.set("onEvent", value)
 }
 
