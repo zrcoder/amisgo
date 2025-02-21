@@ -11,6 +11,7 @@ type (
 	App                 = comp.App
 	Audio               = comp.Audio
 	Avatar              = comp.Avatar
+	Amis                = comp.Amis
 	Barcode             = comp.Barcode
 	Breadcrumb          = comp.Breadcrumb
 	Button              = comp.Action

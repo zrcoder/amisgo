@@ -163,3 +163,8 @@ func (c Column) Valign(value string) Column {
 func (c Column) Buttons(value ...any) Column {
 	return c.Set("buttons", value)
 }
+
+// PopOver sets the pop-over
+func (c Column) PopOver(value any) Column {
+	return c.Set("popOver", value)
+}

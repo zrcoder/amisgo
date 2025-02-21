@@ -11,6 +11,7 @@ func (a *App) AnchorNav() comp.AnchorNav                     { return icomp.NewA
 func (a *App) App() comp.App                                 { return icomp.NewApp() }
 func (a *App) Audio() comp.Audio                             { return icomp.NewAudio() }
 func (a *App) Avatar() comp.Avatar                           { return icomp.NewAvatar() }
+func (a *App) Amis() comp.Amis                               { return icomp.NewAmis() }
 func (a *App) Barcode() comp.Barcode                         { return icomp.NewBarcode() }
 func (a *App) Breadcrumb() comp.Breadcrumb                   { return icomp.NewBreadcrumb() }
 func (a *App) Button() comp.Action                           { return icomp.NewButton(a.mux) }
