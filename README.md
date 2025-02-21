@@ -39,3 +39,7 @@ Explore our [documentation](https://amisgo.pages.dev) for in-depth tutorials and
 ## Examples
 
 Check out our [examples repository](https://github.com/zrcoder/amisgo-examples).
+
+## Issues and Contributions
+
+This project is primarily maintained on Gitee. For issues or pull requests, please visit https://gitee.com/rdor/amisgo
