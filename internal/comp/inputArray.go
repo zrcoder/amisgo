@@ -250,7 +250,7 @@ func (ac InputArray) Nullable(value bool) InputArray {
 }
 
 // OnEvent sets the event configuration
-func (ac InputArray) OnEvent(value any) InputArray {
+func (ac InputArray) OnEvent(value Event) InputArray {
 	return ac.set("onEvent", value)
 }
 

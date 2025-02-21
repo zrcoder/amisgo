@@ -85,7 +85,7 @@ func (i Images) Name(value string) Images {
 }
 
 // OnEvent sets the event action configuration.
-func (i Images) OnEvent(value any) Images {
+func (i Images) OnEvent(value Event) Images {
 	return i.set("onEvent", value)
 }
 
@@ -185,7 +185,7 @@ func (i Images) ThumbRatio(value string) Images {
 }
 
 // ToolbarActions sets the toolbar actions.
-func (i Images) ToolbarActions(value string) Images {
+func (i Images) ToolbarActions(value ...Action) Images {
 	return i.set("toolbarActions", value)
 }
 

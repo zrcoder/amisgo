@@ -160,7 +160,7 @@ func (i InputColor) Name(value string) InputColor {
 }
 
 // OnEvent sets the event action configuration.
-func (i InputColor) OnEvent(value any) InputColor {
+func (i InputColor) OnEvent(value Event) InputColor {
 	return i.set("onEvent", value)
 }
 

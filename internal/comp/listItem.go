@@ -16,7 +16,7 @@ func (li ListItem) set(key string, value any) ListItem {
 }
 
 // Actions sets actions.
-func (li ListItem) Actions(value string) ListItem {
+func (li ListItem) Actions(value ...Action) ListItem {
 	return li.set("actions", value)
 }
 
@@ -76,7 +76,7 @@ func (li ListItem) ID(value string) ListItem {
 }
 
 // OnEvent sets the event action configuration.
-func (li ListItem) OnEvent(value any) ListItem {
+func (li ListItem) OnEvent(value Event) ListItem {
 	return li.set("onEvent", value)
 }
 

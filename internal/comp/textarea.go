@@ -166,7 +166,7 @@ func (t Textarea) Name(value string) Textarea {
 }
 
 // OnEvent sets the event action configuration.
-func (t Textarea) OnEvent(value any) Textarea {
+func (t Textarea) OnEvent(value Event) Textarea {
 	return t.set("onEvent", value)
 }
 

@@ -65,7 +65,7 @@ func (h HBox) ID(value string) HBox {
 }
 
 // OnEvent sets the event action configuration
-func (h HBox) OnEvent(value any) HBox {
+func (h HBox) OnEvent(value Event) HBox {
 	return h.set("onEvent", value)
 }
 

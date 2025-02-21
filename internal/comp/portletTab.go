@@ -69,7 +69,7 @@ func (p PortletTab) MountOnEnter(value bool) PortletTab {
 }
 
 // OnEvent sets the event action configuration
-func (p PortletTab) OnEvent(value any) PortletTab {
+func (p PortletTab) OnEvent(value Event) PortletTab {
 	return p.set("onEvent", value)
 }
 

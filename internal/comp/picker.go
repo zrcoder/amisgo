@@ -265,7 +265,7 @@ func (pc Picker) Name(value string) Picker {
 }
 
 // OnEvent sets the event handler
-func (pc Picker) OnEvent(value any) Picker {
+func (pc Picker) OnEvent(value Event) Picker {
 	return pc.set("onEvent", value)
 }
 

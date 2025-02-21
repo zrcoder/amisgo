@@ -64,7 +64,7 @@ func (rm Remark) Label(value string) Remark {
 }
 
 // OnEvent sets the event handler of the remark.
-func (rm Remark) OnEvent(value any) Remark {
+func (rm Remark) OnEvent(value Event) Remark {
 	return rm.set("onEvent", value)
 }
 

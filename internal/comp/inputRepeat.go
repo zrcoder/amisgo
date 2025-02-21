@@ -140,7 +140,7 @@ func (rc InputRepeat) Name(value string) InputRepeat {
 }
 
 // OnEvent sets the event action configuration
-func (rc InputRepeat) OnEvent(value any) InputRepeat {
+func (rc InputRepeat) OnEvent(value Event) InputRepeat {
 	return rc.set("onEvent", value)
 }
 

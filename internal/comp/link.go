@@ -75,7 +75,7 @@ func (l Link) ID(value string) Link {
 }
 
 // OnEvent sets the event action configuration.
-func (l Link) OnEvent(value any) Link {
+func (l Link) OnEvent(value Event) Link {
 	return l.set("onEvent", value)
 }
 

@@ -124,7 +124,7 @@ func (d Dialog) Name(value string) Dialog {
 }
 
 // OnEvent sets the event handler of the dialog.
-func (d Dialog) OnEvent(value any) Dialog {
+func (d Dialog) OnEvent(value Event) Dialog {
 	return d.set("onEvent", value)
 }
 

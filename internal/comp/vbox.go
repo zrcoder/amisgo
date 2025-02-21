@@ -50,7 +50,7 @@ func (v VBox) ID(value string) VBox {
 }
 
 // OnEvent sets the event action configuration
-func (v VBox) OnEvent(value any) VBox {
+func (v VBox) OnEvent(value Event) VBox {
 	return v.set("onEvent", value)
 }
 

@@ -150,7 +150,7 @@ func (d DiffEditor) Name(value string) DiffEditor {
 }
 
 // OnEvent sets the event action configuration
-func (d DiffEditor) OnEvent(value any) DiffEditor {
+func (d DiffEditor) OnEvent(value Event) DiffEditor {
 	return d.set("onEvent", value)
 }
 

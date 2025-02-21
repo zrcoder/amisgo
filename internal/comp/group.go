@@ -155,7 +155,7 @@ func (g Group) Name(value string) Group {
 }
 
 // OnEvent sets the event action configuration.
-func (g Group) OnEvent(value any) Group {
+func (g Group) OnEvent(value Event) Group {
 	return g.set("onEvent", value)
 }
 

@@ -200,7 +200,7 @@ func (m InputMonthRange) Name(value string) InputMonthRange {
 }
 
 // OnEvent sets event action configuration
-func (m InputMonthRange) OnEvent(value any) InputMonthRange {
+func (m InputMonthRange) OnEvent(value Event) InputMonthRange {
 	return m.set("onEvent", value)
 }
 

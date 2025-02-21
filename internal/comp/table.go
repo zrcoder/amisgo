@@ -135,7 +135,7 @@ func (t Table) ItemBadge(value string) Table {
 }
 
 // OnEvent sets the event action configuration
-func (t Table) OnEvent(value any) Table {
+func (t Table) OnEvent(value Event) Table {
 	return t.set("onEvent", value)
 }
 
@@ -260,7 +260,7 @@ func (t Table) VisibleOn(value string) Table {
 }
 
 // Actions sets the action column configuration
-func (t Table) Actions(value string) Table {
+func (t Table) Actions(value ...Action) Table {
 	return t.set("actions", value)
 }
 

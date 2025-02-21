@@ -101,7 +101,7 @@ func (n Nav) IndentSize(value string) Nav {
 }
 
 // ItemActions sets the item actions menu list
-func (n Nav) ItemActions(value string) Nav {
+func (n Nav) ItemActions(value ...Action) Nav {
 	return n.set("itemActions", value)
 }
 
@@ -126,7 +126,7 @@ func (n Nav) Mode(value string) Nav {
 }
 
 // OnEvent sets the event action configuration
-func (n Nav) OnEvent(value any) Nav {
+func (n Nav) OnEvent(value Event) Nav {
 	return n.set("onEvent", value)
 }
 

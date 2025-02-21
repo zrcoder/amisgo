@@ -55,7 +55,7 @@ func (p Plain) Inline(value bool) Plain {
 }
 
 // OnEvent sets the event configuration
-func (p Plain) OnEvent(value any) Plain {
+func (p Plain) OnEvent(value Event) Plain {
 	return p.set("onEvent", value)
 }
 

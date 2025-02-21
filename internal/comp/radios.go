@@ -246,7 +246,7 @@ func (rc Radios) Name(value string) Radios {
 }
 
 // OnEvent event action configuration
-func (rc Radios) OnEvent(value any) Radios {
+func (rc Radios) OnEvent(value Event) Radios {
 	return rc.set("onEvent", value)
 }
 

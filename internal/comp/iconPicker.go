@@ -140,7 +140,7 @@ func (i IconPicker) Name(value string) IconPicker {
 }
 
 // OnEvent sets event configuration
-func (i IconPicker) OnEvent(value any) IconPicker {
+func (i IconPicker) OnEvent(value Event) IconPicker {
 	return i.set("onEvent", value)
 }
 

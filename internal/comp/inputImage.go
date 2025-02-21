@@ -280,7 +280,7 @@ func (i InputImage) Name(value string) InputImage {
 }
 
 // OnEvent sets the event action configuration
-func (i InputImage) OnEvent(value any) InputImage {
+func (i InputImage) OnEvent(value Event) InputImage {
 	return i.set("onEvent", value)
 }
 

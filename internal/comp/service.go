@@ -125,7 +125,7 @@ func (s Service) Name(value string) Service {
 }
 
 // OnEvent sets the event action configuration.
-func (s Service) OnEvent(value any) Service {
+func (s Service) OnEvent(value Event) Service {
 	return s.set("onEvent", value)
 }
 

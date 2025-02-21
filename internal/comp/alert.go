@@ -16,7 +16,7 @@ func (a Alert) set(key string, value any) Alert {
 }
 
 // Actions sets the actions area
-func (a Alert) Actions(value string) Alert {
+func (a Alert) Actions(value Action) Alert {
 	return a.set("actions", value)
 }
 
@@ -81,7 +81,7 @@ func (a Alert) Level(value string) Alert {
 }
 
 // OnEvent sets the event action configuration
-func (a Alert) OnEvent(value any) Alert {
+func (a Alert) OnEvent(value Event) Alert {
 	return a.set("onEvent", value)
 }
 

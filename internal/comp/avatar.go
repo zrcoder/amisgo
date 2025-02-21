@@ -95,7 +95,7 @@ func (a Avatar) OnError(value string) Avatar {
 }
 
 // OnEvent configures event-driven actions
-func (a Avatar) OnEvent(value any) Avatar {
+func (a Avatar) OnEvent(value Event) Avatar {
 	return a.set("onEvent", value)
 }
 

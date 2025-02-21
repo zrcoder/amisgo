@@ -155,7 +155,7 @@ func (c Checkbox) Name(value string) Checkbox {
 }
 
 // OnEvent configures event-driven actions for the checkbox
-func (c Checkbox) OnEvent(value any) Checkbox {
+func (c Checkbox) OnEvent(value Event) Checkbox {
 	return c.set("onEvent", value)
 }
 

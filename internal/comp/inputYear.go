@@ -176,7 +176,7 @@ func (yc InputYear) Name(value string) InputYear {
 }
 
 // OnEvent sets the event action configuration.
-func (yc InputYear) OnEvent(value any) InputYear {
+func (yc InputYear) OnEvent(value Event) InputYear {
 	return yc.set("onEvent", value)
 }
 

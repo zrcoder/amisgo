@@ -11,6 +11,7 @@ func (a *App) AnchorNav() comp.AnchorNav                     { return icomp.NewA
 func (a *App) App() comp.App                                 { return icomp.NewApp() }
 func (a *App) Audio() comp.Audio                             { return icomp.NewAudio() }
 func (a *App) Avatar() comp.Avatar                           { return icomp.NewAvatar() }
+func (a *App) Amis() comp.Amis                               { return icomp.NewAmis() }
 func (a *App) Barcode() comp.Barcode                         { return icomp.NewBarcode() }
 func (a *App) Breadcrumb() comp.Breadcrumb                   { return icomp.NewBreadcrumb() }
 func (a *App) Button() comp.Action                           { return icomp.NewButton(a.mux) }
@@ -225,16 +226,16 @@ func (a *App) Api() comp.Api                       { return icomp.NewApi() }
 func (a *App) BreadcrumbItem() comp.BreadcrumbItem { return icomp.NewBreadcrumbItem() }
 func (a *App) Column() comp.Column                 { return icomp.NewColumn() }
 func (a *App) Event() comp.Event                   { return icomp.NewEvent() }
-func (a *App) EventActions(actions ...any) icomp.EventActions {
+func (a *App) EventActions(actions ...comp.EventAction) icomp.EventActions {
 	return icomp.NewEventActions(actions...)
 }
 func (a *App) EventAction() comp.EventAction      { return icomp.NewEventAction() }
 func (a *App) EventActionToast() comp.EventAction { return icomp.NewEventActionToast() }
-func (a *App) EventActionDrawer(drawer ...any) icomp.EventAction {
+func (a *App) EventActionDrawer(drawer ...comp.Drawer) icomp.EventAction {
 	return icomp.NewEventActionDrawer(drawer...)
 }
 
-func (a *App) EventActionDialog(dialog ...any) icomp.EventAction {
+func (a *App) EventActionDialog(dialog ...comp.Dialog) icomp.EventAction {
 	return icomp.NewEventActionDialog(dialog...)
 }
 func (a *App) EventActionArgs() comp.EventActionArgs { return icomp.NewEventActionArgs() }
@@ -249,3 +250,4 @@ func (a *App) PropertyItem() comp.PropertyItem       { return icomp.NewPropertyI
 func (a *App) PullRefresh() comp.PullRefresh         { return icomp.NewPullRefresh() }
 func (a *App) Rule() comp.Rule                       { return icomp.NewRule() }
 func (a *App) Tab() comp.Tab                         { return icomp.NewTab() }
+func (a *App) CarouselOption() comp.CarouselOption   { return icomp.NewCarouselOption() }

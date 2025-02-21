@@ -150,7 +150,7 @@ func (ra ReloadAction) OnClick(value string) ReloadAction {
 }
 
 // OnEvent sets on event
-func (ra ReloadAction) OnEvent(value any) ReloadAction {
+func (ra ReloadAction) OnEvent(value Event) ReloadAction {
 	return ra.set("onEvent", value)
 }
 

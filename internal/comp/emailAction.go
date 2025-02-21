@@ -161,7 +161,7 @@ func (ea EmailAction) OnClick(value string) EmailAction {
 }
 
 // OnEvent sets the event action configuration
-func (ea EmailAction) OnEvent(value any) EmailAction {
+func (ea EmailAction) OnEvent(value Event) EmailAction {
 	return ea.set("onEvent", value)
 }
 

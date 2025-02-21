@@ -120,7 +120,7 @@ func (w Wizard) Name(value string) Wizard {
 }
 
 // OnEvent sets the event action configuration
-func (w Wizard) OnEvent(value any) Wizard {
+func (w Wizard) OnEvent(value Event) Wizard {
 	return w.set("onEvent", value)
 }
 

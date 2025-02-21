@@ -178,7 +178,7 @@ func (nc InputNumber) Name(value string) InputNumber {
 }
 
 // OnEvent sets event actions
-func (nc InputNumber) OnEvent(value any) InputNumber {
+func (nc InputNumber) OnEvent(value Event) InputNumber {
 	return nc.set("onEvent", value)
 }
 

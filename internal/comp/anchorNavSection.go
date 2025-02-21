@@ -65,7 +65,7 @@ func (a AnchorNavSection) ID(value string) AnchorNavSection {
 }
 
 // OnEvent sets the event action configuration.
-func (a AnchorNavSection) OnEvent(value any) AnchorNavSection {
+func (a AnchorNavSection) OnEvent(value Event) AnchorNavSection {
 	return a.set("onEvent", value)
 }
 

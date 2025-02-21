@@ -4,7 +4,7 @@ import "github.com/zrcoder/amisgo/schema"
 
 type EventActions schema.Schema
 
-func NewEventActions(value ...any) EventActions {
+func NewEventActions(value ...EventAction) EventActions {
 	res := EventActions{}
 	if len(value) > 0 {
 		res.Actions(value...)
@@ -17,6 +17,6 @@ func (e EventActions) set(key string, value any) EventActions {
 	return e
 }
 
-func (e EventActions) Actions(value ...any) EventActions {
+func (e EventActions) Actions(value ...EventAction) EventActions {
 	return e.set("actions", value)
 }

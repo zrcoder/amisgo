@@ -111,7 +111,7 @@ func (lr List) ListItem(value string) List {
 }
 
 // OnEvent sets the event action configuration.
-func (lr List) OnEvent(value any) List {
+func (lr List) OnEvent(value Event) List {
 	return lr.set("onEvent", value)
 }
 

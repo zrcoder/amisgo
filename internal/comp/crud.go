@@ -137,7 +137,7 @@ func (c Crud) Width(value string) Crud {
 }
 
 // Actions configures the operation column
-func (c Crud) Actions(value string) Crud {
+func (c Crud) Actions(value Action) Crud {
 	return c.set("actions", value)
 }
 
@@ -247,7 +247,7 @@ func (c Crud) Multiple(value bool) Crud {
 }
 
 // OnEvent configures event-driven actions
-func (c Crud) OnEvent(value any) Crud {
+func (c Crud) OnEvent(value Event) Crud {
 	return c.set("onEvent", value)
 }
 
@@ -397,7 +397,7 @@ func (c Crud) AutoGenerateFilter(value any) Crud {
 }
 
 // BulkActions configures batch operation actions
-func (c Crud) BulkActions(value ...any) Crud {
+func (c Crud) BulkActions(value ...Action) Crud {
 	return c.set("bulkActions", value)
 }
 
@@ -499,7 +499,7 @@ func (c Crud) InnerClassName(value string) Crud {
 }
 
 // ItemActions configures single-item actions
-func (c Crud) ItemActions(value string) Crud {
+func (c Crud) ItemActions(value Action) Crud {
 	return c.set("itemActions", value)
 }
 
@@ -664,7 +664,7 @@ func (c Crud) ListItem(value any) Crud {
 }
 
 // QuickSaveItemActions sets the configuration for quick save actions
-func (c Crud) QuickSaveItemActions(value string) Crud {
+func (c Crud) QuickSaveItemActions(value Action) Crud {
 	return c.set("quickSaveItemActions", value)
 }
 

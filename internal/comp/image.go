@@ -125,7 +125,7 @@ func (i Image) Name(value string) Image {
 }
 
 // OnEvent sets the event configuration
-func (i Image) OnEvent(value any) Image {
+func (i Image) OnEvent(value Event) Image {
 	return i.set("onEvent", value)
 }
 
@@ -215,7 +215,7 @@ func (i Image) Title(value any) Image {
 }
 
 // ToolbarActions sets the toolbar actions
-func (i Image) ToolbarActions(value string) Image {
+func (i Image) ToolbarActions(value ...Action) Image {
 	return i.set("toolbarActions", value)
 }
 

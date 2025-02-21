@@ -62,7 +62,7 @@ func (s Step) ID(value string) Step {
 }
 
 // OnEvent sets the event action configuration
-func (s Step) OnEvent(value any) Step {
+func (s Step) OnEvent(value Event) Step {
 	return s.set("onEvent", value)
 }
 

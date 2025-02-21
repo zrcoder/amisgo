@@ -145,7 +145,7 @@ func (fc Control) Name(value string) Control {
 }
 
 // OnEvent configures event-driven actions for the component
-func (fc Control) OnEvent(value any) Control {
+func (fc Control) OnEvent(value Event) Control {
 	return fc.set("onEvent", value)
 }
 

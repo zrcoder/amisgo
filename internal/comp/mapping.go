@@ -81,7 +81,7 @@ func (m Mapping) Name(value string) Mapping {
 }
 
 // OnEvent sets the event action configuration
-func (m Mapping) OnEvent(value any) Mapping {
+func (m Mapping) OnEvent(value Event) Mapping {
 	m.set("onEvent", value)
 	return m
 }

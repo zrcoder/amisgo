@@ -442,7 +442,7 @@ func (t InputText) ValueType(value string) InputText {
 }
 
 // ValueOnEvent sets the value based on an event.
-func (t InputText) ValueOnEvent(value any) InputText {
+func (t InputText) ValueOnEvent(value Event) InputText {
 	return t.set("valueOnEvent", value)
 }
 

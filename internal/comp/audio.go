@@ -70,7 +70,7 @@ func (a Audio) Loop(value bool) Audio {
 }
 
 // OnEvent sets the event action configuration.
-func (a Audio) OnEvent(value any) Audio {
+func (a Audio) OnEvent(value Event) Audio {
 	return a.set("onEvent", value)
 }
 

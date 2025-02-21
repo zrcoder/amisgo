@@ -12,7 +12,7 @@ func NewEventActionToast() EventAction {
 	return NewEventAction().ActionType("toast")
 }
 
-func NewEventActionDrawer(drawer ...any) EventAction {
+func NewEventActionDrawer(drawer ...Drawer) EventAction {
 	res := NewEventAction().ActionType("drawer")
 	if len(drawer) > 0 {
 		res.Drawer(drawer[0])
@@ -20,7 +20,7 @@ func NewEventActionDrawer(drawer ...any) EventAction {
 	return res
 }
 
-func NewEventActionDialog(dialog ...any) EventAction {
+func NewEventActionDialog(dialog ...Dialog) EventAction {
 	res := NewEventAction().ActionType("dialog")
 	if len(dialog) > 0 {
 		res.Dialog(dialog[0])
@@ -54,12 +54,12 @@ func (ea EventAction) Api(value any) EventAction {
 }
 
 // Drawer defines the drawer when the actionType is drawer
-func (ea EventAction) Drawer(value any) EventAction {
+func (ea EventAction) Drawer(value Drawer) EventAction {
 	return ea.set("drawer", value)
 }
 
 // Dialog defines the dialog when the actionType is dialog
-func (ea EventAction) Dialog(value any) EventAction {
+func (ea EventAction) Dialog(value Dialog) EventAction {
 	return ea.set("dialog", value)
 }
 

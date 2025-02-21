@@ -152,7 +152,7 @@ func (rc Radio) Name(value string) Radio {
 }
 
 // OnEvent sets the event action configuration
-func (rc Radio) OnEvent(value any) Radio {
+func (rc Radio) OnEvent(value Event) Radio {
 	return rc.set("onEvent", value)
 }
 

@@ -65,7 +65,7 @@ func (d Divider) LineStyle(value string) Divider {
 }
 
 // OnEvent Event action configuration
-func (d Divider) OnEvent(value any) Divider {
+func (d Divider) OnEvent(value Event) Divider {
 	return d.set("onEvent", value)
 }
 

@@ -94,7 +94,7 @@ func (j Json) Mutable(value bool) Json {
 }
 
 // OnEvent sets the event action configuration
-func (j Json) OnEvent(value any) Json {
+func (j Json) OnEvent(value Event) Json {
 	j.set("onEvent", value)
 	return j
 }

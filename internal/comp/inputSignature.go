@@ -211,7 +211,7 @@ func (i InputSignature) Name(value string) InputSignature {
 }
 
 // OnEvent sets event actions
-func (i InputSignature) OnEvent(value any) InputSignature {
+func (i InputSignature) OnEvent(value Event) InputSignature {
 	return i.set("onEvent", value)
 }
 

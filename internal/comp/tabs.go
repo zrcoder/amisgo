@@ -110,7 +110,7 @@ func (t Tabs) MountOnEnter(value bool) Tabs {
 }
 
 // OnEvent sets the event action configuration
-func (t Tabs) OnEvent(value any) Tabs {
+func (t Tabs) OnEvent(value Event) Tabs {
 	return t.set("onEvent", value)
 }
 

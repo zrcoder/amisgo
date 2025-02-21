@@ -70,7 +70,7 @@ func (g Grid2d) ID(value string) Grid2d {
 }
 
 // OnEvent sets the event action configuration.
-func (g Grid2d) OnEvent(value any) Grid2d {
+func (g Grid2d) OnEvent(value Event) Grid2d {
 	return g.set("onEvent", value)
 }
 

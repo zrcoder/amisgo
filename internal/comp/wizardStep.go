@@ -15,7 +15,7 @@ func (ws WizardStep) set(key string, value any) WizardStep {
 }
 
 // Actions sets the actions buttons displayed at the bottom
-func (ws WizardStep) Actions(value string) WizardStep {
+func (ws WizardStep) Actions(value ...Action) WizardStep {
 	return ws.set("actions", value)
 }
 
@@ -220,7 +220,7 @@ func (ws WizardStep) Name(value string) WizardStep {
 }
 
 // OnEvent sets the event action configuration
-func (ws WizardStep) OnEvent(value any) WizardStep {
+func (ws WizardStep) OnEvent(value Event) WizardStep {
 	return ws.set("onEvent", value)
 }
 

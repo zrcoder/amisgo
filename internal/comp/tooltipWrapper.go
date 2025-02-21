@@ -85,7 +85,7 @@ func (tw TooltipWrapper) Offset(value string) TooltipWrapper {
 }
 
 // OnEvent sets the event action configuration
-func (tw TooltipWrapper) OnEvent(value any) TooltipWrapper {
+func (tw TooltipWrapper) OnEvent(value Event) TooltipWrapper {
 	return tw.set("onEvent", value)
 }
 

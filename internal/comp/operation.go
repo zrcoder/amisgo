@@ -66,7 +66,7 @@ func (o Operation) Label(value string) Operation {
 }
 
 // OnEvent sets the event action configuration
-func (o Operation) OnEvent(value any) Operation {
+func (o Operation) OnEvent(value Event) Operation {
 	return o.set("onEvent", value)
 }
 

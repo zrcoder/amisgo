@@ -90,7 +90,7 @@ func (q QRCode) Value(value string) QRCode {
 }
 
 // OnEvent sets the event action configuration
-func (q QRCode) OnEvent(value any) QRCode {
+func (q QRCode) OnEvent(value Event) QRCode {
 	return q.set("onEvent", value)
 }
 

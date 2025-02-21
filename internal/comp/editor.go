@@ -159,7 +159,7 @@ func (ec Editor) Name(value string) Editor {
 }
 
 // OnEvent sets the event action configuration
-func (ec Editor) OnEvent(value any) Editor {
+func (ec Editor) OnEvent(value Event) Editor {
 	return ec.set("onEvent", value)
 }
 

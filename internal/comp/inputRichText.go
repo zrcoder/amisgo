@@ -150,7 +150,7 @@ func (rc InputRichText) Name(value string) InputRichText {
 }
 
 // OnEvent sets the event action configuration.
-func (rc InputRichText) OnEvent(value any) InputRichText {
+func (rc InputRichText) OnEvent(value Event) InputRichText {
 	return rc.set("onEvent", value)
 }
 

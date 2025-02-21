@@ -80,7 +80,7 @@ func (t Timeline) Mode(value string) Timeline {
 }
 
 // OnEvent sets the event action configuration
-func (t Timeline) OnEvent(value any) Timeline {
+func (t Timeline) OnEvent(value Event) Timeline {
 	return t.set("onEvent", value)
 }
 

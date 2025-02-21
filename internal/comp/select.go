@@ -429,7 +429,7 @@ func (sc Select) Width(value string) Select {
 }
 
 // OnEvent sets the event listener
-func (sc Select) OnEvent(value any) Select {
+func (sc Select) OnEvent(value Event) Select {
 	return sc.set("onEvent", value)
 }
 

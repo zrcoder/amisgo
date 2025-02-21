@@ -90,7 +90,7 @@ func (t Tag) Label(value string) Tag {
 }
 
 // OnEvent sets the event configuration
-func (t Tag) OnEvent(value any) Tag {
+func (t Tag) OnEvent(value Event) Tag {
 	return t.set("onEvent", value)
 }
 

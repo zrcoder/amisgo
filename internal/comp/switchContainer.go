@@ -55,7 +55,7 @@ func (s SwitchContainer) Items(value ...any) SwitchContainer {
 }
 
 // OnEvent sets the event action configuration
-func (s SwitchContainer) OnEvent(value any) SwitchContainer {
+func (s SwitchContainer) OnEvent(value Event) SwitchContainer {
 	return s.set("onEvent", value)
 }
 

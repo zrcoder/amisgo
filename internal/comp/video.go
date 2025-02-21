@@ -100,7 +100,7 @@ func (v Video) Muted(value bool) Video {
 }
 
 // OnEvent sets the event configuration
-func (v Video) OnEvent(value any) Video {
+func (v Video) OnEvent(value Event) Video {
 	return v.set("onEvent", value)
 }
 

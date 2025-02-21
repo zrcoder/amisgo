@@ -3,7 +3,7 @@ package comp
 import "github.com/zrcoder/amisgo/schema"
 
 // Card represents a Card component renderer
-type Card  schema.Schema
+type Card schema.Schema
 
 func NewCard() Card {
 	return Card{"type": "card"}
@@ -15,7 +15,7 @@ func (c Card) set(key string, value any) Card {
 }
 
 // Actions configures the card's action buttons or menu
-func (c Card) Actions(value string) Card {
+func (c Card) Actions(value Action) Card {
 	return c.set("actions", value)
 }
 
@@ -90,7 +90,7 @@ func (c Card) Media(value string) Card {
 }
 
 // OnEvent configures event-driven actions
-func (c Card) OnEvent(value any) Card {
+func (c Card) OnEvent(value Event) Card {
 	return c.set("onEvent", value)
 }
 

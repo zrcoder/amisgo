@@ -170,7 +170,7 @@ func (q InputQuarter) Name(value string) InputQuarter {
 }
 
 // OnEvent sets event actions
-func (q InputQuarter) OnEvent(value any) InputQuarter {
+func (q InputQuarter) OnEvent(value Event) InputQuarter {
 	return q.set("onEvent", value)
 }
 

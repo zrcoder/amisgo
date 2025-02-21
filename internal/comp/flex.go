@@ -75,7 +75,7 @@ func (f Flex) Justify(value string) Flex {
 }
 
 // OnEvent sets the event action configuration
-func (f Flex) OnEvent(value any) Flex {
+func (f Flex) OnEvent(value Event) Flex {
 	return f.set("onEvent", value)
 }
 

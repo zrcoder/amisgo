@@ -3,7 +3,7 @@ package comp
 import "github.com/zrcoder/amisgo/schema"
 
 // SparkLine
-type SparkLine  schema.Schema
+type SparkLine schema.Schema
 
 func NewSparkLine() SparkLine {
 	return SparkLine{"type": "sparkline"}
@@ -65,7 +65,7 @@ func (s SparkLine) Name(value string) SparkLine {
 }
 
 // OnEvent sets the event action configuration for the sparkLine
-func (s SparkLine) OnEvent(value any) SparkLine {
+func (s SparkLine) OnEvent(value Event) SparkLine {
 	return s.set("onEvent", value)
 }
 

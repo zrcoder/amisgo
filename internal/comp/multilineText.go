@@ -66,7 +66,7 @@ func (m MultilineText) MaxRows(value string) MultilineText {
 }
 
 // OnEvent sets the event configuration
-func (m MultilineText) OnEvent(value any) MultilineText {
+func (m MultilineText) OnEvent(value Event) MultilineText {
 	return m.set("onEvent", value)
 }
 

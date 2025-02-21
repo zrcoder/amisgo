@@ -120,7 +120,7 @@ func (c Cards) MasonryLayout(value bool) Cards {
 }
 
 // OnEvent configures event-driven actions
-func (c Cards) OnEvent(value any) Cards {
+func (c Cards) OnEvent(value Event) Cards {
 	return c.set("onEvent", value)
 }
 

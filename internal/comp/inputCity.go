@@ -180,7 +180,7 @@ func (i InputCity) Name(value string) InputCity {
 }
 
 // OnEvent sets the event action configuration.
-func (i InputCity) OnEvent(value any) InputCity {
+func (i InputCity) OnEvent(value Event) InputCity {
 	return i.set("onEvent", value)
 }
 

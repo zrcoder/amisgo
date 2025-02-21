@@ -266,7 +266,7 @@ func (nsc NestedSelect) Name(value string) NestedSelect {
 }
 
 // OnEvent sets the event actions.
-func (nsc NestedSelect) OnEvent(value any) NestedSelect {
+func (nsc NestedSelect) OnEvent(value Event) NestedSelect {
 	return nsc.set("onEvent", value)
 }
 

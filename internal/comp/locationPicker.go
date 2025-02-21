@@ -184,7 +184,7 @@ func (lc LocationPicker) Name(value string) LocationPicker {
 }
 
 // OnEvent sets the event action configuration
-func (lc LocationPicker) OnEvent(value any) LocationPicker {
+func (lc LocationPicker) OnEvent(value Event) LocationPicker {
 	lc.set("onEvent", value)
 	return lc
 }
