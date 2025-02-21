@@ -25,22 +25,46 @@ func NewButtonGroupSelect() Select {
 // Note: Ensure that `conf.WithThemes` is called during app initialization to avoid a panic.
 func (s Select) Themes(mux *http.ServeMux, templ *template.Templ) Select {
 	const theme = "theme"
-	themes := templ.GetThemes()
-	if len(themes) == 0 {
+	if len(templ.Themes) == 0 {
 		panic("ThemeSelect: conf.WithThemes must be called during app initialization")
 	}
 	url := servemux.ServeQuery(mux, func(m map[string]string) error {
-		templ.Theme = templ.GetTheme(m[theme])
+		templ.UpdateTheme(m[theme])
 		return nil
 	}, theme)
 	return s.Name(theme).Source(servemux.ServeData(mux, func() (any, error) {
 		return schema.SuccessResponse(" ", schema.Schema{
-			"value":   templ.Theme.Value,
-			"options": themes,
+			"value":   templ.CurrentTheme(),
+			"options": templ.Themes,
 		}), nil
 	})).OnEvent(
 		NewEvent().Change(
 			NewEventActions(NewEventAction().ActionType("ajax").Api(url+"?"+theme+"=${event.data.value}"),
+				NewEventAction().ActionType("refresh"),
+			),
+		),
+	)
+}
+
+// Localesmakes the select for locale selection.
+// Note: Ensure that `conf.WithLocales` is called during app initialization to avoid a panic.
+func (s Select) Locales(mux *http.ServeMux, templ *template.Templ) Select {
+	const locale = "locale"
+	if len(templ.Locales) == 0 {
+		panic("LocaleSelect: conf.WithLocales must be called during app initialization")
+	}
+	url := servemux.ServeQuery(mux, func(m map[string]string) error {
+		templ.UpdateLocale(m[locale])
+		return nil
+	}, locale)
+	return s.Name(locale).Source(servemux.ServeData(mux, func() (any, error) {
+		return schema.SuccessResponse(" ", schema.Schema{
+			"value":   templ.CurrentLocale(),
+			"options": templ.Locales,
+		}), nil
+	})).OnEvent(
+		NewEvent().Change(
+			NewEventActions(NewEventAction().ActionType("ajax").Api(url+"?"+locale+"=${event.data.value}"),
 				NewEventAction().ActionType("refresh"),
 			),
 		),

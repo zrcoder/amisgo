@@ -4,7 +4,7 @@ import (
 	_ "embed"
 	"html/template"
 
-	"github.com/zrcoder/amisgo/theme"
+	"github.com/zrcoder/amisgo/internal/conf"
 )
 
 const (
@@ -21,20 +21,23 @@ type Templ struct {
 	AmisTempl   *template.Template
 	AmisVersion string
 	AmisBaseURL string
-	Theme       theme.Theme
-	themes      []theme.Theme
+	Themes      []conf.Theme
+	themeIndex  int
+	Locales     []conf.Local
+	localeIndex int
 }
 
 func New() *Templ {
 	res := &Templ{
 		AmisVersion: amisVersion,
 		AmisBaseURL: amisBaseURL,
-		Theme:       theme.Theme{Value: theme.Default, Label: theme.Default},
+		Themes:      []conf.Theme{{Value: conf.ThemeDefault, Label: conf.ThemeDefault}},
+		Locales:     []conf.Local{{Value: conf.LocaleDefault, Label: conf.LocaleDefault}},
 	}
 	funcs := template.FuncMap{
-		"GetTheme": func() string {
-			return res.Theme.Value
-		},
+		"CurrentTheme":  res.CurrentTheme,
+		"CurrentLocale": res.CurrentLocale,
+		"CurrentI18n":   res.CurrentI18n,
 	}
 	tmpl := template.New("").Funcs(funcs)
 	tmpl = template.Must(tmpl.Parse(amisTempl))
@@ -42,22 +45,40 @@ func New() *Templ {
 	return res
 }
 
-func (t *Templ) SetThemes(ts []theme.Theme) {
-	t.themes = ts
-	if len(ts) > 0 {
-		t.Theme = ts[0]
-	}
-}
-
-func (t *Templ) GetThemes() []theme.Theme {
-	return t.themes
-}
-
-func (t *Templ) GetTheme(name string) theme.Theme {
-	for _, theme := range t.themes {
+func (t *Templ) UpdateTheme(name string) {
+	for i, theme := range t.Themes {
 		if theme.Value == name {
-			return theme
+			t.themeIndex = i
+			return
 		}
 	}
-	return theme.Theme{}
+}
+
+func (t *Templ) CurrentTheme() string {
+	return t.Themes[t.themeIndex].Value
+}
+
+func (t *Templ) SetLocales(ls []conf.Local) {
+	t.Locales = ls
+}
+
+func (t *Templ) GetLocales() []conf.Local {
+	return t.Locales
+}
+
+func (t *Templ) UpdateLocale(name string) {
+	for i, locale := range t.Locales {
+		if locale.Value == name {
+			t.localeIndex = i
+			return
+		}
+	}
+}
+
+func (t *Templ) CurrentLocale() string {
+	return t.Locales[t.localeIndex].Value
+}
+
+func (t *Templ) CurrentI18n() any {
+	return t.Locales[t.localeIndex].Dict
 }

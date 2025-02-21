@@ -3,23 +3,30 @@ package conf
 import (
 	"net/http"
 
+	"github.com/zrcoder/amisgo/internal/conf"
 	"github.com/zrcoder/amisgo/internal/template"
-	"github.com/zrcoder/amisgo/theme"
 )
 
-// Lang represents the language setting of the application
-type Lang string
-
-// Supported languages
+// Available confs
 const (
-	LangDefault Lang = LangEn
-	LangZh      Lang = "zh"
-	LangEn      Lang = "en"
+	ThemeDefault = conf.ThemeDefault
+	ThemeCxd     = conf.ThemeCxd
+	ThemeAntd    = conf.ThemeAntd
+	ThemeAng     = conf.ThemeAng
+	ThemeDark    = conf.ThemeDark
+
+	LocaleDefault = conf.LocaleDefault
+	LocaleZhCN    = conf.LocalZhCN
+	LocaleEnUS    = conf.LocaleEnUS
+)
+
+type (
+	Theme  = conf.Theme
+	Locale = conf.Local
 )
 
 // Config holds all configuration options for the application
 type Config struct {
-	Lang       Lang
 	Title      string
 	Icon       string
 	CustomCSS  string
@@ -36,7 +43,6 @@ func (c *Config) UseLocalSDK() bool {
 func Default() *Config {
 	return &Config{
 		Title: "amisgo",
-		Lang:  LangDefault,
 		Templ: template.New(),
 	}
 }
@@ -53,41 +59,33 @@ type Option func(*Config)
 
 // WithTheme sets the UI theme.
 func WithTheme(name string) Option {
-	return func(c *Config) {
-		if len(c.Templ.GetThemes()) > 0 {
-			return
-		}
-		c.Templ.Theme = theme.Theme{Value: name, Label: name}
-	}
+	return WithThemes(Theme{Value: name, Label: name})
 }
 
 // WithThemes sets multiple UI themes, overriding an set theme via WithTheme.
-// Once themes are configured, you can use the comp.ThemeSelect or comp.ThemeButtonGroupSelect component in your pages to enable users to switch between the available themes.
-func WithThemes(themes ...theme.Theme) Option {
+func WithThemes(themes ...Theme) Option {
 	return func(c *Config) {
-		if len(themes) < 2 {
-			panic("WithThemes: at least 2 themes are required")
+		if len(themes) == 0 {
+			panic("WithThemes: at least 1 theme is required")
 		}
-		regularThemes(themes)
-		c.Templ.SetThemes(themes)
+		conf.RegularThemes(themes)
+		c.Templ.Themes = themes
 	}
 }
 
-func regularThemes(themes []theme.Theme) {
-	for i := range themes {
-		if themes[i].Value == "" {
-			themes[i].Value = theme.Default
-		}
-		if themes[i].Label == "" {
-			themes[i].Label = themes[i].Value
-		}
-	}
+// WithLocale sets the locale.
+func WithLocale(locale string) Option {
+	return WithLocales(Locale{Value: locale, Label: locale})
 }
 
-// WithLang sets the interface language.
-func WithLang(lang Lang) Option {
+// WithLocales sets multiple locales, overriding an set locale via WithLocale.
+func WithLocales(locales ...Locale) Option {
 	return func(c *Config) {
-		c.Lang = lang
+		if len(locales) == 0 {
+			panic("WithLocales: at least 1 lang is required")
+		}
+		conf.RegularLocales(locales)
+		c.Templ.Locales = locales
 	}
 }
 

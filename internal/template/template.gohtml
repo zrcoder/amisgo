@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
+
+<html lang="{{ CurrentLocale }}">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -14,9 +15,9 @@
     {{ end }}
 
     {{ if .UseLocalSDK }}
-    <link rel="stylesheet" href="/__amisgo__sdk/{{ GetTheme }}.css" />
+    <link rel="stylesheet" href="/__amisgo__sdk/{{ CurrentTheme }}.css" />
     {{ else }}
-    <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/{{ GetTheme }}.min.css" />
+    <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/{{ CurrentTheme }}.min.css" />
     {{ end }}
     
     {{ if .UseLocalSDK }} 
@@ -58,14 +59,13 @@
         let amisScoped = amis.embed('#root', 
           {{ .AmisJson }},
           {
-            {{ if eq .Lang "en" }}
-            locale: 'en-US'
-            {{ end }}
+            context: {
+              i18n: {{ CurrentI18n }},
+            },
+            locale: {{ CurrentLocale }}
           },
           {
-            {{ if GetTheme }}
-            theme: '{{ GetTheme }}'
-            {{ end }}
+            theme: {{ CurrentTheme }}
           }
         );
       })();

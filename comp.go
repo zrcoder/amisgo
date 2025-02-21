@@ -181,8 +181,13 @@ func (a *App) Wrapper() comp.Wrapper                         { return icomp.NewW
 func (a *App) Number() comp.Number                           { return icomp.NewNumber() }
 func (a *App) Shape() comp.Shape                             { return icomp.NewShape() }
 func (a *App) ThemeSelect() comp.Select                      { return icomp.NewSelect().Themes(a.mux, a.Conf.Templ) }
+func (a *App) LocaleSelect() comp.Select                     { return icomp.NewSelect().Locales(a.mux, a.Conf.Templ) }
 func (a *App) ThemeButtonGroupSelect() comp.Select {
 	return icomp.NewButtonGroupSelect().Themes(a.mux, a.Conf.Templ)
+}
+
+func (a *App) LocaleButtonGroupSelect() comp.Select {
+	return icomp.NewButtonGroupSelect().Locales(a.mux, a.Conf.Templ)
 }
 
 func (a *App) AnchorNavSection() comp.AnchorNavSection     { return icomp.NewAnchorNavSection() }
