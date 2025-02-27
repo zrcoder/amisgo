@@ -153,6 +153,9 @@ type (
 	Table               = comp.Table
 	Table2              = comp.Table
 	TableView           = comp.TableView
+	Tr                  = comp.Tr
+	Td                  = comp.Td
+	Tcol                = comp.Tcol
 	Tabs                = comp.Tabs
 	TabsTransfer        = comp.TabsTransfer
 	TabsTransferPicker  = comp.TabsTransferPicker

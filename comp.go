@@ -220,6 +220,9 @@ func (a *App) SchemaMessage() comp.SchemaMessage   { return icomp.NewSchemaMessa
 func (a *App) SchemaPopOver() comp.SchemaPopOver   { return icomp.NewSchemaPopOver() }
 func (a *App) State() comp.State                   { return icomp.NewState() }
 func (a *App) Step() comp.Step                     { return icomp.NewStep() }
+func (a *App) Tr() comp.Tr                         { return icomp.NewTr() }
+func (a *App) Td() comp.Td                         { return icomp.NewTd() }
+func (a *App) Tcol() comp.Tcol                     { return icomp.NewTCol() }
 func (a *App) TableColumn() comp.TableColumn       { return icomp.NewTableColumn() }
 func (a *App) Toast() comp.Toast                   { return icomp.NewToast() }
 func (a *App) ToastItem() comp.ToastItem           { return icomp.NewToastItem() }
