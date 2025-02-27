@@ -222,3 +222,11 @@ func (s Service) Ws(value string) Service {
 func (s Service) mux() *http.ServeMux {
 	return s[servemux.Key].(*http.ServeMux)
 }
+
+func (s Service) MarshalJSON() ([]byte, error) {
+	m := make(map[string]any, len(s))
+	for k, v := range s {
+		pureAmis(k, v, m)
+	}
+	return marshalMap(m)
+}

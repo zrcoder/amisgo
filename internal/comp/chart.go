@@ -231,3 +231,11 @@ func (c Chart) Width(value string) Chart {
 func (c Chart) mux() *http.ServeMux {
 	return c[servemux.Key].(*http.ServeMux)
 }
+
+func (c Chart) MarshalJSON() ([]byte, error) {
+	m := make(map[string]any, len(c))
+	for k, v := range c {
+		pureAmis(k, v, m)
+	}
+	return marshalMap(m)
+}

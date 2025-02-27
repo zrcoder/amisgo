@@ -761,3 +761,11 @@ func (c Crud) CustomField2(value string) Crud {
 func (c Crud) mux() *http.ServeMux {
 	return c[servemux.Key].(*http.ServeMux)
 }
+
+func (c Crud) MarshalJSON() ([]byte, error) {
+	m := make(map[string]any, len(c))
+	for k, v := range c {
+		pureAmis(k, v, m)
+	}
+	return marshalMap(m)
+}

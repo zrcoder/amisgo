@@ -288,3 +288,11 @@ func (p Page) VisibleOn(value string) Page {
 func (p Page) mux() *http.ServeMux {
 	return p[servemux.Key].(*http.ServeMux)
 }
+
+func (p Page) MarshalJSON() ([]byte, error) {
+	m := make(map[string]any, len(p))
+	for k, v := range p {
+		pureAmis(k, v, m)
+	}
+	return marshalMap(m)
+}

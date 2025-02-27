@@ -11,7 +11,7 @@ import (
 type InputImage schema.Schema
 
 func NewInputImage(mux *http.ServeMux) InputImage {
-	return InputImage{"type": "input-image", servemux.Key: mux}.Receiver("/api/upload")
+	return InputImage{"type": "input-image", servemux.Key: mux}
 }
 
 func (i InputImage) set(key string, value any) InputImage {
@@ -376,4 +376,12 @@ func (i InputImage) Width(value string) InputImage {
 
 func (i InputImage) mux() *http.ServeMux {
 	return i[servemux.Key].(*http.ServeMux)
+}
+
+func (i InputImage) MarshalJSON() ([]byte, error) {
+	m := make(map[string]any, len(i))
+	for k, v := range i {
+		pureAmis(k, v, m)
+	}
+	return marshalMap(m)
 }

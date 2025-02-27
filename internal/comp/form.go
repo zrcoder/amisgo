@@ -235,3 +235,11 @@ func (f Form) SubmitTo(receiver any, callback func(any) error) Form {
 func (f Form) mux() *http.ServeMux {
 	return f[servemux.Key].(*http.ServeMux)
 }
+
+func (f Form) MarshalJSON() ([]byte, error) {
+	m := make(map[string]any, len(f))
+	for k, v := range f {
+		pureAmis(k, v, m)
+	}
+	return marshalMap(m)
+}

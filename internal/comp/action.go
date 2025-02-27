@@ -374,3 +374,11 @@ func (a Action) set(key string, value any) Action {
 func (a Action) mux() *http.ServeMux {
 	return a[servemux.Key].(*http.ServeMux)
 }
+
+func (a Action) MarshalJSON() ([]byte, error) {
+	m := make(map[string]any, len(a))
+	for k, v := range a {
+		pureAmis(k, v, m)
+	}
+	return marshalMap(m)
+}

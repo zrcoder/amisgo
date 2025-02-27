@@ -14,10 +14,6 @@ func NewInputFile(mux *http.ServeMux) InputFile {
 	f := InputFile{}
 	f.set("type", "input-file")
 	f.set(servemux.Key, mux)
-	f.Receiver("/api/upload/file")
-	f.StartChunkApi("/api/upload/startChunk")
-	f.ChunkApi("/api/upload/chunk")
-	f.FinishChunkApi("/api/upload/finishChunkApi")
 	return f
 }
 
@@ -378,4 +374,12 @@ func (fc InputFile) ShowError(value bool) InputFile {
 
 func (f InputFile) mux() *http.ServeMux {
 	return f[servemux.Key].(*http.ServeMux)
+}
+
+func (f InputFile) MarshalJSON() ([]byte, error) {
+	m := make(map[string]any, len(f))
+	for k, v := range f {
+		pureAmis(k, v, m)
+	}
+	return marshalMap(m)
 }
