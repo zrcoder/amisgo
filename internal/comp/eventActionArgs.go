@@ -61,7 +61,7 @@ func (a EventActionArgs) Delta(value int) EventActionArgs {
 	return a.Set("delta", value)
 }
 
-func (a EventActionArgs) copyFormat(value string) EventActionArgs {
+func (a EventActionArgs) CopyFormat(value string) EventActionArgs {
 	return a.Set("copyFormat", value)
 }
 

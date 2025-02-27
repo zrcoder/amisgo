@@ -276,7 +276,6 @@ func (q InputQuarter) Width(value string) InputQuarter {
 
 // set sets a property value
 func (q InputQuarter) set(key string, value any) InputQuarter {
-	// This method should set the property `key` with the given `value` on the `QuarterControl` instance.
-	// Assuming we have a way to store and manage these properties.
+	q[key] = value
 	return q
 }
