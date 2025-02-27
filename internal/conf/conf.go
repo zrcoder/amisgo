@@ -1,5 +1,7 @@
 package conf
 
+import "encoding/json"
+
 const (
 	// Available themes
 	ThemeDefault = ThemeCxd
@@ -14,34 +16,45 @@ const (
 	LocaleEnUS    = "en-US"
 )
 
-type Theme = option
-
-type Local = option
-
-type option struct {
+type Theme struct {
 	Value string `json:"value"`
 	Label string `json:"label"`
-	Dict  any    `json:"-"`
+}
+
+type Local struct {
+	Value string          `json:"value"`
+	Label string          `json:"label"`
+	Dict  json.RawMessage `json:"-"`
 }
 
 func RegularThemes(themes []Theme) {
 	for i := range themes {
-		themes[i] = themes[i].regular(ThemeDefault)
+		themes[i] = themes[i].regular()
 	}
 }
 
 func RegularLocales(langs []Local) {
 	for i := range langs {
-		langs[i] = langs[i].regular(LocaleDefault)
+		langs[i] = langs[i].regular()
 	}
 }
 
-func (o option) regular(placeholder string) option {
-	if o.Value == "" {
-		o.Value = placeholder
+func (t Theme) regular() Theme {
+	if t.Value == "" {
+		t.Value = ThemeDefault
 	}
-	if o.Label == "" {
-		o.Label = o.Value
+	if t.Label == "" {
+		t.Label = t.Value
 	}
-	return o
+	return t
+}
+
+func (l Local) regular() Local {
+	if l.Value == "" {
+		l.Value = LocaleDefault
+	}
+	if l.Label == "" {
+		l.Label = l.Value
+	}
+	return l
 }
