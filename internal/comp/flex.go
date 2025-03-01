@@ -134,6 +134,11 @@ func (f Flex) UseMobileUI(value bool) Flex {
 	return f.set("useMobileUI", value)
 }
 
+// Mobile sets the style when the divice is mobile
+func (f Flex) Mobile(value any) Flex {
+	return f.set("mobile", value)
+}
+
 // Visible sets whether the component is visible
 func (f Flex) Visible(value bool) Flex {
 	return f.set("visible", value)

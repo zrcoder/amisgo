@@ -109,7 +109,7 @@ func (d Divider) StaticSchema(value string) Divider {
 	return d.set("staticSchema", value)
 }
 
-// Style Component style
+// Style Component style, dashed | solid
 func (d Divider) Style(value any) Divider {
 	return d.set("style", value)
 }
