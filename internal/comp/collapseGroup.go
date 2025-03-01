@@ -49,8 +49,8 @@ func (c CollapseGroup) EditorSetting(value string) CollapseGroup {
 	return c.set("editorSetting", value)
 }
 
-// EnableFieldSetStyle enables or disables the FieldSet styling
-func (c CollapseGroup) EnableFieldSetStyle(value bool) CollapseGroup {
+// EnableFieldSetStyle enables or disables the FieldSet styling, bool | expression
+func (c CollapseGroup) EnableFieldSetStyle(value any) CollapseGroup {
 	return c.set("enableFieldSetStyle", value)
 }
 
