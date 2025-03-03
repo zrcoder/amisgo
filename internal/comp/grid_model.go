@@ -1,11 +1,17 @@
 package comp
 
-import "github.com/zrcoder/amisgo/schema"
+import (
+	"github.com/zrcoder/amisgo/schema"
+)
 
 type GridItem schema.Schema
 
-func NewGridItem() GridItem {
-	return GridItem{}
+func NewGridItem(component ...any) GridItem {
+	if len(component) == 0 {
+		return GridItem{}
+	}
+	s := toSchema(component[0])
+	return GridItem(s)
 }
 
 func (g GridItem) set(key string, value any) GridItem {
@@ -51,4 +57,9 @@ func (g GridItem) Align(value string) GridItem {
 // Valign sets the vertical alignment (top/bottom/middle/auto)
 func (g GridItem) Valign(value string) GridItem {
 	return g.set("valign", value)
+}
+
+// GridClassName sets the classname
+func (g GridItem) GridClassName(value string) GridItem {
+	return g.set("gridClassName", value)
 }

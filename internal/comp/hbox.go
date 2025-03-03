@@ -14,7 +14,7 @@ func (h HBox) set(key string, value any) HBox {
 	return h
 }
 
-// Align sets the horizontal alignment: left, right, between, center
+// Align sets the horizontal alignment: 'left' | 'right' | 'between' | 'center'
 func (h HBox) Align(value string) HBox {
 	return h.set("align", value)
 }
@@ -25,7 +25,7 @@ func (h HBox) ClassName(value string) HBox {
 }
 
 // Columns sets the columns
-func (h HBox) Columns(value ...Column) HBox {
+func (h HBox) Columns(value ...any) HBox {
 	return h.set("columns", value)
 }
 
@@ -44,7 +44,7 @@ func (h HBox) EditorSetting(value string) HBox {
 	return h.set("editorSetting", value)
 }
 
-// Gap sets the horizontal gap: xs, sm, base, none, md, lg
+// Gap sets the horizontal gap: 'xs' | 'sm' | 'base' | 'none' | 'md' | 'lg'
 func (h HBox) Gap(value string) HBox {
 	return h.set("gap", value)
 }
@@ -134,7 +134,7 @@ func (h HBox) UseMobileUI(value bool) HBox {
 	return h.set("useMobileUI", value)
 }
 
-// Valign sets the vertical alignment: top, middle, bottom, between
+// Valign sets the vertical alignment: 'top' | 'middle' | 'bottom' | 'between'
 func (h HBox) Valign(value string) HBox {
 	return h.set("valign", value)
 }

@@ -232,7 +232,7 @@ func (a *App) ChartAxis() comp.ChartAxis           { return icomp.NewChartAxis()
 func (a *App) NewListItem() comp.ListItem          { return icomp.NewListItem() }
 func (a *App) Api() comp.Api                       { return icomp.NewApi() }
 func (a *App) BreadcrumbItem() comp.BreadcrumbItem { return icomp.NewBreadcrumbItem() }
-func (a *App) Column() comp.Column                 { return icomp.NewColumn() }
+func (a *App) Column(component ...any) comp.Column { return icomp.NewColumn(component...) }
 func (a *App) Event() comp.Event                   { return icomp.NewEvent() }
 func (a *App) EventActions(actions ...comp.EventAction) icomp.EventActions {
 	return icomp.NewEventActions(actions...)
@@ -246,16 +246,16 @@ func (a *App) EventActionDrawer(drawer ...comp.Drawer) icomp.EventAction {
 func (a *App) EventActionDialog(dialog ...comp.Dialog) icomp.EventAction {
 	return icomp.NewEventActionDialog(dialog...)
 }
-func (a *App) EventActionArgs() comp.EventActionArgs { return icomp.NewEventActionArgs() }
-func (a *App) GridItem() comp.GridItem               { return icomp.NewGridItem() }
-func (a *App) Horizontal() comp.Horizontal           { return icomp.NewHorizontal() }
-func (a *App) ListBodyField() comp.ListBodyField     { return icomp.NewListBodyField() }
-func (a *App) NavLink() comp.NavLink                 { return icomp.NewNavLink() }
-func (a *App) Option() comp.Option                   { return icomp.NewOption() }
-func (a *App) Options() comp.Options                 { return icomp.NewOptions() }
-func (a *App) PageItem() comp.PageItem               { return icomp.NewPageItem() }
-func (a *App) PropertyItem() comp.PropertyItem       { return icomp.NewPropertyItem() }
-func (a *App) PullRefresh() comp.PullRefresh         { return icomp.NewPullRefresh() }
-func (a *App) Rule() comp.Rule                       { return icomp.NewRule() }
-func (a *App) Tab() comp.Tab                         { return icomp.NewTab() }
-func (a *App) CarouselOption() comp.CarouselOption   { return icomp.NewCarouselOption() }
+func (a *App) EventActionArgs() comp.EventActionArgs   { return icomp.NewEventActionArgs() }
+func (a *App) GridItem(component ...any) comp.GridItem { return icomp.NewGridItem(component...) }
+func (a *App) Horizontal() comp.Horizontal             { return icomp.NewHorizontal() }
+func (a *App) ListBodyField() comp.ListBodyField       { return icomp.NewListBodyField() }
+func (a *App) NavLink() comp.NavLink                   { return icomp.NewNavLink() }
+func (a *App) Option() comp.Option                     { return icomp.NewOption() }
+func (a *App) Options() comp.Options                   { return icomp.NewOptions() }
+func (a *App) PageItem() comp.PageItem                 { return icomp.NewPageItem() }
+func (a *App) PropertyItem() comp.PropertyItem         { return icomp.NewPropertyItem() }
+func (a *App) PullRefresh() comp.PullRefresh           { return icomp.NewPullRefresh() }
+func (a *App) Rule() comp.Rule                         { return icomp.NewRule() }
+func (a *App) Tab() comp.Tab                           { return icomp.NewTab() }
+func (a *App) CarouselOption() comp.CarouselOption     { return icomp.NewCarouselOption() }

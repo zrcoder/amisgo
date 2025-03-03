@@ -20,7 +20,7 @@ func (g Grid2d) ClassName(value string) Grid2d {
 }
 
 // Cols sets the number of columns, default is 12.
-func (g Grid2d) Cols(value string) Grid2d {
+func (g Grid2d) Cols(value int) Grid2d {
 	return g.set("cols", value)
 }
 
@@ -39,14 +39,14 @@ func (g Grid2d) EditorSetting(value string) Grid2d {
 	return g.set("editorSetting", value)
 }
 
-// Gap sets the gap between grid items, default is 0.
-func (g Grid2d) Gap(value string) Grid2d {
+// Gap sets the gap between grid items, string | int, default is 0.
+func (g Grid2d) Gap(value any) Grid2d {
 	return g.set("gap", value)
 }
 
-// RowGap sets the vertical gap between grid items.
-func (g Grid2d) RowGap(value string) Grid2d {
-	return g.set("rowGap", value)
+// GapRow sets the vertical gap between grid items, string | int.
+func (g Grid2d) GapRow(value any) Grid2d {
+	return g.set("gapRow", value)
 }
 
 // Grids sets the configuration for each grid item.
