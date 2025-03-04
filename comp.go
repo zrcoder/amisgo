@@ -140,6 +140,7 @@ func (a *App) ReloadAction() comp.ReloadAction               { return icomp.NewR
 func (a *App) Remark() comp.Remark                           { return icomp.NewRemark() }
 func (a *App) SearchBox() comp.SearchBox                     { return icomp.NewSearchBox() }
 func (a *App) Select() comp.Select                           { return icomp.NewSelect() }
+func (a *App) Overlay() comp.Overlay                         { return icomp.NewOverlay() }
 func (a *App) Service() comp.Service                         { return icomp.NewService(a.mux) }
 func (a *App) SparkLine() comp.SparkLine                     { return icomp.NewSparkLine() }
 func (a *App) Spinner() comp.Spinner                         { return icomp.NewSpinner() }

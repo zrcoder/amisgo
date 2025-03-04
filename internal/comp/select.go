@@ -512,8 +512,8 @@ func (sc Select) Outline(value bool) Select {
 	return sc.set("outline", value)
 }
 
-// Overlay enables or disables Overlay
-func (sc Select) Overlay(value bool) Select {
+// Overlay sets the overlay configuration
+func (sc Select) Overlay(value Overlay) Select {
 	return sc.set("overlay", value)
 }
 

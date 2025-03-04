@@ -243,4 +243,5 @@ type (
 	ListItem            = comp.ListItem
 	TimelineItem        = comp.TimelineItem
 	CarouselOption      = comp.CarouselOption
+	Overlay             = comp.Overlay
 )
