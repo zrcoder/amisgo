@@ -79,7 +79,7 @@ func (c Column) Label(value string) Column {
 }
 
 // QuickEdit sets the quick edit configuration
-func (c Column) QuickEdit(value string) Column {
+func (c Column) QuickEdit(value any) Column {
 	return c.set("quickEdit", value)
 }
 
@@ -166,4 +166,9 @@ func (c Column) Buttons(value ...any) Column {
 // PopOver sets the pop-over
 func (c Column) PopOver(value any) Column {
 	return c.set("popOver", value)
+}
+
+// Type sets the column type, for example: operation
+func (c Column) Type(value string) Column {
+	return c.set("type", value)
 }
