@@ -266,6 +266,11 @@ func (c Crud) PerPage(value int) Crud {
 	return c.set("perPage", value)
 }
 
+// PerPageAvailable sets the available options for items per page
+func (c Crud) PerPageAvailable(value ...int) Crud {
+	return c.set("perPageAvailable", value)
+}
+
 // PerPageField sets the field name for specifying items per page
 func (c Crud) PerPageField(value string) Crud {
 	return c.set("perPageField", value)
