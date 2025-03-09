@@ -14,11 +14,6 @@ func (f Flex) set(key string, value any) Flex {
 	return f
 }
 
-// AlignContent sets vertical distribution for multiple lines. Options: normal | flex-start | flex-end | center | space-between | space-around | space-evenly | stretch
-func (f Flex) AlignContent(value string) Flex {
-	return f.set("alignContent", value)
-}
-
 // AlignItems sets vertical alignment. Options: stretch | start | flex-start | flex-end | end | center | baseline
 func (f Flex) AlignItems(value string) Flex {
 	return f.set("alignItems", value)
