@@ -137,6 +137,11 @@ func (fc InputFile) DownloadUrl(value string) InputFile {
 	return fc.set("downloadUrl", value)
 }
 
+// UseChunk sets whether to use chunk upload. true | false | "auto"
+func (fc InputFile) UseChunk(value any) InputFile {
+	return fc.set("useChunk", value)
+}
+
 // Drag sets whether drag-and-drop upload is enabled.
 func (fc InputFile) Drag(value bool) InputFile {
 	return fc.set("drag", value)
