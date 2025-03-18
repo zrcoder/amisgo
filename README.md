@@ -36,9 +36,15 @@ Visit http://localhost:8080 after running the code.
 
 Explore our [documentation](https://amisgo.pages.dev) for in-depth tutorials and guides.
 
-## Examples
+## Use Cases
 
-Check out our [examples repository](https://github.com/zrcoder/amisgo-examples).
+### [podFiles](https://github.com/zrcoder/podFiles)
+
+PodFiles is a tool based on amisgo, designed to manage files within Kubernetes pods.
+
+### [amisgo-examples](https://github.com/zrcoder/amisgo-examples)
+
+amisgo-examples is a sample repository that demonstrates how to use amisgo, containing multiple examples, each of which has practical value.
 
 ## Issues and Contributions
 
