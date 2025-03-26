@@ -198,7 +198,7 @@ func (ec Editor) SaveImmediately(value bool) Editor {
 	return ec.set("saveImmediately", value)
 }
 
-// Size sets the editor size
+// Size sets the editor size.  can be: md、lg、xl、xxl, default is md
 func (ec Editor) Size(value string) Editor {
 	return ec.set("size", value)
 }
