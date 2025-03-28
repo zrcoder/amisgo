@@ -1,6 +1,7 @@
 package conf
 
 import (
+	stdtpl "html/template"
 	"net/http"
 
 	"github.com/zrcoder/amisgo/internal/conf"
@@ -29,8 +30,8 @@ type (
 type Config struct {
 	Title      string
 	Icon       string
-	CustomCSS  string
-	CustomJS   string
+	CustomCSS  stdtpl.CSS
+	CustomJS   stdtpl.JS
 	LocalSdkFS http.FileSystem
 	*template.Templ
 }
@@ -106,14 +107,14 @@ func WithIcon(icon string) Option {
 // WithCustomCSS sets the custom CSS URL.
 func WithCustomCSS(customCSS string) Option {
 	return func(c *Config) {
-		c.CustomCSS = customCSS
+		c.CustomCSS = stdtpl.CSS(customCSS)
 	}
 }
 
 // WithCustomJS sets the custom JavaScript URL.
 func WithCustomJS(customJS string) Option {
 	return func(c *Config) {
-		c.CustomJS = customJS
+		c.CustomJS = stdtpl.JS(customJS)
 	}
 }
 
