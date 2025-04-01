@@ -29,6 +29,13 @@ func (s Service) GetData(getter func() (any, error)) Service {
 	return s.Api(servemux.ServeData(s.mux(), getter))
 }
 
+// GetSchema fetches schema.Schema using the internal API.
+func (s Service) GetSchema(schemaFn func() any) Service {
+	return s.SchemaApi(servemux.ServeData(s.mux(), func() (any, error) {
+		return schemaFn(), nil
+	}))
+}
+
 // Body sets the content area.
 func (s Service) Body(value ...any) Service {
 	return s.set("body", value)
@@ -104,8 +111,8 @@ func (s Service) InitFetchSchemaOn(value string) Service {
 	return s.set("initFetchSchemaOn", value)
 }
 
-// Interval sets the interval for polling.
-func (s Service) Interval(value string) Service {
+// Interval sets the interval for polling. (in milliseconds, the minimum value is 1000)
+func (s Service) Interval(value int) Service {
 	return s.set("interval", value)
 }
 
@@ -115,7 +122,7 @@ func (s Service) LoadingConfig(value string) Service {
 }
 
 // Messages sets the message configurations.
-func (s Service) Messages(value string) Service {
+func (s Service) Messages(value any) Service {
 	return s.set("messages", value)
 }
 
@@ -139,7 +146,7 @@ func (s Service) ShowErrorMsg(value bool) Service {
 	return s.set("showErrorMsg", value)
 }
 
-// SilentPolling sets whether to poll silently.
+// SilentPolling sets whether to poll silently. default is false.
 func (s Service) SilentPolling(value bool) Service {
 	return s.set("silentPolling", value)
 }
