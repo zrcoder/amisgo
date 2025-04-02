@@ -19,6 +19,7 @@ const (
 type Theme struct {
 	Value string `json:"value"`
 	Label string `json:"label"`
+	Icon  string `json:"icon"`
 }
 
 type Local struct {
@@ -42,9 +43,6 @@ func RegularLocales(langs []Local) {
 func (t Theme) regular() Theme {
 	if t.Value == "" {
 		t.Value = ThemeDefault
-	}
-	if t.Label == "" {
-		t.Label = t.Value
 	}
 	return t
 }
