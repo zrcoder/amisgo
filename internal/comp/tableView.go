@@ -122,7 +122,7 @@ func (t Td) Rowspan(value int) Td {
 	return t.set("rowspan", value)
 }
 
-func (t Td) Body(value any) Td {
+func (t Td) Body(value ...any) Td {
 	return t.set("body", value)
 }
 
