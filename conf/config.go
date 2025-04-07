@@ -3,6 +3,7 @@ package conf
 import (
 	stdtpl "html/template"
 	"net/http"
+	"strings"
 
 	"github.com/zrcoder/amisgo/internal/conf"
 	"github.com/zrcoder/amisgo/internal/template"
@@ -105,16 +106,16 @@ func WithIcon(icon string) Option {
 }
 
 // WithCustomCSS sets the custom CSS URL.
-func WithCustomCSS(customCSS string) Option {
+func WithCustomCSS(customCSS ...string) Option {
 	return func(c *Config) {
-		c.CustomCSS = stdtpl.CSS(customCSS)
+		c.CustomCSS = stdtpl.CSS(strings.Join(customCSS, "\n"))
 	}
 }
 
 // WithCustomJS sets the custom JavaScript URL.
-func WithCustomJS(customJS string) Option {
+func WithCustomJS(customJS ...string) Option {
 	return func(c *Config) {
-		c.CustomJS = stdtpl.JS(customJS)
+		c.CustomJS = stdtpl.JS(strings.Join(customJS, "\n"))
 	}
 }
 

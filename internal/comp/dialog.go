@@ -148,7 +148,7 @@ func (d Dialog) ShowLoading(value bool) Dialog {
 	return d.set("showLoading", value)
 }
 
-// Size sets the size of the dialog.
+// Size sets the size of the dialog. supported values: xs、sm、md、lg、xl、full
 func (d Dialog) Size(value string) Dialog {
 	return d.set("size", value)
 }
