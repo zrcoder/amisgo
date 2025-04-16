@@ -31,6 +31,7 @@ Visit http://localhost:8080 to see the result.
 
 - [podFiles](https://github.com/zrcoder/podFiles) - Kubernetes pod file manager
 - [amisgo-examples](https://github.com/zrcoder/amisgo-examples) - Sample projects
+- [amisgo-games](https://github.com/zrcoder/agg) - Amisgo games for STEM education
 
 ## Contributing
 
