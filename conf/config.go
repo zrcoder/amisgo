@@ -103,15 +103,15 @@ func WithIcon(icon string) Option {
 	}
 }
 
-// WithCustomCSS sets the custom CSS URL.
-func WithCustomCSS(customCSS ...string) Option {
+// WithStyles sets the custom CSS URL.
+func WithStyles(customCSS ...string) Option {
 	return func(c *Config) {
 		c.CustomCSS = customCSS
 	}
 }
 
-// WithCustomJS sets the custom JavaScript URL.
-func WithCustomJS(customJS ...string) Option {
+// WithScripts sets the custom JavaScript URL.
+func WithScripts(customJS ...string) Option {
 	return func(c *Config) {
 		c.CustomJS = customJS
 	}
