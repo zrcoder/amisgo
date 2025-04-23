@@ -27,6 +27,14 @@
     <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/helper.min.css" />
     <link rel="stylesheet" href="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/iconfont.min.css" />
     {{ end }}
+
+    {{ range .CustomCSS }}
+    <link rel="stylesheet" href="{{.}}" />
+    {{ end }}
+
+    {{ range .CustomJS }}
+    <script src="{{.}}"></script>
+    {{ end }}
     
     <style>
       html,
@@ -38,7 +46,6 @@
         margin: 0;
         padding: 0;
       }
-      {{ .CustomCSS }}
     </style>
   </head>
   <body>
@@ -47,11 +54,6 @@
     <script src="/__amisgo__sdk/sdk.js"></script>
     {{ else }}
     <script src="{{ .AmisBaseURL }}@{{ .AmisVersion }}/sdk/sdk.min.js"></script>
-    {{ end }}
-    {{ if .CustomJS }}
-    <script type="text/javascript">
-    {{ .CustomJS }}
-    </script> 
     {{ end }}
     <script type="text/javascript">
       (function () {
