@@ -70,6 +70,17 @@ func (a Action) TransformMultiple(transfor func(schema.Schema) (schema.Schema, e
 	)
 }
 
+// Messages sets the toast messages for the button when the action type is ajax.
+// Example:
+//
+//	map[string]string{
+//		"success": "Operation successful",
+//		"failed":  "Operation failed",
+//	}
+func (a Action) Messages(value map[string]string) Action {
+	return a.set("messages", value)
+}
+
 // ActiveClassName sets the class name for the active state of the button.
 func (a Action) ActiveClassName(value string) Action {
 	return a.set("activeClassName", value)
