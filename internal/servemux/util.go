@@ -147,8 +147,7 @@ func TransformMultiple(mux *http.ServeMux, src []string, transfor func(schema.Sc
 			respError(w, err)
 			return
 		}
-		resp := &schema.Response{Data: output}
-		w.Write(resp.Json())
+		w.Write(output.Json())
 	})
 
 	data = make(schema.Schema, len(src))
