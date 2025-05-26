@@ -146,12 +146,12 @@ func (t Textarea) MaxLength(value string) Textarea {
 }
 
 // MaxRows sets the maximum number of rows.
-func (t Textarea) MaxRows(value string) Textarea {
+func (t Textarea) MaxRows(value int) Textarea {
 	return t.set("maxRows", value)
 }
 
 // MinRows sets the minimum number of rows.
-func (t Textarea) MinRows(value string) Textarea {
+func (t Textarea) MinRows(value int) Textarea {
 	return t.set("minRows", value)
 }
 
