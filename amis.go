@@ -62,9 +62,8 @@ func (a *App) HandleFunc(path string, handler http.HandlerFunc, middlewares ...f
 
 // StaticFS registers a file server for serving static files
 func (a *App) StaticFS(prefix string, fs http.FileSystem) {
-	if prefix == "" || prefix == "/" {
-		prefix = "/"
-	}
+	// regular prefix to: "/xxx/"" (eg. "abc", "/abc", "abc/", "//abc/" all will be changed to "/abc/")
+	// if prefix is "" or "/", regular it to "/"
 	prefix = "/" + strings.TrimLeft(prefix, "/")
 	prefix = strings.TrimRight(prefix, "/") + "/"
 	a.mux.Handle(prefix, http.StripPrefix(prefix, http.FileServer(fs)))
