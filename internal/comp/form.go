@@ -228,7 +228,7 @@ func (f Form) Submit(callback func(schema.Schema) error) Form {
 // SubmitTo submits the form data to the specified struct or map and executes a custom callback
 // receiver can be a struct pointer, map, or other types that can be deserialized from JSON
 // callback allows further processing of the received data
-func (f Form) SubmitTo(receiver any, callback func(any) error) Form {
+func (f Form) SubmitTo(receiver any, callback func() error) Form {
 	return f.Api(servemux.BindRouteTo(f.mux(), receiver, callback))
 }
 

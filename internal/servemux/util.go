@@ -32,12 +32,12 @@ func BindDataRoute(mux *http.ServeMux, callback func(schema.Schema) error) strin
 	})
 }
 
-func BindRouteTo(mux *http.ServeMux, receiver any, callback func(any) error) string {
+func BindRouteTo(mux *http.ServeMux, receiver any, callback func() error) string {
 	return handleGenericRequest(mux, func(input []byte) error {
 		if err := json.Unmarshal(input, receiver); err != nil {
 			return fmt.Errorf("data unmarshal: %w", err)
 		}
-		return callback(receiver)
+		return callback()
 	})
 }
 
