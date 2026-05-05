@@ -8,7 +8,7 @@ func NewPullRefresh() PullRefresh {
 	return PullRefresh{}
 }
 
-func (p PullRefresh) set(key string, value interface{}) PullRefresh {
+func (p PullRefresh) set(key string, value any) PullRefresh {
 	p[key] = value
 	return p
 }
